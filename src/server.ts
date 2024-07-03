@@ -41,6 +41,10 @@ server {
 // Dodaj middleware, który odczyta dane JSON z ciała żądania
 app.use(express.json())
 
+app.use((req, res) => {
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+});
+
 app.post('/cashbill-payment', async (req, res) => {
   try {
     // Odczytaj dane z ciała żądania
