@@ -1,0 +1,49 @@
+@import '../../../_css/common';
+
+.posts {
+  margin-top: 48px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  @include small-break {
+    margin-top: 24px;
+  }
+}
+
+.link {
+  width: 30%;
+  @include small-break {
+   width: 100%;
+  }
+}
+.title {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.frame {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(242, 242, 242)
+}
+.image {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.gap {
+  height: 48px;
+}
+
+.priceTitle {  
+  background: linear-gradient(to top, #f5f5f5, #dddddd);
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  border-top: 1px solid rgb(242, 242, 242);
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+}

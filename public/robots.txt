@@ -1,0 +1,17 @@
+# Block all crawlers for /accounts
+User-agent: *
+Disallow: /account
+Disallow: /cart
+Disallow: /admin
+Disallow: /login
+Disallow: /create-account
+Disallow: /recover-password
+Disallow: /personal
+Disallow: /purchases
+Disallow: /orders
+Disallow: /_next
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+

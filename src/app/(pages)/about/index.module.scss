@@ -1,0 +1,67 @@
+@import '../../_css/common';
+
+.container {
+  width: 100%;
+}
+.text {
+    font-size: 20px;
+}
+
+.twitter, .facebook, .instagram {
+  font-size: 30px;
+}
+
+.links {
+  margin-top: 24px;
+}
+
+.link {
+  margin-right: 24px;
+}
+
+.imageHero {
+  order: 2;
+  @include small-break {
+    order: 1;
+  }
+}
+
+.heroText {
+  order: -1;
+  h2 {
+    padding-bottom: 24px;
+  }
+  @include small-break {
+    order: 2;
+    padding-top: 24px;
+  }
+}
+.hero {
+  padding-top: 96px;
+  display: flex;
+  @include small-break {
+    flex-direction: column;
+    padding-top: 48px;
+  }
+}
+
+.workers {
+  margin-top: 100px;
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  justify-content: space-between;
+  @include small-break {
+    flex-direction: column;
+  }
+}
+
+.worker {
+  border-radius: 12px;
+  padding: 24px;
+  background-color: rgb(251, 251, 251);
+}
+
+.avatar {
+  padding-bottom: 24px;
+}

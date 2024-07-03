@@ -1,0 +1,83 @@
+@import "../../_css/common.scss";
+
+.sections {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    @include small-break {
+        display: block;
+      }
+}
+
+.labelAndLogo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title { 
+    padding-bottom: 30px;
+}
+
+.methodsSection, .bannerSection {
+  border: 1px solid var(--color-dark-50);
+  padding: 24px;
+  width: 50%;
+  @include small-break {
+    width: 100%;
+    padding-bottom: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.radioWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.radio {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid var(--color-dark-500);
+  outline: none;
+  cursor: pointer;
+}
+
+.radio:checked {
+  font-size: 16px;
+  background-color: white;
+  position: relative;
+}
+
+.radio:checked::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-dark-500);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.geowidget {
+    height: 600px;
+    @include small-break {
+      height: 500px;
+    }
+}
+
+.hr {
+  margin-top: 36px;
+  margin-bottom: 36px;
+  border-top: 1px solid lightgray;
+}

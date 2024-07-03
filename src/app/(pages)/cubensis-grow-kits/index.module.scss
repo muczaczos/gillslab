@@ -1,0 +1,35 @@
+@import '../../_css/common';
+
+.container {
+  padding: 50px;
+  width: 100%;
+}
+
+.products {
+    display: grid; 
+    grid-template-columns: 1fr 75%;
+    gap: 60px;
+  
+    @include large-break {
+      grid-template-columns: 100%;
+      gap: 48px;
+    }
+  }
+
+  .imageTitle {
+    margin-top: 48px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    @include small-break {
+      flex-direction: column;
+      margin-top: 24px;
+    }
+  }
+
+  .heroText {
+    margin-top: 48px;
+    @include small-break {
+      margin-top: 12px;
+    }
+  }
