@@ -43,7 +43,7 @@ app.use(express.json())
 
 app.use((req, res) => {
   res.setHeader('X-Robots-Tag', 'noindex, nofollow')
-});
+})
 
 app.post('/cashbill-payment', async (req, res) => {
   try {
