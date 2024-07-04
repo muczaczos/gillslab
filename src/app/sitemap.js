@@ -2,17 +2,17 @@ import { connectToDatabase } from './connectMongo'
 
 export default async function sitemap() {
   const client = await connectToDatabase()
-  const db = client.db('planet2')
-  const postsData = await db.collection('posts').find({}).toArray()
+  const db = client.db('gillslab')
+  //const postsData = await db.collection('posts').find({}).toArray()
   const pagesData = await db.collection('pages').find({}).toArray()
   const productsData = await db.collection('products').find({}).toArray()
 
-  const posts = postsData.map(item => ({
-    url: `${process.env.NEXT_PUBLIC_SERVER_URL}/posts/${item.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.5,
-  }))
+  /* const posts = postsData.map(item => ({
+     url: `${process.env.NEXT_PUBLIC_SERVER_URL}/posts/${item.slug}`,
+     lastModified: new Date(),
+     changeFrequency: 'monthly',
+     priority: 0.5,
+   })) */
 
   const pages = pagesData.map(item => ({
     url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${item.slug}`,
@@ -35,6 +35,7 @@ export default async function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+    /*
     {
       url: `${process.env.NEXT_PUBLIC_SERVER_URL}/Cubensis-grow-kits`,
       lastModified: new Date(),
@@ -70,9 +71,9 @@ export default async function sitemap() {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
-    },
+    },*/
     ...pages,
-    ...posts,
+    //...posts,
     ...products,
   ]
 }
