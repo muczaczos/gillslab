@@ -1,0 +1,29 @@
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+  scroll-behavior: auto; /* Disables smooth scrolling */
+  cursor: grab;
+  scrollbar-width: none; /* Hides scrollbar on Firefox */
+  width: 100%; /* Ensure it takes full width */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Hides scrollbar on Chrome, Safari, and Opera */
+}
+
+.slider:active {
+  cursor: grabbing;
+}
+
+.slide {
+  min-width: 100%; /* Ensures each slide takes full width */
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}

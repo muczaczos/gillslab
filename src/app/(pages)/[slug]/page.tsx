@@ -13,6 +13,7 @@ import Categories from '../../_components/Categories'
 import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
 import { Promotion } from '../../_components/Promotion'
+import SmallCarousel from '../../_components/SmallCarousel'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 import classes from './index.module.scss'
@@ -58,6 +59,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   const { hero, layout } = page
 
+  const images = ['/media/paczkomat.png', '/media/dpd.png', '/media/inpost.png', '/media/dhl.jpg']
+
   return (
     <React.Fragment>
       {slug === 'home' ? (
@@ -99,6 +102,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </div>
           </Gutter>
           <Gutter className="classes.home">
+
+            <SmallCarousel images={images} />
             <Categories categories={categories} />
             <Promotion />
           </Gutter>
