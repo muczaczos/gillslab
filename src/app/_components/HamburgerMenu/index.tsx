@@ -11,13 +11,13 @@ export default function HamburgerMenu() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       {/* Przycisk menu */}
       <button
-        className="flex items-center justify-center w-12 h-12 text-3xl focus:outline-none z-50"
+        className="flex bg-white items-center justify-center w-12 h-12 text-3xl focus:outline-none border-0 z-50"
         onClick={toggleMenu}
       >
-        {isOpen ? <HiX className="text-black z-50" /> : <HiMenu className="text-black" />}
+        {isOpen ? <HiX className="fixed text-black z-50" /> : <HiMenu className="text-black" />}
       </button>
 
       {/* Menu po otwarciu */}

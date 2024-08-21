@@ -105,7 +105,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
             <SmallCarousel images={images} />
             <Categories categories={categories} />
-            <Promotion />
           </Gutter>
         </section>
       ) : (

@@ -11,16 +11,13 @@ import { Gutter } from '../../Gutter'
 import HamburgerMenu from '../../HamburgerMenu'
 import { HeaderNav } from '../Nav'
 
-import classes from './index.module.scss'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
 
   return (
     <nav //add class 'hide' when noHeaderFooterUrls includes proper pathname
-      className={[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide]
-        .filter(Boolean) //change array string to string and join space to it
-        .join(' ')}
+      className="fixed bg-white w-full z-50"
     >
       <div className="flex justify-end p-4">
         <HamburgerMenu />

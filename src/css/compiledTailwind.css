@@ -50,6 +50,10 @@
   position: relative !important
 }
 
+.sticky {
+  position: sticky !important
+}
+
 .inset-0 {
   inset: 0px !important
 }
@@ -70,8 +74,16 @@
   top: 0.5rem !important
 }
 
+.right-0 {
+  right: 0px !important
+}
+
 .z-0 {
   z-index: 0 !important
+}
+
+.z-40 {
+  z-index: 40 !important
 }
 
 .z-50 {
@@ -156,6 +168,10 @@
   margin-top: 1.75rem !important
 }
 
+.mb-20 {
+  margin-bottom: 5rem !important
+}
+
 .block {
   display: block !important
 }
@@ -170,6 +186,10 @@
 
 .hidden {
   display: none !important
+}
+
+.h-12 {
+  height: 3rem !important
 }
 
 .h-16 {
@@ -194,6 +214,10 @@
 
 .w-1\/2 {
   width: 50% !important
+}
+
+.w-12 {
+  width: 3rem !important
 }
 
 .w-16 {
@@ -232,6 +256,16 @@
   border-collapse: collapse !important
 }
 
+.-translate-y-full {
+  --tw-translate-y: -100% !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important
+}
+
+.translate-y-0 {
+  --tw-translate-y: 0px !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important
 }
@@ -242,6 +276,10 @@
 
 .list-decimal {
   list-style-type: decimal !important
+}
+
+.list-none {
+  list-style-type: none !important
 }
 
 .flex-col {
@@ -276,6 +314,12 @@
   gap: 1.25rem !important
 }
 
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0 !important;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse)) !important
+}
+
 .rounded-lg {
   border-radius: 0.5rem !important
 }
@@ -290,6 +334,10 @@
 
 .border {
   border-width: 1px !important
+}
+
+.border-0 {
+  border-width: 0px !important
 }
 
 .border-2 {
@@ -584,6 +632,16 @@
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(59 130 246 / var(--tw-text-opacity)) !important
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(239 68 68 / var(--tw-text-opacity)) !important
+}
+
 .underline {
   text-decoration-line: underline !important
 }
@@ -606,6 +664,10 @@
 
 .opacity-90 {
   opacity: 0.9 !important
+}
+
+.opacity-0 {
+  opacity: 0 !important
 }
 
 .shadow-lg {
@@ -633,9 +695,30 @@
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important
 }
 
+.transition-transform {
+  transition-property: transform !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important
+}
+
+.transition-all {
+  transition-property: all !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important
+}
+
+.duration-500 {
+  transition-duration: 500ms !important
+}
+
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(55 65 81 / var(--tw-text-opacity)) !important
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important
 }
 
 @media (min-width: 640px) {
