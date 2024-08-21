@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 import { Header } from '../../../../payload/payload-types'
 import { noHeaderFooterUrls } from '../../../constants'
 import { Gutter } from '../../Gutter'
+import HamburgerMenu from '../../HamburgerMenu'
 import { HeaderNav } from '../Nav'
 
 import classes from './index.module.scss'
@@ -25,7 +26,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
         <Link href="/">
           <Image src="/media/logo-com.svg" alt="logo" width={500} height={50} />
         </Link>
-        <HeaderNav header={header} />
+        <HamburgerMenu />
       </Gutter>
     </nav>
   )
