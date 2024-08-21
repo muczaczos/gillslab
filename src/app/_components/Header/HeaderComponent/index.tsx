@@ -22,12 +22,9 @@ const HeaderComponent = ({ header }: { header: Header }) => {
         .filter(Boolean) //change array string to string and join space to it
         .join(' ')}
     >
-      <Gutter className={classes.wrap}>
-        <Link href="/">
-          <Image src="/media/logo-com.svg" alt="logo" width={500} height={50} />
-        </Link>
+      <div className="flex justify-end p-4">
         <HamburgerMenu />
-      </Gutter>
+      </div>
     </nav>
   )
 }
