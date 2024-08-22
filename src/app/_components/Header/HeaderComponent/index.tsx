@@ -11,15 +11,22 @@ import { Gutter } from '../../Gutter'
 import HamburgerMenu from '../../HamburgerMenu'
 import { HeaderNav } from '../Nav'
 
-
 const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
 
   return (
     <nav //add class 'hide' when noHeaderFooterUrls includes proper pathname
-      className="fixed bg-white w-full z-50"
+      className="flex justify-between items-center p-1 fixed bg-primary-light w-full z-50"
     >
-      <div className="flex justify-end p-4">
+      <div className="scale-75">
+        <Image
+          src="/media/logo3.png" // Ścieżka do obrazu w katalogu public
+          alt="GillsLab logotype"
+          width={240} // Szerokość obrazu
+          height={20} // Wysokość obrazu
+        />
+      </div>
+      <div className="flex p-2">
         <HamburgerMenu />
       </div>
     </nav>

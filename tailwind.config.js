@@ -5,14 +5,16 @@ module.exports = {
   content: ['./src/**/*.{tsx,ts}'],
   theme: {
     extend: {
-      keyframes: {
-        slideDown: {
-          '0%': { opacity: 0, transform: 'translateY(-20px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+      colors: {
+        primary: {
+          light: '#5A7FD0',
+          DEFAULT: '#4968AC',
+          dark: '',
         },
-      },
-      animation: {
-        'slide-down': 'slideDown 0.3s ease-in-out forwards',
+        customWhite: {
+          DEFAULT: '#F7F9FB',
+        },
+        // Dodaj inne kolory tutaj
       },
     },
   },

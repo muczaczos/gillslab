@@ -14,34 +14,34 @@ export default function HamburgerMenu() {
     <div className="relative z-50">
       {/* Przycisk menu */}
       <button
-        className="flex bg-white items-center justify-center w-12 h-12 text-3xl focus:outline-none border-0 z-50"
+        className="flex bg-primary-light items-center justify-center w-12 h-12 text-3xl focus:outline-none border-0 z-50"
         onClick={toggleMenu}
       >
-        {isOpen ? <HiX className="fixed text-black z-50" /> : <HiMenu className="text-black" />}
+        {isOpen ? <HiX className="fixed text-customWhite z-50" /> : <HiMenu className="text-customWhite" />}
       </button>
 
       {/* Menu po otwarciu */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white flex flex-col justify-center items-center z-40">
+        <div className="fixed inset-0 bg-primary-light flex flex-col justify-center items-center z-40">
           {/* Przycisk zamykania menu */}
           <ul className="list-none p-4 space-y-8 text-center">
             <li>
-              <a href="#" className="text-black text-2xl block">
+              <a href="#" className="text-customWhite text-2xl block">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="text-black text-2xl block">
+              <a href="#" className="text-customWhite text-2xl block">
                 About
               </a>
             </li>
             <li>
-              <a href="#" className="text-black text-2xl block">
+              <a href="#" className="text-customWhite text-2xl block">
                 Services
               </a>
             </li>
             <li>
-              <a href="#" className="text-black text-2xl block">
+              <a href="#" className="text-customWhite text-2xl block">
                 Contact
               </a>
             </li>
