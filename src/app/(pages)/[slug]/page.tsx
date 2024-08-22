@@ -64,8 +64,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
   return (
     <React.Fragment>
       {slug === 'home' ? (
-        <section className="pt-16">
-          <div className="lg:hidden sm:h-[22rem] md:h-[29rem] bg-no-repeat bg-cover bg-right bg-[url('/media/hero-bike.webp')] pt-10 pb-10 p-6 bg-gray-50 border-l-0 border-r-0 border-2 border-solid border-gray-100">
+        <section className="">
+          <div className="lg:hidden mt-[4rem] pt-[22rem] bg-no-repeat bg-cover bg-right bg-[url('/media/mobileHero.png')]">
             <h1 className="text-white w-80% mb-0 sm:mt-10 sm:ml-10">
               Be <br className="sm:hidden" />
               yourself <br className="sm:hidden" /> and...

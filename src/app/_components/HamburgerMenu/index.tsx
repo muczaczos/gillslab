@@ -14,11 +14,25 @@ export default function HamburgerMenu() {
     <div className="relative z-50">
       {/* Przycisk menu */}
       <button
-        className="flex bg-primary-light items-center justify-center w-12 h-12 text-3xl focus:outline-none border-0 z-50"
+        className="flex items-center justify-center w-12 h-12 text-3xl focus:outline-none border-0 z-70"
         onClick={toggleMenu}
       >
-        {isOpen ? <HiX className="fixed text-customWhite z-50" /> : <HiMenu className="text-customWhite" />}
+        {isOpen ? (
+          // Krzyżyk (X)
+          <div className="relative w-8 h-8">
+            <div className="absolute w-8 h-1 bg-customWhite rotate-45 top-3 left-0"></div>
+            <div className="absolute w-8 h-1 bg-customWhite -rotate-45 bottom-3 left-0"></div>
+          </div>
+        ) : (
+          // Hamburger menu
+          <div className="flex flex-col items-center justify-center w-8 h-8">
+            <div className="w-8 h-1 bg-customWhite mb-1"></div>
+            <div className="w-8 h-1 bg-customWhite mb-1"></div>
+            <div className="w-8 h-1 bg-customWhite"></div>
+          </div>
+        )}
       </button>
+
 
       {/* Menu po otwarciu */}
       {isOpen && (
