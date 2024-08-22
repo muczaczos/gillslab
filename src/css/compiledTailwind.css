@@ -50,10 +50,6 @@
   position: relative !important
 }
 
-.sticky {
-  position: sticky !important
-}
-
 .inset-0 {
   inset: 0px !important
 }
@@ -72,10 +68,6 @@
 
 .top-2 {
   top: 0.5rem !important
-}
-
-.right-0 {
-  right: 0px !important
 }
 
 .z-0 {
@@ -168,10 +160,6 @@
   margin-top: 1.75rem !important
 }
 
-.mb-20 {
-  margin-bottom: 5rem !important
-}
-
 .block {
   display: block !important
 }
@@ -254,16 +242,6 @@
 
 .border-collapse {
   border-collapse: collapse !important
-}
-
-.-translate-y-full {
-  --tw-translate-y: -100% !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important
-}
-
-.translate-y-0 {
-  --tw-translate-y: 0px !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important
 }
 
 .transform {
@@ -550,6 +528,10 @@
   padding-top: 2.5rem !important
 }
 
+.pt-16 {
+  padding-top: 4rem !important
+}
+
 .pt-3 {
   padding-top: 0.75rem !important
 }
@@ -632,16 +614,6 @@
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important
 }
 
-.text-blue-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(59 130 246 / var(--tw-text-opacity)) !important
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(239 68 68 / var(--tw-text-opacity)) !important
-}
-
 .underline {
   text-decoration-line: underline !important
 }
@@ -664,10 +636,6 @@
 
 .opacity-90 {
   opacity: 0.9 !important
-}
-
-.opacity-0 {
-  opacity: 0 !important
 }
 
 .shadow-lg {
@@ -693,22 +661,6 @@
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important
-}
-
-.transition-transform {
-  transition-property: transform !important;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
-  transition-duration: 150ms !important
-}
-
-.transition-all {
-  transition-property: all !important;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
-  transition-duration: 150ms !important
-}
-
-.duration-500 {
-  transition-duration: 500ms !important
 }
 
 .hover\:text-gray-700:hover {
