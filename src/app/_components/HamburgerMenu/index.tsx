@@ -11,18 +11,21 @@ export default function HamburgerMenu() {
   };
 
   return (
-    <div className="relative z-100">
+    <div className="relative z-40">
       {/* Przycisk menu */}
       <button
-        className="flex items-center justify-center bg-primary-light w-12 h-12 text-3xl focus:outline-none border-none z-70"
+        className="flex items-center justify-center bg-primary-light w-12 h-12 text-3xl focus:outline-none border-none z-40"
         onClick={toggleMenu}
       >
         {isOpen ? (
           // Krzyżyk (X)
-          <div className="relative w-8 h-8">
-            <div className="absolute w-8 h-1 bg-customWhite rotate-45 top-3 left-0"></div>
-            <div className="absolute w-8 h-1 bg-customWhite -rotate-45 bottom-3 left-0"></div>
+          <div className="relative w-8 h-8 transform z-50">
+            <p className="text-customWhite font-bold">X</p>
           </div>
+
+
+
+        
         ) : (
           // Hamburger menu
           <div className="flex flex-col bg-primary-light items-center justify-center w-8 h-8">
@@ -36,8 +39,9 @@ export default function HamburgerMenu() {
 
       {/* Menu po otwarciu */}
       {isOpen && (
-        <div className="fixed inset-0 bg-primary-light flex flex-col justify-center items-center z-40">
+        <div className="fixed inset-0 bg-primary-light flex flex-col justify-center items-center">
           {/* Przycisk zamykania menu */}
+        
           <ul className="list-none p-4 space-y-8 text-center">
             <li>
               <a href="#" className="text-customWhite text-2xl block">
