@@ -1,7 +1,6 @@
 @use '../../../_css/queries.scss' as *;
 
 .card {
-  position: relative;
   background-color: var(--color-dark-50);
   min-height: 360px;
   width: 100%;

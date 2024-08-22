@@ -11,10 +11,10 @@ export default function HamburgerMenu() {
   };
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-100">
       {/* Przycisk menu */}
       <button
-        className="flex items-center justify-center w-12 h-12 text-3xl focus:outline-none border-0 z-70"
+        className="flex items-center justify-center bg-primary-light w-12 h-12 text-3xl focus:outline-none border-none z-70"
         onClick={toggleMenu}
       >
         {isOpen ? (
@@ -25,10 +25,10 @@ export default function HamburgerMenu() {
           </div>
         ) : (
           // Hamburger menu
-          <div className="flex flex-col items-center justify-center w-8 h-8">
+          <div className="flex flex-col bg-primary-light items-center justify-center w-8 h-8">
             <div className="w-8 h-1 bg-customWhite mb-1"></div>
             <div className="w-8 h-1 bg-customWhite mb-1"></div>
-            <div className="w-8 h-1 bg-customWhite"></div>
+            <div className="w-8 h-1 bg-customWhite mb-1"></div>
           </div>
         )}
       </button>
