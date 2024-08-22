@@ -23,9 +23,6 @@ export default function HamburgerMenu() {
             <p className="text-customWhite font-bold">X</p>
           </div>
 
-
-
-        
         ) : (
           // Hamburger menu
           <div className="flex flex-col bg-primary-light items-center justify-center w-8 h-8">
@@ -39,7 +36,7 @@ export default function HamburgerMenu() {
 
       {/* Menu po otwarciu */}
       {isOpen && (
-        <div className="fixed inset-0 bg-primary-light flex flex-col justify-center items-center">
+        <div className="fixed inset-0 bg-primary-light flex flex-col justify-center items-center animate-slideDown">
           {/* Przycisk zamykania menu */}
         
           <ul className="list-none p-4 space-y-8 text-center">
