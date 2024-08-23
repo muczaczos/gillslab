@@ -43,7 +43,7 @@ export default function HamburgerMenu() {
 
       {/* Menu po otwarciu i zamykaniu */}
       {(isOpen || isClosing) && (
-        <div className={`fixed inset-0 bg-primary-light flex flex-col justify-center items-center ${isClosing ? 'animate-slideUp' : 'animate-slideDown'}`}>
+        <div className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${isClosing ? 'animate-slideUp' : 'animate-slideDown'}`}>
           <ul className="list-none p-4 space-y-8 text-center">
             <li>
               <a href="#" className="text-customWhite text-2xl block">

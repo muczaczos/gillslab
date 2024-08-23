@@ -500,6 +500,11 @@
   background-color: rgb(254 249 195 / var(--tw-bg-opacity)) !important
 }
 
+.bg-primary {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(73 104 172 / var(--tw-bg-opacity)) !important
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5 !important
 }
