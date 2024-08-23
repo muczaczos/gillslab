@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 import { Category, Page } from '../../../payload/payload-types'
@@ -65,24 +66,31 @@ export default async function Pages({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <section className="">
-          <div className="lg:hidden mt-[4rem] pt-[22rem] bg-no-repeat bg-cover bg-right bg-[url('/media/mobileHero.png')]">
-            <h1 className="text-white w-80% mb-0 sm:mt-10 sm:ml-10">
-              Be <br className="sm:hidden" />
-              yourself <br className="sm:hidden" /> and...
-            </h1>
-            <p className="text-white mt-2 sm:ml-10">
-              <span className="font-thin text-2xl ">
-                ...Unleash your <br className="sm:hidden" />
-                own imagination.
-              </span>
-            </p>
-            <Button
-              className="mt-5 mb-5 sm:mt-10 sm:ml-10"
-              label="SHOP NOW"
-              appearance="primary"
-              href="/products"
-            ></Button>
+          <div className="flex justify-end">
+            <Image
+              src="/media/mobileHero.png" // Ścieżka do obrazu w katalogu public
+              alt="GillsLab logotype"
+              width={240} // Szerokość obrazu
+              height={20} // Wysokość obrazu
+              className="mt-[64px]"
+            />
           </div>
+          <h1 className="text-white w-80% mb-0 sm:mt-10 sm:ml-10">
+            Be <br className="sm:hidden" />
+            yourself <br className="sm:hidden" /> and...
+          </h1>
+          <p className="text-white mt-2 sm:ml-10">
+            <span className="font-thin text-2xl ">
+              ...Unleash your <br className="sm:hidden" />
+              own imagination.
+            </span>
+          </p>
+          <Button
+            className="mt-5 mb-5 sm:mt-10 sm:ml-10"
+            label="SHOP NOW"
+            appearance="primary"
+            href="/products"
+          ></Button>
           <Gutter>
             <div className="hidden lg:block lg:h-[28rem] xl:h-[35rem] 2xl:h-[44rem] bg-no-repeat bg-cover bg-right bg-[url('/media/hero-big.png')] pt-10 pb-10 p-6 bg-gray-50 border-l-0 border-r-0 border-2 border-solid border-gray-100">
               <p className="text-white lg:font-bold lg:text-4xl lg:mt-5 lg:ml-3 xl:text-5xl xl:mt-[4rem] 2xl:ml-[4rem] w-80% mb-0 mt-52 ml-10">
@@ -102,7 +110,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </div>
           </Gutter>
           <Gutter className="classes.home">
-
             <SmallCarousel images={images} />
             <Categories categories={categories} />
           </Gutter>
