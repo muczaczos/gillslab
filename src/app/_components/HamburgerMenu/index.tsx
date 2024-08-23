@@ -44,24 +44,25 @@ export default function HamburgerMenu() {
       {/* Menu po otwarciu i zamykaniu */}
       {(isOpen || isClosing) && (
         <div className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${isClosing ? 'animate-slideUp' : 'animate-slideDown'}`}>
-          <ul className="list-none p-4 space-y-8 text-center">
+          <div className="absolute inset-0 bg-no-repeat bg-cover opacity-5" style={{ backgroundImage: "url('/media/eyes.png')" }}></div>
+          <ul className="list-none p-4 text-center">
             <li>
-              <a href="#" className="text-customWhite text-2xl block">
+              <a href="#" className="text-customWhite text-bold font-black text-4xl block">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="text-customWhite text-2xl block">
+              <a href="#" className="text-customWhite text-bold font-black text-4xl">
                 About
               </a>
             </li>
-            <li>
-              <a href="#" className="text-customWhite text-2xl block">
+            <li className="mt-0">
+              <a href="#" className="text-customWhite text-bold font-black text-4xl leading-none">
                 Services
               </a>
             </li>
             <li>
-              <a href="#" className="text-customWhite text-2xl block">
+              <a href="#" className="text-customWhite text-bold font-black text-4xl">
                 Contact
               </a>
             </li>

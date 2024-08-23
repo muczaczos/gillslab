@@ -82,6 +82,10 @@
   z-index: 50 !important
 }
 
+.m-0 {
+  margin: 0px !important
+}
+
 .mx-2 {
   margin-left: 0.5rem !important;
   margin-right: 0.5rem !important
@@ -166,6 +170,10 @@
 
 .mt-\[4rem\] {
   margin-top: 4rem !important
+}
+
+.mt-0 {
+  margin-top: 0px !important
 }
 
 .block {
@@ -517,6 +525,10 @@
   background-image: url('/media/mobileHero.png') !important
 }
 
+.bg-\[url\(\'\/media\/eyes\.png\'\)\] {
+  background-image: url('/media/eyes.png') !important
+}
+
 .bg-cover {
   background-size: cover !important
 }
@@ -556,6 +568,10 @@
 
 .p-6 {
   padding: 1.5rem !important
+}
+
+.p-0 {
+  padding: 0px !important
 }
 
 .px-4 {
@@ -645,6 +661,21 @@
   line-height: 1.75rem !important
 }
 
+.text-9xl {
+  font-size: 8rem !important;
+  line-height: 1 !important
+}
+
+.text-4xl {
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important
+}
+
+.text-5xl {
+  font-size: 3rem !important;
+  line-height: 1 !important
+}
+
 .font-bold {
   font-weight: 700 !important
 }
@@ -653,8 +684,20 @@
   font-weight: 100 !important
 }
 
+.font-black {
+  font-weight: 900 !important
+}
+
 .italic {
   font-style: italic !important
+}
+
+.leading-none {
+  line-height: 1 !important
+}
+
+.leading-loose {
+  line-height: 2 !important
 }
 
 .text-black {
@@ -714,6 +757,14 @@
 
 .opacity-90 {
   opacity: 0.9 !important
+}
+
+.opacity-15 {
+  opacity: 0.15 !important
+}
+
+.opacity-5 {
+  opacity: 0.05 !important
 }
 
 .shadow-lg {
