@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import { Jost } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import Script from 'next/script'
 
 import { AdminBar } from './_components/AdminBar'
@@ -13,9 +13,9 @@ import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
 
-const jost = Jost({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '700', '900'],
   variable: '--font-jost',
 })
 
@@ -36,7 +36,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             `}
         </Script>
       </head>
-      <body className={jost.variable}>
+      <body className={montserrat.variable}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error */}
