@@ -17,6 +17,7 @@ import { Promotion } from '../../_components/Promotion'
 import SmallCarousel from '../../_components/SmallCarousel'
 import { generateMeta } from '../../_utilities/generateMeta'
 import StickyBottomMenu from '../../_components/StickyBottomMenu'
+import { FaHome, FaShoppingCart, FaHeart, FaUser} from 'react-icons/fa';
 
 import classes from './index.module.scss'
 
@@ -112,8 +113,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </Gutter>
 
       {/* Sticky footer */}
-      <div className="sticky rounded-full bottom-5 bg-secondary bg-opacity-50 text-white w-[90%] p-4 mx-auto">
-        Sticky Footer
+      <div className="sticky flex justify-between rounded-full bottom-5 bg-secondary bg-opacity-70 text-white w-[90%] p-4 mx-auto">
+         <FaHeart className="text-customWhite text-2xl"/> <FaUser className="text-customWhite text-2xl"/> <FaShoppingCart className="text-customWhite text-2xl"/><FaHome className="text-customWhite text-2xl"/> 
       </div>
         </section>
         
