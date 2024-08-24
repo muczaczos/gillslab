@@ -35,31 +35,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
   return (
     <>
       <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
-        <Gutter>
-          <ul className={classes.inclusions}>
-            {inclusions.map((inclusion, index) => (
-              <li key={inclusion.title}>
-                <Image
-                  src={inclusion.icon}
-                  alt={inclusion.title}
-                  width={36}
-                  height={36}
-                  className={classes.icon}
-                />
-
-                <p className="text-xl font-bold">{inclusion.title}</p>
-                <p>{inclusion.description}</p>
-              </li>
-            ))}
-          </ul>
-        </Gutter>
-        <Image
-          src="/media/footer-grass.svg"
-          style={{ width: '100%' }}
-          alt="elephant and mushroom"
-          width={350}
-          height={50}
-        />
+        
         <div className={classes.footer}>
           <Gutter>
             <div className={classes.newsletter}>

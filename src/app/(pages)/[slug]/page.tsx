@@ -67,7 +67,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
   return (
     <React.Fragment>
       {slug === 'home' ? (
-        <section className="bg-customWhite flex-grow">
+        <section className="bg-customWhite">
           <div className="flex justify-end">
             <Image
               src="/media/mobileHero.png" // Ścieżka do obrazu w katalogu public
@@ -112,10 +112,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <Categories categories={categories} />
           </Gutter>
 
-      {/* Sticky footer */}
-      <div className="sticky flex justify-between rounded-full bottom-5 bg-secondary bg-opacity-70 text-white w-[90%] p-4 mx-auto">
-         <FaHeart className="text-customWhite text-2xl"/> <FaUser className="text-customWhite text-2xl"/> <FaShoppingCart className="text-customWhite text-2xl"/><FaHome className="text-customWhite text-2xl"/> 
-      </div>
+      
         </section>
         
       ) : (
