@@ -62,11 +62,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   const { hero, layout } = page
 
-  const images = ['/media/paczkomat.png', '/media/dpd.png', '/media/inpost.png', '/media/dhl.jpg']
+  const images = ['/media/growkitCat.png', '/media/dpd.png', '/media/inpost.png', '/media/dhl.jpg']
 
   return (
     <React.Fragment>
       {slug === 'home' ? (
+        <>
         <section className="bg-customWhite">
           <div className="flex justify-end">
             <Image
@@ -107,14 +108,15 @@ export default async function Pages({ params: { slug = 'home' } }) {
               ></Button>
             </div>
           </Gutter>
-          <Gutter className="classes.home">
-            <SmallCarousel images={images} />
-            <Categories categories={categories} />
-          </Gutter>
-
       
         </section>
-        
+        <section className="bg-customWhite py-4">
+          <Gutter className="classes.home">
+            <h2 className="py-2 font-bold opacity-50 text-2xl text-primary-light">Shop By Categories</h2>
+            <SmallCarousel images={images} />
+          </Gutter>
+        </section>
+        </>
       ) : (
         <>
           <Hero {...hero} />
