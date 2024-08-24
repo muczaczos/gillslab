@@ -50,8 +50,16 @@
   position: relative !important
 }
 
+.sticky {
+  position: sticky !important
+}
+
 .inset-0 {
   inset: 0px !important
+}
+
+.bottom-5 {
+  bottom: 1.25rem !important
 }
 
 .left-0 {
@@ -68,6 +76,10 @@
 
 .top-2 {
   top: 0.5rem !important
+}
+
+.bottom-0 {
+  bottom: 0px !important
 }
 
 .z-0 {
@@ -220,6 +232,10 @@
   max-height: 100% !important
 }
 
+.min-h-screen {
+  min-height: 100vh !important
+}
+
 .w-1\/2 {
   width: 50% !important
 }
@@ -248,6 +264,14 @@
   width: 100% !important
 }
 
+.w-3\/4 {
+  width: 75% !important
+}
+
+.w-\[90\%\] {
+  width: 90% !important
+}
+
 .max-w-full {
   max-width: 100% !important
 }
@@ -258,6 +282,10 @@
 
 .flex-auto {
   flex: 1 1 auto !important
+}
+
+.flex-grow {
+  flex-grow: 1 !important
 }
 
 .grow {
@@ -360,6 +388,10 @@
 
 .rounded-xl {
   border-radius: 0.75rem !important
+}
+
+.rounded-full {
+  border-radius: 9999px !important
 }
 
 .border {
@@ -477,6 +509,11 @@
   background-color: rgb(249 250 251 / var(--tw-bg-opacity)) !important
 }
 
+.bg-gray-800 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important
+}
+
 .bg-green-100 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity)) !important
@@ -497,6 +534,11 @@
   background-color: rgb(90 127 208 / var(--tw-bg-opacity)) !important
 }
 
+.bg-secondary {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(172 73 104 / var(--tw-bg-opacity)) !important
+}
+
 .bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
@@ -505,11 +547,6 @@
 .bg-yellow-100 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(254 249 195 / var(--tw-bg-opacity)) !important
-}
-
-.bg-secondary {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(172 73 104 / var(--tw-bg-opacity)) !important
 }
 
 .bg-opacity-50 {
@@ -537,10 +574,6 @@
      object-fit: cover !important
 }
 
-.p-1 {
-  padding: 0.25rem !important
-}
-
 .p-10 {
   padding: 2.5rem !important
 }
@@ -561,14 +594,14 @@
   padding: 1.5rem !important
 }
 
-.px-3 {
-  padding-left: 0.75rem !important;
-  padding-right: 0.75rem !important
-}
-
 .px-4 {
   padding-left: 1rem !important;
   padding-right: 1rem !important
+}
+
+.px-7 {
+  padding-left: 1.75rem !important;
+  padding-right: 1.75rem !important
 }
 
 .py-2 {
@@ -586,18 +619,12 @@
   padding-bottom: 1.5rem !important
 }
 
-.px-5 {
-  padding-left: 1.25rem !important;
-  padding-right: 1.25rem !important
-}
-
-.px-7 {
-  padding-left: 1.75rem !important;
-  padding-right: 1.75rem !important
-}
-
 .pb-10 {
   padding-bottom: 2.5rem !important
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem !important
 }
 
 .pb-3 {
@@ -616,8 +643,16 @@
   padding-right: 0px !important
 }
 
+.pr-2 {
+  padding-right: 0.5rem !important
+}
+
 .pr-5 {
   padding-right: 1.25rem !important
+}
+
+.pt-1 {
+  padding-top: 0.25rem !important
 }
 
 .pt-10 {

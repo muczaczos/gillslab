@@ -16,6 +16,7 @@ import { Hero } from '../../_components/Hero'
 import { Promotion } from '../../_components/Promotion'
 import SmallCarousel from '../../_components/SmallCarousel'
 import { generateMeta } from '../../_utilities/generateMeta'
+import StickyBottomMenu from '../../_components/StickyBottomMenu'
 
 import classes from './index.module.scss'
 
@@ -65,7 +66,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
   return (
     <React.Fragment>
       {slug === 'home' ? (
-        <section className="bg-customWhite">
+        <section className="bg-customWhite flex-grow">
           <div className="flex justify-end">
             <Image
               src="/media/mobileHero.png" // Ścieżka do obrazu w katalogu public
@@ -109,7 +110,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <SmallCarousel images={images} />
             <Categories categories={categories} />
           </Gutter>
+
+      {/* Sticky footer */}
+      <div className="sticky rounded-full bottom-5 bg-secondary bg-opacity-50 text-white w-[90%] p-4 mx-auto">
+        Sticky Footer
+      </div>
         </section>
+        
       ) : (
         <>
           <Hero {...hero} />

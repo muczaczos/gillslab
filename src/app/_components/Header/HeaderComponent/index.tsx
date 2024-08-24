@@ -16,17 +16,17 @@ const HeaderComponent = ({ header }: { header: Header }) => {
 
   return (
     <nav //add class 'hide' when noHeaderFooterUrls includes proper pathname
-      className="flex justify-between items-center p-1 bg-primary-light w-full z-60"
+      className="flex mb-1 justify-between items-center pt-1 pb-2 bg-primary-light w-full z-60"
     >
       <div className="scale-75">
         <Image
           src="/media/logo3.png" // Ścieżka do obrazu w katalogu public
           alt="GillsLab logotype"
-          width={240} // Szerokość obrazu
+          width={200} // Szerokość obrazu
           height={20} // Wysokość obrazu
         />
       </div>
-      <div className="flex p-2">
+      <div className="flex mt-2 pr-2">
         <HamburgerMenu />
       </div>
     </nav>
