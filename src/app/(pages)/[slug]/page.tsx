@@ -115,7 +115,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
-          <section className="bg-customWhite py-4">
+          <section className="bg-customWhite py-4 pb-11">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold opacity-50 text-2xl text-primary-light">
                 Shop By Categories
@@ -132,11 +132,26 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <div className={classes.promoCard}>
               <div className={classes.promoText}>
                 <p className={classes.smallText}>Get</p>
-                <h3>20 Off</h3>
+                <h3>20% Off</h3>
                 <p className={classes.smallText}>for this month</p>
               </div>
               <Image src="/media/promotions.png" alt="Promotion" className={classes.promoImage} width={100} height={100} />
             </div>
+          </section>
+          <section className="bg-customWhite py-4 pb-11">
+            <Gutter className="classes.home">
+              <h2 className="py-2 font-bold opacity-50 text-2xl text-primary-light">
+                Cubensis Growkits
+              </h2>
+              <div className="flex justify-between gap-3">
+                <div className="bg-white h-[12rem] w-1/2">d</div>
+                <div className="bg-white h-[12rem] w-1/2">d</div>
+              </div>
+              <div className="flex justify-between gap-3 pt-3">
+                <div className="bg-white h-[12rem] w-1/2">d</div>
+                <div className="bg-white h-[12rem] w-1/2">d</div>
+              </div>
+            </Gutter>
           </section>
         </>
       ) : (

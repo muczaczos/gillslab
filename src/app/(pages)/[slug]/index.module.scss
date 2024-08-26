@@ -10,7 +10,7 @@
   height: 126px;
   border-radius: 1rem;
   background: linear-gradient(to right, #BBCCF1, #F7F9FB);
-  padding-left: 8px;
+  padding-left: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,9 +44,9 @@
 
 .promoImage {
   position: relative;
-  scale: 1.9;
-  top: 10px
-
+  scale: 1.8;
+  top: 15px;
+  right: 10px;
 }
 
 @media (max-width: 1024px) {
