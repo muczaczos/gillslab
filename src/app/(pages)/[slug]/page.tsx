@@ -128,14 +128,14 @@ export default async function Pages({ params: { slug = 'home' } }) {
               Promotions
             </h2>
           </div>
-          <section className="bg-customWhite flex justify-center pb-11">
+          <section className="bg-customWhite flex justify-center px-5 pb-11">
             <div className={classes.promoCard}>
               <div className={classes.promoText}>
                 <p className={classes.smallText}>Get</p>
                 <h3>20 Off</h3>
                 <p className={classes.smallText}>for this month</p>
               </div>
-              <Image src="/media/promotions.png" alt="Promotion" className={classes.promoImage} width={200} height={200} />
+              <Image src="/media/promotions.png" alt="Promotion" className={classes.promoImage} width={100} height={100} />
             </div>
           </section>
         </>

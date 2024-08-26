@@ -268,6 +268,14 @@
   width: 345px !important
 }
 
+.w-10 {
+  width: 2.5rem !important
+}
+
+.w-3\/4 {
+  width: 75% !important
+}
+
 .max-w-full {
   max-width: 100% !important
 }
@@ -642,6 +650,16 @@
   padding-bottom: 1.5rem !important
 }
 
+.py-10 {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important
+}
+
+.px-5 {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important
+}
+
 .pb-10 {
   padding-bottom: 2.5rem !important
 }
@@ -708,6 +726,10 @@
 
 .pl-7 {
   padding-left: 1.75rem !important
+}
+
+.pr-10 {
+  padding-right: 2.5rem !important
 }
 
 .text-left {

@@ -75,7 +75,7 @@ const SmallCarousel = ({ images, catLabels }) => {
     >
       {images.map((image, index) => (
         <div className={styles.slide} key={index}>
-          <Image src={image} alt={`Slide ${index}`} width={100} height={500} />
+          <Image src={image} alt={`Slide ${index}`} width={100} height={100} />
           <h2 className="text-xl text-primary">{catLabels[index]}</h2>
         </div>
       ))}
