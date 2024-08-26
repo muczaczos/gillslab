@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHeart, FaHome, FaShoppingCart, FaUser } from 'react-icons/fa'
+import { FaHeart, FaHome, FaShoppingCart, FaUser, FaRegHeart } from 'react-icons/fa'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
@@ -117,14 +117,14 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
           <section className="bg-customWhite py-4 pb-11">
             <Gutter className="classes.home">
-              <h2 className="py-2 font-bold opacity-50 text-2xl text-primary-light">
+              <h2 className="py-2 font-bold text-2xl text-primary">
                 Shop By Categories
               </h2>
               <SmallCarousel catLabels={catLabels} images={images} />
             </Gutter>
           </section>
           <div className=" bg-customWhite ">
-            <h2 className="pl-7 py-2 font-bold opacity-50 text-2xl text-primary-light">
+            <h2 className="pl-7 py-2 font-bold text-2xl text-primary">
               Promotions
             </h2>
           </div>
@@ -140,16 +140,46 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
           <section className="bg-customWhite py-4 pb-11">
             <Gutter className="classes.home">
-              <h2 className="py-2 font-bold opacity-50 text-2xl text-primary-light">
+              <h2 className="py-2 font-bold text-2xl text-primary">
                 Cubensis Growkits
               </h2>
-              <div className="flex justify-between gap-3">
-                <div className="bg-white h-[12rem] w-1/2">d</div>
-                <div className="bg-white h-[12rem] w-1/2">d</div>
+              <div className="mb-3 flex justify-between gap-3">
+                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
+                  <FaHeart className="absolute top-3 right-3 text-secondary text-2xl"/>
+                  <div className="mt-5 flex justify-center">
+                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                  </div>
+                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
+                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
+                </div>
+
+                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
+                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl"/>
+                  <div className="mt-5 flex justify-center">
+                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                  </div>
+                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">G. Teacher</p>
+                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
+                </div>
               </div>
-              <div className="flex justify-between gap-3 pt-3">
-                <div className="bg-white h-[12rem] w-1/2">d</div>
-                <div className="bg-white h-[12rem] w-1/2">d</div>
+              <div className="flex justify-between gap-3">
+                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
+                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl"/>
+                  <div className="mt-5 flex justify-center">
+                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                  </div>
+                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">Mazatapec</p>
+                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
+                </div>
+
+                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
+                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl"/>
+                  <div className="mt-5 flex justify-center">
+                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                  </div>
+                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">Ecuador</p>
+                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
+                </div>
               </div>
             </Gutter>
           </section>
