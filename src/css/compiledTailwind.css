@@ -660,6 +660,14 @@
   padding-top: 1.25rem !important
 }
 
+.pt-11 {
+  padding-top: 2.75rem !important
+}
+
+.pb-11 {
+  padding-bottom: 2.75rem !important
+}
+
 .text-left {
   text-align: left !important
 }

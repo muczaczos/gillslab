@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaHeart, FaHome, FaShoppingCart, FaUser } from 'react-icons/fa'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
@@ -15,9 +16,8 @@ import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
 import { Promotion } from '../../_components/Promotion'
 import SmallCarousel from '../../_components/SmallCarousel'
-import { generateMeta } from '../../_utilities/generateMeta'
 import StickyBottomMenu from '../../_components/StickyBottomMenu'
-import { FaHome, FaShoppingCart, FaHeart, FaUser} from 'react-icons/fa';
+import { generateMeta } from '../../_utilities/generateMeta'
 
 import classes from './index.module.scss'
 
@@ -62,60 +62,67 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   const { hero, layout } = page
 
-  const images = ['/media/growkitCat.png', '/media/dpd.png', '/media/inpost.png', '/media/dhl.jpg']
+  const images = [
+    '/media/growkitsCat.png',
+    '/media/sporesCat.png',
+    '/media/liquidCat.png',
+    '/media/labCat.png',
+    '/media/substrateCat.png',
+  ]
+
+  const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
 
   return (
     <React.Fragment>
       {slug === 'home' ? (
         <>
-        <section className="bg-customWhite">
-          <div className="flex justify-end">
-            <Image
-              src="/media/mobileHero.png" // Ścieżka do obrazu w katalogu public
-              alt="GillsLab logotype"
-              width={240} // Szerokość obrazu
-              height={20} // Wysokość obrazu
-              className=""
-            />
-          </div>
-          <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
-            MAGIC <br/>
-            GROWKITS
-          </h1>
-          <p className="text-primary-light ml-7 mt-2 sm:ml-10">
-            <span className="font-thin text-base ">
-              Cultivate Your Mushrooms Dreams
-            </span>
-          </p>
-          <button
-            className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10"
-          >Get Started</button>
-          <Gutter>
-            <div className="hidden lg:block lg:h-[28rem] xl:h-[35rem] 2xl:h-[44rem] bg-no-repeat bg-cover bg-right bg-[url('/media/hero-big.png')] pt-10 pb-10 p-6 bg-gray-50 border-l-0 border-r-0 border-2 border-solid border-gray-100">
-              <p className="text-white lg:font-bold lg:text-4xl lg:mt-5 lg:ml-3 xl:text-5xl xl:mt-[4rem] 2xl:ml-[4rem] w-80% mb-0 mt-52 ml-10">
-                Be yourself and...
-              </p>
-              <p className="text-white mt-2 lg:ml-3 md:ml-10 2xl:ml-[4rem]">
-                <span className="font-thin text-2xl ">
-                  ...Unleash your <br className="xl:hidden" /> own imagination.
-                </span>
-              </p>
-              <Button
-                className="mt-5 mb-5 lg:ml-3 md:mt-10 md:ml-10 2xl:ml-[4rem] 2xl:mt-[5rem]"
-                label="Get Started"
-                appearance="primary"
-                href="/products"
-              ></Button>
+          <section className="bg-customWhite pb-11">
+            <div className="flex justify-end">
+              <Image
+                src="/media/mobileHero.png" // Ścieżka do obrazu w katalogu public
+                alt="GillsLab logotype"
+                width={240} // Szerokość obrazu
+                height={20} // Wysokość obrazu
+                className=""
+              />
             </div>
-          </Gutter>
-      
-        </section>
-        <section className="bg-customWhite py-4">
-          <Gutter className="classes.home">
-            <h2 className="py-2 font-bold opacity-50 text-2xl text-primary-light">Shop By Categories</h2>
-            <SmallCarousel images={images} />
-          </Gutter>
-        </section>
+            <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
+              MAGIC <br />
+              GROWKITS
+            </h1>
+            <p className="text-primary-light ml-7 mt-2 sm:ml-10">
+              <span className="font-thin text-base ">Cultivate Your Mushrooms Dreams</span>
+            </p>
+            <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
+              Get Started
+            </button>
+            <Gutter>
+              <div className="hidden lg:block lg:h-[28rem] xl:h-[35rem] 2xl:h-[44rem] bg-no-repeat bg-cover bg-right bg-[url('/media/hero-big.png')] pt-10 pb-10 p-6 bg-gray-50 border-l-0 border-r-0 border-2 border-solid border-gray-100">
+                <p className="text-white lg:font-bold lg:text-4xl lg:mt-5 lg:ml-3 xl:text-5xl xl:mt-[4rem] 2xl:ml-[4rem] w-80% mb-0 mt-52 ml-10">
+                  Be yourself and...
+                </p>
+                <p className="text-white mt-2 lg:ml-3 md:ml-10 2xl:ml-[4rem]">
+                  <span className="font-thin text-2xl ">
+                    ...Unleash your <br className="xl:hidden" /> own imagination.
+                  </span>
+                </p>
+                <Button
+                  className="mt-5 mb-5 lg:ml-3 md:mt-10 md:ml-10 2xl:ml-[4rem] 2xl:mt-[5rem]"
+                  label="Get Started"
+                  appearance="primary"
+                  href="/products"
+                ></Button>
+              </div>
+            </Gutter>
+          </section>
+          <section className="bg-customWhite py-4">
+            <Gutter className="classes.home">
+              <h2 className="py-2 font-bold opacity-50 text-2xl text-primary-light">
+                Shop By Categories
+              </h2>
+              <SmallCarousel catLabels={catLabels} images={images} />
+            </Gutter>
+          </section>
         </>
       ) : (
         <>

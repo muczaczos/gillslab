@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import styles from './index.module.scss'
 
-const SmallCarousel = ({ images }) => {
+const SmallCarousel = ({ images, catLabels }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -75,7 +75,7 @@ const SmallCarousel = ({ images }) => {
       {images.map((image, index) => (
         <div className={styles.slide} key={index}>
           <img src={image} alt={`Slide ${index}`} />
-          <h2 className="text-xl">Growkits</h2>
+          <h2 className="text-xl text-primary">{catLabels[index]}</h2>
         </div>
       ))}
     </div>
