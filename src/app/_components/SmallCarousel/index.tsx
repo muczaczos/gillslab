@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 import styles from './index.module.scss'
 
@@ -74,7 +75,7 @@ const SmallCarousel = ({ images, catLabels }) => {
     >
       {images.map((image, index) => (
         <div className={styles.slide} key={index}>
-          <img src={image} alt={`Slide ${index}`} />
+          <Image src={image} alt={`Slide ${index}`} width={100} height={500} />
           <h2 className="text-xl text-primary">{catLabels[index]}</h2>
         </div>
       ))}

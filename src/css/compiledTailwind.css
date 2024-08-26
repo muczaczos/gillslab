@@ -224,6 +224,10 @@
   height: 100vh !important
 }
 
+.h-\[126px\] {
+  height: 126px !important
+}
+
 .max-h-full {
   max-height: 100% !important
 }
@@ -258,6 +262,10 @@
 
 .w-full {
   width: 100% !important
+}
+
+.w-\[345px\] {
+  width: 345px !important
 }
 
 .max-w-full {
@@ -336,6 +344,10 @@
 
 .items-center {
   align-items: center !important
+}
+
+.justify-start {
+  justify-content: flex-start !important
 }
 
 .justify-end {
@@ -540,6 +552,24 @@
   background-image: url('/media/hero-big.png') !important
 }
 
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)) !important
+}
+
+.from-blue-500 {
+  --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(59 130 246 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important
+}
+
+.to-purple-600 {
+  --tw-gradient-to: #9333ea var(--tw-gradient-to-position) !important
+}
+
 .bg-cover {
   background-size: cover !important
 }
@@ -668,6 +698,18 @@
   padding-bottom: 2.75rem !important
 }
 
+.pl-10 {
+  padding-left: 2.5rem !important
+}
+
+.pl-8 {
+  padding-left: 2rem !important
+}
+
+.pl-7 {
+  padding-left: 1.75rem !important
+}
+
 .text-left {
   text-align: left !important
 }
@@ -708,6 +750,11 @@
 .text-xl {
   font-size: 1.25rem !important;
   line-height: 1.75rem !important
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important
 }
 
 .font-black {
@@ -773,6 +820,11 @@
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.text-secondary {
+  --tw-text-opacity: 1 !important;
+  color: rgb(172 73 104 / var(--tw-text-opacity)) !important
 }
 
 .underline {

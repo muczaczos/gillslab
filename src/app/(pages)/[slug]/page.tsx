@@ -123,6 +123,21 @@ export default async function Pages({ params: { slug = 'home' } }) {
               <SmallCarousel catLabels={catLabels} images={images} />
             </Gutter>
           </section>
+          <div className=" bg-customWhite ">
+            <h2 className="pl-7 py-2 font-bold opacity-50 text-2xl text-primary-light">
+              Promotions
+            </h2>
+          </div>
+          <section className="bg-customWhite flex justify-center pb-11">
+            <div className={classes.promoCard}>
+              <div className={classes.promoText}>
+                <p className={classes.smallText}>Get</p>
+                <h3>20 Off</h3>
+                <p className={classes.smallText}>for this month</p>
+              </div>
+              <Image src="/media/promotions.png" alt="Promotion" className={classes.promoImage} width={200} height={200} />
+            </div>
+          </section>
         </>
       ) : (
         <>
