@@ -1,3 +1,41 @@
 /*@tailwind: base;*/
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .rotate-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .rotate-bg::before,
+  .rotate-bg::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+  }
+
+  .rotate-bg::before {
+    background: linear-gradient(45deg, #AC4968, #DCB4C1);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    transform: rotate(45deg);
+  }
+
+  .rotate-bg::after {
+    background: linear-gradient(45deg, #4968AC, #BBCCF1);
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    transform: rotate(45deg);
+  }
+}
+
+
+
+
+
+
+

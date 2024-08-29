@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHeart, FaHome, FaShoppingCart, FaUser, FaRegHeart } from 'react-icons/fa'
+import { FaHeart, FaHome, FaRegHeart, FaShoppingCart, FaUser } from 'react-icons/fa'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
@@ -117,16 +117,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
           <section className="bg-customWhite py-4 pb-11">
             <Gutter className="classes.home">
-              <h2 className="py-2 font-bold text-2xl text-primary">
-                Shop By Categories
-              </h2>
+              <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
               <SmallCarousel catLabels={catLabels} images={images} />
             </Gutter>
           </section>
           <div className=" bg-customWhite ">
-            <h2 className="pl-7 py-2 font-bold text-2xl text-primary">
-              Promotions
-            </h2>
+            <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
           </div>
           <section className="bg-customWhite flex justify-center px-5 pb-11">
             <div className={classes.promoCard}>
@@ -135,19 +131,29 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 <h3>20% Off</h3>
                 <p className={classes.smallText}>for this month</p>
               </div>
-              <Image src="/media/promotions.png" alt="Promotion" className={classes.promoImage} width={100} height={100} />
+              <Image
+                src="/media/promotions.png"
+                alt="Promotion"
+                className={classes.promoImage}
+                width={100}
+                height={100}
+              />
             </div>
           </section>
           <section className="bg-customWhite py-4 pb-11">
             <Gutter className="classes.home">
-              <h2 className="py-2 font-bold text-2xl text-primary">
-                Cubensis Growkits
-              </h2>
+              <h2 className="py-2 font-bold text-2xl text-primary">Cubensis Growkits</h2>
               <div className="mb-3 flex justify-between gap-3">
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
                   <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/mckLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
+                    <Image
+                      src="/media/mckLabel.png"
+                      alt="Promotion"
+                      className="w-[6rem] py-4"
+                      width={100}
+                      height={100}
+                    />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
@@ -156,7 +162,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
                   <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/ecuLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
+                    <Image
+                      src="/media/ecuLabel.png"
+                      alt="Promotion"
+                      className="w-[6rem] py-4"
+                      width={100}
+                      height={100}
+                    />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">G. Teacher</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
@@ -166,7 +178,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
                   <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/gtLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
+                    <Image
+                      src="/media/gtLabel.png"
+                      alt="Promotion"
+                      className="w-[6rem] py-4"
+                      width={100}
+                      height={100}
+                    />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">Mazatapec</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
@@ -175,7 +193,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
                   <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/colLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
+                    <Image
+                      src="/media/colLabel.png"
+                      alt="Promotion"
+                      className="w-[6rem] py-4"
+                      width={100}
+                      height={100}
+                    />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">Ecuador</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
@@ -183,6 +207,23 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
+          <section className="pb-11">
+            <Gutter>
+              <div className="w-[346px] h-[189px] rounded-2xl relative overflow-hidden bg-transparent">
+                <div className="absolute inset-0 rotate-bg"></div>
+                <div className="relative z-10 text-white flex items-center justify-center h-full">
+                  dupa
+                </div>
+              </div>
+            </Gutter>
+          </section>
+
+
+
+
+
+
+
         </>
       ) : (
         <>

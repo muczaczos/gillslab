@@ -9,7 +9,7 @@ import { Header } from './_components/Header'
 import { Providers } from './_providers'
 import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
-import { FaHome, FaShoppingCart, FaHeart, FaUser} from 'react-icons/fa';
+import { FaHome, FaShoppingCart, FaHeart, FaUser } from 'react-icons/fa';
 
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
@@ -48,7 +48,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
           {/* Sticky footer */}
           <div className="sticky flex justify-between rounded-full bottom-5 bg-secondary bg-opacity-70 text-white w-[90%] px-10 py-4 mx-auto">
-            <FaHeart className="text-customWhite text-3xl"/> <FaUser className="text-customWhite text-3xl"/> <FaShoppingCart className="text-customWhite text-3xl"/><FaHome className="text-customWhite text-3xl"/> 
+            <FaHeart className="text-customWhite text-3xl" /> <FaUser className="text-customWhite text-3xl" /> <FaShoppingCart className="text-customWhite text-3xl" /><FaHome className="text-customWhite text-3xl" />
           </div>
         </Providers>
       </body>
