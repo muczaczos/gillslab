@@ -6,7 +6,7 @@
   .rotate-bg {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 189px;
     overflow: hidden;
   }
 
@@ -23,15 +23,37 @@
   .rotate-bg::before {
     background: linear-gradient(45deg, #AC4968, #DCB4C1);
     clip-path: polygon(0 0, 100% 100%, 0 100%);
-    transform: rotate(45deg);
+    transform: rotate(45deg); /* Poprawiona rotacja */
+    z-index: 1; /* Na dole */
   }
 
   .rotate-bg::after {
     background: linear-gradient(45deg, #4968AC, #BBCCF1);
     clip-path: polygon(0 0, 100% 100%, 100% 0);
-    transform: rotate(45deg);
+    transform: rotate(45deg); /* Poprawiona rotacja */
+    z-index: 0; /* Na dole, pod pseudoelementem ::before */
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 2; /* Na wierzchu tła */
+    background-color: transparent; /* Przezroczyste tło nagłówka */
+    padding: 1rem; /* Padding nagłówka */
+    color: white; /* Kolor tekstu nagłówka */
+    text-align: left;
+    height: 100%; /* Wysokość kontenera */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; 
+  }
+
+  .header-content h2 {
+    line-height: 2rem;
+    font-size: 1.8rem; /* Zmniejszenie rozmiaru czcionki */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Cień tekstu */
   }
 }
+
 
 
 

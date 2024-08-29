@@ -90,10 +90,6 @@
   z-index: 0 !important;
 }
 
-.z-10 {
-  z-index: 10 !important;
-}
-
 .z-40 {
   z-index: 40 !important;
 }
@@ -238,10 +234,6 @@
 
 .h-\[189px\] {
   height: 189px !important;
-}
-
-.h-full {
-  height: 100% !important;
 }
 
 .h-screen {
@@ -560,10 +552,6 @@
 .bg-secondary {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(172 73 104 / var(--tw-bg-opacity)) !important;
-}
-
-.bg-transparent {
-  background-color: transparent !important;
 }
 
 .bg-white {
@@ -897,7 +885,7 @@
 .rotate-bg {
   position: relative !important;
   width: 100% !important;
-  height: 100% !important;
+  height: 189px !important;
   overflow: hidden !important;
 }
 
@@ -916,6 +904,9 @@
   -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%) !important;
           clip-path: polygon(0 0, 100% 100%, 0 100%) !important;
   transform: rotate(45deg) !important;
+  /* Poprawiona rotacja */
+  z-index: 1 !important;
+  /* Na dole */
 }
 
 .rotate-bg::after {
@@ -923,6 +914,35 @@
   -webkit-clip-path: polygon(0 0, 100% 100%, 100% 0) !important;
           clip-path: polygon(0 0, 100% 100%, 100% 0) !important;
   transform: rotate(45deg) !important;
+  /* Poprawiona rotacja */
+  z-index: 0 !important;
+  /* Na dole, pod pseudoelementem ::before */
+}
+
+.header-content {
+  position: relative !important;
+  z-index: 2 !important;
+  /* Na wierzchu tła */
+  background-color: transparent !important;
+  /* Przezroczyste tło nagłówka */
+  padding: 1rem !important;
+  /* Padding nagłówka */
+  color: white !important;
+  /* Kolor tekstu nagłówka */
+  text-align: left !important;
+  height: 100% !important;
+  /* Wysokość kontenera */
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+
+.header-content h2 {
+  line-height: 2rem !important;
+  font-size: 1.8rem !important;
+  /* Zmniejszenie rozmiaru czcionki */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  /* Cień tekstu */
 }
 
 .hover\:text-gray-700:hover {
@@ -1132,6 +1152,7 @@
     height: 44rem !important;
   }
 }
+
 
 
 

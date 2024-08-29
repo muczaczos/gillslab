@@ -209,14 +209,15 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
           <section className="pb-11">
             <Gutter>
-              <div className="w-[346px] h-[189px] rounded-2xl relative overflow-hidden bg-transparent">
-                <div className="absolute inset-0 rotate-bg"></div>
-                <div className="relative z-10 text-white flex items-center justify-center h-full">
-                  dupa
+              <div className="w-[346px] h-[189px] rounded-2xl relative overflow-hidden rotate-bg">
+                <div className="header-content">
+                  <h2>Subscribe to our newsletter!</h2>
                 </div>
               </div>
             </Gutter>
           </section>
+
+
 
 
 
