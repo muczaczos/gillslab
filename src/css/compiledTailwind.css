@@ -232,10 +232,6 @@
   height: 14rem !important;
 }
 
-.h-\[189px\] {
-  height: 189px !important;
-}
-
 .h-screen {
   height: 100vh !important;
 }
@@ -266,10 +262,6 @@
 
 .w-80 {
   width: 20rem !important;
-}
-
-.w-\[346px\] {
-  width: 346px !important;
 }
 
 .w-\[6rem\] {
@@ -873,6 +865,11 @@
   outline-style: solid !important;
 }
 
+.drop-shadow-2xl {
+  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
 .invert {
   --tw-invert: invert(100%) !important;
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
@@ -887,6 +884,8 @@
   width: 100% !important;
   height: 189px !important;
   overflow: hidden !important;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid #1d3465 !important;
 }
 
 .rotate-bg::before,
