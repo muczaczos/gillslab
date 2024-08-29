@@ -21,14 +21,14 @@
   }
 
   .rotate-bg::before {
-    background: linear-gradient(45deg, #AC4968, #DCB4C1);
+    background: linear-gradient(45deg, #AC4968 0%, #DCB4C1 80%);
     clip-path: polygon(0 0, 100% 100%, 0 100%);
     transform: rotate(45deg); /* Poprawiona rotacja */
     z-index: 1; /* Na dole */
   }
 
   .rotate-bg::after {
-    background: linear-gradient(45deg, #4968AC, #BBCCF1);
+    background: linear-gradient(90deg, #4968AC 50% , #BBCCF1 80%);
     clip-path: polygon(0 0, 100% 100%, 100% 0);
     transform: rotate(45deg); /* Poprawiona rotacja */
     z-index: 0; /* Na dole, pod pseudoelementem ::before */

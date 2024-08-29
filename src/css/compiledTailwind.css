@@ -900,7 +900,7 @@
 }
 
 .rotate-bg::before {
-  background: linear-gradient(45deg, #AC4968, #DCB4C1) !important;
+  background: linear-gradient(45deg, #AC4968 0%, #DCB4C1 80%) !important;
   -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%) !important;
           clip-path: polygon(0 0, 100% 100%, 0 100%) !important;
   transform: rotate(45deg) !important;
@@ -910,7 +910,7 @@
 }
 
 .rotate-bg::after {
-  background: linear-gradient(45deg, #4968AC, #BBCCF1) !important;
+  background: linear-gradient(90deg, #4968AC 50% , #BBCCF1 80%) !important;
   -webkit-clip-path: polygon(0 0, 100% 100%, 100% 0) !important;
           clip-path: polygon(0 0, 100% 100%, 100% 0) !important;
   transform: rotate(45deg) !important;
