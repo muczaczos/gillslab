@@ -145,18 +145,18 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </h2>
               <div className="mb-3 flex justify-between gap-3">
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaHeart className="absolute top-3 right-3 text-secondary text-2xl"/>
+                  <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                    <Image src="/media/mckLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
                 </div>
 
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl"/>
+                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                    <Image src="/media/ecuLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">G. Teacher</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
@@ -164,18 +164,18 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
               <div className="flex justify-between gap-3">
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl"/>
+                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                    <Image src="/media/gtLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">Mazatapec</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
                 </div>
 
                 <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl"/>
+                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
-                    <Image src="/media/growkitsCat.png" alt="Promotion" className="w-36" width={100} height={100} />
+                    <Image src="/media/colLabel.png" alt="Promotion" className="w-[6rem] py-4" width={100} height={100} />
                   </div>
                   <p className="leading-3 pl-3 text-primary font-bold opacity-70">Ecuador</p>
                   <p className="text-primary text-2xl font-bold pl-3">$35</p>
