@@ -224,13 +224,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
                   <div className="flex w-full justify-between">
                     <div>
-                      <p className="pt-1 leading-5 text-shadow font-medium">
-                        Be the First to Know <br />
-                        About Promotions <br />
+                      <p className="pt-1 leading-4 text-shadow font-sm">
+                        Be the First to Know 
+                        About Promotions 
                         and New Arrivals!
                       </p>
 
-                      <div className="shadow-md rounded-lg mt-2 flex justify-center bg-primary">
+                      <div className="shadow-md rounded-lg w-full mt-1 flex justify-center bg-primary">
                         <p className="font-medium">Subscribe</p>
                       </div>
                     </div>
@@ -254,6 +254,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
               <p className="py-2 font-bold text-xl text-primary">View All</p>
             </div>
             <NewsCarousel catLabels={catLabels} images={images2} />
+          </Gutter>
+          <Gutter>
+            <div className="flex justify-between">
+              <p className="py-2 font-bold text-xl text-primary">View All</p>
+              <p className="py-2 font-bold text-xl text-primary">News on Vlog</p>
+            </div>
+            <NewsCarousel catLabels={null} images={images2} />
           </Gutter>
         </section>
         </>

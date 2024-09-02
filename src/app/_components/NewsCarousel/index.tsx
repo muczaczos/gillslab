@@ -90,14 +90,14 @@ const NewsCarousel = ({ images, catLabels }) => {
                   </div>
                 </div>
               </div>
-              <div className="p-3 pt-0">
+              {catLabels && ( <div className="p-3 pt-0">
                 <h2 className="text-xl font-bold">{catLabels[index]}</h2>
                 <p className="text-gray-700 text-sm leading-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                  {catLabels[index] + catLabels[index] + catLabels[index]}
                 </p>
-              </div>
+              </div> )}
             </div>  
-</div>
+        </div>
         
       ))}
     </div>

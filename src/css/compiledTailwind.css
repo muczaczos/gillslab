@@ -192,6 +192,10 @@
   margin-top: 1.75rem !important;
 }
 
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+
 .block {
   display: block !important;
 }
@@ -342,6 +346,18 @@
 
 .w-\[12rem\] {
   width: 12rem !important;
+}
+
+.w-6 {
+  width: 1.5rem !important;
+}
+
+.w-24 {
+  width: 6rem !important;
+}
+
+.w-40 {
+  width: 10rem !important;
 }
 
 .max-w-full {
