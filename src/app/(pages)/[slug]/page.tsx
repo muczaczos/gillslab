@@ -16,6 +16,7 @@ import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
 import { Promotion } from '../../_components/Promotion'
 import SmallCarousel from '../../_components/SmallCarousel'
+import NewsCarousel from '../../_components/NewsCarousel'
 import StickyBottomMenu from '../../_components/StickyBottomMenu'
 import { generateMeta } from '../../_utilities/generateMeta'
 
@@ -68,6 +69,14 @@ export default async function Pages({ params: { slug = 'home' } }) {
     '/media/liquidCat.png',
     '/media/labCat.png',
     '/media/substrateCat.png',
+  ]
+
+  const images2 = [
+    '/media/gtLabel.png',
+    '/media/mckLabel.png',
+    '/media/gtLabel.png',
+    '/media/mckLabel.png',
+    '/media/gtLabel.png',
   ]
 
   const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
@@ -237,29 +246,11 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
-
-          <section className="flex justify-center  bg-customWhite">
-            <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg frame-gradient">
-              <div className="p-4">
-                <div className="border-4 border-gray-200 rounded-xl overflow-hidden">
-                  <div className="h-48 w-full relative">
-                    <Image
-                      src="/media/gtLabel.png" // Podaj ścieżkę do swojego obrazu
-                      alt="Example Image"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="p-6 pt-0">
-                <h2 className="text-xl font-bold mb-2">Card Title</h2>
-                <p className="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                </p>
-              </div>
-            </div>
-          </section>
+          
+          <Gutter>
+            <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
+            <NewsCarousel catLabels={catLabels} images={images2} />
+          </Gutter>
         </>
       ) : (
         <>

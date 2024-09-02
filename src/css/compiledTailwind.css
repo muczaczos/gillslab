@@ -244,6 +244,18 @@
   height: 100vh !important;
 }
 
+.h-\[50rem\] {
+  height: 50rem !important;
+}
+
+.h-\[10rem\] {
+  height: 10rem !important;
+}
+
+.h-\[20rem\] {
+  height: 20rem !important;
+}
+
 .max-h-full {
   max-height: 100% !important;
 }
@@ -286,6 +298,30 @@
 
 .w-full {
   width: 100% !important;
+}
+
+.w-\[30rem\] {
+  width: 30rem !important;
+}
+
+.w-3\/4 {
+  width: 75% !important;
+}
+
+.w-\[20rem\] {
+  width: 20rem !important;
+}
+
+.w-\[40rem\] {
+  width: 40rem !important;
+}
+
+.w-48 {
+  width: 12rem !important;
+}
+
+.w-\[50rem\] {
+  width: 50rem !important;
 }
 
 .max-w-full {
