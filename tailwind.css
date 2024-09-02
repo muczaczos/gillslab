@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.frame-gradient {
+  background: linear-gradient(to bottom, black, white);
+}
+
 @layer utilities {
   .rotate-bg {
     position: relative;
@@ -45,6 +49,7 @@
     text-align: left;
     height: 100%; /* Wysokość kontenera */
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center; 
   }

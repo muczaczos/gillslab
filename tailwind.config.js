@@ -14,7 +14,7 @@ module.exports = {
         secondary: {
           light: '',
           DEFAULT: '#AC4968',
-          dark: ''
+          dark: '',
         },
         customWhite: {
           DEFAULT: '#F7F9FB',
@@ -37,7 +37,29 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow': {
+          'text-shadow': '2px 2px 4px rgba(0, 0, 0, 0.5)',
+        },
+        '.shadow': {
+          'shadow': '2px 2px 4px rgba(0, 0, 0, 0.5)',
+        },
+        '.text-shadow-md': {
+          'text-shadow': '3px 3px 6px rgba(0, 0, 0, 0.6)',
+        },
+        '.text-shadow-lg': {
+          'text-shadow': '4px 4px 8px rgba(0, 0, 0, 0.7)',
+        },
+        '.text-shadow-none': {
+          'text-shadow': 'none',
+        },
+      }
+
+      addUtilities(newUtilities)
+    },
+  ],
   corePlugins: {
     preflight: false,
   },

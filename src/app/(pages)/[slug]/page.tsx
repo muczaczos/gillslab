@@ -207,24 +207,59 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
-          <section className="pb-11">
+          <section className="pb-11 bg-customWhite">
             <Gutter>
               <div className="drop-shadow-2xl rounded-2xl relative overflow-hidden rotate-bg">
                 <div className="header-content">
                   <h2>Subscribe to our newsletter!</h2>
+
+                  <div className="flex w-full justify-between">
+                    <div>
+                      <p className="pt-1 leading-5 text-shadow font-medium">
+                        Be the First to Know <br />
+                        About Promotions <br />
+                        and New Arrivals!
+                      </p>
+
+                      <div className="shadow-md rounded-lg mt-2 flex justify-center bg-primary">
+                        <p className="font-medium">Subscribe</p>
+                      </div>
+                    </div>
+                    <Image
+                      src="/media/newsletter.png"
+                      alt="man with growkit"
+                      width={100}
+                      height={100}
+                      className="w-[10rem] relative bottom-14"
+                    />
+                  </div>
                 </div>
               </div>
             </Gutter>
           </section>
 
-
-
-
-
-
-
-
-
+          <section className="flex justify-center  bg-customWhite">
+            <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg frame-gradient">
+              <div className="p-4">
+                <div className="border-4 border-gray-200 rounded-xl overflow-hidden">
+                  <div className="h-48 w-full relative">
+                    <Image
+                      src="/media/gtLabel.png" // Podaj ścieżkę do swojego obrazu
+                      alt="Example Image"
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <h2 className="text-xl font-bold mb-2">Card Title</h2>
+                <p className="text-gray-700 text-base">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                </p>
+              </div>
+            </div>
+          </section>
         </>
       ) : (
         <>
