@@ -256,6 +256,18 @@
   height: 20rem !important;
 }
 
+.h-\[15rem\] {
+  height: 15rem !important;
+}
+
+.h-\[12rem\] {
+  height: 12rem !important;
+}
+
+.h-\[8rem\] {
+  height: 8rem !important;
+}
+
 .max-h-full {
   max-height: 100% !important;
 }
@@ -322,6 +334,14 @@
 
 .w-\[50rem\] {
   width: 50rem !important;
+}
+
+.w-\[15rem\] {
+  width: 15rem !important;
+}
+
+.w-\[12rem\] {
+  width: 12rem !important;
 }
 
 .max-w-full {
@@ -400,6 +420,10 @@
 
 .flex-col {
   flex-direction: column !important;
+}
+
+.content-between {
+  align-content: space-between !important;
 }
 
 .items-center {
@@ -661,6 +685,10 @@
   padding: 1.5rem !important;
 }
 
+.p-3 {
+  padding: 0.75rem !important;
+}
+
 .px-10 {
   padding-left: 2.5rem !important;
   padding-right: 2.5rem !important;
@@ -765,6 +793,10 @@
   padding-top: 1.25rem !important;
 }
 
+.pb-7 {
+  padding-bottom: 1.75rem !important;
+}
+
 .text-left {
   text-align: left !important;
 }
@@ -807,6 +839,11 @@
   line-height: 1.75rem !important;
 }
 
+.text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
 .font-black {
   font-weight: 900 !important;
 }
@@ -837,6 +874,10 @@
 
 .leading-none {
   line-height: 1 !important;
+}
+
+.leading-4 {
+  line-height: 1rem !important;
 }
 
 .text-black {

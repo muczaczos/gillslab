@@ -85,7 +85,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <>
-          <section className="bg-customWhite pb-11">
+          <section className="bg-customWhite pb-7">
             <div className="flex justify-end">
               <Image
                 src="/media/mobileHero.png" // Ścieżka do obrazu w katalogu public
@@ -124,7 +124,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
-          <section className="bg-customWhite py-4 pb-11">
+          <section className="bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
               <SmallCarousel catLabels={catLabels} images={images} />
@@ -133,7 +133,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           <div className=" bg-customWhite ">
             <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
           </div>
-          <section className="bg-customWhite flex justify-center px-5 pb-11">
+          <section className="bg-customWhite flex justify-center px-5 pb-7">
             <div className={classes.promoCard}>
               <div className={classes.promoText}>
                 <p className={classes.smallText}>Get</p>
@@ -149,7 +149,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               />
             </div>
           </section>
-          <section className="bg-customWhite py-4 pb-11">
+          <section className="bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Cubensis Growkits</h2>
               <div className="mb-3 flex justify-between gap-3">
@@ -216,7 +216,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
-          <section className="pb-11 bg-customWhite">
+          <section className="pb-7 bg-customWhite">
             <Gutter>
               <div className="drop-shadow-2xl rounded-2xl relative overflow-hidden rotate-bg">
                 <div className="header-content">
@@ -246,11 +246,16 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
-          
+
+        <section className="bg-customWhite">
           <Gutter>
-            <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
+            <div className="flex justify-between">
+              <p className="py-2 font-bold text-xl text-primary">News on Blog</p>
+              <p className="py-2 font-bold text-xl text-primary">View All</p>
+            </div>
             <NewsCarousel catLabels={catLabels} images={images2} />
           </Gutter>
+        </section>
         </>
       ) : (
         <>

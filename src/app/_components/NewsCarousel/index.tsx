@@ -78,8 +78,8 @@ const NewsCarousel = ({ images, catLabels }) => {
       <div className={styles.slide} key={index}>
           <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg frame-gradient">
               <div className="p-4">
-                <div className="w-[20rem] border-4 border-gray-200 rounded-xl overflow-hidden">
-                  <div className="h-[20rem] w-full relative">
+                <div className="w-[12rem] border-4 border-gray-200 rounded-xl overflow-hidden">
+                  <div className="h-[8rem] w-full relative">
                     <Image
                       src={image} // Podaj ścieżkę do swojego obrazu
                       alt="Example Image"
@@ -90,9 +90,9 @@ const NewsCarousel = ({ images, catLabels }) => {
                   </div>
                 </div>
               </div>
-              <div className="p-6 pt-0">
-                <h2 className="text-xl font-bold mb-2">{catLabels[index]}</h2>
-                <p className="text-gray-700 text-base">
+              <div className="p-3 pt-0">
+                <h2 className="text-xl font-bold">{catLabels[index]}</h2>
+                <p className="text-gray-700 text-sm leading-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
