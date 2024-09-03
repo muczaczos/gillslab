@@ -65,7 +65,7 @@ const NewsCarousel = ({ images, catLabels }) => {
 
   return (
     <div
-      className={styles.slider}
+      className={`${styles.slider} slider`} // Połączenie Tailwind i SCSS klas
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseLeave={handleMouseLeave}
@@ -74,31 +74,30 @@ const NewsCarousel = ({ images, catLabels }) => {
       onTouchEnd={handleTouchEnd}
     >
       {images.map((image, index) => (
-      
-      <div className={styles.slide} key={index}>
-          <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg frame-gradient">
-              <div className="p-4">
-                <div className="w-[12rem] border-4 border-gray-200 rounded-xl overflow-hidden">
-                  <div className="h-[8rem] w-full relative">
-                    <Image
-                      src={image} // Podaj ścieżkę do swojego obrazu
-                      alt="Example Image"
-                      layout="fill"
-                      objectFit="cover"
-                      className=""
-                    />
-                  </div>
+        <div className={`${styles.slide} slide`} key={index}>
+          <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
+            <div className="p-4">
+              <div className="w-full rounded-xl overflow-hidden">
+                <div className="h-[8rem] w-full relative">
+                  <Image
+                    src={image} // Podaj ścieżkę do swojego obrazu
+                    alt="Example Image"
+                    layout="fill"
+                    objectFit="cover"
+                  />
                 </div>
               </div>
-              {catLabels && ( <div className="p-3 pt-0">
-                <h2 className="text-xl font-bold">{catLabels[index]}</h2>
-                <p className="text-gray-700 text-sm leading-4">
-                  {catLabels[index] + catLabels[index] + catLabels[index]}
+            </div>
+            {catLabels && (
+              <div className="p-3 pt-0">
+                <h2 className="text-xl text-customWhite font-bold">{catLabels[index]}</h2>
+                <p className="text-customWhite text-sm leading-4 max-w-full break-words overflow-hidden">
+                  {catLabels[index] + catLabels[index] + catLabels[index] + catLabels[index] + catLabels[index]}
                 </p>
-              </div> )}
-            </div>  
+              </div>
+            )}
+          </div>
         </div>
-        
       ))}
     </div>
   )

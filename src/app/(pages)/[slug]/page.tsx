@@ -14,9 +14,9 @@ import { Button } from '../../_components/Button'
 import Categories from '../../_components/Categories'
 import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
+import NewsCarousel from '../../_components/NewsCarousel'
 import { Promotion } from '../../_components/Promotion'
 import SmallCarousel from '../../_components/SmallCarousel'
-import NewsCarousel from '../../_components/NewsCarousel'
 import StickyBottomMenu from '../../_components/StickyBottomMenu'
 import { generateMeta } from '../../_utilities/generateMeta'
 
@@ -85,6 +85,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <>
+          {/* Hero */}
           <section className="bg-customWhite pb-7">
             <div className="flex justify-end">
               <Image
@@ -124,12 +125,16 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
+
+          {/* horizontal carousel */}
           <section className="bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
               <SmallCarousel catLabels={catLabels} images={images} />
             </Gutter>
           </section>
+
+          {/* promotions banner */}
           <div className=" bg-customWhite ">
             <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
           </div>
@@ -149,6 +154,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
               />
             </div>
           </section>
+
+          {/* 4 x growkit section */}
           <section className="bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Cubensis Growkits</h2>
@@ -216,53 +223,50 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
+          {/* Newsletter */}
           <section className="pb-7 bg-customWhite">
             <Gutter>
-              <div className="drop-shadow-2xl rounded-2xl relative overflow-hidden rotate-bg">
-                <div className="header-content">
-                  <h2>Subscribe to our newsletter!</h2>
+              <div className="drop-shadow-2xl rounded-2xl w-9/10 newsletter-gradient">
+                <div className="text-customWhite p-5">
+                  <h2 className="text-shadow">Subscribe to our newsletter!</h2>
 
-                  <div className="flex w-full justify-between">
-                    <div>
-                      <p className="pt-1 leading-4 text-shadow font-sm">
-                        Be the First to Know 
-                        About Promotions 
-                        and New Arrivals!
-                      </p>
-
-                      <div className="shadow-md rounded-lg w-full mt-1 flex justify-center bg-primary">
-                        <p className="font-medium">Subscribe</p>
-                      </div>
-                    </div>
+                  <div className="flex h-[4rem] w-full justify-between">
+                    <p className="pt-1 leading-4 text-shadow font-sm">
+                      Be the First to Know About Promotions and New Arrivals!
+                    </p>
                     <Image
                       src="/media/newsletter.png"
                       alt="man with growkit"
-                      width={100}
-                      height={100}
-                      className="w-[10rem] relative bottom-14"
+                      width={200}
+                      height={200}
+                      className="w-32 h-32 bottom-16 relative"
                     />
+                  </div>
+                  <div className="shadow-lg rounded-lg w-1/2 mt-1 flex justify-center bg-secondary">
+                    <p className="font-medium">Subscribe</p>
                   </div>
                 </div>
               </div>
             </Gutter>
           </section>
 
-        <section className="bg-customWhite">
-          <Gutter>
-            <div className="flex justify-between">
-              <p className="py-2 font-bold text-xl text-primary">News on Blog</p>
-              <p className="py-2 font-bold text-xl text-primary">View All</p>
-            </div>
-            <NewsCarousel catLabels={catLabels} images={images2} />
-          </Gutter>
-          <Gutter>
-            <div className="flex justify-between">
-              <p className="py-2 font-bold text-xl text-primary">View All</p>
-              <p className="py-2 font-bold text-xl text-primary">News on Vlog</p>
-            </div>
-            <NewsCarousel catLabels={null} images={images2} />
-          </Gutter>
-        </section>
+          {/* news on blog and vlog */}
+          <section className="bg-customWhite">
+            <Gutter>
+              <div className="flex justify-between">
+                <p className="py-2 font-bold text-xl text-primary">News on Blog</p>
+                <p className="py-2 font-bold text-xl text-primary">View All</p>
+              </div>
+              <NewsCarousel catLabels={catLabels} images={images2} />
+            </Gutter>
+            <Gutter>
+              <div className="flex justify-between">
+                <p className="py-2 font-bold text-xl text-primary">View All</p>
+                <p className="py-2 font-bold text-xl text-primary">News on Vlog</p>
+              </div>
+              <NewsCarousel catLabels={null} images={images2} />
+            </Gutter>
+          </section>
         </>
       ) : (
         <>
@@ -272,8 +276,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
             disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
           />
         </>
-      )}
-    </React.Fragment>
+      )
+      }
+    </React.Fragment >
   )
 }
 

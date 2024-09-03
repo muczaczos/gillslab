@@ -1,17 +1,17 @@
 .slider {
   display: flex;
   overflow-x: scroll;
-  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
-  scroll-behavior: auto; /* Disables smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto;
   cursor: grab;
-  scrollbar-width: none; /* Hides scrollbar on Firefox */
-  width: 100%; /* Ensure it takes full width */
-  margin: 0; /* Remove any default margin */
-  padding-bottom: 1rem; /* Remove any default padding */
+  scrollbar-width: none;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 1rem;
 }
 
 .slider::-webkit-scrollbar {
-  display: none; /* Hides scrollbar on Chrome, Safari, and Opera */
+  display: none;
 }
 
 .slider:active {
@@ -21,15 +21,17 @@
 .slide {
   margin-left: 1rem;
   display: flex;
-  background-color: white;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column; /* Ustawienie układu kolumnowego */
+  justify-content: flex-start; /* Zmieniamy na 'flex-start', aby elementy były rozmieszczone od góry */
   align-items: center;
+  background-color: white;
   transition: transform 0.3s ease-in-out;
   border-radius: 1rem;
+  width: 90%; /* Szerokość slajdu w stosunku do rodzica */
+  flex-shrink: 0; /* Zapobiega kurczeniu się elementów slajdu */
 }
 
 .slide img {
-  width: 90%;
+  width: 100%; /* Ustawienie szerokości obrazu na 100% kontenera */
   display: block;
 }

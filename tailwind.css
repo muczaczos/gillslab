@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 .frame-gradient {
-  background: linear-gradient(to bottom, #BBCCF1, #E9EDF6);
+  background: linear-gradient(to top, #4968AC,  #AC4968);
+}
+
+.newsletter-gradient {
+  background: linear-gradient(to bottom, #4968AC, #F7F9FB);
 }
 
 @layer utilities {
