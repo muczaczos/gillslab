@@ -130,8 +130,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
           <section className="bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
-              <SmallCarousel catLabels={catLabels} images={images} />
             </Gutter>
+              <SmallCarousel catLabels={catLabels} images={images} />
+            
           </section>
 
           {/* promotions banner */}
@@ -223,15 +224,16 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
+          
           {/* Newsletter */}
           <section className="pb-7 bg-customWhite">
             <Gutter>
               <div className="drop-shadow-2xl rounded-2xl w-9/10 newsletter-gradient">
-                <div className="text-customWhite p-5">
-                  <h2 className="text-shadow">Subscribe to our newsletter!</h2>
+                <div className="text-customWhite px-5 pt-2">
+                  <p className="text-shadow text-2xl font-bold">Subscribe to our newsletter!</p>
 
-                  <div className="flex h-[4rem] w-full justify-between">
-                    <p className="pt-1 leading-4 text-shadow font-sm">
+                  <div className="flex h-[6rem] w-full justify-between">
+                    <p className="pt-1 leading-4 text-shadow text-md font-bold text-secondary">
                       Be the First to Know About Promotions and New Arrivals!
                     </p>
                     <Image
@@ -242,30 +244,36 @@ export default async function Pages({ params: { slug = 'home' } }) {
                       className="w-32 h-32 bottom-16 relative"
                     />
                   </div>
-                  <div className="shadow-lg rounded-lg w-1/2 mt-1 flex justify-center bg-secondary">
-                    <p className="font-medium">Subscribe</p>
-                  </div>
                 </div>
               </div>
             </Gutter>
           </section>
 
           {/* news on blog and vlog */}
-          <section className="bg-customWhite">
+          <section className="bg-customWhite relative overflow-hidden pb-[8rem]">
+          <div className={classes.stripeGreen}></div>
+          <div className={classes.stripeRed}></div>
             <Gutter>
-              <div className="flex justify-between">
-                <p className="py-2 font-bold text-xl text-primary">News on Blog</p>
-                <p className="py-2 font-bold text-xl text-primary">View All</p>
+              <div className="flex justify-between z-20">
+                <p className="py-2 font-bold text-xl text-primary z-20">News on Blog</p>
+                <p className="pt-2 relative top-1 font-bold text-md text-primary">View All</p>
               </div>
-              <NewsCarousel catLabels={catLabels} images={images2} />
             </Gutter>
+              <NewsCarousel catLabels={catLabels} images={images2} />
+           
             <Gutter>
-              <div className="flex justify-between">
-                <p className="py-2 font-bold text-xl text-primary">View All</p>
+              <div className="flex justify-between z-10">
+                <p className="py-2 relative top-1 font-bold text-md text-primary">View All</p>
                 <p className="py-2 font-bold text-xl text-primary">News on Vlog</p>
               </div>
-              <NewsCarousel catLabels={null} images={images2} />
             </Gutter>
+              <NewsCarousel catLabels={null} images={images2} />
+            
+          </section>
+
+          {/* footer */}
+          <section className={classes.section}>
+          
           </section>
         </>
       ) : (

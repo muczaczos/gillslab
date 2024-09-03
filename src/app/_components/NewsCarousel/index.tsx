@@ -74,7 +74,7 @@ const NewsCarousel = ({ images, catLabels }) => {
       onTouchEnd={handleTouchEnd}
     >
       {images.map((image, index) => (
-        <div className={`${styles.slide} slide`} key={index}>
+        <div className={`${styles.slide} slide z-10`} key={index}>
           <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
             <div className="p-4">
               <div className="w-full rounded-xl overflow-hidden">
@@ -89,9 +89,9 @@ const NewsCarousel = ({ images, catLabels }) => {
               </div>
             </div>
             {catLabels && (
-              <div className="p-3 pt-0">
-                <h2 className="text-xl text-customWhite font-bold">{catLabels[index]}</h2>
-                <p className="text-customWhite text-sm leading-4 max-w-full break-words overflow-hidden">
+              <div className="p-3 pt-0 ">
+                <h2 className="text-xl text-primary opacity-80 font-bold">{catLabels[index]}</h2>
+                <p className="text-primary text-sm leading-4 max-w-full break-words overflow-hidden">
                   {catLabels[index] + catLabels[index] + catLabels[index] + catLabels[index] + catLabels[index]}
                 </p>
               </div>

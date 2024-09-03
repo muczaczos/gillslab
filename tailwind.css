@@ -3,11 +3,22 @@
 @tailwind utilities;
 
 .frame-gradient {
-  background: linear-gradient(to top, #4968AC,  #AC4968);
+  background: linear-gradient(to top,  #F7F9FB, #D2E0FF);
 }
 
 .newsletter-gradient {
   background: linear-gradient(to bottom, #4968AC, #F7F9FB);
+}
+
+.bg-diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    green,
+    green 2rem,
+    red 2rem,
+    red 4rem
+  );
+  background-size: 4rem 4rem;
 }
 
 @layer utilities {
