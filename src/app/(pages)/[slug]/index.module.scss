@@ -69,14 +69,6 @@
   overflow: hidden;
 }
 
-.section {
-  position: relative;
-  background-color: #4968AC; /* Kolor tła sekcji */
-  padding: 4rem 2rem;
-  clip-path: polygon(0 45%, 100% 0, 100% 100%, 0 100%);
-  margin-top: -4rem;
-}
-
 .promoImage {
   position: relative;
   scale: 1.8;

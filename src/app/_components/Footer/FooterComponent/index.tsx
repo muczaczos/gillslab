@@ -29,33 +29,26 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
   }
   const handleSubscriber = async () => {
     router.push(`/subscribe?email=${email}`)
-    //console.log(email)
   }
 
   return (
     <>
       <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
-        
-        <div className={classes.footer}>
+        {/* Kontener dla obrazka i sekcji */}
+
+        {/* Kontener dla obrazka i sekcji */}
+        <div className="relative w-full h-64 overflow-hidden">
+          <Image
+            src="/media/mobile2.png"
+            alt="Example Image"
+            layout="fill"
+            objectFit="cover"
+            className={classes.customRotate} // Ustawienia dla obrazu
+          />
+        </div>
+
+        <div className="bg-primary -mt-[5rem]">
           <Gutter>
-            <div className={classes.newsletter}>
-              <Input
-                name="subscribe"
-                type="email"
-                label=""
-                placeholder="Subscribe to newsletter"
-                register={register}
-                error={null}
-                disabled={false}
-                onChange={handleAddress}
-                className={classes.newsletterInput}
-              />
-              <Button
-                label="Subscribe"
-                onClick={handleSubscriber}
-                className={classes.newsButton}
-              ></Button>
-            </div>
             <div className={classes.menu}>
               <div className={classes.menuCol}>
                 <section className="w-1/2">
