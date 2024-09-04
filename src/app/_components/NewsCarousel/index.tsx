@@ -12,43 +12,43 @@ const NewsCarousel = ({ images, catLabels }) => {
 
   useEffect(() => {
     const slider = sliderRef.current
-    const handleMouseMove = event => {
-      if (!isDown) return
-      event.preventDefault()
-      const x = event.pageX - slider.offsetLeft
-      const walk = x - startX
-      slider.scrollLeft = scrollLeft - walk
-    }
-
-    const handleTouchMove = event => {
-      if (!isDown) return
-      event.preventDefault()
-      const x = event.touches[0].pageX - slider.offsetLeft
-      const walk = x - startX
-      slider.scrollLeft = scrollLeft - walk
-    }
-
     if (slider) {
-      slider.addEventListener('mousemove', handleMouseMove)
-      slider.addEventListener('touchmove', handleTouchMove)
-
-      return () => {
-        slider.removeEventListener('mousemove', handleMouseMove)
-        slider.removeEventListener('touchmove', handleTouchMove)
-      }
+      const firstSlide = slider.querySelector(`.${styles.slide}`)
+      const slideWidth = firstSlide ? firstSlide.offsetWidth : 0
+      slider.scrollLeft = slideWidth / 2 // Ustawienie początkowego przesunięcia przy montowaniu komponentu
     }
-  }, [isDown, startX, scrollLeft])
+  }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
+
+  const handleMouseMove = event => {
+    if (!isDown) return
+    event.preventDefault()
+    const slider = sliderRef.current
+    const x = event.pageX - slider.offsetLeft
+    const walk = x - startX
+    slider.scrollLeft = scrollLeft - walk
+  }
+
+  const handleTouchMove = event => {
+    if (!isDown) return
+    event.preventDefault()
+    const slider = sliderRef.current
+    const x = event.touches[0].pageX - slider.offsetLeft
+    const walk = x - startX
+    slider.scrollLeft = scrollLeft - walk
+  }
 
   const handleMouseDown = event => {
+    const slider = sliderRef.current
     setIsDown(true)
-    setStartX(event.pageX - sliderRef.current.offsetLeft)
-    setScrollLeft(sliderRef.current.scrollLeft)
+    setStartX(event.pageX - slider.offsetLeft)
+    setScrollLeft(slider.scrollLeft)
   }
 
   const handleTouchStart = event => {
+    const slider = sliderRef.current
     setIsDown(true)
-    setStartX(event.touches[0].pageX - sliderRef.current.offsetLeft)
-    setScrollLeft(sliderRef.current.scrollLeft)
+    setStartX(event.touches[0].pageX - slider.offsetLeft)
+    setScrollLeft(slider.scrollLeft)
   }
 
   const handleMouseLeave = () => {
@@ -65,7 +65,7 @@ const NewsCarousel = ({ images, catLabels }) => {
 
   return (
     <div
-      className={`${styles.slider} slider`} // Połączenie Tailwind i SCSS klas
+      className={`${styles.slider} slider`}
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseLeave={handleMouseLeave}
@@ -79,12 +79,7 @@ const NewsCarousel = ({ images, catLabels }) => {
             <div className="p-4">
               <div className="w-full rounded-xl overflow-hidden">
                 <div className="h-[8rem] w-full relative">
-                  <Image
-                    src={image} // Podaj ścieżkę do swojego obrazu
-                    alt="Example Image"
-                    layout="fill"
-                    objectFit="cover"
-                  />
+                  <Image src={image} alt="Example Image" layout="fill" objectFit="cover" />
                 </div>
               </div>
             </div>
@@ -92,13 +87,16 @@ const NewsCarousel = ({ images, catLabels }) => {
               <div className="p-3 pt-0 ">
                 <h2 className="text-xl text-primary opacity-80 font-bold">{catLabels[index]}</h2>
                 <p className="text-primary text-sm leading-4 max-w-full break-words overflow-hidden">
-                  {catLabels[index] + catLabels[index] + catLabels[index] + catLabels[index] + catLabels[index]}
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, ipsam consectetur
+                  rerum sit qui accusantium architecto vero, corporis tempora perspiciatis
+                  distinctio placeat quae aut odit sint veritatis possimus sapiente. Fuga.
                 </p>
               </div>
             )}
           </div>
         </div>
       ))}
+      <div className="flex-shrink-0 w-[100px]"></div>
     </div>
   )
 }

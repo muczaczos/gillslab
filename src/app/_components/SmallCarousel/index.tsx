@@ -12,43 +12,43 @@ const SmallCarousel = ({ images, catLabels }) => {
 
   useEffect(() => {
     const slider = sliderRef.current
-    const handleMouseMove = event => {
-      if (!isDown) return
-      event.preventDefault()
-      const x = event.pageX - slider.offsetLeft
-      const walk = x - startX
-      slider.scrollLeft = scrollLeft - walk
-    }
-
-    const handleTouchMove = event => {
-      if (!isDown) return
-      event.preventDefault()
-      const x = event.touches[0].pageX - slider.offsetLeft
-      const walk = x - startX
-      slider.scrollLeft = scrollLeft - walk
-    }
-
     if (slider) {
-      slider.addEventListener('mousemove', handleMouseMove)
-      slider.addEventListener('touchmove', handleTouchMove)
-
-      return () => {
-        slider.removeEventListener('mousemove', handleMouseMove)
-        slider.removeEventListener('touchmove', handleTouchMove)
-      }
+      const firstSlide = slider.querySelector(`.${styles.slide}`)
+      const slideWidth = firstSlide ? firstSlide.offsetWidth : 0
+      slider.scrollLeft = slideWidth / 2 // Ustawienie początkowego przesunięcia przy montowaniu komponentu
     }
-  }, [isDown, startX, scrollLeft])
+  }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
+
+  const handleMouseMove = event => {
+    if (!isDown) return
+    event.preventDefault()
+    const slider = sliderRef.current
+    const x = event.pageX - slider.offsetLeft
+    const walk = x - startX
+    slider.scrollLeft = scrollLeft - walk
+  }
+
+  const handleTouchMove = event => {
+    if (!isDown) return
+    event.preventDefault()
+    const slider = sliderRef.current
+    const x = event.touches[0].pageX - slider.offsetLeft
+    const walk = x - startX
+    slider.scrollLeft = scrollLeft - walk
+  }
 
   const handleMouseDown = event => {
+    const slider = sliderRef.current
     setIsDown(true)
-    setStartX(event.pageX - sliderRef.current.offsetLeft)
-    setScrollLeft(sliderRef.current.scrollLeft)
+    setStartX(event.pageX - slider.offsetLeft)
+    setScrollLeft(slider.scrollLeft)
   }
 
   const handleTouchStart = event => {
+    const slider = sliderRef.current
     setIsDown(true)
-    setStartX(event.touches[0].pageX - sliderRef.current.offsetLeft)
-    setScrollLeft(sliderRef.current.scrollLeft)
+    setStartX(event.touches[0].pageX - slider.offsetLeft)
+    setScrollLeft(slider.scrollLeft)
   }
 
   const handleMouseLeave = () => {
@@ -62,6 +62,7 @@ const SmallCarousel = ({ images, catLabels }) => {
   const handleTouchEnd = () => {
     setIsDown(false)
   }
+
 
   return (
     <div
@@ -79,6 +80,7 @@ const SmallCarousel = ({ images, catLabels }) => {
           <h3 className="text-xl text-primary opacity-70">{catLabels[index]}</h3>
         </div>
       ))}
+      <div className="flex-shrink-0 w-[100px]"></div>
     </div>
   )
 }

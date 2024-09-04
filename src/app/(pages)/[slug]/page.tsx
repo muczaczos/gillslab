@@ -17,7 +17,6 @@ import { Hero } from '../../_components/Hero'
 import NewsCarousel from '../../_components/NewsCarousel'
 import { Promotion } from '../../_components/Promotion'
 import SmallCarousel from '../../_components/SmallCarousel'
-import StickyBottomMenu from '../../_components/StickyBottomMenu'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 import classes from './index.module.scss'
@@ -131,8 +130,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
             </Gutter>
-              <SmallCarousel catLabels={catLabels} images={images} />
-            
+            <SmallCarousel catLabels={catLabels} images={images} />
           </section>
 
           {/* promotions banner */}
@@ -224,7 +222,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </Gutter>
           </section>
-          
+
           {/* Newsletter */}
           <section className="pb-7 bg-customWhite">
             <Gutter>
@@ -251,30 +249,27 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
           {/* news on blog and vlog */}
           <section className="bg-customWhite relative overflow-hidden pb-[8rem]">
-          <div className={classes.stripeGreen}></div>
-          <div className={classes.stripeRed}></div>
+            <div className={classes.stripeGreen}></div>
+            <div className={classes.stripeRed}></div>
             <Gutter>
               <div className="flex justify-between z-20">
                 <p className="py-2 font-bold text-xl text-primary z-20">News on Blog</p>
                 <p className="pt-2 relative top-1 font-bold text-md text-primary">View All</p>
               </div>
             </Gutter>
-              <NewsCarousel catLabels={catLabels} images={images2} />
-           
+            <NewsCarousel catLabels={catLabels} images={images2} />
+
             <Gutter>
               <div className="flex justify-between z-10">
                 <p className="py-2 relative top-1 font-bold text-md text-primary">View All</p>
                 <p className="py-2 font-bold text-xl text-primary">News on Vlog</p>
               </div>
             </Gutter>
-              <NewsCarousel catLabels={null} images={images2} />
-            
+            <NewsCarousel catLabels={null} images={images2} />
           </section>
 
           {/* footer */}
-          <section className={classes.section}>
-          
-          </section>
+          <section className={classes.section}></section>
         </>
       ) : (
         <>
@@ -284,9 +279,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
             disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
           />
         </>
-      )
-      }
-    </React.Fragment >
+      )}
+    </React.Fragment>
   )
 }
 
