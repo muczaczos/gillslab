@@ -43,26 +43,25 @@
 /* Styl dla zielonego paska */
 .stripeGreen {
   position: absolute;
-  top: 0;
-  left: 62px;
+  top: -10rem;
+  left: 0;
   bottom: 10rem;
   width: 200%; /* Zwiększona szerokość, aby objąć cały ekran pod kątem */
-  height: 10rem; /* Wysokość paska */
+  height: 12rem; /* Wysokość paska */
   background-color: #4968AC;
   opacity: 10%;
   transform: rotate(45deg);
   transform-origin: top left; /* Punkt obrotu */
   overflow: hidden;
-  z-index: 0;
 }
 
 /* Styl dla czerwonego paska */
 .stripeRed {
   position: absolute;
-  top: 10rem; /* Przesunięcie czerwonego paska poniżej zielonego */
-  left: 0;
+  top: 1rem; /* Przesunięcie czerwonego paska poniżej zielonego */
+  left: -6rem;
   width: 200%;
-  height: 10rem;
+  height: 12rem;
   background-color: #AC4968;
   opacity: 10%;
   transform: rotate(45deg);

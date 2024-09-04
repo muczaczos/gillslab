@@ -78,7 +78,7 @@ const NewsCarousel = ({ images, catLabels }) => {
           <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
             <div className="p-4">
               <div className="w-full rounded-xl overflow-hidden">
-                <div className="h-[8rem] w-full relative">
+                <div className="z-50 h-[8rem] w-full relative">
                   <Image src={image} alt="Example Image" layout="fill" objectFit="cover" />
                 </div>
               </div>

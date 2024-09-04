@@ -71,11 +71,11 @@ export default async function Pages({ params: { slug = 'home' } }) {
   ]
 
   const images2 = [
-    '/media/gtLabel.png',
-    '/media/mckLabel.png',
-    '/media/gtLabel.png',
-    '/media/mckLabel.png',
-    '/media/gtLabel.png',
+    '/media/muchomor.jpg',
+    '/media/koszyk.jpg',
+    '/media/growkit.jpg',
+    '/media/muchomor.jpg',
+    '/media/koszyk.jpg',
   ]
 
   const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
