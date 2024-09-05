@@ -35,19 +35,16 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
     <>
       <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
 
-        {/* Kontener dla obrazka i sekcji */}
-
-        {/* Kontener dla obrazka i sekcji */}
         <Image
           src="/media/mobFoot3.png"
           alt="Example Image"
           width="900"
           height="100"
           objectFit="cover"
-          className="absolute top-[-150px] left-0"
+          className="absolute top-[-150px] left-0 z-10"
         />
 
-        <div className="bg-primary">
+        <div className="bg-primary relative z-20">
           <Gutter>
             <div className={classes.menu}>
               <div className={classes.menuCol}>
