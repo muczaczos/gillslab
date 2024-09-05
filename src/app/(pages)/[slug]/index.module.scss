@@ -74,8 +74,9 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding-bottom: 15rem;
+  padding-bottom: 10rem;
   background-image: url('/media/stripes2.png');
+  z-index: 0;
 }
 
 .promoImage {

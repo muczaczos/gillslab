@@ -1,11 +1,22 @@
-.customRotate {
-  margin-top: -5rem;
-  transform: rotate(-15deg); /* lub inny kąt */
-  width: 100%; /* Dopasowanie szerokości */
-  height: auto; /* Automatyczne dopasowanie wysokości */
+.footer-image-container {
   position: relative;
-  z-index: 100;
+  width: 100%;
+  height: 300px; /* Możesz dostosować wysokość */
+  overflow: hidden; /* Ukrywa wychodzące części obrazka */
+
+  .footer-image {
+    position: absolute;
+    top: -150px; /* Dopasuj według potrzeb */
+    left: 50%;
+    transform: translateX(-50%) scale(1.5); /* Wyśrodkowanie i skalowanie */
+    z-index: 10;
+    width: 100%; /* Ustawiamy pełną szerokość */
+    height: 100%; /* Obrazek rozciągnięty na wysokość kontenera */
+    object-fit: cover; /* Przycięcie obrazka w kontenerze */
+  }
 }
+
+
 
 .mobfoot {
   position: relative;

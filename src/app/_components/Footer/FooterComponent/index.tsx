@@ -34,17 +34,17 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
   return (
     <>
       <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
-
+<div className="relative overflow-hidden w-full h-auto -mt-32 ">
         <Image
           src="/media/mobFoot3.png"
           alt="Example Image"
-          width="900"
-          height="100"
+          width="1000"
+          height="200"
           objectFit="cover"
-          className="absolute top-[-150px] left-0 z-10"
+          className="relative left-0 "
         />
-
-        <div className="bg-primary relative z-20">
+</div>
+        <div className="-mt-10 bg-primary relative z-20">
           <Gutter>
             <div className={classes.menu}>
               <div className={classes.menuCol}>

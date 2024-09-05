@@ -251,7 +251,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           <section className={classes.blogvlog}>
 
             <Gutter>
-              <div className="flex justify-between z-20">
+              <div className="flex justify-between z-0">
                 <p className="py-2 font-bold text-xl text-primary z-20">News on Blog</p>
                 <p className="pt-2 relative top-1 font-bold text-md text-primary">View All</p>
               </div>
