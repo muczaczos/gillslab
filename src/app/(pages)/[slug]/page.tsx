@@ -248,7 +248,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* news on blog and vlog */}
-          <section className="bg-customWhite overflow-hidden pb-[12rem]">
+          <section className={classes.blogvlog}>
 
             <Gutter>
               <div className="flex justify-between z-20">
