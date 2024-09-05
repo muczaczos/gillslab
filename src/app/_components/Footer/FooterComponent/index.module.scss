@@ -7,6 +7,10 @@
   z-index: 100;
 }
 
+.mobfoot {
+  position: relative;
+}
+
 /* Responsywne style */
 @media (max-width: 768px) {
   .imageWrapper {

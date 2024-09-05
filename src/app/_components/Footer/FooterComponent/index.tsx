@@ -33,21 +33,21 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
 
   return (
     <>
-      <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
+      <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
+
         {/* Kontener dla obrazka i sekcji */}
 
         {/* Kontener dla obrazka i sekcji */}
-        <div className="relative w-full h-64 overflow-hidden">
-          <Image
-            src="/media/mobile2.png"
-            alt="Example Image"
-            layout="fill"
-            objectFit="cover"
-            className={classes.customRotate} // Ustawienia dla obrazu
-          />
-        </div>
+        <Image
+          src="/media/mobFoot3.png"
+          alt="Example Image"
+          width="900"
+          height="100"
+          objectFit="cover"
+          className="absolute top-[-150px] left-0"
+        />
 
-        <div className="bg-primary -mt-[5rem]">
+        <div className="bg-primary">
           <Gutter>
             <div className={classes.menu}>
               <div className={classes.menuCol}>

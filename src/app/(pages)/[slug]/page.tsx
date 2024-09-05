@@ -248,9 +248,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* news on blog and vlog */}
-          <section className="bg-customWhite relative overflow-hidden pb-[8rem]">
-            <div className={classes.stripeGreen}></div>
-            <div className={classes.stripeRed}></div>
+          <section className="bg-customWhite overflow-hidden pb-[12rem]">
+
             <Gutter>
               <div className="flex justify-between z-20">
                 <p className="py-2 font-bold text-xl text-primary z-20">News on Blog</p>
@@ -268,8 +267,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <NewsCarousel catLabels={null} images={images2} />
           </section>
 
-          {/* footer */}
-          <section className={classes.section}></section>
+
         </>
       ) : (
         <>
