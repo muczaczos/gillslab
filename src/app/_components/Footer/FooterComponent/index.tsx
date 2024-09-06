@@ -91,38 +91,16 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 <p className="text-customWhite text-xl">Europe 1-3 Days</p>
                 <p className="text-customWhite text-xl">USA 4-7 Days</p>
                 <div className="flex gap-2 py-2">
-                  <Image
-                    className="w-1/2 h-auto"
-                    src="/media/dhl.png"
-                    alt="dhl logo image"
-                    width={400} // Oryginalne rozmiary obrazu
-                    height={200} // Oryginalne rozmiary obrazu
-                  />
 
-                  <div
-                    style={{
-                      height: 45,
-                      width: 140,
-                      position: 'relative',
-                    }}
-                  >
-                    <Image priority={true} src="/media/dhl.png" alt="Picture of the logo" fill />
+                  <div className="w-3/4 mx-auto overflow-hidden"> {/* Kontener z 50% szerokości i wyśrodkowany */}
+                    <div className="relative w-full" style={{ paddingTop: '50%' }}> {/* Proporcjonalny kontener */}
+                      <img
+                        src="/media/dhl.png"
+                        alt="dhl logo image"
+                        className="absolute inset-0 w-full h-full object-contain transform scale-50" // Skaluje obrazek do 50% jego rozmiarów
+                      />
+                    </div>
                   </div>
-                  <Image
-                    className="w-1/2 h-auto" // Zmniejszenie szerokości do 50%, automatyczna wysokość zachowuje proporcje
-                    src="/media/fedex.png"
-                    alt="dhl logo image"
-                    width={400} // Oryginalna szerokość
-                    height={200} // Oryginalna wysokość
-                  />
-                  <Image
-                    className="w-1/3 h-auto" // Zmniejszenie szerokości do 50%, automatyczna wysokość zachowuje proporcje
-                    src="/media/ups.png"
-                    alt="dhl logo image"
-                    width={400} // Oryginalna szerokość
-                    height={200} // Oryginalna wysokość
-                  />
-                  <Image src="/media/dpd.png" alt="dhl logo image" width="100" height="100" />
                 </div>
               </section>
             </div>
