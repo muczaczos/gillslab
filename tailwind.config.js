@@ -5,6 +5,9 @@ module.exports = {
   content: ['./src/**/*.{tsx,ts}'],
   theme: {
     extend: {
+      screens: {
+        xs: { max: '389px' }, // Breakpoint dla szerokości do 400px
+      },
       colors: {
         primary: {
           light: '#5A7FD0',
@@ -44,7 +47,7 @@ module.exports = {
           'text-shadow': '2px 2px 4px rgba(0, 0, 0, 0.5)',
         },
         '.shadow': {
-          'shadow': '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          shadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
         },
         '.text-shadow-md': {
           'text-shadow': '3px 3px 6px rgba(0, 0, 0, 0.6)',
