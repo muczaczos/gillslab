@@ -46,10 +46,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* @ts-expect-error */}
           <Footer />
 
-          {/* Sticky footer */}
-          <div className="z-30 sticky flex justify-between rounded-full bottom-5 bg-secondary bg-opacity-70 text-white w-[90%] px-10 py-4 mx-auto">
-            <FaHeart className="text-customWhite text-3xl" /> <FaUser className="text-customWhite text-3xl" /> <FaShoppingCart className="text-customWhite text-3xl" /><FaHome className="text-customWhite text-3xl" />
+          {/* Fixed footer */}
+          <div className="z-30 fixed bottom-5 left-0 right-0 mx-auto flex justify-between rounded-full bg-secondary bg-opacity-70 text-white max-w-[90%] w-full px-10 py-4">
+            <FaHeart className="text-customWhite text-3xl" />
+            <FaUser className="text-customWhite text-3xl" />
+            <FaShoppingCart className="text-customWhite text-3xl" />
+            <FaHome className="text-customWhite text-3xl" />
           </div>
+
         </Providers>
       </body>
     </html>

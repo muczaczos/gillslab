@@ -43,7 +43,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
   return (
     <>
       <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
-        <div className="relative overflow-hidden w-full h-auto -mt-32 ">
+        <div className="relative overflow-hidden w-full h-auto -mt-36 ">
           <Image
             src="/media/mobFoot3.png"
             alt="Example Image"
@@ -53,9 +53,11 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             className="relative left-0 "
           />
         </div>
-        <div className="p -mt-10 bg-[url('/media/eyes5.png')] bg-cover bg-primary relative z-20 p-5 xs:p-3">
+        <div className="xs:-mt-16 -mt-20 bg-[url('/media/eyes5.png')] bg-cover bg-primary relative z-20 p-5 xs:p-3">
+          {/* Address, Socials, Payments, Shipping*/}
           <div className="flex justify-between">
             <div>
+              {/* Logo */}
               <section className="mb-5">
                 <Image
                   src="/media/logo3.png"
@@ -73,35 +75,29 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 <FaWhatsapp className="text-4xl text-customWhite mr-5" />{' '}
                 <FaPhone className="text-3xl text-customWhite" />
               </section>
+
+              {/* Socials */}
               <section className="mb-5">
                 <h4 className="text-customWhite font-bold">Socials</h4>
                 <FaFacebook className="text-4xl  mr-5 text-customWhite" />
                 <FaInstagram className=" text-4xl mr-5 text-customWhite" />
                 <FaVimeo className="text-4xl text-customWhite" />
               </section>
+
+              {/* Payments */}
               <section className="mb-5">
                 <h4 className="text-customWhite font-bold">Payments</h4>
                 <FaBtc className="text-4xl  mr-5 text-customWhite" />
                 <FaCreditCard className=" text-4xl mr-5 text-customWhite" />
                 <FaVimeo className="text-4xl text-customWhite" />
               </section>
+
+              {/* Shipping */}
               <section className="mb-5">
                 <h4 className="text-customWhite font-bold">Shipping</h4>
                 <p className="text-customWhite text-xl">Poland 1 Day</p>
                 <p className="text-customWhite text-xl">Europe 1-3 Days</p>
                 <p className="text-customWhite text-xl">USA 4-7 Days</p>
-                <div className="flex gap-2 py-2">
-
-                  <div className="w-3/4 mx-auto overflow-hidden"> {/* Kontener z 50% szerokości i wyśrodkowany */}
-                    <div className="relative w-full" style={{ paddingTop: '50%' }}> {/* Proporcjonalny kontener */}
-                      <img
-                        src="/media/dhl.png"
-                        alt="dhl logo image"
-                        className="absolute inset-0 w-full h-full object-contain transform scale-50" // Skaluje obrazek do 50% jego rozmiarów
-                      />
-                    </div>
-                  </div>
-                </div>
               </section>
             </div>
             <section>
@@ -122,6 +118,55 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               <p className="text-customWhite text-xl">Cart</p>
               <p className="text-customWhite text-xl">Favorities</p>
             </section>
+          </div>
+          {/* dhl, dpd, ups, fedex logotypes */}
+          <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden"> {/* Kontener z 50% szerokości i wyśrodkowany */}
+            <div className="relative w-full" style={{ paddingTop: '5%' }}> {/* Proporcjonalny kontener */}
+              <Image
+                src="/media/dhl.png"
+                alt="dhl logo image"
+                className="absolute inset-0 w-full transform scale-100" // Skaluje obrazek do 50% jego rozmiarów
+                width={100}
+                height={100}
+              />
+            </div>
+            <div className="relative w-full" style={{ paddingTop: '8%' }}> {/* Proporcjonalny kontener */}
+              <Image
+                src="/media/dpd.png"
+                alt="dhl logo image"
+                className="absolute inset-0 w-full transform scale-100" // Skaluje obrazek do 50% jego rozmiarów
+                width={100}
+                height={100}
+              />
+            </div>
+            <div className="relative w-full" style={{ paddingTop: '20%' }}> {/* Proporcjonalny kontener */}
+              <Image
+                src="/media/ups.png"
+                alt="dhl logo image"
+                className="absolute inset-0" // Skaluje obrazek do 50% jego rozmiarów
+                width={100}
+                height={100}
+              />
+            </div>
+            <div className="relative w-full" style={{ paddingTop: '5%' }}> {/* Proporcjonalny kontener */}
+              <Image
+                src="/media/fedex.png"
+                alt="dhl logo image"
+                className="absolute inset-0" // Skaluje obrazek do 50% jego rozmiarów
+                width={100}
+                height={100}
+              />
+            </div>
+          </div>
+          <div className="mt-2 mb-20 items-center flex gap-2">
+            <p className="text-customWhite text-large font-bold">© 2008 - 2024</p>
+            <Image
+              src="/media/logoCom.png"
+              alt="Gillsal logo"
+              className="" // Skaluje obrazek do 50% jego rozmiarów
+              width={150}
+              height={100}
+            />
           </div>
         </div>
       </footer>
