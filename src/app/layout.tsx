@@ -1,6 +1,9 @@
+
 import React from 'react'
+import { FaHeart, FaHome, FaShoppingCart, FaUser } from 'react-icons/fa'
 import { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
+import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 
 import { AdminBar } from './_components/AdminBar'
@@ -9,7 +12,6 @@ import { Header } from './_components/Header'
 import { Providers } from './_providers'
 import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
-import { FaHome, FaShoppingCart, FaHeart, FaUser } from 'react-icons/fa';
 
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
@@ -21,6 +23,7 @@ const montserrat = Montserrat({
 })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -53,7 +56,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <FaShoppingCart className="text-customWhite text-3xl" />
             <FaHome className="text-customWhite text-3xl" />
           </div>
-
         </Providers>
       </body>
     </html>
