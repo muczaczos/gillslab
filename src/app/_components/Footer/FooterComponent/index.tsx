@@ -53,7 +53,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             className="relative left-0 "
           />
         </div>
-        <div className="p -mt-10 bg-[url('/media/eyes.png')] bg-cover bg-primary relative z-20 p-5 xs:p-3">
+        <div className="p -mt-10 bg-[url('/media/eyes5.png')] bg-cover bg-primary relative z-20 p-5 xs:p-3">
           <div className="flex justify-between">
             <div>
               <section className="mb-5">

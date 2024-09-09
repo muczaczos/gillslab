@@ -220,30 +220,6 @@
   margin-top: 1.75rem !important;
 }
 
-.-mt-20 {
-  margin-top: -5rem !important;
-}
-
-.-mt-\[2rem\] {
-  margin-top: -2rem !important;
-}
-
-.-mt-\[3rem\] {
-  margin-top: -3rem !important;
-}
-
-.-mt-\[4rem\] {
-  margin-top: -4rem !important;
-}
-
-.-mt-\[6rem\] {
-  margin-top: -6rem !important;
-}
-
-.-mt-\[5rem\] {
-  margin-top: -5rem !important;
-}
-
 .block {
   display: block !important;
 }
@@ -657,12 +633,12 @@
   --tw-bg-opacity: 0.7 !important;
 }
 
-.bg-\[url\(\'\/media\/hero-big\.png\'\)\] {
-  background-image: url('/media/hero-big.png') !important;
+.bg-\[url\(\'\/media\/eyes5\.png\'\)\] {
+  background-image: url('/media/eyes5.png') !important;
 }
 
-.bg-\[url\(\'\/media\/eyes\.png\'\)\] {
-  background-image: url('/media/eyes.png') !important;
+.bg-\[url\(\'\/media\/hero-big\.png\'\)\] {
+  background-image: url('/media/hero-big.png') !important;
 }
 
 .bg-cover {
@@ -1234,20 +1210,12 @@
     flex-direction: column !important;
   }
 
-  .xs\:justify-normal {
-    justify-content: normal !important;
-  }
-
   .xs\:p-0 {
     padding: 0px !important;
   }
 
   .xs\:p-3 {
     padding: 0.75rem !important;
-  }
-
-  .xs\:p-10 {
-    padding: 2.5rem !important;
   }
 
   .xs\:pb-0 {
