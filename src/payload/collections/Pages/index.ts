@@ -37,6 +37,12 @@ export const Pages: CollectionConfig = {
   },
   fields: [
     {
+      name: 'hideFooter',
+      type: 'checkbox',
+      label: 'Hide Footer',
+      defaultValue: false,
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,

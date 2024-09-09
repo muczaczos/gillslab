@@ -632,6 +632,8 @@ export interface Media {
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -904,6 +906,7 @@ export interface Product {
  */
 export interface Page {
   id: string;
+  hideFooter?: boolean | null;
   title: string;
   publishedOn?: string | null;
   hero: {
