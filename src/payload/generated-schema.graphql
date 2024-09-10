@@ -1750,6 +1750,7 @@ enum User_roles {
 
 type Product {
   id: String
+  hideFooter: Boolean
   title: String
   price: String
   weight: Float
@@ -2380,7 +2381,6 @@ union Cta_Links_Link_Reference = Page
 
 type Page {
   id: String
-  hideFooter: Boolean
   title: String
   publishedOn: DateTime
   hero: Page_Hero
@@ -7421,7 +7421,6 @@ type Pages {
 }
 
 input Page_where {
-  hideFooter: Page_hideFooter_operator
   title: Page_title_operator
   publishedOn: Page_publishedOn_operator
   hero__type: Page_hero__type_operator
@@ -7445,12 +7444,6 @@ input Page_where {
   id: Page_id_operator
   AND: [Page_where_and]
   OR: [Page_where_or]
-}
-
-input Page_hideFooter_operator {
-  equals: Boolean
-  not_equals: Boolean
-  exists: Boolean
 }
 
 input Page_title_operator {
@@ -7666,7 +7659,6 @@ input Page_id_operator {
 }
 
 input Page_where_and {
-  hideFooter: Page_hideFooter_operator
   title: Page_title_operator
   publishedOn: Page_publishedOn_operator
   hero__type: Page_hero__type_operator
@@ -7693,7 +7685,6 @@ input Page_where_and {
 }
 
 input Page_where_or {
-  hideFooter: Page_hideFooter_operator
   title: Page_title_operator
   publishedOn: Page_publishedOn_operator
   hero__type: Page_hero__type_operator
@@ -7733,7 +7724,6 @@ type pagesDocAccess {
 }
 
 type PagesDocAccessFields {
-  hideFooter: PagesDocAccessFields_hideFooter
   title: PagesDocAccessFields_title
   publishedOn: PagesDocAccessFields_publishedOn
   hero: PagesDocAccessFields_hero
@@ -7743,29 +7733,6 @@ type PagesDocAccessFields {
   updatedAt: PagesDocAccessFields_updatedAt
   createdAt: PagesDocAccessFields_createdAt
   _status: PagesDocAccessFields__status
-}
-
-type PagesDocAccessFields_hideFooter {
-  create: PagesDocAccessFields_hideFooter_Create
-  read: PagesDocAccessFields_hideFooter_Read
-  update: PagesDocAccessFields_hideFooter_Update
-  delete: PagesDocAccessFields_hideFooter_Delete
-}
-
-type PagesDocAccessFields_hideFooter_Create {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_hideFooter_Read {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_hideFooter_Update {
-  permission: Boolean!
-}
-
-type PagesDocAccessFields_hideFooter_Delete {
-  permission: Boolean!
 }
 
 type PagesDocAccessFields_title {
@@ -8410,7 +8377,6 @@ type PageVersion {
 }
 
 type PageVersion_Version {
-  hideFooter: Boolean
   title: String
   publishedOn: DateTime
   hero: PageVersion_Version_Hero
@@ -9067,7 +9033,6 @@ type versionsPages {
 
 input versionsPage_where {
   parent: versionsPage_parent_operator
-  version__hideFooter: versionsPage_version__hideFooter_operator
   version__title: versionsPage_version__title_operator
   version__publishedOn: versionsPage_version__publishedOn_operator
   version__hero__type: versionsPage_version__hero__type_operator
@@ -9102,12 +9067,6 @@ input versionsPage_parent_operator {
   in: [JSON]
   not_in: [JSON]
   all: [JSON]
-  exists: Boolean
-}
-
-input versionsPage_version__hideFooter_operator {
-  equals: Boolean
-  not_equals: Boolean
   exists: Boolean
 }
 
@@ -9353,7 +9312,6 @@ input versionsPage_id_operator {
 
 input versionsPage_where_and {
   parent: versionsPage_parent_operator
-  version__hideFooter: versionsPage_version__hideFooter_operator
   version__title: versionsPage_version__title_operator
   version__publishedOn: versionsPage_version__publishedOn_operator
   version__hero__type: versionsPage_version__hero__type_operator
@@ -9384,7 +9342,6 @@ input versionsPage_where_and {
 
 input versionsPage_where_or {
   parent: versionsPage_parent_operator
-  version__hideFooter: versionsPage_version__hideFooter_operator
   version__title: versionsPage_version__title_operator
   version__publishedOn: versionsPage_version__publishedOn_operator
   version__hero__type: versionsPage_version__hero__type_operator
@@ -9428,6 +9385,7 @@ type Products {
 }
 
 input Product_where {
+  hideFooter: Product_hideFooter_operator
   title: Product_title_operator
   price: Product_price_operator
   weight: Product_weight_operator
@@ -9451,6 +9409,12 @@ input Product_where {
   id: Product_id_operator
   AND: [Product_where_and]
   OR: [Product_where_or]
+}
+
+input Product_hideFooter_operator {
+  equals: Boolean
+  not_equals: Boolean
+  exists: Boolean
 }
 
 input Product_title_operator {
@@ -9644,6 +9608,7 @@ input Product_id_operator {
 }
 
 input Product_where_and {
+  hideFooter: Product_hideFooter_operator
   title: Product_title_operator
   price: Product_price_operator
   weight: Product_weight_operator
@@ -9670,6 +9635,7 @@ input Product_where_and {
 }
 
 input Product_where_or {
+  hideFooter: Product_hideFooter_operator
   title: Product_title_operator
   price: Product_price_operator
   weight: Product_weight_operator
@@ -9709,6 +9675,7 @@ type productsDocAccess {
 }
 
 type ProductsDocAccessFields {
+  hideFooter: ProductsDocAccessFields_hideFooter
   title: ProductsDocAccessFields_title
   price: ProductsDocAccessFields_price
   weight: ProductsDocAccessFields_weight
@@ -9729,6 +9696,29 @@ type ProductsDocAccessFields {
   updatedAt: ProductsDocAccessFields_updatedAt
   createdAt: ProductsDocAccessFields_createdAt
   _status: ProductsDocAccessFields__status
+}
+
+type ProductsDocAccessFields_hideFooter {
+  create: ProductsDocAccessFields_hideFooter_Create
+  read: ProductsDocAccessFields_hideFooter_Read
+  update: ProductsDocAccessFields_hideFooter_Update
+  delete: ProductsDocAccessFields_hideFooter_Delete
+}
+
+type ProductsDocAccessFields_hideFooter_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_hideFooter_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_hideFooter_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_hideFooter_Delete {
+  permission: Boolean!
 }
 
 type ProductsDocAccessFields_title {
@@ -10302,6 +10292,7 @@ type ProductVersion {
 }
 
 type ProductVersion_Version {
+  hideFooter: Boolean
   title: String
   price: String
   weight: Float
@@ -11107,6 +11098,7 @@ type versionsProducts {
 
 input versionsProduct_where {
   parent: versionsProduct_parent_operator
+  version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
@@ -11141,6 +11133,12 @@ input versionsProduct_parent_operator {
   in: [JSON]
   not_in: [JSON]
   all: [JSON]
+  exists: Boolean
+}
+
+input versionsProduct_version__hideFooter_operator {
+  equals: Boolean
+  not_equals: Boolean
   exists: Boolean
 }
 
@@ -11364,6 +11362,7 @@ input versionsProduct_id_operator {
 
 input versionsProduct_where_and {
   parent: versionsProduct_parent_operator
+  version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
@@ -11394,6 +11393,7 @@ input versionsProduct_where_and {
 
 input versionsProduct_where_or {
   parent: versionsProduct_parent_operator
+  version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
@@ -18214,7 +18214,6 @@ type pagesAccess {
 }
 
 type PagesFields {
-  hideFooter: PagesFields_hideFooter
   title: PagesFields_title
   publishedOn: PagesFields_publishedOn
   hero: PagesFields_hero
@@ -18224,29 +18223,6 @@ type PagesFields {
   updatedAt: PagesFields_updatedAt
   createdAt: PagesFields_createdAt
   _status: PagesFields__status
-}
-
-type PagesFields_hideFooter {
-  create: PagesFields_hideFooter_Create
-  read: PagesFields_hideFooter_Read
-  update: PagesFields_hideFooter_Update
-  delete: PagesFields_hideFooter_Delete
-}
-
-type PagesFields_hideFooter_Create {
-  permission: Boolean!
-}
-
-type PagesFields_hideFooter_Read {
-  permission: Boolean!
-}
-
-type PagesFields_hideFooter_Update {
-  permission: Boolean!
-}
-
-type PagesFields_hideFooter_Delete {
-  permission: Boolean!
 }
 
 type PagesFields_title {
@@ -18891,6 +18867,7 @@ type productsAccess {
 }
 
 type ProductsFields {
+  hideFooter: ProductsFields_hideFooter
   title: ProductsFields_title
   price: ProductsFields_price
   weight: ProductsFields_weight
@@ -18911,6 +18888,29 @@ type ProductsFields {
   updatedAt: ProductsFields_updatedAt
   createdAt: ProductsFields_createdAt
   _status: ProductsFields__status
+}
+
+type ProductsFields_hideFooter {
+  create: ProductsFields_hideFooter_Create
+  read: ProductsFields_hideFooter_Read
+  update: ProductsFields_hideFooter_Update
+  delete: ProductsFields_hideFooter_Delete
+}
+
+type ProductsFields_hideFooter_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_hideFooter_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_hideFooter_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_hideFooter_Delete {
+  permission: Boolean!
 }
 
 type ProductsFields_title {
@@ -23304,7 +23304,6 @@ enum SubscriberUpdate__status_MutationInput {
 }
 
 input mutationPageInput {
-  hideFooter: Boolean
   title: String
   publishedOn: String
   hero: mutationPage_HeroInput!
@@ -23373,7 +23372,6 @@ enum Page__status_MutationInput {
 }
 
 input mutationPageUpdateInput {
-  hideFooter: Boolean
   title: String
   publishedOn: String
   hero: mutationPageUpdate_HeroInput!
@@ -23442,6 +23440,7 @@ enum PageUpdate__status_MutationInput {
 }
 
 input mutationProductInput {
+  hideFooter: Boolean
   title: String!
   price: String!
   weight: Float!
@@ -23476,6 +23475,7 @@ enum Product__status_MutationInput {
 }
 
 input mutationProductUpdateInput {
+  hideFooter: Boolean
   title: String
   price: String
   weight: Float

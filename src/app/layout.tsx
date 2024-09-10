@@ -24,7 +24,16 @@ const montserrat = Montserrat({
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
+  
+  const res = await fetch(`http://localhost:3000/api2/products/mycelium`)
+  const product = await res.json()
+  
+  const shouldHideFooter = product.hideFooter
+
+  console.log(shouldHideFooter)
+
   return (
+    
     <html lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
@@ -46,8 +55,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* @ts-expect-error */}
           <Header />
           <main>{children}</main>
-          {/* @ts-expect-error */}
-          <Footer />
 
           {/* Fixed footer */}
           <div className="z-30 fixed bottom-5 left-0 right-0 mx-auto flex justify-between rounded-full bg-secondary bg-opacity-70 text-white max-w-[90%] w-full px-10 py-4">
@@ -70,3 +77,5 @@ export const metadata: Metadata = {
   },
   openGraph: mergeOpenGraph(),
 }
+
+

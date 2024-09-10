@@ -671,6 +671,7 @@ export interface User {
  */
 export interface Product {
   id: string;
+  hideFooter?: boolean | null;
   title: string;
   price: string;
   weight: number;
@@ -906,7 +907,6 @@ export interface Product {
  */
 export interface Page {
   id: string;
-  hideFooter?: boolean | null;
   title: string;
   publishedOn?: string | null;
   hero: {
