@@ -120,8 +120,12 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             </section>
           </div>
           {/* dhl, dpd, ups, fedex logotypes */}
-          <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden"> {/* Kontener z 50% szerokości i wyśrodkowany */}
-            <div className="relative w-full" style={{ paddingTop: '5%' }}> {/* Proporcjonalny kontener */}
+          <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden">
+            {' '}
+            {/* Kontener z 50% szerokości i wyśrodkowany */}
+            <div className="relative w-full" style={{ paddingTop: '5%' }}>
+              {' '}
+              {/* Proporcjonalny kontener */}
               <Image
                 src="/media/dhl.png"
                 alt="dhl logo image"
@@ -130,7 +134,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 height={100}
               />
             </div>
-            <div className="relative w-full" style={{ paddingTop: '8%' }}> {/* Proporcjonalny kontener */}
+            <div className="relative w-full" style={{ paddingTop: '8%' }}>
+              {' '}
+              {/* Proporcjonalny kontener */}
               <Image
                 src="/media/dpd.png"
                 alt="dhl logo image"
@@ -139,7 +145,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 height={100}
               />
             </div>
-            <div className="relative w-full" style={{ paddingTop: '20%' }}> {/* Proporcjonalny kontener */}
+            <div className="relative w-full" style={{ paddingTop: '20%' }}>
+              {' '}
+              {/* Proporcjonalny kontener */}
               <Image
                 src="/media/ups.png"
                 alt="dhl logo image"
@@ -148,7 +156,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 height={100}
               />
             </div>
-            <div className="relative w-full" style={{ paddingTop: '5%' }}> {/* Proporcjonalny kontener */}
+            <div className="relative w-full" style={{ paddingTop: '5%' }}>
+              {' '}
+              {/* Proporcjonalny kontener */}
               <Image
                 src="/media/fedex.png"
                 alt="dhl logo image"

@@ -1,7 +1,6 @@
 import axios from 'axios'
 import dotenv from 'dotenv'
 import next from 'next'
-import nextBuild from 'next/dist/build'
 import path from 'path'
 
 dotenv.config({
@@ -15,7 +14,7 @@ import { seed } from './payload/seed'
 
 const app = express()
 const PORT = process.env.PORT || 3000
-const PRODUCTS_API_URL = 'http://localhost:3000/api/products';
+const PRODUCTS_API_URL = 'http://localhost:3000/api/products'
 
 // set trust proxy to true if you use nginx
 // when NodeJS app are served behind nginx reverse proxies and similar.
@@ -63,27 +62,21 @@ app.post('/cashbill-payment', async (req, res) => {
 // Endpoint do pobierania produktu na podstawie slug
 // Endpoint do pobierania produktu na podstawie slug
 app.get('/api2/products/:slug', async (req, res) => {
-  const { slug } = req.params;
+  const { slug } = req.params
 
   try {
-    console.log(`Fetching product with slug: ${slug}`);
-    const response = await fetch(`${PRODUCTS_API_URL}?where[slug][equals]=${slug}`);
-    const data = await response.json();
-
-    console.log('Product data:', data);
+    const response = await fetch(`${PRODUCTS_API_URL}?where[slug][equals]=${slug}`)
+    const data = await response.json()
 
     if (data.docs.length > 0) {
-      res.status(200).json(data.docs[0]);
+      res.status(200).json(data.docs[0])
     } else {
-      res.status(404).json({ error: 'Product not found' });
+      res.status(404).json({ error: 'Product not found' })
     }
-  } catch (error) {
-    console.error('Error fetching product:', error);
-    res.status(500).json({ error: 'Internal server error' });
+  } catch (error: unknown) {
+    res.status(500).json({ error: 'Internal server error' })
   }
-});
-
-
+})
 
 app.post('/send-email', async (req, res) => {
   try {

@@ -1,18 +1,15 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import { Montserrat } from 'next/font/google'
 import Script from 'next/script'
 
 import { AdminBar } from './_components/AdminBar'
+import { Footer } from './_components/Footer'
+import { Header } from './_components/Header' // Asynchroniczny komponent
 import { Providers } from './_providers'
 import { InitTheme } from './_providers/Theme/InitTheme'
 
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
-
-// Dynamiczny import Header i Footer
-const Header = dynamic(() => import('./_components/Header').then(mod => mod.Header), { ssr: true })
-const Footer = dynamic(() => import('./_components/Footer').then(mod => mod.Footer), { ssr: true })
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -20,7 +17,7 @@ const montserrat = Montserrat({
   variable: '--font-jost',
 })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   hideFooter = false,
 }: {
@@ -46,8 +43,13 @@ export default function RootLayout({
       <body className={montserrat.variable}>
         <Providers>
           <AdminBar />
+
+          {/* Asynchroniczny Header */}
           <Header />
+
           <main>{children}</main>
+
+          {/* Warunkowe wyświetlanie stopki */}
           {!hideFooter && <Footer />}
         </Providers>
       </body>

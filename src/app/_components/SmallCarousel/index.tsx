@@ -63,7 +63,6 @@ const SmallCarousel = ({ images, catLabels }) => {
     setIsDown(false)
   }
 
-
   return (
     <div
       className={styles.slider}

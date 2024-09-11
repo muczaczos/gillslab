@@ -43,7 +43,7 @@ const Products: CollectionConfig = {
     {
       name: 'hideFooter',
       type: 'checkbox',
-      required: false
+      required: false,
     },
     {
       name: 'title',

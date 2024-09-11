@@ -249,7 +249,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
           {/* news on blog and vlog */}
           <section className={classes.blogvlog}>
-
             <Gutter>
               <div className="flex justify-between z-0">
                 <p className="py-2 font-bold text-xl text-primary z-20">News on Blog</p>
@@ -266,8 +265,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </Gutter>
             <NewsCarousel catLabels={null} images={images2} />
           </section>
-
-
         </>
       ) : (
         <>
