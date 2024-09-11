@@ -1,20 +1,18 @@
-
 import React from 'react'
-import { FaHeart, FaHome, FaShoppingCart, FaUser } from 'react-icons/fa'
-import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { Montserrat } from 'next/font/google'
-import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 
 import { AdminBar } from './_components/AdminBar'
-import { Footer } from './_components/Footer'
-import { Header } from './_components/Header'
 import { Providers } from './_providers'
 import { InitTheme } from './_providers/Theme/InitTheme'
-import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
+
+// Dynamiczny import Header i Footer
+const Header = dynamic(() => import('./_components/Header').then(mod => mod.Header), { ssr: true })
+const Footer = dynamic(() => import('./_components/Footer').then(mod => mod.Footer), { ssr: true })
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -22,25 +20,21 @@ const montserrat = Montserrat({
   variable: '--font-jost',
 })
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-
-  
-  const res = await fetch(`http://localhost:3000/api2/products/mycelium`)
-  const product = await res.json()
-  
-  const shouldHideFooter = product.hideFooter
-
-  console.log(shouldHideFooter)
-
+export default function RootLayout({
+  children,
+  hideFooter = false,
+}: {
+  children: React.ReactNode
+  hideFooter?: boolean
+}) {
   return (
-    
     <html lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link rel="icon" href="/media/el2-icon.svg" sizes="32x32" />
         <link rel="icon" href="/media/el2-icon.svg" type="image/svg+xml" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ62PVHDXD"></Script>
-        <Script id="google-analitics">
+        <Script id="google-analytics">
           {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -52,30 +46,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={montserrat.variable}>
         <Providers>
           <AdminBar />
-          {/* @ts-expect-error */}
           <Header />
           <main>{children}</main>
-
-          {/* Fixed footer */}
-          <div className="z-30 fixed bottom-5 left-0 right-0 mx-auto flex justify-between rounded-full bg-secondary bg-opacity-70 text-white max-w-[90%] w-full px-10 py-4">
-            <FaHeart className="text-customWhite text-3xl" />
-            <FaUser className="text-customWhite text-3xl" />
-            <FaShoppingCart className="text-customWhite text-3xl" />
-            <FaHome className="text-customWhite text-3xl" />
-          </div>
+          {!hideFooter && <Footer />}
         </Providers>
       </body>
     </html>
   )
 }
-
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'https://payloadcms.com'),
-  twitter: {
-    card: 'summary_large_image',
-    creator: '@payloadcms',
-  },
-  openGraph: mergeOpenGraph(),
-}
-
-
