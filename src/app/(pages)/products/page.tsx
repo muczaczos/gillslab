@@ -7,6 +7,7 @@ import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import Filters from './Filters'
 
 import classes from './index.module.scss'
@@ -37,13 +38,15 @@ const Products = async () => {
   }
 
   return (
-    <div className={classes.container}>
-      <Gutter className={classes.products}>
-        <Filters categories={categories} />
-        <Blocks blocks={page.layout} disableTopPadding={true} />
-      </Gutter>
-      <HR />
-    </div>
+    <LayoutWithHeaderFooter>
+      <div className={classes.container}>
+        <Gutter className={classes.products}>
+          <Filters categories={categories} />
+          <Blocks blocks={page.layout} disableTopPadding={true} />
+        </Gutter>
+        <HR />
+      </div>
+    </LayoutWithHeaderFooter>
   )
 }
 

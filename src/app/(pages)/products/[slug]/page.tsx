@@ -10,7 +10,7 @@ import { Blocks } from '../../../_components/Blocks'
 import { HR } from '../../../_components/HR'
 import { ProductHero } from '../../../_heros/Product'
 import { generateMeta } from '../../../_utilities/generateMeta'
-import RootLayout from '../../../layout' // Import RootLayout, jeśli potrzebujesz na poziomie strony
+import LayoutWithNoHeaderAndFooter from '../../../layouts/withNoFooter/layout'
 
 // Force this page to be dynamic so that Next.js does not cache it
 export const dynamic = 'force-dynamic'
@@ -40,7 +40,7 @@ export default async function Products({ params: { slug } }) {
 
   return (
     // Przekazanie hideFooter do RootLayout
-    <RootLayout hideFooter={hideFooter}>
+    <LayoutWithNoHeaderAndFooter>
       <ProductHero product={product} />
       <HR />
       <Blocks
@@ -64,7 +64,7 @@ export default async function Products({ params: { slug } }) {
           },
         ]}
       />
-    </RootLayout>
+    </LayoutWithNoHeaderAndFooter>
   )
 }
 

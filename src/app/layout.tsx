@@ -1,12 +1,12 @@
 import React from 'react'
+import { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import Script from 'next/script'
 
 import { AdminBar } from './_components/AdminBar'
-import { Footer } from './_components/Footer'
-import { Header } from './_components/Header' // Asynchroniczny komponent
 import { Providers } from './_providers'
 import { InitTheme } from './_providers/Theme/InitTheme'
+import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
@@ -17,13 +17,7 @@ const montserrat = Montserrat({
   variable: '--font-jost',
 })
 
-export default async function RootLayout({
-  children,
-  hideFooter = false,
-}: {
-  children: React.ReactNode
-  hideFooter?: boolean
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -31,7 +25,7 @@ export default async function RootLayout({
         <link rel="icon" href="/media/el2-icon.svg" sizes="32x32" />
         <link rel="icon" href="/media/el2-icon.svg" type="image/svg+xml" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ62PVHDXD"></Script>
-        <Script id="google-analytics">
+        <Script id="google-analitics">
           {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -43,16 +37,19 @@ export default async function RootLayout({
       <body className={montserrat.variable}>
         <Providers>
           <AdminBar />
-
-          {/* Asynchroniczny Header */}
-          <Header />
-
+          {/* @ts-expect-error */}
           <main>{children}</main>
-
-          {/* Warunkowe wyświetlanie stopki */}
-          {!hideFooter && <Footer />}
         </Providers>
       </body>
     </html>
   )
+}
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'https://payloadcms.com'),
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@payloadcms',
+  },
+  openGraph: mergeOpenGraph(),
 }

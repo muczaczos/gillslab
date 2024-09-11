@@ -18,6 +18,7 @@ import NewsCarousel from '../../_components/NewsCarousel'
 import { Promotion } from '../../_components/Promotion'
 import SmallCarousel from '../../_components/SmallCarousel'
 import { generateMeta } from '../../_utilities/generateMeta'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 import classes from './index.module.scss'
 
@@ -81,7 +82,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
   const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
 
   return (
-    <React.Fragment>
+    <LayoutWithHeaderFooter>
       {slug === 'home' ? (
         <>
           {/* Hero */}
@@ -275,7 +276,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           />
         </>
       )}
-    </React.Fragment>
+    </LayoutWithHeaderFooter>
   )
 }
 
