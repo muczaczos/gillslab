@@ -1,24 +1,41 @@
-import React from 'react'
-import Link from 'next/link'
+'use client'
+import React, { useEffect, useState } from 'react'
 
-import { Footer } from '../../../payload/payload-types'
+import { Footer as FooterType } from '../../../payload/payload-types'
 import { fetchFooter } from '../../_api/fetchGlobals'
 import FooterComponent from './FooterComponent'
 
-export async function Footer() {
-  let footer: Footer | null = null
+export function Footer() {
+  const [footer, setFooter] = useState<FooterType | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  try {
-    footer = await fetchFooter()
-  } catch (error) {
-    //console.log(error)
+  useEffect(() => {
+    const loadFooter = async () => {
+      try {
+        const footerData = await fetchFooter()
+        setFooter(footerData)
+      } catch (error) {
+        setError('Failed to load footer')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadFooter()
+  }, [])
+
+  if (loading) {
+    return <div>Loading...</div> // Możesz użyć spinnera lub innego wskaźnika ładowania
   }
 
-  const navItems = footer?.navItems || []
+  if (error) {
+    return <div>{error}</div> // Wyświetl błąd w przypadku problemów z ładowaniem
+  }
 
-  return (
-    <>
-      <FooterComponent footer={footer} />
-    </>
-  )
+  if (!footer) {
+    return <div>No footer data available</div> // Wyświetl domyślną treść, jeśli brak danych
+  }
+
+  return <FooterComponent footer={footer} />
 }

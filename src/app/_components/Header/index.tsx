@@ -1,33 +1,45 @@
-{
-  /* eslint-disable @next/next/no-img-element */
-}
-
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-import { Header } from '../../../payload/payload-types'
+import { Header as HeaderType } from '../../../payload/payload-types'
 import { fetchHeader } from '../../_api/fetchGlobals'
-import { Gutter } from '../Gutter'
 import HeaderComponent from './HeaderComponent'
 import { HeaderNav } from './Nav'
 
 import classes from './index.module.scss'
 
-export async function Header() {
-  let header: Header | null = null
+export function Header() {
+  const [header, setHeader] = useState<HeaderType | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  try {
-    header = await fetchHeader()
-  } catch (error) {
-    // When deploying this template on Payload Cloud, this page needs to build before the APIs are live
-    // So swallow the error here and simply render the header without nav items if one occurs
-    // in production you may want to redirect to a 404  page or at least log the error somewhere
-    //console.error(error)
+  useEffect(() => {
+    const loadHeader = async () => {
+      try {
+        const headerData = await fetchHeader()
+        setHeader(headerData)
+      } catch (error) {
+        setError('Failed to load header')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadHeader()
+  }, [])
+
+  if (loading) {
+    return <div>Loading...</div> // Możesz użyć spinnera lub innego wskaźnika ładowania
   }
 
-  return (
-    <>
-      <HeaderComponent header={header} />
-    </>
-  )
+  if (error) {
+    return <div>{error}</div> // Wyświetl błąd w przypadku problemów z ładowaniem
+  }
+
+  if (!header) {
+    return <div>No header data available</div> // Wyświetl domyślną treść, jeśli brak danych
+  }
+
+  return <HeaderComponent header={header} />
 }
