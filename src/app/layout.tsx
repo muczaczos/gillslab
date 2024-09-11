@@ -37,7 +37,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={montserrat.variable}>
         <Providers>
           <AdminBar />
-          {/* @ts-expect-error */}
           <main>{children}</main>
         </Providers>
       </body>
