@@ -20,6 +20,7 @@ import RichText from '../../_components/RichText'
 import 'react-tabs/style/react-tabs.css'
 
 import classes from './index.module.scss'
+import SmallCarousel from '../../_components/SmallCarousel'
 
 export const ProductHero: React.FC<{
   product: Product
@@ -39,7 +40,16 @@ export const ProductHero: React.FC<{
   let productDetails
   let productFaq
 
-  let images = []
+  const images = [
+    '/media/growkitsCat.png',
+    '/media/sporesCat.png',
+    '/media/liquidCat.png',
+    '/media/labCat.png',
+    '/media/substrateCat.png',
+  ]
+
+  const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
+
 
   if (media1) {
     images.push(media1['url'])
@@ -99,7 +109,7 @@ export const ProductHero: React.FC<{
       <section className="px-5 bg-customWhite">
         <div className="">
           <h3 className="text-primary text-2xl">{title}</h3>
-          <p className="text-primary-light">{title2}</p>
+          <p className="text-primary-light text-xl">{title2}</p>
 
           {/* In stock and price*/}
           <div className={classes.categoryWrapper}>
@@ -121,17 +131,18 @@ export const ProductHero: React.FC<{
                 }
               })}
             </div>
-            <p className={classes.stock}>In stock</p>
+            <p className="text-green-700 text-md font-bold">In stock</p>
           </div>
-          <p>{`€ ${price}`}</p>
-
+          <RichText className="mb-10 text-lg text-customGray-dark font-medium" content={productDescription.richText} />
+          <SmallCarousel catLabels={catLabels} images={images} />
+          <div className="mt-5 flex justify-between items-center">
+            <p className="text-primary text-6xl font-bold">{`€${price}`}</p>
+            <AddToCartButton product={product} className="bg-secondary px-5 flex h-16 items-center text-customWhite font-bold" />    
+          </div>
           {/*Descriptions */}
           <div className="pt-5 pb-5">
             <Tabs>
               <TabList>
-                <Tab>
-                  <h6>Description</h6>
-                </Tab>
                 <Tab>
                   <h6>Details</h6>
                 </Tab>
@@ -140,22 +151,6 @@ export const ProductHero: React.FC<{
                 </Tab>
               </TabList>
               <div className="p3">
-                <TabPanel className="">
-                  <div
-                    style={{
-                      height: '200px', // Stała wysokość ramki
-                      overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                      overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                      border: 'none', // Usunięcie obramowania
-                      outline: 'none', // Usunięcie obramowania po kliknięciu
-                      scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                      scrollbarColor:
-                        'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                    }}
-                  >
-                    <RichText content={productDescription.richText} />
-                  </div>
-                </TabPanel>
                 <TabPanel>
                   <div
                     style={{
@@ -192,7 +187,6 @@ export const ProductHero: React.FC<{
             </Tabs>
           </div>
 
-          <AddToCartButton product={product} className={classes.addToCartButton} />
         </div>
         <br />
       </section>

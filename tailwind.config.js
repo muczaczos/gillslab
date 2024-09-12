@@ -22,6 +22,11 @@ module.exports = {
         customWhite: {
           DEFAULT: '#F7F9FB',
         },
+        customGray: {
+          DEFAULT: '#7B8291',
+          dark: '#484D58',
+          light: '#ADB2BC'
+        }
         // Dodaj inne kolory tutaj
       },
       keyframes: {
