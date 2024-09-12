@@ -83,10 +83,10 @@ export const ProductHero: React.FC<{
         <div className="">
           <Image
             alt="Image with black credit card"
-            src={`${websiteUrl}/media/gtLabel.png`}
+            src={`${media1['url']}`}
             height="300"
             width="200"
-            className="mb-5 mx-auto"
+            className="mb-5 mx-auto bg-customWhite"
           />
         </div>
       </section>
