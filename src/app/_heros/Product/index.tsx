@@ -1,7 +1,9 @@
 'use client'
 
 import React, { Fragment } from 'react'
+import { IoArrowBackSharp, IoHeartOutline, IoShareOutline, IoArrowBackOutline } from 'react-icons/io5'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
+import Image from 'next/image'
 
 import { Product } from '../../../payload/payload-types'
 import { AddToCartButton } from '../../_components/AddToCartButton'
@@ -59,108 +61,128 @@ export const ProductHero: React.FC<{
       }
     })
   }
+
   return (
-    <Gutter className={classes.productHero}>
-      <div className={classes.mediaWrapper}>
-        {!metaImage && <div className={classes.placeholder}>No image</div>}
-        {metaImage && typeof metaImage !== 'string' && <Gal images={images} />}
-      </div>
-
-      <div className={classes.details}>
-        <h3 className={classes.title}>{title}</h3>
-
-        <div className={classes.categoryWrapper}>
-          <div className={classes.categories}>
-            {categories?.map((category, index) => {
-              if (typeof category === 'object' && category !== null) {
-                const { title: categoryTitle } = category
-
-                const titleToUse = categoryTitle || 'Untitled category'
-
-                const isLast = index === categories.length - 1
-
-                return (
-                  <p key={index} className={classes.category}>
-                    {titleToUse} {!isLast && <Fragment>, &nbsp;</Fragment>}
-                    <span className={classes.separator}>|</span>
-                  </p>
-                )
-              }
-            })}
+    <>
+      <section className="bg-primary pt-5 pb-16">
+        <div className="flex justify-between px-5 pt-5 pb-7">
+          <div>
+            <IoArrowBackOutline className="text-3xl text-customWhite" />
           </div>
-          <p className={classes.stock}>In stock</p>
+          <div>
+            <IoShareOutline className="text-3xl text-customWhite mr-5" />
+            <IoHeartOutline className="text-3xl text-customWhite" />
+          </div>
         </div>
-        <p>{`€ ${price}`}</p>
+        <div className="">
+          <Image
+            alt="Image with black credit card"
+            src="/media/gtLabel.png"
+            height="300"
+            width="200"
+            className="mb-5 mx-auto"
+          />
+        </div>
+      </section>
+      <Gutter className={classes.productHero}>
+        <div className={classes.details}>
+          <h3 className={classes.title}>{title}</h3>
 
-        <div className="pt-5 pb-5">
-          <Tabs>
-            <TabList>
-              <Tab>
-                <h6>Description</h6>
-              </Tab>
-              <Tab>
-                <h6>Details</h6>
-              </Tab>
-              <Tab>
-                <h6>FAQ</h6>
-              </Tab>
-            </TabList>
-            <div className="p3">
-              <TabPanel className="">
-                <div
-                  style={{
-                    height: '200px', // Stała wysokość ramki
-                    overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                    overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                    border: 'none', // Usunięcie obramowania
-                    outline: 'none', // Usunięcie obramowania po kliknięciu
-                    scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                    scrollbarColor:
-                      'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                  }}
-                >
-                  <RichText content={productDescription.richText} />
-                </div>
-              </TabPanel>
-              <TabPanel>
-                <div
-                  style={{
-                    height: '200px', // Stała wysokość ramki
-                    overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                    overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                    border: 'none', // Usunięcie obramowania
-                    outline: 'none', // Usunięcie obramowania po kliknięciu
-                    scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                    scrollbarColor:
-                      'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                  }}
-                >
-                  <RichText content={productDetails.richText} />
-                </div>
-              </TabPanel>
-              <TabPanel>
-                <div
-                  style={{
-                    height: '200px', // Stała wysokość ramki
-                    overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                    overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                    border: 'none', // Usunięcie obramowania
-                    outline: 'none', // Usunięcie obramowania po kliknięciu
-                    scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                    scrollbarColor:
-                      'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                  }}
-                >
-                  <RichText content={productFaq.richText} />
-                </div>
-              </TabPanel>
+          {/* In stock and price*/}
+          <div className={classes.categoryWrapper}>
+            <div className={classes.categories}>
+              {categories?.map((category, index) => {
+                if (typeof category === 'object' && category !== null) {
+                  const { title: categoryTitle } = category
+
+                  const titleToUse = categoryTitle || 'Untitled category'
+
+                  const isLast = index === categories.length - 1
+
+                  return (
+                    <p key={index} className={classes.category}>
+                      {titleToUse} {!isLast && <Fragment>, &nbsp;</Fragment>}
+                      <span className={classes.separator}>|</span>
+                    </p>
+                  )
+                }
+              })}
             </div>
-          </Tabs>
-        </div>
+            <p className={classes.stock}>In stock</p>
+          </div>
+          <p>{`€ ${price}`}</p>
 
-        <AddToCartButton product={product} className={classes.addToCartButton} />
-      </div>
-      <br />
-    </Gutter>
+          {/*Descriptions */}
+          <div className="pt-5 pb-5">
+            <Tabs>
+              <TabList>
+                <Tab>
+                  <h6>Description</h6>
+                </Tab>
+                <Tab>
+                  <h6>Details</h6>
+                </Tab>
+                <Tab>
+                  <h6>FAQ</h6>
+                </Tab>
+              </TabList>
+              <div className="p3">
+                <TabPanel className="">
+                  <div
+                    style={{
+                      height: '200px', // Stała wysokość ramki
+                      overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
+                      overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
+                      border: 'none', // Usunięcie obramowania
+                      outline: 'none', // Usunięcie obramowania po kliknięciu
+                      scrollbarWidth: 'thin' /* Grubość paska przewijania */,
+                      scrollbarColor:
+                        'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
+                    }}
+                  >
+                    <RichText content={productDescription.richText} />
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <div
+                    style={{
+                      height: '200px', // Stała wysokość ramki
+                      overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
+                      overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
+                      border: 'none', // Usunięcie obramowania
+                      outline: 'none', // Usunięcie obramowania po kliknięciu
+                      scrollbarWidth: 'thin' /* Grubość paska przewijania */,
+                      scrollbarColor:
+                        'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
+                    }}
+                  >
+                    <RichText content={productDetails.richText} />
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <div
+                    style={{
+                      height: '200px', // Stała wysokość ramki
+                      overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
+                      overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
+                      border: 'none', // Usunięcie obramowania
+                      outline: 'none', // Usunięcie obramowania po kliknięciu
+                      scrollbarWidth: 'thin' /* Grubość paska przewijania */,
+                      scrollbarColor:
+                        'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
+                    }}
+                  >
+                    <RichText content={productFaq.richText} />
+                  </div>
+                </TabPanel>
+              </div>
+            </Tabs>
+          </div>
+
+          <AddToCartButton product={product} className={classes.addToCartButton} />
+        </div>
+        <br />
+      </Gutter>
+    </>
   )
 }

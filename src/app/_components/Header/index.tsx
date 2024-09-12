@@ -13,28 +13,41 @@ export function Header() {
   const [header, setHeader] = useState<HeaderType | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [retryCount, setRetryCount] = useState(0)
 
   useEffect(() => {
     const loadHeader = async () => {
       try {
         const headerData = await fetchHeader()
         setHeader(headerData)
+        setError(null) // Wyczyszczenie błędu, jeśli dane zostały załadowane poprawnie
       } catch (error) {
-        setError('Failed to load header')
+        console.error('Error loading header:', error) // Logujemy szczegóły błędu
+        setError('Failed to load header. Please try again.')
       } finally {
         setLoading(false)
       }
     }
 
     loadHeader()
-  }, [])
+  }, [retryCount])
+
+  const handleRetry = () => {
+    setLoading(true)
+    setRetryCount(prevCount => prevCount + 1)
+  }
 
   if (loading) {
     return <div>Loading...</div> // Możesz użyć spinnera lub innego wskaźnika ładowania
   }
 
   if (error) {
-    return <div>{error}</div> // Wyświetl błąd w przypadku problemów z ładowaniem
+    return (
+      <div>
+        {error}
+        <button onClick={handleRetry}>Retry</button> {/* Przycisk ponownej próby */}
+      </div>
+    )
   }
 
   if (!header) {
