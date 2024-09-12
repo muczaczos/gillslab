@@ -758,6 +758,11 @@
   padding-right: 5rem !important;
 }
 
+.px-3 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem !important;
 }

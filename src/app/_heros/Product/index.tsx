@@ -136,8 +136,8 @@ export const ProductHero: React.FC<{
           <RichText className="mb-10 text-lg text-customGray-dark font-medium" content={productDescription.richText} />
           <SmallCarousel catLabels={catLabels} images={images} />
           <div className="mt-5 flex justify-between items-center">
-            <p className="text-primary text-6xl font-bold">{`€${price}`}</p>
-            <AddToCartButton product={product} className="bg-secondary px-5 flex h-16 items-center text-customWhite font-bold" />    
+            <p className="text-primary text-5xl font-medium">{`€${price}`}</p>
+            <AddToCartButton product={product} className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold" />    
           </div>
           {/*Descriptions */}
           <div className="pt-5 pb-5">
