@@ -62,6 +62,7 @@ export const ProductHero: React.FC<{
     })
   }
 
+  const websiteUrl = process.env.NEXT_PUBLIC_SERVER_URL
   return (
     <>
       <section className="bg-primary pt-5 pb-16">
@@ -77,7 +78,7 @@ export const ProductHero: React.FC<{
         <div className="">
           <Image
             alt="Image with black credit card"
-            src="/media/gtLabel.png"
+            src={`${websiteUrl}/media/gtLabel.png`}
             height="300"
             width="200"
             className="mb-5 mx-auto"
