@@ -1752,6 +1752,7 @@ type Product {
   id: String
   hideFooter: Boolean
   title: String
+  title2: String
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Product_Media1_where): Media
@@ -9387,6 +9388,7 @@ type Products {
 input Product_where {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
+  title2: Product_title2_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -9425,6 +9427,17 @@ input Product_title_operator {
   in: [String]
   not_in: [String]
   all: [String]
+}
+
+input Product_title2_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
 }
 
 input Product_price_operator {
@@ -9610,6 +9623,7 @@ input Product_id_operator {
 input Product_where_and {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
+  title2: Product_title2_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -9637,6 +9651,7 @@ input Product_where_and {
 input Product_where_or {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
+  title2: Product_title2_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -9677,6 +9692,7 @@ type productsDocAccess {
 type ProductsDocAccessFields {
   hideFooter: ProductsDocAccessFields_hideFooter
   title: ProductsDocAccessFields_title
+  title2: ProductsDocAccessFields_title2
   price: ProductsDocAccessFields_price
   weight: ProductsDocAccessFields_weight
   media1: ProductsDocAccessFields_media1
@@ -9741,6 +9757,29 @@ type ProductsDocAccessFields_title_Update {
 }
 
 type ProductsDocAccessFields_title_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_title2 {
+  create: ProductsDocAccessFields_title2_Create
+  read: ProductsDocAccessFields_title2_Read
+  update: ProductsDocAccessFields_title2_Update
+  delete: ProductsDocAccessFields_title2_Delete
+}
+
+type ProductsDocAccessFields_title2_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_title2_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_title2_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_title2_Delete {
   permission: Boolean!
 }
 
@@ -10294,6 +10333,7 @@ type ProductVersion {
 type ProductVersion_Version {
   hideFooter: Boolean
   title: String
+  title2: String
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ProductVersion_Version_Media1_where): Media
@@ -11100,6 +11140,7 @@ input versionsProduct_where {
   parent: versionsProduct_parent_operator
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
+  version__title2: versionsProduct_version__title2_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -11150,6 +11191,17 @@ input versionsProduct_version__title_operator {
   in: [String]
   not_in: [String]
   all: [String]
+}
+
+input versionsProduct_version__title2_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
 }
 
 input versionsProduct_version__price_operator {
@@ -11364,6 +11416,7 @@ input versionsProduct_where_and {
   parent: versionsProduct_parent_operator
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
+  version__title2: versionsProduct_version__title2_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -11395,6 +11448,7 @@ input versionsProduct_where_or {
   parent: versionsProduct_parent_operator
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
+  version__title2: versionsProduct_version__title2_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -18869,6 +18923,7 @@ type productsAccess {
 type ProductsFields {
   hideFooter: ProductsFields_hideFooter
   title: ProductsFields_title
+  title2: ProductsFields_title2
   price: ProductsFields_price
   weight: ProductsFields_weight
   media1: ProductsFields_media1
@@ -18933,6 +18988,29 @@ type ProductsFields_title_Update {
 }
 
 type ProductsFields_title_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_title2 {
+  create: ProductsFields_title2_Create
+  read: ProductsFields_title2_Read
+  update: ProductsFields_title2_Update
+  delete: ProductsFields_title2_Delete
+}
+
+type ProductsFields_title2_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_title2_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_title2_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_title2_Delete {
   permission: Boolean!
 }
 
@@ -23442,6 +23520,7 @@ enum PageUpdate__status_MutationInput {
 input mutationProductInput {
   hideFooter: Boolean
   title: String!
+  title2: String
   price: String!
   weight: Float!
   media1: String
@@ -23477,6 +23556,7 @@ enum Product__status_MutationInput {
 input mutationProductUpdateInput {
   hideFooter: Boolean
   title: String
+  title2: String
   price: String
   weight: Float
   media1: String

@@ -26,6 +26,7 @@ export const ProductHero: React.FC<{
 }> = ({ product }) => {
   const {
     title,
+    title2,
     categories,
     price,
     media1,
@@ -70,6 +71,7 @@ export const ProductHero: React.FC<{
   const websiteUrl = process.env.NEXT_PUBLIC_SERVER_URL
   return (
     <>
+      {/* main image with buttons */}
       <section className="bg-primary pt-5 pb-16">
         <div className="flex justify-between px-5 pt-5 pb-7">
           <div>
@@ -90,9 +92,13 @@ export const ProductHero: React.FC<{
           />
         </div>
       </section>
-      <Gutter className={classes.productHero}>
-        <div className={classes.details}>
-          <h3 className={classes.title}>{title}</h3>
+
+      {/* titles and descriptions */}
+      <section className="px-5 bg-customWhite">
+        <hr className="border-l-gray-100 my-4 border-t-2 w-1/2 opacity-30 mt-5 mb-3" />
+        <div className="">
+          <h3 className="text-primary text-2xl">{title}</h3>
+          <p className="text-primary-light">{title2}</p>
 
           {/* In stock and price*/}
           <div className={classes.categoryWrapper}>
@@ -188,7 +194,7 @@ export const ProductHero: React.FC<{
           <AddToCartButton product={product} className={classes.addToCartButton} />
         </div>
         <br />
-      </Gutter>
+      </section>
     </>
   )
 }

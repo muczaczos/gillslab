@@ -19,6 +19,7 @@ export const PRODUCT = `
         hideFooter
         id
         title
+        title2
         price
         weight
         media1 {

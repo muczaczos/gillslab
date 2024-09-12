@@ -51,6 +51,11 @@ const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: 'title2',
+      type: 'text',
+      required: false,
+    },
+    {
       name: 'price',
       type: 'text',
       required: true,

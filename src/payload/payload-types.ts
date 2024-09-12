@@ -673,6 +673,7 @@ export interface Product {
   id: string;
   hideFooter?: boolean | null;
   title: string;
+  title2?: string | null;
   price: string;
   weight: number;
   media1?: string | Media | null;
