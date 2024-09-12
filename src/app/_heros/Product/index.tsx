@@ -1,7 +1,12 @@
 'use client'
 
 import React, { Fragment } from 'react'
-import { IoArrowBackSharp, IoHeartOutline, IoShareOutline, IoArrowBackOutline } from 'react-icons/io5'
+import {
+  IoArrowBackOutline,
+  IoArrowBackSharp,
+  IoHeartOutline,
+  IoShareOutline,
+} from 'react-icons/io5'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 import Image from 'next/image'
 
