@@ -84,18 +84,19 @@ export const ProductHero: React.FC<{
         </div>
         <div className="">
           <Image
-            alt="Image with black credit card"
-            src={`${media1['url']}`}
+            alt="Product Image"
+            src={`${websiteUrl}/media/gtLabel.png`}
             height="300"
             width="200"
             className="mb-5 mx-auto bg-customWhite"
           />
         </div>
       </section>
-
+      <div className="bg-customWhite pt-5 pb-3">
+        <hr className="border-l-gray-100 w-1/3 opacity-30 py-0 my-0" />
+      </div>
       {/* titles and descriptions */}
       <section className="px-5 bg-customWhite">
-        <hr className="border-l-gray-100 my-4 border-t-2 w-1/2 opacity-30 mt-5 mb-3" />
         <div className="">
           <h3 className="text-primary text-2xl">{title}</h3>
           <p className="text-primary-light">{title2}</p>
