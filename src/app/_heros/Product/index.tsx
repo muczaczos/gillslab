@@ -31,6 +31,10 @@ export const ProductHero: React.FC<{
   const {
     title,
     title2,
+    shortInfo1,
+    shortInfo2,
+    shortInfo3,
+    shortInfo4,
     categories,
     price,
     media1,
@@ -42,10 +46,9 @@ export const ProductHero: React.FC<{
   let productDescription
   let productDetails
   let productFaq
-
   const images = []
   const icons = [GiWateringCan, LiaTemperatureLowSolid, GiWeight, TbSunOff]
-  const infoLabels = ['Watering needed', 'Betwen 20-25*C', 'Weight 1.2kg', 'No direct sun']
+  const infoLabels = [shortInfo1, shortInfo2, shortInfo3, shortInfo4]
 
   if (media1) {
     images.push(media1['url'])

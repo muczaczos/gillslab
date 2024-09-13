@@ -20,6 +20,10 @@ export const PRODUCT = `
         id
         title
         title2
+        shortInfo1
+        shortInfo2
+        shortInfo3
+        shortInfo4
         price
         weight
         media1 {

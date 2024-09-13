@@ -56,6 +56,30 @@ const Products: CollectionConfig = {
       required: false,
     },
     {
+      name: 'shortInfo1',
+      type: 'text',
+      required: false,
+      maxLength: 15,
+    },
+    {
+      name: 'shortInfo2',
+      type: 'text',
+      required: false,
+      maxLength: 15,
+    },
+    {
+      name: 'shortInfo3',
+      type: 'text',
+      required: false,
+      maxLength: 15,
+    },
+    {
+      name: 'shortInfo4',
+      type: 'text',
+      required: false,
+      maxLength: 15,
+    },
+    {
       name: 'price',
       type: 'text',
       required: true,

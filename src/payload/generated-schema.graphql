@@ -1753,6 +1753,10 @@ type Product {
   hideFooter: Boolean
   title: String
   title2: String
+  shortInfo1: String
+  shortInfo2: String
+  shortInfo3: String
+  shortInfo4: String
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Product_Media1_where): Media
@@ -9389,6 +9393,10 @@ input Product_where {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
   title2: Product_title2_operator
+  shortInfo1: Product_shortInfo1_operator
+  shortInfo2: Product_shortInfo2_operator
+  shortInfo3: Product_shortInfo3_operator
+  shortInfo4: Product_shortInfo4_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -9430,6 +9438,50 @@ input Product_title_operator {
 }
 
 input Product_title2_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_shortInfo1_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_shortInfo2_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_shortInfo3_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_shortInfo4_operator {
   equals: String
   not_equals: String
   like: String
@@ -9624,6 +9676,10 @@ input Product_where_and {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
   title2: Product_title2_operator
+  shortInfo1: Product_shortInfo1_operator
+  shortInfo2: Product_shortInfo2_operator
+  shortInfo3: Product_shortInfo3_operator
+  shortInfo4: Product_shortInfo4_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -9652,6 +9708,10 @@ input Product_where_or {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
   title2: Product_title2_operator
+  shortInfo1: Product_shortInfo1_operator
+  shortInfo2: Product_shortInfo2_operator
+  shortInfo3: Product_shortInfo3_operator
+  shortInfo4: Product_shortInfo4_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -9693,6 +9753,10 @@ type ProductsDocAccessFields {
   hideFooter: ProductsDocAccessFields_hideFooter
   title: ProductsDocAccessFields_title
   title2: ProductsDocAccessFields_title2
+  shortInfo1: ProductsDocAccessFields_shortInfo1
+  shortInfo2: ProductsDocAccessFields_shortInfo2
+  shortInfo3: ProductsDocAccessFields_shortInfo3
+  shortInfo4: ProductsDocAccessFields_shortInfo4
   price: ProductsDocAccessFields_price
   weight: ProductsDocAccessFields_weight
   media1: ProductsDocAccessFields_media1
@@ -9780,6 +9844,98 @@ type ProductsDocAccessFields_title2_Update {
 }
 
 type ProductsDocAccessFields_title2_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo1 {
+  create: ProductsDocAccessFields_shortInfo1_Create
+  read: ProductsDocAccessFields_shortInfo1_Read
+  update: ProductsDocAccessFields_shortInfo1_Update
+  delete: ProductsDocAccessFields_shortInfo1_Delete
+}
+
+type ProductsDocAccessFields_shortInfo1_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo1_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo1_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo1_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo2 {
+  create: ProductsDocAccessFields_shortInfo2_Create
+  read: ProductsDocAccessFields_shortInfo2_Read
+  update: ProductsDocAccessFields_shortInfo2_Update
+  delete: ProductsDocAccessFields_shortInfo2_Delete
+}
+
+type ProductsDocAccessFields_shortInfo2_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo2_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo2_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo2_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo3 {
+  create: ProductsDocAccessFields_shortInfo3_Create
+  read: ProductsDocAccessFields_shortInfo3_Read
+  update: ProductsDocAccessFields_shortInfo3_Update
+  delete: ProductsDocAccessFields_shortInfo3_Delete
+}
+
+type ProductsDocAccessFields_shortInfo3_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo3_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo3_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo3_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo4 {
+  create: ProductsDocAccessFields_shortInfo4_Create
+  read: ProductsDocAccessFields_shortInfo4_Read
+  update: ProductsDocAccessFields_shortInfo4_Update
+  delete: ProductsDocAccessFields_shortInfo4_Delete
+}
+
+type ProductsDocAccessFields_shortInfo4_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo4_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo4_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_shortInfo4_Delete {
   permission: Boolean!
 }
 
@@ -10334,6 +10490,10 @@ type ProductVersion_Version {
   hideFooter: Boolean
   title: String
   title2: String
+  shortInfo1: String
+  shortInfo2: String
+  shortInfo3: String
+  shortInfo4: String
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ProductVersion_Version_Media1_where): Media
@@ -11141,6 +11301,10 @@ input versionsProduct_where {
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
   version__title2: versionsProduct_version__title2_operator
+  version__shortInfo1: versionsProduct_version__shortInfo1_operator
+  version__shortInfo2: versionsProduct_version__shortInfo2_operator
+  version__shortInfo3: versionsProduct_version__shortInfo3_operator
+  version__shortInfo4: versionsProduct_version__shortInfo4_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -11194,6 +11358,50 @@ input versionsProduct_version__title_operator {
 }
 
 input versionsProduct_version__title2_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__shortInfo1_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__shortInfo2_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__shortInfo3_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__shortInfo4_operator {
   equals: String
   not_equals: String
   like: String
@@ -11417,6 +11625,10 @@ input versionsProduct_where_and {
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
   version__title2: versionsProduct_version__title2_operator
+  version__shortInfo1: versionsProduct_version__shortInfo1_operator
+  version__shortInfo2: versionsProduct_version__shortInfo2_operator
+  version__shortInfo3: versionsProduct_version__shortInfo3_operator
+  version__shortInfo4: versionsProduct_version__shortInfo4_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -11449,6 +11661,10 @@ input versionsProduct_where_or {
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
   version__title2: versionsProduct_version__title2_operator
+  version__shortInfo1: versionsProduct_version__shortInfo1_operator
+  version__shortInfo2: versionsProduct_version__shortInfo2_operator
+  version__shortInfo3: versionsProduct_version__shortInfo3_operator
+  version__shortInfo4: versionsProduct_version__shortInfo4_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -18924,6 +19140,10 @@ type ProductsFields {
   hideFooter: ProductsFields_hideFooter
   title: ProductsFields_title
   title2: ProductsFields_title2
+  shortInfo1: ProductsFields_shortInfo1
+  shortInfo2: ProductsFields_shortInfo2
+  shortInfo3: ProductsFields_shortInfo3
+  shortInfo4: ProductsFields_shortInfo4
   price: ProductsFields_price
   weight: ProductsFields_weight
   media1: ProductsFields_media1
@@ -19011,6 +19231,98 @@ type ProductsFields_title2_Update {
 }
 
 type ProductsFields_title2_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo1 {
+  create: ProductsFields_shortInfo1_Create
+  read: ProductsFields_shortInfo1_Read
+  update: ProductsFields_shortInfo1_Update
+  delete: ProductsFields_shortInfo1_Delete
+}
+
+type ProductsFields_shortInfo1_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo1_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo1_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo1_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo2 {
+  create: ProductsFields_shortInfo2_Create
+  read: ProductsFields_shortInfo2_Read
+  update: ProductsFields_shortInfo2_Update
+  delete: ProductsFields_shortInfo2_Delete
+}
+
+type ProductsFields_shortInfo2_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo2_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo2_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo2_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo3 {
+  create: ProductsFields_shortInfo3_Create
+  read: ProductsFields_shortInfo3_Read
+  update: ProductsFields_shortInfo3_Update
+  delete: ProductsFields_shortInfo3_Delete
+}
+
+type ProductsFields_shortInfo3_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo3_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo3_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo3_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo4 {
+  create: ProductsFields_shortInfo4_Create
+  read: ProductsFields_shortInfo4_Read
+  update: ProductsFields_shortInfo4_Update
+  delete: ProductsFields_shortInfo4_Delete
+}
+
+type ProductsFields_shortInfo4_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo4_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo4_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_shortInfo4_Delete {
   permission: Boolean!
 }
 
@@ -23521,6 +23833,10 @@ input mutationProductInput {
   hideFooter: Boolean
   title: String!
   title2: String
+  shortInfo1: String
+  shortInfo2: String
+  shortInfo3: String
+  shortInfo4: String
   price: String!
   weight: Float!
   media1: String
@@ -23557,6 +23873,10 @@ input mutationProductUpdateInput {
   hideFooter: Boolean
   title: String
   title2: String
+  shortInfo1: String
+  shortInfo2: String
+  shortInfo3: String
+  shortInfo4: String
   price: String
   weight: Float
   media1: String
