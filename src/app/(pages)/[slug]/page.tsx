@@ -131,7 +131,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
             </Gutter>
-            <SmallCarousel catLabels={catLabels} images={images} />
+            <SmallCarousel icons={null} catLabels={catLabels} images={images} />
           </section>
 
           {/* promotions banner */}

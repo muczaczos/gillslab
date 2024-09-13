@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import styles from './index.module.scss'
 
-const SmallCarousel = ({ images, catLabels }) => {
+const SmallCarousel = ({ icons, images, catLabels }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -73,12 +73,21 @@ const SmallCarousel = ({ images, catLabels }) => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {images.map((image, index) => (
-        <div className={styles.slide} key={index}>
-          <Image src={image} alt={`Slide ${index}`} width={80} height={100} />
-          <h3 className="text-xl text-primary opacity-70">{catLabels[index]}</h3>
-        </div>
-      ))}
+      {images &&
+        images.map((image, index) => (
+          <div className={styles.slide} key={index}>
+            <Image src={image} alt={`Slide ${index}`} width={80} height={100} />
+            <h3 className="text-xl text-primary opacity-70">{catLabels[index]}</h3>
+          </div>
+        ))}
+      {icons &&
+        icons.map((IconComponent, index) => (
+          <div className={styles.slide} key={index}>
+            {/* Renderowanie ikony */}
+            <IconComponent size={50} color="#4968AC" />
+            <h3 className="text-xs text-primary opacity-70">{catLabels[index]}</h3>
+          </div>
+        ))}
       <div className="flex-shrink-0 w-[100px]"></div>
     </div>
   )

@@ -1,12 +1,15 @@
 'use client'
 
 import React, { Fragment } from 'react'
+import { GiWateringCan, GiWeight } from 'react-icons/gi'
 import {
   IoArrowBackOutline,
   IoArrowBackSharp,
   IoHeartOutline,
   IoShareOutline,
 } from 'react-icons/io5'
+import { LiaTemperatureLowSolid } from 'react-icons/lia'
+import { TbSunOff } from 'react-icons/tb'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 import Image from 'next/image'
 
@@ -16,11 +19,11 @@ import Gal from '../../_components/Gal'
 import { Gutter } from '../../_components/Gutter'
 import { Media } from '../../_components/Media'
 import RichText from '../../_components/RichText'
+import SmallCarousel from '../../_components/SmallCarousel'
 
 import 'react-tabs/style/react-tabs.css'
 
 import classes from './index.module.scss'
-import SmallCarousel from '../../_components/SmallCarousel'
 
 export const ProductHero: React.FC<{
   product: Product
@@ -40,16 +43,9 @@ export const ProductHero: React.FC<{
   let productDetails
   let productFaq
 
-  const images = [
-    '/media/growkitsCat.png',
-    '/media/sporesCat.png',
-    '/media/liquidCat.png',
-    '/media/labCat.png',
-    '/media/substrateCat.png',
-  ]
-
-  const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
-
+  const images = []
+  const icons = [GiWateringCan, LiaTemperatureLowSolid, GiWeight, TbSunOff]
+  const infoLabels = ['Watering needed', 'Betwen 20-25*C', 'Weight 1.2kg', 'No direct sun']
 
   if (media1) {
     images.push(media1['url'])
@@ -133,11 +129,17 @@ export const ProductHero: React.FC<{
             </div>
             <p className="text-green-700 text-md font-bold">In stock</p>
           </div>
-          <RichText className="mb-10 text-lg text-customGray-dark font-medium" content={productDescription.richText} />
-          <SmallCarousel catLabels={catLabels} images={images} />
+          <RichText
+            className="mb-10 text-lg text-customGray-dark font-medium"
+            content={productDescription.richText}
+          />
+          <SmallCarousel icons={icons} catLabels={infoLabels} images={null} />
           <div className="mt-5 flex justify-between items-center">
             <p className="text-primary text-5xl font-medium">{`€${price}`}</p>
-            <AddToCartButton product={product} className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold" />    
+            <AddToCartButton
+              product={product}
+              className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold"
+            />
           </div>
           {/*Descriptions */}
           <div className="pt-5 pb-5">
@@ -186,7 +188,6 @@ export const ProductHero: React.FC<{
               </div>
             </Tabs>
           </div>
-
         </div>
         <br />
       </section>
