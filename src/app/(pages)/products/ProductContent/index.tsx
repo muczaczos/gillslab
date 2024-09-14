@@ -10,6 +10,8 @@ import { Gutter } from '../../../_components/Gutter'
 
 import 'react-tabs/style/react-tabs.css'
 
+import classes from './index.module.scss'
+
 export const ProductContent: React.FC<{
   product: Product
 }> = ({ product }) => {
@@ -33,9 +35,9 @@ export const ProductContent: React.FC<{
   }
 
   return (
-    <Gutter className="bg-customWhite">
+    <Gutter className={classes.contentGradient}>
       {/*Descriptions */}
-      <section className="pt-5 pb-5 bg-customWhite">
+      <section className={classes.contentGradient}>
         <Tabs>
           <TabList>
             <Tab>

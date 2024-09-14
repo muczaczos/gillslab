@@ -137,11 +137,6 @@
   margin-bottom: 0px !important;
 }
 
-.my-4 {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-}
-
 .-mt-20 {
   margin-top: -5rem !important;
 }
@@ -522,10 +517,6 @@
   border-right-width: 0px !important;
 }
 
-.border-t-2 {
-  border-top-width: 2px !important;
-}
-
 .border-solid {
   border-style: solid !important;
 }
@@ -662,6 +653,10 @@
 
 .bg-\[url\(\'\/media\/hero-big\.png\'\)\] {
   background-image: url('/media/hero-big.png') !important;
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops)) !important;
 }
 
 .bg-cover {

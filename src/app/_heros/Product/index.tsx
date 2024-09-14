@@ -97,8 +97,7 @@ export const ProductHero: React.FC<{
       </div>
 
       {/* titles, short descriptions, price and addToCart button */}
-
-      <section className="px-5 bg-customWhite">
+      <section className="px-5 bg-customWhite ">
         <h3 className="text-primary text-2xl">{title}</h3>
         <p className="text-primary-light text-xl">{title2}</p>
 
@@ -129,7 +128,7 @@ export const ProductHero: React.FC<{
           content={productDescription.richText}
         />
         <SmallCarousel icons={icons} catLabels={infoLabels} images={null} />
-        <div className="mt-5 flex justify-between items-center">
+        <div className="mt-5 flex justify-between items-center pb-5">
           <p className="text-primary text-5xl font-medium">{`€${price}`}</p>
           <AddToCartButton
             product={product}
@@ -137,7 +136,6 @@ export const ProductHero: React.FC<{
           />
         </div>
       </section>
-      <br />
     </>
   )
 }
