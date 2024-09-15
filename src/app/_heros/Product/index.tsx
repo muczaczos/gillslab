@@ -97,7 +97,7 @@ export const ProductHero: React.FC<{
       </div>
 
       {/* titles, short descriptions, price and addToCart button */}
-      <section className="px-5 bg-customWhite ">
+      <section className="px-5 bg-customWhite pb-5">
         <h3 className="text-primary text-2xl">{title}</h3>
         <p className="text-primary-light text-xl">{title2}</p>
 

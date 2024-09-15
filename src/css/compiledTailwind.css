@@ -655,10 +655,6 @@
   background-image: url('/media/hero-big.png') !important;
 }
 
-.bg-gradient-to-b {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops)) !important;
-}
-
 .bg-cover {
   background-size: cover !important;
 }

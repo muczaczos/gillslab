@@ -3,6 +3,49 @@
 @use './type.scss' as *;
 @import "./theme.scss";
 
+.react-tabs__tab-list {
+  border: none !important; /* Usunięcie obramowania */
+  outline: none !important; /* Usuń obrys */
+  box-shadow: none !important; /* Usuń cień */
+  border-bottom: none !important;
+}
+
+.react-tabs__tab {
+  h6 {
+    font-weight: 400;
+  }
+}
+
+.react-tabs__tab {
+  padding: 15px 20px !important;
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: 900 !important;
+  color: #F7F9FB;
+  border: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: #F7F9FB;
+  }
+}
+
+.react-tabs__tab--selected {
+  color: #F7F9FB;
+  border-left: 1px solid #F7F9FB !important; 
+  border-top: 1px solid #F7F9FB !important;
+  border-right: 1px solid #F7F9FB !important;
+  outline: none !important; /* Usuń obrys */
+ 
+}
+
+.react-tabs__tab--selected::after {
+  display: none;
+}
+
+
 
 :root {
   --base: 24px;

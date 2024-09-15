@@ -13,7 +13,7 @@ import '../css/compiledTailwind.css'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
+  weight: ['100', '200', '400', '700', '900'],
   variable: '--font-jost',
 })
 

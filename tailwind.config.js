@@ -9,6 +9,8 @@ module.exports = {
         xs: { max: '389px' }, // Breakpoint dla szerokości do 400px
       },
       colors: {
+        productTop: '#4968AC',
+        productBottom: '#2D4069',
         primary: {
           light: '#5A7FD0',
           DEFAULT: '#4968AC',
