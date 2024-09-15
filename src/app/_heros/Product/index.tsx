@@ -65,7 +65,6 @@ export const ProductHero: React.FC<{
       }
     })
   }
-
   const websiteUrl = process.env.NEXT_PUBLIC_SERVER_URL
   return (
     <>

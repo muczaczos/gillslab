@@ -5,7 +5,7 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 
 import { Product } from '../../../../payload/payload-types'
 import RichText from '../../../_components/RichText'
-
+import Image from 'next/image'
 import { Gutter } from '../../../_components/Gutter'
 
 import 'react-tabs/style/react-tabs.css'
@@ -17,7 +17,6 @@ export const ProductContent: React.FC<{
 }> = ({ product }) => {
   let productDetails
   let productFaq
-
   // Sprawdź, czy istnieje layout w produkcie, aby uniknąć błędów w czasie wykonania
   if (product.layout) {
     // Iteruj przez każdy element w layout
@@ -36,8 +35,42 @@ export const ProductContent: React.FC<{
 
   return (
     <Gutter className={classes.contentGradient}>
-      {/*Descriptions */}
-      <section className={classes.contentGradient}>
+      
+      <div className="mt-8 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-customWhite pl-5 py-4">
+        <h6 className="text-customWhite text-4xl font-medium">Gallery</h6>
+      </div>
+
+      {/*Gallery */}
+      <section className="mb-10 flex gap-4 p-4 bg-transparent h-[300px]">
+        <div className="flex-none w-2/3 h-full">
+          <img
+            src="/media/gtLabel.png"
+            alt="Main Image"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
+        <div className="flex flex-col gap-4 w-1/3 h-full">
+          <img
+            src="/media/gtLabel.png"
+            alt="Image 1"
+            className="w-full h-1/3 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src="/media/gtLabel.png"
+            alt="Image 2"
+            className="w-full h-1/3 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src="/media/gtLabel.png"
+            alt="Image 3"
+            className="w-full h-1/3 object-cover rounded-lg shadow-md"
+          />
+        </div>
+      </section>
+
+      {/*Details and FAQ */}
+      <section className="mb-10">
         <Tabs>
           <TabList>
             <Tab>

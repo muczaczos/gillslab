@@ -9,6 +9,7 @@ import { fetchDoc } from '../../../_api/fetchDoc'
 import { fetchDocs } from '../../../_api/fetchDocs'
 import { Blocks } from '../../../_components/Blocks'
 import { ProductHero } from '../../../_heros/Product'
+import { RelatedMovies } from '../RelatedMovies'
 import { generateMeta } from '../../../_utilities/generateMeta'
 import LayoutWithNoHeaderAndFooter from '../../../layouts/withNoFooter/layout'
 import { ProductContent } from '../ProductContent'
@@ -20,6 +21,7 @@ export default async function Products({ params: { slug } }) {
 
   let productDetails
   let productFaq
+
 
   try {
     product = await fetchDoc<Product>({
@@ -57,27 +59,7 @@ export default async function Products({ params: { slug } }) {
     <LayoutWithNoHeaderAndFooter>
       <ProductHero product={product} />
       <ProductContent product={product} />
-      <Blocks
-        disableTopPadding
-        blocks={[
-          {
-            blockType: 'relatedProducts',
-            blockName: 'Related Product',
-            relationTo: 'products',
-            introContent: [
-              {
-                type: 'h3',
-                children: [
-                  {
-                    text: 'Related Products',
-                  },
-                ],
-              },
-            ],
-            docs: relatedProducts,
-          },
-        ]}
-      />
+      <RelatedMovies />
     </LayoutWithNoHeaderAndFooter>
   )
 }
