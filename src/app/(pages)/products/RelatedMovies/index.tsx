@@ -24,6 +24,13 @@ export const RelatedMovies: React.FC<{}> = () => {
     '/media/gtLabel.png',
   ]
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Płynne przewijanie
+    });
+  };
+
   const catLabels = ['Growkit 1', 'Growkit 2', 'Growkit 3', 'Growkit 4', 'Growkit 5']
 
   return (
@@ -50,7 +57,7 @@ export const RelatedMovies: React.FC<{}> = () => {
         <hr className="border-l-gray-100 w-1/3 opacity-30 py-0 my-0" />
       </div>
 
-      <div className="flex justify-end mt-10">
+      <div onClick={scrollToTop} className="flex justify-end mt-10">
         <FaArrowAltCircleUp className="text-8xl text-primary" />
       </div>
     </Gutter>
