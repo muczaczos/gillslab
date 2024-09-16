@@ -145,6 +145,16 @@
   margin-bottom: 0px !important;
 }
 
+.my-3 {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.my-1 {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
 .-mt-20 {
   margin-top: -5rem !important;
 }
@@ -243,6 +253,14 @@
 
 .mt-8 {
   margin-top: 2rem !important;
+}
+
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+
+.mt-12 {
+  margin-top: 3rem !important;
 }
 
 .block {
@@ -754,6 +772,10 @@
   padding: 1.5rem !important;
 }
 
+.p-1 {
+  padding: 0.25rem !important;
+}
+
 .px-10 {
   padding-left: 2.5rem !important;
   padding-right: 2.5rem !important;
@@ -955,6 +977,10 @@
   font-weight: 100 !important;
 }
 
+.font-semibold {
+  font-weight: 600 !important;
+}
+
 .italic {
   font-style: italic !important;
 }
@@ -969,6 +995,10 @@
 
 .leading-none {
   line-height: 1 !important;
+}
+
+.leading-tight {
+  line-height: 1.25 !important;
 }
 
 .text-black {
@@ -1029,6 +1059,11 @@
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.text-\[\#4968AC\] {
+  --tw-text-opacity: 1 !important;
+  color: rgb(73 104 172 / var(--tw-text-opacity)) !important;
 }
 
 .underline {

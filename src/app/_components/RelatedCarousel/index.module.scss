@@ -1,0 +1,40 @@
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+  scroll-behavior: auto; /* Disables smooth scrolling */
+  cursor: grab;
+  scrollbar-width: none; /* Hides scrollbar on Firefox */
+  width: 100%; /* Ensure it takes full width */
+  margin: 0; /* Remove any default margin */
+  padding-bottom: 1rem; /* Remove any default padding */
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Hides scrollbar on Chrome, Safari, and Opera */
+}
+
+.slider:active {
+  cursor: grabbing;
+}
+
+.slide {
+  color: #4968AC;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  gap:0.5rem;
+  padding: 0.5rem;
+  background-color: #F4F6FB;
+  justify-content: center;
+  align-items: center;
+  min-width: 45%; /* Ensures each slide takes full width */
+  min-height: 13rem;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 1rem;
+  border: 2px solid #4968AC;
+}
+
+.slide img {
+  width: 60%;
+  display: block;
+}
