@@ -3,3 +3,11 @@
     padding-top: 1.25rem; // 20px (tailwind `pt-5`)
     padding-bottom: 1.25rem; // 20px (tailwind `pb-5`)
   }
+
+  .diagonalSection {
+    margin-top:  -1rem;
+      background-color: #E7EAF0;
+      height: 40px;
+      clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 90%);
+  }
+  
