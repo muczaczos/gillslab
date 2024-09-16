@@ -35,8 +35,8 @@ export const RelatedMovies: React.FC<{}> = () => {
 
   return (
     <>
-      <div className={classes.diagonalSection}></div>
-      <Gutter className={classes.relatedGradient}>
+      <div className={classes.diagonalRelated}></div>
+      <Gutter className={`mt-[-2.2rem] ${classes.relatedGradient}`}>
         {/*Related */}
         <section>
           <div className="mt-8 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">

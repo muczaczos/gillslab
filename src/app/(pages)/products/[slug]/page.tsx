@@ -22,7 +22,6 @@ export default async function Products({ params: { slug } }) {
   let productDetails
   let productFaq
 
-
   try {
     product = await fetchDoc<Product>({
       collection: 'products',

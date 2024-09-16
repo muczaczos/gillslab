@@ -3,3 +3,10 @@
     padding-top: 1.25rem; // 20px (tailwind `pt-5`)
     padding-bottom: 1.25rem; // 20px (tailwind `pb-5`)
   }
+
+  .diagonalGallery {
+    margin-bottom: -1rem;
+    background-color: #4968AC;
+    height: 40px;
+    clip-path: polygon(0 15%, 100% 0, 100% 90%, 0 100%);
+}

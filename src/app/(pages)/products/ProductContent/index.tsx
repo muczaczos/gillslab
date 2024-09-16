@@ -35,7 +35,9 @@ export const ProductContent: React.FC<{
   }
 
   return (
-    <Gutter className={classes.contentGradient}>
+    <>
+    <div className={classes.diagonalGallery}></div>
+    <Gutter className={`mt-[-2.25rem] ${classes.contentGradient}`}>
       <div className="mt-8 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-customWhite pl-5 py-4">
         <h6 className="text-customWhite text-4xl font-medium">Gallery</h6>
       </div>
@@ -91,5 +93,6 @@ export const ProductContent: React.FC<{
         </Tabs>
       </section>
     </Gutter>
+    </>
   )
 }
