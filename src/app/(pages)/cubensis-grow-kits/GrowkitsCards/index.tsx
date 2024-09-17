@@ -20,7 +20,7 @@ const GrowkitsCards = ({ pages, products }) => {
           return (
             <div className="">
               <Link  href={href}>
-                <section className="bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl">
+                <section className="shadow-xl bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl">
                 <div className="flex justify-end pt-4 px-4">
                   <FaRegHeart className="text-primary text-4xl" />
                 </div>
