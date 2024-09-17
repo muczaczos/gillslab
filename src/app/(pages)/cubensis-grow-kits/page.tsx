@@ -66,8 +66,8 @@ const GrowKits = async () => {
       </Head>
       <div className="bg-customWhite pb-36">
         <Gutter className="pt-5">
-          <div className="mb-10">
-            <h2 className="text-primary">Cubensis Growkits</h2>
+          <div className="m-0">
+            <h3 className="mb-0 text-primary text-2xl">Cubensis Growkits</h3>
           </div>
 
           <div className={classes.gap}></div>

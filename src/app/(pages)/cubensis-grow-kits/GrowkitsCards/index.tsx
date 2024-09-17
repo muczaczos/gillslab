@@ -27,8 +27,8 @@ const GrowkitsCards = ({ pages, products }) => {
                   <div className="px-16 pb-3 w-full">
                     <Image className="" alt="Cubensis grow kit" src={src} width="350" height="180" />
                   </div>
-                  <h6 className="pl-10 text-2xl text-primary">{title}</h6>
-                  <p className="pl-10 text-xl pb-4 font-bold text-primary">€{price}</p>
+                  <h6 className="pl-5 text-xl text-primary">{title}</h6>
+                  <p className="pl-5 text-xl pb-4 font-bold text-primary">€{price}</p>
                 </section>
               </Link>
               <Link className={classes.link} href={href}>
