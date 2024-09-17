@@ -5,19 +5,20 @@ import Link from 'next/link'
 import classes from './index.module.scss'
 
 const GrowkitsCards = ({ pages, products }) => {
+  const baseUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL
   return (
     <section className="mt-10 flex flex-col gap-5 justify-center md:flex-wrap md:flex-row md:justify-between">
       {pages.map((item, index) => {
         if (item !== null) {
           if (!item) return null
-          const src = '/media/' + item.meta.image.filename
+          const src = baseUrl + '/media/' + item.meta.image.filename
           const href = process.env.NEXT_PUBLIC_SERVER_URL + '/products/' + item.slug
           const title = item.title
           const description = item.meta.description
           const price = item.price
           return (
             <div className="">
-              <Link className="" href={href}>
+              <Link className="border-2 border-solid border-black" href={href}>
                 <div className="w-full">
                   <Image className="" alt="Cubensis grow kit" src={src} width="350" height="180" />
                 </div>

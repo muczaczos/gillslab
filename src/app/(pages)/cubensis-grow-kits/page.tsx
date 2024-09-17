@@ -9,6 +9,7 @@ import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import GrowkitsCards from './GrowkitsCards'
 
 import classes from './index.module.scss'
@@ -40,7 +41,7 @@ const GrowKits = async () => {
   })
 
   return (
-    <>
+    <LayoutWithHeaderFooter>
       <Head>
         {/* 60 char */}
         <title>Beginner-Friendly Cubensis Grow Kit - Psychodelic Mushrooms</title>
@@ -64,25 +65,15 @@ const GrowKits = async () => {
         <meta property="og:type" content="website" />
       </Head>
       <Gutter>
-        <div className={classes.imageTitle}>
-          <Image alt="Planet of mushrooms" src="/media/growkit.jpeg" height="500" width="600" />
-          <h2 className={classes.title}>
-            Start Your Mushroom Journey: Beginner-Friendly Cubensis Grow Kits 🍄 🍄 🍄
-          </h2>
+        <div className="mt-10 mb-10">
+          <h2 className="text-primary">Cubensis Growkits</h2>
         </div>
-        <p className={classes.heroText}>
-          Embark on a captivating journey into the world 🌎 of fungi with our premium Cubensis Grow
-          Kits, designed to bring the magic of mushroom cultivation to your fingertips. Elevate your
-          gardening experience and unlock the satisfaction of growing your own fresh, organic
-          mushrooms right at home. Join countless enthusiasts 👩🏿‍🤝‍👩🏾👩🏼‍🤝‍🧑🏼👩🏿‍🤝‍🧑🏾 who have discovered
-          the joy and rewards of cultivating their own delicious harvest – start your mushroom
-          adventure today! 💪 🍄
-        </p>
+
         <div className={classes.gap}></div>
         <GrowkitsCards pages={filteredPages} products={products} />
-        <HR />
+
       </Gutter>
-    </>
+    </LayoutWithHeaderFooter>
   )
 }
 
