@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `}
         </Script>
       </head>
-      <body className={montserrat.variable}>
+      <body className={`bg-customWhite ${montserrat.variable}`}>
         <Providers>
           <AdminBar />
           <main>{children}</main>

@@ -39,12 +39,11 @@ const Products = async () => {
 
   return (
     <LayoutWithHeaderFooter>
-      <div className={classes.container}>
+      <div className="bg-customWhite">
         <Gutter className={classes.products}>
           <Filters categories={categories} />
           <Blocks blocks={page.layout} disableTopPadding={true} />
         </Gutter>
-        <HR />
       </div>
     </LayoutWithHeaderFooter>
   )
