@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
+
 import { Button } from '../../_components/Button'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
@@ -47,7 +48,11 @@ export default function Contact() {
     }
   }
 
-  const { register, handleSubmit, formState: { errors, isLoading } } = useForm<FormData>()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isLoading },
+  } = useForm<FormData>()
 
   const handleName = e => {
     setName(e.target.value)

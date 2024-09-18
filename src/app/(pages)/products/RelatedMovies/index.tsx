@@ -27,9 +27,9 @@ export const RelatedMovies: React.FC<{}> = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Płynne przewijanie
-    });
-  };
+      behavior: 'smooth', // Płynne przewijanie
+    })
+  }
 
   const catLabels = ['Growkit 1', 'Growkit 2', 'Growkit 3', 'Growkit 4', 'Growkit 5']
 
@@ -43,7 +43,6 @@ export const RelatedMovies: React.FC<{}> = () => {
             <h6 className="text-primary text-4xl font-medium">Related</h6>
           </div>
           <RelatedCarousel icons={null} images={images2} catLabels={catLabels} />
-
         </section>
 
         {/*Movies */}

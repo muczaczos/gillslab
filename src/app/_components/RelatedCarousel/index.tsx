@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
+import { FaRegHeart } from 'react-icons/fa'
 import Image from 'next/image'
 
 import styles from './index.module.scss'
-import { FaRegHeart } from 'react-icons/fa'
 
 const RelatedCarousel = ({ icons, images, catLabels }) => {
   const sliderRef = useRef(null)

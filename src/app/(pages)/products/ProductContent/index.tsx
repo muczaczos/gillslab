@@ -36,63 +36,63 @@ export const ProductContent: React.FC<{
 
   return (
     <>
-    <div className={classes.diagonalGallery}></div>
-    <Gutter className={`mt-[-2.25rem] ${classes.contentGradient}`}>
-      <div className="mt-8 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-customWhite pl-5 py-4">
-        <h6 className="text-customWhite text-4xl font-medium">Gallery</h6>
-      </div>
+      <div className={classes.diagonalGallery}></div>
+      <Gutter className={`mt-[-2.25rem] ${classes.contentGradient}`}>
+        <div className="mt-8 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-customWhite pl-5 py-4">
+          <h6 className="text-customWhite text-4xl font-medium">Gallery</h6>
+        </div>
 
-      {/*Gallery */}
-      <ProductGallery />
+        {/*Gallery */}
+        <ProductGallery />
 
-      {/*Details and FAQ */}
-      <section className="mb-10">
-        <Tabs>
-          <TabList>
-            <Tab>
-              <h6>Details</h6>
-            </Tab>
-            <Tab>
-              <h6>FAQ</h6>
-            </Tab>
-          </TabList>
-          <div className="p3">
-            <TabPanel>
-              <div
-                style={{
-                  height: '200px', // Stała wysokość ramki
-                  overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                  overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                  border: 'none', // Usunięcie obramowania
-                  outline: 'none', // Usunięcie obramowania po kliknięciu
-                  scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                  scrollbarColor:
-                    'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                }}
-              >
-                <RichText content={productDetails.richText} />
-              </div>
-            </TabPanel>
-            <TabPanel>
-              <div
-                style={{
-                  height: '200px', // Stała wysokość ramki
-                  overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                  overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                  border: 'none', // Usunięcie obramowania
-                  outline: 'none', // Usunięcie obramowania po kliknięciu
-                  scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                  scrollbarColor:
-                    'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                }}
-              >
-                <RichText content={productFaq.richText} />
-              </div>
-            </TabPanel>
-          </div>
-        </Tabs>
-      </section>
-    </Gutter>
+        {/*Details and FAQ */}
+        <section className="mb-10">
+          <Tabs>
+            <TabList>
+              <Tab>
+                <h6>Details</h6>
+              </Tab>
+              <Tab>
+                <h6>FAQ</h6>
+              </Tab>
+            </TabList>
+            <div className="p3">
+              <TabPanel>
+                <div
+                  style={{
+                    height: '200px', // Stała wysokość ramki
+                    overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
+                    overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
+                    border: 'none', // Usunięcie obramowania
+                    outline: 'none', // Usunięcie obramowania po kliknięciu
+                    scrollbarWidth: 'thin' /* Grubość paska przewijania */,
+                    scrollbarColor:
+                      'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
+                  }}
+                >
+                  <RichText content={productDetails.richText} />
+                </div>
+              </TabPanel>
+              <TabPanel>
+                <div
+                  style={{
+                    height: '200px', // Stała wysokość ramki
+                    overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
+                    overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
+                    border: 'none', // Usunięcie obramowania
+                    outline: 'none', // Usunięcie obramowania po kliknięciu
+                    scrollbarWidth: 'thin' /* Grubość paska przewijania */,
+                    scrollbarColor:
+                      'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
+                  }}
+                >
+                  <RichText content={productFaq.richText} />
+                </div>
+              </TabPanel>
+            </div>
+          </Tabs>
+        </section>
+      </Gutter>
     </>
   )
 }

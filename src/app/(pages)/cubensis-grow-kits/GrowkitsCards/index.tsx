@@ -1,9 +1,9 @@
 import React from 'react'
+import { FaRegHeart } from 'react-icons/fa'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import classes from './index.module.scss'
-import { FaRegHeart } from 'react-icons/fa'
 
 const GrowkitsCards = ({ pages, products }) => {
   const baseUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL
@@ -19,21 +19,25 @@ const GrowkitsCards = ({ pages, products }) => {
           const price = item.price
           return (
             <div className="">
-              <Link  href={href}>
+              <Link href={href}>
                 <section className="shadow-xl bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl">
-                <div className="flex justify-end pt-4 px-4">
-                  <FaRegHeart className="text-primary text-4xl" />
-                </div>
+                  <div className="flex justify-end pt-4 px-4">
+                    <FaRegHeart className="text-primary text-4xl" />
+                  </div>
                   <div className="px-16 pb-3 w-full">
-                    <Image className="" alt="Cubensis grow kit" src={src} width="350" height="180" />
+                    <Image
+                      className=""
+                      alt="Cubensis grow kit"
+                      src={src}
+                      width="350"
+                      height="180"
+                    />
                   </div>
                   <h6 className="pl-5 text-xl text-primary">{title}</h6>
                   <p className="pl-5 text-xl pb-4 font-bold text-primary">€{price}</p>
                 </section>
               </Link>
-              <Link className={classes.link} href={href}>
-                
-              </Link>
+              <Link className={classes.link} href={href}></Link>
             </div>
           )
         }
