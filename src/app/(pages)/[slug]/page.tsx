@@ -64,23 +64,23 @@ export default async function Pages({ params: { slug = 'home' } }) {
   const { hero, layout } = page
 
   const images = [
-    '/media/growkitsCat.png',
-    '/media/sporesCat.png',
-    '/media/liquidCat.png',
-    '/media/labCat.png',
-    '/media/substrateCat.png',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/growkitsCat.png',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/sporesCat.png',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/liquidCat.png',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/labCat.png',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/substrateCat.png',
   ]
 
   const images2 = [
-    '/media/muchomor.jpg',
-    '/media/koszyk.jpg',
-    '/media/growkit.jpg',
-    '/media/muchomor.jpg',
-    '/media/koszyk.jpg',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/muchomor.jpg',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/koszyk.jpg',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/growkit.jpg',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/muchomor.jpg',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/koszyk.jpg',
   ]
 
   const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
-
+  const promotionImg = process.env.NEXT_PUBLIC_SERVER_URL + '/media/promotions.png'
   return (
     <LayoutWithHeaderFooter>
       {slug === 'home' ? (
@@ -89,7 +89,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           <section className="bg-customWhite pb-7">
             <div className="flex justify-end">
               <Image
-                src="/media/mobileHero.png" // Ścieżka do obrazu w katalogu public
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.png`} // Ścieżka do obrazu w katalogu public
                 alt="GillsLab logotype"
                 width={240} // Szerokość obrazu
                 height={20} // Wysokość obrazu
@@ -146,7 +146,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 <p className={classes.smallText}>for this month</p>
               </div>
               <Image
-                src="/media/promotions.png"
+                src={promotionImg}
                 alt="Promotion"
                 className={classes.promoImage}
                 width={100}
@@ -164,7 +164,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                   <div className="mt-5 flex justify-center">
                     <Image
-                      src="/media/mckLabel.png"
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mckLabel.png`}
                       alt="Promotion"
                       className="w-[6rem] py-4"
                       width={100}
@@ -179,7 +179,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
                     <Image
-                      src="/media/ecuLabel.png"
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ecuLabel.png`}
                       alt="Promotion"
                       className="w-[6rem] py-4"
                       width={100}
@@ -195,7 +195,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
                     <Image
-                      src="/media/gtLabel.png"
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/gtLabel.png`}
                       alt="Promotion"
                       className="w-[6rem] py-4"
                       width={100}
@@ -210,7 +210,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
                   <div className="mt-5 flex justify-center">
                     <Image
-                      src="/media/colLabel.png"
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/colLabel.png`}
                       alt="Promotion"
                       className="w-[6rem] py-4"
                       width={100}
@@ -236,7 +236,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                       Be the First to Know About Promotions and New Arrivals!
                     </p>
                     <Image
-                      src="/media/newsletter.png"
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter.png`}
                       alt="man with growkit"
                       width={200}
                       height={200}

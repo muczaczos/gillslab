@@ -45,7 +45,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
       <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
         <div className="relative overflow-hidden w-full h-auto -mt-36 ">
           <Image
-            src="/media/mobFoot3.png"
+            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobFoot3.png`}
             alt="Example Image"
             width="1000"
             height="200"
@@ -53,7 +53,12 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             className="relative left-0 "
           />
         </div>
-        <div className="xs:-mt-16 -mt-20 bg-[url('/media/eyes5.png')] bg-cover bg-primary relative z-20 p-5 xs:p-3">
+        <div
+          className="xs:-mt-16 -mt-20 bg-cover bg-primary relative z-20 p-5 xs:p-3"
+          style={{
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_SERVER_URL}/media/eyes5.png)`,
+          }}
+        >
           {/* Address, Socials, Payments, Shipping*/}
           <div className="flex justify-between">
             <div>
@@ -127,7 +132,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               {' '}
               {/* Proporcjonalny kontener */}
               <Image
-                src="/media/dhl.png"
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/dhl.png`}
                 alt="dhl logo image"
                 className="absolute inset-0 w-full transform scale-100" // Skaluje obrazek do 50% jego rozmiarów
                 width={100}
@@ -138,7 +143,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               {' '}
               {/* Proporcjonalny kontener */}
               <Image
-                src="/media/dpd.png"
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/dpd.png`}
                 alt="dhl logo image"
                 className="absolute inset-0 w-full transform scale-100" // Skaluje obrazek do 50% jego rozmiarów
                 width={100}
@@ -149,7 +154,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               {' '}
               {/* Proporcjonalny kontener */}
               <Image
-                src="/media/ups.png"
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ups.png`}
                 alt="dhl logo image"
                 className="absolute inset-0" // Skaluje obrazek do 50% jego rozmiarów
                 width={100}
@@ -160,7 +165,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               {' '}
               {/* Proporcjonalny kontener */}
               <Image
-                src="/media/fedex.png"
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/fedex.png`}
                 alt="dhl logo image"
                 className="absolute inset-0" // Skaluje obrazek do 50% jego rozmiarów
                 width={100}
@@ -171,8 +176,8 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           <div className="mt-2 mb-20 items-center flex gap-2">
             <p className="text-customWhite text-large font-bold">© 2008 - 2024</p>
             <Image
-              src="/media/logoCom.png"
-              alt="Gillsal logo"
+              src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logoCom.png`}
+              alt="Gillslab logo"
               className="" // Skaluje obrazek do 50% jego rozmiarów
               width={150}
               height={100}

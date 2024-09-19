@@ -20,7 +20,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
     >
       <div className="scale-75">
         <Image
-          src="/media/logo3.png" // Ścieżka do obrazu w katalogu public
+          src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logo3.png`} // Ścieżka do obrazu w katalogu public
           alt="GillsLab logotype"
           width={200} // Szerokość obrazu
           height={20} // Wysokość obrazu
