@@ -100,8 +100,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
               MAGIC <br />
               GROWKITS
             </h1>
-            <p className="text-primary-light ml-7 mt-2 sm:ml-10">
-              <span className="font-thin text-base ">Cultivate Your Mushrooms Dreams</span>
+            <p className="text-primary ml-7 mt-2 sm:ml-10">
+              <span className="font-normal text-base">Cultivate Your Mushrooms Dreams</span>
             </p>
             <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
               Get Started
@@ -142,7 +142,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <div className={classes.promoCard}>
               <div className={classes.promoText}>
                 <p className={classes.smallText}>Get</p>
-                <h3>20% Off</h3>
+                <h3 className={classes.bigText}>20% Off</h3>
                 <p className={classes.smallText}>for this month</p>
               </div>
               <Image
@@ -159,66 +159,68 @@ export default async function Pages({ params: { slug = 'home' } }) {
           <section className="bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Cubensis Growkits</h2>
-              <div className="mb-3 flex justify-between gap-3">
-                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
-                  <div className="mt-5 flex justify-center">
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mckLabel.png`}
-                      alt="Promotion"
-                      className="w-[6rem] py-4"
-                      width={100}
-                      height={100}
-                    />
+              <div className="flex flex-col sm:flex-row sm:gap-3">
+                <div className="mb-3 flex justify-between csm:justify-center sm:w-full gap-3">
+                  <div className="relative flex flex-col justify-aroun bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3 sm:w-1/2">
+                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
+                    <div className="mt-5 flex justify-center">
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mckLabel.png`}
+                        alt="Promotion"
+                        className="w-[6rem] py-4"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
+                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
-                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
-                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
-                </div>
 
-                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
-                  <div className="mt-5 flex justify-center">
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ecuLabel.png`}
-                      alt="Promotion"
-                      className="w-[6rem] py-4"
-                      width={100}
-                      height={100}
-                    />
+                  <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3">
+                    <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
+                    <div className="mt-5 flex justify-center">
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ecuLabel.png`}
+                        alt="Promotion"
+                        className="w-[6rem] py-4"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">G. Teacher</p>
+                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
-                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">G. Teacher</p>
-                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
                 </div>
-              </div>
-              <div className="flex justify-between gap-3">
-                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
-                  <div className="mt-5 flex justify-center">
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/gtLabel.png`}
-                      alt="Promotion"
-                      className="w-[6rem] py-4"
-                      width={100}
-                      height={100}
-                    />
+                <div className="flex justify-between csm:justify-center gap-3 sm:w-full">
+                  <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3">
+                    <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
+                    <div className="mt-5 flex justify-center">
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/gtLabel.png`}
+                        alt="Promotion"
+                        className="w-[6rem] py-4"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Mazatapec</p>
+                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
-                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">Mazatapec</p>
-                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
-                </div>
 
-                <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2">
-                  <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
-                  <div className="mt-5 flex justify-center">
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/colLabel.png`}
-                      alt="Promotion"
-                      className="w-[6rem] py-4"
-                      width={100}
-                      height={100}
-                    />
+                  <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3">
+                    <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
+                    <div className="mt-5 flex justify-center">
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/colLabel.png`}
+                        alt="Promotion"
+                        className="w-[6rem] py-4"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Ecuador</p>
+                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
-                  <p className="leading-3 pl-3 text-primary font-bold opacity-70">Ecuador</p>
-                  <p className="text-primary text-2xl font-bold pl-3">$35</p>
                 </div>
               </div>
             </Gutter>
@@ -227,12 +229,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
           {/* Newsletter */}
           <section className="pb-7 bg-customWhite">
             <Gutter>
-              <div className="drop-shadow-2xl rounded-2xl w-9/10 newsletter-gradient">
+              <div className="rounded-2xl w-9/10 newsletter-gradient h-[12rem] csm:h-[12rem] sm:h-[14rem]">
                 <div className="text-customWhite px-5 pt-2">
-                  <p className="text-shadow text-2xl font-bold">Subscribe to our newsletter!</p>
+                  <p className="text-shadow text-2xl font-bold mt-5 csm:w-full sm:mt-7 sm:text-4xl sm:w-3/4">Subscribe to our newsletter!</p>
 
-                  <div className="flex h-[6rem] w-full justify-between">
-                    <p className="pt-1 leading-4 text-shadow text-md font-bold text-secondary">
+                  <div className="flex  w-full justify-between">
+                    <p className="pt-1 leading-4 text-shadow text-md font-bold text-secondary w-1/2">
                       Be the First to Know About Promotions and New Arrivals!
                     </p>
                     <Image
@@ -240,7 +242,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                       alt="man with growkit"
                       width={200}
                       height={200}
-                      className="w-32 h-32 bottom-16 relative"
+                      className="w-32 h-32 bottom-16 relative sm:w-64 sm:h-64 sm:bottom-48"
                     />
                   </div>
                 </div>

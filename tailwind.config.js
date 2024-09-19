@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       screens: {
         xs: { max: '389px' }, // Breakpoint dla szerokości do 400px
+        csm: { min: '500px', max: '639px' },
       },
       colors: {
         productTop: '#4968AC',
@@ -27,8 +28,8 @@ module.exports = {
         customGray: {
           DEFAULT: '#7B8291',
           dark: '#484D58',
-          light: '#ADB2BC'
-        }
+          light: '#ADB2BC',
+        },
         // Dodaj inne kolory tutaj
       },
       keyframes: {

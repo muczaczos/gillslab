@@ -28,9 +28,13 @@
   justify-content: center;
   align-items: center;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2); /* Cień tylko na dole */
-  min-width: 45%; /* Ensures each slide takes full width */
+  min-width: 35%; /* Ensures each slide takes full width */
   transition: transform 0.3s ease-in-out;
   border-radius: 1rem;
+
+  @media (min-width: 500px) and (max-width: 999px) {
+    min-width: 25%;
+  }  
 }
 
 .slide img {

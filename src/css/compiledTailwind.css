@@ -4,6 +4,12 @@
   width: 100%;
 }
 
+@media (min-width: 500px) {
+  .container {
+    max-width: 500px;
+  }
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -327,6 +333,14 @@
 
 .h-full {
   height: 100% !important;
+}
+
+.h-\[12rem\] {
+  height: 12rem !important;
+}
+
+.h-\[10rem\] {
+  height: 10rem !important;
 }
 
 .max-h-full {
@@ -975,6 +989,10 @@
   font-weight: 500 !important;
 }
 
+.font-normal {
+  font-weight: 400 !important;
+}
+
 .font-thin {
   font-weight: 100 !important;
 }
@@ -1196,6 +1214,26 @@
 }
 
 @media (min-width: 640px) {
+  .sm\:bottom-32 {
+    bottom: 8rem !important;
+  }
+
+  .sm\:bottom-40 {
+    bottom: 10rem !important;
+  }
+
+  .sm\:bottom-64 {
+    bottom: 16rem !important;
+  }
+
+  .sm\:bottom-52 {
+    bottom: 13rem !important;
+  }
+
+  .sm\:bottom-48 {
+    bottom: 12rem !important;
+  }
+
   .sm\:ml-10 {
     margin-left: 2.5rem !important;
   }
@@ -1208,12 +1246,57 @@
     margin-top: 2.5rem !important;
   }
 
+  .sm\:mt-7 {
+    margin-top: 1.75rem !important;
+  }
+
   .sm\:flex {
     display: flex !important;
   }
 
+  .sm\:h-64 {
+    height: 16rem !important;
+  }
+
+  .sm\:h-\[14rem\] {
+    height: 14rem !important;
+  }
+
+  .sm\:w-1\/2 {
+    width: 50% !important;
+  }
+
+  .sm\:w-full {
+    width: 100% !important;
+  }
+
+  .sm\:w-3\/4 {
+    width: 75% !important;
+  }
+
+  .sm\:w-64 {
+    width: 16rem !important;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row !important;
+  }
+
   .sm\:items-center {
     align-items: center !important;
+  }
+
+  .sm\:gap-1 {
+    gap: 0.25rem !important;
+  }
+
+  .sm\:gap-3 {
+    gap: 0.75rem !important;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
   }
 }
 
@@ -1409,6 +1492,60 @@
   .xs\:text-sm {
     font-size: 0.875rem !important;
     line-height: 1.25rem !important;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 639px) {
+  .csm\:mt-10 {
+    margin-top: 2.5rem !important;
+  }
+
+  .csm\:mt-14 {
+    margin-top: 3.5rem !important;
+  }
+
+  .csm\:mt-20 {
+    margin-top: 5rem !important;
+  }
+
+  .csm\:h-\[10rem\] {
+    height: 10rem !important;
+  }
+
+  .csm\:h-\[12rem\] {
+    height: 12rem !important;
+  }
+
+  .csm\:h-\[24rem\] {
+    height: 24rem !important;
+  }
+
+  .csm\:h-\[16rem\] {
+    height: 16rem !important;
+  }
+
+  .csm\:w-1\/3 {
+    width: 33.333333% !important;
+  }
+
+  .csm\:w-1\/2 {
+    width: 50% !important;
+  }
+
+  .csm\:w-full {
+    width: 100% !important;
+  }
+
+  .csm\:justify-center {
+    justify-content: center !important;
+  }
+
+  .csm\:pt-10 {
+    padding-top: 2.5rem !important;
+  }
+
+  .csm\:pt-20 {
+    padding-top: 5rem !important;
   }
 }
 
