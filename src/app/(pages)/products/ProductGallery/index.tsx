@@ -3,7 +3,9 @@ import Image from 'next/image'
 
 const ProductGallery = () => {
   // State do przechowywania aktualnie wybranego obrazka
-  const [selectedImage, setSelectedImage] = useState('/media/gtLabel.png')
+  const [selectedImage, setSelectedImage] = useState(
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/gtLabel.png',
+  )
 
   // State do kontrolowania widoczności modala
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -20,9 +22,9 @@ const ProductGallery = () => {
 
   // Obrazy do galerii
   const images = [
-    '/media/gtLabel.png',
-    '/media/mckLabel.png', // Dodaj inne obrazy jeśli masz
-    '/media/gtLabel.png',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/gtLabel.png',
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/mckLabel.png', // Dodaj inne obrazy jeśli masz
+    process.env.NEXT_PUBLIC_SERVER_URL + '/media/gtLabel.png',
   ]
 
   return (
