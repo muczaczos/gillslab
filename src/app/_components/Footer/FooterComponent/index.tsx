@@ -65,7 +65,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               {/* Logo */}
               <section className="mb-5">
                 <Image
-                  src="/media/logo3.png"
+                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logo3.png`}
                   alt="Gillslab logo"
                   width="150"
                   height="100"
@@ -124,6 +124,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               <p className="text-customWhite text-xl">Favorities</p>
             </section>
           </div>
+
           {/* dhl, dpd, ups, fedex logotypes */}
           <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden">
             {' '}
