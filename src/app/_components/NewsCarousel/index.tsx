@@ -83,6 +83,7 @@ const NewsCarousel = ({ images, catLabels }) => {
                 </div>
               </div>
             </div>
+            <p className="max-w-full"></p>
             {catLabels && (
               <div className="p-3 pt-0 ">
                 <h2 className="text-xl text-primary opacity-80 font-bold">{catLabels[index]}</h2>
