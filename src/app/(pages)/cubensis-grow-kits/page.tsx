@@ -64,7 +64,7 @@ const GrowKits = async () => {
         <meta property="og:url" content="https://planet-of-mushrooms.com/grow-kits" />
         <meta property="og:type" content="website" />
       </Head>
-      <div className="bg-customWhite pb-36">
+      <section className="bg-customWhite pb-36">
         <Gutter className="pt-5">
           <div className="m-0">
             <h3 className="mb-0 text-primary text-2xl">Cubensis Growkits</h3>
@@ -73,7 +73,7 @@ const GrowKits = async () => {
           <div className={classes.gap}></div>
           <GrowkitsCards pages={filteredPages} products={products} />
         </Gutter>
-      </div>
+      </section>
     </LayoutWithHeaderFooter>
   )
 }

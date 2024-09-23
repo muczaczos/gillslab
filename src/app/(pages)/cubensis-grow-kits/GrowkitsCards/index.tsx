@@ -18,13 +18,13 @@ const GrowkitsCards = ({ pages, products }) => {
           const description = item.meta.description
           const price = item.price
           return (
-            <div className="">
-              <Link href={href}>
-                <section className="shadow-xl bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl">
+            <div className="flex justify-center">
+              <Link href={href} className="">
+                <div className="shadow-xl bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl">
                   <div className="flex justify-end pt-4 px-4">
                     <FaRegHeart className="text-primary text-4xl" />
                   </div>
-                  <div className="px-16 pb-3 w-full">
+                  <div className="px-16 pb-3">
                     <Image
                       className=""
                       alt="Cubensis grow kit"
@@ -35,9 +35,8 @@ const GrowkitsCards = ({ pages, products }) => {
                   </div>
                   <h6 className="pl-5 text-xl text-primary">{title}</h6>
                   <p className="pl-5 text-xl pb-4 font-bold text-primary">€{price}</p>
-                </section>
+                </div>
               </Link>
-              <Link className={classes.link} href={href}></Link>
             </div>
           )
         }

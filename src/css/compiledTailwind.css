@@ -407,6 +407,10 @@
   width: 75% !important;
 }
 
+.w-\[10rem\] {
+  width: 10rem !important;
+}
+
 .max-w-\[90\%\] {
   max-width: 90% !important;
 }
