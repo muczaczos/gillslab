@@ -44,7 +44,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
     <>
       <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
         {/*Footer image*/}
-        <div className="md:hidden relative overflow-hidden h-auto -mt-36 csm:-mt-48 sm:-mt-52 ">
+        <div className="bg-customWhite md:hidden relative overflow-hidden h-auto">
           <Image
             src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobFoot3.png`}
             alt="Example Image"
@@ -54,7 +54,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             className="relative left-0"
           />
         </div>
-        <div className="hidden md:block md:-mt-44 md:mb-10">
+        <div className="bg-customWhite hidden md:block md:mb-10">
           <Image
             src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/bigFoot.png`}
             alt="Example Image"
