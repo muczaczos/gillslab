@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       screens: {
         xs: { max: '389px' }, // Breakpoint dla szerokości do 400px
-        csm: { min: '500px', max: '639px' },
+        csm: { min: '390px', max: '639px' },
       },
       colors: {
         productTop: '#4968AC',

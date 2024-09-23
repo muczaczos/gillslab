@@ -43,16 +43,28 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
   return (
     <>
       <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
-        <div className="relative overflow-hidden w-full h-auto -mt-36 ">
+        {/*Footer image*/}
+        <div className="md:hidden relative overflow-hidden h-auto -mt-36 csm:-mt-48 sm:-mt-52 ">
           <Image
             src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobFoot3.png`}
             alt="Example Image"
-            width="1000"
+            width="2000"
             height="200"
             objectFit="cover"
-            className="relative left-0 "
+            className="relative left-0"
           />
         </div>
+        <div className="hidden md:block md:-mt-44 md:mb-10">
+          <Image
+            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/bigFoot.png`}
+            alt="Example Image"
+            width="2000"
+            height="200"
+            objectFit="cover"
+            className="relative left-0"
+          />
+        </div>
+
         <div
           className="xs:-mt-16 -mt-20 bg-cover bg-primary relative z-20 p-5 xs:p-3"
           style={{
@@ -60,7 +72,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           }}
         >
           {/* Address, Socials, Payments, Shipping*/}
-          <div className="flex justify-between">
+          <div className="flex xs:justify-between csm:gap-20 sm:gap-40 justify-center">
             <div>
               {/* Logo */}
               <section className="mb-5">
@@ -127,53 +139,48 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
 
           {/* dhl, dpd, ups, fedex logotypes */}
           <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden">
-            {' '}
             {/* Kontener z 50% szerokości i wyśrodkowany */}
-            <div className="relative w-full" style={{ paddingTop: '5%' }}>
+            <div className="relative w-full h-16">
               {' '}
-              {/* Proporcjonalny kontener */}
+              {/* Ustawienie stałej wysokości */}
               <Image
                 src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/dhl.png`}
                 alt="dhl logo image"
-                className="absolute inset-0 w-full transform scale-100" // Skaluje obrazek do 50% jego rozmiarów
+                className="object-contain w-full h-full" // Ustawienie w pełni skalowalnego obrazu
                 width={100}
                 height={100}
               />
             </div>
-            <div className="relative w-full" style={{ paddingTop: '8%' }}>
-              {' '}
-              {/* Proporcjonalny kontener */}
+            <div className="relative w-full h-16">
               <Image
                 src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/dpd.png`}
-                alt="dhl logo image"
-                className="absolute inset-0 w-full transform scale-100" // Skaluje obrazek do 50% jego rozmiarów
+                alt="dpd logo image"
+                className="object-contain w-full h-full" // Ustawienie w pełni skalowalnego obrazu
                 width={100}
                 height={100}
               />
             </div>
-            <div className="relative w-full" style={{ paddingTop: '20%' }}>
-              {' '}
-              {/* Proporcjonalny kontener */}
+            <div className="relative w-full h-16">
               <Image
                 src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ups.png`}
-                alt="dhl logo image"
-                className="absolute inset-0" // Skaluje obrazek do 50% jego rozmiarów
+                alt="ups logo image"
+                className="object-contain w-full h-full" // Ustawienie w pełni skalowalnego obrazu
                 width={100}
                 height={100}
               />
             </div>
-            <div className="relative w-full" style={{ paddingTop: '5%' }}>
-              {' '}
-              {/* Proporcjonalny kontener */}
+            <div className="relative w-full h-16">
               <Image
                 src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/fedex.png`}
-                alt="dhl logo image"
-                className="absolute inset-0" // Skaluje obrazek do 50% jego rozmiarów
+                alt="fedex logo image"
+                className="object-contain w-full h-full" // Ustawienie w pełni skalowalnego obrazu
                 width={100}
                 height={100}
               />
             </div>
           </div>
+
+          {/* Gillslab logo and date */}
           <div className="mt-2 mb-20 items-center flex gap-2">
             <p className="text-customWhite text-large font-bold">© 2008 - 2024</p>
             <Image

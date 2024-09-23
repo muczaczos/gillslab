@@ -57,6 +57,71 @@
   }
 }
 
+.newsCard {
+  width: 345px;
+  height: 200px;
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, #AC4968, #F7F9FB);
+  padding-left: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding-bottom: 2rem;
+
+  @media (min-width: 500px) and (max-width: 999px) {
+    width: 100%;
+    height: 200px; 
+  }
+  
+}
+
+.subscribe {
+  background: linear-gradient(to bottom, #AC4968, #F7F9FB);
+}
+
+.nSmallText {
+  color: #4968AC;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  font-size: 1rem;
+  line-height: 1rem;
+  @media (min-width: 500px) and (max-width: 999px) {
+    font-size: 24px !important;
+    line-height: 1.5rem;
+  }
+}
+
+.nBigText {
+  color: #F7F9FB;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  @media (min-width: 500px) and (max-width: 999px) {
+    font-size: 36px !important;
+    line-height: 2rem;
+  }
+}
+
+.newsImage {
+  position: relative;
+  scale: 1.5;
+  bottom: 20px;
+  right: 30px;
+
+  @media (min-width: 500px) and (max-width: 639px) {
+    bottom: 30px;
+    right: 50px;
+    scale: 2;
+  }
+  @media (min-width: 640px) and (max-width: 999px) {
+    bottom: 30px;
+    right: 100px;
+    scale: 2;
+  }
+}
+
 /* Styl dla zielonego paska */
 .stripeGreen {
   position: absolute;
@@ -87,12 +152,15 @@
 }
 
 .blogvlog {
-  background-color: #F7F9FB ;
+  background-color: #F7F9FB;
   position: relative;
   width: 100%;
   overflow: hidden;
   padding-bottom: 10rem;
   background-image: url('/media/stripes2.png');
+  background-size: cover; /* Rozciąga tło, aby pokryło cały obszar diva */
+  background-repeat: no-repeat; /* Zapobiega powielaniu tła */
+  background-position: center; /* Ustawia tło na środku */
   z-index: 0;
 }
 

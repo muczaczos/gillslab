@@ -227,27 +227,27 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* Newsletter */}
-          <section className="pb-7 bg-customWhite">
-            <Gutter>
-              <div className="rounded-2xl w-9/10 newsletter-gradient h-[12rem] csm:h-[12rem] sm:h-[14rem]">
-                <div className="text-customWhite px-5 pt-2">
-                  <p className="text-shadow text-2xl font-bold mt-5 csm:w-full sm:mt-7 sm:text-4xl sm:w-3/4">Subscribe to our newsletter!</p>
-
-                  <div className="flex  w-full justify-between">
-                    <p className="pt-1 leading-4 text-shadow text-md font-bold text-secondary w-1/2">
-                      Be the First to Know About Promotions and New Arrivals!
-                    </p>
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter.png`}
-                      alt="man with growkit"
-                      width={200}
-                      height={200}
-                      className="w-32 h-32 bottom-16 relative sm:w-64 sm:h-64 sm:bottom-48"
-                    />
-                  </div>
-                </div>
+          <section className="bg-customWhite flex flex-col items-center px-5 pb-7">
+            <div className={classes.newsCard}>
+              <div className={classes.newsText}>
+                <h3 className={classes.nBigText}>Subscribe to our newsletter!</h3>
+                <p className={classes.nSmallText}>
+                  Be the First to Know About Promotions and New Arrivals!
+                </p>
               </div>
-            </Gutter>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter.png`}
+                alt="Promotion"
+                className={classes.newsImage}
+                width={100}
+                height={100}
+              />
+            </div>
+            <div
+              className={`${classes.subscribe} w-1/2 rounded-xl py-5 flex justify-center -mt-12`}
+            >
+              <p className="text-customWhite text-shadow text-xl font-bold">Subscribe</p>
+            </div>
           </section>
 
           {/* news on blog and vlog */}
