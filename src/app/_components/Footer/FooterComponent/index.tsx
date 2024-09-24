@@ -44,7 +44,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
     <>
       <footer className={`${noHeaderFooterUrls.includes(pathname) ? classes.hide : ''} relative`}>
         {/*Footer image*/}
-        <div className="bg-customWhite md:hidden relative overflow-hidden h-auto">
+        <div className="bg-transparent md:hidden -mt-40 relative overflow-hidden h-auto">
           <Image
             src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobFoot3.png`}
             alt="Example Image"

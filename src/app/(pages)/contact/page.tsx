@@ -64,7 +64,7 @@ export default function Contact() {
 
   return (
     <LayoutWithHeaderFooter>
-      <div id="mail" className="rounded-xl shadow-xl bg-customWhite opacity-90 p-5">
+      <div id="mail" className="rounded-xl bg-customWhite opacity-90 p-5">
         <div>
           <h3 className="mb-3 text-primary">Contact Us</h3>
           <div>
