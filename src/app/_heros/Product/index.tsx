@@ -79,14 +79,16 @@ export const ProductHero: React.FC<{
             <IoHeartOutline className="text-3xl text-customWhite" />
           </div>
         </div>
-        <div className="">
-          <Image
-            alt="Product Image"
-            src={`${websiteUrl}/media/gtLabel.png`}
-            height="300"
-            width="200"
-            className="mb-5 mx-auto bg-customWhite"
-          />
+        <div className="flex justify-center">
+          <div className="w-1/2 sm:w-3/4 ">
+            <Image
+              alt="Product Image"
+              src={`${websiteUrl}/media/gtLabel.png`}
+              height="300"
+              width="400"
+              className="mb-5 mx-auto bg-customWhite"
+            />
+          </div>
         </div>
       </section>
 

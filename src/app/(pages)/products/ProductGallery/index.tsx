@@ -28,15 +28,15 @@ const ProductGallery = () => {
   ]
 
   return (
-    <section className="mb-10 flex gap-4 p-4 bg-transparent h-[300px]">
+    <section className="mb-10 flex gap-4 p-4 bg-transparent h-[300px] sm:h-[500px]">
       {/* Duży obrazek po lewej */}
-      <div className="flex-none w-2/3 h-full">
+      <div className="flex-none w-2/3">
         <Image
           src={selectedImage} // Aktualnie wybrany obrazek
           alt="Main Image"
           width="500"
           height="500"
-          className="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer"
+          className="h-full object-cover rounded-lg shadow-lg cursor-pointer"
           onClick={openModal} // Po kliknięciu otwiera modal
         />
       </div>
