@@ -20,7 +20,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
 
   return (
     <nav //add class 'hide' when noHeaderFooterUrls includes proper pathname
-      className="flex mb-1 justify-between items-center pt-1 pb-2 bg-primary w-full z-60 md:pl-7 md:pr-7 md:pb-4 md:pt-4 md:bg-[#5A7FD0]"
+      className="flex mb-1 justify-between items-center pt-1 pb-2 bg-primary w-full z-60 md:mb-0 md:pl-7 md:pr-7 md:pb-4 md:pt-4 md:bg-[#5A7FD0]"
     >
       <div className="scale-75">
         <Image

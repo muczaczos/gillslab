@@ -86,27 +86,44 @@ export default async function Pages({ params: { slug = 'home' } }) {
       {slug === 'home' ? (
         <>
           {/* Hero */}
-          <section className="bg-customWhite pb-7">
-            <div className="flex justify-end">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.png`} // Ścieżka do obrazu w katalogu public
-                alt="GillsLab logotype"
-                width={240} // Szerokość obrazu
-                height={20} // Wysokość obrazu
-                className=""
-              />
-            </div>
-            <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
-              MAGIC <br />
-              GROWKITS
-            </h1>
-            <p className="text-primary ml-7 mt-2 sm:ml-10">
-              <span className="font-normal text-base">Cultivate Your Mushrooms Dreams</span>
-            </p>
-            <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
-              Get Started
-            </button>
+          <section>
+            <div className="grid grid-cols-3">
+              {/* Lewa kolumna podzielona na dwa wiersze */}
+              <div className="col-span-2 grid grid-rows-2">
+                <div className="">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/clouds.png`} // Ścieżka do obrazu w katalogu public
+                    alt="GillsLab logotype"
+                    width={240} // Szerokość obrazu
+                    height={20} // Wysokość obrazu
+                    className="ml-28 w-3/4 h-full"
+                  />
+                </div>
+                <div className="">
+                  <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
+                    MAGIC <br />
+                    GROWKITS
+                  </h1>
+                  <p className="text-primary ml-7 mt-2 sm:ml-10">
+                    <span className="font-normal text-base">Cultivate Your Mushrooms Dreams</span>
+                  </p>
+                  <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
+                    Get Started
+                  </button>
+                </div>
+              </div>
 
+              {/* Druga kolumna */}
+              <div className="col-span-1 flex justify-end">
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.png`} // Ścieżka do obrazu w katalogu public
+                  alt="GillsLab logotype"
+                  width={240} // Szerokość obrazu
+                  height={20} // Wysokość obrazu
+                  className="md:w-[440px]"
+                />
+              </div>
+            </div>
           </section>
 
           {/* horizontal carousel */}
