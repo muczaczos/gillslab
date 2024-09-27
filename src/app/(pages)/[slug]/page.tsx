@@ -106,24 +106,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
               Get Started
             </button>
-            <Gutter>
-              <div className="hidden lg:block lg:h-[28rem] xl:h-[35rem] 2xl:h-[44rem] bg-no-repeat bg-cover bg-right bg-[url('/media/hero-big.png')] pt-10 pb-10 p-6 bg-gray-50 border-l-0 border-r-0 border-2 border-solid border-gray-100">
-                <p className="text-white lg:font-bold lg:text-4xl lg:mt-5 lg:ml-3 xl:text-5xl xl:mt-[4rem] 2xl:ml-[4rem] w-80% mb-0 mt-52 ml-10">
-                  Be yourself and...
-                </p>
-                <p className="text-white mt-2 lg:ml-3 md:ml-10 2xl:ml-[4rem]">
-                  <span className="font-thin text-2xl ">
-                    ...Unleash your <br className="xl:hidden" /> own imagination.
-                  </span>
-                </p>
-                <Button
-                  className="mt-5 mb-5 lg:ml-3 md:mt-10 md:ml-10 2xl:ml-[4rem] 2xl:mt-[5rem]"
-                  label="Get Started"
-                  appearance="primary"
-                  href="/products"
-                ></Button>
-              </div>
-            </Gutter>
+
           </section>
 
           {/* horizontal carousel */}
@@ -145,13 +128,15 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 <h3 className={classes.bigText}>20% Off</h3>
                 <p className={classes.smallText}>for this month</p>
               </div>
-              <Image
-                src={promotionImg}
-                alt="Promotion"
-                className={classes.promoImage}
-                width={100}
-                height={100}
-              />
+              <div>
+                <Image
+                  src={promotionImg}
+                  alt="Promotion"
+                  className={classes.promoImage}
+                  width={100}
+                  height={100}
+                />
+              </div>
             </div>
           </section>
 
