@@ -28,29 +28,31 @@ const ProductGallery = () => {
   ]
 
   return (
-    <section className="mb-10 flex gap-4 p-4 bg-transparent h-[300px] sm:h-[500px]">
+    <section className="mb-10 flex gap-4 p-4 bg-transparent h-[300px] csm:h-[400px] sm:h-[600px]">
       {/* Duży obrazek po lewej */}
-      <div className="flex-none w-2/3">
-        <Image
-          src={selectedImage} // Aktualnie wybrany obrazek
-          alt="Main Image"
-          width="500"
-          height="500"
-          className="h-full object-cover rounded-lg shadow-lg cursor-pointer"
-          onClick={openModal} // Po kliknięciu otwiera modal
-        />
+      <div className="flex items-center justify-center w-3/4">
+        <div className="w-full flex justify-center">
+          <Image
+            src={selectedImage} // Aktualnie wybrany obrazek
+            alt="Main Image"
+            width="300"
+            height="300"
+            className="sm:w-[400px] rounded-lg shadow-lg cursor-pointer"
+            onClick={openModal} // Po kliknięciu otwiera modal
+          />
+        </div>
       </div>
 
       {/* Małe obrazki po prawej */}
-      <div className="flex flex-col gap-4 w-1/3 h-full">
+      <div className="flex flex-col gap-4 justify-center">
         {images.map((image, index) => (
           <Image
             key={index}
             src={image}
             alt={`Image ${index + 1}`}
-            width="500"
-            height="500"
-            className="w-full h-1/3 object-cover rounded-lg shadow-md cursor-pointer"
+            width="75"
+            height="75"
+            className="rounded-lg shadow-md cursor-pointer"
             onClick={() => setSelectedImage(image)} // Zmieniamy obrazek po lewej po kliknięciu
           />
         ))}

@@ -56,35 +56,35 @@ export const ProductContent: React.FC<{
                 <h6>FAQ</h6>
               </Tab>
             </TabList>
-            <div className="p3">
+            <div className="p-3">
               <TabPanel>
                 <div
-                  style={{
-                    height: '200px', // Stała wysokość ramki
-                    overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                    overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                    border: 'none', // Usunięcie obramowania
-                    outline: 'none', // Usunięcie obramowania po kliknięciu
-                    scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                    scrollbarColor:
-                      'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                  }}
+                  className="
+                  h-[200px]        // Domyślna wysokość
+                  sm:h-[300px]     // Wyższa ramka na małych ekranach (640px+)
+                  md:h-[400px]     // Jeszcze wyższa ramka na średnich ekranach (768px+)
+                  overflow-x-auto
+                  overflow-y-auto
+                  border-none
+                  outline-none
+                  scrollbar-thin scrollbar-thumb-gray-400
+                "
                 >
                   <RichText content={productDetails.richText} />
                 </div>
               </TabPanel>
               <TabPanel>
                 <div
-                  style={{
-                    height: '200px', // Stała wysokość ramki
-                    overflowX: 'auto', // Przewijanie poziome w przypadku długiego tekstu
-                    overflowY: 'auto', // Przewijanie pionowe w przypadku długiego tekstu
-                    border: 'none', // Usunięcie obramowania
-                    outline: 'none', // Usunięcie obramowania po kliknięciu
-                    scrollbarWidth: 'thin' /* Grubość paska przewijania */,
-                    scrollbarColor:
-                      'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0)' /* Kolor paska przewijania */,
-                  }}
+                  className="
+                  h-[200px]        // Domyślna wysokość
+                  sm:h-[300px]     // Wyższa ramka na małych ekranach (640px+)
+                  md:h-[400px]     // Jeszcze wyższa ramka na średnich ekranach (768px+)
+                  overflow-x-auto
+                  overflow-y-auto
+                  border-none
+                  outline-none
+                  scrollbar-thin scrollbar-thumb-gray-400
+                "
                 >
                   <RichText content={productFaq.richText} />
                 </div>
