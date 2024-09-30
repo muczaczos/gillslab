@@ -121,7 +121,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </div>
 
             {/* Druga kolumna */}
-
           </section>
 
           {/* Desktokp Hero */}
@@ -165,12 +164,68 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </div>
           </section>
 
-          {/* horizontal carousel */}
-          <section className="bg-customWhite py-4 pb-7">
+          {/* horizontal carousel for mobile*/}
+          <section className="block md:hidden bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
             </Gutter>
             <SmallCarousel icons={null} catLabels={catLabels} images={images} />
+          </section>
+
+          {/* horizontal menu for desktop*/}
+          <section className="w-full hidden md:block bg-customWhite py-4 pb-7">
+            <div className="flex flex-col w-full items-end">
+              <div className="w-3/4">
+                <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
+                <div className={`${classes.gradientMenu} rounded-xl flex py-14 px-10`}>
+                  <div className={`${classes.imageContainer}`}>
+                    <Image
+                      src={images[0]} // Ścieżka do obrazu
+                      alt="Category Image"
+                      width={150} // Szerokość obrazu
+                      height={100} // Wysokość obrazu
+                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                    />
+                  </div>
+                  <div className={`${classes.imageContainer}`}>
+                    <Image
+                      src={images[1]} // Ścieżka do obrazu
+                      alt="Category Image"
+                      width={150} // Szerokość obrazu
+                      height={100} // Wysokość obrazu
+                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                    />
+                  </div>
+                  <div className={`${classes.imageContainer}`}>
+                    <Image
+                      src={images[2]} // Ścieżka do obrazu
+                      alt="Category Image"
+                      width={150} // Szerokość obrazu
+                      height={100} // Wysokość obrazu
+                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                    />
+                  </div>
+                  <div className={`${classes.imageContainer}`}>
+                    <Image
+                      src={images[3]} // Ścieżka do obrazu
+                      alt="Category Image"
+                      width={150} // Szerokość obrazu
+                      height={100} // Wysokość obrazu
+                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                    />
+                  </div>
+                  <div className={`${classes.imageContainer}`}>
+                    <Image
+                      src={images[4]} // Ścieżka do obrazu
+                      alt="Category Image"
+                      width={150} // Szerokość obrazu
+                      height={100} // Wysokość obrazu
+                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* promotions banner */}
@@ -318,9 +373,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
             disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
           />
         </>
-      )
-      }
-    </LayoutWithHeaderFooter >
+      )}
+    </LayoutWithHeaderFooter>
   )
 }
 

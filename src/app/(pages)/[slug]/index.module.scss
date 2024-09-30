@@ -188,3 +188,17 @@
     gap: 60px;
   }
 }/*# sourceMappingURL=index.module.css.map */
+
+.gradientMenu {
+  background: linear-gradient(to right, #BBCCF1, #F7F9FB);
+  height: full;
+  width: 100%;
+}
+
+.imageContainer {
+  transition: transform 0.3s ease; /* Animacja */
+}
+
+.imageContainer:hover {
+  transform: scale(1.05); /* Powiększenie */
+}
