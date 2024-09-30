@@ -202,3 +202,16 @@
 .imageContainer:hover {
   transform: scale(1.05); /* Powiększenie */
 }
+
+.newsletterSec {
+  border-radius: 1rem;
+  width: 80%;
+  height: 300px;
+  background: linear-gradient(70deg,
+  #AC4968,           /* Niebieski początek */
+  #DCB4C1 50%,       /* Koniec jednolitego niebieskiego */
+  #BBCCF1 50%, /* Początek gradientu */
+  #4968AC 100%);
+}
+
+

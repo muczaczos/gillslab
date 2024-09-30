@@ -228,6 +228,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </div>
           </section>
 
+          {/* New newsletter banner */}
+          <section className="w-1/2 flex justify-center bg-customWhite">
+           <div className={classes.newsletterSec}>
+           </div>
+          </section>
+
           {/* promotions banner */}
           <div className=" bg-customWhite ">
             <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
