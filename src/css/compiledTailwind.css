@@ -1493,6 +1493,10 @@
     margin-left: 3.5rem !important;
   }
 
+  .xl\:mt-24 {
+    margin-top: 6rem !important;
+  }
+
   .xl\:w-\[800px\] {
     width: 800px !important;
   }
