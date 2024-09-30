@@ -85,21 +85,60 @@ export default async function Pages({ params: { slug = 'home' } }) {
     <LayoutWithHeaderFooter>
       {slug === 'home' ? (
         <>
-          {/* Hero */}
-          <section>
-            <div className="grid grid-cols-3">
+          {/* Mobile Hero */}
+          <section className="block md:hidden">
+            <div className="">
+              {/* Lewa kolumna podzielona na dwa wiersze */}
+
+              <div className="col-span-1 flex justify-end">
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/clouds.png`} // Ścieżka do obrazu w katalogu public
+                  alt="Clouds image"
+                  width={240} // Szerokość obrazu
+                  height={20} // Wysokość obrazu
+                  className="hidden sm:block ml-15 w-3/4 h-full"
+                />
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.png`} // Ścieżka do obrazu w katalogu public
+                  alt="Hero image"
+                  width={240} // Szerokość obrazu
+                  height={20} // Wysokość obrazu
+                  className="md:w-[440px]"
+                />
+              </div>
+              <div className="">
+                <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
+                  MAGIC <br />
+                  GROWKITS
+                </h1>
+                <p className="text-primary ml-7 mt-2 sm:ml-10">
+                  <span className="font-normal text-base">Cultivate Your Mushrooms Dreams</span>
+                </p>
+                <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
+                  Get Started
+                </button>
+              </div>
+            </div>
+
+            {/* Druga kolumna */}
+
+          </section>
+
+          {/* Desktokp Hero */}
+          <section className="hidden md:block">
+            <div className="grid grid-cols-3 bg-customWhite">
               {/* Lewa kolumna podzielona na dwa wiersze */}
               <div className="col-span-2 grid grid-rows-2">
-                <div className="">
+                <div className="bg-customWhite">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/clouds.png`} // Ścieżka do obrazu w katalogu public
-                    alt="GillsLab logotype"
+                    alt="Clouds image"
                     width={240} // Szerokość obrazu
                     height={20} // Wysokość obrazu
-                    className="ml-28 w-3/4 h-full"
+                    className="hidden md:block ml-10 w-[450px] lg:w-[600px] xl:w-[800px] xl:ml-24 xl:mt-16 2xl:w-[1000px]"
                   />
                 </div>
-                <div className="">
+                <div className="bg-customWhite">
                   <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
                     MAGIC <br />
                     GROWKITS
@@ -117,7 +156,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               <div className="col-span-1 flex justify-end">
                 <Image
                   src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.png`} // Ścieżka do obrazu w katalogu public
-                  alt="GillsLab logotype"
+                  alt="Hero image"
                   width={240} // Szerokość obrazu
                   height={20} // Wysokość obrazu
                   className="md:w-[440px]"
@@ -279,8 +318,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
             disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
           />
         </>
-      )}
-    </LayoutWithHeaderFooter>
+      )
+      }
+    </LayoutWithHeaderFooter >
   )
 }
 
