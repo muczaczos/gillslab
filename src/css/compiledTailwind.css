@@ -1489,6 +1489,10 @@
     margin-top: 4rem !important;
   }
 
+  .xl\:ml-14 {
+    margin-left: 3.5rem !important;
+  }
+
   .xl\:w-\[800px\] {
     width: 800px !important;
   }

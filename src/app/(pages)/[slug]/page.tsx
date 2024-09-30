@@ -134,7 +134,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                     alt="Clouds image"
                     width={240} // Szerokość obrazu
                     height={20} // Wysokość obrazu
-                    className="hidden md:block ml-10 w-[450px] lg:w-[600px] xl:w-[800px] xl:ml-24 xl:mt-16 2xl:w-[1000px]"
+                    className="hidden md:block ml-10 w-[450px] lg:w-[600px] xl:w-[800px] xl:ml-14 xl:mt-16 2xl:w-[1000px]"
                   />
                 </div>
                 <div className="bg-customWhite">
