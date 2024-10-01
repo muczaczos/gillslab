@@ -252,21 +252,61 @@ export default async function Pages({ params: { slug = 'home' } }) {
                       <p className="text-primary font-semibold">Substrates</p>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
           </section>
 
           {/* New newsletter banner */}
-          <section className="w-1/2 flex justify-center bg-customWhite">
-            <div className={classes.newsletterSec}></div>
-          </section>
-
-          {/* promotions banner */}
           <div className=" bg-customWhite ">
             <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
           </div>
+          <Gutter>
+            <section className="w-full flex flex-col md:flex-row justify-between gap-2 bg-customWhite">
+              <div
+                className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] grid-cols-1 md:grid-cols-2 gap-4 min-h-[300px]`}
+              >
+                {/* Górny wiersz */}
+                <div className="row-span-1">
+                  <h3 className="ml-5 mt-5 text-customWhite text-shadow">
+                    Subscribe to our newsletter!
+                  </h3>
+                </div>
+
+                {/* Dolny wiersz z dwoma kolumnami */}
+                <div className="row-span-1 grid grid-cols-2 gap-4">
+                  <div className="p-4">
+                    <h3 className="text-lg">Kolumna 1</h3>
+                    <p>Be the First to Know About Promotions and New Arrivals!</p>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg">Kolumna 2</h3>
+                    <p>Treść kolumny 2</p>
+                  </div>
+                </div>
+
+                {/* Ostatni wiersz */}
+                <div className="row-span-1 p-4">
+                  <h2 className="text-xl font-bold">Ostatni Wiersz</h2>
+                </div>
+              </div>
+
+              <div className={`${classes.newsletterSec} flex`}>
+                <div>
+                  <h3 className="ml-5 mt-5 text-customWhite text-shadow">
+                    Subscribe to our newsletter!
+                  </h3>
+                  <p className="ml-5 w-1/2 text-customWhite text-shadow">
+                    Be the First to Know About Promotions and New Arrivals!
+                  </p>
+                </div>
+                <div>Super obrazek</div>
+              </div>
+            </section>
+          </Gutter>
+
+          {/* promotions banner */}
+
           <section className="bg-customWhite flex justify-center px-5 pb-7">
             <div className={classes.promoCard}>
               <div className={classes.promoText}>
