@@ -262,35 +262,35 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
           </div>
           <Gutter>
-            <section className="w-full flex flex-col md:flex-row justify-between gap-2 bg-customWhite">
+            <section className="w-full bg-customWhite flex flex-col md:flex-row">
               <div
-                className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] grid-cols-1 md:grid-cols-2 gap-4 min-h-[300px]`}
+                className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] min-h-[150px]`}
               >
                 {/* Górny wiersz */}
-                <div className="row-span-1">
+                <div className="row-start-1 col-span-full">
                   <h3 className="ml-5 mt-5 text-customWhite text-shadow">
                     Subscribe to our newsletter!
                   </h3>
                 </div>
 
-                {/* Dolny wiersz z dwoma kolumnami */}
-                <div className="row-span-1 grid grid-cols-2 gap-4">
-                  <div className="p-4">
-                    <h3 className="text-lg">Kolumna 1</h3>
-                    <p>Be the First to Know About Promotions and New Arrivals!</p>
+                {/* Wiersz z dwoma kolumnami */}
+                <div className="grid grid-cols-2">
+                  <div className="">
+                    <p className="ml-5 w-full mt-2 text-customWhite font-semibold text-shadow">Be the First to Know About Promotions and New Arrivals!</p>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-lg">Kolumna 2</h3>
-                    <p>Treść kolumny 2</p>
+                  <div className="">
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter2.png`}
+                      alt="Promotion"
+                      className="pr-10"
+                      width={200}
+                      height={100}
+                    />
                   </div>
-                </div>
-
-                {/* Ostatni wiersz */}
-                <div className="row-span-1 p-4">
-                  <h2 className="text-xl font-bold">Ostatni Wiersz</h2>
                 </div>
               </div>
 
+              {/* Dodatkowa sekcja */}
               <div className={`${classes.newsletterSec} flex`}>
                 <div>
                   <h3 className="ml-5 mt-5 text-customWhite text-shadow">
@@ -304,6 +304,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </section>
           </Gutter>
+
 
           {/* promotions banner */}
 
