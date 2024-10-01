@@ -255,6 +255,38 @@
   margin-top: 6px !important;
 }
 
+.-mt-5 {
+  margin-top: -1.25rem !important;
+}
+
+.-mt-4 {
+  margin-top: -1rem !important;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem !important;
+}
+
+.-mt-1 {
+  margin-top: -0.25rem !important;
+}
+
+.-mt-\[10px\] {
+  margin-top: -10px !important;
+}
+
+.-mt-\[15px\] {
+  margin-top: -15px !important;
+}
+
+.-mt-\[14px\] {
+  margin-top: -14px !important;
+}
+
+.-mt-\[13px\] {
+  margin-top: -13px !important;
+}
+
 .block {
   display: block !important;
 }

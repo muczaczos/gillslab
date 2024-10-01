@@ -178,51 +178,81 @@ export default async function Pages({ params: { slug = 'home' } }) {
               <div className="w-3/4">
                 <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
                 <div className={`${classes.gradientMenu} rounded-xl flex py-14 px-10`}>
-                  <div className={`${classes.imageContainer}`}>
+                  <div
+                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                  >
                     <Image
                       src={images[0]} // Ścieżka do obrazu
                       alt="Category Image"
-                      width={150} // Szerokość obrazu
-                      height={100} // Wysokość obrazu
-                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                      width={170} // Szerokość obrazu
+                      height={120} // Wysokość obrazu
+                      className=" transform hover:scale-105"
                     />
+                    <div className="flex justify-center -mt-5 mb-2">
+                      <p className="text-primary font-semibold">Growkits</p>
+                    </div>
                   </div>
-                  <div className={`${classes.imageContainer}`}>
+
+                  <div
+                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                  >
                     <Image
                       src={images[1]} // Ścieżka do obrazu
                       alt="Category Image"
-                      width={150} // Szerokość obrazu
-                      height={100} // Wysokość obrazu
-                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                      width={170} // Szerokość obrazu
+                      height={120} // Wysokość obrazu
+                      className=" transform hover:scale-105"
                     />
+                    <div className="flex justify-center -mt-5 mb-2">
+                      <p className="text-primary font-semibold">Spores</p>
+                    </div>
                   </div>
-                  <div className={`${classes.imageContainer}`}>
+
+                  <div
+                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                  >
                     <Image
                       src={images[2]} // Ścieżka do obrazu
                       alt="Category Image"
-                      width={150} // Szerokość obrazu
-                      height={100} // Wysokość obrazu
-                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                      width={170} // Szerokość obrazu
+                      height={120} // Wysokość obrazu
+                      className=" transform hover:scale-105"
                     />
+                    <div className="flex justify-center -mt-5 mb-2">
+                      <p className="text-primary font-semibold">Cultures</p>
+                    </div>
                   </div>
-                  <div className={`${classes.imageContainer}`}>
+
+                  <div
+                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                  >
                     <Image
                       src={images[3]} // Ścieżka do obrazu
                       alt="Category Image"
-                      width={150} // Szerokość obrazu
-                      height={100} // Wysokość obrazu
-                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                      width={170} // Szerokość obrazu
+                      height={120} // Wysokość obrazu
+                      className=" transform hover:scale-105"
                     />
+                    <div className="flex justify-center -mt-5 mb-2">
+                      <p className="text-primary font-semibold">Lab</p>
+                    </div>
                   </div>
-                  <div className={`${classes.imageContainer}`}>
+
+                  <div
+                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                  >
                     <Image
                       src={images[4]} // Ścieżka do obrazu
                       alt="Category Image"
-                      width={150} // Szerokość obrazu
-                      height={100} // Wysokość obrazu
-                      className="bg-customWhite rounded-lg shadow-xl transform hover:scale-105 mr-5"
+                      width={160} // Szerokość obrazu
+                      height={120} // Wysokość obrazu
+                      className=" transform hover:scale-105"
                     />
+                    <div className="flex justify-center -mt-[13px] mb-2">
+                      <p className="text-primary font-semibold">Substrates</p>
+                    </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -230,8 +260,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
           {/* New newsletter banner */}
           <section className="w-1/2 flex justify-center bg-customWhite">
-           <div className={classes.newsletterSec}>
-           </div>
+            <div className={classes.newsletterSec}></div>
           </section>
 
           {/* promotions banner */}
