@@ -287,7 +287,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             >
               {/* Górny wiersz */}
               <div className="row-start-1 col-span-full">
-                <h3 className="ml-5 mt-5 text-customWhite text-shadow">
+                <h3 className="ml-5 mt-5 text-customWhite text-shadow xl:text-4xl xl:ml-10 xl:mt-10">
                   Subscribe to our newsletter!
                 </h3>
               </div>
@@ -295,7 +295,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               {/* Wiersz z dwoma kolumnami */}
               <div className="grid grid-cols-2">
                 <div className="">
-                  <p className="ml-5 w-full mt-2 text-customWhite font-semibold text-shadow">
+                  <p className="ml-5 w-full mt-2 text-customWhite font-semibold text-shadow xl:text-2xl xl:ml-10 ">
                     Be the First to Know About Promotions and New Arrivals!
                   </p>
                 </div>
@@ -303,7 +303,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   <Image
                     src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter2.png`}
                     alt="Promotion"
-                    className="pr-2"
+                    className="xl:ml-5 xl:w-[250px] xl:relative xl:bottom-[45px]"
                     width={200}
                     height={100}
                   />

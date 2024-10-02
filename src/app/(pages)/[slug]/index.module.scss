@@ -24,6 +24,11 @@
     width: 420px;
     height: 250px;
   }
+
+  @media (min-width: 1280px) {
+    width: 590px;
+    height: 300px;
+   }
 }
 
 .promoCard {
@@ -45,6 +50,11 @@
     width: 420px;
     height: 250px;
    }
+
+   @media (min-width: 1280px) {
+    width: 590px;
+    height: 300px;
+   }
 }
 
 .promoImage {
@@ -62,6 +72,11 @@
     top: 35px;
     right: -20px;
   }
+  @media (min-width: 1280px) {
+    scale: 4;
+    top: 40px;
+    right: 70px;
+   }
 }
 
 .promoText {
@@ -93,12 +108,21 @@
     font-size: 32px !important;
     line-height: 3.5rem;
   }
+
+  @media (min-width: 1280px) {
+    font-size: 40px !important;
+    line-height: 4rem;
+  }
 }
 
 .bigText {
   font-size: 32px !important;
   @media (min-width: 1024px) {
     font-size: 40px !important;
+  }
+  @media (min-width: 1280px) {
+    font-size: 48px !important;
+    line-height: 4rem;
   }
 }
 

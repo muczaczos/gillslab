@@ -1384,6 +1384,22 @@
 }
 
 @media (min-width: 1024px) {
+  .lg\:relative {
+    position: relative !important;
+  }
+
+  .lg\:bottom-4 {
+    bottom: 1rem !important;
+  }
+
+  .lg\:bottom-\[50px\] {
+    bottom: 50px !important;
+  }
+
+  .lg\:bottom-\[45px\] {
+    bottom: 45px !important;
+  }
+
   .lg\:mb-0 {
     margin-bottom: 0px !important;
   }
@@ -1400,12 +1416,36 @@
     margin-top: 2.5rem !important;
   }
 
+  .lg\:ml-10 {
+    margin-left: 2.5rem !important;
+  }
+
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem !important;
+  }
+
   .lg\:flex {
     display: flex !important;
   }
 
   .lg\:w-\[600px\] {
     width: 600px !important;
+  }
+
+  .lg\:w-\[250x\] {
+    width: 250x !important;
+  }
+
+  .lg\:w-\[300px\] {
+    width: 300px !important;
+  }
+
+  .lg\:w-\[250px\] {
+    width: 250px !important;
+  }
+
+  .lg\:w-\[240px\] {
+    width: 240px !important;
   }
 
   .lg\:flex-row {
@@ -1457,9 +1497,22 @@
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
   }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
+  }
 }
 
 @media (min-width: 1280px) {
+  .xl\:relative {
+    position: relative !important;
+  }
+
+  .xl\:bottom-\[45px\] {
+    bottom: 45px !important;
+  }
+
   .xl\:ml-14 {
     margin-left: 3.5rem !important;
   }
@@ -1468,8 +1521,34 @@
     margin-top: 4rem !important;
   }
 
+  .xl\:ml-5 {
+    margin-left: 1.25rem !important;
+  }
+
+  .xl\:ml-10 {
+    margin-left: 2.5rem !important;
+  }
+
+  .xl\:mt-10 {
+    margin-top: 2.5rem !important;
+  }
+
   .xl\:w-\[800px\] {
     width: 800px !important;
+  }
+
+  .xl\:w-\[250px\] {
+    width: 250px !important;
+  }
+
+  .xl\:text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .xl\:text-4xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
   }
 }
 
