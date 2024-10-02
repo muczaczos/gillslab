@@ -124,7 +124,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* Desktokp Hero */}
-          <section className="hidden md:block">
+
+          <div className="md:flex md:justify-center">
+            <section className="hidden md:block max-w-[1536px]">
             <div className="grid grid-cols-3 bg-customWhite">
               {/* Lewa kolumna podzielona na dwa wiersze */}
               <div className="col-span-2 grid grid-rows-2">
@@ -162,7 +164,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 />
               </div>
             </div>
-          </section>
+            </section>
+          </div>
 
           {/* horizontal carousel for mobile*/}
           <section className="block md:hidden bg-customWhite py-4 pb-7">
@@ -258,60 +261,64 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* Banners */}
-          <div className=" bg-customWhite ">
-            <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
-          </div>
-          <section className="px-5 w-full bg-customWhite flex flex-col items-center md:justify-between md:flex-row">
-
-            {/* Promo banner */}
-            <div className={`${classes.promoCard} mb-5 md:mb-0 flex`}>
-              <div className={classes.promoText}>
-                <p className={classes.smallText}>Get</p>
-                <h3 className={classes.bigText}>20% Off</h3>
-                <p className={classes.smallText}>for this month</p>
-              </div>
-              <div>
-                <Image
-                  src={promotionImg}
-                  alt="Promotion"
-                  className={classes.promoImage}
-                  width={100}
-                  height={100}
-                />
-              </div>
+          <div className="px-5 bg-customWhite md:flex md:justify-center">
+            <div className="w-full md:flex md:justify-start max-w-[1536px]">
+              <h2 className="py-2 font-bold text-2xl text-primary">Promotions</h2>
             </div>
-
-            {/* News banner */}
-            <div
-              className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] min-h-[150px]`}
-            >
-              {/* Górny wiersz */}
-              <div className="row-start-1 col-span-full">
-                <h3 className="ml-5 mt-5 text-customWhite text-shadow xl:text-4xl xl:ml-10 xl:mt-10">
-                  Subscribe to our newsletter!
-                </h3>
-              </div>
-
-              {/* Wiersz z dwoma kolumnami */}
-              <div className="grid grid-cols-2">
-                <div className="">
-                  <p className="ml-5 w-full mt-2 text-customWhite font-semibold text-shadow xl:text-2xl xl:ml-10 ">
-                    Be the First to Know About Promotions and New Arrivals!
-                  </p>
+          </div>
+          <section className="bg-customWhite md:flex md:justify-center">
+            <div className="px-5 w-full bg-customWhite flex flex-col items-center md:justify-between md:flex-row 2xl:px-0 max-w-[1536px]">
+              {/* Promo banner */}
+              <div className={`${classes.promoCard} mb-5 md:mb-0 flex`}>
+                <div className={classes.promoText}>
+                  <p className={classes.smallText}>Get</p>
+                  <h3 className={classes.bigText}>20% Off</h3>
+                  <p className={classes.smallText}>for this month</p>
                 </div>
-                <div className="">
+                <div>
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter2.png`}
+                    src={promotionImg}
                     alt="Promotion"
-                    className="xl:ml-5 xl:w-[250px] xl:relative xl:bottom-[45px]"
-                    width={200}
+                    className={classes.promoImage}
+                    width={100}
                     height={100}
                   />
                 </div>
               </div>
-            </div>
 
+              {/* News banner */}
+              <div
+                className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] min-h-[150px]`}
+              >
+                {/* Górny wiersz */}
+                <div className="row-start-1 col-span-full">
+                  <h3 className="ml-5 mt-5 text-customWhite text-shadow xl:text-4xl xl:ml-10 xl:mt-10">
+                    Subscribe to our newsletter!
+                  </h3>
+                </div>
+
+                {/* Wiersz z dwoma kolumnami */}
+                <div className="grid grid-cols-2">
+                  <div className="">
+                    <p className="ml-5 w-full mt-2 text-customWhite font-semibold text-shadow xl:text-2xl xl:ml-10 ">
+                      Be the First to Know About Promotions and New Arrivals!
+                    </p>
+                  </div>
+                  <div className="">
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter2.png`}
+                      alt="Promotion"
+                      className="xl:ml-5 xl:w-[250px] xl:relative xl:bottom-[45px]"
+                      width={200}
+                      height={100}
+                    />
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </section>
+          
 
           {/* 4 x growkit section */}
           <section className="bg-customWhite py-4 pb-7">

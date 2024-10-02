@@ -128,10 +128,6 @@
   grid-column: 1 / -1 !important;
 }
 
-.row-span-1 {
-  grid-row: span 1 / span 1 !important;
-}
-
 .row-start-1 {
   grid-row-start: 1 !important;
 }
@@ -153,10 +149,6 @@
 .my-0 {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
-}
-
-.-mt-12 {
-  margin-top: -3rem !important;
 }
 
 .-mt-20 {
@@ -343,16 +335,8 @@
   height: 100% !important;
 }
 
-.h-\[150px\] {
-  height: 150px !important;
-}
-
 .max-h-full {
   max-height: 100% !important;
-}
-
-.min-h-\[300px\] {
-  min-height: 300px !important;
 }
 
 .min-h-\[150px\] {
@@ -423,6 +407,10 @@
   max-width: 24rem !important;
 }
 
+.max-w-\[1536px\] {
+  max-width: 1536px !important;
+}
+
 .flex-auto {
   flex: 1 1 auto !important;
 }
@@ -489,10 +477,6 @@
   list-style-type: none !important;
 }
 
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-}
-
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
@@ -547,10 +531,6 @@
 
 .gap-5 {
   gap: 1.25rem !important;
-}
-
-.gap-0 {
-  gap: 0px !important;
 }
 
 .overflow-hidden {
@@ -839,11 +819,6 @@
   padding-bottom: 1rem !important;
 }
 
-.py-5 {
-  padding-top: 1.25rem !important;
-  padding-bottom: 1.25rem !important;
-}
-
 .py-6 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
@@ -927,14 +902,6 @@
 
 .pt-5 {
   padding-top: 1.25rem !important;
-}
-
-.pr-10 {
-  padding-right: 2.5rem !important;
-}
-
-.pr-1 {
-  padding-right: 0.25rem !important;
 }
 
 .text-left {
@@ -1341,20 +1308,32 @@
     width: 440px !important;
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  .md\:max-w-\[1536px\] {
+    max-width: 1536px !important;
   }
 
   .md\:flex-row {
     flex-direction: row !important;
   }
 
+  .md\:flex-col {
+    flex-direction: column !important;
+  }
+
   .md\:flex-wrap {
     flex-wrap: wrap !important;
   }
 
-  .md\:items-stretch {
-    align-items: stretch !important;
+  .md\:items-center {
+    align-items: center !important;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start !important;
+  }
+
+  .md\:justify-center {
+    justify-content: center !important;
   }
 
   .md\:justify-between {
@@ -1384,22 +1363,6 @@
 }
 
 @media (min-width: 1024px) {
-  .lg\:relative {
-    position: relative !important;
-  }
-
-  .lg\:bottom-4 {
-    bottom: 1rem !important;
-  }
-
-  .lg\:bottom-\[50px\] {
-    bottom: 50px !important;
-  }
-
-  .lg\:bottom-\[45px\] {
-    bottom: 45px !important;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px !important;
   }
@@ -1416,36 +1379,12 @@
     margin-top: 2.5rem !important;
   }
 
-  .lg\:ml-10 {
-    margin-left: 2.5rem !important;
-  }
-
-  .lg\:mb-5 {
-    margin-bottom: 1.25rem !important;
-  }
-
   .lg\:flex {
     display: flex !important;
   }
 
   .lg\:w-\[600px\] {
     width: 600px !important;
-  }
-
-  .lg\:w-\[250x\] {
-    width: 250x !important;
-  }
-
-  .lg\:w-\[300px\] {
-    width: 300px !important;
-  }
-
-  .lg\:w-\[250px\] {
-    width: 250px !important;
-  }
-
-  .lg\:w-\[240px\] {
-    width: 240px !important;
   }
 
   .lg\:flex-row {
@@ -1497,11 +1436,6 @@
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
   }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem !important;
-    line-height: 2.5rem !important;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -1513,32 +1447,37 @@
     bottom: 45px !important;
   }
 
-  .xl\:ml-14 {
-    margin-left: 3.5rem !important;
+  .xl\:ml-10 {
+    margin-left: 2.5rem !important;
   }
 
-  .xl\:mt-16 {
-    margin-top: 4rem !important;
+  .xl\:ml-14 {
+    margin-left: 3.5rem !important;
   }
 
   .xl\:ml-5 {
     margin-left: 1.25rem !important;
   }
 
-  .xl\:ml-10 {
-    margin-left: 2.5rem !important;
-  }
-
   .xl\:mt-10 {
     margin-top: 2.5rem !important;
+  }
+
+  .xl\:mt-16 {
+    margin-top: 4rem !important;
+  }
+
+  .xl\:w-\[250px\] {
+    width: 250px !important;
   }
 
   .xl\:w-\[800px\] {
     width: 800px !important;
   }
 
-  .xl\:w-\[250px\] {
-    width: 250px !important;
+  .xl\:px-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
   .xl\:text-2xl {
@@ -1555,6 +1494,11 @@
 @media (min-width: 1536px) {
   .\32xl\:w-\[1000px\] {
     width: 1000px !important;
+  }
+
+  .\32xl\:px-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
 
