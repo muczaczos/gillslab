@@ -257,59 +257,14 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </div>
           </section>
 
-          {/* New newsletter banner */}
+          {/* Banners */}
           <div className=" bg-customWhite ">
             <h2 className="pl-7 py-2 font-bold text-2xl text-primary">Promotions</h2>
           </div>
-          <Gutter>
-            <section className="w-full bg-customWhite flex flex-col md:flex-row">
-              <div
-                className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] min-h-[150px]`}
-              >
-                {/* Górny wiersz */}
-                <div className="row-start-1 col-span-full">
-                  <h3 className="ml-5 mt-5 text-customWhite text-shadow">
-                    Subscribe to our newsletter!
-                  </h3>
-                </div>
+          <section className="px-5 w-full bg-customWhite flex flex-col items-center md:justify-between md:flex-row">
 
-                {/* Wiersz z dwoma kolumnami */}
-                <div className="grid grid-cols-2">
-                  <div className="">
-                    <p className="ml-5 w-full mt-2 text-customWhite font-semibold text-shadow">Be the First to Know About Promotions and New Arrivals!</p>
-                  </div>
-                  <div className="">
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter2.png`}
-                      alt="Promotion"
-                      className="pr-10"
-                      width={200}
-                      height={100}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Dodatkowa sekcja */}
-              <div className={`${classes.newsletterSec} flex`}>
-                <div>
-                  <h3 className="ml-5 mt-5 text-customWhite text-shadow">
-                    Subscribe to our newsletter!
-                  </h3>
-                  <p className="ml-5 w-1/2 text-customWhite text-shadow">
-                    Be the First to Know About Promotions and New Arrivals!
-                  </p>
-                </div>
-                <div>Super obrazek</div>
-              </div>
-            </section>
-          </Gutter>
-
-
-          {/* promotions banner */}
-
-          <section className="bg-customWhite flex justify-center px-5 pb-7">
-            <div className={classes.promoCard}>
+            {/* Promo banner */}
+            <div className={`${classes.promoCard} mb-5 md:mb-0 flex`}>
               <div className={classes.promoText}>
                 <p className={classes.smallText}>Get</p>
                 <h3 className={classes.bigText}>20% Off</h3>
@@ -325,12 +280,43 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 />
               </div>
             </div>
+
+            {/* News banner */}
+            <div
+              className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] min-h-[150px]`}
+            >
+              {/* Górny wiersz */}
+              <div className="row-start-1 col-span-full">
+                <h3 className="ml-5 mt-5 text-customWhite text-shadow">
+                  Subscribe to our newsletter!
+                </h3>
+              </div>
+
+              {/* Wiersz z dwoma kolumnami */}
+              <div className="grid grid-cols-2">
+                <div className="">
+                  <p className="ml-5 w-full mt-2 text-customWhite font-semibold text-shadow">
+                    Be the First to Know About Promotions and New Arrivals!
+                  </p>
+                </div>
+                <div className="">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter2.png`}
+                    alt="Promotion"
+                    className="pr-2"
+                    width={200}
+                    height={100}
+                  />
+                </div>
+              </div>
+            </div>
+
           </section>
 
           {/* 4 x growkit section */}
           <section className="bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
-              <h2 className="py-2 font-bold text-2xl text-primary">Cubensis Growkits</h2>
+              <h2 className="py-2 font-bold text-2xl text-primary">Best Products</h2>
               <div className="flex flex-col sm:flex-row sm:gap-3">
                 <div className="mb-3 flex justify-between csm:justify-center sm:w-full gap-3">
                   <div className="relative flex flex-col justify-aroun bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3 sm:w-1/2">
@@ -396,30 +382,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 </div>
               </div>
             </Gutter>
-          </section>
-
-          {/* Newsletter */}
-          <section className="bg-customWhite flex flex-col items-center px-5 pb-7">
-            <div className={classes.newsCard}>
-              <div className={classes.newsText}>
-                <h3 className={classes.nBigText}>Subscribe to our newsletter!</h3>
-                <p className={classes.nSmallText}>
-                  Be the First to Know About Promotions and New Arrivals!
-                </p>
-              </div>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/newsletter.png`}
-                alt="Promotion"
-                className={classes.newsImage}
-                width={100}
-                height={100}
-              />
-            </div>
-            <div
-              className={`${classes.subscribe} w-1/2 rounded-xl py-5 flex justify-center -mt-12`}
-            >
-              <p className="text-customWhite text-shadow text-xl font-bold">Subscribe</p>
-            </div>
           </section>
 
           {/* news on blog and vlog */}
