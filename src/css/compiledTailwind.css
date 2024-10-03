@@ -395,6 +395,14 @@
   width: 100% !important;
 }
 
+.w-\[1536px\] {
+  width: 1536px !important;
+}
+
+.max-w-\[1536px\] {
+  max-width: 1536px !important;
+}
+
 .max-w-full {
   max-width: 100% !important;
 }
@@ -405,10 +413,6 @@
 
 .max-w-sm {
   max-width: 24rem !important;
-}
-
-.max-w-\[1536px\] {
-  max-width: 1536px !important;
 }
 
 .flex-auto {
@@ -864,10 +868,6 @@
   padding-left: 1.25rem !important;
 }
 
-.pl-7 {
-  padding-left: 1.75rem !important;
-}
-
 .pr-0 {
   padding-right: 0px !important;
 }
@@ -1308,16 +1308,24 @@
     width: 440px !important;
   }
 
+  .md\:w-full {
+    width: 100% !important;
+  }
+
+  .md\:w-\[1536px\] {
+    width: 1536px !important;
+  }
+
+  .md\:max-w-\[1536\] {
+    max-width: 1536 !important;
+  }
+
   .md\:max-w-\[1536px\] {
     max-width: 1536px !important;
   }
 
   .md\:flex-row {
     flex-direction: row !important;
-  }
-
-  .md\:flex-col {
-    flex-direction: column !important;
   }
 
   .md\:flex-wrap {
@@ -1473,11 +1481,6 @@
 
   .xl\:w-\[800px\] {
     width: 800px !important;
-  }
-
-  .xl\:px-0 {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
   }
 
   .xl\:text-2xl {
