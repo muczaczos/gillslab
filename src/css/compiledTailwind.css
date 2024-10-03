@@ -335,6 +335,14 @@
   height: 100% !important;
 }
 
+.h-\[10rem\] {
+  height: 10rem !important;
+}
+
+.h-\[12rem\] {
+  height: 12rem !important;
+}
+
 .max-h-full {
   max-height: 100% !important;
 }
@@ -405,6 +413,22 @@
 
 .w-\[12rem\] {
   width: 12rem !important;
+}
+
+.w-\[8rem\] {
+  width: 8rem !important;
+}
+
+.w-\[10rem\] {
+  width: 10rem !important;
+}
+
+.w-\[4rem\] {
+  width: 4rem !important;
+}
+
+.w-\[5rem\] {
+  width: 5rem !important;
 }
 
 .max-w-\[1536px\] {
@@ -521,6 +545,10 @@
   align-items: center !important;
 }
 
+.justify-start {
+  justify-content: flex-start !important;
+}
+
 .justify-end {
   justify-content: flex-end !important;
 }
@@ -547,6 +575,10 @@
 
 .gap-5 {
   gap: 1.25rem !important;
+}
+
+.gap-6 {
+  gap: 1.5rem !important;
 }
 
 .overflow-hidden {
@@ -927,6 +959,10 @@
 
 .pb-20 {
   padding-bottom: 5rem !important;
+}
+
+.pb-14 {
+  padding-bottom: 3.5rem !important;
 }
 
 .text-left {
@@ -1379,6 +1415,10 @@
     justify-content: flex-start !important;
   }
 
+  .md\:justify-end {
+    justify-content: flex-end !important;
+  }
+
   .md\:justify-center {
     justify-content: center !important;
   }
@@ -1406,6 +1446,10 @@
 
   .md\:pt-4 {
     padding-top: 1rem !important;
+  }
+
+  .md\:pl-0 {
+    padding-left: 0px !important;
   }
 }
 
@@ -1514,12 +1558,24 @@
     margin-top: 4rem !important;
   }
 
+  .xl\:flex {
+    display: flex !important;
+  }
+
   .xl\:w-\[250px\] {
     width: 250px !important;
   }
 
   .xl\:w-\[800px\] {
     width: 800px !important;
+  }
+
+  .xl\:w-3\/4 {
+    width: 75% !important;
+  }
+
+  .xl\:justify-end {
+    justify-content: flex-end !important;
   }
 
   .xl\:gap-4 {
@@ -1542,6 +1598,22 @@
   .xl\:px-5 {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
+  }
+
+  .xl\:pl-0 {
+    padding-left: 0px !important;
+  }
+
+  .xl\:pb-7 {
+    padding-bottom: 1.75rem !important;
+  }
+
+  .xl\:pt-7 {
+    padding-top: 1.75rem !important;
+  }
+
+  .xl\:pt-14 {
+    padding-top: 3.5rem !important;
   }
 
   .xl\:text-2xl {

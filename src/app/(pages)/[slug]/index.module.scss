@@ -67,7 +67,7 @@
 
 .promoImage {
   position: relative;
-  scale: 1.8;
+  scale: 1.7;
   top: 28px;
   right: 25px;
   @media (min-width: 768px) {
@@ -162,9 +162,12 @@
 }
 
 .gradientMenu2 {
-  background: linear-gradient(to left, #DAACBA, #F7F9FB);
-  height: full;
-  width: 100%;
+  background: #F7F9FB;
+  @media (min-width: 1280px) {
+    background: linear-gradient(to left, #DAACBA, #F7F9FB);
+    height: full;
+    width: 100%;
+  }
 }
 
 .imageContainer {

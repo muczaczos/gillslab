@@ -90,7 +90,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <div className="">
               {/* Lewa kolumna podzielona na dwa wiersze */}
 
-              <div className="col-span-1 flex justify-end">
+              <div className="bg-customWhite col-span-1 flex justify-end">
                 <Image
                   src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/clouds.png`} // Ścieżka do obrazu w katalogu public
                   alt="Clouds image"
@@ -106,7 +106,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   className="md:w-[440px]"
                 />
               </div>
-              <div className="">
+              <div className="bg-customWhite">
                 <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
                   MAGIC <br />
                   GROWKITS
@@ -317,73 +317,78 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </div>
           </section>
 
-          <section className="w-full hidden md:block bg-customWhite py-4 pb-7">
-            <div className="flex flex-col w-full items-start">
-              <div className="w-3/4">
-                <div className="flex justify-end">
+          {/* Best producst */}
+          <section className="w-full bg-customWhite py-4 pb-7">
+            <div className="flex flex-col w-full items-center">
+              <div className="w-full xl:w-3/4">
+                <div className="pl-5 flex justify-start xl:pl-0 xl:justify-end">
                   <h2 className="py-2 font-bold text-2xl text-primary">Best Products</h2>
                 </div>
                 <div
-                  className={`${classes.gradientMenu2} rounded-xl flex gap-2 xl:gap-6 justify-end py-14 px-10`}
+                  className={`${classes.gradientMenu2} rounded-xl flex gap-2 xl:gap-6 justify-center xl:justify-end pb-14 xl:pt-14 px-10`}
                 >
-                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
-                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
-                    <div className="mt-5 flex justify-center">
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mckLabel.png`}
-                        alt="Promotion"
-                        className="w-[6rem] py-4"
-                        width={100}
-                        height={100}
-                      />
+                  <div className=" xl:flex xl:gap-6">
+                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                      <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
+                      <div className="mt-5 flex justify-center">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mckLabel.png`}
+                          alt="Promotion"
+                          className="w-[5rem] py-4"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                      <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
+                      <p className="text-primary text-2xl font-bold pl-3">$35</p>
                     </div>
-                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
-                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
+
+                    <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                      <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
+                      <div className="mt-5 flex justify-center">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ecuLabel.png`}
+                          alt="Promotion"
+                          className="w-[5rem] py-4"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                      <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
+                      <p className="text-primary text-2xl font-bold pl-3">$35</p>
+                    </div>
                   </div>
 
-                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
-                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
-                    <div className="mt-5 flex justify-center">
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ecuLabel.png`}
-                        alt="Promotion"
-                        className="w-[6rem] py-4"
-                        width={100}
-                        height={100}
-                      />
+                  <div className="xl:flex xl:gap-6">
+                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                      <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
+                      <div className="mt-5 flex justify-center">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/gtLabel.png`}
+                          alt="Promotion"
+                          className="w-[5rem] py-4"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                      <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
+                      <p className="text-primary text-2xl font-bold pl-3">$35</p>
                     </div>
-                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
-                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
-                  </div>
 
-                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
-                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
-                    <div className="mt-5 flex justify-center">
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/gtLabel.png`}
-                        alt="Promotion"
-                        className="w-[6rem] py-4"
-                        width={100}
-                        height={100}
-                      />
+                    <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                      <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
+                      <div className="mt-5 flex justify-center">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/colLabel.png`}
+                          alt="Promotion"
+                          className="w-[5rem] py-4"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                      <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
+                      <p className="text-primary text-2xl font-bold pl-3">$35</p>
                     </div>
-                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
-                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
-                  </div>
-
-                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
-                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
-                    <div className="mt-5 flex justify-center">
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/colLabel.png`}
-                        alt="Promotion"
-                        className="w-[6rem] py-4"
-                        width={100}
-                        height={100}
-                      />
-                    </div>
-                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
-                    <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
                 </div>
               </div>
