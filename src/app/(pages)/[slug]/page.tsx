@@ -124,9 +124,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* Desktokp Hero */}
-
           <div className="md:flex md:justify-center">
-            <section className="hidden md:block max-w-[1536px]">
+            <section className="hidden md:block md:w-full 2xl:min-w-[1536px] max-w-[1536px]">
               <div className="grid grid-cols-3 bg-customWhite">
                 {/* Lewa kolumna podzielona na dwa wiersze */}
                 <div className="col-span-2 grid grid-rows-2">
@@ -176,7 +175,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* horizontal menu for desktop*/}
-          <section className="w-full hidden md:block bg-customWhite py-4 pb-7">
+          <section className="w-full hidden md:block bg-customWhite pb-20 py-5">
             <div className="flex flex-col w-full items-end">
               <div className="w-3/4">
                 <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
@@ -266,7 +265,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               <h2 className="py-2 font-bold text-2xl text-primary">Promotions</h2>
             </div>
           </div>
-          <section className="bg-customWhite md:flex md:justify-center">
+          <section className="pb-10 xl:px-5 bg-customWhite md:flex md:justify-center">
             <div className="px-5 w-full bg-customWhite flex flex-col items-center md:justify-between md:flex-row 2xl:px-0 max-w-[1536px]">
               {/* Promo banner */}
               <div className={`${classes.promoCard} mb-5 md:mb-0 flex`}>
@@ -291,7 +290,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] min-h-[150px]`}
               >
                 {/* Górny wiersz */}
-                <div className="row-start-1 col-span-full">
+                <div className="2xl:w-3/4 row-start-1 col-span-full">
                   <h3 className="ml-5 mt-5 text-customWhite text-shadow xl:text-4xl xl:ml-10 xl:mt-10">
                     Subscribe to our newsletter!
                   </h3>
@@ -315,18 +314,19 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   </div>
                 </div>
               </div>
-
             </div>
           </section>
 
-
-          {/* 4 x growkit section */}
-          <section className="bg-customWhite py-4 pb-7">
-            <Gutter className="classes.home">
-              <h2 className="py-2 font-bold text-2xl text-primary">Best Products</h2>
-              <div className="flex flex-col sm:flex-row sm:gap-3">
-                <div className="mb-3 flex justify-between csm:justify-center sm:w-full gap-3">
-                  <div className="relative flex flex-col justify-aroun bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3 sm:w-1/2">
+          <section className="w-full hidden md:block bg-customWhite py-4 pb-7">
+            <div className="flex flex-col w-full items-start">
+              <div className="w-3/4">
+                <div className="flex justify-end">
+                  <h2 className="py-2 font-bold text-2xl text-primary">Best Products</h2>
+                </div>
+                <div
+                  className={`${classes.gradientMenu2} rounded-xl flex gap-2 xl:gap-6 justify-end py-14 px-10`}
+                >
+                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
                     <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                     <div className="mt-5 flex justify-center">
                       <Image
@@ -341,8 +341,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
                     <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
 
-                  <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3">
-                    <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
+                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
+                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                     <div className="mt-5 flex justify-center">
                       <Image
                         src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ecuLabel.png`}
@@ -352,13 +352,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
                         height={100}
                       />
                     </div>
-                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">G. Teacher</p>
+                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
                     <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
-                </div>
-                <div className="flex justify-between csm:justify-center gap-3 sm:w-full">
-                  <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3">
-                    <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
+
+                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
+                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                     <div className="mt-5 flex justify-center">
                       <Image
                         src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/gtLabel.png`}
@@ -368,12 +367,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
                         height={100}
                       />
                     </div>
-                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Mazatapec</p>
+                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
                     <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
 
-                  <div className="relative flex flex-col bg-white rounded-xl h-[14rem] w-1/2 csm:w-1/3">
-                    <FaRegHeart className="absolute top-3 right-3 text-primary text-2xl" />
+                  <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[14rem] w-[12rem]">
+                    <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                     <div className="mt-5 flex justify-center">
                       <Image
                         src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/colLabel.png`}
@@ -383,12 +382,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
                         height={100}
                       />
                     </div>
-                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Ecuador</p>
+                    <p className="leading-3 pl-3 text-primary font-bold opacity-70">Cambodian</p>
                     <p className="text-primary text-2xl font-bold pl-3">$35</p>
                   </div>
                 </div>
               </div>
-            </Gutter>
+            </div>
           </section>
 
           {/* news on blog and vlog */}

@@ -29,6 +29,10 @@
     width: 590px;
     height: 300px;
    }
+
+   @media (min-width: 1536px) {
+    width: 700px;
+   }
 }
 
 .promoCard {
@@ -54,6 +58,10 @@
    @media (min-width: 1280px) {
     width: 590px;
     height: 300px;
+   }
+
+   @media (min-width: 1536px) {
+    width: 700px;
    }
 }
 
@@ -149,6 +157,12 @@
 
 .gradientMenu {
   background: linear-gradient(to right, #BBCCF1, #F7F9FB);
+  height: full;
+  width: 100%;
+}
+
+.gradientMenu2 {
+  background: linear-gradient(to left, #DAACBA, #F7F9FB);
   height: full;
   width: 100%;
 }

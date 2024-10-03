@@ -399,6 +399,14 @@
   width: 1536px !important;
 }
 
+.w-\[14rem\] {
+  width: 14rem !important;
+}
+
+.w-\[12rem\] {
+  width: 12rem !important;
+}
+
 .max-w-\[1536px\] {
   max-width: 1536px !important;
 }
@@ -499,6 +507,10 @@
 
 .flex-col {
   flex-direction: column !important;
+}
+
+.items-start {
+  align-items: flex-start !important;
 }
 
 .items-end {
@@ -828,6 +840,11 @@
   padding-bottom: 1.5rem !important;
 }
 
+.py-5 {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
 .pb-16 {
   padding-bottom: 4rem !important;
 }
@@ -902,6 +919,14 @@
 
 .pt-5 {
   padding-top: 1.25rem !important;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem !important;
+}
+
+.pb-20 {
+  padding-bottom: 5rem !important;
 }
 
 .text-left {
@@ -1133,6 +1158,12 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
 .outline-none {
   outline: 2px solid transparent !important;
   outline-offset: 2px !important;
@@ -1155,6 +1186,10 @@
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.shadow {
+  shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .frame-gradient {
@@ -1314,6 +1349,10 @@
 
   .md\:w-\[1536px\] {
     width: 1536px !important;
+  }
+
+  .md\:min-w-\[1536px\] {
+    min-width: 1536px !important;
   }
 
   .md\:max-w-\[1536\] {
@@ -1483,6 +1522,28 @@
     width: 800px !important;
   }
 
+  .xl\:gap-4 {
+    gap: 1rem !important;
+  }
+
+  .xl\:gap-8 {
+    gap: 2rem !important;
+  }
+
+  .xl\:gap-6 {
+    gap: 1.5rem !important;
+  }
+
+  .xl\:py-5 {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  .xl\:px-5 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
   .xl\:text-2xl {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
@@ -1497,6 +1558,14 @@
 @media (min-width: 1536px) {
   .\32xl\:w-\[1000px\] {
     width: 1000px !important;
+  }
+
+  .\32xl\:w-3\/4 {
+    width: 75% !important;
+  }
+
+  .\32xl\:min-w-\[1536px\] {
+    min-width: 1536px !important;
   }
 
   .\32xl\:px-0 {
