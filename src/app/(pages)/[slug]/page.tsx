@@ -178,7 +178,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           <section className="w-full hidden md:block bg-customWhite pb-20 py-5">
             <div className="flex flex-col w-full items-end">
               <div className="w-3/4">
-                <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
+                <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">Shop By Categories</h2>
                 <div className={`${classes.gradientMenu} rounded-xl flex py-14 px-10`}>
                   <div
                     className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
@@ -260,9 +260,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* Banners */}
-          <div className="px-5 bg-customWhite md:flex md:justify-center">
+          <div className="px-5 xl:px-10 bg-customWhite md:flex md:justify-center">
             <div className="w-full md:flex md:justify-start max-w-[1536px]">
-              <h2 className="py-2 font-bold text-2xl text-primary">Promotions</h2>
+              <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">Promotions</h2>
             </div>
           </div>
           <section className="pb-10 xl:px-5 bg-customWhite md:flex md:justify-center">
@@ -318,23 +318,23 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* Best producst */}
-          <section className="w-full bg-customWhite py-4 pb-7">
+          <section className="w-full bg-customWhite py-4 pb-20">
             <div className="flex flex-col w-full items-center">
               <div className="w-full xl:w-3/4">
                 <div className="pl-5 flex justify-start xl:pl-0 xl:justify-end">
-                  <h2 className="py-2 font-bold text-2xl text-primary">Best Products</h2>
+                  <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">Best Products</h2>
                 </div>
                 <div
-                  className={`${classes.gradientMenu2} rounded-xl flex gap-2 xl:gap-6 justify-center xl:justify-end pb-14 xl:pt-14 px-10`}
+                  className={`${classes.gradientMenu2} rounded-xl flex gap-2 xl:gap-12 justify-center xl:justify-end pb-14 xl:pt-14 px-10`}
                 >
-                  <div className=" xl:flex xl:gap-6">
-                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                  <div className=" xl:flex xl:gap-12">
+                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
                       <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                       <div className="mt-5 flex justify-center">
                         <Image
                           src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mckLabel.png`}
                           alt="Promotion"
-                          className="w-[5rem] py-4"
+                          className="w-[5rem] py-4 sm:w-[7rem] sm:mt-[1rem]"
                           width={100}
                           height={100}
                         />
@@ -343,13 +343,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
                       <p className="text-primary text-2xl font-bold pl-3">$35</p>
                     </div>
 
-                    <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
                       <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                       <div className="mt-5 flex justify-center">
                         <Image
                           src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/ecuLabel.png`}
                           alt="Promotion"
-                          className="w-[5rem] py-4"
+                          className="w-[5rem] py-4 sm:w-[7rem] sm:mt-[1rem]"
                           width={100}
                           height={100}
                         />
@@ -359,14 +359,14 @@ export default async function Pages({ params: { slug = 'home' } }) {
                     </div>
                   </div>
 
-                  <div className="xl:flex xl:gap-6">
-                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                  <div className="xl:flex xl:gap-12">
+                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
                       <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                       <div className="mt-5 flex justify-center">
                         <Image
                           src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/gtLabel.png`}
                           alt="Promotion"
-                          className="w-[5rem] py-4"
+                          className="w-[5rem] py-4 sm:w-[7rem] sm:mt-[1rem]"
                           width={100}
                           height={100}
                         />
@@ -375,13 +375,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
                       <p className="text-primary text-2xl font-bold pl-3">$35</p>
                     </div>
 
-                    <div className="relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem]">
+                    <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
                       <FaHeart className="absolute top-3 right-3 text-secondary text-2xl" />
                       <div className="mt-5 flex justify-center">
                         <Image
                           src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/colLabel.png`}
                           alt="Promotion"
-                          className="w-[5rem] py-4"
+                          className="w-[5rem] py-4 sm:w-[7rem] sm:mt-[1rem]"
                           width={100}
                           height={100}
                         />
@@ -396,19 +396,19 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* news on blog and vlog */}
-          <section className={classes.blogvlog}>
+          <section className={`${classes.blogvlog} pt-10`}>
             <Gutter>
               <div className="flex justify-between z-0">
-                <p className="py-2 font-bold text-xl text-primary z-20">News on Blog</p>
-                <p className="pt-2 relative top-1 font-bold text-md text-primary">View All</p>
+                <p className="py-2 font-bold text-xl text-primary z-20 sm:text-3xl">News on Blog</p>
+                <p className="pt-2 relative top-1 font-bold text-md text-primary sm:text-xl">View All</p>
               </div>
             </Gutter>
             <NewsCarousel catLabels={catLabels} images={images2} />
-
+            <div className="pb-10"></div>
             <Gutter>
               <div className="flex justify-between z-10">
-                <p className="py-2 relative top-1 font-bold text-md text-primary">View All</p>
-                <p className="py-2 font-bold text-xl text-primary">News on Vlog</p>
+                <p className="py-2 relative top-1 font-bold text-md text-primary sm:text-xl">View All</p>
+                <p className="py-2 font-bold text-xl text-primary sm:text-3xl">News on Vlog</p>
               </div>
             </Gutter>
             <NewsCarousel catLabels={null} images={images2} />

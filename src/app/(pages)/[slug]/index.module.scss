@@ -140,7 +140,8 @@
   width: 100%;
   overflow: hidden;
   padding-bottom: 10rem;
-  background-image: url('/media/stripes2.png');
+  background: linear-gradient(rgba(247, 249, 251, 0.8), rgba(247, 249, 251, 0)), 
+              url('/media/stripes2.png');
   background-size: cover; /* Rozciąga tło, aby pokryło cały obszar diva */
   background-repeat: no-repeat; /* Zapobiega powielaniu tła */
   background-position: center; /* Ustawia tło na środku */

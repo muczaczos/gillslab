@@ -311,8 +311,8 @@
   height: 2rem !important;
 }
 
-.h-\[14rem\] {
-  height: 14rem !important;
+.h-\[12rem\] {
+  height: 12rem !important;
 }
 
 .h-\[200px\] {
@@ -333,14 +333,6 @@
 
 .h-full {
   height: 100% !important;
-}
-
-.h-\[10rem\] {
-  height: 10rem !important;
-}
-
-.h-\[12rem\] {
-  height: 12rem !important;
 }
 
 .max-h-full {
@@ -387,6 +379,10 @@
   width: 100px !important;
 }
 
+.w-\[10rem\] {
+  width: 10rem !important;
+}
+
 .w-\[20rem\] {
   width: 20rem !important;
 }
@@ -395,40 +391,12 @@
   width: 450px !important;
 }
 
-.w-\[6rem\] {
-  width: 6rem !important;
+.w-\[5rem\] {
+  width: 5rem !important;
 }
 
 .w-full {
   width: 100% !important;
-}
-
-.w-\[1536px\] {
-  width: 1536px !important;
-}
-
-.w-\[14rem\] {
-  width: 14rem !important;
-}
-
-.w-\[12rem\] {
-  width: 12rem !important;
-}
-
-.w-\[8rem\] {
-  width: 8rem !important;
-}
-
-.w-\[10rem\] {
-  width: 10rem !important;
-}
-
-.w-\[4rem\] {
-  width: 4rem !important;
-}
-
-.w-\[5rem\] {
-  width: 5rem !important;
 }
 
 .max-w-\[1536px\] {
@@ -533,10 +501,6 @@
   flex-direction: column !important;
 }
 
-.items-start {
-  align-items: flex-start !important;
-}
-
 .items-end {
   align-items: flex-end !important;
 }
@@ -575,10 +539,6 @@
 
 .gap-5 {
   gap: 1.25rem !important;
-}
-
-.gap-6 {
-  gap: 1.5rem !important;
 }
 
 .overflow-hidden {
@@ -867,14 +827,22 @@
   padding-bottom: 1rem !important;
 }
 
+.py-5 {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
 .py-6 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
 }
 
-.py-5 {
-  padding-top: 1.25rem !important;
-  padding-bottom: 1.25rem !important;
+.pb-10 {
+  padding-bottom: 2.5rem !important;
+}
+
+.pb-14 {
+  padding-bottom: 3.5rem !important;
 }
 
 .pb-16 {
@@ -883,6 +851,10 @@
 
 .pb-2 {
   padding-bottom: 0.5rem !important;
+}
+
+.pb-20 {
+  padding-bottom: 5rem !important;
 }
 
 .pb-3 {
@@ -951,18 +923,6 @@
 
 .pt-5 {
   padding-top: 1.25rem !important;
-}
-
-.pb-10 {
-  padding-bottom: 2.5rem !important;
-}
-
-.pb-20 {
-  padding-bottom: 5rem !important;
-}
-
-.pb-14 {
-  padding-bottom: 3.5rem !important;
 }
 
 .text-left {
@@ -1194,12 +1154,6 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color) !important;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-
 .outline-none {
   outline: 2px solid transparent !important;
   outline-offset: 2px !important;
@@ -1222,10 +1176,6 @@
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
-}
-
-.shadow {
-  shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .frame-gradient {
@@ -1297,6 +1247,10 @@
     margin-top: 2.5rem !important;
   }
 
+  .sm\:mt-\[1rem\] {
+    margin-top: 1rem !important;
+  }
+
   .sm\:block {
     display: block !important;
   }
@@ -1313,8 +1267,12 @@
     height: 600px !important;
   }
 
-  .sm\:w-1\/2 {
-    width: 50% !important;
+  .sm\:h-\[14rem\] {
+    height: 14rem !important;
+  }
+
+  .sm\:h-\[16rem\] {
+    height: 16rem !important;
   }
 
   .sm\:w-3\/4 {
@@ -1325,24 +1283,34 @@
     width: 400px !important;
   }
 
-  .sm\:w-full {
-    width: 100% !important;
+  .sm\:w-\[12rem\] {
+    width: 12rem !important;
   }
 
-  .sm\:flex-row {
-    flex-direction: row !important;
+  .sm\:w-\[14rem\] {
+    width: 14rem !important;
+  }
+
+  .sm\:w-\[7rem\] {
+    width: 7rem !important;
   }
 
   .sm\:items-center {
     align-items: center !important;
   }
 
-  .sm\:gap-3 {
-    gap: 0.75rem !important;
-  }
-
   .sm\:gap-40 {
     gap: 10rem !important;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
   }
 }
 
@@ -1375,28 +1343,16 @@
     height: 400px !important;
   }
 
+  .md\:w-\[1536px\] {
+    width: 1536px !important;
+  }
+
   .md\:w-\[440px\] {
     width: 440px !important;
   }
 
   .md\:w-full {
     width: 100% !important;
-  }
-
-  .md\:w-\[1536px\] {
-    width: 1536px !important;
-  }
-
-  .md\:min-w-\[1536px\] {
-    min-width: 1536px !important;
-  }
-
-  .md\:max-w-\[1536\] {
-    max-width: 1536 !important;
-  }
-
-  .md\:max-w-\[1536px\] {
-    max-width: 1536px !important;
   }
 
   .md\:flex-row {
@@ -1413,10 +1369,6 @@
 
   .md\:justify-start {
     justify-content: flex-start !important;
-  }
-
-  .md\:justify-end {
-    justify-content: flex-end !important;
   }
 
   .md\:justify-center {
@@ -1446,10 +1398,6 @@
 
   .md\:pt-4 {
     padding-top: 1rem !important;
-  }
-
-  .md\:pl-0 {
-    padding-left: 0px !important;
   }
 }
 
@@ -1562,6 +1510,10 @@
     display: flex !important;
   }
 
+  .xl\:w-3\/4 {
+    width: 75% !important;
+  }
+
   .xl\:w-\[250px\] {
     width: 250px !important;
   }
@@ -1570,29 +1522,16 @@
     width: 800px !important;
   }
 
-  .xl\:w-3\/4 {
-    width: 75% !important;
-  }
-
   .xl\:justify-end {
     justify-content: flex-end !important;
-  }
-
-  .xl\:gap-4 {
-    gap: 1rem !important;
-  }
-
-  .xl\:gap-8 {
-    gap: 2rem !important;
   }
 
   .xl\:gap-6 {
     gap: 1.5rem !important;
   }
 
-  .xl\:py-5 {
-    padding-top: 1.25rem !important;
-    padding-bottom: 1.25rem !important;
+  .xl\:gap-12 {
+    gap: 3rem !important;
   }
 
   .xl\:px-5 {
@@ -1600,16 +1539,13 @@
     padding-right: 1.25rem !important;
   }
 
+  .xl\:px-10 {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+
   .xl\:pl-0 {
     padding-left: 0px !important;
-  }
-
-  .xl\:pb-7 {
-    padding-bottom: 1.75rem !important;
-  }
-
-  .xl\:pt-7 {
-    padding-top: 1.75rem !important;
   }
 
   .xl\:pt-14 {
@@ -1628,12 +1564,12 @@
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:w-\[1000px\] {
-    width: 1000px !important;
-  }
-
   .\32xl\:w-3\/4 {
     width: 75% !important;
+  }
+
+  .\32xl\:w-\[1000px\] {
+    width: 1000px !important;
   }
 
   .\32xl\:min-w-\[1536px\] {
@@ -1688,14 +1624,6 @@
 @media (min-width: 390px) and (max-width: 639px) {
   .csm\:h-\[400px\] {
     height: 400px !important;
-  }
-
-  .csm\:w-1\/3 {
-    width: 33.333333% !important;
-  }
-
-  .csm\:justify-center {
-    justify-content: center !important;
   }
 
   .csm\:gap-20 {
