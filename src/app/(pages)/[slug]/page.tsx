@@ -85,6 +85,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
     <LayoutWithHeaderFooter>
       {slug === 'home' ? (
         <>
+
+
           {/* Mobile Hero */}
           <section className="block md:hidden">
             <div className="">

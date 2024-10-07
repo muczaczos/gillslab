@@ -96,6 +96,14 @@
   top: 1rem !important;
 }
 
+.bottom-0 {
+  bottom: 0px !important;
+}
+
+.right-0 {
+  right: 0px !important;
+}
+
 .z-0 {
   z-index: 0 !important;
 }
@@ -525,6 +533,10 @@
   justify-content: space-between !important;
 }
 
+.justify-around {
+  justify-content: space-around !important;
+}
+
 .gap-2 {
   gap: 0.5rem !important;
 }
@@ -599,6 +611,10 @@
 
 .border-r-0 {
   border-right-width: 0px !important;
+}
+
+.border-t {
+  border-top-width: 1px !important;
 }
 
 .border-solid {
@@ -1090,6 +1106,11 @@
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
 }
 
 .underline {
