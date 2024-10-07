@@ -762,6 +762,10 @@
   --tw-bg-opacity: 0.75 !important;
 }
 
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1 !important;
+}
+
 .bg-cover {
   background-size: cover !important;
 }
@@ -1431,6 +1435,10 @@
 
   .md\:pt-4 {
     padding-top: 1rem !important;
+  }
+
+  .md\:pb-20 {
+    padding-bottom: 5rem !important;
   }
 }
 

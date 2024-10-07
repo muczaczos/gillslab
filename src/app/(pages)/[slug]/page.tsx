@@ -86,7 +86,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
       {slug === 'home' ? (
         <>
 
-
           {/* Mobile Hero */}
           <section className="block md:hidden">
             <div className="">
@@ -320,7 +319,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </section>
 
           {/* Best producst */}
-          <section className="w-full bg-customWhite py-4 pb-20">
+          <section className="w-full bg-customWhite py-4 md:pb-20">
             <div className="flex flex-col w-full items-center">
               <div className="w-full xl:w-3/4">
                 <div className="pl-5 flex justify-start xl:pl-0 xl:justify-end">
