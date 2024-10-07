@@ -8,6 +8,8 @@ module.exports = {
       screens: {
         xs: { max: '389px' }, // Breakpoint dla szerokości do 400px
         csm: { min: '390px', max: '639px' },
+        xxl: { min: '2000px'},
+
       },
       colors: {
         productTop: '#4968AC',

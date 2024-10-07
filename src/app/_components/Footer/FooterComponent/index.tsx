@@ -54,7 +54,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             className="relative left-0"
           />
         </div>
-        <div className="bg-customWhite hidden md:block md:mb-10">
+        <div className="bg-customWhite hidden md:block md:mb-10 xxl:hidden">
           <Image
             src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/bigFoot.png`}
             alt="Example Image"
@@ -73,7 +73,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         >
           {/* Address, Socials, Payments, Shipping*/}
           <div className="flex xs:justify-between csm:gap-20 sm:gap-40 justify-center">
-            <div>
+            <div className="">
               {/* Logo */}
               <section className="mb-5">
                 <Image
