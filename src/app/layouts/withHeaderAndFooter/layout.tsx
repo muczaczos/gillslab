@@ -9,11 +9,11 @@ import { Header } from '../../_components/Header' // Ścieżki do komponentów m
 export default function LayoutWithHeaderFooter({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="z-50 fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 p-4 flex justify-around items-center">
-        <FaHome className="text-gray-600 text-2xl" />
-        <FaRegHeart className="text-gray-600 text-2xl" />
-        <FaShoppingCart className="text-gray-600 text-2xl" />
-        <FaUser className="text-gray-600 text-2xl" />
+      <div className="md:hidden m-5 rounded-3xl z-50 fixed bottom-0 left-0 right-0 bg-secondary p-4 flex justify-around items-center">
+        <FaHome className="text-customWhite text-2xl" />
+        <FaRegHeart className="text-customWhite text-2xl" />
+        <FaShoppingCart className="text-customWhite text-2xl" />
+        <FaUser className="text-customWhite text-2xl" />
       </div>
       <Header />
       <main>{children}</main>
