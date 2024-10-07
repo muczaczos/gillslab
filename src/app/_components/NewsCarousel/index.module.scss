@@ -5,10 +5,11 @@
   scroll-behavior: auto;
   cursor: grab;
   scrollbar-width: none;
-  width: 100%;
   margin: 0;
   padding-bottom: 1rem;
-  
+  @media (min-width:1536px) {
+    width: 1536px;
+  }
 }
 
 .slider::-webkit-scrollbar {

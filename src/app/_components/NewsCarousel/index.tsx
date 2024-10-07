@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle} from "react-icons/io";
 
 import styles from './index.module.scss'
 
@@ -63,44 +64,81 @@ const NewsCarousel = ({ images, catLabels }) => {
     setIsDown(false)
   }
 
+  const handleNext = () => {
+    const slider = sliderRef.current;
+    const slideWidth = slider.querySelector(`.${styles.slide}`).offsetWidth;
+    slider.scrollLeft += slideWidth * 1.6; // Zmiana wartości na 1.6, aby przesuwać dwa razy więcej
+  };
+  
+  const handlePrev = () => {
+    const slider = sliderRef.current;
+    const slideWidth = slider.querySelector(`.${styles.slide}`).offsetWidth;
+    slider.scrollLeft -= slideWidth * 1.6; // Zmiana wartości na 1.6, aby przesuwać dwa razy więcej
+  };
+  
+  
+  // Dodanie stylów do smooth scrolling
+  const smoothScroll = () => {
+    const slider = sliderRef.current;
+    slider.style.scrollBehavior = 'smooth'; // Włączenie płynnego przewijania
+  };
+  
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.style.scrollBehavior = 'smooth'; // Ustawienie płynnego przewijania przy montowaniu komponentu
+    }
+  }, []); // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
+  
   return (
-    <div
-      className={`${styles.slider} slider`}
-      ref={sliderRef}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      {images.map((image, index) => (
-        <div className={`${styles.slide} slide z-10`} key={index}>
-          <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
-            <div className="p-4">
-              <div className="w-full rounded-xl overflow-hidden">
-                <div className="z-50 h-[8rem] w-full relative">
-                  <Image src={image} alt="Example Image" layout="fill" objectFit="cover" />
+    
+    <div className="relative md:flex md:justify-center">
+      <div
+        className={`${styles.slider} slider`}
+        ref={sliderRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {images.map((image, index) => (
+          <div className={`${styles.slide} slide z-10`} key={index}>
+            <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
+              <div className="p-4">
+                <div className="w-full rounded-xl overflow-hidden">
+                  <div className="z-50 h-[8rem] w-full relative">
+                    <Image src={image} alt="Example Image" layout="fill" objectFit="cover" />
+                  </div>
                 </div>
               </div>
+              <p className="max-w-full"></p>
+              {!catLabels && <div className="w-[20rem] pt-0"></div>}
+              {catLabels && (
+                <div className="p-3 pt-0 ">
+                  <h2 className="text-xl md:text-3xl text-customGray-dark opacity-80 font-black">{catLabels[index]}</h2>
+                  <p className="text-customGray-dark font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, ipsam consectetur
+                    rerum sit qui accusantium architecto vero, corporis tempora perspiciatis
+                    distinctio placeat quae aut odit sint veritatis possimus sapiente. Fuga.
+                  </p>
+                </div>
+              )}
             </div>
-            <p className="max-w-full"></p>
-            {!catLabels && <div className="w-[20rem] pt-0"></div>}
-            {catLabels && (
-              <div className="p-3 pt-0 ">
-                <h2 className="text-xl text-primary opacity-80 font-bold">{catLabels[index]}</h2>
-                <p className="text-primary text-sm leading-4 max-w-full break-words overflow-hidden">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, ipsam consectetur
-                  rerum sit qui accusantium architecto vero, corporis tempora perspiciatis
-                  distinctio placeat quae aut odit sint veritatis possimus sapiente. Fuga.
-                </p>
-              </div>
-            )}
           </div>
-        </div>
-      ))}
-      <div className="flex-shrink-0 w-[100px]"></div>
-    </div>
-  )
+        ))}
+        <div className="flex-shrink-0 w-[100px]"></div>
+      </div>
+      <IoIosArrowDropleftCircle className="z-50 absolute left-0 text-8xl top-1/2 text-primary transform -translate-y-1/2 p-2 hidden md:block"
+        onClick={handlePrev} 
+      />
+      <IoIosArrowDroprightCircle
+        className="z-50 absolute right-0 top-1/2 transform -translate-y-1/2 text-8xl text-primary p-2 hidden md:block"
+        onClick={handleNext}
+      />
+
+      </div>
+  );
 }
 
 export default NewsCarousel
