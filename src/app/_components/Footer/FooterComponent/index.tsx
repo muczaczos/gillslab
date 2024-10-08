@@ -66,56 +66,63 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         </div>
 
         <div
-          className="xs:-mt-16 -mt-20 bg-cover bg-primary relative z-20 p-5 xs:p-3"
+          className="xs:-mt-16 -mt-20 bg-cover bg-primary relative z-20 p-5 xs:p-3 xxl:pt-20"
           style={{
             backgroundImage: `url(${process.env.NEXT_PUBLIC_SERVER_URL}/media/eyes5.png)`,
           }}
         >
           {/* Address, Socials, Payments, Shipping*/}
-          <div className="flex xs:justify-between csm:gap-20 sm:gap-40 justify-center">
-            <div className="">
-              {/* Logo */}
-              <section className="mb-5">
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logo3.png`}
-                  alt="Gillslab logo"
-                  width="150"
-                  height="100"
-                  objectFit="cover"
-                  className="relative -left-[10px]"
-                />
-                <p className="text-customWhite text-xl">Gillslab LTD.</p>
-                <p className="text-customWhite text-xl">05-500</p>
-                <p className="text-customWhite text-xl">Piaseczno</p>
-                <p className="text-customWhite text-xl">Szkolna 1/3</p>
-                <p className="text-customWhite text-xl">Poland</p>
-                <FaWhatsapp className="text-4xl text-customWhite mr-5" />{' '}
-                <FaPhone className="text-3xl text-customWhite" />
-              </section>
+          <div className="flex xs:justify-between csm:gap-20 sm:gap-5 justify-center lg:justify-around sm:mb-10">
+            <div className="flex flex-col sm:flex-row">
+              {/* Logo and company details */}
+              <div className="flex flex-col lg:flex-row lg:gap-5">
+                <section className="mb-5">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logo3.png`}
+                    alt="Gillslab logo"
+                    width="150"
+                    height="100"
+                    objectFit="cover"
+                    className="relative -left-[10px]"
+                  />
+                  <p className="text-customWhite text-xl">Gillslab LTD.</p>
+                  <p className="text-customWhite text-xl">05-500</p>
+                  <p className="text-customWhite text-xl">Piaseczno</p>
+                  <p className="text-customWhite text-xl">Szkolna 1/3</p>
+                  <p className="text-customWhite text-xl">Poland</p>
+                  <FaWhatsapp className="text-4xl text-customWhite mr-5" />{' '}
+                  <FaPhone className="text-3xl text-customWhite" />
+                </section>
 
-              {/* Socials */}
-              <section className="mb-5">
-                <h4 className="text-customWhite font-bold">Socials</h4>
-                <FaFacebook className="text-4xl  mr-5 text-customWhite" />
-                <FaInstagram className=" text-4xl mr-5 text-customWhite" />
-                <FaVimeo className="text-4xl text-customWhite" />
-              </section>
+                {/* Socials */}
+                <section className="mb-5 lg:mr-10">
+                  <h4 className="text-customWhite font-bold">Socials</h4>
+                  <div className="flex flex-row lg:flex-col">
+                    <FaFacebook className="text-4xl  mr-5 text-customWhite lg:mb-5" />
+                    <FaInstagram className=" text-4xl mr-5 text-customWhite lg:mb-5" />
+                    <FaVimeo className="text-4xl text-customWhite" />
+                  </div>
+                </section>
+              </div>
+              <div className="flex flex-col md:flex-row md:gap-10">
+                {/* Payments */}
+                <section className="mb-5">
+                  <h4 className="text-customWhite font-bold">Payments</h4>
+                  <div className="flex flex-row lg:flex-col">
+                    <FaBtc className="text-4xl  mr-5 text-customWhite mb-5" />
+                    <FaCreditCard className=" text-4xl mr-5 text-customWhite mb-5" />
+                    <FaVimeo className="text-4xl text-customWhite" />
+                  </div>
+                </section>
 
-              {/* Payments */}
-              <section className="mb-5">
-                <h4 className="text-customWhite font-bold">Payments</h4>
-                <FaBtc className="text-4xl  mr-5 text-customWhite" />
-                <FaCreditCard className=" text-4xl mr-5 text-customWhite" />
-                <FaVimeo className="text-4xl text-customWhite" />
-              </section>
-
-              {/* Shipping */}
-              <section className="mb-5">
-                <h4 className="text-customWhite font-bold">Shipping</h4>
-                <p className="text-customWhite text-xl">Poland 1 Day</p>
-                <p className="text-customWhite text-xl">Europe 1-3 Days</p>
-                <p className="text-customWhite text-xl">USA 4-7 Days</p>
-              </section>
+                {/* Shipping */}
+                <section className="mb-5 lg:mr-5">
+                  <h4 className="text-customWhite font-bold">Shipping</h4>
+                  <p className="text-customWhite text-xl">Poland 0-1 Days</p>
+                  <p className="text-customWhite text-xl">Europe 1-3 Days</p>
+                  <p className="text-customWhite text-xl">USA 4-7 Days</p>
+                </section>
+              </div>
             </div>
             <section>
               <h4 className="text-customWhite font-bold">Sitemap</h4>
@@ -136,7 +143,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               <p className="text-customWhite text-xl">Favorities</p>
             </section>
           </div>
-
+          <hr className="border-customWhite w-full sm:mb-10 xl:w-3/4" />
           {/* dhl, dpd, ups, fedex logotypes */}
           <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden">
             {/* Kontener z 50% szerokości i wyśrodkowany */}

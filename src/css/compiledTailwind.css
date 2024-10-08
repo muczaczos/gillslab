@@ -289,10 +289,6 @@
   margin-top: 6px !important;
 }
 
-.mr-10 {
-  margin-right: 2.5rem !important;
-}
-
 .block {
   display: block !important;
 }
@@ -528,6 +524,10 @@
   grid-template-rows: auto 1fr auto !important;
 }
 
+.flex-row {
+  flex-direction: row !important;
+}
+
 .flex-col {
   flex-direction: column !important;
 }
@@ -691,6 +691,11 @@
 .border-yellow-300 {
   --tw-border-opacity: 1 !important;
   border-color: rgb(253 224 71 / var(--tw-border-opacity)) !important;
+}
+
+.border-black {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
 .border-l-gray-100 {
@@ -1290,6 +1295,10 @@
     margin-top: 1rem !important;
   }
 
+  .sm\:mb-10 {
+    margin-bottom: 2.5rem !important;
+  }
+
   .sm\:block {
     display: block !important;
   }
@@ -1326,12 +1335,24 @@
     width: 7rem !important;
   }
 
+  .sm\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column !important;
+  }
+
   .sm\:items-center {
     align-items: center !important;
   }
 
   .sm\:gap-40 {
     gap: 10rem !important;
+  }
+
+  .sm\:gap-5 {
+    gap: 1.25rem !important;
   }
 
   .sm\:text-3xl {
@@ -1410,6 +1431,14 @@
     justify-content: space-between !important;
   }
 
+  .md\:gap-5 {
+    gap: 1.25rem !important;
+  }
+
+  .md\:gap-10 {
+    gap: 2.5rem !important;
+  }
+
   .md\:bg-\[\#5A7FD0\] {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(90 127 208 / var(--tw-bg-opacity)) !important;
@@ -1463,6 +1492,18 @@
     margin-top: 2.5rem !important;
   }
 
+  .lg\:mr-5 {
+    margin-right: 1.25rem !important;
+  }
+
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .lg\:mr-10 {
+    margin-right: 2.5rem !important;
+  }
+
   .lg\:flex {
     display: flex !important;
   }
@@ -1475,8 +1516,24 @@
     flex-direction: row !important;
   }
 
+  .lg\:flex-col {
+    flex-direction: column !important;
+  }
+
   .lg\:items-center {
     align-items: center !important;
+  }
+
+  .lg\:justify-around {
+    justify-content: space-around !important;
+  }
+
+  .lg\:gap-5 {
+    gap: 1.25rem !important;
+  }
+
+  .lg\:gap-1 {
+    gap: 0.25rem !important;
   }
 
   .lg\:p-2 {
@@ -1549,6 +1606,10 @@
 
   .xl\:mt-16 {
     margin-top: 4rem !important;
+  }
+
+  .xl\:mb-10 {
+    margin-bottom: 2.5rem !important;
   }
 
   .xl\:flex {
@@ -1675,6 +1736,14 @@
 @media (min-width: 2000px) {
   .xxl\:hidden {
     display: none !important;
+  }
+
+  .xxl\:pt-10 {
+    padding-top: 2.5rem !important;
+  }
+
+  .xxl\:pt-20 {
+    padding-top: 5rem !important;
   }
 }
 
