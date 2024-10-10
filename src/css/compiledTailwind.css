@@ -357,6 +357,10 @@
   height: 100% !important;
 }
 
+.h-9 {
+  height: 2.25rem !important;
+}
+
 .max-h-full {
   max-height: 100% !important;
 }
@@ -419,6 +423,14 @@
 
 .w-full {
   width: 100% !important;
+}
+
+.w-10 {
+  width: 2.5rem !important;
+}
+
+.w-9 {
+  width: 2.25rem !important;
 }
 
 .max-w-\[1536px\] {
@@ -612,6 +624,10 @@
   border-radius: 0.75rem !important;
 }
 
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
 .border {
   border-width: 1px !important;
 }
@@ -691,11 +707,6 @@
 .border-yellow-300 {
   --tw-border-opacity: 1 !important;
   border-color: rgb(253 224 71 / var(--tw-border-opacity)) !important;
-}
-
-.border-black {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
 .border-l-gray-100 {
@@ -814,6 +825,10 @@
 
 .p-5 {
   padding: 1.25rem !important;
+}
+
+.p-0 {
+  padding: 0px !important;
 }
 
 .px-10 {
@@ -1034,6 +1049,11 @@
 .text-xs {
   font-size: 0.75rem !important;
   line-height: 1rem !important;
+}
+
+.text-7xl {
+  font-size: 4.5rem !important;
+  line-height: 1 !important;
 }
 
 .font-black {
@@ -1279,6 +1299,10 @@
 }
 
 @media (min-width: 640px) {
+  .sm\:mb-10 {
+    margin-bottom: 2.5rem !important;
+  }
+
   .sm\:ml-10 {
     margin-left: 2.5rem !important;
   }
@@ -1293,10 +1317,6 @@
 
   .sm\:mt-\[1rem\] {
     margin-top: 1rem !important;
-  }
-
-  .sm\:mb-10 {
-    margin-bottom: 2.5rem !important;
   }
 
   .sm\:block {
@@ -1339,16 +1359,8 @@
     flex-direction: row !important;
   }
 
-  .sm\:flex-col {
-    flex-direction: column !important;
-  }
-
   .sm\:items-center {
     align-items: center !important;
-  }
-
-  .sm\:gap-40 {
-    gap: 10rem !important;
   }
 
   .sm\:gap-5 {
@@ -1431,10 +1443,6 @@
     justify-content: space-between !important;
   }
 
-  .md\:gap-5 {
-    gap: 1.25rem !important;
-  }
-
   .md\:gap-10 {
     gap: 2.5rem !important;
   }
@@ -1480,6 +1488,10 @@
     margin-bottom: 0px !important;
   }
 
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem !important;
+  }
+
   .lg\:ml-5 {
     margin-left: 1.25rem !important;
   }
@@ -1488,20 +1500,16 @@
     margin-left: 1.5rem !important;
   }
 
-  .lg\:mt-10 {
-    margin-top: 2.5rem !important;
+  .lg\:mr-10 {
+    margin-right: 2.5rem !important;
   }
 
   .lg\:mr-5 {
     margin-right: 1.25rem !important;
   }
 
-  .lg\:mb-5 {
-    margin-bottom: 1.25rem !important;
-  }
-
-  .lg\:mr-10 {
-    margin-right: 2.5rem !important;
+  .lg\:mt-10 {
+    margin-top: 2.5rem !important;
   }
 
   .lg\:flex {
@@ -1530,10 +1538,6 @@
 
   .lg\:gap-5 {
     gap: 1.25rem !important;
-  }
-
-  .lg\:gap-1 {
-    gap: 0.25rem !important;
   }
 
   .lg\:p-2 {
@@ -1606,10 +1610,6 @@
 
   .xl\:mt-16 {
     margin-top: 4rem !important;
-  }
-
-  .xl\:mb-10 {
-    margin-bottom: 2.5rem !important;
   }
 
   .xl\:flex {
@@ -1736,10 +1736,6 @@
 @media (min-width: 2000px) {
   .xxl\:hidden {
     display: none !important;
-  }
-
-  .xxl\:pt-10 {
-    padding-top: 2.5rem !important;
   }
 
   .xxl\:pt-20 {

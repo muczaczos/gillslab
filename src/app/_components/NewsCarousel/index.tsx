@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Image from 'next/image'
-import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle} from "react-icons/io";
 
 import styles from './index.module.scss'
 
@@ -65,33 +65,31 @@ const NewsCarousel = ({ images, catLabels }) => {
   }
 
   const handleNext = () => {
-    const slider = sliderRef.current;
-    const slideWidth = slider.querySelector(`.${styles.slide}`).offsetWidth;
-    slider.scrollLeft += slideWidth * 1.6; // Zmiana wartości na 1.6, aby przesuwać dwa razy więcej
-  };
-  
+    const slider = sliderRef.current
+    const slideWidth = slider.querySelector(`.${styles.slide}`).offsetWidth
+    slider.scrollLeft += slideWidth * 1.6 // Zmiana wartości na 1.6, aby przesuwać dwa razy więcej
+  }
+
   const handlePrev = () => {
-    const slider = sliderRef.current;
-    const slideWidth = slider.querySelector(`.${styles.slide}`).offsetWidth;
-    slider.scrollLeft -= slideWidth * 1.6; // Zmiana wartości na 1.6, aby przesuwać dwa razy więcej
-  };
-  
-  
+    const slider = sliderRef.current
+    const slideWidth = slider.querySelector(`.${styles.slide}`).offsetWidth
+    slider.scrollLeft -= slideWidth * 1.6 // Zmiana wartości na 1.6, aby przesuwać dwa razy więcej
+  }
+
   // Dodanie stylów do smooth scrolling
   const smoothScroll = () => {
-    const slider = sliderRef.current;
-    slider.style.scrollBehavior = 'smooth'; // Włączenie płynnego przewijania
-  };
-  
+    const slider = sliderRef.current
+    slider.style.scrollBehavior = 'smooth' // Włączenie płynnego przewijania
+  }
+
   useEffect(() => {
-    const slider = sliderRef.current;
+    const slider = sliderRef.current
     if (slider) {
-      slider.style.scrollBehavior = 'smooth'; // Ustawienie płynnego przewijania przy montowaniu komponentu
+      slider.style.scrollBehavior = 'smooth' // Ustawienie płynnego przewijania przy montowaniu komponentu
     }
-  }, []); // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
-  
+  }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
+
   return (
-    
     <div className="relative md:flex md:justify-center">
       <div
         className={`${styles.slider} slider`}
@@ -116,7 +114,9 @@ const NewsCarousel = ({ images, catLabels }) => {
               {!catLabels && <div className="w-[20rem] pt-0"></div>}
               {catLabels && (
                 <div className="p-3 pt-0 ">
-                  <h2 className="text-xl md:text-3xl text-customGray-dark opacity-80 font-black">{catLabels[index]}</h2>
+                  <h2 className="text-xl md:text-3xl text-customGray-dark opacity-80 font-black">
+                    {catLabels[index]}
+                  </h2>
                   <p className="text-customGray-dark font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, ipsam consectetur
                     rerum sit qui accusantium architecto vero, corporis tempora perspiciatis
@@ -129,16 +129,17 @@ const NewsCarousel = ({ images, catLabels }) => {
         ))}
         <div className="flex-shrink-0 w-[100px]"></div>
       </div>
-      <IoIosArrowDropleftCircle className="z-50 absolute left-0 text-8xl top-1/2 text-primary transform -translate-y-1/2 p-2 hidden md:block"
-        onClick={handlePrev} 
+
+      <IoIosArrowDropleftCircle
+        className="z-50 absolute left-0 text-7xl top-1/2 text-customWhite  bg-primary rounded-full  transform -translate-y-1/2 p-0 hidden md:block"
+        onClick={handlePrev}
       />
       <IoIosArrowDroprightCircle
-        className="z-50 absolute right-0 top-1/2 transform -translate-y-1/2 text-8xl text-primary p-2 hidden md:block"
+        className="z-50 absolute right-0 top-1/2 transform -translate-y-1/2 text-7xl text-customWhite bg-primary rounded-full p-0 hidden md:block"
         onClick={handleNext}
       />
-
-      </div>
-  );
+    </div>
+  )
 }
 
 export default NewsCarousel
