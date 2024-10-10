@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 import Image from 'next/image'
@@ -16,6 +16,8 @@ import 'react-tabs/style/react-tabs.css'
 import classes from './index.module.scss'
 
 export const RelatedMovies: React.FC<{}> = () => {
+
+  const sliderRef = useRef(null)
   const images2 = [
     '/media/gtLabel.png',
     '/media/mckLabel.png',
@@ -24,6 +26,7 @@ export const RelatedMovies: React.FC<{}> = () => {
     '/media/gtLabel.png',
   ]
 
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -31,12 +34,25 @@ export const RelatedMovies: React.FC<{}> = () => {
     })
   }
 
+  // Dodanie stylów do smooth scrolling
+  const smoothScroll = () => {
+    const slider = sliderRef.current
+    slider.style.scrollBehavior = 'smooth' // Włączenie płynnego przewijania
+  }
+
+  useEffect(() => {
+    const slider = sliderRef.current
+    if (slider) {
+      slider.style.scrollBehavior = 'smooth' // Ustawienie płynnego przewijania przy montowaniu komponentu
+    }
+  }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
+
   const catLabels = ['Growkit 1', 'Growkit 2', 'Growkit 3', 'Growkit 4', 'Growkit 5']
 
   return (
     <>
       <div className={classes.diagonalRelated}></div>
-      <Gutter className={`mt-[-2.2rem] ${classes.relatedGradient}`}>
+      <div className={`mt-[-2.2rem] ${classes.relatedGradient}`}>
         {/*Related */}
         <section>
           <div className="mt-8 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
@@ -61,7 +77,7 @@ export const RelatedMovies: React.FC<{}> = () => {
         <div onClick={scrollToTop} className="flex justify-end mt-10">
           <FaArrowAltCircleUp className="text-8xl text-primary" />
         </div>
-      </Gutter>
+      </div>
     </>
   )
 }

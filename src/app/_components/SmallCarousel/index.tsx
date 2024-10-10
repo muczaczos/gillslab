@@ -85,7 +85,7 @@ const SmallCarousel = ({ icons, images, catLabels }) => {
           <div className={styles.slide} key={index}>
             {/* Renderowanie ikony */}
             <IconComponent size={50} color="#4968AC" />
-            <h3 className="text-xs text-primary opacity-70">{catLabels[index]}</h3>
+            <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
           </div>
         ))}
       <div className="flex-shrink-0 w-[100px]"></div>

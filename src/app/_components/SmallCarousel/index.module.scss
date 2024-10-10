@@ -32,9 +32,12 @@
   transition: transform 0.3s ease-in-out;
   border-radius: 1rem;
   height: 140px;
-  @media (min-width: 500px) and (max-width: 999px) {
+  @media (min-width: 500px) and (max-width: 768px) {
     min-width: 25%;
   }  
+  @media (min-width: 768px) {
+    min-width: 25%;
+  }
 }
 
 .slide img {

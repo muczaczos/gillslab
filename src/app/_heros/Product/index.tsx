@@ -72,11 +72,11 @@ export const ProductHero: React.FC<{
       <section className="bg-primary pt-5 pb-16">
         <div className="flex justify-between px-5 pt-5 pb-7">
           <div>
-            <IoArrowBackOutline className="text-3xl text-customWhite" />
+            <IoArrowBackOutline className="text-3xl text-customWhite md:text-6xl" />
           </div>
           <div>
-            <IoShareOutline className="text-3xl text-customWhite mr-5" />
-            <IoHeartOutline className="text-3xl text-customWhite" />
+            <IoShareOutline className="text-3xl text-customWhite mr-5 md:text-6xl" />
+            <IoHeartOutline className="text-3xl text-customWhite md:text-6xl" />
           </div>
         </div>
         <div className="flex justify-center">
@@ -93,47 +93,29 @@ export const ProductHero: React.FC<{
       </section>
 
       {/* hr */}
-      <div className="bg-customWhite pt-5 pb-3">
+      <div className="bg-customWhite pt-5 pb-3 md:pt-10 md:pb-8">
         <hr className="border-l-gray-100 w-1/3 opacity-30 py-0 my-0" />
       </div>
 
       {/* titles, short descriptions, price and addToCart button */}
       <section className="px-5 bg-customWhite pb-5">
-        <h3 className="text-primary text-2xl">{title}</h3>
-        <p className="text-primary-light text-xl">{title2}</p>
+        <h3 className="text-primary text-2xl md:text-4xl">{title}</h3>
+        <p className="text-primary-light text-xl md:text-2xl">{title2}</p>
 
         {/* In stock and price*/}
         <div className={classes.categoryWrapper}>
-          <div className={classes.categories}>
-            {categories?.map((category, index) => {
-              if (typeof category === 'object' && category !== null) {
-                const { title: categoryTitle } = category
-
-                const titleToUse = categoryTitle || 'Untitled category'
-
-                const isLast = index === categories.length - 1
-
-                return (
-                  <p key={index} className={classes.category}>
-                    {titleToUse} {!isLast && <Fragment>, &nbsp;</Fragment>}
-                    <span className={classes.separator}>|</span>
-                  </p>
-                )
-              }
-            })}
-          </div>
-          <p className="text-green-700 text-md font-bold">In stock</p>
+          <p className="text-green-700 text-md font-bold md:text-xl">In stock</p>
         </div>
         <RichText
-          className="mb-10 text-lg text-customGray-dark font-medium"
+          className="mb-10 text-lg text-customGray-dark font-medium md:text-2xl"
           content={productDescription.richText}
         />
         <SmallCarousel icons={icons} catLabels={infoLabels} images={null} />
         <div className="mt-5 flex justify-between items-center pb-5">
-          <p className="text-primary text-5xl font-medium">{`€${price}`}</p>
+          <p className="text-primary text-5xl font-medium md:text-8xl">{`€${price}`}</p>
           <AddToCartButton
             product={product}
-            className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold"
+            className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold md:h-24"
           />
         </div>
       </section>
