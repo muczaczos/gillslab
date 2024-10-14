@@ -77,8 +77,6 @@ const RelatedCarousel = ({ icons, images, catLabels }) => {
     slider.scrollLeft -= slideWidth * 1.6 // Zmiana wartości na 1.6, aby przesuwać dwa razy więcej
   }
 
-
-
   // Dodanie stylów do smooth scrolling
   const smoothScroll = () => {
     const slider = sliderRef.current
@@ -91,7 +89,6 @@ const RelatedCarousel = ({ icons, images, catLabels }) => {
       slider.style.scrollBehavior = 'smooth' // Ustawienie płynnego przewijania przy montowaniu komponentu
     }
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
-
 
   return (
     <div className="relative md:flex md:justify-center">

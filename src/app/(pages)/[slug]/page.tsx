@@ -85,7 +85,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
     <LayoutWithHeaderFooter>
       {slug === 'home' ? (
         <>
-
           {/* Mobile Hero */}
           <section className="block md:hidden">
             <div className="">
@@ -179,7 +178,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
           <section className="w-full hidden md:block bg-customWhite pb-20 py-5">
             <div className="flex flex-col w-full items-end">
               <div className="w-3/4">
-                <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">Shop By Categories</h2>
+                <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">
+                  Shop By Categories
+                </h2>
                 <div className={`${classes.gradientMenu} rounded-xl flex py-14 px-10`}>
                   <div
                     className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
@@ -323,7 +324,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <div className="flex flex-col w-full items-center">
               <div className="w-full xl:w-3/4">
                 <div className="pl-5 flex justify-start xl:pl-0 xl:justify-end">
-                  <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">Best Products</h2>
+                  <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">
+                    Best Products
+                  </h2>
                 </div>
                 <div
                   className={`${classes.gradientMenu2} rounded-xl flex gap-2 xl:gap-12 justify-center xl:justify-end pb-14 xl:pt-14 px-10`}
@@ -401,14 +404,18 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <Gutter>
               <div className="flex justify-between z-0">
                 <p className="py-2 font-bold text-xl text-primary z-20 sm:text-3xl">News on Blog</p>
-                <p className="pt-2 relative top-1 font-bold text-md text-primary sm:text-xl">View All</p>
+                <p className="pt-2 relative top-1 font-bold text-md text-primary sm:text-xl">
+                  View All
+                </p>
               </div>
             </Gutter>
             <NewsCarousel catLabels={catLabels} images={images2} />
             <div className="pb-10"></div>
             <Gutter>
               <div className="flex justify-between z-10">
-                <p className="py-2 relative top-1 font-bold text-md text-primary sm:text-xl">View All</p>
+                <p className="py-2 relative top-1 font-bold text-md text-primary sm:text-xl">
+                  View All
+                </p>
                 <p className="py-2 font-bold text-xl text-primary sm:text-3xl">News on Vlog</p>
               </div>
             </Gutter>

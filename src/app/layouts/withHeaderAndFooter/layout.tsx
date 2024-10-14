@@ -19,7 +19,6 @@ export default function LayoutWithHeaderFooter({ children }: { children: React.R
       <main>{children}</main>
       <Footer />
       {/* Fixed footer */}
-
     </>
   )
 }

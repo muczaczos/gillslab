@@ -16,7 +16,6 @@ import 'react-tabs/style/react-tabs.css'
 import classes from './index.module.scss'
 
 export const RelatedMovies: React.FC<{}> = () => {
-
   const sliderRef = useRef(null)
   const images2 = [
     '/media/gtLabel.png',
@@ -25,7 +24,6 @@ export const RelatedMovies: React.FC<{}> = () => {
     '/media/mckLabel.png',
     '/media/gtLabel.png',
   ]
-
 
   const scrollToTop = () => {
     window.scrollTo({
