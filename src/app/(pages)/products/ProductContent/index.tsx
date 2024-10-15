@@ -36,63 +36,65 @@ export const ProductContent: React.FC<{
 
   return (
     <>
-      <div className={classes.diagonalGallery}></div>
-      <Gutter className={`mt-[-2.25rem] ${classes.contentGradient}`}>
-        <div className="mt-8 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-customWhite pl-5 py-4">
-          <h6 className="text-customWhite text-4xl font-medium md:text-6xl">Gallery</h6>
-        </div>
+      <div className={`mt-[-2.25rem] md:mt-0 `}>
 
-        {/*Gallery */}
-        <ProductGallery />
 
-        {/*Details and FAQ */}
-        <section className="mb-10">
-          <Tabs>
-            <TabList>
-              <Tab>
-                <h6 className="md:text-6xl">Details</h6>
-              </Tab>
-              <Tab>
-                <h6 className="md:text-6xl">FAQ</h6>
-              </Tab>
-            </TabList>
-            <div className="p-3">
-              <TabPanel>
-                <div
-                  className="
-                  h-[200px]        // Domyślna wysokość
-                  sm:h-[300px]     // Wyższa ramka na małych ekranach (640px+)
-                  md:h-[400px]     // Jeszcze wyższa ramka na średnich ekranach (768px+)
-                  overflow-x-auto
-                  overflow-y-auto
-                  border-none
-                  outline-none
-                  scrollbar-thin scrollbar-thumb-gray-400
-                "
-                >
-                  <RichText content={productDetails.richText} />
-                </div>
-              </TabPanel>
-              <TabPanel>
-                <div
-                  className="
-                  h-[200px]        // Domyślna wysokość
-                  sm:h-[300px]     // Wyższa ramka na małych ekranach (640px+)
-                  md:h-[400px]     // Jeszcze wyższa ramka na średnich ekranach (768px+)
-                  overflow-x-auto
-                  overflow-y-auto
-                  border-none
-                  outline-none
-                  scrollbar-thin scrollbar-thumb-gray-400
-                "
-                >
-                  <RichText content={productFaq.richText} />
-                </div>
-              </TabPanel>
+        <div className="lg:flex lg:justify-between lg:w-full">
+          {/*Gallery */}
+          <ProductGallery />
+
+          {/*Details and FAQ */}
+          <section className={` pl-5 ${classes.contentGradient} lg:w-1/2 `}>
+            <Tabs>
+              <TabList>
+                <Tab>
+                  <h6 className="md:text-6xl">Details</h6>
+                </Tab>
+                <Tab>
+                  <h6 className="md:text-6xl">FAQ</h6>
+                </Tab>
+              </TabList>
+              <div className="p-3">
+                <TabPanel>
+                  <div
+                    className="
+                    h-[200px]        // Domyślna wysokość
+                    sm:h-[300px]     // Wyższa ramka na małych ekranach (640px+)
+                    md:h-[400px]     // Jeszcze wyższa ramka na średnich ekranach (768px+)
+                    overflow-x-auto
+                    overflow-y-auto
+                    border-none
+                    outline-none
+                    scrollbar-thin scrollbar-thumb-gray-400
+                  "
+                  >
+                    <RichText content={productDetails.richText} />
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <div
+                    className="
+                    h-[200px]        // Domyślna wysokość
+                    sm:h-[300px]     // Wyższa ramka na małych ekranach (640px+)
+                    md:h-[400px]     // Jeszcze wyższa ramka na średnich ekranach (768px+)
+                    overflow-x-auto
+                    overflow-y-auto
+                    border-none
+                    outline-none
+                    scrollbar-thin scrollbar-thumb-gray-400
+                  "
+                  >
+                    <RichText content={productFaq.richText} />
+                  </div>
+                </TabPanel>
+              </div>
+            </Tabs>
+            <div className="hidden lg:block lg:mt-6 mx-5 border-solid border-b-1 border-r-1 border-t-0 border-l-0 border-customWhite pl-5 py-4">
+              <div className="h-10"></div>
             </div>
-          </Tabs>
-        </section>
-      </Gutter>
+          </section>
+        </div>
+      </div>
     </>
   )
 }

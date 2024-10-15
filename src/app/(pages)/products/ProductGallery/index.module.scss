@@ -1,0 +1,9 @@
+.contentGradient {
+  background: linear-gradient(to bottom, #F7F9FB, #4968AC );
+  padding-top: 1.25rem; // 20px (tailwind `pt-5`)
+  padding-bottom: 1.25rem; // 20px (tailwind `pb-5`)
+
+  @media (min-width: 1024px) {
+    background: #F7F9FB;
+  }
+}

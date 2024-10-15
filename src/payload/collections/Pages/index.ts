@@ -5,6 +5,7 @@ import { Archive } from '../../blocks/ArchiveBlock'
 import { CallToAction } from '../../blocks/CallToAction'
 import { Content } from '../../blocks/Content'
 import { MediaBlock } from '../../blocks/MediaBlock'
+import { CustomPublishButton } from '../../components/CustomPublishButton'
 import { hero } from '../../fields/hero'
 import { slugField } from '../../fields/slug'
 import { populateArchiveBlock } from '../../hooks/populateArchiveBlock'
@@ -20,6 +21,12 @@ export const Pages: CollectionConfig = {
       return `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/next/preview?url=${encodeURIComponent(
         `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/${doc.slug !== 'home' ? doc.slug : ''}`,
       )}&secret=${process.env.PAYLOAD_PUBLIC_DRAFT_SECRET}`
+    },
+    components: {
+      edit: {
+        PublishButton: CustomPublishButton, // Your custom publish button
+        // You can also define other custom buttons if needed
+      },
     },
   },
   hooks: {
