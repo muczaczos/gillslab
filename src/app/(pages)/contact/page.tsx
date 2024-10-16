@@ -64,9 +64,9 @@ export default function Contact() {
 
   return (
     <LayoutWithHeaderFooter>
-      <div id="mail" className="rounded-xl bg-customWhite opacity-90 p-5">
-        <div>
-          <h3 className="mb-3 text-primary">Contact Us</h3>
+      <h3 className="mb-3 text-primary md:text-6xl mt-5 ml-5">Contact Us</h3>
+      <div id="mail" className="rounded-xl flex justify-center bg-customWhite opacity-90 p-5">
+        <div className="">
           <div>
             <div className="relative mb-5">
               <input

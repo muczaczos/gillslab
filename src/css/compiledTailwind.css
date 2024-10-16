@@ -1464,6 +1464,14 @@
     width: 100% !important;
   }
 
+  .md\:min-w-\[768px\] {
+    min-width: 768px !important;
+  }
+
+  .md\:max-w-\[768px\] {
+    max-width: 768px !important;
+  }
+
   .md\:flex-row {
     flex-direction: row !important;
   }
