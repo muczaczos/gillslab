@@ -52,7 +52,7 @@ export const RelatedMovies: React.FC<{}> = () => {
       <div className={classes.diagonalRelated}></div>
       <div className={`mt-[-2.2rem] ${classes.relatedGradient}`}>
         {/*Related */}
-        <section>
+        <section className="">
           <div className="mt-8 mx-5 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
             <h6 className="text-primary text-4xl md:text-6xl font-medium">Related</h6>
           </div>

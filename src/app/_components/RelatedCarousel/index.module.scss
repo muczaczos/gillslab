@@ -5,9 +5,11 @@
   scroll-behavior: auto; /* Disables smooth scrolling */
   cursor: grab;
   scrollbar-width: none; /* Hides scrollbar on Firefox */
-  width: 100%; /* Ensure it takes full width */
   margin: 0; /* Remove any default margin */
   padding-bottom: 1rem; /* Remove any default padding */
+  @media (min-width:1536px) {
+    width: 1536px;
+  }
 }
 
 .slider::-webkit-scrollbar {
@@ -37,6 +39,10 @@
       min-width: 45%;  // Na najmniejszych ekranach slajd zajmuje pełną szerokość ekranu
       min-height: 10rem;
   }
+  @media (min-width: 1260px) {
+    min-width: 30%;  // Na najmniejszych ekranach slajd zajmuje pełną szerokość ekranu
+    min-height: 10rem;
+}
 }
 
 .slide img {

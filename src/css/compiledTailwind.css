@@ -178,11 +178,6 @@
   margin-bottom: 0px !important;
 }
 
-.mx-10 {
-  margin-left: 2.5rem !important;
-  margin-right: 2.5rem !important;
-}
-
 .-mt-20 {
   margin-top: -5rem !important;
 }
@@ -994,16 +989,16 @@
   padding-top: 0.5rem !important;
 }
 
+.pt-20 {
+  padding-top: 5rem !important;
+}
+
 .pt-4 {
   padding-top: 1rem !important;
 }
 
 .pt-5 {
   padding-top: 1.25rem !important;
-}
-
-.pt-20 {
-  padding-top: 5rem !important;
 }
 
 .text-left {
@@ -1433,10 +1428,6 @@
     margin-left: 2.25rem !important;
   }
 
-  .md\:mt-5 {
-    margin-top: 1.25rem !important;
-  }
-
   .md\:mt-0 {
     margin-top: 0px !important;
   }
@@ -1471,10 +1462,6 @@
 
   .md\:w-full {
     width: 100% !important;
-  }
-
-  .md\:w-1\/2 {
-    width: 50% !important;
   }
 
   .md\:flex-row {
@@ -1538,14 +1525,6 @@
     padding-top: 1rem !important;
   }
 
-  .md\:pt-5 {
-    padding-top: 1.25rem !important;
-  }
-
-  .md\:pt-14 {
-    padding-top: 3.5rem !important;
-  }
-
   .md\:text-2xl {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
@@ -1583,11 +1562,6 @@
 }
 
 @media (min-width: 1024px) {
-  .lg\:mx-5 {
-    margin-left: 1.25rem !important;
-    margin-right: 1.25rem !important;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px !important;
   }
@@ -1620,12 +1594,12 @@
     margin-top: 2.5rem !important;
   }
 
-  .lg\:mt-4 {
-    margin-top: 1rem !important;
-  }
-
   .lg\:mt-6 {
     margin-top: 1.5rem !important;
+  }
+
+  .lg\:mb-10 {
+    margin-bottom: 2.5rem !important;
   }
 
   .lg\:block {
@@ -1644,10 +1618,6 @@
     height: 4rem !important;
   }
 
-  .lg\:h-\[500px\] {
-    height: 500px !important;
-  }
-
   .lg\:w-1\/2 {
     width: 50% !important;
   }
@@ -1658,6 +1628,10 @@
 
   .lg\:w-full {
     width: 100% !important;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75% !important;
   }
 
   .lg\:flex-row {
@@ -1693,13 +1667,12 @@
     padding-right: 0.25rem !important;
   }
 
-  .lg\:px-5 {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-
   .lg\:pb-0 {
     padding-bottom: 0px !important;
+  }
+
+  .lg\:pb-14 {
+    padding-bottom: 3.5rem !important;
   }
 
   .lg\:pb-5 {
@@ -1718,6 +1691,10 @@
     padding-left: 1.25rem !important;
   }
 
+  .lg\:pt-0 {
+    padding-top: 0px !important;
+  }
+
   .lg\:pt-10 {
     padding-top: 2.5rem !important;
   }
@@ -1728,22 +1705,6 @@
 
   .lg\:pt-5 {
     padding-top: 1.25rem !important;
-  }
-
-  .lg\:pb-10 {
-    padding-bottom: 2.5rem !important;
-  }
-
-  .lg\:pb-14 {
-    padding-bottom: 3.5rem !important;
-  }
-
-  .lg\:pt-6 {
-    padding-top: 1.5rem !important;
-  }
-
-  .lg\:pt-0 {
-    padding-top: 0px !important;
   }
 
   .lg\:text-2xl {
@@ -1764,6 +1725,16 @@
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
   }
 }
 
@@ -1798,10 +1769,6 @@
 
   .xl\:flex {
     display: flex !important;
-  }
-
-  .xl\:hidden {
-    display: none !important;
   }
 
   .xl\:w-3\/4 {
@@ -1870,14 +1837,6 @@
     min-width: 40% !important;
   }
 
-  .\32xl\:flex-row {
-    flex-direction: row !important;
-  }
-
-  .\32xl\:gap-0 {
-    gap: 0px !important;
-  }
-
   .\32xl\:px-0 {
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -1891,10 +1850,6 @@
 @media (max-width: 389px) {
   .xs\:-mt-16 {
     margin-top: -4rem !important;
-  }
-
-  .xs\:w-3\/4 {
-    width: 75% !important;
   }
 
   .xs\:w-4\/5 {

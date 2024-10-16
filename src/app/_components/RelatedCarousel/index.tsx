@@ -104,14 +104,22 @@ const RelatedCarousel = ({ icons, images, catLabels }) => {
         {images &&
           images.map((image, index) => (
             <div className={styles.slide} key={index}>
-              <div className="flex justify-end">
-                <FaRegHeart className="text-primary text-xl" />
+              <div className="flex justify-end lg:pb-5">
+                <FaRegHeart className="text-primary text-xl lg:text-4xl" />
               </div>
-              <div className="flex justify-center mt-1 mb-3">
-                <Image src={image} alt={`Slide ${index}`} width={80} height={100} />
+              <div className="flex justify-center mt-1 mb-3 lg:mb-10">
+                <Image
+                  src={image}
+                  alt={`Slide ${index}`}
+                  width={80}
+                  height={100}
+                  className="lg:w-1/2"
+                />
               </div>
-              <p className="mt-5 text-lg font-bold text-primary leading-3">{catLabels[index]}</p>
-              <p className="text-lg text-primary">$40</p>
+              <p className="mt-5 text-lg font-bold text-primary leading-3 lg:text-3xl lg:ml-5">
+                {catLabels[index]}
+              </p>
+              <p className="text-lg text-primary lg:text-2xl lg:ml-5">$40</p>
             </div>
           ))}
         <div className="flex-shrink-0 w-[100px]"></div>
