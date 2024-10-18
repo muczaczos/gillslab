@@ -302,6 +302,10 @@
   margin-top: 6px !important;
 }
 
+.mr-1 {
+  margin-right: 0.25rem !important;
+}
+
 .block {
   display: block !important;
 }
@@ -595,6 +599,10 @@
 
 .gap-5 {
   gap: 1.25rem !important;
+}
+
+.gap-10 {
+  gap: 2.5rem !important;
 }
 
 .overflow-hidden {

@@ -34,14 +34,14 @@ const HeaderComponent = ({ header }: { header: Header }) => {
         <div className="flex mt-2 pr-2 md:hidden">
           <HamburgerMenu />
         </div>
-        <div className="hidden md:flex text-customWhite font-semibold gap-3">
-          <p>About</p>
+        <div className="hidden md:flex text-customWhite font-semibold gap-10">
+          <p className="mr-1">About</p>
           <div className="flex">
             <p>Our Products</p>
             <RiArrowDownSLine className="mt-[6px]" />
           </div>
-          <p>Contact</p>
-          <p>Shipping</p>
+          <p className="mr-1">Contact</p>
+          <p className="">Shipping</p>
         </div>
         <div className="hidden md:flex text-customWhite gap-2">
           <FaHouse />
