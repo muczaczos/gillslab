@@ -145,7 +145,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           </div>
           <hr className="border-customWhite w-full sm:mb-10 xl:w-3/4" />
           {/* dhl, dpd, ups, fedex logotypes */}
-          <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden">
+          <div className="flex items-center gap-2 w-full h-24 mx-auto overflow-hidden lg:max-w-[1024px] 2xl:max-w-[1536px]">
             {/* Kontener z 50% szerokości i wyśrodkowany */}
             <div className="relative w-full h-16">
               {' '}
@@ -188,15 +188,19 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           </div>
 
           {/* Gillslab logo and date */}
-          <div className="mt-2 mb-20 items-center flex gap-2">
-            <p className="text-customWhite text-large font-bold">© 2008 - 2024</p>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logoCom.png`}
-              alt="Gillslab logo"
-              className="" // Skaluje obrazek do 50% jego rozmiarów
-              width={150}
-              height={100}
-            />
+          <div className="w-full flex justify-center">
+            <div>
+              <div className="mt-2 lg:mt-10 mb-20 items-center flex gap-2 lg:w-[1000px] 2xl:w-[1536px] 2xl:ml-32">
+                <p className="text-customWhite text-large font-bold">© 2008 - 2024</p>
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logoCom.png`}
+                  alt="Gillslab logo"
+                  className="" // Skaluje obrazek do 50% jego rozmiarów
+                  width={150}
+                  height={100}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </footer>
