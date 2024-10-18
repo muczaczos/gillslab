@@ -818,6 +818,11 @@
   background-color: rgb(254 249 195 / var(--tw-bg-opacity)) !important;
 }
 
+.bg-primary-light {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(90 127 208 / var(--tw-bg-opacity)) !important;
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5 !important;
 }
@@ -1239,6 +1244,10 @@
 
 .opacity-90 {
   opacity: 0.9 !important;
+}
+
+.opacity-10 {
+  opacity: 0.1 !important;
 }
 
 .shadow-\[4px_4px_0px_rgba\(0\2c 0\2c 0\2c 0\.2\)\] {

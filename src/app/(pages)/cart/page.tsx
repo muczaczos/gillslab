@@ -10,6 +10,7 @@ import { Blocks } from '../../_components/Blocks'
 import { Button } from '../../_components/Button'
 import { Gutter } from '../../_components/Gutter'
 import { generateMeta } from '../../_utilities/generateMeta'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import { CartPage } from './CartPage'
 
 import classes from './index.module.scss'
@@ -56,15 +57,17 @@ export default async function Cart() {
   }
 
   return (
-    <div className={classes.container}>
-      <Gutter>
-        <h3>Cart</h3>
-        <CartPage settings={settings} page={page} />
-        <div className="p-10 w-full bg-gray-100 mt-10 ">
-          <Button label="Continue Shopping" href="/products" appearance="secondary" />
-        </div>
-      </Gutter>
-    </div>
+    <LayoutWithHeaderFooter>
+      <div className={classes.container}>
+        <Gutter>
+          <h3 className="text-primary">Cart</h3>
+          <CartPage settings={settings} page={page} />
+          <div className="p-10 w-full bg-primary opacity-90 ">
+            <Button label="Continue Shopping" href="/products" appearance="secondary" />
+          </div>
+        </Gutter>
+      </div>
+    </LayoutWithHeaderFooter>
   )
 }
 
