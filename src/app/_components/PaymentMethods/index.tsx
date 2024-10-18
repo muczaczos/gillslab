@@ -13,7 +13,7 @@ const PaymentMethods = ({ method, setMethod }) => {
 
   return (
     <div className={classes.paymentSection}>
-      <h3 className={classes.payment}>Payment Methods</h3>
+      <h3 className="text-primary mb-5">Payment Methods</h3>
       {/* <div className={classes.radioAndIcon}>
         <RadioButton
           label="Payment Gateway"

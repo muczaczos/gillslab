@@ -8,6 +8,7 @@ import { Message } from '../../_components/Message'
 import { LowImpactHero } from '../../_heros/LowImpact'
 import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import { CheckoutPage } from './CheckoutPage'
 
 import classes from './index.module.scss'
@@ -23,11 +24,13 @@ export default async function Checkout() {
   }
 
   return (
-    <div className={classes.checkout}>
-      <Gutter className={classes.checkoutPage}>
-        <CheckoutPage settings={settings} />
-      </Gutter>
-    </div>
+    <LayoutWithHeaderFooter>
+      <div className={`${classes.checkout} bg-customWhite`}>
+        <Gutter className={classes.checkoutPage}>
+          <CheckoutPage settings={settings} />
+        </Gutter>
+      </div>
+    </LayoutWithHeaderFooter>
   )
 }
 

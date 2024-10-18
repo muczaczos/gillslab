@@ -9,8 +9,8 @@ const AdditionalInfo = ({ setAdditionalInfo }) => {
   }
 
   return (
-    <div className={classes.section}>
-      <h3 className={classes.title}> Additional Information </h3>
+    <div className={`${classes.section} bg-customWhite`}>
+      <h3 className="text-primary mb-5"> Additional Information </h3>
       <textarea
         className={classes.textArea}
         onChange={handleChange}

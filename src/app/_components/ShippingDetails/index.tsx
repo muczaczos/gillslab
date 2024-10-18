@@ -99,7 +99,7 @@ const ShippingDetails = ({
 
   return (
     <div className={classes.shippingSection}>
-      <h3 className={classes.shipping}>Shipping Details</h3>
+      <h3 className="text-primary mb-5">Shipping Details</h3>
       <div className={classes.forms}>
         <div className={classes.fullName}>
           <Input
