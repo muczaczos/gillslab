@@ -14,6 +14,7 @@ import { noHeaderFooterUrls } from '../../../constants'
 import { Gutter } from '../../Gutter'
 import HamburgerMenu from '../../HamburgerMenu'
 import { HeaderNav } from '../Nav'
+import { useCart } from '../../../_providers/Cart'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
@@ -22,6 +23,9 @@ const HeaderComponent = ({ header }: { header: Header }) => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen)
   }
+
+  const { cart } = useCart()
+  let totalItem = 0
 
   return (
     <nav
@@ -98,9 +102,23 @@ const HeaderComponent = ({ header }: { header: Header }) => {
           <Link className="text-customWhite" href="/">
             <FaHouse />
           </Link>
-          <Link className="text-customWhite" href="/cart">
-            <FiShoppingCart />
+          <Link className="text-customWhite relative" href="/cart">
+            <FiShoppingCart className="text-2xl" />
+            {cart?.items?.length > 0 && (
+              <>
+                {cart?.items?.forEach((item) => {
+                  if (typeof item.product === 'object' && item.quantity) {
+                    totalItem += item.quantity
+                  }
+                })}
+                {/* Badge z ilością produktów */}
+                <span className="absolute top-[-8px] right-[-10px] bg-secondary text-customWhite rounded-full px-2 py-0 text-xs font-bold">
+                  {totalItem}
+                </span>
+              </>
+            )}
           </Link>
+
           <Link className="text-customWhite" href="/favorities">
             <FiHeart />
           </Link>
