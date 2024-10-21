@@ -59,8 +59,8 @@ export default async function Account() {
   return (
     <Fragment>
       <Gutter>
-        <h1 className={classes.title}>My Profile</h1>
-        <div className={classes.layout}>
+        <h1 className={`${classes.title} text-primary-dark`}>My Profile</h1>
+        <div className={`${classes.layout} text-primary`}>
           <div className={classes.menu}>
             <ul className={classes.menuList}>
               <li className={classes.avatar}>
@@ -73,20 +73,20 @@ export default async function Account() {
                 </div>
               </li>
               <Link href="/personal" className={classes.menuItem}>
-                <FaRegUser />
-                Personal Information
+                <FaRegUser className="text-primary" />
+                <p className="text-primary">Personal Information</p>
               </Link>
               <Link href="/purchases" className={classes.menuItem}>
-                <FaCreditCard />
-                My Pucharses
+                <FaCreditCard className="text-primary" />
+                <p className="text-primary">My Pucharses</p>
               </Link>
               <Link href="/orders" className={classes.menuItem}>
-                <FaClipboardList />
-                My Orders
+                <FaClipboardList className="text-primary" />
+                <p className="text-primary">My Orders</p>
               </Link>
               <Link href="/logout" className={classes.menuItem + ' ' + classes.menuLogout}>
-                <BiDoorOpen />
-                Logout
+                <BiDoorOpen className="text-primary" />
+                <p className="text-primary">Logout</p>
               </Link>
             </ul>
           </div>

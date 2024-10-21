@@ -23,7 +23,7 @@ export default async function CreateAccount() {
       <div className={classes.heroImg}>
         <Link href="/">
           <Image
-            src="/logo-black.svg"
+            src="/media/gillslab-com.png"
             alt="logo"
             width={250}
             height={23}
@@ -37,7 +37,7 @@ export default async function CreateAccount() {
           <RenderParams className={classes.params} />
 
           <div className={classes.formTitle}>
-            <h3>Create Account</h3>
+            <h3 className="text-secondary">Create Account</h3>
             <Image src="/assets/icons/hand.png" alt="hand" width={30} height={30} />
           </div>
 
@@ -46,7 +46,7 @@ export default async function CreateAccount() {
           <CreateAccountForm />
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 

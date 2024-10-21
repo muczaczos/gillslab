@@ -13,7 +13,7 @@ const Personal = async () => {
   return (
     <Fragment>
       <Gutter className={classes.account}>
-        <h1 className={classes.title}>Personal Information</h1>
+        <h1 className={`${classes.title} text-primary-dark`}>Personal Information</h1>
         <AccountForm />
       </Gutter>
     </Fragment>

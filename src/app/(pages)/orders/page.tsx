@@ -48,7 +48,7 @@ export default async function Orders() {
 
   return (
     <Gutter className={classes.orders}>
-      <h1 className="pb-5">Orders</h1>
+      <h1 className="pb-5 text-primary-dark">Orders</h1>
       {(!orders || !Array.isArray(orders) || orders?.length === 0) && (
         <p className={classes.noOrders}>You have no orders.</p>
       )}

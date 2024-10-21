@@ -17,7 +17,7 @@ const Purchases = async () => {
   return (
     <Fragment>
       <Gutter className={classes.account}>
-        <h1 className={classes.title}>Purchases Products</h1>
+        <h1 className={`${classes.title} text-primary-dark`}>Purchases Products</h1>
         <p>These are the products you have purchased over time.</p>
         <div>
           {user?.purchases?.length || 0 > 0 ? (

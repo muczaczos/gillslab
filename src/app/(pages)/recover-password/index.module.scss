@@ -8,10 +8,9 @@
 
   @include mid-break {
     grid-template-columns: 1fr;
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/assets/images/image-3.svg');
+    background-color: #4968AC;
   }
 
   p {
@@ -22,15 +21,23 @@
 .heroImg {
   height: 100%;
   width: 100%;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/assets/images/image-3.svg');
+  background-image: url('/media/spores-white.png');
+  background-size: 75%; 
+  background-color: #4968AC;
 
   @include mid-break {
     background: none;
     display: flex;
-    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    background-size: 90%;
+  }
+
+  @media (min-width: 1280px) {
+    background-size: 60%;
   }
 }
 

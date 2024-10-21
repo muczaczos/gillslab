@@ -20,7 +20,7 @@ export default async function Login() {
       <div className={classes.heroImg}>
         <Link href="/">
           <Image
-            src="/logo-black.svg"
+            src="/media/gillslab-com.png"
             alt="logo"
             width={250}
             height={23}
@@ -34,7 +34,7 @@ export default async function Login() {
           <RenderParams className={classes.params} />
 
           <div className={classes.formTitle}>
-            <h3>Welcome</h3>
+            <h3 className="text-primary">Welcome</h3>
             <Image src="/assets/icons/hand.png" alt="hand" width={30} height={30} />
           </div>
 

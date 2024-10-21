@@ -15,7 +15,7 @@ export default async function RecoverPassword() {
       <div className={classes.heroImg}>
         <Link href="/">
           <Image
-            src="/logo-black.svg"
+            src="/media/gillslab-com.png"
             alt="logo"
             width={250}
             height={23}
@@ -32,7 +32,7 @@ export default async function RecoverPassword() {
             <p>Back</p>
           </Link>
           <div className={classes.formTitle}>
-            <h3>Forgot Password</h3>
+            <h3 className="text-primary">Forgot Password</h3>
           </div>
 
           <RecoverPasswordForm />
