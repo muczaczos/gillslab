@@ -30,12 +30,14 @@ const HeaderComponent = ({ header }: { header: Header }) => {
     >
       <section className="mb-1 flex justify-between md:items-center md:mb-0 md:w-[1536px]">
         <div className="scale-75">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logo3.png`} // Ścieżka do obrazu w katalogu public
-            alt="GillsLab logotype"
-            width={200} // Szerokość obrazu
-            height={20} // Wysokość obrazu
-          />
+          <Link href="/">
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logo3.png`} // Ścieżka do obrazu w katalogu public
+              alt="GillsLab logotype"
+              width={200} // Szerokość obrazu
+              height={20} // Wysokość obrazu
+            />
+          </Link>
         </div>
         <div className="flex mt-2 pr-2 md:hidden">
           <HamburgerMenu />
@@ -93,10 +95,18 @@ const HeaderComponent = ({ header }: { header: Header }) => {
         </div>
 
         <div className="hidden md:flex text-customWhite gap-2">
-          <FaHouse />
-          <FiShoppingCart />
-          <FiHeart />
-          <FiUser />
+          <Link className="text-customWhite" href="/">
+            <FaHouse />
+          </Link>
+          <Link className="text-customWhite" href="/cart">
+            <FiShoppingCart />
+          </Link>
+          <Link className="text-customWhite" href="/favorities">
+            <FiHeart />
+          </Link>
+          <Link className="text-customWhite" href="/account">
+            <FiUser />
+          </Link>
         </div>
       </section>
     </nav>
