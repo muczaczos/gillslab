@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { GiWateringCan, GiWeight } from 'react-icons/gi'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 import { LiaTemperatureLowSolid } from 'react-icons/lia'
@@ -13,12 +13,9 @@ import RichText from '../../_components/RichText'
 import SmallCarousel from '../../_components/SmallCarousel'
 
 import 'react-tabs/style/react-tabs.css'
-
 import classes from './index.module.scss'
 
-export const ProductHero: React.FC<{
-  product: Product
-}> = ({ product }) => {
+export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
     id,
     title,
@@ -33,6 +30,7 @@ export const ProductHero: React.FC<{
     media2,
     media3,
   } = product
+
   let productDescription
   let productDetails
   let productFaq
@@ -56,17 +54,42 @@ export const ProductHero: React.FC<{
     product.layout.forEach(layoutItem => {
       // Sprawdź, czy obiekt layoutItem ma właściwość columns
       if (layoutItem.blockType === 'content' && layoutItem.columns) {
-        // Jeśli columns istnieje, możesz uzyskać do niego dostęp tutaj
         const columns = layoutItem.columns
-        // Możesz dalej przetwarzać columns
-        // np. możesz iterować przez każdą kolumnę i wykonywać odpowiednie operacje
         productDescription = columns[0]
         productDetails = columns[1]
         productFaq = columns[2]
       }
     })
   }
+
   const websiteUrl = process.env.NEXT_PUBLIC_SERVER_URL
+
+  // Stan do zarządzania ulubionymi
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  // Sprawdź localStorage przy załadowaniu komponentu
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || []
+    setIsFavorite(favorites.includes(id))
+  }, [id])
+
+  // Funkcja do zarządzania ulubionymi
+  const handleFavoriteToggle = () => {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || []
+
+    if (isFavorite) {
+      // Usuń z ulubionych
+      const updatedFavorites = favorites.filter(favId => favId !== id)
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+      setIsFavorite(false)
+    } else {
+      // Dodaj do ulubionych
+      favorites.push(id)
+      localStorage.setItem('favorites', JSON.stringify(favorites))
+      setIsFavorite(true)
+    }
+  }
+
   return (
     <>
       <div className="lg:flex">
@@ -78,12 +101,16 @@ export const ProductHero: React.FC<{
             </div>
             <div>
               <IoShareOutline className="text-3xl text-customWhite mr-5 md:text-6xl lg:text-5xl" />
-              <IoHeartOutline className="text-3xl text-customWhite md:text-6xl lg:text-5xl" />
-              <IoHeart className="text-secondary text-3xl md:text-6xl lg:text-5xl" />
+              {/* Ikona serca z obsługą kliknięcia */}
+              {isFavorite ? (
+                <IoHeart className="text-secondary text-3xl md:text-6xl lg:text-5xl" onClick={handleFavoriteToggle} />
+              ) : (
+                <IoHeartOutline className="text-3xl text-customWhite md:text-6xl lg:text-5xl" onClick={handleFavoriteToggle} />
+              )}
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <div className="w-1/2 sm:w-3/4 ">
+            <div className="w-1/2 sm:w-3/4">
               <Image
                 alt="Product Image"
                 src={`${websiteUrl}/media/gtLabel.png`}
@@ -105,7 +132,7 @@ export const ProductHero: React.FC<{
           <h3 className="text-primary text-2xl md:text-4xl">{title}</h3>
           <p className="text-primary-light text-xl md:text-2xl">{title2}</p>
 
-          {/* In stock and price*/}
+          {/* In stock and price */}
           <div className={classes.categoryWrapper}>
             <p className="text-green-700 text-md font-bold md:text-xl">In stock</p>
           </div>
