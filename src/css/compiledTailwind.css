@@ -796,11 +796,6 @@
   background-color: rgb(90 127 208 / var(--tw-bg-opacity)) !important;
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity)) !important;
-}
-
 .bg-secondary {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(172 73 104 / var(--tw-bg-opacity)) !important;
@@ -1212,10 +1207,6 @@
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.text-secondary-dark {
-  color:  !important;
 }
 
 .underline {

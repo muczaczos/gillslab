@@ -9,11 +9,11 @@ import { fetchDocs } from '../../_api/fetchDocs'
 import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
 import { HR } from '../../_components/HR'
-import LiquidsCards from '../cubensis-liquid-cultures/LiquidsCards'
+import PrintsCards from './PrintsCards'
 
 import classes from './index.module.scss'
 
-const CubensisLiquidCultures = async () => {
+const Favorities = async () => {
   const { isEnabled: isDraftMode } = draftMode()
   let products: Product[] | null = null
   let pages = []
@@ -21,8 +21,9 @@ const CubensisLiquidCultures = async () => {
 
   try {
     products = await fetchDocs<Product>('products')
-
+    console.log(products)
     for (let i = 0; i < products.length; i++) {
+      console.log(products)
       pages[i] = await fetchDoc<Page>({
         collection: 'products',
         slug: products[i].slug,
@@ -35,31 +36,27 @@ const CubensisLiquidCultures = async () => {
 
   filteredPages = pages.filter(page => {
     if (page.categories[0]) {
-      return page.categories[0].slug === 'cubensis-liquid-cultures'
+      return page.categories[0].slug === 'cubensis-spore-prints'
     }
   })
 
   return (
     <Gutter>
       <div className={classes.imageTitle}>
-        <Image
-          alt="Syringe needle inside ampoule"
-          src="/media/cultures.jpeg"
-          height="500"
-          width="600"
-        />
-        <h2 className={classes.title}>Cultivate with Cubensis Liquid Cultures! 🧪🧪🧪🍄</h2>
+        <Image alt="Planet of mushrooms" src="/media/prints.jpeg" height="500" width="600" />
+        <h2 className={classes.title}>
+          Cubensis Spore Prints: High-Quality Mushroom Genetics 😍😍😍
+        </h2>
       </div>
-      <p className="mt-5 text-lg">
-        Experience Effortless Growth with Cubensis Liquid Cultures! Our premium liquid cultures
-        offer a hassle-free solution for mushroom cultivation. Inject 💉 vitality into your
-        substrate and witness rapid mycelial colonization 🚀, leading to bountiful harvests. Perfect
-        for both beginners and seasoned growers, our liquid cultures ensure consistent results and
-        robust mushroom yields 🍄🍄🍄. Elevate your cultivation game 🎮 with Cubensis Liquid
-        Cultures today!
+      <p className={classes.heroText}>
+        Explore 🔎 our diverse collection of Cubensis Spore Prints 🧫🧫🧫, each meticulously
+        harvested to ensure optimal genetics 🍄. These prints offer a convenient way to propagate
+        your favorite mushroom strains, whether you're a seasoned cultivator 👴 or just starting
+        your mycological journey 👶. With our high-quality spore prints, you can embark on exciting
+        mushroom cultivation projects with confidence. 😎
       </p>
       <div className={classes.gap}></div>
-      <LiquidsCards pages={filteredPages} products={products} />
+      <PrintsCards pages={filteredPages} products={products} />
       <HR />
     </Gutter>
   )
@@ -67,19 +64,19 @@ const CubensisLiquidCultures = async () => {
 
 // either Static metadata
 export const metadata: Metadata = {
-  title: 'Cultivate with Cubensis Liquid Cultures - Easy inoculation', //60 char
+  title: 'Cubensis Spore Prints: High-Quality Mushroom Genetics', //60 char
   description:
-    'Experience Effortless Growth with Cubensis Liquid Cultures! Our premium liquid cultures offer a hassle-free solution for mushroom cultivation', //150 char
+    'Explore 🔎 our diverse collection of Cubensis Spore Prints 🧫🧫🧫, each meticulously harvested to ensure optimal genetics 🍄.', //150 char
   keywords:
-    'Cubensis liquid cultures, mushroom mycelium, Azurescens spores, Cubensis spore print, Fungus, Organic Mushrooms Mycelium',
+    'Cubensis spore prints, spore syringes, Azurescens spores, mushrooms spore print, mycelium, Organic Mushrooms Spores',
   openGraph: {
-    images: ['/media/cultures.jpeg'],
-    title: 'Cultivate with Cubensis Liquid Cultures - Easy inoculation',
+    images: ['/media/prints.jpeg'],
+    title: 'Cubensis Spore Prints: High-Quality Mushroom Genetics',
     description:
-      'Experience Effortless Growth with Cubensis Liquid Cultures! Our premium liquid cultures offer a hassle-free solution for mushroom cultivation',
-    url: 'https://planet-of-mushrooms.com/cubensis-liquid-cultures',
+      'Explore 🔎 our diverse collection of Cubensis Spore Prints 🧫🧫🧫, each meticulously harvested to ensure optimal genetics 🍄.',
+    url: 'https://planet-of-mushrooms.com/cubensis-spore-prints',
     type: 'website',
   },
 }
 
-export default CubensisLiquidCultures
+export default Favorities
