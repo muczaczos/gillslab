@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react'
 import { GiWateringCan, GiWeight } from 'react-icons/gi'
-import { IoArrowBackOutline, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
+import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 import { LiaTemperatureLowSolid } from 'react-icons/lia'
 import { TbSunOff } from 'react-icons/tb'
 import Image from 'next/image'
@@ -20,6 +20,7 @@ export const ProductHero: React.FC<{
   product: Product
 }> = ({ product }) => {
   const {
+    id,
     title,
     title2,
     shortInfo1,
@@ -78,6 +79,7 @@ export const ProductHero: React.FC<{
             <div>
               <IoShareOutline className="text-3xl text-customWhite mr-5 md:text-6xl lg:text-5xl" />
               <IoHeartOutline className="text-3xl text-customWhite md:text-6xl lg:text-5xl" />
+              <IoHeart className="text-secondary text-3xl md:text-6xl lg:text-5xl" />
             </div>
           </div>
           <div className="flex justify-center items-center">

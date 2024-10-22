@@ -4,6 +4,7 @@ import { Montserrat } from 'next/font/google'
 import Script from 'next/script'
 
 import { AdminBar } from './_components/AdminBar'
+import MobileStickyMenu from './_components/MobileStickyMenu'
 import { Providers } from './_providers'
 import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <AdminBar />
           <main>{children}</main>
+          <MobileStickyMenu />
         </Providers>
       </body>
     </html>
