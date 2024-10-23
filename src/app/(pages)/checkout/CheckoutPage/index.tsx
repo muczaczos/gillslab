@@ -218,10 +218,11 @@ export const CheckoutPage: React.FC<{
         from planet-of-mushrooms.com
       </label>
       <div
-        className={`${isButtonActive
+        className={`${
+          isButtonActive
             ? 'opacity-100 flex justify-between mt-10'
             : 'opacity-50 flex justify-between mt-10'
-          }`}
+        }`}
       >
         <Button label="Back to cart" href="/cart" appearance="secondary" />
         <GatewayLogic

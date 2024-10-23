@@ -37,8 +37,6 @@ export const ProductContent: React.FC<{
   return (
     <>
       <div className={`mt-[-2.25rem] md:mt-0 `}>
-
-
         <div className="lg:flex lg:justify-between lg:w-full">
           {/*Gallery */}
           <ProductGallery />

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { GiWateringCan, GiWeight } from 'react-icons/gi'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 import { LiaTemperatureLowSolid } from 'react-icons/lia'
@@ -13,10 +13,12 @@ import RichText from '../../_components/RichText'
 import SmallCarousel from '../../_components/SmallCarousel'
 
 import 'react-tabs/style/react-tabs.css'
+
 import classes from './index.module.scss'
 
 export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
+    slug,
     id,
     title,
     title2,
@@ -70,8 +72,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   // Sprawdź localStorage przy załadowaniu komponentu
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || []
-    setIsFavorite(favorites.includes(id))
-  }, [id])
+    setIsFavorite(favorites.includes(slug))
+  }, [slug])
 
   // Funkcja do zarządzania ulubionymi
   const handleFavoriteToggle = () => {
@@ -79,12 +81,12 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
 
     if (isFavorite) {
       // Usuń z ulubionych
-      const updatedFavorites = favorites.filter(favId => favId !== id)
+      const updatedFavorites = favorites.filter(favSlug => favSlug !== slug)
       localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
       setIsFavorite(false)
     } else {
       // Dodaj do ulubionych
-      favorites.push(id)
+      favorites.push(slug)
       localStorage.setItem('favorites', JSON.stringify(favorites))
       setIsFavorite(true)
     }
@@ -103,9 +105,15 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               <IoShareOutline className="text-3xl text-customWhite mr-5 md:text-6xl lg:text-5xl" />
               {/* Ikona serca z obsługą kliknięcia */}
               {isFavorite ? (
-                <IoHeart className="text-secondary text-3xl md:text-6xl lg:text-5xl" onClick={handleFavoriteToggle} />
+                <IoHeart
+                  className="text-secondary text-3xl md:text-6xl lg:text-5xl"
+                  onClick={handleFavoriteToggle}
+                />
               ) : (
-                <IoHeartOutline className="text-3xl text-customWhite md:text-6xl lg:text-5xl" onClick={handleFavoriteToggle} />
+                <IoHeartOutline
+                  className="text-3xl text-customWhite md:text-6xl lg:text-5xl"
+                  onClick={handleFavoriteToggle}
+                />
               )}
             </div>
           </div>

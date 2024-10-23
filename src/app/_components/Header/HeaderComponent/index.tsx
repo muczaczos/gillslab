@@ -10,11 +10,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { Header } from '../../../../payload/payload-types'
+import { useCart } from '../../../_providers/Cart'
 import { noHeaderFooterUrls } from '../../../constants'
 import { Gutter } from '../../Gutter'
 import HamburgerMenu from '../../HamburgerMenu'
 import { HeaderNav } from '../Nav'
-import { useCart } from '../../../_providers/Cart'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
@@ -106,7 +106,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
             <FiShoppingCart className="text-2xl" />
             {cart?.items?.length > 0 && (
               <>
-                {cart?.items?.forEach((item) => {
+                {cart?.items?.forEach(item => {
                   if (typeof item.product === 'object' && item.quantity) {
                     totalItem += item.quantity
                   }

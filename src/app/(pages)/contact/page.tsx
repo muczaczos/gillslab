@@ -64,7 +64,6 @@ export default function Contact() {
 
   return (
     <LayoutWithHeaderFooter>
-
       <h6 className="mx-5 mt-5 text-primary text-4xl font-medium md:text-6xl">Contact</h6>
 
       <div id="mail" className="rounded-xl flex justify-center bg-customWhite opacity-90 p-5">
