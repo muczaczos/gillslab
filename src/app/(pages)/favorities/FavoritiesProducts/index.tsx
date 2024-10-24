@@ -22,7 +22,6 @@ const FavoritiesProducts = ({ favoriteSlugs }) => {
               })
               return product
             } catch (error) {
-              console.error(`Error fetching product with slug ${slug}:`, error)
               return null // Zwróć null, jeśli wystąpił błąd
             }
           }),
@@ -42,7 +41,6 @@ const FavoritiesProducts = ({ favoriteSlugs }) => {
               })
               return page
             } catch (error) {
-              console.error(`Error fetching page for product with slug ${product.slug}:`, error)
               return null
             }
           }),
@@ -50,7 +48,6 @@ const FavoritiesProducts = ({ favoriteSlugs }) => {
 
         setPages(fetchedPages.filter(Boolean)) // Filtruj null dla stron
       } catch (error) {
-        console.error('Error fetching products and pages:', error)
       } finally {
         setLoading(false)
       }

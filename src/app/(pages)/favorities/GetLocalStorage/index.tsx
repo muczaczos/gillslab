@@ -7,7 +7,6 @@ const GetLocalStorage = ({ setFavoriteSlugs }) => {
 
     // Set the favorites state to pass to the server component
     setFavoriteSlugs(favorite)
-
   }, [setFavoriteSlugs])
 
   return <div></div>
