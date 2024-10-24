@@ -13,9 +13,7 @@ const Checkout = async () => {
 
   try {
     settings = await fetchSettings()
-  } catch (error) {
-    console.error(error)
-  }
+  } catch (error) {}
 
   return (
     <LayoutWithHeaderFooter>
