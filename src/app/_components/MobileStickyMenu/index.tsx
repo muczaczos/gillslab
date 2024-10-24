@@ -21,7 +21,7 @@ const MobileStickyMenu = () => {
       <Link href="/">
         <FaHome className="text-customWhite text-2xl" />
       </Link>
-      <Link href="/favorites">
+      <Link href="/favorities">
         <FaRegHeart className="text-customWhite text-2xl" />
       </Link>
       <Link href="/cart">

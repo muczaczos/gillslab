@@ -569,6 +569,10 @@
   flex-direction: column !important;
 }
 
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
 .items-end {
   align-items: flex-end !important;
 }
@@ -611,6 +615,10 @@
 
 .gap-5 {
   gap: 1.25rem !important;
+}
+
+.gap-8 {
+  gap: 2rem !important;
 }
 
 .overflow-hidden {
@@ -741,6 +749,11 @@
 .border-yellow-300 {
   --tw-border-opacity: 1 !important;
   border-color: rgb(253 224 71 / var(--tw-border-opacity)) !important;
+}
+
+.border-secondary {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(172 73 104 / var(--tw-border-opacity)) !important;
 }
 
 .border-l-gray-100 {
@@ -940,6 +953,11 @@
   padding-bottom: 1.5rem !important;
 }
 
+.py-10 {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem !important;
 }
@@ -1030,6 +1048,14 @@
 
 .pt-5 {
   padding-top: 1.25rem !important;
+}
+
+.pb-32 {
+  padding-bottom: 8rem !important;
+}
+
+.pb-64 {
+  padding-bottom: 16rem !important;
 }
 
 .text-left {
@@ -1868,6 +1894,11 @@
     font-size: 2.25rem !important;
     line-height: 2.5rem !important;
   }
+
+  .xl\:text-8xl {
+    font-size: 6rem !important;
+    line-height: 1 !important;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -1906,6 +1937,11 @@
 
   .\32xl\:pb-28 {
     padding-bottom: 7rem !important;
+  }
+
+  .\32xl\:text-8xl {
+    font-size: 6rem !important;
+    line-height: 1 !important;
   }
 }
 
