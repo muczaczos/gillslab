@@ -17,7 +17,7 @@ const Products = async () => {
 
   let page: Page | null = null //Page for layout
   let categories: Category[] | null = null //I need this for filters
-  if(page.layout){
+  if (page.layout) {
     try {
       //fetch page and categories
       //1 fetch page with slug 'products'
@@ -31,7 +31,7 @@ const Products = async () => {
           how something is currently working. 
         */
       })
-    
+
       categories = await fetchDocs<Category>('categories')
     } catch (error) {
       //console.log(error)
