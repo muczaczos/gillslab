@@ -1,29 +1,30 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Metadata } from 'next'
 
-import { Settings } from '../../../payload/payload-types'
-import { fetchSettings } from '../../_api/fetchGlobals'
 import { Gutter } from '../../_components/Gutter'
+import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import { CheckoutPage } from './CheckoutPage'
 
 import classes from './index.module.scss'
 
-const Checkout = async () => {
-  let settings: Settings | null = null
-
-  try {
-    settings = await fetchSettings()
-  } catch (error) {}
-
+export default async function Checkout() {
   return (
     <LayoutWithHeaderFooter>
       <div className={`${classes.checkout} bg-customWhite`}>
         <Gutter className={classes.checkoutPage}>
-          <CheckoutPage settings={settings} />
+          <CheckoutPage />
         </Gutter>
       </div>
     </LayoutWithHeaderFooter>
   )
 }
 
-export default Checkout
+export const metadata: Metadata = {
+  title: 'Account',
+  description: 'Create an account or log in to your existing account.',
+  openGraph: mergeOpenGraph({
+    title: 'Account',
+    url: '/account',
+  }),
+}

@@ -18,13 +18,7 @@ import { CheckoutItem } from '../CheckoutItem'
 
 import classes from './index.module.scss'
 
-export const CheckoutPage: React.FC<{
-  settings: Settings
-}> = props => {
-  const {
-    settings: { productsPage },
-  } = props
-
+export const CheckoutPage: React.FC<{}> = props => {
   const { user } = useAuth()
   const router = useRouter()
 
@@ -146,12 +140,10 @@ export const CheckoutPage: React.FC<{
           {'Your '}
           <Link href="/cart">cart</Link>
           {' is empty.'}
-          {typeof productsPage === 'object' && productsPage?.slug && (
-            <Fragment>
-              {' '}
-              <Link href={`/${productsPage.slug}`}>Continue shopping?</Link>
-            </Fragment>
-          )}
+          <Fragment>
+            {' '}
+            <Link href={`/`}>Continue shopping?</Link>
+          </Fragment>
         </div>
       )}
       {!cartIsEmpty && (
