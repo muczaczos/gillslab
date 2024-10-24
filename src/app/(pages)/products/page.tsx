@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { draftMode } from 'next/headers'
 
 import { Category, Page } from '../../../payload/payload-types'
@@ -15,45 +15,26 @@ import classes from './index.module.scss'
 const Products = async () => {
   const { isEnabled: isDraftMode } = draftMode()
 
-  const [page, setPage] = useState<Page | null>(null)
-  const [categories, setCategories] = useState<Category[] | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  let page: Page | null = null //Page for layout
+  let categories: Category[] | null = null //I need this for filters
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch page and categories
-        const fetchedPage = await fetchDoc<Page>({
-          collection: 'pages',
-          slug: 'products',
-          draft: isDraftMode,
-        })
+  try {
+    //fetch page and categories
+    //1 fetch page with slug 'products'
+    page = await fetchDoc<Page>({
+      collection: 'pages',
+      slug: 'products',
+      draft: isDraftMode,
+      /*drafts allow you to build on top of versions functionality
+        to make changes to your collection, documents and globals but
+        publish only when you're ready. It allows you to check out
+        how something is currently working. 
+      */
+    })
 
-        const fetchedCategories = await fetchDocs<Category>('categories')
-
-        setPage(fetchedPage)
-        setCategories(fetchedCategories)
-      } catch (error) {
-        console.error("Error fetching data:", error)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    fetchData()
-  }, [isDraftMode])
-
-  // Sprawdzenie, czy dane są dostępne
-  if (isLoading) {
-    return <div>Loading...</div> // Komunikat ładowania
-  }
-
-  if (!page) {
-    return <div>Page not found</div> // Obsługa błędu braku strony
-  }
-
-  if (!categories) {
-    return <div>Categories not found</div> // Obsługa błędu braku kategorii
+    categories = await fetchDocs<Category>('categories')
+  } catch (error) {
+    //console.log(error)
   }
 
   return (
