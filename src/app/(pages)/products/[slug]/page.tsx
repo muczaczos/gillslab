@@ -13,6 +13,8 @@ import { generateMeta } from '../../../_utilities/generateMeta'
 import LayoutWithNoHeaderAndFooter from '../../../layouts/withNoFooter/layout'
 import { ProductContent } from '../ProductContent'
 import { RelatedMovies } from '../RelatedMovies'
+
+export const dynamic = 'force-dynamic'
 export default async function Products({ params: { slug } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
