@@ -82,6 +82,10 @@
 }
 
 html {
+  scroll-behavior: smooth;
+}
+
+html {
   @extend %body;
   background: var(--theme-bg);
   -webkit-font-smoothing: antialiased;
@@ -106,6 +110,7 @@ body {
   color: var(--color-dark-500);
   display: flex;
   flex-flow: column;
+  scroll-behavior: smooth;
 }
 
 .main {

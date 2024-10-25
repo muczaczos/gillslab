@@ -633,6 +633,10 @@
   overflow-y: auto !important;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth !important;
+}
+
 .break-words {
   overflow-wrap: break-word !important;
 }
@@ -984,6 +988,10 @@
   padding-bottom: 1.25rem !important;
 }
 
+.pb-64 {
+  padding-bottom: 16rem !important;
+}
+
 .pb-7 {
   padding-bottom: 1.75rem !important;
 }
@@ -1038,10 +1046,6 @@
 
 .pt-5 {
   padding-top: 1.25rem !important;
-}
-
-.pb-64 {
-  padding-bottom: 16rem !important;
 }
 
 .text-left {

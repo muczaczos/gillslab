@@ -3,6 +3,7 @@ import { FaHeart, FaHome, FaRegHeart, FaShoppingCart, FaUser } from 'react-icons
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { Category, Page } from '../../../payload/payload-types'
@@ -114,9 +115,11 @@ export default async function Pages({ params: { slug = 'home' } }) {
                 <p className="text-primary ml-7 mt-2 sm:ml-10">
                   <span className="font-normal text-base">Cultivate Your Mushrooms Dreams</span>
                 </p>
-                <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
-                  Get Started
-                </button>
+                <Link href="#start2">
+                  <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -146,9 +149,11 @@ export default async function Pages({ params: { slug = 'home' } }) {
                     <p className="text-primary ml-7 mt-2 sm:ml-10">
                       <span className="font-normal text-base">Cultivate Your Mushrooms Dreams</span>
                     </p>
-                    <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
-                      Get Started
-                    </button>
+                    <Link href="#start">
+                      <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
+                        Get Started
+                      </button>
+                    </Link>
                   </div>
                 </div>
 
@@ -167,7 +172,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           </div>
 
           {/* horizontal carousel for mobile*/}
-          <section className="block md:hidden bg-customWhite py-4 pb-7">
+          <section id="start2" className="block md:hidden bg-customWhite py-4 pb-7">
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
             </Gutter>
@@ -177,7 +182,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
           {/* horizontal menu for desktop*/}
           <section className="w-full hidden md:block bg-customWhite pb-20 py-5">
             <div className="flex flex-col w-full items-end">
-              <div className="w-3/4">
+              <div id="start" className="w-3/4">
                 <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">
                   Shop By Categories
                 </h2>
