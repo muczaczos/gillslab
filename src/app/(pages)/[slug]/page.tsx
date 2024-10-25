@@ -36,7 +36,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   let page: Page | null = null
   let categories: Category[] | null = null
-
   try {
     page = await fetchDoc<Page>({
       collection: 'pages',
@@ -64,6 +63,13 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   const { hero, layout } = page
 
+  const links = [
+    'cubensis-grow-kits',
+    'cubensis-spore-syringes',
+    'cubensis-liquid-cultures',
+    'laboratory-equipments',
+    'substrates',
+  ]
   const images = [
     process.env.NEXT_PUBLIC_SERVER_URL + '/media/growkitsCat.png',
     process.env.NEXT_PUBLIC_SERVER_URL + '/media/sporesCat.png',
@@ -176,7 +182,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <Gutter className="classes.home">
               <h2 className="py-2 font-bold text-2xl text-primary">Shop By Categories</h2>
             </Gutter>
-            <SmallCarousel icons={null} catLabels={catLabels} images={images} />
+            <SmallCarousel icons={null} links={links} catLabels={catLabels} images={images} />
           </section>
 
           {/* horizontal menu for desktop*/}
@@ -187,80 +193,91 @@ export default async function Pages({ params: { slug = 'home' } }) {
                   Shop By Categories
                 </h2>
                 <div className={`${classes.gradientMenu} rounded-xl flex py-14 px-10`}>
-                  <div
-                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
-                  >
-                    <Image
-                      src={images[0]} // Ścieżka do obrazu
-                      alt="Category Image"
-                      width={170} // Szerokość obrazu
-                      height={120} // Wysokość obrazu
-                      className=" transform hover:scale-105"
-                    />
-                    <div className="flex justify-center -mt-5 mb-2">
-                      <p className="text-primary font-semibold">Growkits</p>
+                  <Link className="" href={`/${links[0]}`}>
+                    <div
+                      className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                    >
+                      <Image
+                        src={images[0]} // Ścieżka do obrazu
+                        alt="Category Image"
+                        width={170} // Szerokość obrazu
+                        height={120} // Wysokość obrazu
+                        className=" transform hover:scale-105"
+                      />
+                      <div className="flex justify-center -mt-5 ">
+                        <p className="pt-1  text-primary font-semibold mb-2">Growkits</p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
 
-                  <div
-                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
-                  >
-                    <Image
-                      src={images[1]} // Ścieżka do obrazu
-                      alt="Category Image"
-                      width={170} // Szerokość obrazu
-                      height={120} // Wysokość obrazu
-                      className=" transform hover:scale-105"
-                    />
-                    <div className="flex justify-center -mt-5 mb-2">
-                      <p className="text-primary font-semibold">Spores</p>
+                  <Link className="" href={`/${links[1]}`}>
+                    <div
+                      className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                    >
+                      <Image
+                        src={images[1]} // Ścieżka do obrazu
+                        alt="Category Image"
+                        width={170} // Szerokość obrazu
+                        height={120} // Wysokość obrazu
+                        className=" transform hover:scale-105"
+                      />
+                      <div className="flex justify-center -mt-5 mb-2">
+                        <p className="pb-2 pt-1 text-primary font-semibold">Spores</p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
 
-                  <div
-                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
-                  >
-                    <Image
-                      src={images[2]} // Ścieżka do obrazu
-                      alt="Category Image"
-                      width={170} // Szerokość obrazu
-                      height={120} // Wysokość obrazu
-                      className=" transform hover:scale-105"
-                    />
-                    <div className="flex justify-center -mt-5 mb-2">
-                      <p className="text-primary font-semibold">Cultures</p>
+                  <Link className="" href={`/${links[2]}`}>
+                    <div
+                      className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                    >
+                      <Image
+                        src={images[2]} // Ścieżka do obrazu
+                        alt="Category Image"
+                        width={170} // Szerokość obrazu
+                        height={120} // Wysokość obrazu
+                        className=" transform hover:scale-105"
+                      />
+                      <div className="flex justify-center -mt-5 mb-2">
+                        <p className="pb-2 pt-1 text-primary font-semibold">Cultures</p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
 
-                  <div
-                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
-                  >
-                    <Image
-                      src={images[3]} // Ścieżka do obrazu
-                      alt="Category Image"
-                      width={170} // Szerokość obrazu
-                      height={120} // Wysokość obrazu
-                      className=" transform hover:scale-105"
-                    />
-                    <div className="flex justify-center -mt-5 mb-2">
-                      <p className="text-primary font-semibold">Lab</p>
+                  <Link className="" href={`/${links[3]}`}>
+                    <div
+                      className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                    >
+                      <Image
+                        src={images[3]} // Ścieżka do obrazu
+                        alt="Category Image"
+                        width={170} // Szerokość obrazu
+                        height={120} // Wysokość obrazu
+                        className=" transform hover:scale-105"
+                      />
+                      <div className="flex justify-center -mt-5 mb-2">
+                        <p className="pb-2 pt-1 text-primary font-semibold">Lab</p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
 
-                  <div
-                    className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
-                  >
-                    <Image
-                      src={images[4]} // Ścieżka do obrazu
-                      alt="Category Image"
-                      width={160} // Szerokość obrazu
-                      height={120} // Wysokość obrazu
-                      className=" transform hover:scale-105"
-                    />
-                    <div className="flex justify-center -mt-[13px] mb-2">
-                      <p className="text-primary font-semibold">Substrates</p>
+                  <Link className="" href={`/${links[4]}`}>
+                    <div
+                      className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
+                    >
+                      <Image
+                        src={images[4]} // Ścieżka do obrazu
+                        alt="Category Image"
+                        width={160} // Szerokość obrazu
+                        height={120} // Wysokość obrazu
+                        className=" transform hover:scale-105"
+                      />
+                      <div className="flex justify-center -mt-[13px] mb-2">
+                        <p className="pb-2 pt-1 text-primary font-semibold">Substrates</p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
+
                 </div>
               </div>
             </div>

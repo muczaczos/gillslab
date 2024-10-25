@@ -3,8 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 import styles from './index.module.scss'
+import Link from 'next/link'
 
-const SmallCarousel = ({ icons, images, catLabels }) => {
+const SmallCarousel = ({ icons, images, catLabels, links }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -75,18 +76,22 @@ const SmallCarousel = ({ icons, images, catLabels }) => {
     >
       {images &&
         images.map((image, index) => (
-          <div className={styles.slide} key={index}>
-            <Image src={image} alt={`Slide ${index}`} width={80} height={100} />
-            <h3 className="text-xl text-primary opacity-70">{catLabels[index]}</h3>
-          </div>
+          <Link className={styles.slide} href={`/${links[index]}`}>
+            <div className="flex flex-col items-center" key={index}>
+              <Image src={image} alt={`Slide ${index}`} width={80} height={100} />
+              <h3 className="text-xl text-primary opacity-70">{catLabels[index]}</h3>
+            </div>
+          </Link>
         ))}
       {icons &&
         icons.map((IconComponent, index) => (
-          <div className={styles.slide} key={index}>
-            {/* Renderowanie ikony */}
-            <IconComponent size={50} color="#4968AC" />
-            <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
-          </div>
+          <Link href={`/${links[index]}`}>
+            <div className={styles.slide} key={index}>
+              {/* Renderowanie ikony */}
+              <IconComponent size={50} color="#4968AC" />
+              <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
+            </div>
+          </Link>
         ))}
       <div className="flex-shrink-0 w-[100px]"></div>
     </div>
