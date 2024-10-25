@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi' // Import ikon z Heroicons
+import Link from 'next/link'
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -44,35 +45,53 @@ export default function HamburgerMenu() {
       {/* Menu po otwarciu i zamykaniu */}
       {(isOpen || isClosing) && (
         <div
-          className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${
-            isClosing ? 'animate-slideUp' : 'animate-slideDown'
-          }`}
+          className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${isClosing ? 'animate-slideUp' : 'animate-slideDown'
+            }`}
         >
           <div
             className="absolute inset-0 bg-no-repeat bg-cover opacity-5"
             style={{ backgroundImage: "url('/media/eyes.png')" }}
           ></div>
-          <ul className="list-none p-4 text-center">
-            <li>
-              <a href="#" className="text-customWhite text-bold font-black text-4xl block">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-customWhite text-bold font-black text-4xl">
-                About
-              </a>
-            </li>
-            <li className="mt-0">
-              <a href="#" className="text-customWhite text-bold font-black text-4xl leading-none">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-customWhite text-bold font-black text-4xl">
-                Contact
-              </a>
-            </li>
+          <ul className="list-none p-4 text-center z-50">
+            <Link className="" href="/about">
+              <p className="text-customWhite font-bold text-5xl block pb-2">About</p>
+            </Link>
+            <Link className="" href="/cubensis-grow-kits">
+              <p className="text-customWhite font-bold text-5xl block pb-2">Growkits</p>
+            </Link>
+            <Link className="" href="/cubensis-spore-syringes">
+              <p className="text-customWhite font-bold text-5xl block pb-4">spores</p>
+            </Link>
+            <Link className="" href="/cubensis-liquid-cultures">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Cultures</p>
+            </Link>
+            <Link className="" href="/substrates">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Substrates</p>
+            </Link>
+            <Link className="" href="/laboratory-equipment">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Lab</p>
+            </Link>
+            <Link className="" href="/favorities">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Favorities</p>
+            </Link>
+            <Link className="" href="/contact">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Contact</p>
+            </Link>
+            <Link className="" href="/shipping">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Shipping</p>
+            </Link>
+            <Link className="" href="/blog">
+              <p className="text-customWhite font-bold text-5xl block pb-4">blog</p>
+            </Link>
+            <Link className="" href="/vlog">
+              <p className="text-customWhite font-bold text-5xl block pb-4">vlog</p>
+            </Link>
+            <Link className="" href="/conditions">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Conditions</p>
+            </Link>
+            <Link className="" href="/privacy">
+              <p className="text-customWhite font-bold text-5xl block pb-4">Privacy</p>
+            </Link>
           </ul>
         </div>
       )}
