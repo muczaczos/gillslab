@@ -310,6 +310,14 @@
   margin-top: 6px !important;
 }
 
+.mb-24 {
+  margin-bottom: 6rem !important;
+}
+
+.mb-32 {
+  margin-bottom: 8rem !important;
+}
+
 .block {
   display: block !important;
 }
@@ -1050,6 +1058,10 @@
 
 .pt-5 {
   padding-top: 1.25rem !important;
+}
+
+.pb-32 {
+  padding-bottom: 8rem !important;
 }
 
 .text-left {

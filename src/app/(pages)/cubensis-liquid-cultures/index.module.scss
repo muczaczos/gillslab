@@ -19,10 +19,11 @@
   .imageTitle {
     margin-top: 48px;
     display: flex;
+    flex-direction: column;
     gap: 48px;
     align-items: center;
-    @include small-break {
-      flex-direction: column;
+    @media (min-width: 1024px) {
+      flex-direction: row;
       margin-top: 24px;
     }
   }

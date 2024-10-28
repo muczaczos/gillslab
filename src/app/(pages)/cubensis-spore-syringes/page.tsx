@@ -1,13 +1,14 @@
 import React from 'react'
-import { Metadata } from 'next'
+import Head from 'next/head'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
 
-import { Category, Page, Product } from '../../../payload/payload-types'
+import { Page, Product } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import SyringesCards from './SyringesCards'
 
 import classes from './index.module.scss'
@@ -39,7 +40,33 @@ const Syringes = async () => {
   })
 
   return (
-    <>
+    <LayoutWithHeaderFooter>
+      <Head>
+        {/* 60 char */}
+        <title>Cubensis Spore Syringes: Premium Cultivation Essentials</title>
+        {/* 150 char */}
+        <meta
+          name="description"
+          content="Unlock the mysteries of the fungal world with our premium Cubensis Spore Syringes. Perfect for both beginners and experienced cultivators"
+        />
+        <meta
+          name="keywords"
+          content="Cubensis spore syringe, Cubensis spore print, magic mushrooms, Cubensis spores, Fungi, Organic Mushrooms"
+        />
+        <meta name="author" content="www.gillslab.com" />
+        <meta
+          property="og:title"
+          content="Cubensis Spore Syringes: Premium Cultivation Essentials"
+        />
+        <meta
+          property="og:description"
+          content="
+          Enhance your mushroom cultivation endeavors with our premium Cubensis Plate Cultures 🍽️. Designed to streamline the cultivation process"
+        />
+        <meta property="og:image" content="/media/syringes.webp" />
+        <meta property="og:url" content="https://gillslab.com/cubensis-spore-syringes" />
+        <meta property="og:type" content="website" />
+      </Head>
       <Gutter>
         <div className={classes.imageTitle}>
           <Image alt="Planet of mushrooms" src="/media/syringes.webp" height="500" width="600" />
@@ -59,25 +86,8 @@ const Syringes = async () => {
         <SyringesCards pages={filteredPages} products={products} />
         <HR />
       </Gutter>
-    </>
+    </LayoutWithHeaderFooter>
   )
-}
-
-// either Static metadata
-export const metadata: Metadata = {
-  title: 'Cubensis Spore Syringes: Premium Cultivation Essentials', //60 char
-  description:
-    'Unlock the mysteries of the fungal world with our premium Cubensis Spore Syringes. Perfect for both beginners and experienced cultivators', //150 char
-  keywords:
-    'Cubensis spore syringe, Cubensis spore print, magic mushrooms, Cubensis spores, Fungi, Organic Mushrooms',
-  openGraph: {
-    images: ['/media/syringes.webp'],
-    title: 'Cubensis Spore Syringes: Premium Cultivation Essentials',
-    description:
-      'Unlock the mysteries of the fungal world with our premium Cubensis Spore Syringes. Perfect for both beginners and experienced cultivators',
-    url: 'https://planet-of-mushrooms.com/cubensis-spore-syringes',
-    type: 'website',
-  },
 }
 
 export default Syringes
