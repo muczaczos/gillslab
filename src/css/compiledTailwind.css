@@ -450,6 +450,18 @@
   width: 100% !important;
 }
 
+.w-\[200px\] {
+  width: 200px !important;
+}
+
+.w-\[300px\] {
+  width: 300px !important;
+}
+
+.w-\[500px\] {
+  width: 500px !important;
+}
+
 .min-w-\[45\%\] {
   min-width: 45% !important;
 }
@@ -1512,6 +1524,10 @@
 
   .md\:w-full {
     width: 100% !important;
+  }
+
+  .md\:w-\[200px\] {
+    width: 200px !important;
   }
 
   .md\:flex-row {

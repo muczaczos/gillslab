@@ -149,7 +149,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             content={productDescription.richText}
           />
           <div className="lg:hidden">
-            <SmallCarousel icons={icons} catLabels={infoLabels} images={null} />
+            <SmallCarousel links={null} icons={icons} catLabels={infoLabels} images={null} />
           </div>
           <div className="hidden lg:flex lg:flex-col lg:gap-5 xxl:flex-row xxl:gap-0 justify-center pb-10 2xl:pb-28">
             <div className="flex justify-center">

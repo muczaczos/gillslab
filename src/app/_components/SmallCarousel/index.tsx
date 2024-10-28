@@ -1,16 +1,18 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from './index.module.scss'
-import Link from 'next/link'
 
 const SmallCarousel = ({ icons, images, catLabels, links }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
-
+  if (links === null) {
+    links = ['', '', '', '']
+  }
   useEffect(() => {
     const slider = sliderRef.current
     if (slider) {
@@ -85,8 +87,8 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
         ))}
       {icons &&
         icons.map((IconComponent, index) => (
-          <Link href={`/${links[index]}`}>
-            <div className={styles.slide} key={index}>
+          <Link href={`/${links[index]}`} className="w-full">
+            <div className={`${styles.slide} w-[150px] md:w-[200px]`} key={index}>
               {/* Renderowanie ikony */}
               <IconComponent size={50} color="#4968AC" />
               <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
