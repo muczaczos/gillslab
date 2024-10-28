@@ -78,8 +78,8 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
     >
       {images &&
         images.map((image, index) => (
-          <Link className={styles.slide} href={`/${links[index]}`}>
-            <div className="flex flex-col items-center" key={index}>
+          <Link href={`/${links[index]}`}>
+            <div className={`${styles.slide} w-[150px] md:w-[200px]`} key={index}>
               <Image src={image} alt={`Slide ${index}`} width={80} height={100} />
               <h3 className="text-xl text-primary opacity-70">{catLabels[index]}</h3>
             </div>

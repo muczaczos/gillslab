@@ -72,7 +72,7 @@ export const RelatedMovies: React.FC<{}> = () => {
           <hr className="border-l-gray-100 w-1/3 opacity-30 py-0 my-0" />
         </div>
 
-        <div onClick={scrollToTop} className="flex justify-end mr-10 mt-10">
+        <div onClick={scrollToTop} className="flex justify-end mr-10 mt-10 mb-20">
           <FaArrowAltCircleUp className="text-8xl text-primary" />
         </div>
       </div>
