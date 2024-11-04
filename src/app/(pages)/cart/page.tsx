@@ -59,11 +59,11 @@ export default async function Cart() {
   return (
     <LayoutWithHeaderFooter>
       <div className={classes.container}>
-        <Gutter>
+        <Gutter className="pb-36 bg-customWhite">
           <h3 className="text-primary">Cart</h3>
           <CartPage settings={settings} page={page} />
-          <div className="p-10 w-full bg-primary opacity-90 ">
-            <Button label="Continue Shopping" href="/products" appearance="secondary" />
+          <div className="p-10 w-full bg-primary opacity-90 rounded-xl">
+            <Button label="Continue Shopping" href="/" appearance="secondary" />
           </div>
         </Gutter>
       </div>

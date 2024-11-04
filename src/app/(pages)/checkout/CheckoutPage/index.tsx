@@ -210,29 +210,35 @@ export const CheckoutPage: React.FC<{}> = props => {
         from planet-of-mushrooms.com
       </label>
       <div
-        className={`${
-          isButtonActive
-            ? 'opacity-100 flex justify-between mt-10'
-            : 'opacity-50 flex justify-between mt-10'
-        }`}
+        className={`${isButtonActive
+            ? 'opacity-100 flex flex-col md:flex-row gap-2 justify-between mt-10'
+            : 'opacity-50 flex flex-col md:flex-row gap-2 justify-between mt-10'
+          }`}
       >
-        <Button label="Back to cart" href="/cart" appearance="secondary" />
-        <GatewayLogic
-          setShowMessage={setShowMessage}
-          setShowMessage2={setShowMessage2}
-          disabled={!isButtonActive}
-          method={method}
-          totalAmount={total}
-          fullName={fullName}
-          address={address}
-          city={city}
-          postalCode={postalCode}
-          country={country}
-          phone={phone}
-          email={email}
-          lockerCode={lockerCode}
-          additionalInfo={additionalInfo}
-          cart={cart}
+        <div className="order-2">
+          <GatewayLogic
+            setShowMessage={setShowMessage}
+            setShowMessage2={setShowMessage2}
+            disabled={!isButtonActive}
+            method={method}
+            totalAmount={total}
+            fullName={fullName}
+            address={address}
+            city={city}
+            postalCode={postalCode}
+            country={country}
+            phone={phone}
+            email={email}
+            lockerCode={lockerCode}
+            additionalInfo={additionalInfo}
+            cart={cart}
+          />
+        </div>
+        <Button
+          className="order-2 md:order-1"
+          label="Back to cart"
+          href="/cart"
+          appearance="primary"
         />
       </div>
     </Fragment>

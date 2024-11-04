@@ -108,7 +108,7 @@ export const CartPage: React.FC<{
                   className={classes.checkoutButton}
                   href={'/checkout'}
                   label={'Checkout'}
-                  appearance="primary"
+                  appearance="third"
                 />
               </div>
             </div>

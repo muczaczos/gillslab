@@ -95,11 +95,11 @@ const GatewayLogic = ({
 
         hash.update(
           dataObj.title +
-            dataObj.amount.value +
-            dataObj.amount.currencyCode +
-            dataObj.returnUrl +
-            dataObj.negativeReturnUrl +
-            '04f58ee93d486f0b426c09d776e1f540',
+          dataObj.amount.value +
+          dataObj.amount.currencyCode +
+          dataObj.returnUrl +
+          dataObj.negativeReturnUrl +
+          '04f58ee93d486f0b426c09d776e1f540',
         )
         // Obliczanie skrótu SHA-1 i przekształcenie wyniku na szesnastkowy
         const sha1Hash = hash.digest('hex')
@@ -280,6 +280,7 @@ const GatewayLogic = ({
 
   return (
     <Button
+      className="w-full"
       disabled={disabled}
       label="Place the Order"
       appearance="third"
