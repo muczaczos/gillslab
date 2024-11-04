@@ -12,12 +12,11 @@ import classes from './index.module.scss'
 
 export const SubscribePage: React.FC<{}> = () => {
   const searchParams = useSearchParams()
-  const email = searchParams.get('email')
   const error = searchParams.get('error')
   const [isChecked, setIsChecked] = useState(false)
   const [isButtonActive, setIsButtonActive] = useState(false)
   const [firstName, setFirstName] = useState('')
-  const [customerEmail, setCustomerEmail] = useState('')
+  const [email, setCustomerEmail] = useState('')
   const [message, setMessage] = useState('')
   const router = useRouter()
 
@@ -75,9 +74,9 @@ export const SubscribePage: React.FC<{}> = () => {
 
   return (
     <Fragment>
-      <h1 className="mb-5">Subscribe to our newsletter!</h1>
-      <p className="text-xl text-left mb-5">
-        By providing your email address: {email}, you agree to receive periodic updates, promotions,
+      <h1 className="mb-5 text-primary text-4xl md:text-3xl">Subscribe to our newsletter!</h1>
+      <p className="text-xl text-customGray-dark font-medium md:text-lg">
+        By providing your email address{email}, you agree to receive periodic updates, promotions,
         and information related to mushroom cultivation, spore microscopy, and exclusive offers.
         Your email address will only be used for the purpose of sending our newsletter and will not
         be shared with any third parties. You can unsubscribe at any time. For more information,
@@ -119,7 +118,7 @@ export const SubscribePage: React.FC<{}> = () => {
             disabled={!isButtonActive}
             label="Subscribe"
             onClick={handleSubscriber}
-            className="bg-black text-white"
+            className="bg-primary text-customWhite"
           ></Button>
         </div>
       </div>

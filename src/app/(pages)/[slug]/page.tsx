@@ -277,7 +277,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
                       </div>
                     </div>
                   </Link>
-
                 </div>
               </div>
             </div>
@@ -310,7 +309,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </Link>
 
               {/* News banner */}
-              <div
+              <Link
+                href="/subscribe"
                 className={`${classes.newsletterSec} grid grid-rows-[auto,1fr,auto] min-h-[150px]`}
               >
                 {/* Górny wiersz */}
@@ -337,7 +337,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
                     />
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </section>
 
