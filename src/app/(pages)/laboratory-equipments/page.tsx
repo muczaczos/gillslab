@@ -66,11 +66,11 @@ const Equipments = async () => {
       <Gutter className="bg-customWhite pb-64">
         <div className={classes.imageTitle}>
           <Image alt="Planet of mushrooms" src="/media/syringes.webp" height="500" width="600" />
-          <h2 className={classes.title}>
+          <h1 className="text-primary text-4xl md:text-3xl pb-5">
             Cultivate mushrooms with our premium laboratory equipment 🔬🔬
-          </h2>
+          </h1>
         </div>
-        <p className={classes.heroText}>
+        <p className="text-xl text-customGray-dark font-medium md:text-lg">
           Explore the world of fungi with our premium laboratory equipment, designed to support
           every stage of your mushroom cultivation journey. Perfect for both beginners and seasoned
           growers, our equipment provides the precision and reliability needed for successful

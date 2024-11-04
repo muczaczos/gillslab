@@ -71,11 +71,11 @@ const Substrates = async () => {
             height="500"
             width="600"
           />
-          <h2 className={classes.title}>
+          <h1 className="text-primary text-4xl md:text-3xl pb-5">
             Premium Substrates for Cubensis Mushroom Cultivation 🌱🍄
-          </h2>
+          </h1>
         </div>
-        <p className={classes.heroText}>
+        <p className="text-xl text-customGray-dark font-medium md:text-lg">
           Unlock the full potential of your Cubensis mushroom cultivation with our expertly crafted
           substrates, designed to support each stage of growth and maximize yield. Whether you're a
           beginner or an experienced cultivator, our substrates provide a reliable foundation for

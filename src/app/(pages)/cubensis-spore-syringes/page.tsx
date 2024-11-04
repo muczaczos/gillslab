@@ -76,7 +76,7 @@ const Syringes = async () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <h1 className="text-primary text-4xl md:text-3xl">
+            <h1 className="text-primary text-4xl md:text-3xl pb-5">
               Cubensis Spore Syringes: Premium Cultivation Essentials 💉💉💉
             </h1>
             <p className="text-xl text-customGray-dark font-medium md:text-lg">

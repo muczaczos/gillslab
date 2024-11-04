@@ -446,12 +446,12 @@
   width: 5rem !important;
 }
 
-.w-full {
-  width: 100% !important;
-}
-
 .w-\[80\%\] {
   width: 80% !important;
+}
+
+.w-full {
+  width: 100% !important;
 }
 
 .min-w-\[45\%\] {
@@ -1217,11 +1217,6 @@
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
-.text-customGray {
-  --tw-text-opacity: 1 !important;
-  color: rgb(123 130 145 / var(--tw-text-opacity)) !important;
-}
-
 .underline {
   text-decoration-line: underline !important;
 }
@@ -1555,11 +1550,6 @@
     gap: 2.5rem !important;
   }
 
-  .md\:bg-\[\#5A7FD0\] {
-    --tw-bg-opacity: 1 !important;
-    background-color: rgb(90 127 208 / var(--tw-bg-opacity)) !important;
-  }
-
   .md\:bg-primary {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(73 104 172 / var(--tw-bg-opacity)) !important;
@@ -1626,11 +1616,6 @@
   .md\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
-  }
-
-  .md\:text-5xl {
-    font-size: 3rem !important;
-    line-height: 1 !important;
   }
 }
 
