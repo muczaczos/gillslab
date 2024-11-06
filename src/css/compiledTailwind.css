@@ -314,10 +314,6 @@
   margin-top: 6px !important;
 }
 
-.mb-32 {
-  margin-bottom: 8rem !important;
-}
-
 .block {
   display: block !important;
 }
@@ -466,6 +462,10 @@
   min-width: 45% !important;
 }
 
+.max-w-\[1519px\] {
+  max-width: 1519px !important;
+}
+
 .max-w-\[1536px\] {
   max-width: 1536px !important;
 }
@@ -480,26 +480,6 @@
 
 .max-w-sm {
   max-width: 24rem !important;
-}
-
-.max-w-\[1530px\] {
-  max-width: 1530px !important;
-}
-
-.max-w-\[1500px\] {
-  max-width: 1500px !important;
-}
-
-.max-w-\[1520px\] {
-  max-width: 1520px !important;
-}
-
-.max-w-\[1518px\] {
-  max-width: 1518px !important;
-}
-
-.max-w-\[1519px\] {
-  max-width: 1519px !important;
 }
 
 .flex-auto {
@@ -1558,10 +1538,6 @@
     width: 100% !important;
   }
 
-  .md\:w-\[400px\] {
-    width: 400px !important;
-  }
-
   .md\:flex-row {
     flex-direction: row !important;
   }
@@ -1885,10 +1861,6 @@
     width: 800px !important;
   }
 
-  .xl\:w-\[700px\] {
-    width: 700px !important;
-  }
-
   .xl\:justify-end {
     justify-content: flex-end !important;
   }
@@ -1927,10 +1899,6 @@
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:ml-32 {
-    margin-left: 8rem !important;
-  }
-
   .\32xl\:w-3\/4 {
     width: 75% !important;
   }
@@ -1939,56 +1907,16 @@
     width: 1000px !important;
   }
 
-  .\32xl\:w-\[1536px\] {
-    width: 1536px !important;
-  }
-
-  .\32xl\:w-\[900px\] {
-    width: 900px !important;
-  }
-
-  .\32xl\:w-\[700px\] {
-    width: 700px !important;
-  }
-
-  .\32xl\:w-full {
-    width: 100% !important;
-  }
-
   .\32xl\:w-\[1400px\] {
     width: 1400px !important;
   }
 
-  .\32xl\:w-\[1300px\] {
-    width: 1300px !important;
-  }
-
-  .\32xl\:min-w-\[1536px\] {
-    min-width: 1536px !important;
+  .\32xl\:min-w-\[1519px\] {
+    min-width: 1519px !important;
   }
 
   .\32xl\:min-w-\[40\%\] {
     min-width: 40% !important;
-  }
-
-  .\32xl\:min-w-\[1530px\] {
-    min-width: 1530px !important;
-  }
-
-  .\32xl\:min-w-\[1500px\] {
-    min-width: 1500px !important;
-  }
-
-  .\32xl\:min-w-\[1520px\] {
-    min-width: 1520px !important;
-  }
-
-  .\32xl\:min-w-\[1518px\] {
-    min-width: 1518px !important;
-  }
-
-  .\32xl\:min-w-\[1519px\] {
-    min-width: 1519px !important;
   }
 
   .\32xl\:max-w-\[1536px\] {
@@ -2070,10 +1998,6 @@
 
   .xxl\:w-\[2000px\] {
     width: 2000px !important;
-  }
-
-  .xxl\:w-\[1536px\] {
-    width: 1536px !important;
   }
 
   .xxl\:flex-row {
