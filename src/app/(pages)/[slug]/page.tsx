@@ -134,7 +134,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
           {/* Desktokp Hero */}
           <div className="bg-customWhite md:flex md:justify-center">
-            <section className="hidden md:block md:w-full 2xl:min-w-[1536px] max-w-[1536px]">
+            <section className="hidden md:block md:w-full 2xl:min-w-[1519px] max-w-[1519px]">
               <div className="grid grid-cols-3 bg-customWhite">
                 {/* Lewa kolumna podzielona na dwa wiersze */}
                 <div className="col-span-2 grid grid-rows-2">
