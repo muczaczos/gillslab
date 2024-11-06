@@ -72,7 +72,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           }}
         >
           <div className="">
-            <div className="xxl:w-[2000px] xxl:mx-auto">
+            <div className="w-full xxl:w-[2000px] xxl:mx-auto">
               {/* Address, Socials, Payments, Shipping*/}
               <div className="flex xs:justify-between csm:gap-20 sm:gap-5 justify-center lg:justify-around sm:mb-10">
                 <div className="flex flex-col sm:flex-row">
@@ -194,7 +194,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           {/* Gillslab logo and date */}
           <div className="w-full flex justify-center">
             <div>
-              <div className="mt-2 lg:mt-10 mb-20 items-center flex gap-2 lg:w-[1000px] 2xl:w-[1536px] 2xl:ml-32">
+              <div className="mt-2 lg:mt-10 mb-20 items-center flex gap-2 lg:w-[1000px] 2xl:w-[1400px]">
                 <p className="text-customWhite text-large font-bold">© 2008 - 2024</p>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/logoCom.png`}
