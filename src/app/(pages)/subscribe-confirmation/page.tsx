@@ -7,10 +7,8 @@ import { SubscribeConfiramtionPage } from './SubscribeConfirmationPage'
 
 export default async function SubscribeConfirmation() {
   return (
-    <Gutter>
-      <Suspense fallback={<div>Loading...</div>}>
-        <SubscribeConfiramtionPage />
-      </Suspense>
-    </Gutter>
+    <Suspense fallback={<div>Loading...</div>}>
+      <SubscribeConfiramtionPage />
+    </Suspense>
   )
 }

@@ -314,6 +314,10 @@
   margin-top: 6px !important;
 }
 
+.mb-32 {
+  margin-bottom: 8rem !important;
+}
+
 .block {
   display: block !important;
 }

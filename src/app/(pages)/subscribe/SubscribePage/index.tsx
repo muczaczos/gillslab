@@ -52,7 +52,7 @@ export const SubscribePage: React.FC<{}> = () => {
         error?: string
         doc: Subscriber
       } = await subscriberReq.json()
-      router.push(`/subscribe-confirmation?firstName=${firstName}`)
+      router.push(`/subscribe-confirmation?firstName=${firstName}&email=${email}`)
     } else {
       setMessage('Please enter your name into the form.')
     }
@@ -76,7 +76,7 @@ export const SubscribePage: React.FC<{}> = () => {
     <Fragment>
       <h1 className="mb-5 text-primary text-4xl md:text-3xl">Subscribe to our newsletter!</h1>
       <p className="text-xl text-customGray-dark font-medium md:text-lg">
-        By providing your email address{email}, you agree to receive periodic updates, promotions,
+        By providing your email address {email}, you agree to receive periodic updates, promotions,
         and information related to mushroom cultivation, spore microscopy, and exclusive offers.
         Your email address will only be used for the purpose of sending our newsletter and will not
         be shared with any third parties. You can unsubscribe at any time. For more information,
