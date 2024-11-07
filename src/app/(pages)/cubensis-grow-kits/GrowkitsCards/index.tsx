@@ -3,33 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
+import useFavorites from '../../../_components/UseFavorites';
+
 
 const GrowkitsCards = ({ pages }) => {
-  const baseUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL;
   
   // Stan do przechowywania ulubionych produktów
-  const [favorites, setFavorites] = useState([]);
-
-  // Pobieranie ulubionych z localStorage w momencie montowania komponentu
-  useEffect(() => {
-    if (typeof window !== 'undefined') { // sprawdzenie środowiska
-      const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      setFavorites(savedFavorites);
-    }
-  }, []);
-
-  // Funkcja do aktualizacji ulubionych
-  const toggleFavorite = (slug) => {
-    if (favorites.includes(slug)) {
-      const updatedFavorites = favorites.filter(favSlug => favSlug !== slug);
-      setFavorites(updatedFavorites);
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-    } else {
-      const updatedFavorites = [...favorites, slug];
-      setFavorites(updatedFavorites);
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-    }
-  };
+  const { favorites, toggleFavorite } = useFavorites();
 
   return (
     <section className="mt-10 flex flex-col gap-5 justify-center md:flex-wrap md:flex-row md:justify-between">
