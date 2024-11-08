@@ -1,17 +1,17 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'payload/types';
 
-import { admins } from '../../access/admins'
-import { Archive } from '../../blocks/ArchiveBlock'
-import { CallToAction } from '../../blocks/CallToAction'
-import { Content } from '../../blocks/Content'
-import { MediaBlock } from '../../blocks/MediaBlock'
-import { slugField } from '../../fields/slug'
-import { populateArchiveBlock } from '../../hooks/populateArchiveBlock'
-import { checkUserPurchases } from './access/checkUserPurchases'
-import { beforeProductChange } from './hooks/beforeChange'
-import { deleteProductFromCarts } from './hooks/deleteProductFromCarts'
-import { revalidateProduct } from './hooks/revalidateProduct'
-import { ProductSelect } from './ui/ProductSelect'
+import { admins } from '../../access/admins';
+import { Archive } from '../../blocks/ArchiveBlock';
+import { CallToAction } from '../../blocks/CallToAction';
+import { Content } from '../../blocks/Content';
+import { MediaBlock } from '../../blocks/MediaBlock';
+import { slugField } from '../../fields/slug';
+import { populateArchiveBlock } from '../../hooks/populateArchiveBlock';
+import { checkUserPurchases } from './access/checkUserPurchases';
+import { beforeProductChange } from './hooks/beforeChange';
+import { deleteProductFromCarts } from './hooks/deleteProductFromCarts';
+import { revalidateProduct } from './hooks/revalidateProduct';
+import { ProductSelect } from './ui/ProductSelect';
 
 const Products: CollectionConfig = {
   slug: 'products',
@@ -20,12 +20,27 @@ const Products: CollectionConfig = {
     defaultColumns: ['price', 'title', 'stripeProductID', '_status'],
     preview: doc => {
       return `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/next/preview?url=${encodeURIComponent(
-        `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/products/${doc.slug}`,
-      )}&secret=${process.env.PAYLOAD_PUBLIC_DRAFT_SECRET}`
+        `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/products/${doc.slug}`
+      )}&secret=${process.env.PAYLOAD_PUBLIC_DRAFT_SECRET}`;
     },
   },
   hooks: {
-    beforeChange: [beforeProductChange],
+    beforeChange: [
+      beforeProductChange,
+      async ({ data, req }) => {
+        // Automatyczne ustawienie `category_slug` na podstawie pierwszej kategorii
+        if (data.categories && data.categories.length > 0) {
+          const categoryId = data.categories[0];
+          const category = await req.payload.findByID({
+            collection: 'categories',
+            id: categoryId,
+          });
+          if (category?.slug) {
+            data.category_slug = category.slug; // ustawienie slug kategorii
+          }
+        }
+      },
+    ],
     afterChange: [revalidateProduct],
     afterRead: [populateArchiveBlock],
     afterDelete: [deleteProductFromCarts],
@@ -51,35 +66,6 @@ const Products: CollectionConfig = {
       required: true,
     },
     {
-      name: 'title2',
-      type: 'text',
-      required: false,
-    },
-    {
-      name: 'shortInfo1',
-      type: 'text',
-      required: false,
-      maxLength: 15,
-    },
-    {
-      name: 'shortInfo2',
-      type: 'text',
-      required: false,
-      maxLength: 15,
-    },
-    {
-      name: 'shortInfo3',
-      type: 'text',
-      required: false,
-      maxLength: 15,
-    },
-    {
-      name: 'shortInfo4',
-      type: 'text',
-      required: false,
-      maxLength: 15,
-    },
-    {
       name: 'price',
       type: 'text',
       required: true,
@@ -91,18 +77,6 @@ const Products: CollectionConfig = {
     },
     {
       name: 'media1',
-      type: 'upload',
-      relationTo: 'media',
-      required: false,
-    },
-    {
-      name: 'media2',
-      type: 'upload',
-      relationTo: 'media',
-      required: false,
-    },
-    {
-      name: 'media3',
       type: 'upload',
       relationTo: 'media',
       required: false,
@@ -120,9 +94,9 @@ const Products: CollectionConfig = {
         beforeChange: [
           ({ siblingData, value }) => {
             if (siblingData._status === 'published' && !value) {
-              return new Date()
+              return new Date();
             }
-            return value
+            return value;
           },
         ],
       },
@@ -200,10 +174,19 @@ const Products: CollectionConfig = {
           id: {
             not_in: [id],
           },
-        }
+        };
       },
     },
-    slugField(),
+    slugField(), // Pole `slug` dla `product_slug`
+    {
+      name: 'category_slug',
+      label: 'Category Slug',
+      type: 'text',
+      admin: {
+        readOnly: true,
+        hidden: true,
+      },
+    },
     {
       name: 'skipSync',
       label: 'Skip Sync',
@@ -215,6 +198,6 @@ const Products: CollectionConfig = {
       },
     },
   ],
-}
+};
 
-export default Products
+export default Products;

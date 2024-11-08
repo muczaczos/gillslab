@@ -1,28 +1,27 @@
 'use client'
-import React, { useEffect, useState } from 'react';
-import { FaRegHeart, FaHeart } from 'react-icons/fa';
-import Image from 'next/image';
-import Link from 'next/link';
-import useFavorites from '../../../_components/UseFavorites';
+import React, { useEffect, useState } from 'react'
+import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import Image from 'next/image'
+import Link from 'next/link'
 
+import useFavorites from '../../../_components/UseFavorites'
 
 const GrowkitsCards = ({ pages }) => {
-  
   // Stan do przechowywania ulubionych produktów
-  const { favorites, toggleFavorite } = useFavorites();
+  const { favorites, toggleFavorite } = useFavorites()
 
   return (
     <section className="mt-10 flex flex-col gap-5 justify-center md:flex-wrap md:flex-row md:justify-between">
       {pages.map((item, index) => {
-        if (!item) return null;
+        if (!item) return null
 
         const src = item.meta.image.filename.startsWith('http')
           ? item.meta.image.filename
-          : `/media/${item.meta.image.filename}`;
+          : `/media/${item.meta.image.filename}`
 
-        const href = `/${item.slug}`;
-        const title = item.title;
-        const price = item.price;
+        const href = `/${item.slug}`
+        const title = item.title
+        const price = item.price
 
         return (
           <div className="flex justify-center" key={index}>
@@ -33,17 +32,17 @@ const GrowkitsCards = ({ pages }) => {
                   {favorites.includes(item.slug) ? (
                     <FaHeart
                       className="text-secondary text-4xl cursor-pointer"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleFavorite(item.slug);
+                      onClick={e => {
+                        e.preventDefault()
+                        toggleFavorite(item.slug)
                       }}
                     />
                   ) : (
                     <FaRegHeart
                       className="text-primary text-4xl cursor-pointer"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleFavorite(item.slug);
+                      onClick={e => {
+                        e.preventDefault()
+                        toggleFavorite(item.slug)
                       }}
                     />
                   )}
@@ -56,10 +55,10 @@ const GrowkitsCards = ({ pages }) => {
               </div>
             </Link>
           </div>
-        );
+        )
       })}
     </section>
-  );
-};
+  )
+}
 
-export default GrowkitsCards;
+export default GrowkitsCards

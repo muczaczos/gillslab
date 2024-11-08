@@ -673,16 +673,9 @@ export interface Product {
   id: string;
   hideFooter?: boolean | null;
   title: string;
-  title2?: string | null;
-  shortInfo1?: string | null;
-  shortInfo2?: string | null;
-  shortInfo3?: string | null;
-  shortInfo4?: string | null;
   price: string;
   weight: number;
   media1?: string | Media | null;
-  media2?: string | Media | null;
-  media3?: string | Media | null;
   publishedOn?: string | null;
   layout?:
     | (
@@ -896,6 +889,7 @@ export interface Product {
   categories?: (string | Category)[] | null;
   relatedProducts?: (string | Product)[] | null;
   slug?: string | null;
+  category_slug?: string | null;
   skipSync?: boolean | null;
   meta?: {
     title?: string | null;

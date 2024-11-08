@@ -1752,16 +1752,9 @@ type Product {
   id: String
   hideFooter: Boolean
   title: String
-  title2: String
-  shortInfo1: String
-  shortInfo2: String
-  shortInfo3: String
-  shortInfo4: String
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Product_Media1_where): Media
-  media2(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Product_Media2_where): Media
-  media3(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Product_Media3_where): Media
   publishedOn: DateTime
   layout: [Product_Layout!]
   stripeProductID: String
@@ -1771,6 +1764,7 @@ type Product {
   categories(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [Category!]
   relatedProducts(draft: Boolean, locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [Product!]
   slug: String
+  category_slug: String
   skipSync: Boolean
   meta: Product_Meta
   updatedAt: DateTime
@@ -1964,382 +1958,6 @@ input Product_Media1_where_or {
   id: Product_Media1_id_operator
   AND: [Product_Media1_where_and]
   OR: [Product_Media1_where_or]
-}
-
-input Product_Media2_where {
-  alt: Product_Media2_alt_operator
-  caption: Product_Media2_caption_operator
-  updatedAt: Product_Media2_updatedAt_operator
-  createdAt: Product_Media2_createdAt_operator
-  url: Product_Media2_url_operator
-  filename: Product_Media2_filename_operator
-  mimeType: Product_Media2_mimeType_operator
-  filesize: Product_Media2_filesize_operator
-  width: Product_Media2_width_operator
-  height: Product_Media2_height_operator
-  focalX: Product_Media2_focalX_operator
-  focalY: Product_Media2_focalY_operator
-  id: Product_Media2_id_operator
-  AND: [Product_Media2_where_and]
-  OR: [Product_Media2_where_or]
-}
-
-input Product_Media2_alt_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-}
-
-input Product_Media2_caption_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
-  exists: Boolean
-}
-
-input Product_Media2_updatedAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Product_Media2_createdAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Product_Media2_url_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media2_filename_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media2_mimeType_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media2_filesize_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media2_width_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media2_height_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media2_focalX_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media2_focalY_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media2_id_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media2_where_and {
-  alt: Product_Media2_alt_operator
-  caption: Product_Media2_caption_operator
-  updatedAt: Product_Media2_updatedAt_operator
-  createdAt: Product_Media2_createdAt_operator
-  url: Product_Media2_url_operator
-  filename: Product_Media2_filename_operator
-  mimeType: Product_Media2_mimeType_operator
-  filesize: Product_Media2_filesize_operator
-  width: Product_Media2_width_operator
-  height: Product_Media2_height_operator
-  focalX: Product_Media2_focalX_operator
-  focalY: Product_Media2_focalY_operator
-  id: Product_Media2_id_operator
-  AND: [Product_Media2_where_and]
-  OR: [Product_Media2_where_or]
-}
-
-input Product_Media2_where_or {
-  alt: Product_Media2_alt_operator
-  caption: Product_Media2_caption_operator
-  updatedAt: Product_Media2_updatedAt_operator
-  createdAt: Product_Media2_createdAt_operator
-  url: Product_Media2_url_operator
-  filename: Product_Media2_filename_operator
-  mimeType: Product_Media2_mimeType_operator
-  filesize: Product_Media2_filesize_operator
-  width: Product_Media2_width_operator
-  height: Product_Media2_height_operator
-  focalX: Product_Media2_focalX_operator
-  focalY: Product_Media2_focalY_operator
-  id: Product_Media2_id_operator
-  AND: [Product_Media2_where_and]
-  OR: [Product_Media2_where_or]
-}
-
-input Product_Media3_where {
-  alt: Product_Media3_alt_operator
-  caption: Product_Media3_caption_operator
-  updatedAt: Product_Media3_updatedAt_operator
-  createdAt: Product_Media3_createdAt_operator
-  url: Product_Media3_url_operator
-  filename: Product_Media3_filename_operator
-  mimeType: Product_Media3_mimeType_operator
-  filesize: Product_Media3_filesize_operator
-  width: Product_Media3_width_operator
-  height: Product_Media3_height_operator
-  focalX: Product_Media3_focalX_operator
-  focalY: Product_Media3_focalY_operator
-  id: Product_Media3_id_operator
-  AND: [Product_Media3_where_and]
-  OR: [Product_Media3_where_or]
-}
-
-input Product_Media3_alt_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-}
-
-input Product_Media3_caption_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
-  exists: Boolean
-}
-
-input Product_Media3_updatedAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Product_Media3_createdAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Product_Media3_url_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media3_filename_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media3_mimeType_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media3_filesize_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media3_width_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media3_height_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media3_focalX_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media3_focalY_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Product_Media3_id_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_Media3_where_and {
-  alt: Product_Media3_alt_operator
-  caption: Product_Media3_caption_operator
-  updatedAt: Product_Media3_updatedAt_operator
-  createdAt: Product_Media3_createdAt_operator
-  url: Product_Media3_url_operator
-  filename: Product_Media3_filename_operator
-  mimeType: Product_Media3_mimeType_operator
-  filesize: Product_Media3_filesize_operator
-  width: Product_Media3_width_operator
-  height: Product_Media3_height_operator
-  focalX: Product_Media3_focalX_operator
-  focalY: Product_Media3_focalY_operator
-  id: Product_Media3_id_operator
-  AND: [Product_Media3_where_and]
-  OR: [Product_Media3_where_or]
-}
-
-input Product_Media3_where_or {
-  alt: Product_Media3_alt_operator
-  caption: Product_Media3_caption_operator
-  updatedAt: Product_Media3_updatedAt_operator
-  createdAt: Product_Media3_createdAt_operator
-  url: Product_Media3_url_operator
-  filename: Product_Media3_filename_operator
-  mimeType: Product_Media3_mimeType_operator
-  filesize: Product_Media3_filesize_operator
-  width: Product_Media3_width_operator
-  height: Product_Media3_height_operator
-  focalX: Product_Media3_focalX_operator
-  focalY: Product_Media3_focalY_operator
-  id: Product_Media3_id_operator
-  AND: [Product_Media3_where_and]
-  OR: [Product_Media3_where_or]
 }
 
 union Product_Layout = Cta | Content | MediaBlock | Archive
@@ -9392,16 +9010,9 @@ type Products {
 input Product_where {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
-  title2: Product_title2_operator
-  shortInfo1: Product_shortInfo1_operator
-  shortInfo2: Product_shortInfo2_operator
-  shortInfo3: Product_shortInfo3_operator
-  shortInfo4: Product_shortInfo4_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
-  media2: Product_media2_operator
-  media3: Product_media3_operator
   publishedOn: Product_publishedOn_operator
   stripeProductID: Product_stripeProductID_operator
   priceJSON: Product_priceJSON_operator
@@ -9409,6 +9020,7 @@ input Product_where {
   categories: Product_categories_operator
   relatedProducts: Product_relatedProducts_operator
   slug: Product_slug_operator
+  category_slug: Product_category_slug_operator
   skipSync: Product_skipSync_operator
   meta__title: Product_meta__title_operator
   meta__description: Product_meta__description_operator
@@ -9437,61 +9049,6 @@ input Product_title_operator {
   all: [String]
 }
 
-input Product_title2_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_shortInfo1_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_shortInfo2_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_shortInfo3_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Product_shortInfo4_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
 input Product_price_operator {
   equals: String
   not_equals: String
@@ -9512,18 +9069,6 @@ input Product_weight_operator {
 }
 
 input Product_media1_operator {
-  equals: String
-  not_equals: String
-  exists: Boolean
-}
-
-input Product_media2_operator {
-  equals: String
-  not_equals: String
-  exists: Boolean
-}
-
-input Product_media3_operator {
   equals: String
   not_equals: String
   exists: Boolean
@@ -9584,6 +9129,17 @@ input Product_relatedProducts_operator {
 }
 
 input Product_slug_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_category_slug_operator {
   equals: String
   not_equals: String
   like: String
@@ -9675,16 +9231,9 @@ input Product_id_operator {
 input Product_where_and {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
-  title2: Product_title2_operator
-  shortInfo1: Product_shortInfo1_operator
-  shortInfo2: Product_shortInfo2_operator
-  shortInfo3: Product_shortInfo3_operator
-  shortInfo4: Product_shortInfo4_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
-  media2: Product_media2_operator
-  media3: Product_media3_operator
   publishedOn: Product_publishedOn_operator
   stripeProductID: Product_stripeProductID_operator
   priceJSON: Product_priceJSON_operator
@@ -9692,6 +9241,7 @@ input Product_where_and {
   categories: Product_categories_operator
   relatedProducts: Product_relatedProducts_operator
   slug: Product_slug_operator
+  category_slug: Product_category_slug_operator
   skipSync: Product_skipSync_operator
   meta__title: Product_meta__title_operator
   meta__description: Product_meta__description_operator
@@ -9707,16 +9257,9 @@ input Product_where_and {
 input Product_where_or {
   hideFooter: Product_hideFooter_operator
   title: Product_title_operator
-  title2: Product_title2_operator
-  shortInfo1: Product_shortInfo1_operator
-  shortInfo2: Product_shortInfo2_operator
-  shortInfo3: Product_shortInfo3_operator
-  shortInfo4: Product_shortInfo4_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
-  media2: Product_media2_operator
-  media3: Product_media3_operator
   publishedOn: Product_publishedOn_operator
   stripeProductID: Product_stripeProductID_operator
   priceJSON: Product_priceJSON_operator
@@ -9724,6 +9267,7 @@ input Product_where_or {
   categories: Product_categories_operator
   relatedProducts: Product_relatedProducts_operator
   slug: Product_slug_operator
+  category_slug: Product_category_slug_operator
   skipSync: Product_skipSync_operator
   meta__title: Product_meta__title_operator
   meta__description: Product_meta__description_operator
@@ -9752,16 +9296,9 @@ type productsDocAccess {
 type ProductsDocAccessFields {
   hideFooter: ProductsDocAccessFields_hideFooter
   title: ProductsDocAccessFields_title
-  title2: ProductsDocAccessFields_title2
-  shortInfo1: ProductsDocAccessFields_shortInfo1
-  shortInfo2: ProductsDocAccessFields_shortInfo2
-  shortInfo3: ProductsDocAccessFields_shortInfo3
-  shortInfo4: ProductsDocAccessFields_shortInfo4
   price: ProductsDocAccessFields_price
   weight: ProductsDocAccessFields_weight
   media1: ProductsDocAccessFields_media1
-  media2: ProductsDocAccessFields_media2
-  media3: ProductsDocAccessFields_media3
   publishedOn: ProductsDocAccessFields_publishedOn
   layout: ProductsDocAccessFields_layout
   stripeProductID: ProductsDocAccessFields_stripeProductID
@@ -9771,6 +9308,7 @@ type ProductsDocAccessFields {
   categories: ProductsDocAccessFields_categories
   relatedProducts: ProductsDocAccessFields_relatedProducts
   slug: ProductsDocAccessFields_slug
+  category_slug: ProductsDocAccessFields_category_slug
   skipSync: ProductsDocAccessFields_skipSync
   meta: ProductsDocAccessFields_meta
   updatedAt: ProductsDocAccessFields_updatedAt
@@ -9821,121 +9359,6 @@ type ProductsDocAccessFields_title_Update {
 }
 
 type ProductsDocAccessFields_title_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_title2 {
-  create: ProductsDocAccessFields_title2_Create
-  read: ProductsDocAccessFields_title2_Read
-  update: ProductsDocAccessFields_title2_Update
-  delete: ProductsDocAccessFields_title2_Delete
-}
-
-type ProductsDocAccessFields_title2_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_title2_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_title2_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_title2_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo1 {
-  create: ProductsDocAccessFields_shortInfo1_Create
-  read: ProductsDocAccessFields_shortInfo1_Read
-  update: ProductsDocAccessFields_shortInfo1_Update
-  delete: ProductsDocAccessFields_shortInfo1_Delete
-}
-
-type ProductsDocAccessFields_shortInfo1_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo1_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo1_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo1_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo2 {
-  create: ProductsDocAccessFields_shortInfo2_Create
-  read: ProductsDocAccessFields_shortInfo2_Read
-  update: ProductsDocAccessFields_shortInfo2_Update
-  delete: ProductsDocAccessFields_shortInfo2_Delete
-}
-
-type ProductsDocAccessFields_shortInfo2_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo2_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo2_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo2_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo3 {
-  create: ProductsDocAccessFields_shortInfo3_Create
-  read: ProductsDocAccessFields_shortInfo3_Read
-  update: ProductsDocAccessFields_shortInfo3_Update
-  delete: ProductsDocAccessFields_shortInfo3_Delete
-}
-
-type ProductsDocAccessFields_shortInfo3_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo3_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo3_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo3_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo4 {
-  create: ProductsDocAccessFields_shortInfo4_Create
-  read: ProductsDocAccessFields_shortInfo4_Read
-  update: ProductsDocAccessFields_shortInfo4_Update
-  delete: ProductsDocAccessFields_shortInfo4_Delete
-}
-
-type ProductsDocAccessFields_shortInfo4_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo4_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo4_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_shortInfo4_Delete {
   permission: Boolean!
 }
 
@@ -10005,52 +9428,6 @@ type ProductsDocAccessFields_media1_Update {
 }
 
 type ProductsDocAccessFields_media1_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media2 {
-  create: ProductsDocAccessFields_media2_Create
-  read: ProductsDocAccessFields_media2_Read
-  update: ProductsDocAccessFields_media2_Update
-  delete: ProductsDocAccessFields_media2_Delete
-}
-
-type ProductsDocAccessFields_media2_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media2_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media2_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media2_Delete {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media3 {
-  create: ProductsDocAccessFields_media3_Create
-  read: ProductsDocAccessFields_media3_Read
-  update: ProductsDocAccessFields_media3_Update
-  delete: ProductsDocAccessFields_media3_Delete
-}
-
-type ProductsDocAccessFields_media3_Create {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media3_Read {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media3_Update {
-  permission: Boolean!
-}
-
-type ProductsDocAccessFields_media3_Delete {
   permission: Boolean!
 }
 
@@ -10258,6 +9635,29 @@ type ProductsDocAccessFields_slug_Update {
 }
 
 type ProductsDocAccessFields_slug_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_category_slug {
+  create: ProductsDocAccessFields_category_slug_Create
+  read: ProductsDocAccessFields_category_slug_Read
+  update: ProductsDocAccessFields_category_slug_Update
+  delete: ProductsDocAccessFields_category_slug_Delete
+}
+
+type ProductsDocAccessFields_category_slug_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_category_slug_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_category_slug_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_category_slug_Delete {
   permission: Boolean!
 }
 
@@ -10489,16 +9889,9 @@ type ProductVersion {
 type ProductVersion_Version {
   hideFooter: Boolean
   title: String
-  title2: String
-  shortInfo1: String
-  shortInfo2: String
-  shortInfo3: String
-  shortInfo4: String
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ProductVersion_Version_Media1_where): Media
-  media2(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ProductVersion_Version_Media2_where): Media
-  media3(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ProductVersion_Version_Media3_where): Media
   publishedOn: DateTime
   layout: [ProductVersion_Version_Layout!]
   stripeProductID: String
@@ -10508,6 +9901,7 @@ type ProductVersion_Version {
   categories(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [Category!]
   relatedProducts(draft: Boolean, locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [Product!]
   slug: String
+  category_slug: String
   skipSync: Boolean
   meta: ProductVersion_Version_Meta
   updatedAt: DateTime
@@ -10701,382 +10095,6 @@ input ProductVersion_Version_Media1_where_or {
   id: ProductVersion_Version_Media1_id_operator
   AND: [ProductVersion_Version_Media1_where_and]
   OR: [ProductVersion_Version_Media1_where_or]
-}
-
-input ProductVersion_Version_Media2_where {
-  alt: ProductVersion_Version_Media2_alt_operator
-  caption: ProductVersion_Version_Media2_caption_operator
-  updatedAt: ProductVersion_Version_Media2_updatedAt_operator
-  createdAt: ProductVersion_Version_Media2_createdAt_operator
-  url: ProductVersion_Version_Media2_url_operator
-  filename: ProductVersion_Version_Media2_filename_operator
-  mimeType: ProductVersion_Version_Media2_mimeType_operator
-  filesize: ProductVersion_Version_Media2_filesize_operator
-  width: ProductVersion_Version_Media2_width_operator
-  height: ProductVersion_Version_Media2_height_operator
-  focalX: ProductVersion_Version_Media2_focalX_operator
-  focalY: ProductVersion_Version_Media2_focalY_operator
-  id: ProductVersion_Version_Media2_id_operator
-  AND: [ProductVersion_Version_Media2_where_and]
-  OR: [ProductVersion_Version_Media2_where_or]
-}
-
-input ProductVersion_Version_Media2_alt_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-}
-
-input ProductVersion_Version_Media2_caption_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_updatedAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_createdAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_url_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_filename_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_mimeType_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_filesize_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_width_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_height_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_focalX_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_focalY_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_id_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media2_where_and {
-  alt: ProductVersion_Version_Media2_alt_operator
-  caption: ProductVersion_Version_Media2_caption_operator
-  updatedAt: ProductVersion_Version_Media2_updatedAt_operator
-  createdAt: ProductVersion_Version_Media2_createdAt_operator
-  url: ProductVersion_Version_Media2_url_operator
-  filename: ProductVersion_Version_Media2_filename_operator
-  mimeType: ProductVersion_Version_Media2_mimeType_operator
-  filesize: ProductVersion_Version_Media2_filesize_operator
-  width: ProductVersion_Version_Media2_width_operator
-  height: ProductVersion_Version_Media2_height_operator
-  focalX: ProductVersion_Version_Media2_focalX_operator
-  focalY: ProductVersion_Version_Media2_focalY_operator
-  id: ProductVersion_Version_Media2_id_operator
-  AND: [ProductVersion_Version_Media2_where_and]
-  OR: [ProductVersion_Version_Media2_where_or]
-}
-
-input ProductVersion_Version_Media2_where_or {
-  alt: ProductVersion_Version_Media2_alt_operator
-  caption: ProductVersion_Version_Media2_caption_operator
-  updatedAt: ProductVersion_Version_Media2_updatedAt_operator
-  createdAt: ProductVersion_Version_Media2_createdAt_operator
-  url: ProductVersion_Version_Media2_url_operator
-  filename: ProductVersion_Version_Media2_filename_operator
-  mimeType: ProductVersion_Version_Media2_mimeType_operator
-  filesize: ProductVersion_Version_Media2_filesize_operator
-  width: ProductVersion_Version_Media2_width_operator
-  height: ProductVersion_Version_Media2_height_operator
-  focalX: ProductVersion_Version_Media2_focalX_operator
-  focalY: ProductVersion_Version_Media2_focalY_operator
-  id: ProductVersion_Version_Media2_id_operator
-  AND: [ProductVersion_Version_Media2_where_and]
-  OR: [ProductVersion_Version_Media2_where_or]
-}
-
-input ProductVersion_Version_Media3_where {
-  alt: ProductVersion_Version_Media3_alt_operator
-  caption: ProductVersion_Version_Media3_caption_operator
-  updatedAt: ProductVersion_Version_Media3_updatedAt_operator
-  createdAt: ProductVersion_Version_Media3_createdAt_operator
-  url: ProductVersion_Version_Media3_url_operator
-  filename: ProductVersion_Version_Media3_filename_operator
-  mimeType: ProductVersion_Version_Media3_mimeType_operator
-  filesize: ProductVersion_Version_Media3_filesize_operator
-  width: ProductVersion_Version_Media3_width_operator
-  height: ProductVersion_Version_Media3_height_operator
-  focalX: ProductVersion_Version_Media3_focalX_operator
-  focalY: ProductVersion_Version_Media3_focalY_operator
-  id: ProductVersion_Version_Media3_id_operator
-  AND: [ProductVersion_Version_Media3_where_and]
-  OR: [ProductVersion_Version_Media3_where_or]
-}
-
-input ProductVersion_Version_Media3_alt_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-}
-
-input ProductVersion_Version_Media3_caption_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_updatedAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_createdAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_url_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_filename_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_mimeType_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_filesize_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_width_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_height_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_focalX_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_focalY_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_id_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ProductVersion_Version_Media3_where_and {
-  alt: ProductVersion_Version_Media3_alt_operator
-  caption: ProductVersion_Version_Media3_caption_operator
-  updatedAt: ProductVersion_Version_Media3_updatedAt_operator
-  createdAt: ProductVersion_Version_Media3_createdAt_operator
-  url: ProductVersion_Version_Media3_url_operator
-  filename: ProductVersion_Version_Media3_filename_operator
-  mimeType: ProductVersion_Version_Media3_mimeType_operator
-  filesize: ProductVersion_Version_Media3_filesize_operator
-  width: ProductVersion_Version_Media3_width_operator
-  height: ProductVersion_Version_Media3_height_operator
-  focalX: ProductVersion_Version_Media3_focalX_operator
-  focalY: ProductVersion_Version_Media3_focalY_operator
-  id: ProductVersion_Version_Media3_id_operator
-  AND: [ProductVersion_Version_Media3_where_and]
-  OR: [ProductVersion_Version_Media3_where_or]
-}
-
-input ProductVersion_Version_Media3_where_or {
-  alt: ProductVersion_Version_Media3_alt_operator
-  caption: ProductVersion_Version_Media3_caption_operator
-  updatedAt: ProductVersion_Version_Media3_updatedAt_operator
-  createdAt: ProductVersion_Version_Media3_createdAt_operator
-  url: ProductVersion_Version_Media3_url_operator
-  filename: ProductVersion_Version_Media3_filename_operator
-  mimeType: ProductVersion_Version_Media3_mimeType_operator
-  filesize: ProductVersion_Version_Media3_filesize_operator
-  width: ProductVersion_Version_Media3_width_operator
-  height: ProductVersion_Version_Media3_height_operator
-  focalX: ProductVersion_Version_Media3_focalX_operator
-  focalY: ProductVersion_Version_Media3_focalY_operator
-  id: ProductVersion_Version_Media3_id_operator
-  AND: [ProductVersion_Version_Media3_where_and]
-  OR: [ProductVersion_Version_Media3_where_or]
 }
 
 union ProductVersion_Version_Layout = Cta | Content | MediaBlock | Archive
@@ -11300,16 +10318,9 @@ input versionsProduct_where {
   parent: versionsProduct_parent_operator
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
-  version__title2: versionsProduct_version__title2_operator
-  version__shortInfo1: versionsProduct_version__shortInfo1_operator
-  version__shortInfo2: versionsProduct_version__shortInfo2_operator
-  version__shortInfo3: versionsProduct_version__shortInfo3_operator
-  version__shortInfo4: versionsProduct_version__shortInfo4_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
-  version__media2: versionsProduct_version__media2_operator
-  version__media3: versionsProduct_version__media3_operator
   version__publishedOn: versionsProduct_version__publishedOn_operator
   version__stripeProductID: versionsProduct_version__stripeProductID_operator
   version__priceJSON: versionsProduct_version__priceJSON_operator
@@ -11317,6 +10328,7 @@ input versionsProduct_where {
   version__categories: versionsProduct_version__categories_operator
   version__relatedProducts: versionsProduct_version__relatedProducts_operator
   version__slug: versionsProduct_version__slug_operator
+  version__category_slug: versionsProduct_version__category_slug_operator
   version__skipSync: versionsProduct_version__skipSync_operator
   version__meta__title: versionsProduct_version__meta__title_operator
   version__meta__description: versionsProduct_version__meta__description_operator
@@ -11357,61 +10369,6 @@ input versionsProduct_version__title_operator {
   all: [String]
 }
 
-input versionsProduct_version__title2_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input versionsProduct_version__shortInfo1_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input versionsProduct_version__shortInfo2_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input versionsProduct_version__shortInfo3_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input versionsProduct_version__shortInfo4_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
 input versionsProduct_version__price_operator {
   equals: String
   not_equals: String
@@ -11432,18 +10389,6 @@ input versionsProduct_version__weight_operator {
 }
 
 input versionsProduct_version__media1_operator {
-  equals: String
-  not_equals: String
-  exists: Boolean
-}
-
-input versionsProduct_version__media2_operator {
-  equals: String
-  not_equals: String
-  exists: Boolean
-}
-
-input versionsProduct_version__media3_operator {
   equals: String
   not_equals: String
   exists: Boolean
@@ -11504,6 +10449,17 @@ input versionsProduct_version__relatedProducts_operator {
 }
 
 input versionsProduct_version__slug_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__category_slug_operator {
   equals: String
   not_equals: String
   like: String
@@ -11624,16 +10580,9 @@ input versionsProduct_where_and {
   parent: versionsProduct_parent_operator
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
-  version__title2: versionsProduct_version__title2_operator
-  version__shortInfo1: versionsProduct_version__shortInfo1_operator
-  version__shortInfo2: versionsProduct_version__shortInfo2_operator
-  version__shortInfo3: versionsProduct_version__shortInfo3_operator
-  version__shortInfo4: versionsProduct_version__shortInfo4_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
-  version__media2: versionsProduct_version__media2_operator
-  version__media3: versionsProduct_version__media3_operator
   version__publishedOn: versionsProduct_version__publishedOn_operator
   version__stripeProductID: versionsProduct_version__stripeProductID_operator
   version__priceJSON: versionsProduct_version__priceJSON_operator
@@ -11641,6 +10590,7 @@ input versionsProduct_where_and {
   version__categories: versionsProduct_version__categories_operator
   version__relatedProducts: versionsProduct_version__relatedProducts_operator
   version__slug: versionsProduct_version__slug_operator
+  version__category_slug: versionsProduct_version__category_slug_operator
   version__skipSync: versionsProduct_version__skipSync_operator
   version__meta__title: versionsProduct_version__meta__title_operator
   version__meta__description: versionsProduct_version__meta__description_operator
@@ -11660,16 +10610,9 @@ input versionsProduct_where_or {
   parent: versionsProduct_parent_operator
   version__hideFooter: versionsProduct_version__hideFooter_operator
   version__title: versionsProduct_version__title_operator
-  version__title2: versionsProduct_version__title2_operator
-  version__shortInfo1: versionsProduct_version__shortInfo1_operator
-  version__shortInfo2: versionsProduct_version__shortInfo2_operator
-  version__shortInfo3: versionsProduct_version__shortInfo3_operator
-  version__shortInfo4: versionsProduct_version__shortInfo4_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
-  version__media2: versionsProduct_version__media2_operator
-  version__media3: versionsProduct_version__media3_operator
   version__publishedOn: versionsProduct_version__publishedOn_operator
   version__stripeProductID: versionsProduct_version__stripeProductID_operator
   version__priceJSON: versionsProduct_version__priceJSON_operator
@@ -11677,6 +10620,7 @@ input versionsProduct_where_or {
   version__categories: versionsProduct_version__categories_operator
   version__relatedProducts: versionsProduct_version__relatedProducts_operator
   version__slug: versionsProduct_version__slug_operator
+  version__category_slug: versionsProduct_version__category_slug_operator
   version__skipSync: versionsProduct_version__skipSync_operator
   version__meta__title: versionsProduct_version__meta__title_operator
   version__meta__description: versionsProduct_version__meta__description_operator
@@ -19139,16 +18083,9 @@ type productsAccess {
 type ProductsFields {
   hideFooter: ProductsFields_hideFooter
   title: ProductsFields_title
-  title2: ProductsFields_title2
-  shortInfo1: ProductsFields_shortInfo1
-  shortInfo2: ProductsFields_shortInfo2
-  shortInfo3: ProductsFields_shortInfo3
-  shortInfo4: ProductsFields_shortInfo4
   price: ProductsFields_price
   weight: ProductsFields_weight
   media1: ProductsFields_media1
-  media2: ProductsFields_media2
-  media3: ProductsFields_media3
   publishedOn: ProductsFields_publishedOn
   layout: ProductsFields_layout
   stripeProductID: ProductsFields_stripeProductID
@@ -19158,6 +18095,7 @@ type ProductsFields {
   categories: ProductsFields_categories
   relatedProducts: ProductsFields_relatedProducts
   slug: ProductsFields_slug
+  category_slug: ProductsFields_category_slug
   skipSync: ProductsFields_skipSync
   meta: ProductsFields_meta
   updatedAt: ProductsFields_updatedAt
@@ -19208,121 +18146,6 @@ type ProductsFields_title_Update {
 }
 
 type ProductsFields_title_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_title2 {
-  create: ProductsFields_title2_Create
-  read: ProductsFields_title2_Read
-  update: ProductsFields_title2_Update
-  delete: ProductsFields_title2_Delete
-}
-
-type ProductsFields_title2_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_title2_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_title2_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_title2_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo1 {
-  create: ProductsFields_shortInfo1_Create
-  read: ProductsFields_shortInfo1_Read
-  update: ProductsFields_shortInfo1_Update
-  delete: ProductsFields_shortInfo1_Delete
-}
-
-type ProductsFields_shortInfo1_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo1_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo1_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo1_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo2 {
-  create: ProductsFields_shortInfo2_Create
-  read: ProductsFields_shortInfo2_Read
-  update: ProductsFields_shortInfo2_Update
-  delete: ProductsFields_shortInfo2_Delete
-}
-
-type ProductsFields_shortInfo2_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo2_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo2_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo2_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo3 {
-  create: ProductsFields_shortInfo3_Create
-  read: ProductsFields_shortInfo3_Read
-  update: ProductsFields_shortInfo3_Update
-  delete: ProductsFields_shortInfo3_Delete
-}
-
-type ProductsFields_shortInfo3_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo3_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo3_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo3_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo4 {
-  create: ProductsFields_shortInfo4_Create
-  read: ProductsFields_shortInfo4_Read
-  update: ProductsFields_shortInfo4_Update
-  delete: ProductsFields_shortInfo4_Delete
-}
-
-type ProductsFields_shortInfo4_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo4_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo4_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_shortInfo4_Delete {
   permission: Boolean!
 }
 
@@ -19392,52 +18215,6 @@ type ProductsFields_media1_Update {
 }
 
 type ProductsFields_media1_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_media2 {
-  create: ProductsFields_media2_Create
-  read: ProductsFields_media2_Read
-  update: ProductsFields_media2_Update
-  delete: ProductsFields_media2_Delete
-}
-
-type ProductsFields_media2_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_media2_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_media2_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_media2_Delete {
-  permission: Boolean!
-}
-
-type ProductsFields_media3 {
-  create: ProductsFields_media3_Create
-  read: ProductsFields_media3_Read
-  update: ProductsFields_media3_Update
-  delete: ProductsFields_media3_Delete
-}
-
-type ProductsFields_media3_Create {
-  permission: Boolean!
-}
-
-type ProductsFields_media3_Read {
-  permission: Boolean!
-}
-
-type ProductsFields_media3_Update {
-  permission: Boolean!
-}
-
-type ProductsFields_media3_Delete {
   permission: Boolean!
 }
 
@@ -19645,6 +18422,29 @@ type ProductsFields_slug_Update {
 }
 
 type ProductsFields_slug_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_category_slug {
+  create: ProductsFields_category_slug_Create
+  read: ProductsFields_category_slug_Read
+  update: ProductsFields_category_slug_Update
+  delete: ProductsFields_category_slug_Delete
+}
+
+type ProductsFields_category_slug_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_category_slug_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_category_slug_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_category_slug_Delete {
   permission: Boolean!
 }
 
@@ -23832,16 +22632,9 @@ enum PageUpdate__status_MutationInput {
 input mutationProductInput {
   hideFooter: Boolean
   title: String!
-  title2: String
-  shortInfo1: String
-  shortInfo2: String
-  shortInfo3: String
-  shortInfo4: String
   price: String!
   weight: Float!
   media1: String
-  media2: String
-  media3: String
   publishedOn: String
   layout: JSON
   stripeProductID: String
@@ -23851,6 +22644,7 @@ input mutationProductInput {
   categories: [String]
   relatedProducts: [String]
   slug: String
+  category_slug: String
   skipSync: Boolean
   meta: mutationProduct_MetaInput
   updatedAt: String
@@ -23872,16 +22666,9 @@ enum Product__status_MutationInput {
 input mutationProductUpdateInput {
   hideFooter: Boolean
   title: String
-  title2: String
-  shortInfo1: String
-  shortInfo2: String
-  shortInfo3: String
-  shortInfo4: String
   price: String
   weight: Float
   media1: String
-  media2: String
-  media3: String
   publishedOn: String
   layout: JSON
   stripeProductID: String
@@ -23891,6 +22678,7 @@ input mutationProductUpdateInput {
   categories: [String]
   relatedProducts: [String]
   slug: String
+  category_slug: String
   skipSync: Boolean
   meta: mutationProductUpdate_MetaInput
   updatedAt: String
