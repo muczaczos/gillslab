@@ -1,7 +1,7 @@
 @use './queries.scss' as *;
 @use './colors.scss' as *;
 @use './type.scss' as *;
-@import "./theme.scss";
+@use "./theme.scss";
 
 .react-tabs__tab-list {
   border: none !important; /* Usunięcie obramowania */
@@ -104,7 +104,7 @@ body,
 }
 
 body {
-  font-family: var(--font-jost);
+  font-family: var(--font-monteserrat);
   margin: 0;
   padding: 0;
   color: var(--color-dark-500);

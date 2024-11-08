@@ -71,7 +71,7 @@ const GrowKits = async () => {
           </div>
 
           <div className={classes.gap}></div>
-          <GrowkitsCards pages={filteredPages} products={products} />
+          <GrowkitsCards pages={filteredPages} />
         </Gutter>
       </section>
     </LayoutWithHeaderFooter>

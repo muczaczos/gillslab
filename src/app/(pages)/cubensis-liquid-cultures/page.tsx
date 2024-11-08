@@ -89,7 +89,7 @@ const CubensisLiquidCultures = async () => {
           Liquid Cultures today!
         </p>
         <div className={`${classes.gap} bg-customWhite`}></div>
-        <GrowkitsCards pages={filteredPages} products={products} />
+        <GrowkitsCards pages={filteredPages} />
       </Gutter>
     </LayoutWithHeaderFooter>
   )
