@@ -72,7 +72,12 @@ const Syringes = async () => {
         <div className={`flex flex-col lg:flex-row mb-5 pt-10`}>
           <div className="w-full flex justify-center items-center mb-10 lg:w-1/2">
             <div className="relative w-[80%] aspect-w-4 aspect-h-3">
-              <Image alt="Planet of mushrooms" src="/media/syringes.webp" height="500" width="600" />
+              <Image
+                alt="Planet of mushrooms"
+                src="/media/syringes.webp"
+                height="500"
+                width="600"
+              />
             </div>
           </div>
           <div className="w-full lg:w-1/2">
@@ -90,7 +95,7 @@ const Syringes = async () => {
           </div>
         </div>
         <div className={classes.gap}></div>
-        <GrowkitsCards pages={filteredPages} products={products} />
+        <GrowkitsCards pages={filteredPages} />
       </Gutter>
     </LayoutWithHeaderFooter>
   )

@@ -80,7 +80,7 @@ const Equipments = async () => {
           journey today! 🌍🍄
         </p>
         <div className={classes.gap}></div>
-        <GrowkitsCards pages={filteredPages} products={products} />
+        <GrowkitsCards pages={filteredPages} />
       </Gutter>
     </LayoutWithHeaderFooter>
   )
