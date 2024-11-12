@@ -19,7 +19,7 @@ const GrowkitsCards = ({ pages }) => {
           ? item.meta.image.filename
           : `/media/${item.meta.image.filename}`
 
-        const href = `/${item.slug}`
+        const href = `/${item.categories[0].slug}/${item.slug}`
         const title = item.title
         const price = item.price
 

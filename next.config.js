@@ -43,17 +43,18 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/:category/:slug', // URL widoczny dla użytkownika
-        destination: '/products/:slug', // Wewnętrzna ścieżka
+        source: '/:category_slug/:slug', // Użycie dynamicznych segmentów dla kategorii i produktu
+        destination: '/products/:slug', // Docelowa strona produktu
       },
     ]
   },
+
   async redirects() {
     return [
       {
-        source: '/products/:slug',
-        destination: '/:slug',
-        permanent: true, // Zwraca przekierowanie 301 (stałe przekierowanie)
+        source: '/products', // Źródłowy URL
+        destination: '/', // Docelowy URL (strona główna)
+        permanent: true, // Przekierowanie 301 (stałe przekierowanie)
       },
     ]
   },
