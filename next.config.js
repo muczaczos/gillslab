@@ -43,7 +43,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/:slug', // URL widoczny dla użytkownika
+        source: '/:category/:slug', // URL widoczny dla użytkownika
         destination: '/products/:slug', // Wewnętrzna ścieżka
       },
     ]

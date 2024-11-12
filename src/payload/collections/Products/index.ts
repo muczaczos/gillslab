@@ -66,6 +66,31 @@ const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: 'title2',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'shortInfo1',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'shortInfo2',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'shortInfo3',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'shortInfo4',
+      type: 'text',
+      required: true,
+    },
+    {
       name: 'price',
       type: 'text',
       required: true,
@@ -77,6 +102,18 @@ const Products: CollectionConfig = {
     },
     {
       name: 'media1',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+    },
+    {
+      name: 'media2',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+    },
+    {
+      name: 'media3',
       type: 'upload',
       relationTo: 'media',
       required: false,
