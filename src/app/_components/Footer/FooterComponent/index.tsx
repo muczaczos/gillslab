@@ -128,21 +128,48 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 </div>
                 <section>
                   <h4 className="text-customWhite font-bold">Sitemap</h4>
-                  <p className="text-customWhite text-xl">Gillslab LTD.</p>
-                  <p className="text-customWhite text-xl">Growkits</p>
-                  <p className="text-customWhite text-xl">Spores</p>
-                  <p className="text-customWhite text-xl">Cultures</p>
-                  <p className="text-customWhite text-xl">Lab</p>
-                  <p className="text-customWhite text-xl">Substrates</p>
-                  <p className="text-customWhite text-xl">Contact</p>
-                  <p className="text-customWhite text-xl">Conditions</p>
-                  <p className="text-customWhite text-xl">Privacy</p>
-                  <p className="text-customWhite text-xl">Blog</p>
-                  <p className="text-customWhite text-xl">Vlog</p>
-                  <p className="text-customWhite text-xl">Shipping</p>
-                  <p className="text-customWhite text-xl">Payments</p>
-                  <p className="text-customWhite text-xl">Cart</p>
-                  <p className="text-customWhite text-xl">Favorities</p>
+                  <Link href="/cubensis-grow-kits">
+                    <p className="text-customWhite text-xl">Growkits</p>
+                  </Link>
+                  <Link href="/cubensis-liquid-cultures">
+                    <p className="text-customWhite text-xl">Cultures</p>
+                  </Link>
+                  <Link href="/cubensis-spore-syringes">
+                    <p className="text-customWhite text-xl">Spores</p>
+                  </Link>
+                  <Link href="/laboratory-equipments">
+                    <p className="text-customWhite text-xl">Lab</p>
+                  </Link>
+                  <Link href="/substrates">
+                    <p className="text-customWhite text-xl">Substrates</p>
+                  </Link>
+                  <Link href="/contact">
+                    <p className="text-customWhite text-xl">Contact</p>
+                  </Link>
+                  <Link href="/conditions">
+                    <p className="text-customWhite text-xl">Conditions</p>
+                  </Link>
+                  <Link href="/privacy">
+                    <p className="text-customWhite text-xl">Privacy</p>
+                  </Link>
+                  <Link href="/blog">
+                    <p className="text-customWhite text-xl">Blog</p>
+                  </Link>
+                  <Link href="/vlog">
+                    <p className="text-customWhite text-xl">Vlog</p>
+                  </Link>
+                  <Link href="/shipping">
+                    <p className="text-customWhite text-xl">Shipping</p>
+                  </Link>
+                  <Link href="/payments">
+                    <p className="text-customWhite text-xl">Payments</p>
+                  </Link>
+                  <Link href="/cart">
+                    <p className="text-customWhite text-xl">Cart</p>
+                  </Link>
+                  <Link href="/favorities">
+                    <p className="text-customWhite text-xl">Favorities</p>
+                  </Link>
                 </section>
               </div>
             </div>

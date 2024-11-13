@@ -69,7 +69,7 @@ const FavoritiesProducts = ({ favoriteSlugs }) => {
       <ul className="flex flex-wrap gap-8 justify-center bg-customWhite">
         {products.map((product, index) => (
           <Link
-            href={`/${product.slug}`}
+            href={`/${product.category}/${product.slug}`}
             className="shadow-xl bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl px-10 pt-10 pb-5"
             key={product.id}
           >

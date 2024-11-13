@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FaHeart, FaHome, FaRegHeart, FaShoppingCart, FaUser } from 'react-icons/fa'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
@@ -33,6 +33,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function Pages({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
+
 
   let page: Page | null = null
   let categories: Category[] | null = null
