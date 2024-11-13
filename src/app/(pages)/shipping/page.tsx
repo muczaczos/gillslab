@@ -21,11 +21,11 @@ const Shipping = async () => {
             width="400"
             className={classes.image}
           />
-          <h2 className={classes.title}>
+          <h2 className={`${classes.title} text-primary }`}>
             Shipping is the most important thing in an online store. 🍄🎁🎁🎁🚐
           </h2>
         </div>
-        <p className="sm:mt-0 lg:mt-10 mb-10 text-xl lg:text-2xl">
+        <p className="sm:mt-0 lg:mt-10 mb-10 text-xl lg:text-2xl text-customGray-dark">
           We take care of your shipments from start to finish. We always send the tracking number
           after shipment. You can check shipping prices by zone on this page. If you don’t see your
           country on that list, please contact us.
