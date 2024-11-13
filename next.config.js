@@ -43,7 +43,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/:category_slug/:slug', // Użycie dynamicznych segmentów dla kategorii i produktu
+        source: '/(cubensis-spore-syringe | cubensis-grow-kits | cubensis-liquid-cultures )/:slug', // Użycie dynamicznych segmentów dla kategorii i produktu
         destination: '/products/:slug', // Docelowa strona produktu
       },
     ]

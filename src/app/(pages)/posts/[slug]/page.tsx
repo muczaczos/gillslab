@@ -17,6 +17,7 @@ import { generateMeta } from '../../../_utilities/generateMeta'
 export const dynamic = 'force-dynamic'
 
 export default async function Posts({ params: { slug } }) {
+
   const { isEnabled: isDraftMode } = draftMode()
 
   let post: Post | null = null
@@ -128,29 +129,4 @@ export default async function Posts({ params: { slug } }) {
   )
 }
 
-export async function generateStaticParams() {
-  try {
-    const posts = await fetchDocs<Post>('posts')
-    return posts?.map(({ slug }) => slug)
-  } catch (error) {
-    return []
-  }
-}
 
-export async function generateMetadata({ params: { slug } }): Promise<Metadata> {
-  const { isEnabled: isDraftMode } = draftMode()
-
-  let post: Post | null = null
-
-  try {
-    post = await fetchDoc<Post>({
-      collection: 'posts',
-      slug,
-      draft: isDraftMode,
-    })
-  } catch (error) {
-    error
-  }
-
-  return generateMeta({ doc: post })
-}
