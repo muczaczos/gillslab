@@ -11,6 +11,7 @@ import { Blocks } from '../../../_components/Blocks'
 import { PremiumContent } from '../../../_components/PremiumContent'
 import { PostHero } from '../../../_heros/PostHero'
 import { generateMeta } from '../../../_utilities/generateMeta'
+import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 
 // Force this page to be dynamic so that Next.js does not cache it
 // See the note in '../../../[slug]/page.tsx' about this
@@ -43,90 +44,90 @@ export default async function Posts({ params: { slug } }) {
   const { layout, relatedPosts, enablePremiumContent, premiumContent } = post
 
   return (
-    <React.Fragment>
-      <PostHero post={post} />
-      <Blocks blocks={layout} />
-      {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />}
-      <Blocks
-        disableTopPadding
-        blocks={[
-          {
-            blockType: 'comments',
-            blockName: 'Comments',
-            relationTo: 'posts',
-            introContent: [
-              {
-                type: 'h4',
-                children: [
-                  {
-                    text: 'Comments',
-                  },
-                ],
-              },
-              {
-                type: 'p',
-                children: [
-                  {
-                    text: 'Authenticated users can leave comments on this post ',
-                  },
-                  {
-                    type: 'link',
-                    url: '/admin/collections/comments',
-                    children: [
-                      {
-                        text: '',
-                      },
-                    ],
-                  },
-                  {
-                    text: '.',
-                  },
-                ],
-              },
-            ],
-            doc: post,
-            comments,
-          },
-          {
-            blockType: 'relatedPosts',
-            blockName: 'Related Posts',
-            relationTo: 'posts',
-            introContent: [
-              {
-                type: 'h4',
-                children: [
-                  {
-                    text: 'Related posts',
-                  },
-                ],
-              },
-              {
-                type: 'p',
-                children: [
-                  {
-                    text: '',
-                  },
-                  {
-                    type: 'link',
-                    url: `/admin/collections/posts/${post.id}`,
-                    children: [
-                      {
-                        text: '',
-                      },
-                    ],
-                  },
-                  {
-                    text: '',
-                  },
-                ],
-              },
-            ],
-            docs: relatedPosts,
-          },
-        ]}
-      />
-    </React.Fragment>
+    <LayoutWithHeaderFooter>
+      <React.Fragment>
+        <PostHero post={post} />
+        <Blocks blocks={layout} />
+        {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />}
+        <Blocks
+          disableTopPadding
+          blocks={[
+            {
+              blockType: 'comments',
+              blockName: 'Comments',
+              relationTo: 'posts',
+              introContent: [
+                {
+                  type: 'h4',
+                  children: [
+                    {
+                      text: 'Comments',
+                    },
+                  ],
+                },
+                {
+                  type: 'p',
+                  children: [
+                    {
+                      text: 'Authenticated users can leave comments on this post ',
+                    },
+                    {
+                      type: 'link',
+                      url: '/admin/collections/comments',
+                      children: [
+                        {
+                          text: '',
+                        },
+                      ],
+                    },
+                    {
+                      text: '.',
+                    },
+                  ],
+                },
+              ],
+              doc: post,
+              comments,
+            },
+            {
+              blockType: 'relatedPosts',
+              blockName: 'Related Posts',
+              relationTo: 'posts',
+              introContent: [
+                {
+                  type: 'h4',
+                  children: [
+                    {
+                      text: 'Related posts',
+                    },
+                  ],
+                },
+                {
+                  type: 'p',
+                  children: [
+                    {
+                      text: '',
+                    },
+                    {
+                      type: 'link',
+                      url: `/admin/collections/posts/${post.id}`,
+                      children: [
+                        {
+                          text: '',
+                        },
+                      ],
+                    },
+                    {
+                      text: '',
+                    },
+                  ],
+                },
+              ],
+              docs: relatedPosts,
+            },
+          ]}
+        />
+      </React.Fragment>
+    </LayoutWithHeaderFooter>
   )
 }
-
-

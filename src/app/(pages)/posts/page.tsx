@@ -11,6 +11,7 @@ import { HR } from '../../_components/HR'
 import PostsCards from './PostsCards'
 
 import classes from './index.module.scss'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 const Posts = async () => {
   const { isEnabled: isDraftMode } = draftMode()
@@ -40,23 +41,25 @@ const Posts = async () => {
         draft: isDraftMode,
       })
     }
-  } catch (error) {}
+  } catch (error) { }
 
   return (
-    <Gutter>
-      <div className={classes.imageTitle}>
-        <Image alt="Planet of mushrooms" src="/media/earth-1.jpg" height="500" width="500" />
-        <h2 className={classes.title}>Nice to see you on our blog... 🙋‍♂️</h2>
-      </div>
-      <p className={classes.heroText}>
-        You can find here many informations about mushrooms and their cultivating. Master the art of
-        mushrooms cultivation for a bountiful harvest. 🍄 Change your planet to
-        planet-of-mushrooms.com 🌎
-      </p>
-      <div className={classes.gap}></div>
-      <PostsCards posts={posts} pages={pages} />
-      <HR />
-    </Gutter>
+    <LayoutWithHeaderFooter>
+      <Gutter>
+        <div className={classes.imageTitle}>
+          <Image alt="Planet of mushrooms" src="/media/earth-1.jpg" height="500" width="500" />
+          <h2 className={classes.title}>Nice to see you on our blog... 🙋‍♂️</h2>
+        </div>
+        <p className={classes.heroText}>
+          You can find here many informations about mushrooms and their cultivating. Master the art of
+          mushrooms cultivation for a bountiful harvest. 🍄 Change your planet to
+          planet-of-mushrooms.com 🌎
+        </p>
+        <div className={classes.gap}></div>
+        <PostsCards posts={posts} pages={pages} />
+        <HR />
+      </Gutter>
+    </LayoutWithHeaderFooter>
   )
 }
 
