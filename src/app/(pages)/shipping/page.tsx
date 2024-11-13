@@ -4,15 +4,15 @@ import Image from 'next/image'
 import { Button } from '../../_components/Button'
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import ShippingTable from './ShippingTable'
 
 import classes from './index.module.scss'
-import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 const Shipping = async () => {
   return (
     <LayoutWithHeaderFooter>
-      <Gutter>
+      <Gutter className="bg-customWhite">
         <div className={classes.imageTitle}>
           <Image
             alt="Shipping package with mushrooms growkit"
@@ -35,10 +35,11 @@ const Shipping = async () => {
         </div>
         <ShippingTable />
         <p className="mt-5 text-lg">
-          <span className="font-bold">DPD</span> also adds special zones for these countries depending
-          on your postcode. Shipping to these zones will be more expensive. Croatia, Denmark, Estonia,
-          Finland, France, Greece, Spain, the Netherlands, Germany, Portugal, Sweden and Italy have
-          special zones. Go to ‘Special Zone‘ page and check if your zip code is in these zones.
+          <span className="font-bold">DPD</span> also adds special zones for these countries
+          depending on your postcode. Shipping to these zones will be more expensive. Croatia,
+          Denmark, Estonia, Finland, France, Greece, Spain, the Netherlands, Germany, Portugal,
+          Sweden and Italy have special zones. Go to ‘Special Zone‘ page and check if your zip code
+          is in these zones.
         </p>
         <div className="flex justify-center mt-5">
           <Button label="Special Zones" href="/special-zones" appearance="primary" />
@@ -54,7 +55,7 @@ const Shipping = async () => {
           />
         </div>
 
-        <table className="mt-5 border-collapse w-full">
+        <table className="mt-5 border-collapse w-full bg-customWhite">
           <thead>
             <tr className="border-solid border-1 border-gray-400">
               <th className="p-2">Zone 6</th>
@@ -66,8 +67,9 @@ const Shipping = async () => {
             <tr>
               <td className="w-1/2 border-l-0 border-solid border-1 border-gray-400" rowSpan={5}>
                 <p className="">
-                  Egypt, Iran, Japan, Jordan, Lebanon, South Korea, Thailand, Bosnia and Herzegovina,
-                  Norway, Serbia, Switzerland, Turkey, United Kingdom, Canada, New Zeland, Uruguay
+                  Egypt, Iran, Japan, Jordan, Lebanon, South Korea, Thailand, Bosnia and
+                  Herzegovina, Norway, Serbia, Switzerland, Turkey, United Kingdom, Canada, New
+                  Zeland, Uruguay
                 </p>
               </td>
               <td className="border-l-0 border-r-0 border-solid border-gray-400 text-right p-2">

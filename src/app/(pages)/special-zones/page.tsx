@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import {
   croatia,
   denmark,
@@ -15,7 +16,6 @@ import {
   italy,
 } from './contryRanges'
 import SpecialTable from './SpecialTable'
-import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 const SpecialZones = () => {
   return (

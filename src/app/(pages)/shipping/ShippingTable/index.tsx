@@ -3,7 +3,7 @@ import React from 'react'
 
 const ShippingTable = () => {
   return (
-    <div className="pt-10">
+    <div className="pt-10 bg-customWhite">
       <table className="border-collapse w-full">
         <thead>
           <tr className="border-solid border-1 border-gray-400">
