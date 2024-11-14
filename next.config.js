@@ -43,8 +43,24 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/(cubensis-spore-syringe | cubensis-grow-kits | cubensis-liquid-cultures )/:slug', // Użycie dynamicznych segmentów dla kategorii i produktu
-        destination: '/products/:slug', // Docelowa strona produktu
+        source: '/cubensis-grow-kits/:slug',  // dla kategorii cubensis-grow-kits
+        destination: '/products/:slug',      // docelowa strona produktu
+      },
+      {
+        source: '/substrates/:slug',          // dla kategorii substrates
+        destination: '/products/:slug',      // docelowa strona produktu
+      },
+      {
+        source: '/cubensis-spore-syringe/:slug',          // dla kategorii substrates
+        destination: '/products/:slug',      // docelowa strona produktu
+      },
+      {
+        source: '/cubensis-liquid-cultures/:slug',          // dla kategorii substrates
+        destination: '/products/:slug',      // docelowa strona produktu
+      },
+      {
+        source: '/lab-equipments/:slug',          // dla kategorii substrates
+        destination: '/products/:slug',      // docelowa strona produktu
       },
     ]
   },
