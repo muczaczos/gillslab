@@ -45,56 +45,83 @@ export default function HamburgerMenu() {
       {/* Menu po otwarciu i zamykaniu */}
       {(isOpen || isClosing) && (
         <div
-          className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${
-            isClosing ? 'animate-slideUp' : 'animate-slideDown'
-          }`}
+          className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${isClosing ? 'animate-slideUp' : 'animate-slideDown'
+            }`}
         >
           <div
             className="absolute inset-0 bg-no-repeat bg-cover opacity-5"
             style={{ backgroundImage: "url('/media/eyes.png')" }}
           ></div>
-          <ul className="list-none p-4 text-center z-50">
-            <Link className="" href="/about">
-              <p className="text-customWhite font-bold text-3xl block pb-2">About</p>
+          <ul className="list-none p-4 text-center z-50 w-full">
+            <Link href="/about">
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">About</p>
+              </div>
             </Link>
             <Link className="" href="/cubensis-grow-kits">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Growkits</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Growkits</p>
+              </div>
             </Link>
             <Link className="" href="/cubensis-spore-syringes">
-              <p className="text-customWhite font-bold text-3xl block pb-2">spores</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Spores</p>
+              </div>
             </Link>
             <Link className="" href="/cubensis-liquid-cultures">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Cultures</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Cultures</p>
+              </div>
             </Link>
             <Link className="" href="/substrates">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Substrates</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Substrates</p>
+              </div>
             </Link>
             <Link className="" href="/laboratory-equipments">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Lab</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Lab</p>
+              </div>
             </Link>
             <Link className="" href="/favorities">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Favorities</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Favorities</p>
+              </div>
             </Link>
             <Link className="" href="/contact">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Contact</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Contact</p>
+              </div>
             </Link>
             <Link className="" href="/shipping">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Shipping</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Shipping</p>
+              </div>
             </Link>
             <Link className="" href="/blog">
-              <p className="text-customWhite font-bold text-3xl block pb-2">blog</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Blog</p>
+              </div>
             </Link>
             <Link className="" href="/payments">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Payments</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Payments</p>
+              </div>
             </Link>
             <Link className="" href="/vlog">
-              <p className="text-customWhite font-bold text-3xl block pb-2">vlog</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Vlog</p>
+              </div>
             </Link>
             <Link className="" href="/conditions">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Conditions</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Conditions</p>
+              </div>
             </Link>
             <Link className="" href="/privacy">
-              <p className="text-customWhite font-bold text-3xl block pb-2">Privacy</p>
+              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
+                <p className="text-customWhite font-bold text-2xl block pb-1">Privacy</p>
+              </div>
             </Link>
           </ul>
         </div>
