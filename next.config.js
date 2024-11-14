@@ -62,6 +62,14 @@ const nextConfig = {
         source: '/lab-equipments/:slug',          // dla kategorii substrates
         destination: '/products/:slug',      // docelowa strona produktu
       },
+      {
+        source: '/blog',          // dla kategorii substrates
+        destination: '/posts',      // docelowa strona produktu
+      },
+      {
+        source: '/blog/:slug',          // dla kategorii substrates
+        destination: '/posts/:slug',      // docelowa strona produktu
+      },
     ]
   },
 
