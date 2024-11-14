@@ -48,7 +48,13 @@ const GrowkitsCards = ({ pages }) => {
                   )}
                 </div>
                 <div className="px-16 pb-3">
-                  <Image alt="Cubensis grow kit" src={src} width={350} height={180} />
+                  <Image
+                    alt="Cubensis grow kit"
+                    src={src}
+                    width={150}
+                    height={180}
+                    className="w-[150px] lg:w-[200px]"
+                  />
                 </div>
                 <h6 className="pl-5 text-xl text-primary">{title}</h6>
                 <p className="pl-5 text-xl pb-4 font-bold text-primary">€{price}</p>

@@ -462,6 +462,10 @@
   width: 100% !important;
 }
 
+.w-\[350px\] {
+  width: 350px !important;
+}
+
 .min-w-\[45\%\] {
   min-width: 45% !important;
 }
@@ -1726,6 +1730,10 @@
 
   .lg\:w-full {
     width: 100% !important;
+  }
+
+  .lg\:w-\[200px\] {
+    width: 200px !important;
   }
 
   .lg\:max-w-\[1024px\] {
