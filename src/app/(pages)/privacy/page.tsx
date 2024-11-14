@@ -6,10 +6,10 @@ import { fetchDoc } from '../../_api/fetchDoc'
 import { Blocks } from '../../_components/Blocks'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
-export default async function Conditions({ params }) {
+export default async function Privacy({ params }) {
   const pageData: Page | null = await fetchDoc<Page>({
     collection: 'pages',
-    slug: 'conditions',
+    slug: 'privacy',
   })
 
   if (!pageData) {
@@ -19,7 +19,7 @@ export default async function Conditions({ params }) {
   return (
     <LayoutWithHeaderFooter>
       <div className={`custom-page ${pageData.customClass || ''}`}>
-        <h1 className="pt-10 pl-5 text-primary">{pageData.title}</h1>
+        <h1 className="pt-10 pl-5 pb-3 text-primary">{pageData.title}</h1>
 
         <Blocks blocks={pageData.layout} />
       </div>
