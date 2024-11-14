@@ -21,7 +21,7 @@ export default function HamburgerMenu() {
   }
 
   return (
-    <div className="relative z-40">
+    <div className="relative z-[60]">
       {/* Przycisk menu */}
       <button
         className="flex items-center justify-center bg-primary w-12 h-12 text-3xl focus:outline-none border-none z-40"
@@ -54,43 +54,46 @@ export default function HamburgerMenu() {
           ></div>
           <ul className="list-none p-4 text-center z-50">
             <Link className="" href="/about">
-              <p className="text-customWhite font-bold text-5xl block pb-2">About</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">About</p>
             </Link>
             <Link className="" href="/cubensis-grow-kits">
-              <p className="text-customWhite font-bold text-5xl block pb-2">Growkits</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Growkits</p>
             </Link>
             <Link className="" href="/cubensis-spore-syringes">
-              <p className="text-customWhite font-bold text-5xl block pb-4">spores</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">spores</p>
             </Link>
             <Link className="" href="/cubensis-liquid-cultures">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Cultures</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Cultures</p>
             </Link>
             <Link className="" href="/substrates">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Substrates</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Substrates</p>
             </Link>
-            <Link className="" href="/laboratory-equipment">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Lab</p>
+            <Link className="" href="/laboratory-equipments">
+              <p className="text-customWhite font-bold text-3xl block pb-2">Lab</p>
             </Link>
             <Link className="" href="/favorities">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Favorities</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Favorities</p>
             </Link>
             <Link className="" href="/contact">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Contact</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Contact</p>
             </Link>
             <Link className="" href="/shipping">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Shipping</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Shipping</p>
             </Link>
             <Link className="" href="/blog">
-              <p className="text-customWhite font-bold text-5xl block pb-4">blog</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">blog</p>
+            </Link>
+            <Link className="" href="/payments">
+              <p className="text-customWhite font-bold text-3xl block pb-2">Payments</p>
             </Link>
             <Link className="" href="/vlog">
-              <p className="text-customWhite font-bold text-5xl block pb-4">vlog</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">vlog</p>
             </Link>
             <Link className="" href="/conditions">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Conditions</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Conditions</p>
             </Link>
             <Link className="" href="/privacy">
-              <p className="text-customWhite font-bold text-5xl block pb-4">Privacy</p>
+              <p className="text-customWhite font-bold text-3xl block pb-2">Privacy</p>
             </Link>
           </ul>
         </div>
