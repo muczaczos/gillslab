@@ -13,7 +13,9 @@ export const SubscribeConfiramtionPage: React.FC<{}> = () => {
   return (
     <LayoutWithHeaderFooter>
       <div className="flex justify-center mx-5">
-        <h1 className="mb-36 mt-10 text-2xl text-secondary xl:text-4xl">Welcome to our newsletter, {firstName} !</h1>
+        <h1 className="mb-36 mt-10 text-2xl text-secondary xl:text-4xl">
+          Welcome to our newsletter, {firstName} !
+        </h1>
       </div>
     </LayoutWithHeaderFooter>
   )

@@ -42,11 +42,12 @@ const Payments = async () => {
               className="w-50 lg:pl-10 xs:pl-0 mx-auto"
             />
             <p className="pl-5 pr-5 pb-5 lg:pb-0 lg:pt-5 text-xl">
-              Discover the power of Revolut for effortless shopping at our store. With lightning-fast
-              transactions and enhanced security features, your purchases are worry-free. Say goodbye
-              to traditional banking constraints and hello to a world of convenience. If you open a
-              free Revolut account, you'll be able to make lightning-fast transfers to us. You can
-              also initiate a SEPA transfer to our Revolut from any account and in any currency.
+              Discover the power of Revolut for effortless shopping at our store. With
+              lightning-fast transactions and enhanced security features, your purchases are
+              worry-free. Say goodbye to traditional banking constraints and hello to a world of
+              convenience. If you open a free Revolut account, you'll be able to make lightning-fast
+              transfers to us. You can also initiate a SEPA transfer to our Revolut from any account
+              and in any currency.
             </p>
           </Link>
         </div>
@@ -65,11 +66,11 @@ const Payments = async () => {
             />
             <p className="mb-5 pl-5 pr-5 lg:mb-0 text-xl">
               Experience the convenience of Visa Bank for seamless shopping at our store. With rapid
-              transactions and advanced security measures, your purchases are effortlessly smooth. Bid
-              farewell to conventional banking limitations and embrace a realm of ease. Upon opening a
-              free Visa Bank account, you'll gain the capability to swiftly transfer funds to us.
-              Additionally, you can execute SEPA transfers to our Visa Bank account from any source
-              and in any currency.
+              transactions and advanced security measures, your purchases are effortlessly smooth.
+              Bid farewell to conventional banking limitations and embrace a realm of ease. Upon
+              opening a free Visa Bank account, you'll gain the capability to swiftly transfer funds
+              to us. Additionally, you can execute SEPA transfers to our Visa Bank account from any
+              source and in any currency.
             </p>
           </Link>
         </div>
@@ -90,10 +91,10 @@ const Payments = async () => {
               Explore the efficiency of SEPA transfers for seamless transactions at our store. With
               swift processing times and robust security protocols, your payments are handled with
               ease. Say goodbye to lengthy waiting periods and embrace the speed of SEPA transfers.
-              Whether you're sending funds domestically or across borders within the SEPA zone, enjoy
-              the convenience and reliability of this streamlined payment method. Join the countless
-              satisfied customers who trust SEPA transfers for their financial transactions, and
-              experience hassle-free payments today.
+              Whether you're sending funds domestically or across borders within the SEPA zone,
+              enjoy the convenience and reliability of this streamlined payment method. Join the
+              countless satisfied customers who trust SEPA transfers for their financial
+              transactions, and experience hassle-free payments today.
             </p>
           </Link>
         </div>

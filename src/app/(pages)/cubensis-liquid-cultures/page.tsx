@@ -78,7 +78,9 @@ const CubensisLiquidCultures = async () => {
             height="500"
             width="600"
           />
-          <h1 className="text-primary text-4xl md:text-3xl pb-5">Cultivate with Cubensis Liquid Cultures! 🧪🧪🧪🍄</h1>
+          <h1 className="text-primary text-4xl md:text-3xl pb-5">
+            Cultivate with Cubensis Liquid Cultures! 🧪🧪🧪🍄
+          </h1>
         </div>
         <p className="text-xl text-customGray-dark font-medium md:text-lg">
           Experience Effortless Growth with Cubensis Liquid Cultures! Our premium liquid cultures

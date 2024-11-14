@@ -8,10 +8,10 @@ import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import PostsCards from './PostsCards'
 
 import classes from './index.module.scss'
-import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 const Posts = async () => {
   const { isEnabled: isDraftMode } = draftMode()
@@ -41,7 +41,7 @@ const Posts = async () => {
         draft: isDraftMode,
       })
     }
-  } catch (error) { }
+  } catch (error) {}
 
   return (
     <LayoutWithHeaderFooter>
@@ -51,8 +51,8 @@ const Posts = async () => {
           <h2 className={classes.title}>Nice to see you on our blog... 🙋‍♂️</h2>
         </div>
         <p className={classes.heroText}>
-          You can find here many informations about mushrooms and their cultivating. Master the art of
-          mushrooms cultivation for a bountiful harvest. 🍄 Change your planet to
+          You can find here many informations about mushrooms and their cultivating. Master the art
+          of mushrooms cultivation for a bountiful harvest. 🍄 Change your planet to
           planet-of-mushrooms.com 🌎
         </p>
         <div className={classes.gap}></div>

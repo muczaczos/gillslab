@@ -9,9 +9,9 @@ import { fetchDoc } from '../../_api/fetchDoc'
 import { Blocks } from '../../_components/Blocks'
 import { Gutter } from '../../_components/Gutter'
 import { generateMeta } from '../../_utilities/generateMeta'
+import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 import classes from './index.module.scss'
-import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 // Force this page to be dynamic so that Next.js does not cache it
 // See the note in '../[slug]/page.tsx' about this
@@ -42,11 +42,11 @@ export default async function About() {
               <h2>Planet-of-Mushrooms Team</h2>
               <p className={classes.text}>
                 We are people from different parts of the world 🌏. We have different hobbies ⚽,
-                different religions 🧕, different tastes 🍟🌭🍕. We have a different skin color and a
-                different hair color or we don’t have a hair 😁. We wear different clothes and speak
-                different mother tongues 🎏🏳‍🌈🏴, but we share the same passion. Passion for
-                mushrooms 🍄. Mushrooms that have developed our world for billions of years 🐱‍🐉. Now
-                we want to infect your brain with this passion.🍄
+                different religions 🧕, different tastes 🍟🌭🍕. We have a different skin color and
+                a different hair color or we don’t have a hair 😁. We wear different clothes and
+                speak different mother tongues 🎏🏳‍🌈🏴, but we share the same passion. Passion for
+                mushrooms 🍄. Mushrooms that have developed our world for billions of years 🐱‍🐉.
+                Now we want to infect your brain with this passion.🍄
               </p>
               <div className={classes.links}>
                 <Link className={classes.link} href="http://facebook.com">
@@ -80,9 +80,9 @@ export default async function About() {
               <h3>James</h3>
               <h4>Mushrooms Grower</h4>
               <p>
-                My name is James and I have been a mushroom farmer for fifteen years. I’ve worked in a
-                few cubensis grow kit stores, but now I work with Arek. I want to share my knowledge
-                with you. You can contact me via chat from 9am to 5pm.
+                My name is James and I have been a mushroom farmer for fifteen years. I’ve worked in
+                a few cubensis grow kit stores, but now I work with Arek. I want to share my
+                knowledge with you. You can contact me via chat from 9am to 5pm.
               </p>
             </div>
             <div className={classes.worker}>
@@ -97,8 +97,8 @@ export default async function About() {
               <h4>Help Desk</h4>
               <p>
                 My name is Adiva and I am waiting for your e-mail. You can talk to me in English or
-                Polish. I will be happy to answer any questions about our store. My mission is to help
-                people solve their problems.
+                Polish. I will be happy to answer any questions about our store. My mission is to
+                help people solve their problems.
               </p>
             </div>
             <div className={classes.worker}>
@@ -112,9 +112,9 @@ export default async function About() {
               <h3>Arek</h3>
               <h4>IT Technican</h4>
               <p>
-                Hi, I’m Arek and apart from mushrooms I love computers. If you have any problems with
-                payment, the functioning of our website or the shipment, just give me a call. I will
-                try to help you.
+                Hi, I’m Arek and apart from mushrooms I love computers. If you have any problems
+                with payment, the functioning of our website or the shipment, just give me a call. I
+                will try to help you.
               </p>
             </div>
           </section>
