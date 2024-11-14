@@ -19,6 +19,7 @@ export const PAGE = `
       docs {
         id
         title
+        customClass
         hero {
           type
           richText

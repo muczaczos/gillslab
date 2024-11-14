@@ -50,6 +50,12 @@ export const Pages: CollectionConfig = {
       localized: true,
     },
     {
+      name: 'customClass',
+      type: 'text',
+      label: 'Custom CSS Class', // Pole do wpisania niestandardowej klasy CSS
+      required: false,
+    },
+    {
       name: 'publishedOn',
       type: 'date',
       admin: {

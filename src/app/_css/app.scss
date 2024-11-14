@@ -205,31 +205,35 @@ svg {
 }
 
 
-//styling terms and conditions page
+//styling privacy page
 //#########################################
-.Gutter_gutter__QB0_n {
-  background-color: #F7F9FB;
-  p {
-    color: #484D58;
-  }
-  h2 {
-    span {
-      font-size: 32px !important;
+.conditions {
+   padding-bottom: 3rem;
+  .Gutter_gutter__QB0_n {
+    padding-bottom: 5rem;
+    p {
+      color: #484D58;
     }
-    font-size: 32px !important;
-    padding-top: 2rem;
-    color: #4968AC;
+    h2 {
+      span {
+        font-size: 32px !important;
+      }
+      font-size: 32px !important;
+      padding-top: 2rem;
+      color: #4968AC;
+    }
+
+    h3 {
+      padding-top: 1rem !important;
+      color: #484D58;
+    }
+
+  }
+  
+  .VerticalPadding_bottom-large__W6wnm {
+    background-color: #F7F9FB !important;
+    padding: 0;
   }
 
-  h3 {
-    padding-top: 1rem !important;
-    color: #484D58;
-  }
-
-}
-
-.VerticalPadding_bottom-large__W6wnm {
-  background-color: #F7F9FB;
-  margin-bottom: 5rem;
 }
 // ###########################################

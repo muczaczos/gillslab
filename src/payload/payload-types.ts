@@ -914,6 +914,7 @@ export interface Product {
 export interface Page {
   id: string;
   title: string;
+  customClass?: string | null;
   publishedOn?: string | null;
   hero: {
     type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'customHero';
