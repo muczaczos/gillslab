@@ -1558,6 +1558,18 @@
     width: 100% !important;
   }
 
+  .md\:w-3\/4 {
+    width: 75% !important;
+  }
+
+  .md\:w-\[90\%\] {
+    width: 90% !important;
+  }
+
+  .md\:w-\[85\%\] {
+    width: 85% !important;
+  }
+
   .md\:flex-row {
     flex-direction: row !important;
   }
