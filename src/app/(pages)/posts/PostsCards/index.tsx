@@ -15,7 +15,7 @@ const PostsCards = ({ pages, posts }) => {
           // console.log(posts[0].slug)
           // console.log(process.env.NEXT_PUBLIC_SERVER_URL + '/' + posts[index].slug)
           const src = '/media/' + pages[index].meta.image.filename
-          const href = process.env.NEXT_PUBLIC_SERVER_URL + '/posts/' + posts[index].slug
+          const href = process.env.NEXT_PUBLIC_SERVER_URL + '/blog/' + posts[index].slug
           const title = pages[index].title
           const description = pages[index].meta.description.substring(0, 40) + '...'
           return (

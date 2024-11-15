@@ -462,10 +462,6 @@
   width: 100% !important;
 }
 
-.w-\[350px\] {
-  width: 350px !important;
-}
-
 .min-w-\[45\%\] {
   min-width: 45% !important;
 }
@@ -1724,16 +1720,16 @@
     width: 1000px !important;
   }
 
+  .lg\:w-\[200px\] {
+    width: 200px !important;
+  }
+
   .lg\:w-\[600px\] {
     width: 600px !important;
   }
 
   .lg\:w-full {
     width: 100% !important;
-  }
-
-  .lg\:w-\[200px\] {
-    width: 200px !important;
   }
 
   .lg\:max-w-\[1024px\] {
