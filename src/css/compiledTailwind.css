@@ -238,6 +238,10 @@
   margin-bottom: 9rem !important;
 }
 
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem !important;
 }
@@ -633,6 +637,18 @@
   gap: 2rem !important;
 }
 
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0 !important;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse)) !important;
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse))) !important;
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0 !important;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse)) !important;
+}
+
 .overflow-hidden {
   overflow: hidden !important;
 }
@@ -647,6 +663,10 @@
 
 .break-words {
   overflow-wrap: break-word !important;
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
 }
 
 .rounded-2xl {
@@ -891,6 +911,10 @@
 
 .p-5 {
   padding: 1.25rem !important;
+}
+
+.p-6 {
+  padding: 1.5rem !important;
 }
 
 .px-10 {
@@ -1189,6 +1213,16 @@
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
+.text-blue-400 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(96 165 250 / var(--tw-text-opacity)) !important;
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(37 99 235 / var(--tw-text-opacity)) !important;
+}
+
 .text-customGray-dark {
   --tw-text-opacity: 1 !important;
   color: rgb(72 77 88 / var(--tw-text-opacity)) !important;
@@ -1202,6 +1236,11 @@
 .text-gray-500 {
   --tw-text-opacity: 1 !important;
   color: rgb(107 114 128 / var(--tw-text-opacity)) !important;
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
 }
 
 .text-gray-800 {
@@ -1385,9 +1424,23 @@
   background-color: rgb(247 249 251 / var(--tw-bg-opacity)) !important;
 }
 
+.hover\:bg-secondary:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(172 73 104 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-primary-dark:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(56 84 144 / var(--tw-bg-opacity)) !important;
+}
+
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(55 65 81 / var(--tw-text-opacity)) !important;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline !important;
 }
 
 .focus\:border-secondary:focus {
@@ -1554,20 +1607,12 @@
     width: 440px !important;
   }
 
-  .md\:w-full {
-    width: 100% !important;
-  }
-
-  .md\:w-3\/4 {
-    width: 75% !important;
-  }
-
-  .md\:w-\[90\%\] {
-    width: 90% !important;
-  }
-
   .md\:w-\[85\%\] {
     width: 85% !important;
+  }
+
+  .md\:w-full {
+    width: 100% !important;
   }
 
   .md\:flex-row {

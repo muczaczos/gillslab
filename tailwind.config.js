@@ -50,6 +50,11 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      backgroundColor: ['hover'], // Obsługa hover dla kolorów tła
+    },
+  },
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {

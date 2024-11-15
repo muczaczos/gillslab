@@ -15,6 +15,8 @@ import SmallCarousel from '../../_components/SmallCarousel'
 import 'react-tabs/style/react-tabs.css'
 
 import classes from './index.module.scss'
+import Link from 'next/link'
+import ShareModal from '../../_components/ShareModal'
 
 export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
@@ -98,11 +100,19 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
         {/* main image with buttons */}
         <section className="bg-primary pt-5 pb-16 lg:w-1/2">
           <div className="flex justify-between px-5 pt-5 pb-7 lg:mb-20">
-            <div>
+            <Link
+              href="#"
+              onClick={e => {
+                e.preventDefault()
+                window.history.back()
+              }}
+            >
               <IoArrowBackOutline className="text-3xl text-customWhite md:text-6xl lg:text-5xl" />
-            </div>
-            <div>
-              <IoShareOutline className="text-3xl text-customWhite mr-5 md:text-6xl lg:text-5xl" />
+            </Link>
+            <div className="flex">
+              <ShareModal />
+
+
               {/* Ikona serca z obsługą kliknięcia */}
               {isFavorite ? (
                 <IoHeart
