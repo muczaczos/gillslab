@@ -24,6 +24,10 @@ export const PRODUCT = `
         shortInfo2
         shortInfo3
         shortInfo4
+        icons { 
+          iconLibrary
+          iconName
+        }
         price
         weight
         media1 {

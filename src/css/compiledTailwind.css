@@ -1424,11 +1424,6 @@
   background-color: rgb(247 249 251 / var(--tw-bg-opacity)) !important;
 }
 
-.hover\:bg-secondary:hover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(172 73 104 / var(--tw-bg-opacity)) !important;
-}
-
 .hover\:bg-primary-dark:hover {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(56 84 144 / var(--tw-bg-opacity)) !important;

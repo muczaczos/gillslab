@@ -91,6 +91,31 @@ const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: 'icons', // Pole do przechowywania listy ikon
+      type: 'array',
+      label: 'Icons',
+      fields: [
+        {
+          name: 'iconLibrary',
+          type: 'select',
+          options: [
+            { label: 'Game Icons', value: 'gi' },
+            { label: 'Ion Icons', value: 'io5' },
+            { label: 'Line Awesome', value: 'lia' },
+            { label: 'Tabler Icons', value: 'tb' },
+          ],
+          required: true,
+          label: 'Icon Library',
+        },
+        {
+          name: 'iconName',
+          type: 'text',
+          label: 'Icon Name',
+          required: true,
+        },
+      ],
+    },
+    {
       name: 'price',
       type: 'text',
       required: true,

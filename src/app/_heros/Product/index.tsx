@@ -5,7 +5,9 @@ import { GiWateringCan, GiWeight } from 'react-icons/gi'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 import { LiaTemperatureLowSolid } from 'react-icons/lia'
 import { TbSunOff } from 'react-icons/tb'
+import { GiPressureCooker } from "react-icons/gi";
 import Image from 'next/image'
+import DynamicIcon from '../../_components/DaynamicIcon'
 
 import { Product } from '../../../payload/payload-types'
 import { AddToCartButton } from '../../_components/AddToCartButton'
@@ -52,6 +54,10 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
     images.push(media3['url'])
   }
 
+  const categoryIcons = [ { growkits: [GiWateringCan, LiaTemperatureLowSolid, GiWeight, TbSunOff]}, 
+{ spores: [] } ]
+  
+
   // Sprawdź, czy istnieje layout w produkcie, aby uniknąć błędów w czasie wykonania
   if (product.layout) {
     // Iteruj przez każdy element w layout
@@ -93,7 +99,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
       setIsFavorite(true)
     }
   }
-
+console.log(product)
   return (
     <>
       <div className="lg:flex">
@@ -111,7 +117,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             </Link>
             <div className="flex">
               <ShareModal />
-
 
               {/* Ikona serca z obsługą kliknięcia */}
               {isFavorite ? (
@@ -150,7 +155,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <h3 className="text-primary text-2xl md:text-4xl">{title}</h3>
           <p className="text-primary-light text-xl md:text-2xl">{title2}</p>
 
-          {/* In stock and price */}
+          {/* In stock and short text */}
           <div className={classes.categoryWrapper}>
             <p className="text-green-700 text-md font-bold md:text-xl">In stock</p>
           </div>
@@ -158,31 +163,57 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             className="mb-10 text-lg text-customGray-dark font-medium md:text-2xl"
             content={productDescription.richText}
           />
+
+          {/* Short info for mobile */}
           <div className="lg:hidden">
             <SmallCarousel links={null} icons={icons} catLabels={infoLabels} images={null} />
           </div>
+
+          {/* Short info for desktop */}
           <div className="hidden lg:flex lg:flex-col lg:gap-5 xxl:flex-row xxl:gap-0 justify-center pb-10 2xl:pb-28">
             <div className="flex justify-center">
               <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
-                <GiWateringCan size={50} color="#4968AC" />
-                <h3 className="text-xs text-primary opacity-70 md:text-lg">"Watering needed"</h3>
+                <DynamicIcon
+                  library={product.icons[0].iconLibrary}
+                  name={product.icons[0].iconName}
+                  size={50}
+                  color="#4968AC"
+                />
+                <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo1}</h3>
               </div>
               <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
-                <GiWateringCan size={50} color="#4968AC" />
-                <h3 className="text-xs text-primary opacity-70 md:text-lg">"Watering needed"</h3>
+                <DynamicIcon
+                  library={product.icons[1].iconLibrary}
+                  name={product.icons[1].iconName}
+                  size={50}
+                  color="#4968AC"
+                />
+                <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo2}</h3>
               </div>
             </div>
             <div className="flex justify-center">
               <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
-                <GiWateringCan size={50} color="#4968AC" />
-                <h3 className="text-xs text-primary opacity-70 md:text-lg">"Watering needed"</h3>
+                <DynamicIcon
+                  library={product.icons[2].iconLibrary}
+                  name={product.icons[2].iconName}
+                  size={50}
+                  color="#4968AC"
+                />
+                <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo3}</h3>
               </div>
               <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
-                <GiWateringCan size={50} color="#4968AC" />
-                <h3 className="text-xs text-primary opacity-70 md:text-lg">"Watering needed"</h3>
+                <DynamicIcon
+                  library={product.icons[3].iconLibrary}
+                  name={product.icons[3].iconName}
+                  size={50}
+                  color="#4968AC"
+                />
+                <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo4}</h3>
               </div>
             </div>
           </div>
+          
+          {/* Price and add to cart button */}
           <div className="mt-5 flex justify-between items-center pb-5">
             <p className="text-primary text-5xl font-medium md:text-8xl lg:text-6xl">{`€${price}`}</p>
             <AddToCartButton
@@ -190,6 +221,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold md:h-24 lg:h-16 lg:px-1"
             />
           </div>
+
         </section>
       </div>
     </>

@@ -678,6 +678,13 @@ export interface Product {
   shortInfo2: string;
   shortInfo3: string;
   shortInfo4: string;
+  icons?:
+    | {
+        iconLibrary: 'gi' | 'io5' | 'lia' | 'tb';
+        iconName: string;
+        id?: string | null;
+      }[]
+    | null;
   price: string;
   weight: number;
   media1?: string | Media | null;
