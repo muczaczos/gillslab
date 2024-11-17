@@ -170,9 +170,9 @@ console.log(product)
           </div>
 
           {/* Short info for desktop */}
-          <div className="hidden lg:flex lg:flex-col lg:gap-5 xxl:flex-row xxl:gap-0 justify-center pb-10 2xl:pb-28">
-            <div className="flex justify-center">
-              <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+          <div className="hidden lg:flex lg:flex-col lg:gap-5 xxl:flex-row xxl:gap-0 justify-center pb-10 2xl:pb-28 ">
+            <div className="flex w-full">
+              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
                 <DynamicIcon
                   library={product.icons[0].iconLibrary}
                   name={product.icons[0].iconName}
@@ -181,7 +181,7 @@ console.log(product)
                 />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo1}</h3>
               </div>
-              <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
                 <DynamicIcon
                   library={product.icons[1].iconLibrary}
                   name={product.icons[1].iconName}
@@ -191,8 +191,8 @@ console.log(product)
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo2}</h3>
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+            <div className="flex justify-center w-full">
+              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
                 <DynamicIcon
                   library={product.icons[2].iconLibrary}
                   name={product.icons[2].iconName}
@@ -201,7 +201,7 @@ console.log(product)
                 />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo3}</h3>
               </div>
-              <div className="ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] min-w-[45%] 2xl:min-w-[40%] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
                 <DynamicIcon
                   library={product.icons[3].iconLibrary}
                   name={product.icons[3].iconName}

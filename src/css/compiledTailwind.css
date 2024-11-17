@@ -466,6 +466,10 @@
   width: 100% !important;
 }
 
+.w-\[200px\] {
+  width: 200px !important;
+}
+
 .min-w-\[45\%\] {
   min-width: 45% !important;
 }
@@ -2076,12 +2080,32 @@
     width: 2000px !important;
   }
 
+  .xxl\:min-w-\[30\%\] {
+    min-width: 30% !important;
+  }
+
+  .xxl\:min-w-\[300px\] {
+    min-width: 300px !important;
+  }
+
+  .xxl\:min-w-\[50\%\] {
+    min-width: 50% !important;
+  }
+
+  .xxl\:min-w-\[100\%\] {
+    min-width: 100% !important;
+  }
+
   .xxl\:flex-row {
     flex-direction: row !important;
   }
 
   .xxl\:gap-0 {
     gap: 0px !important;
+  }
+
+  .xxl\:gap-5 {
+    gap: 1.25rem !important;
   }
 
   .xxl\:pt-20 {
