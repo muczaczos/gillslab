@@ -130,6 +130,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
             {/* Druga kolumna */}
           </section>
+          {/* /////////// */}
 
           {/* Desktokp Hero */}
           <div className="bg-customWhite md:flex md:justify-center">
@@ -175,6 +176,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </section>
           </div>
+          {/* /////////// */}
 
           {/* horizontal carousel for mobile*/}
           <section id="start2" className="block md:hidden bg-customWhite py-4 pb-7">
@@ -183,6 +185,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </Gutter>
             <SmallCarousel icons={null} links={links} catLabels={catLabels} images={images} />
           </section>
+          {/* /////////// */}
 
           {/* horizontal menu for desktop*/}
           <section className="w-full hidden md:block bg-customWhite pb-20 py-5">
@@ -280,6 +283,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </div>
           </section>
+          {/* /////////// */}
 
           {/* Banners */}
           <div className="px-5 xl:px-10 bg-customWhite md:flex md:justify-center">
@@ -339,6 +343,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </Link>
             </div>
           </section>
+          {/* /////////// */}
 
           {/* Best producst */}
           <section className="w-full bg-customWhite py-4 md:pb-20">
@@ -419,6 +424,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
               </div>
             </div>
           </section>
+          {/* /////////// */}
 
           {/* news on blog and vlog */}
           <section className={`${classes.blogvlog} pt-10`}>
@@ -442,6 +448,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
             </Gutter>
             <NewsCarousel catLabels={null} images={images2} />
           </section>
+          {/* /////////// */}
         </>
       ) : (
         <>

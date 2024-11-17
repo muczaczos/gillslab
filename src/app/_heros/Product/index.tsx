@@ -30,6 +30,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
     shortInfo2,
     shortInfo3,
     shortInfo4,
+    icons,
     categories,
     price,
     media1,
@@ -41,7 +42,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   let productDetails
   let productFaq
   const images = []
-  const icons = [GiWateringCan, LiaTemperatureLowSolid, GiWeight, TbSunOff]
   const infoLabels = [shortInfo1, shortInfo2, shortInfo3, shortInfo4]
 
   if (media1) {
@@ -53,9 +53,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   if (media3) {
     images.push(media3['url'])
   }
-
-  const categoryIcons = [ { growkits: [GiWateringCan, LiaTemperatureLowSolid, GiWeight, TbSunOff]}, 
-{ spores: [] } ]
   
 
   // Sprawdź, czy istnieje layout w produkcie, aby uniknąć błędów w czasie wykonania
@@ -74,6 +71,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
 
   const websiteUrl = process.env.NEXT_PUBLIC_SERVER_URL
 
+  //********************************************* */
   // Stan do zarządzania ulubionymi
   const [isFavorite, setIsFavorite] = useState(false)
 
@@ -99,10 +97,12 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
       setIsFavorite(true)
     }
   }
-console.log(product)
+  //********************************************* */
+
   return (
     <>
       <div className="lg:flex">
+
         {/* main image with buttons */}
         <section className="bg-primary pt-5 pb-16 lg:w-1/2">
           <div className="flex justify-between px-5 pt-5 pb-7 lg:mb-20">
@@ -144,11 +144,13 @@ console.log(product)
             </div>
           </div>
         </section>
+        {/* /////////////////////// */}
 
         {/* hr */}
         <div className="lg:hidden bg-customWhite pt-5 pb-3 md:pt-10 md:pb-8">
           <hr className="border-l-gray-100 w-1/3 opacity-30 py-0 my-0" />
         </div>
+        {/* /////////////////////// */}
 
         {/* titles, short descriptions, price and addToCart button */}
         <section className="px-5 bg-customWhite pb-5 lg:w-1/2 lg:pt-12">
@@ -163,11 +165,13 @@ console.log(product)
             className="mb-10 text-lg text-customGray-dark font-medium md:text-2xl"
             content={productDescription.richText}
           />
+          {/* /////////////////////// */}
 
           {/* Short info for mobile */}
           <div className="lg:hidden">
             <SmallCarousel links={null} icons={icons} catLabels={infoLabels} images={null} />
           </div>
+          {/* /////////////////////// */}
 
           {/* Short info for desktop */}
           <div className="hidden lg:flex lg:flex-col lg:gap-5 xxl:flex-row xxl:gap-0 justify-center pb-10 2xl:pb-28 ">
@@ -212,6 +216,7 @@ console.log(product)
               </div>
             </div>
           </div>
+          {/* /////////////////////// */}
           
           {/* Price and add to cart button */}
           <div className="mt-5 flex justify-between items-center pb-5">
@@ -221,8 +226,11 @@ console.log(product)
               className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold md:h-24 lg:h-16 lg:px-1"
             />
           </div>
+          {/* /////////////////////// */}
 
         </section>
+        {/* /////////////////////// */}
+        
       </div>
     </>
   )

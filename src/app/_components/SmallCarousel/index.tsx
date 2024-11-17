@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from './index.module.scss'
+import DynamicIcon from '../DaynamicIcon'
 
 const SmallCarousel = ({ icons, images, catLabels, links }) => {
   const sliderRef = useRef(null)
@@ -86,11 +87,16 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
           </Link>
         ))}
       {icons &&
-        icons.map((IconComponent, index) => (
+        icons.map((Icon, index) => (
           <Link href={`/${links[index]}`} className="w-full">
             <div className={`${styles.slide} w-[150px] md:w-[200px]`} key={index}>
               {/* Renderowanie ikony */}
-              <IconComponent size={50} color="#4968AC" />
+              <DynamicIcon
+                  library={Icon.iconLibrary}
+                  name={Icon.iconName}
+                  size={50}
+                  color="#4968AC"
+              />
               <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
             </div>
           </Link>
