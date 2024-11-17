@@ -1614,6 +1614,14 @@
     width: 100% !important;
   }
 
+  .md\:w-\[100\%\] {
+    width: 100% !important;
+  }
+
+  .md\:w-\[50\%\] {
+    width: 50% !important;
+  }
+
   .md\:flex-row {
     flex-direction: row !important;
   }

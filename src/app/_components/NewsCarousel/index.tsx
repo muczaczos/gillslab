@@ -92,7 +92,7 @@ const NewsCarousel = ({ images, catLabels }) => {
   return (
     <div className="relative md:flex md:justify-center">
       <div
-        className={`${styles.slider} slider md:w-[85%]`}
+        className={`${styles.slider} slider`}
         ref={sliderRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
