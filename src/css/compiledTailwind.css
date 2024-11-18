@@ -466,8 +466,12 @@
   width: 100% !important;
 }
 
-.w-\[500px\] {
-  width: 500px !important;
+.w-\[200px\] {
+  width: 200px !important;
+}
+
+.min-w-\[45\%\] {
+  min-width: 45% !important;
 }
 
 .max-w-\[1519px\] {
@@ -1606,8 +1610,20 @@
     width: 440px !important;
   }
 
+  .md\:w-\[85\%\] {
+    width: 85% !important;
+  }
+
   .md\:w-full {
     width: 100% !important;
+  }
+
+  .md\:w-\[100\%\] {
+    width: 100% !important;
+  }
+
+  .md\:w-\[50\%\] {
+    width: 50% !important;
   }
 
   .md\:flex-row {
@@ -1991,6 +2007,10 @@
     min-width: 1519px !important;
   }
 
+  .\32xl\:min-w-\[40\%\] {
+    min-width: 40% !important;
+  }
+
   .\32xl\:max-w-\[1536px\] {
     max-width: 1536px !important;
   }
@@ -2072,12 +2092,32 @@
     width: 2000px !important;
   }
 
+  .xxl\:min-w-\[30\%\] {
+    min-width: 30% !important;
+  }
+
+  .xxl\:min-w-\[300px\] {
+    min-width: 300px !important;
+  }
+
+  .xxl\:min-w-\[50\%\] {
+    min-width: 50% !important;
+  }
+
+  .xxl\:min-w-\[100\%\] {
+    min-width: 100% !important;
+  }
+
   .xxl\:flex-row {
     flex-direction: row !important;
   }
 
   .xxl\:gap-0 {
     gap: 0px !important;
+  }
+
+  .xxl\:gap-5 {
+    gap: 1.25rem !important;
   }
 
   .xxl\:pt-20 {

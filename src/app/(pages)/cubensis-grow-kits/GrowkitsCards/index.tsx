@@ -15,10 +15,7 @@ const GrowkitsCards = ({ pages }) => {
       {pages.map((item, index) => {
         if (!item) return null
 
-        const src = item.meta.image.filename.startsWith('http')
-          ? item.meta.image.filename
-          : `/media/${item.meta.image.filename}`
-
+        const src = item.media1.url
         const href = `/${item.categories[0].slug}/${item.slug}`
         const title = item.title
         const price = item.price
