@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 import styles from './index.module.scss'
 
-const RelatedCarousel = ({ icons, images, catLabels }) => {
+const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
