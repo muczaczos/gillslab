@@ -3,11 +3,9 @@ import Image from 'next/image'
 
 import classes from './index.module.scss'
 
-const ProductGallery = () => {
+const ProductGallery = ({ product }) => {
   // State do przechowywania aktualnie wybranego obrazka
-  const [selectedImage, setSelectedImage] = useState(
-    process.env.NEXT_PUBLIC_SERVER_URL + '/media/gtLabel.png',
-  )
+  const [selectedImage, setSelectedImage] = useState(product.media1.url)
 
   // State do kontrolowania widoczności modala
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -23,11 +21,6 @@ const ProductGallery = () => {
   }
 
   // Obrazy do galerii
-  const images = [
-    process.env.NEXT_PUBLIC_SERVER_URL + '/media/gtLabel.png',
-    process.env.NEXT_PUBLIC_SERVER_URL + '/media/mckLabel.png', // Dodaj inne obrazy jeśli masz
-    process.env.NEXT_PUBLIC_SERVER_URL + '/media/gtLabel.png',
-  ]
 
   return (
     <div className="pt-20 bg-customWhite lg:w-1/2 lg:pt-0">
@@ -52,17 +45,30 @@ const ProductGallery = () => {
 
           {/* Małe obrazki po prawej */}
           <div className="flex flex-col gap-4 justify-center">
-            {images.map((image, index) => (
-              <Image
-                key={index}
-                src={image}
-                alt={`Image ${index + 1}`}
-                width="75"
-                height="75"
-                className="rounded-lg shadow-md cursor-pointer"
-                onClick={() => setSelectedImage(image)} // Zmieniamy obrazek po lewej po kliknięciu
-              />
-            ))}
+            <Image
+              src={product.media1.url}
+              alt={product.media1.alt}
+              width="75"
+              height="75"
+              className="rounded-lg shadow-md cursor-pointer"
+              onClick={() => setSelectedImage(product.media1.url)} // Zmieniamy obrazek po lewej po kliknięciu
+            />
+            <Image
+              src={product.media2.url}
+              alt={product.media2.alt}
+              width="75"
+              height="75"
+              className="rounded-lg shadow-md cursor-pointer"
+              onClick={() => setSelectedImage(product.media2.url)} // Zmieniamy obrazek po lewej po kliknięciu
+            />
+            <Image
+              src={product.media3.url}
+              alt={product.media3.alt}
+              width="75"
+              height="75"
+              className="rounded-lg shadow-md cursor-pointer"
+              onClick={() => setSelectedImage(product.media3.url)} // Zmieniamy obrazek po lewej po kliknięciu
+            />
           </div>
 
           {/* Modal do wyświetlenia powiększonego obrazka */}

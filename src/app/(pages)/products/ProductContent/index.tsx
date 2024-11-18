@@ -39,7 +39,7 @@ export const ProductContent: React.FC<{
       <div className={`mt-[-2.25rem] md:mt-0 `}>
         <div className="lg:flex lg:justify-between lg:w-full">
           {/*Gallery */}
-          <ProductGallery />
+          <ProductGallery product={product} />
 
           {/*Details and FAQ */}
           <section className={` pl-5 ${classes.contentGradient} lg:w-1/2 `}>

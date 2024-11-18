@@ -53,7 +53,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   if (media3) {
     images.push(media3['url'])
   }
-  
+
 
   // Sprawdź, czy istnieje layout w produkcie, aby uniknąć błędów w czasie wykonania
   if (product.layout) {
@@ -133,13 +133,13 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <div className="w-1/2 sm:w-3/4">
+            <div className="sm:w-full">
               <Image
                 alt="Product Image"
-                src={`${websiteUrl}/media/gtLabel.png`}
+                src={product.media1.url}
                 height="300"
-                width="400"
-                className="mb-5 mx-auto bg-customWhite"
+                width="500"
+                className="mb-5 mx-auto"
               />
             </div>
           </div>
@@ -217,7 +217,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             </div>
           </div>
           {/* /////////////////////// */}
-          
+
           {/* Price and add to cart button */}
           <div className="mt-5 flex justify-between items-center pb-5">
             <p className="text-primary text-5xl font-medium md:text-8xl lg:text-6xl">{`€${price}`}</p>
@@ -230,7 +230,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
 
         </section>
         {/* /////////////////////// */}
-        
+
       </div>
     </>
   )

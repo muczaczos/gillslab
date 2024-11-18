@@ -466,6 +466,10 @@
   width: 100% !important;
 }
 
+.w-\[500px\] {
+  width: 500px !important;
+}
+
 .max-w-\[1519px\] {
   max-width: 1519px !important;
 }
@@ -1520,6 +1524,10 @@
 
   .sm\:w-\[7rem\] {
     width: 7rem !important;
+  }
+
+  .sm\:w-full {
+    width: 100% !important;
   }
 
   .sm\:flex-row {
