@@ -5,6 +5,7 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 import Image from 'next/image'
 
 import styles from './index.module.scss'
+import Link from 'next/link'
 
 const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   const sliderRef = useRef(null)
@@ -20,24 +21,6 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
       slider.scrollLeft = slideWidth / 2 // Ustawienie początkowego przesunięcia przy montowaniu komponentu
     }
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
-
-  const handleMouseMove = event => {
-    if (!isDown) return
-    event.preventDefault()
-    const slider = sliderRef.current
-    const x = event.pageX - slider.offsetLeft
-    const walk = x - startX
-    slider.scrollLeft = scrollLeft - walk
-  }
-
-  const handleTouchMove = event => {
-    if (!isDown) return
-    event.preventDefault()
-    const slider = sliderRef.current
-    const x = event.touches[0].pageX - slider.offsetLeft
-    const walk = x - startX
-    slider.scrollLeft = scrollLeft - walk
-  }
 
   const handleMouseDown = event => {
     const slider = sliderRef.current
@@ -90,6 +73,10 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
     }
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
+  const { relatedProducts } = product
+  console.log(product.relatedProducts[0])
+ // console.log(product.relatedProducts.categories)
+
   return (
     <div className="relative md:flex md:justify-center">
       <div
@@ -101,15 +88,16 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {images &&
-          images.map((image, index) => (
+        {product.relatedProducts &&
+          product.relatedProducts.map((related, index) => (
+            <Link href={`/${related.categories[0].slug}/${related.slug}`}>
             <div className={styles.slide} key={index}>
               <div className="flex justify-end lg:pb-5">
                 <FaRegHeart className="text-primary text-xl lg:text-4xl" />
               </div>
               <div className="flex justify-center mt-1 mb-3 lg:mb-10">
                 <Image
-                  src={image}
+                  src={``}
                   alt={`Slide ${index}`}
                   width={80}
                   height={100}
@@ -121,6 +109,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
               </p>
               <p className="text-lg text-primary lg:text-2xl lg:ml-5">$40</p>
             </div>
+            </Link>
           ))}
         <div className="flex-shrink-0 w-[100px]"></div>
         <IoIosArrowDropleftCircle

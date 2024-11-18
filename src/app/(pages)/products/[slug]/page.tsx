@@ -41,7 +41,6 @@ export default async function Products({ params: { slug } }) {
 
   const { relatedProducts } = product
 
-  console.log(JSON.stringify(relatedProducts, null, 2));
   if (product.layout) {
     // Iteruj przez każdy element w layout
     product.layout.forEach(layoutItem => {
@@ -62,7 +61,7 @@ export default async function Products({ params: { slug } }) {
     <LayoutWithNoHeaderAndFooter>
       <ProductHero product={product} />
       <ProductContent product={product} />
-      <RelatedMovies />
+      <RelatedMovies product={product}/>
     </LayoutWithNoHeaderAndFooter>
   )
 }
