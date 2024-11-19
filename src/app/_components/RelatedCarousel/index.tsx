@@ -75,9 +75,6 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
 
   const { relatedProducts } = product
 
-
-  console.log(product.relatedProducts[1].title)
-
   return (
     <div className="relative md:flex md:justify-center">
       <div
@@ -116,15 +113,15 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
             </Link>
           ))}
         <div className="flex-shrink-0 w-[100px]"></div>
-        <IoIosArrowDropleftCircle
-          className="z-50 absolute left-0 text-7xl top-1/2 text-customWhite  bg-primary rounded-full  transform -translate-y-1/2 p-0 hidden md:block"
-          onClick={handlePrev}
-        />
-        <IoIosArrowDroprightCircle
-          className="z-50 absolute right-0 top-1/2 transform -translate-y-1/2 text-7xl text-customWhite bg-primary rounded-full p-0 hidden md:block"
-          onClick={handleNext}
-        />
       </div>
+      <IoIosArrowDropleftCircle
+        className="z-50 absolute left-0 text-7xl top-1/2 text-customWhite  bg-primary rounded-full  transform -translate-y-1/2 p-0 hidden md:block"
+        onClick={handlePrev}
+      />
+      <IoIosArrowDroprightCircle
+        className="z-50 absolute right-0 top-1/2 transform -translate-y-1/2 text-7xl text-customWhite bg-primary rounded-full p-0 hidden md:block"
+        onClick={handleNext}
+      />
     </div>
   )
 }

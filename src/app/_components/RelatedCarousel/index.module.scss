@@ -7,9 +7,7 @@
   scrollbar-width: none; /* Hides scrollbar on Firefox */
   margin: 0; /* Remove any default margin */
   padding-bottom: 1rem; /* Remove any default padding */
-  @media (min-width:1536px) {
-    width: 1536px;
-  }
+
 }
 
 .slider::-webkit-scrollbar {
