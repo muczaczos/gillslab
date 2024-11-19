@@ -338,6 +338,10 @@
   display: none !important;
 }
 
+.aspect-\[5\/1\] {
+  aspect-ratio: 5/1 !important;
+}
+
 .h-1 {
   height: 0.25rem !important;
 }
@@ -392,6 +396,18 @@
 
 .h-full {
   height: 100% !important;
+}
+
+.h-60 {
+  height: 15rem !important;
+}
+
+.h-\[170px\] {
+  height: 170px !important;
+}
+
+.h-\[68px\] {
+  height: 68px !important;
 }
 
 .max-h-full {
@@ -466,12 +482,16 @@
   width: 100% !important;
 }
 
-.w-\[200px\] {
-  width: 200px !important;
+.w-\[600px\] {
+  width: 600px !important;
 }
 
-.min-w-\[45\%\] {
-  min-width: 45% !important;
+.w-\[500px\] {
+  width: 500px !important;
+}
+
+.w-\[200px\] {
+  width: 200px !important;
 }
 
 .max-w-\[1519px\] {
@@ -1514,10 +1534,6 @@
     height: 600px !important;
   }
 
-  .sm\:w-3\/4 {
-    width: 75% !important;
-  }
-
   .sm\:w-\[14rem\] {
     width: 14rem !important;
   }
@@ -1532,6 +1548,10 @@
 
   .sm\:w-full {
     width: 100% !important;
+  }
+
+  .sm\:w-64 {
+    width: 16rem !important;
   }
 
   .sm\:flex-row {
@@ -1610,20 +1630,12 @@
     width: 440px !important;
   }
 
-  .md\:w-\[85\%\] {
-    width: 85% !important;
-  }
-
   .md\:w-full {
     width: 100% !important;
   }
 
-  .md\:w-\[100\%\] {
-    width: 100% !important;
-  }
-
-  .md\:w-\[50\%\] {
-    width: 50% !important;
+  .md\:w-80 {
+    width: 20rem !important;
   }
 
   .md\:flex-row {
@@ -1780,6 +1792,10 @@
     height: 4rem !important;
   }
 
+  .lg\:h-\[170px\] {
+    height: 170px !important;
+  }
+
   .lg\:w-1\/2 {
     width: 50% !important;
   }
@@ -1798,6 +1814,14 @@
 
   .lg\:w-full {
     width: 100% !important;
+  }
+
+  .lg\:w-96 {
+    width: 24rem !important;
+  }
+
+  .lg\:w-\[500px\] {
+    width: 500px !important;
   }
 
   .lg\:max-w-\[1024px\] {
@@ -2007,10 +2031,6 @@
     min-width: 1519px !important;
   }
 
-  .\32xl\:min-w-\[40\%\] {
-    min-width: 40% !important;
-  }
-
   .\32xl\:max-w-\[1536px\] {
     max-width: 1536px !important;
   }
@@ -2092,32 +2112,12 @@
     width: 2000px !important;
   }
 
-  .xxl\:min-w-\[30\%\] {
-    min-width: 30% !important;
-  }
-
-  .xxl\:min-w-\[300px\] {
-    min-width: 300px !important;
-  }
-
-  .xxl\:min-w-\[50\%\] {
-    min-width: 50% !important;
-  }
-
-  .xxl\:min-w-\[100\%\] {
-    min-width: 100% !important;
-  }
-
   .xxl\:flex-row {
     flex-direction: row !important;
   }
 
   .xxl\:gap-0 {
     gap: 0px !important;
-  }
-
-  .xxl\:gap-5 {
-    gap: 1.25rem !important;
   }
 
   .xxl\:pt-20 {

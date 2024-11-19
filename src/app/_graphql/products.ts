@@ -62,6 +62,9 @@ export const PRODUCT = `
           id
           slug
           title
+          media1 {
+            url
+          }
           categories {
             slug
           }

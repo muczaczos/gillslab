@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { FaRegHeart } from 'react-icons/fa'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from './index.module.scss'
-import Link from 'next/link'
 
 const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   const sliderRef = useRef(null)
@@ -74,8 +74,9 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
   const { relatedProducts } = product
-  console.log(product.relatedProducts[0])
- // console.log(product.relatedProducts.categories)
+
+
+  console.log(product.relatedProducts[1].title)
 
   return (
     <div className="relative md:flex md:justify-center">
@@ -91,24 +92,27 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
         {product.relatedProducts &&
           product.relatedProducts.map((related, index) => (
             <Link href={`/${related.categories[0].slug}/${related.slug}`}>
-            <div className={styles.slide} key={index}>
-              <div className="flex justify-end lg:pb-5">
-                <FaRegHeart className="text-primary text-xl lg:text-4xl" />
+              <div className={styles.slide} key={index}>
+                <div className="flex justify-end lg:pb-5">
+                  <FaRegHeart className="text-primary text-xl lg:text-4xl" />
+                </div>
+                <div
+                  className="flex justify-center items-center mt-1 mb-3 
+                   w-[200px] h-[68px] lg:w-[500px] lg:h-[170px]"
+                >
+                  <Image
+                    src={`${related.media1.url}`}
+                    alt={`Slide ${index}`}
+                    width={500}
+                    height={120}
+                    className="object-contain"
+                  />
+                </div>
+
+                <p className="mt-5 text-lg font-bold text-primary leading-3 lg:text-3xl">
+                  {related.title}
+                </p>
               </div>
-              <div className="flex justify-center mt-1 mb-3 lg:mb-10">
-                <Image
-                  src={``}
-                  alt={`Slide ${index}`}
-                  width={80}
-                  height={100}
-                  className="lg:w-1/2"
-                />
-              </div>
-              <p className="mt-5 text-lg font-bold text-primary leading-3 lg:text-3xl lg:ml-5">
-                {catLabels[index]}
-              </p>
-              <p className="text-lg text-primary lg:text-2xl lg:ml-5">$40</p>
-            </div>
             </Link>
           ))}
         <div className="flex-shrink-0 w-[100px]"></div>

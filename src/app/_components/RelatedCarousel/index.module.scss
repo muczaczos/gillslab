@@ -29,19 +29,13 @@
   background-color: #F4F6FB;
   justify-content: center;
   align-items: center;
-  min-width: 45%; /* Ensures each slide takes full width */
-  min-height: 13rem;
   transition: transform 0.3s ease-in-out;
   border-radius: 1rem;
   border: 2px solid #4968AC;
 
   @media (max-width: 380px) {
-      min-width: 45%;  // Na najmniejszych ekranach slajd zajmuje pełną szerokość ekranu
-      min-height: 10rem;
   }
   @media (min-width: 1260px) {
-    min-width: 30%;  // Na najmniejszych ekranach slajd zajmuje pełną szerokość ekranu
-    min-height: 10rem;
 }
 }
 
