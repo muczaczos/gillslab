@@ -45,6 +45,13 @@ const richText: RichText = (
                 }),
               },
               {
+                type: 'upload',
+                name: 'file',
+                relationTo: 'media', // Ensure this relates to the media collection
+                label: 'Upload Image',
+                required: true,
+              },
+              {
                 type: 'radio',
                 name: 'alignment',
                 label: 'Alignment',
