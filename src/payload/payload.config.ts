@@ -197,6 +197,7 @@ export default buildConfig({
     },
   ],
   plugins: [
+    payloadCloud(),
     stripePlugin({
       stripeSecretKey: process.env.STRIPE_SECRET_KEY || '',
       isTestKey: Boolean(process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY),
