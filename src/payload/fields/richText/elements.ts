@@ -15,6 +15,7 @@ const elements: RichTextElement[] = [
   'ul',
   'link',
   'upload',
+  'textAlign', // Dodanie justowania
   largeBody,
   label,
 ]

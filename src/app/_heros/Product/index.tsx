@@ -1,24 +1,23 @@
 'use client'
 
 import React, { Fragment, useEffect, useState } from 'react'
-import { GiWateringCan, GiWeight } from 'react-icons/gi'
+import { GiPressureCooker, GiWateringCan, GiWeight } from 'react-icons/gi'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 import { LiaTemperatureLowSolid } from 'react-icons/lia'
 import { TbSunOff } from 'react-icons/tb'
-import { GiPressureCooker } from "react-icons/gi";
 import Image from 'next/image'
-import DynamicIcon from '../../_components/DaynamicIcon'
+import Link from 'next/link'
 
 import { Product } from '../../../payload/payload-types'
 import { AddToCartButton } from '../../_components/AddToCartButton'
+import DynamicIcon from '../../_components/DaynamicIcon'
 import RichText from '../../_components/RichText'
+import ShareModal from '../../_components/ShareModal'
 import SmallCarousel from '../../_components/SmallCarousel'
 
 import 'react-tabs/style/react-tabs.css'
 
 import classes from './index.module.scss'
-import Link from 'next/link'
-import ShareModal from '../../_components/ShareModal'
 
 export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
@@ -53,7 +52,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   if (media3) {
     images.push(media3['url'])
   }
-
 
   // Sprawdź, czy istnieje layout w produkcie, aby uniknąć błędów w czasie wykonania
   if (product.layout) {
@@ -102,7 +100,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <>
       <div className="lg:flex">
-
         {/* main image with buttons */}
         <section className="bg-primary pt-5 pb-16 lg:w-1/2">
           <div className="flex justify-between px-5 pt-5 pb-7 lg:mb-20">
@@ -227,10 +224,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             />
           </div>
           {/* /////////////////////// */}
-
         </section>
         {/* /////////////////////// */}
-
       </div>
     </>
   )

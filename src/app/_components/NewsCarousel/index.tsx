@@ -101,7 +101,7 @@ const NewsCarousel = ({ images, catLabels }) => {
         onTouchEnd={handleTouchEnd}
       >
         {images.map((image, index) => (
-          <div className={`${styles.slide} slide z-10`} key={index}>
+          <div key={index} className={`${styles.slide} slide z-10`}>
             <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
               <div className="p-4">
                 <div className="w-full rounded-xl overflow-hidden">

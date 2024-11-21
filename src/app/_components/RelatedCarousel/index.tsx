@@ -88,7 +88,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
       >
         {product.relatedProducts &&
           product.relatedProducts.map((related, index) => (
-            <Link href={`/${related.categories[0].slug}/${related.slug}`}>
+            <Link key={index} href={`/${related.categories[0].slug}/${related.slug}`}>
               <div className={styles.slide} key={index}>
                 <div className="flex justify-end lg:pb-5">
                   <FaRegHeart className="text-primary text-xl lg:text-4xl" />

@@ -3,8 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import styles from './index.module.scss'
 import DynamicIcon from '../DaynamicIcon'
+
+import styles from './index.module.scss'
 
 const SmallCarousel = ({ icons, images, catLabels, links }) => {
   const sliderRef = useRef(null)
@@ -79,7 +80,7 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
     >
       {images &&
         images.map((image, index) => (
-          <Link href={`/${links[index]}`}>
+          <Link key={index} href={`/${links[index]}`}>
             <div className={`${styles.slide} w-[150px] md:w-[200px]`} key={index}>
               <Image src={image} alt={`Slide ${index}`} width={80} height={100} />
               <h3 className="text-xl text-primary opacity-70">{catLabels[index]}</h3>
@@ -88,14 +89,14 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
         ))}
       {icons &&
         icons.map((Icon, index) => (
-          <Link href={`/${links[index]}`} className="w-full">
+          <Link key={index} href={`/${links[index]}`} className="w-full">
             <div className={`${styles.slide} w-[150px] md:w-[200px]`} key={index}>
               {/* Renderowanie ikony */}
               <DynamicIcon
-                  library={Icon.iconLibrary}
-                  name={Icon.iconName}
-                  size={50}
-                  color="#4968AC"
+                library={Icon.iconLibrary}
+                name={Icon.iconName}
+                size={50}
+                color="#4968AC"
               />
               <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
             </div>
