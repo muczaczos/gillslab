@@ -75,12 +75,12 @@ const HeaderComponent = ({ header }: { header: Header }) => {
                       <p className="text-customWhite group-hover:text-primary-dark">Cultures</p>
                     </li>
                   </Link>
-                  <Link href="/laboratory-equipment">
+                  <Link href="/laboratory-equipments">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Laboratory</p>
                     </li>
                   </Link>
-                  <Link href="/Substrates">
+                  <Link href="/substrates">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Substrates</p>
                     </li>
