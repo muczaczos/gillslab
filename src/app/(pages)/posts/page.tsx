@@ -46,18 +46,18 @@ const Posts = async () => {
   return (
     <LayoutWithHeaderFooter>
       <Gutter>
-        <div className={classes.imageTitle}>
-          <Image alt="Planet of mushrooms" src="/media/earth-1.jpg" height="500" width="500" />
-          <h2 className={classes.title}>Nice to see you on our blog... 🙋‍♂️</h2>
-        </div>
-        <p className={classes.heroText}>
+      <div className="w-full flex flex-col mt-10 mb-2">
+        <h1 className="text-primary font-medium">Blog</h1>
+        <h2 className="text-primary-light font-normal text-2xl">Discover new articles</h2>
+      </div>
+        <p className="text-xl">
           You can find here many informations about mushrooms and their cultivating. Master the art
           of mushrooms cultivation for a bountiful harvest. 🍄 Change your planet to
           planet-of-mushrooms.com 🌎
         </p>
-        <div className={classes.gap}></div>
+        <div className="p-2"></div>
         <PostsCards posts={posts} pages={pages} />
-        <HR />
+        <div className="mb-40"></div>
       </Gutter>
     </LayoutWithHeaderFooter>
   )

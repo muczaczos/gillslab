@@ -322,6 +322,14 @@
   margin-top: 6px !important;
 }
 
+.mb-14 {
+  margin-bottom: 3.5rem !important;
+}
+
+.mb-40 {
+  margin-bottom: 10rem !important;
+}
+
 .block {
   display: block !important;
 }
@@ -641,6 +649,14 @@
   gap: 2rem !important;
 }
 
+.gap-1 {
+  gap: 0.25rem !important;
+}
+
+.gap-\[1px\] {
+  gap: 1px !important;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0 !important;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse)) !important;
@@ -921,6 +937,10 @@
   padding: 1.5rem !important;
 }
 
+.p-1 {
+  padding: 0.25rem !important;
+}
+
 .px-10 {
   padding-left: 2.5rem !important;
   padding-right: 2.5rem !important;
@@ -1102,6 +1122,18 @@
 
 .pt-5 {
   padding-top: 1.25rem !important;
+}
+
+.pr-1 {
+  padding-right: 0.25rem !important;
+}
+
+.pr-4 {
+  padding-right: 1rem !important;
+}
+
+.pl-4 {
+  padding-left: 1rem !important;
 }
 
 .text-left {
@@ -1534,6 +1566,10 @@
     flex-direction: row !important;
   }
 
+  .sm\:items-start {
+    align-items: flex-start !important;
+  }
+
   .sm\:items-center {
     align-items: center !important;
   }
@@ -1550,6 +1586,11 @@
   .sm\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
+  }
+
+  .sm\:text-secondary {
+    --tw-text-opacity: 1 !important;
+    color: rgb(172 73 104 / var(--tw-text-opacity)) !important;
   }
 }
 
