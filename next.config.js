@@ -51,7 +51,7 @@ const nextConfig = {
         destination: '/products/:slug',      // docelowa strona produktu
       },
       {
-        source: '/cubensis-spore-syringe/:slug',          // dla kategorii substrates
+        source: '/cubensis-spore-syringes/:slug',          // dla kategorii substrates
         destination: '/products/:slug',      // docelowa strona produktu
       },
       {
