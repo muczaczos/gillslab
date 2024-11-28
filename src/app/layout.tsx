@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`bg-customWhite ${montserrat.variable}`}>
         <Providers>
           <AdminBar />
-          <main>{children}</main>
+          <main className="bg-customWhite">{children}</main>
           <MobileStickyMenu />
         </Providers>
       </body>

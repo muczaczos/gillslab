@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Page, Post } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
+import { fetchPosts } from '../../_components/FetchPosts'
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
@@ -14,49 +15,22 @@ import PostsCards from './PostsCards'
 import classes from './index.module.scss'
 
 const Posts = async () => {
-  const { isEnabled: isDraftMode } = draftMode()
-  let page: Page | null = null //Page for layout
-  let posts: Post[] | null = null
-
   let pages = []
-  try {
-    //fetch page and categories
-    //1 fetch page with slug 'posts'
-    page = await fetchDoc<Page>({
-      collection: 'pages',
-      slug: 'posts',
-      draft: isDraftMode,
-      /*drafts allow you to build on top of versions functionality
-        to make changes to your collection, documents and globals but
-        publish only when you're ready. It allows you to check out
-        how something is currently working. 
-      */
-    })
-    posts = await fetchDocs<Post>('posts')
-
-    for (let i = 0; i < posts.length; i++) {
-      pages[i] = await fetchDoc<Page>({
-        collection: 'posts',
-        slug: posts[i].slug,
-        draft: isDraftMode,
-      })
-    }
-  } catch (error) { }
-
+  pages = await fetchPosts(1, 2)
   return (
     <LayoutWithHeaderFooter>
-      <div className="mr-2 ml-2">
-        <div className="w-full flex flex-col mt-10 mb-2">
+      <div className="pr-2 pl-2 bg-customWhite w-full md:flex md:flex-col items-center ">
+        <div className="w-full flex flex-col mt-10 mb-2 md:max-w-[1536px]">
           <h1 className="text-primary font-medium">Blog</h1>
           <h2 className="text-primary-light font-normal text-2xl">Discover new articles</h2>
         </div>
-        <p className="text-xl text-customGray-dark">
+        <p className="text-xl text-customGray-dark md:max-w-[1536px]">
           You can find here many informations about mushrooms and their cultivating. Master the art
           of mushrooms cultivation for a bountiful harvest. 🍄 Change your planet to
           planet-of-mushrooms.com 🌎
         </p>
         <div className="p-2"></div>
-        <PostsCards posts={posts} pages={pages} />
+        <PostsCards pages={pages} />
         <div className="mb-40"></div>
       </div>
     </LayoutWithHeaderFooter>

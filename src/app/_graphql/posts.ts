@@ -19,6 +19,7 @@ export const POST = `
       docs {
         id
         title
+        slug
         categories {
           title
         }
