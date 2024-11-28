@@ -9,12 +9,18 @@ import { fetchDocs } from '../../_api/fetchDocs'
 import { fetchPosts } from '../../_components/FetchPosts'
 import { Gutter } from '../../_components/Gutter'
 import { HR } from '../../_components/HR'
+import { Pagination } from '../../_components/Pagination'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import PostsCards from './PostsCards'
 
 import classes from './index.module.scss'
 
 const Posts = async () => {
+
+  const handlePageChange = async (page: number) => {
+    return 'hello'
+  }
+
   let pages = []
   pages = await fetchPosts(1, 2)
   return (
