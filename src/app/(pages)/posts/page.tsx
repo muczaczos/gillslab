@@ -41,16 +41,16 @@ const Posts = async () => {
         draft: isDraftMode,
       })
     }
-  } catch (error) {}
+  } catch (error) { }
 
   return (
     <LayoutWithHeaderFooter>
-      <Gutter>
-      <div className="w-full flex flex-col mt-10 mb-2">
-        <h1 className="text-primary font-medium">Blog</h1>
-        <h2 className="text-primary-light font-normal text-2xl">Discover new articles</h2>
-      </div>
-        <p className="text-xl">
+      <div className="mr-2 ml-2">
+        <div className="w-full flex flex-col mt-10 mb-2">
+          <h1 className="text-primary font-medium">Blog</h1>
+          <h2 className="text-primary-light font-normal text-2xl">Discover new articles</h2>
+        </div>
+        <p className="text-xl text-customGray-dark">
           You can find here many informations about mushrooms and their cultivating. Master the art
           of mushrooms cultivation for a bountiful harvest. 🍄 Change your planet to
           planet-of-mushrooms.com 🌎
@@ -58,7 +58,7 @@ const Posts = async () => {
         <div className="p-2"></div>
         <PostsCards posts={posts} pages={pages} />
         <div className="mb-40"></div>
-      </Gutter>
+      </div>
     </LayoutWithHeaderFooter>
   )
 }
