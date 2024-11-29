@@ -3,12 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // Komponent przyjmujący props 'pages' i opcjonalnie 'posts'
-const PostsCard = ({ pages }) => {
-  if (!pages || pages.length === 0) return null // Sprawdzamy, czy pages istnieje
+const PostsCard = ({ posts }) => {
+  if (!posts || posts.length === 0) return null // Sprawdzamy, czy pages istnieje
 
   return (
     <>
-      {pages.map((item, index) => {
+      {posts.map((item, index) => {
         const src = process.env.NEXT_PUBLIC_SERVER_URL + '/media/' + item.meta.image.filename
         const href = `${process.env.NEXT_PUBLIC_SERVER_URL}/blog/${item.slug}`
         const title = item.title

@@ -1,7 +1,6 @@
 import type { CollectionConfig } from 'payload/types'
 
 import { admins } from '../../access/admins'
-import { adminsOrPublished } from '../../access/adminsOrPublished'
 import { Archive } from '../../blocks/ArchiveBlock'
 import { CallToAction } from '../../blocks/CallToAction'
 import { Content } from '../../blocks/Content'
@@ -13,7 +12,7 @@ import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { populateAuthors } from './hooks/populateAuthors'
 import { revalidatePost } from './hooks/revalidatePost'
 
-export const Posts: CollectionConfig = {
+const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
     useAsTitle: 'title',
@@ -33,7 +32,7 @@ export const Posts: CollectionConfig = {
     drafts: true,
   },
   access: {
-    read: adminsOrPublished,
+    read: () => true,
     update: admins,
     create: admins,
     delete: admins,
@@ -155,3 +154,5 @@ export const Posts: CollectionConfig = {
     slugField(),
   ],
 }
+
+export default Posts

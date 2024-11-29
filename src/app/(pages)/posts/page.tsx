@@ -1,31 +1,49 @@
-import React from 'react'
-import { draftMode } from 'next/headers'
-import Image from 'next/image'
-import Link from 'next/link'
+'use client'
 
-import { Page, Post } from '../../../payload/payload-types'
-import { fetchDoc } from '../../_api/fetchDoc'
-import { fetchDocs } from '../../_api/fetchDocs'
+import React, { useEffect, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+
+import { Post } from '../../../payload/payload-types'
 import { fetchPosts } from '../../_components/FetchPosts'
-import { Gutter } from '../../_components/Gutter'
-import { HR } from '../../_components/HR'
-import { Pagination } from '../../_components/Pagination'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import PostsCards from './PostsCards'
 
 import classes from './index.module.scss'
 
-const Posts = async () => {
+const Posts = () => {
+  const [posts, setPosts] = useState<Post[]>([]) // Tablica postów
+  const [totalPages, setTotalPages] = useState<number>(0) // Liczba stron
+  const [currentPage, setCurrentPage] = useState<number>(1) // Numer aktualnej strony
 
-  const handlePageChange = async (page: number) => {
-    return 'hello'
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  // Funkcja fetchująca posty
+  const getPosts = async (page: number) => {
+    const postsData = await fetchPosts(page, 4) // 4 posty na stronę
+    setPosts(postsData.docs) // Ustawiamy posty
+    setTotalPages(postsData.totalPages) // Ustawiamy liczbę stron
   }
 
-  let pages = []
-  pages = await fetchPosts(1, 2)
+  // Pobranie postów na podstawie query params
+  useEffect(() => {
+    const pageFromUrl = searchParams.get('page')
+    const currentPageNum = pageFromUrl ? parseInt(pageFromUrl, 10) : 1
+    setCurrentPage(currentPageNum)
+    getPosts(currentPageNum)
+  }, [searchParams]) // Zaktualizuj za każdym razem, gdy searchParams się zmienia
+
+  // Funkcja zmieniająca stronę
+  const handlePageChange = (newPage: number) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage) // Zaktualizuj stan
+      router.push(`/blog?page=${newPage}`) // Zaktualizuj URL
+    }
+  }
+
   return (
     <LayoutWithHeaderFooter>
-      <div className="pr-2 pl-2 bg-customWhite w-full md:flex md:flex-col items-center ">
+      <div className="pr-2 pl-2 bg-customWhite w-full md:flex md:flex-col items-center">
         <div className="w-full flex flex-col mt-10 mb-2 md:max-w-[1536px]">
           <h1 className="text-primary font-medium">Blog</h1>
           <h2 className="text-primary-light font-normal text-2xl">Discover new articles</h2>
@@ -36,7 +54,42 @@ const Posts = async () => {
           planet-of-mushrooms.com 🌎
         </p>
         <div className="p-2"></div>
-        <PostsCards pages={pages} />
+        <PostsCards posts={posts} />
+
+        {/* Paginacja */}
+        <div className="pagination">
+          {/* Przycisk do pierwszej strony */}
+          <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}>
+            First
+          </button>
+
+          {/* Przycisk do poprzedniej strony */}
+          <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+            Previous
+          </button>
+
+          {/* Linki do stron */}
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+
+          {/* Przycisk do następnej strony */}
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+
+          {/* Przycisk do ostatniej strony */}
+          <button
+            onClick={() => handlePageChange(totalPages)}
+            disabled={currentPage === totalPages}
+          >
+            Last
+          </button>
+        </div>
+
         <div className="mb-40"></div>
       </div>
     </LayoutWithHeaderFooter>
