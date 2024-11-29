@@ -8,13 +8,12 @@ import { fetchPosts } from '../../_components/FetchPosts'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import PostsCards from './PostsCards'
 
-import classes from './index.module.scss'
-
 const Posts = () => {
   const [posts, setPosts] = useState<Post[]>([]) // Tablica postów
   const [totalPages, setTotalPages] = useState<number>(0) // Liczba stron
   const [currentPage, setCurrentPage] = useState<number>(1) // Numer aktualnej strony
   const [showAll, setShowAll] = useState<boolean>(false) // Stan dla "See All"
+  const [currentPageInput, setCurrentPageInput] = useState<string>("") // Stan lokalny dla inputa
 
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -61,16 +60,35 @@ const Posts = () => {
     router.push('/blog') // Zmień adres URL na /blog
   }
 
-  // Funkcja wracająca do paginacji
+  // Funkcja powrotu do paginacji
   const handleReturnToPagination = () => {
     setShowAll(false)
     sessionStorage.setItem('showAll', 'false') // Zapisz stan
-    router.push(`/blog?page=1`) // Powróć do pierwszej strony
+    router.push(`/blog?page=${currentPage}`) // Powrót do obecnej strony paginacji
+  }
+
+  // Funkcja do generowania numerów stron w paginacji
+  const renderPageNumbers = () => {
+    const pages: (number | string)[] = []
+    if (totalPages <= 4) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i)
+      }
+    } else {
+      if (currentPage <= 3) {
+        pages.push(1, 2, 3, '...', totalPages)
+      } else if (currentPage > totalPages - 3) {
+        pages.push(1, '...', totalPages - 2, totalPages - 1, totalPages)
+      } else {
+        pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages)
+      }
+    }
+    return pages
   }
 
   return (
     <LayoutWithHeaderFooter>
-      <div className="pr-2 pl-2 bg-customWhite w-full md:flex md:flex-col items-center">
+      <div className="pr-2 pl-2 bg-customWhite w-full flex flex-col items-center">
         <div className="w-full flex flex-col mt-10 mb-2 md:max-w-[1536px]">
           <h1 className="text-primary font-medium">Blog</h1>
           <h2 className="text-primary-light font-normal text-2xl">Discover new articles</h2>
@@ -83,54 +101,103 @@ const Posts = () => {
         <div className="p-2"></div>
         <PostsCards posts={posts} />
 
-        {/* Przycisk do pokazania wszystkich postów */}
-        {!showAll && (
-          <button onClick={handleSeeAllToggle} className="see-all-button">
-            See All
-          </button>
-        )}
+        {/* Przyciski dla trybów widoku */}
+        <div className="flex justify-center mt-5">
+          {showAll ? (
+            <button
+              onClick={handleReturnToPagination}
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            >
+              Return to Pagination
+            </button>
+          ) : (
+            <button
+              onClick={handleSeeAllToggle}
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            >
+              See All
+            </button>
+          )}
+        </div>
 
         {/* Paginacja (jeśli nie pokazujemy wszystkich postów) */}
         {!showAll && totalPages > 1 && (
-          <div className="pagination">
-            {/* Przycisk do pierwszej strony */}
-            <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}>
-              First
-            </button>
+          <div>
+            <div className="flex items-center justify-center mt-5 space-x-2">
+              {/* Strzałka w lewo */}
+              <button
+                className="text-xl text-black disabled:text-gray-400"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                {'<'}
+              </button>
 
-            {/* Przycisk do poprzedniej strony */}
-            <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-              Previous
-            </button>
+              {/* Numery stron */}
+              {renderPageNumbers().map((page, index) =>
+                typeof page === 'number' ? (
+                  <button
+                    key={index}
+                    className={`px-3 py-1 text-black ${page === currentPage
+                      ? 'bg-blue-500 text-white rounded-full'
+                      : 'hover:underline'
+                      }`}
+                    onClick={() => handlePageChange(page)}
+                  >
+                    {page}
+                  </button>
+                ) : (
+                  <span key={index} className="text-gray-400">
+                    {page}
+                  </span>
+                ),)}
 
-            {/* Linki do stron */}
-            <span>
-              Page {currentPage} of {totalPages}
-            </span>
-
-            {/* Przycisk do następnej strony */}
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
+              {/* Strzałka w prawo */}
+              <button
+                className="text-xl text-black disabled:text-gray-400"
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                {'>'}
+              </button>
+            </div>
+            {/* Combobox z wyborem strony */}
+            <select
+              value={currentPage}
+              onChange={e => handlePageChange(parseInt(e.target.value, 10))}
+              className="ml-4 p-2 border border-gray-300 rounded-md"
             >
-              Next
-            </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <option key={page} value={page}>
+                  Page {page}
+                </option>
+              ))}
+            </select>
 
-            {/* Przycisk do ostatniej strony */}
-            <button
-              onClick={() => handlePageChange(totalPages)}
-              disabled={currentPage === totalPages}
-            >
-              Last
-            </button>
+            {/* Pole do przejścia do konkretnej strony */}
+            {/* Pole do przejścia do konkretnej strony */}
+            <div className="ml-4 flex items-center space-x-2">
+              <span className="text-sm">Go to</span>
+              <input
+                type="number"
+                min="1"
+                max={totalPages}
+                value={currentPageInput} // Używamy lokalnego stanu do kontroli wpisanej liczby
+                onChange={e => {
+                  const page = parseInt(e.target.value, 10)
+                  if (!isNaN(page) && page >= 1 && page <= totalPages) {
+                    setCurrentPageInput(page) // Aktualizuj wartość lokalnego stanu
+                    handlePageChange(page) // Natychmiast przejdź na stronę
+                  } else if (e.target.value === '') {
+                    setCurrentPageInput('') // Pozwól na puste pole
+                  }
+                }}
+                className="p-2 border border-gray-300 rounded-md w-20"
+                placeholder={`Page`}
+              />
+              <span className="text-sm">page</span>
+            </div>
           </div>
-        )}
-
-        {/* Przycisk "Return to Pagination" */}
-        {showAll && (
-          <button onClick={handleReturnToPagination} className="return-pagination-button">
-            Return to Pagination
-          </button>
         )}
 
         <div className="mb-40"></div>
