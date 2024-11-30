@@ -5,6 +5,18 @@ import Link from 'next/link'
 // Komponent przyjmujący props 'pages' i opcjonalnie 'posts'
 const PostsCard = ({ posts }) => {
   if (!posts || posts.length === 0) return null // Sprawdzamy, czy pages istnieje
+  
+  function formatDateWithComma(dateString) {
+    const date = new Date(dateString);
+  
+    // Pobieramy części daty
+    const day = date.toLocaleDateString('en-GB', { day: '2-digit' });
+    const month = date.toLocaleDateString('en-GB', { month: 'short' });
+    const year = date.toLocaleDateString('en-GB', { year: 'numeric' });
+  
+    // Składamy wynik z przecinkiem po miesiącu
+    return `${day} ${month}, ${year}`;
+  }
 
   return (
     <>
@@ -25,7 +37,7 @@ const PostsCard = ({ posts }) => {
             </Link>
             <h3 className="text-left text-xl mt-2 text-customGray-dark">{title}</h3>
             <h4 className="text-lg font-medium text-customGray-light">
-              24 Jun, 2024 <span className="text-2xl">•</span> {item.readingTime} min read
+            {formatDateWithComma(item.publishedAt)} <span className="text-2xl">•</span> {item.readingTime} min read
             </h4>
           </div>
         )

@@ -120,7 +120,7 @@ const Posts = () => {
         </div>
         {/* Paginacja (jeśli nie pokazujemy wszystkich postów) */}
         {!showAll && totalPages > 1 && (
-          <div className="flex w-full justify-between px-5 items-center">
+          <div className="flex w-full justify-between px-5 items-center md:max-w-[1536px]">
 
             {/* strzałki i liczby nawigacyjne */}
             <div className="flex items-center justify-center mt-5 space-x-2">
@@ -182,7 +182,7 @@ const Posts = () => {
 
         {/* Paginacja (jeśli nie pokazujemy wszystkich postów) */}
         {!showAll && totalPages > 1 && (
-          <div className="flex w-full justify-between px-5 items-center">
+          <div className="flex w-full justify-between px-5 items-center md:max-w-[1536px]">
 
             {/* strzałki i liczby nawigacyjne */}
             <div className="flex items-center justify-center mt-5 space-x-2">
