@@ -93,8 +93,8 @@ const HeaderComponent = ({ header }: { header: Header }) => {
           <Link href="/contact">
             <p className="mr-1 text-customWhite">Contact</p>
           </Link>
-          <Link href="/shipping">
-            <p className="text-customWhite">Shipping</p>
+          <Link href="/blog">
+            <p className="text-customWhite">Blog</p>
           </Link>
         </div>
 
