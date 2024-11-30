@@ -150,7 +150,8 @@ const Posts = () => {
                   <span key={index} className="text-customGray-light">
                     {page}
                   </span>
-                ),)}
+                ),
+              )}
               {/* Strzałka w prawo */}
               <button
                 className="appearance-none border-none bg-transparent text-xl text-customGray-dark disabled:text-customGray-light"
@@ -210,7 +211,8 @@ const Posts = () => {
                   <span key={index} className="text-customGray-light">
                     {page}
                   </span>
-                ),)}
+                ),
+              )}
 
               {/* Strzałka w prawo */}
               <button
