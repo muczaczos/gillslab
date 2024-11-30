@@ -99,34 +99,34 @@ const Posts = () => {
           planet-of-mushrooms.com 🌎
         </p>
         <div className="p-2"></div>
-        <PostsCards posts={posts} />
 
-        {/* Przyciski dla trybów widoku */}
-        <div className="flex justify-center mt-5">
+          {/* Przyciski dla trybów widoku */}
+          <div className="flex justify-center mt-5">
           {showAll ? (
             <button
               onClick={handleReturnToPagination}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              className="appearance-none border-none px-4 py-2 bg-primary text-customWhite rounded-lg hover:bg-primary-dark"
             >
               Return to Pagination
             </button>
           ) : (
             <button
               onClick={handleSeeAllToggle}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              className="appearance-none border-none px-4 py-2 bg-primary text-customWhite rounded-lg hover:bg-primary-dark"
             >
               See All
             </button>
           )}
         </div>
-
         {/* Paginacja (jeśli nie pokazujemy wszystkich postów) */}
         {!showAll && totalPages > 1 && (
-          <div>
+          <div className="flex w-full justify-between px-5 items-center">
+
+            {/* strzałki i liczby nawigacyjne */}
             <div className="flex items-center justify-center mt-5 space-x-2">
               {/* Strzałka w lewo */}
               <button
-                className="text-xl text-black disabled:text-gray-400"
+                className="appearance-none border-none bg-transparent text-xl text-customGray-dark disabled:text-customGray-light"
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
               >
@@ -138,8 +138,8 @@ const Posts = () => {
                 typeof page === 'number' ? (
                   <button
                     key={index}
-                    className={`px-3 py-1 text-black ${page === currentPage
-                      ? 'bg-blue-500 text-white rounded-full'
+                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${page === currentPage
+                      ? 'bg-primary text-customWhite rounded-full'
                       : 'hover:underline'
                       }`}
                     onClick={() => handlePageChange(page)}
@@ -147,20 +147,21 @@ const Posts = () => {
                     {page}
                   </button>
                 ) : (
-                  <span key={index} className="text-gray-400">
+                  <span key={index} className="text-customGray-light">
                     {page}
                   </span>
                 ),)}
 
               {/* Strzałka w prawo */}
               <button
-                className="text-xl text-black disabled:text-gray-400"
+                className="appearance-none border-none bg-transparent text-xl text-customGray-dark disabled:text-customGray-light"
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
               >
                 {'>'}
               </button>
             </div>
+            
             {/* Combobox z wyborem strony */}
             <select
               value={currentPage}
@@ -174,32 +175,89 @@ const Posts = () => {
               ))}
             </select>
 
-            {/* Pole do przejścia do konkretnej strony */}
-            {/* Pole do przejścia do konkretnej strony */}
-            <div className="ml-4 flex items-center space-x-2">
-              <span className="text-sm">Go to</span>
-              <input
-                type="number"
-                min="1"
-                max={totalPages}
-                value={currentPageInput} // Używamy lokalnego stanu do kontroli wpisanej liczby
-                onChange={e => {
-                  const page = parseInt(e.target.value, 10)
-                  if (!isNaN(page) && page >= 1 && page <= totalPages) {
-                    setCurrentPageInput(page) // Aktualizuj wartość lokalnego stanu
-                    handlePageChange(page) // Natychmiast przejdź na stronę
-                  } else if (e.target.value === '') {
-                    setCurrentPageInput('') // Pozwól na puste pole
-                  }
-                }}
-                className="p-2 border border-gray-300 rounded-md w-20"
-                placeholder={`Page`}
-              />
-              <span className="text-sm">page</span>
-            </div>
           </div>
         )}
 
+        <PostsCards posts={posts} />
+
+        {/* Paginacja (jeśli nie pokazujemy wszystkich postów) */}
+        {!showAll && totalPages > 1 && (
+          <div className="flex w-full justify-between px-5 items-center">
+
+            {/* strzałki i liczby nawigacyjne */}
+            <div className="flex items-center justify-center mt-5 space-x-2">
+              {/* Strzałka w lewo */}
+              <button
+                className="appearance-none border-none bg-transparent text-xl text-customGray-dark disabled:text-customGray-light"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                {'<'}
+              </button>
+
+              {/* Numery stron */}
+              {renderPageNumbers().map((page, index) =>
+                typeof page === 'number' ? (
+                  <button
+                    key={index}
+                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${page === currentPage
+                      ? 'bg-primary text-customWhite rounded-full'
+                      : 'hover:underline'
+                      }`}
+                    onClick={() => handlePageChange(page)}
+                  >
+                    {page}
+                  </button>
+                ) : (
+                  <span key={index} className="text-customGray-light">
+                    {page}
+                  </span>
+                ),)}
+
+              {/* Strzałka w prawo */}
+              <button
+                className="appearance-none border-none bg-transparent text-xl text-customGray-dark disabled:text-customGray-light"
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                {'>'}
+              </button>
+            </div>
+            
+            {/* Combobox z wyborem strony */}
+            <select
+              value={currentPage}
+              onChange={e => handlePageChange(parseInt(e.target.value, 10))}
+              className="ml-4 p-2 mt-5 border border-gray-300 rounded-md"
+            >
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <option key={page} value={page}>
+                  Page {page}
+                </option>
+              ))}
+            </select>
+
+          </div>
+        )}
+
+        {/* Przyciski dla trybów widoku */}
+        <div className="flex justify-center mt-5">
+          {showAll ? (
+            <button
+              onClick={handleReturnToPagination}
+              className="appearance-none border-none px-4 py-2 bg-primary text-customWhite rounded-lg hover:bg-primary-dark"
+            >
+              Return to Pagination
+            </button>
+          ) : (
+            <button
+              onClick={handleSeeAllToggle}
+              className="appearance-none border-none px-4 py-2 bg-primary text-customWhite rounded-lg hover:bg-primary-dark"
+            >
+              See All
+            </button>
+          )}
+        </div>
         <div className="mb-40"></div>
       </div>
     </LayoutWithHeaderFooter>
