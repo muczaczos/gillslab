@@ -10,12 +10,16 @@ const policies = {
     'https://geowidget.inpost.pl/inpost-geowidget.js',
     'https://www.googletagmanager.com/',
     'https://region1.google-analytics.com/',
-    'https://www.google-analytics.com'
-
+    'https://www.google-analytics.com',
   ],
   'child-src': ["'self'"],
   'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-  'img-src': ["'self'", 'https://*.stripe.com', 'https://raw.githubusercontent.com', 'https://jakimkurierem.pl/logo_kuriera/dpd_logo.png'],
+  'img-src': [
+    "'self'",
+    'https://*.stripe.com',
+    'https://raw.githubusercontent.com',
+    'https://jakimkurierem.pl/logo_kuriera/dpd_logo.png',
+  ],
   'font-src': ["'self'"],
   'frame-src': [
     "'self'",
@@ -37,9 +41,8 @@ const policies = {
     'https://jsonplaceholder.typicode.com/users',
     'https://www.googletagmanager.com/',
     'https://region1.google-analytics.com/',
-    'https://www.google-analytics.com'
+    'https://www.google-analytics.com',
   ],
-
 }
 
 module.exports = Object.entries(policies)
