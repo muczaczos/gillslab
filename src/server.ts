@@ -2,6 +2,7 @@ import axios from 'axios'
 import dotenv from 'dotenv'
 import next from 'next'
 import path from 'path'
+const { nextBuild } = require('next/dist/build')
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
