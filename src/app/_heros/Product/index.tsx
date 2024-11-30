@@ -131,17 +131,19 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           </div>
           <div className="flex justify-center items-center">
             <div className="sm:w-full">
-            {typeof product.media1 === 'object' && product.media1 !== null && 'url' in product.media1 ? (
-              <Image
-                alt="Product Image"
-                src={product.media1.url}
-                height="300"
-                width="500"
-                className="mb-5 mx-auto"
-              />
-            ) : (
-              <p>Image not available</p> // Alternatywa, jeśli media1 nie ma url
-            )}
+              {typeof product.media1 === 'object' &&
+              product.media1 !== null &&
+              'url' in product.media1 ? (
+                <Image
+                  alt="Product Image"
+                  src={product.media1.url}
+                  height="300"
+                  width="500"
+                  className="mb-5 mx-auto"
+                />
+              ) : (
+                <p>Image not available</p> // Alternatywa, jeśli media1 nie ma url
+              )}
             </div>
           </div>
         </section>
