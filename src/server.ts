@@ -1,8 +1,8 @@
 import axios from 'axios'
 import dotenv from 'dotenv'
 import next from 'next'
+import nextBuild from 'next/dist/build'
 import path from 'path'
-const { nextBuild } = require('next/dist/build')
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
@@ -112,6 +112,7 @@ const start = async (): Promise<void> => {
   if (process.env.NEXT_BUILD) {
     app.listen(PORT, async () => {
       payload.logger.info(`Next.js is now building...`)
+      // @ts-expect-error
       await nextBuild(path.join(__dirname, '../'))
       process.exit()
     })
