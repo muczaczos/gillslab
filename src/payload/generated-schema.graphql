@@ -1475,6 +1475,7 @@ type TagsDeleteDocAccess {
 type Post {
   id: String
   title: String
+  readingTime: String
   categories(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [Category!]
   publishedAt: DateTime
   authors(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [User!]
@@ -4596,6 +4597,7 @@ type Posts {
 
 input Post_where {
   title: Post_title_operator
+  readingTime: Post_readingTime_operator
   categories: Post_categories_operator
   publishedAt: Post_publishedAt_operator
   authors: Post_authors_operator
@@ -4627,6 +4629,16 @@ input Post_where {
 }
 
 input Post_title_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input Post_readingTime_operator {
   equals: String
   not_equals: String
   like: String
@@ -4895,6 +4907,7 @@ input Post_id_operator {
 
 input Post_where_and {
   title: Post_title_operator
+  readingTime: Post_readingTime_operator
   categories: Post_categories_operator
   publishedAt: Post_publishedAt_operator
   authors: Post_authors_operator
@@ -4927,6 +4940,7 @@ input Post_where_and {
 
 input Post_where_or {
   title: Post_title_operator
+  readingTime: Post_readingTime_operator
   categories: Post_categories_operator
   publishedAt: Post_publishedAt_operator
   authors: Post_authors_operator
@@ -4972,6 +4986,7 @@ type postsDocAccess {
 
 type PostsDocAccessFields {
   title: PostsDocAccessFields_title
+  readingTime: PostsDocAccessFields_readingTime
   categories: PostsDocAccessFields_categories
   publishedAt: PostsDocAccessFields_publishedAt
   authors: PostsDocAccessFields_authors
@@ -5008,6 +5023,29 @@ type PostsDocAccessFields_title_Update {
 }
 
 type PostsDocAccessFields_title_Delete {
+  permission: Boolean!
+}
+
+type PostsDocAccessFields_readingTime {
+  create: PostsDocAccessFields_readingTime_Create
+  read: PostsDocAccessFields_readingTime_Read
+  update: PostsDocAccessFields_readingTime_Update
+  delete: PostsDocAccessFields_readingTime_Delete
+}
+
+type PostsDocAccessFields_readingTime_Create {
+  permission: Boolean!
+}
+
+type PostsDocAccessFields_readingTime_Read {
+  permission: Boolean!
+}
+
+type PostsDocAccessFields_readingTime_Update {
+  permission: Boolean!
+}
+
+type PostsDocAccessFields_readingTime_Delete {
   permission: Boolean!
 }
 
@@ -5821,6 +5859,7 @@ type PostVersion {
 
 type PostVersion_Version {
   title: String
+  readingTime: String
   categories(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [Category!]
   publishedAt: DateTime
   authors(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType): [User!]
@@ -6490,6 +6529,7 @@ type versionsPosts {
 input versionsPost_where {
   parent: versionsPost_parent_operator
   version__title: versionsPost_version__title_operator
+  version__readingTime: versionsPost_version__readingTime_operator
   version__categories: versionsPost_version__categories_operator
   version__publishedAt: versionsPost_version__publishedAt_operator
   version__authors: versionsPost_version__authors_operator
@@ -6533,6 +6573,16 @@ input versionsPost_parent_operator {
 }
 
 input versionsPost_version__title_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input versionsPost_version__readingTime_operator {
   equals: String
   not_equals: String
   like: String
@@ -6830,6 +6880,7 @@ input versionsPost_id_operator {
 input versionsPost_where_and {
   parent: versionsPost_parent_operator
   version__title: versionsPost_version__title_operator
+  version__readingTime: versionsPost_version__readingTime_operator
   version__categories: versionsPost_version__categories_operator
   version__publishedAt: versionsPost_version__publishedAt_operator
   version__authors: versionsPost_version__authors_operator
@@ -6866,6 +6917,7 @@ input versionsPost_where_and {
 input versionsPost_where_or {
   parent: versionsPost_parent_operator
   version__title: versionsPost_version__title_operator
+  version__readingTime: versionsPost_version__readingTime_operator
   version__categories: versionsPost_version__categories_operator
   version__publishedAt: versionsPost_version__publishedAt_operator
   version__authors: versionsPost_version__authors_operator
@@ -17771,6 +17823,7 @@ type postsAccess {
 
 type PostsFields {
   title: PostsFields_title
+  readingTime: PostsFields_readingTime
   categories: PostsFields_categories
   publishedAt: PostsFields_publishedAt
   authors: PostsFields_authors
@@ -17807,6 +17860,29 @@ type PostsFields_title_Update {
 }
 
 type PostsFields_title_Delete {
+  permission: Boolean!
+}
+
+type PostsFields_readingTime {
+  create: PostsFields_readingTime_Create
+  read: PostsFields_readingTime_Read
+  update: PostsFields_readingTime_Update
+  delete: PostsFields_readingTime_Delete
+}
+
+type PostsFields_readingTime_Create {
+  permission: Boolean!
+}
+
+type PostsFields_readingTime_Read {
+  permission: Boolean!
+}
+
+type PostsFields_readingTime_Update {
+  permission: Boolean!
+}
+
+type PostsFields_readingTime_Delete {
   permission: Boolean!
 }
 
@@ -23973,6 +24049,7 @@ input mutationTagUpdateInput {
 
 input mutationPostInput {
   title: String!
+  readingTime: String!
   categories: [String]
   publishedAt: String
   authors: [String]
@@ -24052,6 +24129,7 @@ enum Post__status_MutationInput {
 
 input mutationPostUpdateInput {
   title: String
+  readingTime: String
   categories: [String]
   publishedAt: String
   authors: [String]

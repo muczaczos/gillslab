@@ -342,6 +342,7 @@ export interface Tag {
 export interface Post {
   id: string;
   title: string;
+  readingTime: string;
   categories?: (string | Category)[] | null;
   publishedAt?: string | null;
   authors?: (string | User)[] | null;

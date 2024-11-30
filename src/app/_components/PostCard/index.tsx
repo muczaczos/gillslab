@@ -12,7 +12,6 @@ const PostsCard = ({ posts }) => {
         const src = process.env.NEXT_PUBLIC_SERVER_URL + '/media/' + item.meta.image.filename
         const href = `${process.env.NEXT_PUBLIC_SERVER_URL}/blog/${item.slug}`
         const title = item.title
-
         return (
           <div key={index} className="mb-10">
             <Link href={href}>
@@ -26,7 +25,7 @@ const PostsCard = ({ posts }) => {
             </Link>
             <h3 className="text-left text-xl mt-2 text-customGray-dark">{title}</h3>
             <h4 className="text-lg font-medium text-customGray-light">
-              24 Jun, 2024 <span className="text-2xl">•</span> 12 min read
+              24 Jun, 2024 <span className="text-2xl">•</span> {item.readingTime} min read
             </h4>
           </div>
         )

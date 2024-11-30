@@ -19,6 +19,7 @@ export const POST = `
       docs {
         id
         title
+        readingTime
         slug
         categories {
           title

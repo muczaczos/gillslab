@@ -44,6 +44,12 @@ const Posts: CollectionConfig = {
       required: true,
     },
     {
+      name: 'readingTime',
+      label: 'Reading Time',
+      type: 'text',
+      required: true,
+    },
+    {
       name: 'categories',
       type: 'relationship',
       relationTo: 'categories',
