@@ -78,23 +78,22 @@ app.post('/send-email', async (req, res) => {
 app.get('/api/custom-posts', async (req, res) => {
   try {
     // Pobranie parametrów z zapytania
-    const { limit = 10, page = 1 } = req.query;
+    const { limit = 10, page = 1 } = req.query
 
     // Wykonanie zapytania z parametrami limit i page
     const posts = await payload.find({
       collection: 'posts',
-      limit: parseInt(limit as string),  // Konwersja limitu na liczbę
-      page: parseInt(page as string),    // Konwersja strony na liczbę
-    });
+      limit: parseInt(limit as string), // Konwersja limitu na liczbę
+      page: parseInt(page as string), // Konwersja strony na liczbę
+    })
 
     // Zwrócenie wyników w odpowiedzi
-    res.json(posts);
+    res.json(posts)
   } catch (error: unknown) {
-    console.error('Error fetching posts:', error);
-    res.status(500).json({ message: 'Server error' });
+    // console.error('Error fetching posts:', error)
+    res.status(500).json({ message: 'Server error' })
   }
-});
-
+})
 
 const start = async (): Promise<void> => {
   await payload.init({

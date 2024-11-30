@@ -53,7 +53,6 @@ const PostsCards = ({ posts }) => {
           <PostsCard posts={everyFourthPageStartingFromFourth} />
         </div>
       </section>
-
     </div>
   )
 }

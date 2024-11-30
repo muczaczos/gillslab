@@ -61,7 +61,7 @@ export default async function Products({ params: { slug } }) {
     <LayoutWithNoHeaderAndFooter>
       <ProductHero product={product} />
       <ProductContent product={product} />
-      <RelatedMovies product={product}/>
+      <RelatedMovies product={product} />
     </LayoutWithNoHeaderAndFooter>
   )
 }
@@ -86,7 +86,7 @@ export async function generateMetadata({ params: { slug } }): Promise<Metadata> 
       slug,
       draft: isDraftMode,
     })
-  } catch (error) { }
+  } catch (error) {}
 
   return generateMeta({ doc: product })
 }

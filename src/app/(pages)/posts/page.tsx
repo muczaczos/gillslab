@@ -13,7 +13,7 @@ const Posts = () => {
   const [totalPages, setTotalPages] = useState<number>(0) // Liczba stron
   const [currentPage, setCurrentPage] = useState<number>(1) // Numer aktualnej strony
   const [showAll, setShowAll] = useState<boolean>(false) // Stan dla "See All"
-  const [currentPageInput, setCurrentPageInput] = useState<string>("") // Stan lokalny dla inputa
+  const [currentPageInput, setCurrentPageInput] = useState<string>('') // Stan lokalny dla inputa
 
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -100,8 +100,8 @@ const Posts = () => {
         </p>
         <div className="p-2"></div>
 
-          {/* Przyciski dla trybów widoku */}
-          <div className="flex justify-center mt-5">
+        {/* Przyciski dla trybów widoku */}
+        <div className="flex justify-center mt-5">
           {showAll ? (
             <button
               onClick={handleReturnToPagination}
@@ -121,7 +121,6 @@ const Posts = () => {
         {/* Paginacja (jeśli nie pokazujemy wszystkich postów) */}
         {!showAll && totalPages > 1 && (
           <div className="flex w-full justify-between px-5 items-center md:max-w-[1536px]">
-
             {/* strzałki i liczby nawigacyjne */}
             <div className="flex items-center justify-center mt-5 space-x-2">
               {/* Strzałka w lewo */}
@@ -138,10 +137,11 @@ const Posts = () => {
                 typeof page === 'number' ? (
                   <button
                     key={index}
-                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${page === currentPage
-                      ? 'bg-primary text-customWhite rounded-full'
-                      : 'hover:underline'
-                      }`}
+                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${
+                      page === currentPage
+                        ? 'bg-primary text-customWhite rounded-full'
+                        : 'hover:underline'
+                    }`}
                     onClick={() => handlePageChange(page)}
                   >
                     {page}
@@ -161,7 +161,7 @@ const Posts = () => {
                 {'>'}
               </button>
             </div>
-            
+
             {/* Combobox z wyborem strony */}
             <select
               value={currentPage}
@@ -174,7 +174,6 @@ const Posts = () => {
                 </option>
               ))}
             </select>
-
           </div>
         )}
 
@@ -183,7 +182,6 @@ const Posts = () => {
         {/* Paginacja (jeśli nie pokazujemy wszystkich postów) */}
         {!showAll && totalPages > 1 && (
           <div className="flex w-full justify-between px-5 items-center md:max-w-[1536px]">
-
             {/* strzałki i liczby nawigacyjne */}
             <div className="flex items-center justify-center mt-5 space-x-2">
               {/* Strzałka w lewo */}
@@ -200,10 +198,11 @@ const Posts = () => {
                 typeof page === 'number' ? (
                   <button
                     key={index}
-                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${page === currentPage
-                      ? 'bg-primary text-customWhite rounded-full'
-                      : 'hover:underline'
-                      }`}
+                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${
+                      page === currentPage
+                        ? 'bg-primary text-customWhite rounded-full'
+                        : 'hover:underline'
+                    }`}
                     onClick={() => handlePageChange(page)}
                   >
                     {page}
@@ -223,7 +222,7 @@ const Posts = () => {
                 {'>'}
               </button>
             </div>
-            
+
             {/* Combobox z wyborem strony */}
             <select
               value={currentPage}
@@ -236,7 +235,6 @@ const Posts = () => {
                 </option>
               ))}
             </select>
-
           </div>
         )}
 
