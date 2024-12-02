@@ -342,6 +342,10 @@
   display: none !important;
 }
 
+.aspect-\[16\/9\] {
+  aspect-ratio: 16/9 !important;
+}
+
 .h-1 {
   height: 0.25rem !important;
 }
@@ -404,6 +408,30 @@
 
 .h-96 {
   height: 24rem !important;
+}
+
+.h-64 {
+  height: 16rem !important;
+}
+
+.h-1\/2 {
+  height: 50% !important;
+}
+
+.h-3\/4 {
+  height: 75% !important;
+}
+
+.h-2\/5 {
+  height: 40% !important;
+}
+
+.h-screen {
+  height: 100vh !important;
+}
+
+.h-4\/5 {
+  height: 80% !important;
 }
 
 .max-h-full {
@@ -484,6 +512,10 @@
 
 .w-full {
   width: 100% !important;
+}
+
+.w-64 {
+  width: 16rem !important;
 }
 
 .max-w-\[1519px\] {
@@ -900,6 +932,10 @@
 
 .bg-cover {
   background-size: cover !important;
+}
+
+.bg-contain {
+  background-size: contain !important;
 }
 
 .bg-center {

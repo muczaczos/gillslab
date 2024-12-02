@@ -29,14 +29,18 @@ export const PostHero: React.FC<{
   const imageLink = serverURL + "/media/" + post.meta.image.filename
 
   return (
-    <>
+    <div className="p-3 h-1/2">
       <div
-        className="h-96 bg-cover bg-center"
+        className="rounded-3xl w-full h-full bg-center bg-no-repeat bg-fit bg-cover"
         style={{
           backgroundImage: `url(${imageLink})`,
         }}
-      ></div>
-      <h1>H1 hero</h1>
-    </>
+      >
+        <div className="flex h-full items-end p-4">
+          <h1 className="text-customWhite text-2xl">{post.title}</h1>
+        </div>
+      </div>
+    </div>
+
   )
 }
