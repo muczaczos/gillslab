@@ -31,13 +31,19 @@ export const PostHero: React.FC<{
   return (
     <div className="p-3 h-1/2">
       <div
-        className="rounded-3xl w-full h-full bg-center bg-no-repeat bg-fit bg-cover"
+        className="rounded-3xl w-full h-full bg-center bg-no-repeat bg-fit bg-cover relative"
         style={{
           backgroundImage: `url(${imageLink})`,
         }}
       >
+
+
+        <div className="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+
         <div className="flex h-full items-end p-4">
+          {/* Warstwa przyciemniająca */}
           <h1 className="text-customWhite text-2xl">{post.title}</h1>
+
         </div>
       </div>
     </div>
