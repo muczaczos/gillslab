@@ -26,6 +26,18 @@ export const PostHero: React.FC<{
 
   console.log(serverURL + '/media/' + post.meta.image.filename)
 
+  function formatDateWithComma(dateString) {
+    const date = new Date(dateString)
+
+    // Pobieramy części daty
+    const day = date.toLocaleDateString('en-GB', { day: '2-digit' })
+    const month = date.toLocaleDateString('en-GB', { month: 'short' })
+    const year = date.toLocaleDateString('en-GB', { year: 'numeric' })
+
+    // Składamy wynik z przecinkiem po miesiącu
+    return `${day} ${month}, ${year}`
+  }
+
   const imageLink = serverURL + '/media/' + post.meta.image.filename
 
   return (
@@ -36,10 +48,14 @@ export const PostHero: React.FC<{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${imageLink})`,
         }}
       >
-
-        <div className="flex h-full items-end p-4">
+        <div className="flex h-full items-end px-4 pb-10">
           {/* Warstwa przyciemniająca */}
-          <h1 className="text-customWhite text-2xl z-10">{post.title}</h1>
+          <div className="flex flex-col">
+            <h1 className="text-customWhite text-2xl z-10">{post.title}</h1>
+            <p className="text-gray-300 text-sm pt-2">
+              {formatDateWithComma(post.publishedAt)} <span className="text-customWhite">•</span>{' '} Categories
+            </p>
+          </div>
         </div>
       </div>
     </div>
