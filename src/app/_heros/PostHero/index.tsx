@@ -22,31 +22,26 @@ export const PostHero: React.FC<{
     populatedAuthors,
   } = post
 
-  const serverURL = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3000';
+  const serverURL = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
-  console.log(serverURL + "/media/" + post.meta.image.filename)
+  console.log(serverURL + '/media/' + post.meta.image.filename)
 
-  const imageLink = serverURL + "/media/" + post.meta.image.filename
+  const imageLink = serverURL + '/media/' + post.meta.image.filename
 
   return (
     <div className="p-3 h-1/2">
       <div
         className="rounded-3xl w-full h-full bg-center bg-no-repeat bg-fit bg-cover relative"
         style={{
-          backgroundImage: `url(${imageLink})`,
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${imageLink})`,
         }}
       >
 
-
-        <div className="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
-
         <div className="flex h-full items-end p-4">
           {/* Warstwa przyciemniająca */}
-          <h1 className="text-customWhite text-2xl">{post.title}</h1>
-
+          <h1 className="text-customWhite text-2xl z-10">{post.title}</h1>
         </div>
       </div>
     </div>
-
   )
 }
