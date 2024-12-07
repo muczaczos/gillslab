@@ -898,6 +898,10 @@
   background-size: cover !important;
 }
 
+.bg-center {
+  background-position: center !important;
+}
+
 .bg-no-repeat {
   background-repeat: no-repeat !important;
 }
