@@ -346,6 +346,10 @@
   height: 0.25rem !important;
 }
 
+.h-1\/2 {
+  height: 50% !important;
+}
+
 .h-10 {
   height: 2.5rem !important;
 }
@@ -1318,6 +1322,11 @@
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(209 213 219 / var(--tw-text-opacity)) !important;
 }
 
 .underline {

@@ -106,7 +106,12 @@ const NewsCarousel = ({ images, catLabels }) => {
               <div className="p-4">
                 <div className="w-full rounded-xl overflow-hidden">
                   <div className="z-50 h-[8rem] w-full relative">
-                    <Image src={image} alt="Example Image" layout="fill" objectFit="cover" />
+                    <Image
+                      src={image}
+                      alt="Example Image"
+                      fill={true}
+                      style={{ objectFit: 'cover' }}
+                    />
                   </div>
                 </div>
               </div>
