@@ -10,8 +10,7 @@ import FavoritesPage from './FavoritiesPage'
 import classes from './index.module.scss'
 
 const Favorities = () => {
-
-  console.log('sdfdsfsfsfd$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  //console.log('sdfdsfsfsfd$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
   return (
     <LayoutWithHeaderFooter>
       <Gutter className="bg-customWhite pb-64">

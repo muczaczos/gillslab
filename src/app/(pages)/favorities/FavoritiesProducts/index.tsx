@@ -63,8 +63,8 @@ const FavoritiesProducts = ({ favoriteSlugs }) => {
   if (loading) {
     return <div>Loading...</div> // Możesz dodać ładujący komponent
   }
-  console.log('product href: ' + JSON.stringify(products, null, 2))
-  console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  //console.log('product href: ' + JSON.stringify(products, null, 2))
+  //console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
   return (
     <div className="w-full bg-customWhite">
       <ul className="flex flex-wrap gap-8 justify-center bg-customWhite">

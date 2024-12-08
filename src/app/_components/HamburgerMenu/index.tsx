@@ -45,8 +45,9 @@ export default function HamburgerMenu() {
       {/* Menu po otwarciu i zamykaniu */}
       {(isOpen || isClosing) && (
         <div
-          className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${isClosing ? 'animate-slideUp' : 'animate-slideDown'
-            }`}
+          className={`fixed inset-0 bg-primary flex flex-col justify-center items-center ${
+            isClosing ? 'animate-slideUp' : 'animate-slideDown'
+          }`}
         >
           <div
             className="absolute inset-0 bg-no-repeat bg-cover opacity-5"
