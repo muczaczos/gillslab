@@ -1,67 +1,37 @@
 import axios from 'axios'
+import { exec } from 'child_process'
 import dotenv from 'dotenv'
+import express from 'express'
 import next from 'next'
-import { build as nextBuild } from 'next/dist/build'
 import path from 'path'
+import payload from 'payload'
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })
-
-import express from 'express'
-import payload from 'payload'
 
 import { seed } from './payload/seed'
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
-// set trust proxy to true if you use nginx
-// when NodeJS app are served behind nginx reverse proxies and similar.
-// after that you must config your nginx server
-/*
-server {
-    listen 80;
-    server_name yourdomain.com;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_cache_bypass $http_upgrade;
-    }
-}*/
-//app.set('trust proxy', true)
-
-// Dodaj middleware, który odczyta dane JSON z ciała żądania
 app.use(express.json())
 
 app.post('/cashbill-payment', async (req, res) => {
   try {
-    // Odczytaj dane z ciała żądania
     const requestData = req.body
-    //  console.log(requestData)
-    // Tutaj możesz użyć danych przekazanych z frontendu
     const response = await axios.post(
       'https://pay.cashbill.pl/testws/rest/payment/grzybole.pl',
       requestData,
     )
-    //   console.log(response)
     res.status(200).json(response.data)
   } catch (error: unknown) {
-    // console.error('Error:', error.message)
     res.status(500).json({ error: 'Internal Server Error' })
   }
 })
 
 app.post('/send-email', async (req, res) => {
   try {
-    // Odczytaj dane z ciała żądania
     const requestData = req.body
     await payload.sendEmail({
       to: 'muczaczos@gmail.com',
@@ -70,7 +40,6 @@ app.post('/send-email', async (req, res) => {
       html: 'Email: ' + requestData.email + ' Content: ' + requestData.message,
     })
   } catch (error: unknown) {
-    // console.error('Error:', error.message)
     res.status(500).json({ error: 'Internal Server Error' })
   }
 })
@@ -92,11 +61,21 @@ const start = async (): Promise<void> => {
   if (process.env.NEXT_BUILD) {
     app.listen(PORT, async () => {
       payload.logger.info(`Next.js is now building...`)
-      // @ts-expect-error
-      await nextBuild(path.join(__dirname, '../'))
-      process.exit()
-    })
 
+      // Uruchomienie komendy next build za pomocą child_process
+      exec('npx next build', { cwd: path.join(__dirname, '../') }, (err, stdout, stderr) => {
+        if (err) {
+          // console.error(`Error during build: ${err.message}`)
+          return
+        }
+        if (stderr) {
+          // console.error(`stderr: ${stderr}`)
+          return
+        }
+        //  console.log(`stdout: ${stdout}`)
+        process.exit()
+      })
+    })
     return
   }
 
