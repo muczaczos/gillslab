@@ -8,6 +8,8 @@ module.exports = {
   ignorePatterns: ['**/payload-types.ts'], // Ignorowanie wygenerowanych plików
   plugins: ['prettier'], // Wtyczka Prettiera
   rules: {
+    'import/default': 'off', // Wyłącza regułę dla domyślnego importu
+    'no-unused-vars': 'warn', // Zmienia błąd na ostrzeżenie
     'prettier/prettier': [
       'error',
       {
