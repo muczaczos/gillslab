@@ -22,7 +22,7 @@ export const PostHero: React.FC<{
     populatedAuthors,
   } = post
 
-  const imageSrc = process.env.NEXT_PUBLIC_SERVER_URL + '/media/' + post.meta.image.filename
+  //const imageSrc = process.env.NEXT_PUBLIC_SERVER_URL + '/media/' + post.meta.image.filename
 
   return (
     <>
