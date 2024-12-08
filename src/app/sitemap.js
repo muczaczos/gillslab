@@ -2,7 +2,7 @@ import { connectToDatabase } from './connectMongo'
 
 export default async function sitemap() {
   const client = await connectToDatabase()
-  const db = client.db('gillslab')
+  const db = client.db('gillslab1')
   //const postsData = await db.collection('posts').find({}).toArray()
   const pagesData = await db.collection('pages').find({}).toArray()
   const productsData = await db.collection('products').find({}).toArray()
