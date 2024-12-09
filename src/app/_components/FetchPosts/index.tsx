@@ -13,12 +13,12 @@ export async function fetchPosts(currentPage: number, postsPerPage: number): Pro
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/custom-posts?limit=${postsPerPage}&page=${currentPage}`,
+      `http://localhost:3000/api/posts?limit=${postsPerPage}&page=${currentPage}`,
     )
 
     // Zwracamy odpowiedź z serwera w postaci obiektu PostData
     postData = await response.json()
-
+    //console.log(postData)
     return postData // Zwracamy dane w odpowiednim formacie
   } catch (error) {
     //console.error('Error fetching posts:', error)
