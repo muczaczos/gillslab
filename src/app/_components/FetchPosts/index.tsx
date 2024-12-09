@@ -18,7 +18,7 @@ export async function fetchPosts(currentPage: number, postsPerPage: number): Pro
 
     // Zwracamy odpowiedź z serwera w postaci obiektu PostData
     postData = await response.json()
-    //console.log(postData)
+
     return postData // Zwracamy dane w odpowiednim formacie
   } catch (error) {
     //console.error('Error fetching posts:', error)
