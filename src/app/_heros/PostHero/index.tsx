@@ -24,8 +24,6 @@ export const PostHero: React.FC<{
 
   const serverURL = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
-  console.log(serverURL + '/media/' + post.meta.image.filename)
-
   function formatDateWithComma(dateString) {
     const date = new Date(dateString)
 
