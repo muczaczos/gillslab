@@ -11,13 +11,9 @@ import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 const PostsCards = dynamic(() => import('./PostsCards'), { suspense: true })
 
 const Posts = () => {
-
-
   return (
     <LayoutWithHeaderFooter>
-      <div className="pr-2 pl-2 bg-customWhite w-full flex flex-col items-center">
-
-      </div>
+      <div className="pr-2 pl-2 bg-customWhite w-full flex flex-col items-center"></div>
     </LayoutWithHeaderFooter>
   )
 }
