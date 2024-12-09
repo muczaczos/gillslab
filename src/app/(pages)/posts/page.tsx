@@ -86,8 +86,6 @@ const Posts = () => {
     return pages
   }
 
-  console.log(posts)
-
   return (
     <LayoutWithHeaderFooter>
       <div className="pr-2 pl-2 bg-customWhite w-full flex flex-col items-center">
@@ -139,10 +137,11 @@ const Posts = () => {
                 typeof page === 'number' ? (
                   <button
                     key={index}
-                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${page === currentPage
-                      ? 'bg-primary text-customWhite rounded-full'
-                      : 'hover:underline'
-                      }`}
+                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${
+                      page === currentPage
+                        ? 'bg-primary text-customWhite rounded-full'
+                        : 'hover:underline'
+                    }`}
                     onClick={() => handlePageChange(page)}
                   >
                     {page}
@@ -199,10 +198,11 @@ const Posts = () => {
                 typeof page === 'number' ? (
                   <button
                     key={index}
-                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${page === currentPage
-                      ? 'bg-primary text-customWhite rounded-full'
-                      : 'hover:underline'
-                      }`}
+                    className={`appearance-none border-none bg-customWhite px-3 py-1 text-customGray-dark ${
+                      page === currentPage
+                        ? 'bg-primary text-customWhite rounded-full'
+                        : 'hover:underline'
+                    }`}
                     onClick={() => handlePageChange(page)}
                   >
                     {page}
