@@ -22,17 +22,46 @@ export const PostHero: React.FC<{
     populatedAuthors,
   } = post
 
-  if (typeof post.meta.image === 'object' && post.meta.image !== null) {
-    const imageSrc = process.env.NEXT_PUBLIC_SERVER_URL + '/media/' + post.meta.image.filename
+  const serverURL = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3000'
+
+  console.log(serverURL + '/media/' + post.meta.image.filename)
+
+  function formatDateWithComma(dateString) {
+    const date = new Date(dateString)
+
+    // Pobieramy części daty
+    const day = date.toLocaleDateString('en-GB', { day: '2-digit' })
+    const month = date.toLocaleDateString('en-GB', { month: 'short' })
+    const year = date.toLocaleDateString('en-GB', { year: 'numeric' })
+
+    // Składamy wynik z przecinkiem po miesiącu
+    return `${day} ${month}, ${year}`
   }
+
+  var imageLink
+  if (typeof post.meta.image === 'object' && post.meta.image !== null) {
+    imageLink = serverURL + '/media/' + post.meta.image.filename
+  }
+
   return (
-    <>
-      <div className={classes.heroImage}></div>
-      <h1>H1 hero</h1>
-      <div className="p-3"></div>
-      <div className="bg-cover bg-center" style={{ backgroundImage: `blue` }}>
-        {/* Treść div */}
+    <div className="p-3 h-1/2">
+      <div
+        className="rounded-3xl w-full h-full bg-center bg-no-repeat bg-fit bg-cover relative"
+        style={{
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${imageLink})`,
+        }}
+      >
+        <div className="flex h-full items-end px-4 pb-10">
+          {/* Warstwa przyciemniająca */}
+          <div className="flex flex-col">
+            <h1 className="text-customWhite text-2xl z-10">{post.title}</h1>
+            <p className="text-gray-300 text-sm pt-2">
+              {formatDateWithComma(post.publishedAt)} <span className="text-customWhite">•</span>{' '}
+              Categories
+            </p>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
