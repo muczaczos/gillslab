@@ -22,8 +22,9 @@ export const PostHero: React.FC<{
     populatedAuthors,
   } = post
 
-  //const imageSrc = process.env.NEXT_PUBLIC_SERVER_URL + '/media/' + post.meta.image.filename
-
+  if (typeof post.meta.image === 'object' && post.meta.image !== null) {
+    const imageSrc = process.env.NEXT_PUBLIC_SERVER_URL + '/media/' + post.meta.image.filename
+  }
   return (
     <>
       <div className={classes.heroImage}></div>
