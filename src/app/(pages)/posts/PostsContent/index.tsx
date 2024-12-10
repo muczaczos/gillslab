@@ -7,7 +7,7 @@ import { Post } from '../../../../payload/payload-types'
 import { fetchPosts } from '../../../_components/FetchPosts'
 import PostsCards from '../PostsCards'
 
-const PostsContent = () => {
+const PostsContent = serverUrl => {
   const [posts, setPosts] = useState<Post[]>([]) // Tablica postów
   const [totalPages, setTotalPages] = useState<number>(0) // Liczba stron
   const [currentPage, setCurrentPage] = useState<number>(1) // Numer aktualnej strony
@@ -19,7 +19,7 @@ const PostsContent = () => {
 
   // Funkcja fetchująca posty
   const getPosts = async (page: number, perPage: number) => {
-    const postsData = await fetchPosts(page, perPage) // Fetch 4 posty na stronę
+    const postsData = await fetchPosts(page, perPage, serverUrl) // Fetch 4 posty na stronę
     setPosts(postsData.docs) // Ustawiamy posty
     setTotalPages(postsData.totalPages) // Ustawiamy liczbę stron
   }
