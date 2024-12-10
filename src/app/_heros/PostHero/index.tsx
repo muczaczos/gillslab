@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaHeart } from 'react-icons/fa'
 import { PiShareFatFill } from 'react-icons/pi'
+import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 
 import { Post } from '../../../payload/payload-types'
 
@@ -45,13 +46,18 @@ export const PostHero: React.FC<{
         </div>
 
         {/* Kółeczka w prawym dolnym rogu */}
+        <div className="absolute bottom-[-20px] left-5 flex space-x-4 z-20">
+          <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
+            <IoArrowBackOutline className="text-primary text-3xl font-bold" />
+          </div>
+        </div>
         <div className="absolute bottom-[-20px] right-5 flex space-x-4 z-20">
           <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
-            <PiShareFatFill className="text-customGray-light text-2xl" />
+            <IoShareOutline className="text-primary text-3xl" />
           </div>
 
           <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
-            <FaHeart className="text-secondary text-2xl" />
+            <IoHeartOutline className="text-primary text-3xl" />
           </div>
         </div>
       </div>
