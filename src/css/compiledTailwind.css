@@ -122,6 +122,30 @@
   top: -8px !important;
 }
 
+.bottom-5 {
+  bottom: 1.25rem !important;
+}
+
+.right-5 {
+  right: 1.25rem !important;
+}
+
+.bottom-10 {
+  bottom: 2.5rem !important;
+}
+
+.top-5 {
+  top: 1.25rem !important;
+}
+
+.bottom-\[-10px\] {
+  bottom: -10px !important;
+}
+
+.bottom-\[-20px\] {
+  bottom: -20px !important;
+}
+
 .z-0 {
   z-index: 0 !important;
 }
@@ -669,6 +693,12 @@
   --tw-space-y-reverse: 0 !important;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse))) !important;
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse)) !important;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0 !important;
+  margin-right: calc(1rem * var(--tw-space-x-reverse)) !important;
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))) !important;
 }
 
 .overflow-hidden {
@@ -1394,6 +1424,12 @@
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) !important;
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color) !important;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
