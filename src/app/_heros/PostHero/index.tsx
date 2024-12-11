@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaHeart } from 'react-icons/fa'
-import { PiShareFatFill } from 'react-icons/pi'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
+import { PiShareFatFill } from 'react-icons/pi'
 
 import { Post } from '../../../payload/payload-types'
 
@@ -37,9 +37,9 @@ export const PostHero: React.FC<{
       >
         <div className="flex h-full items-end px-4 pb-10">
           <div className="flex flex-col z-10">
-            <h1 className="text-customWhite text-2xl">{post.title}</h1>
+            <h1 className="text-customWhite text-2xl">{title}</h1>
             <p className="text-gray-300 text-sm pt-2">
-              {formatDateWithComma(post.publishedAt)} <span className="text-customWhite">•</span>{' '}
+              {formatDateWithComma(publishedAt)} <span className="text-customWhite">•</span>{' '}
               Categories
             </p>
           </div>

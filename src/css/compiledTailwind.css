@@ -82,6 +82,10 @@
   left: 0px !important;
 }
 
+.left-5 {
+  left: 1.25rem !important;
+}
+
 .right-0 {
   right: 0px !important;
 }
@@ -128,10 +132,6 @@
 
 .top-\[-8px\] {
   top: -8px !important;
-}
-
-.left-5 {
-  left: 1.25rem !important;
 }
 
 .z-0 {
