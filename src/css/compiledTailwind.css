@@ -1674,12 +1674,20 @@
     width: 100% !important;
   }
 
+  .md\:w-1\/2 {
+    width: 50% !important;
+  }
+
   .md\:max-w-\[1536px\] {
     max-width: 1536px !important;
   }
 
   .md\:flex-row {
     flex-direction: row !important;
+  }
+
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse !important;
   }
 
   .md\:flex-wrap {

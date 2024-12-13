@@ -5,6 +5,7 @@ import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
 import { CommentsBlock, type CommentsBlockProps } from '../../_blocks/Comments/index'
 import { ContentBlock } from '../../_blocks/Content'
+import { ImageTextBlock, type ImageTextBlockProps } from '../../_blocks/ImageAndText/'
 import { MediaBlock } from '../../_blocks/MediaBlock'
 import { RelatedPosts, type RelatedPostsProps } from '../../_blocks/RelatedPosts'
 import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
@@ -20,16 +21,24 @@ const blockComponents = {
   relatedProducts: RelatedProducts,
   relatedPosts: RelatedPosts,
   comments: CommentsBlock,
+  imageTextBlock: ImageTextBlock,
 }
 
 export const Blocks: React.FC<{
-  blocks: (Page['layout'][0] | RelatedPostsProps | RelatedProductsProps | CommentsBlockProps)[]
+  blocks: (
+    | Page['layout'][0]
+    | RelatedPostsProps
+    | RelatedProductsProps
+    | CommentsBlockProps
+    | ImageTextBlockProps
+  )[]
   disableTopPadding?: boolean
 }> = props => {
   const { disableTopPadding, blocks } = props
 
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0
-
+  console.log('test')
+  console.log(blocks)
   if (hasBlocks) {
     return (
       <Fragment>
@@ -38,7 +47,6 @@ export const Blocks: React.FC<{
 
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType]
-
             // the cta block is containerized, so we don't consider it to be inverted at the block-level
             const blockIsInverted =
               'invertBackground' in block && blockType !== 'cta' ? block.invertBackground : false

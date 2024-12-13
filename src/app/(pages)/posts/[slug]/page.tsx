@@ -42,6 +42,7 @@ export default async function Posts({ params: { slug } }) {
 
   const { layout, relatedPosts, enablePremiumContent, premiumContent } = post
 
+  console.log(layout)
   return (
     <React.Fragment>
       <PostHero post={post} />

@@ -476,6 +476,16 @@ export interface Post {
         blockName?: string | null;
         blockType: 'archive';
       }
+    | {
+        image: string | Media;
+        text: {
+          [k: string]: unknown;
+        }[];
+        alignment: 'left' | 'right';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageTextBlock';
+      }
   )[];
   enablePremiumContent?: boolean | null;
   premiumContent?:
