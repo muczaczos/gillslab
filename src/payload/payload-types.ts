@@ -477,14 +477,19 @@ export interface Post {
         blockType: 'archive';
       }
     | {
-        image: string | Media;
-        text: {
-          [k: string]: unknown;
-        }[];
-        alignment: 'left' | 'right';
+        invertBackground?: boolean | null;
+        position?: ('default' | 'fullscreen') | null;
+        media: string | Media;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'imageTextBlock';
+        blockType: 'imageText';
+      }
+    | {
+        test?: string | null;
+        author?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'text';
       }
   )[];
   enablePremiumContent?: boolean | null;
@@ -588,6 +593,14 @@ export interface Post {
             id?: string | null;
             blockName?: string | null;
             blockType: 'archive';
+          }
+        | {
+            invertBackground?: boolean | null;
+            position?: ('default' | 'fullscreen') | null;
+            media: string | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'imageText';
           }
       )[]
     | null;

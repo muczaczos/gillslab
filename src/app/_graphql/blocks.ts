@@ -72,14 +72,11 @@ export const ARCHIVE_BLOCK = `
   populatedDocsTotal
 }
 `
-export const IMAGE_TEXT_BLOCK = `
-...on ImageTextBlock {
+
+export const TEXT = `
+...on Text {
   blockType
-  invertBackground
-  image {
-    url
-    alt
-  }
-  text
+  test
+  author
 }
 `
