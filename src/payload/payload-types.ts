@@ -487,6 +487,7 @@ export interface Post {
     | {
         test?: string | null;
         author?: string | null;
+        media?: string | Media | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'text';

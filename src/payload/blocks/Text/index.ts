@@ -12,7 +12,7 @@ export const Text: Block = {
       type: 'text',
     },
     {
-      name: 'image',
+      name: 'media',
       type: 'upload',
       relationTo: 'media', // Kolekcja, w której przechowywane są obrazy
       required: false, // Możesz ustawić na `true`, jeśli obraz jest wymagany

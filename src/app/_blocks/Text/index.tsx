@@ -8,31 +8,25 @@ import RichText from '../../_components/RichText'
 
 import classes from './index.module.scss'
 
-type Props = Extract<Page['layout'][0], { blockType: 'text' }>
-
-interface Media {
-  caption?: string
+type Props = Extract<Page['layout'][0], { blockType: 'text' }> & {
+  staticImage?: StaticImageData
+  id?: string
+  test?: string
 }
 
-export const Text: React.FC<
-  Props & {
-    staticImage?: StaticImageData
-    id?: string
-  }
-> = ({ test, staticImage, media }) => {
-  if (media?.filename) {
-    // Renderuj obraz
-  } else {
-    // Wyświetl placeholder lub pomiń
-  }
+export const Text: React.FC<Props> = props => {
+  const { test, media, staticImage } = props
 
   let caption
-  if (media && typeof media === 'object') caption = media.caption
+  if (media && typeof media === 'object') caption = media.filename
+
+  console.log(props)
   return (
     <div className={classes.mediaBlock}>
       <p>test</p>
       <p>{test}</p>
       <Media resource={media} src={staticImage} />
+      <p>no i po obrazku</p>
     </div>
   )
 }

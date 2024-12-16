@@ -78,5 +78,6 @@ export const TEXT = `
   blockType
   test
   author
+  ${MEDIA}
 }
 `
