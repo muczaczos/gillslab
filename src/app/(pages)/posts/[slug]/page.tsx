@@ -28,9 +28,7 @@ export default async function Posts({ params: { slug } }) {
       slug,
       draft: isDraftMode,
     })
-  } catch (error) {
-    //console.error(error) // eslint-disable-line no-console
-  }
+  } catch (error) {}
 
   if (!post) {
     notFound()
@@ -42,7 +40,6 @@ export default async function Posts({ params: { slug } }) {
 
   const { layout, relatedPosts, enablePremiumContent, premiumContent } = post
 
-  console.log(layout)
   return (
     <React.Fragment>
       <PostHero post={post} />

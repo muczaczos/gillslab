@@ -5,11 +5,10 @@ import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
 import { CommentsBlock, type CommentsBlockProps } from '../../_blocks/Comments/index'
 import { ContentBlock } from '../../_blocks/Content'
-import { ImageText } from '../../_blocks/ImageText'
-import { Text } from '../../_blocks/Text/'
 import { MediaBlock } from '../../_blocks/MediaBlock'
 import { RelatedPosts, type RelatedPostsProps } from '../../_blocks/RelatedPosts'
 import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
+import { Text } from '../../_blocks/Text/'
 import { toKebabCase } from '../../_utilities/toKebabCase'
 import { BackgroundColor } from '../BackgroundColor/index'
 import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding/index'
@@ -22,7 +21,6 @@ const blockComponents = {
   relatedProducts: RelatedProducts,
   relatedPosts: RelatedPosts,
   comments: CommentsBlock,
-  imageText: ImageText,
   text: Text,
 }
 
@@ -66,7 +64,7 @@ export const Blocks: React.FC<{
             if (disableTopPadding && index === 0) {
               paddingTop = 'none'
             }
-            console.log(Block)
+
             if (Block) {
               return (
                 <BackgroundColor key={index} invert={blockIsInverted}>

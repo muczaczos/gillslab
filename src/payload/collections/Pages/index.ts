@@ -5,6 +5,7 @@ import { Archive } from '../../blocks/ArchiveBlock'
 import { CallToAction } from '../../blocks/CallToAction'
 import { Content } from '../../blocks/Content'
 import { MediaBlock } from '../../blocks/MediaBlock'
+import { Text } from '../../blocks/Text'
 import { CustomPublishButton } from '../../components/CustomPublishButton'
 import { hero } from '../../fields/hero'
 import { slugField } from '../../fields/slug'
@@ -89,7 +90,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [CallToAction, Content, MediaBlock, Archive],
+              blocks: [CallToAction, Content, MediaBlock, Archive, Text],
             },
           ],
         },

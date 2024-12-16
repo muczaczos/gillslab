@@ -2842,7 +2842,7 @@ input Page_Hero_Media_where_or {
   OR: [Page_Hero_Media_where_or]
 }
 
-union Page_Layout = Cta | Content | MediaBlock | Archive
+union Page_Layout = Cta | Content | MediaBlock | Archive | Text
 
 type Content {
   invertBackground: Boolean
@@ -3336,6 +3336,203 @@ enum Archive_PopulatedDocs_RelationTo {
 }
 
 union Archive_PopulatedDocs = Product | Post
+
+type Text {
+  test: String
+  author: String
+  media(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Text_Media_where): Media
+  id: String
+  blockName: String
+  blockType: String
+}
+
+input Text_Media_where {
+  alt: Text_Media_alt_operator
+  caption: Text_Media_caption_operator
+  updatedAt: Text_Media_updatedAt_operator
+  createdAt: Text_Media_createdAt_operator
+  url: Text_Media_url_operator
+  filename: Text_Media_filename_operator
+  mimeType: Text_Media_mimeType_operator
+  filesize: Text_Media_filesize_operator
+  width: Text_Media_width_operator
+  height: Text_Media_height_operator
+  focalX: Text_Media_focalX_operator
+  focalY: Text_Media_focalY_operator
+  id: Text_Media_id_operator
+  AND: [Text_Media_where_and]
+  OR: [Text_Media_where_or]
+}
+
+input Text_Media_alt_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input Text_Media_caption_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+  exists: Boolean
+}
+
+input Text_Media_updatedAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Text_Media_createdAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Text_Media_url_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Text_Media_filename_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Text_Media_mimeType_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Text_Media_filesize_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Text_Media_width_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Text_Media_height_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Text_Media_focalX_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Text_Media_focalY_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Text_Media_id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Text_Media_where_and {
+  alt: Text_Media_alt_operator
+  caption: Text_Media_caption_operator
+  updatedAt: Text_Media_updatedAt_operator
+  createdAt: Text_Media_createdAt_operator
+  url: Text_Media_url_operator
+  filename: Text_Media_filename_operator
+  mimeType: Text_Media_mimeType_operator
+  filesize: Text_Media_filesize_operator
+  width: Text_Media_width_operator
+  height: Text_Media_height_operator
+  focalX: Text_Media_focalX_operator
+  focalY: Text_Media_focalY_operator
+  id: Text_Media_id_operator
+  AND: [Text_Media_where_and]
+  OR: [Text_Media_where_or]
+}
+
+input Text_Media_where_or {
+  alt: Text_Media_alt_operator
+  caption: Text_Media_caption_operator
+  updatedAt: Text_Media_updatedAt_operator
+  createdAt: Text_Media_createdAt_operator
+  url: Text_Media_url_operator
+  filename: Text_Media_filename_operator
+  mimeType: Text_Media_mimeType_operator
+  filesize: Text_Media_filesize_operator
+  width: Text_Media_width_operator
+  height: Text_Media_height_operator
+  focalX: Text_Media_focalX_operator
+  focalY: Text_Media_focalY_operator
+  id: Text_Media_id_operator
+  AND: [Text_Media_where_and]
+  OR: [Text_Media_where_or]
+}
 
 type Page_Meta {
   title: String
@@ -4378,408 +4575,9 @@ input Post_Hero_Media_where_or {
   OR: [Post_Hero_Media_where_or]
 }
 
-union Post_Layout = Cta | Content | MediaBlock | Archive | ImageText | Text
+union Post_Layout = Cta | Content | MediaBlock | Archive | Text
 
-type ImageText {
-  invertBackground: Boolean
-  position: ImageText_position
-  media(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ImageText_Media_where): Media
-  id: String
-  blockName: String
-  blockType: String
-}
-
-enum ImageText_position {
-  default
-  fullscreen
-}
-
-input ImageText_Media_where {
-  alt: ImageText_Media_alt_operator
-  caption: ImageText_Media_caption_operator
-  updatedAt: ImageText_Media_updatedAt_operator
-  createdAt: ImageText_Media_createdAt_operator
-  url: ImageText_Media_url_operator
-  filename: ImageText_Media_filename_operator
-  mimeType: ImageText_Media_mimeType_operator
-  filesize: ImageText_Media_filesize_operator
-  width: ImageText_Media_width_operator
-  height: ImageText_Media_height_operator
-  focalX: ImageText_Media_focalX_operator
-  focalY: ImageText_Media_focalY_operator
-  id: ImageText_Media_id_operator
-  AND: [ImageText_Media_where_and]
-  OR: [ImageText_Media_where_or]
-}
-
-input ImageText_Media_alt_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-}
-
-input ImageText_Media_caption_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
-  exists: Boolean
-}
-
-input ImageText_Media_updatedAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input ImageText_Media_createdAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input ImageText_Media_url_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ImageText_Media_filename_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ImageText_Media_mimeType_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ImageText_Media_filesize_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ImageText_Media_width_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ImageText_Media_height_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ImageText_Media_focalX_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ImageText_Media_focalY_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input ImageText_Media_id_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input ImageText_Media_where_and {
-  alt: ImageText_Media_alt_operator
-  caption: ImageText_Media_caption_operator
-  updatedAt: ImageText_Media_updatedAt_operator
-  createdAt: ImageText_Media_createdAt_operator
-  url: ImageText_Media_url_operator
-  filename: ImageText_Media_filename_operator
-  mimeType: ImageText_Media_mimeType_operator
-  filesize: ImageText_Media_filesize_operator
-  width: ImageText_Media_width_operator
-  height: ImageText_Media_height_operator
-  focalX: ImageText_Media_focalX_operator
-  focalY: ImageText_Media_focalY_operator
-  id: ImageText_Media_id_operator
-  AND: [ImageText_Media_where_and]
-  OR: [ImageText_Media_where_or]
-}
-
-input ImageText_Media_where_or {
-  alt: ImageText_Media_alt_operator
-  caption: ImageText_Media_caption_operator
-  updatedAt: ImageText_Media_updatedAt_operator
-  createdAt: ImageText_Media_createdAt_operator
-  url: ImageText_Media_url_operator
-  filename: ImageText_Media_filename_operator
-  mimeType: ImageText_Media_mimeType_operator
-  filesize: ImageText_Media_filesize_operator
-  width: ImageText_Media_width_operator
-  height: ImageText_Media_height_operator
-  focalX: ImageText_Media_focalX_operator
-  focalY: ImageText_Media_focalY_operator
-  id: ImageText_Media_id_operator
-  AND: [ImageText_Media_where_and]
-  OR: [ImageText_Media_where_or]
-}
-
-type Text {
-  test: String
-  author: String
-  media(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Text_Media_where): Media
-  id: String
-  blockName: String
-  blockType: String
-}
-
-input Text_Media_where {
-  alt: Text_Media_alt_operator
-  caption: Text_Media_caption_operator
-  updatedAt: Text_Media_updatedAt_operator
-  createdAt: Text_Media_createdAt_operator
-  url: Text_Media_url_operator
-  filename: Text_Media_filename_operator
-  mimeType: Text_Media_mimeType_operator
-  filesize: Text_Media_filesize_operator
-  width: Text_Media_width_operator
-  height: Text_Media_height_operator
-  focalX: Text_Media_focalX_operator
-  focalY: Text_Media_focalY_operator
-  id: Text_Media_id_operator
-  AND: [Text_Media_where_and]
-  OR: [Text_Media_where_or]
-}
-
-input Text_Media_alt_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-}
-
-input Text_Media_caption_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
-  exists: Boolean
-}
-
-input Text_Media_updatedAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Text_Media_createdAt_operator {
-  equals: DateTime
-  not_equals: DateTime
-  greater_than_equal: DateTime
-  greater_than: DateTime
-  less_than_equal: DateTime
-  less_than: DateTime
-  like: DateTime
-  exists: Boolean
-}
-
-input Text_Media_url_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Text_Media_filename_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Text_Media_mimeType_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Text_Media_filesize_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Text_Media_width_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Text_Media_height_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Text_Media_focalX_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Text_Media_focalY_operator {
-  equals: Float
-  not_equals: Float
-  greater_than_equal: Float
-  greater_than: Float
-  less_than_equal: Float
-  less_than: Float
-  exists: Boolean
-}
-
-input Text_Media_id_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
-  exists: Boolean
-}
-
-input Text_Media_where_and {
-  alt: Text_Media_alt_operator
-  caption: Text_Media_caption_operator
-  updatedAt: Text_Media_updatedAt_operator
-  createdAt: Text_Media_createdAt_operator
-  url: Text_Media_url_operator
-  filename: Text_Media_filename_operator
-  mimeType: Text_Media_mimeType_operator
-  filesize: Text_Media_filesize_operator
-  width: Text_Media_width_operator
-  height: Text_Media_height_operator
-  focalX: Text_Media_focalX_operator
-  focalY: Text_Media_focalY_operator
-  id: Text_Media_id_operator
-  AND: [Text_Media_where_and]
-  OR: [Text_Media_where_or]
-}
-
-input Text_Media_where_or {
-  alt: Text_Media_alt_operator
-  caption: Text_Media_caption_operator
-  updatedAt: Text_Media_updatedAt_operator
-  createdAt: Text_Media_createdAt_operator
-  url: Text_Media_url_operator
-  filename: Text_Media_filename_operator
-  mimeType: Text_Media_mimeType_operator
-  filesize: Text_Media_filesize_operator
-  width: Text_Media_width_operator
-  height: Text_Media_height_operator
-  focalX: Text_Media_focalX_operator
-  focalY: Text_Media_focalY_operator
-  id: Text_Media_id_operator
-  AND: [Text_Media_where_and]
-  OR: [Text_Media_where_or]
-}
-
-union Post_PremiumContent = Cta | Content | MediaBlock | Archive | ImageText
+union Post_PremiumContent = Cta | Content | MediaBlock | Archive
 
 type Post_Meta {
   title: String
@@ -6708,9 +6506,9 @@ input PostVersion_Version_Hero_Media_where_or {
   OR: [PostVersion_Version_Hero_Media_where_or]
 }
 
-union PostVersion_Version_Layout = Cta | Content | MediaBlock | Archive | ImageText | Text
+union PostVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text
 
-union PostVersion_Version_PremiumContent = Cta | Content | MediaBlock | Archive | ImageText
+union PostVersion_Version_PremiumContent = Cta | Content | MediaBlock | Archive
 
 type PostVersion_Version_Meta {
   title: String
@@ -9327,7 +9125,7 @@ input PageVersion_Version_Hero_Media_where_or {
   OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
-union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive
+union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text
 
 type PageVersion_Version_Meta {
   title: String

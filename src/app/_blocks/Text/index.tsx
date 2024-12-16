@@ -20,7 +20,6 @@ export const Text: React.FC<Props> = props => {
   let caption
   if (media && typeof media === 'object') caption = media.filename
 
-  console.log(props)
   return (
     <div className={classes.mediaBlock}>
       <p>test</p>

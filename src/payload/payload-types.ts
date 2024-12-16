@@ -477,14 +477,6 @@ export interface Post {
         blockType: 'archive';
       }
     | {
-        invertBackground?: boolean | null;
-        position?: ('default' | 'fullscreen') | null;
-        media: string | Media;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'imageText';
-      }
-    | {
         test?: string | null;
         author?: string | null;
         media?: string | Media | null;
@@ -594,14 +586,6 @@ export interface Post {
             id?: string | null;
             blockName?: string | null;
             blockType: 'archive';
-          }
-        | {
-            invertBackground?: boolean | null;
-            position?: ('default' | 'fullscreen') | null;
-            media: string | Media;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'imageText';
           }
       )[]
     | null;
@@ -1071,6 +1055,14 @@ export interface Page {
         id?: string | null;
         blockName?: string | null;
         blockType: 'archive';
+      }
+    | {
+        test?: string | null;
+        author?: string | null;
+        media?: string | Media | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'text';
       }
   )[];
   slug?: string | null;
