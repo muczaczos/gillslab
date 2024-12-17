@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaHeart } from 'react-icons/fa'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 import { PiShareFatFill } from 'react-icons/pi'
@@ -31,13 +31,21 @@ export const PostHero: React.FC<{
     imageLink = serverURL + '/media/' + post.meta.image.filename
   }
 
+  const [backgroundImage, setBackgroundImage] = useState<string>('')
+
+  useEffect(() => {
+    if (metaImage && typeof metaImage === 'object') {
+      setBackgroundImage(`url(${serverURL}/media/${metaImage.filename})`)
+    }
+  }, [metaImage])
+
   return (
     <Gutter>
       <div className="pt-3 relative md:flex md:items-center">
         <div
           className="rounded-3xl w-full md:w-1/3 pb-5 pt-96 md:pt-[500px] bg-center bg-no-repeat bg-cover relative"
           style={{
-            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${imageLink})`,
+            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), ${backgroundImage}`,
           }}
         >
           <div className="flex h-full items-end px-4 pb-10">
