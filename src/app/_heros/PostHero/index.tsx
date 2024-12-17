@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { FaHeart } from 'react-icons/fa'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
@@ -5,6 +6,7 @@ import { PiShareFatFill } from 'react-icons/pi'
 
 import { Post } from '../../../payload/payload-types'
 import { Gutter } from '../../_components/Gutter'
+import Link from 'next/link'
 
 export const PostHero: React.FC<{
   post: Post
@@ -50,7 +52,15 @@ export const PostHero: React.FC<{
           {/* Kółeczka w prawym dolnym rogu */}
           <div className="absolute bottom-[-20px] left-5 flex space-x-4 z-20">
             <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
-              <IoArrowBackOutline className="text-primary text-3xl font-bold" />
+              <Link
+                href="#"
+                onClick={e => {
+                  e.preventDefault()
+                  window.history.back()
+                }}
+              >
+                <IoArrowBackOutline className="text-primary text-3xl font-bold" />
+              </Link>
             </div>
           </div>
           <div className="absolute bottom-[-20px] right-5 flex space-x-4 z-20">
