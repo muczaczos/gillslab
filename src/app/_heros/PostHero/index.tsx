@@ -40,7 +40,6 @@ export const PostHero: React.FC<{
 
   return (
     <Gutter>
-      <p>Background image link: {backgroundImage}</p>
       <div className="pt-3 relative md:flex md:items-center">
         <div
           className="rounded-3xl w-full md:w-1/3 pb-5 pt-96 md:pt-[500px] bg-center bg-no-repeat bg-cover relative"
