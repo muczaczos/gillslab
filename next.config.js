@@ -5,6 +5,9 @@ const redirects = require('./redirects')
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    PAYLOAD_PUBLIC_SERVER_URL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
+  },
   images: {
     domains: ['localhost', process.env.NEXT_PUBLIC_SERVER_URL]
       .filter(Boolean)
