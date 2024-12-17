@@ -3,10 +3,11 @@ import React from 'react'
 import { FaHeart } from 'react-icons/fa'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
 import { PiShareFatFill } from 'react-icons/pi'
+import Link from 'next/link'
 
 import { Post } from '../../../payload/payload-types'
 import { Gutter } from '../../_components/Gutter'
-import Link from 'next/link'
+import ShareModal from '../../_components/ShareModal'
 
 export const PostHero: React.FC<{
   post: Post
@@ -65,7 +66,7 @@ export const PostHero: React.FC<{
           </div>
           <div className="absolute bottom-[-20px] right-5 flex space-x-4 z-20">
             <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
-              <IoShareOutline className="text-primary text-3xl" />
+              <ShareModal />
             </div>
 
             <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
@@ -76,8 +77,7 @@ export const PostHero: React.FC<{
         <div className="hidden md:block z-10 pl-16 w-2/3">
           <h1 className="hidden md:block text-primary text-8xl">{title}</h1>
           <p className="hidden md:block text-customGray font-semibold text-2xl pt-2">
-            {formatDateWithComma(publishedAt)} <span className="text-customGray">•</span>{' '}
-            Categories
+            {formatDateWithComma(publishedAt)} <span className="text-customGray">•</span> Categories
           </p>
         </div>
       </div>

@@ -7,7 +7,6 @@ const ShareModal = () => {
   const currentURL = typeof window !== 'undefined' ? window.location.href : '' // Aktualny URL strony
 
   const toggleModal = () => setIsOpen(!isOpen)
-
   return (
     <div>
       {/* Ikona udostępniania */}
