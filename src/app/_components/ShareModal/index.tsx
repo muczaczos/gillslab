@@ -7,8 +7,6 @@ const ShareModal = color => {
   const currentURL = typeof window !== 'undefined' ? window.location.href : '' // Aktualny URL strony
 
   const toggleModal = () => setIsOpen(!isOpen)
-  console.log('color')
-  console.log(color.color)
   return (
     <div>
       {/* Ikona udostępniania */}

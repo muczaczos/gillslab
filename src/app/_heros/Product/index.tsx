@@ -132,8 +132,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="sm:w-full">
               {typeof product.media1 === 'object' &&
-                product.media1 !== null &&
-                'url' in product.media1 ? (
+              product.media1 !== null &&
+              'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
