@@ -1,7 +1,13 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { FaHeart } from 'react-icons/fa'
-import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
+import {
+  IoArrowBackOutline,
+  IoHeart,
+  IoHeartOutline,
+  IoHomeOutline,
+  IoShareOutline,
+} from 'react-icons/io5'
 import { PiShareFatFill } from 'react-icons/pi'
 import Link from 'next/link'
 
@@ -75,10 +81,11 @@ export const PostHero: React.FC<{
             <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
               <ShareModal color="primary" />
             </div>
-
-            <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
-              <IoHeartOutline className="text-primary text-3xl" />
-            </div>
+            <Link href="/">
+              <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
+                <IoHomeOutline className="text-primary text-3xl" />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="hidden md:block z-10 pl-16 w-2/3">
