@@ -46,7 +46,7 @@ export const PostHero: React.FC<{
 
   return (
     <Gutter>
-      <div className="pt-3 relative md:flex md:items-center">
+      <div className="pt-5 relative md:pt-16 md:flex md:items-center">
         <div
           className="rounded-3xl w-full md:w-1/3 pb-5 pt-96 md:pt-[500px] bg-center bg-no-repeat bg-cover relative"
           style={{
@@ -79,7 +79,7 @@ export const PostHero: React.FC<{
           </div>
           <div className="absolute bottom-[-20px] right-5 flex space-x-4 z-20">
             <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
-              <ShareModal color="primary" size="" />
+              <ShareModal color="primary" mdsize="3xl" lgsize="3xl" />
             </div>
             <Link href="/">
               <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
