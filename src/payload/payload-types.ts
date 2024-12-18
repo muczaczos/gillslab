@@ -694,6 +694,14 @@ export interface Product {
         id?: string | null;
       }[]
     | null;
+  Modals?:
+    | {
+        Modal: {
+          [k: string]: unknown;
+        }[];
+        id?: string | null;
+      }[]
+    | null;
   price: string;
   weight: number;
   media1?: string | Media | null;

@@ -1759,6 +1759,7 @@ type Product {
   shortInfo3: String
   shortInfo4: String
   icons: [Product_Icons!]
+  Modals: [Product_Modals!]
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Product_Media1_where): Media
@@ -1792,6 +1793,11 @@ enum Product_Icons_iconLibrary {
   io5
   lia
   tb
+}
+
+type Product_Modals {
+  Modal(depth: Int): JSON
+  id: String
 }
 
 input Product_Media1_where {
@@ -9718,6 +9724,8 @@ input Product_where {
   icons__iconLibrary: Product_icons__iconLibrary_operator
   icons__iconName: Product_icons__iconName_operator
   icons__id: Product_icons__id_operator
+  Modals__Modal: Product_Modals__Modal_operator
+  Modals__id: Product_Modals__id_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -9835,6 +9843,24 @@ input Product_icons__iconName_operator {
 }
 
 input Product_icons__id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Product_Modals__Modal_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+}
+
+input Product_Modals__id_operator {
   equals: String
   not_equals: String
   like: String
@@ -10047,6 +10073,8 @@ input Product_where_and {
   icons__iconLibrary: Product_icons__iconLibrary_operator
   icons__iconName: Product_icons__iconName_operator
   icons__id: Product_icons__id_operator
+  Modals__Modal: Product_Modals__Modal_operator
+  Modals__id: Product_Modals__id_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -10083,6 +10111,8 @@ input Product_where_or {
   icons__iconLibrary: Product_icons__iconLibrary_operator
   icons__iconName: Product_icons__iconName_operator
   icons__id: Product_icons__id_operator
+  Modals__Modal: Product_Modals__Modal_operator
+  Modals__id: Product_Modals__id_operator
   price: Product_price_operator
   weight: Product_weight_operator
   media1: Product_media1_operator
@@ -10130,6 +10160,7 @@ type ProductsDocAccessFields {
   shortInfo3: ProductsDocAccessFields_shortInfo3
   shortInfo4: ProductsDocAccessFields_shortInfo4
   icons: ProductsDocAccessFields_icons
+  Modals: ProductsDocAccessFields_Modals
   price: ProductsDocAccessFields_price
   weight: ProductsDocAccessFields_weight
   media1: ProductsDocAccessFields_media1
@@ -10409,6 +10440,81 @@ type ProductsDocAccessFields_icons_id_Update {
 }
 
 type ProductsDocAccessFields_icons_id_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals {
+  create: ProductsDocAccessFields_Modals_Create
+  read: ProductsDocAccessFields_Modals_Read
+  update: ProductsDocAccessFields_Modals_Update
+  delete: ProductsDocAccessFields_Modals_Delete
+  fields: ProductsDocAccessFields_Modals_Fields
+}
+
+type ProductsDocAccessFields_Modals_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_Fields {
+  Modal: ProductsDocAccessFields_Modals_Modal
+  id: ProductsDocAccessFields_Modals_id
+}
+
+type ProductsDocAccessFields_Modals_Modal {
+  create: ProductsDocAccessFields_Modals_Modal_Create
+  read: ProductsDocAccessFields_Modals_Modal_Read
+  update: ProductsDocAccessFields_Modals_Modal_Update
+  delete: ProductsDocAccessFields_Modals_Modal_Delete
+}
+
+type ProductsDocAccessFields_Modals_Modal_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_Modal_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_Modal_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_Modal_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_id {
+  create: ProductsDocAccessFields_Modals_id_Create
+  read: ProductsDocAccessFields_Modals_id_Read
+  update: ProductsDocAccessFields_Modals_id_Update
+  delete: ProductsDocAccessFields_Modals_id_Delete
+}
+
+type ProductsDocAccessFields_Modals_id_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_id_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_id_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_Modals_id_Delete {
   permission: Boolean!
 }
 
@@ -10991,6 +11097,7 @@ type ProductVersion_Version {
   shortInfo3: String
   shortInfo4: String
   icons: [ProductVersion_Version_Icons!]
+  Modals: [ProductVersion_Version_Modals!]
   price: String
   weight: Float
   media1(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ProductVersion_Version_Media1_where): Media
@@ -11024,6 +11131,11 @@ enum ProductVersion_Version_Icons_iconLibrary {
   io5
   lia
   tb
+}
+
+type ProductVersion_Version_Modals {
+  Modal(depth: Int): JSON
+  id: String
 }
 
 input ProductVersion_Version_Media1_where {
@@ -11819,6 +11931,8 @@ input versionsProduct_where {
   version__icons__iconLibrary: versionsProduct_version__icons__iconLibrary_operator
   version__icons__iconName: versionsProduct_version__icons__iconName_operator
   version__icons__id: versionsProduct_version__icons__id_operator
+  version__Modals__Modal: versionsProduct_version__Modals__Modal_operator
+  version__Modals__id: versionsProduct_version__Modals__id_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -11948,6 +12062,24 @@ input versionsProduct_version__icons__iconName_operator {
 }
 
 input versionsProduct_version__icons__id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsProduct_version__Modals__Modal_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+}
+
+input versionsProduct_version__Modals__id_operator {
   equals: String
   not_equals: String
   like: String
@@ -12189,6 +12321,8 @@ input versionsProduct_where_and {
   version__icons__iconLibrary: versionsProduct_version__icons__iconLibrary_operator
   version__icons__iconName: versionsProduct_version__icons__iconName_operator
   version__icons__id: versionsProduct_version__icons__id_operator
+  version__Modals__Modal: versionsProduct_version__Modals__Modal_operator
+  version__Modals__id: versionsProduct_version__Modals__id_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -12229,6 +12363,8 @@ input versionsProduct_where_or {
   version__icons__iconLibrary: versionsProduct_version__icons__iconLibrary_operator
   version__icons__iconName: versionsProduct_version__icons__iconName_operator
   version__icons__id: versionsProduct_version__icons__id_operator
+  version__Modals__Modal: versionsProduct_version__Modals__Modal_operator
+  version__Modals__id: versionsProduct_version__Modals__id_operator
   version__price: versionsProduct_version__price_operator
   version__weight: versionsProduct_version__weight_operator
   version__media1: versionsProduct_version__media1_operator
@@ -19758,6 +19894,7 @@ type ProductsFields {
   shortInfo3: ProductsFields_shortInfo3
   shortInfo4: ProductsFields_shortInfo4
   icons: ProductsFields_icons
+  Modals: ProductsFields_Modals
   price: ProductsFields_price
   weight: ProductsFields_weight
   media1: ProductsFields_media1
@@ -20037,6 +20174,81 @@ type ProductsFields_icons_id_Update {
 }
 
 type ProductsFields_icons_id_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals {
+  create: ProductsFields_Modals_Create
+  read: ProductsFields_Modals_Read
+  update: ProductsFields_Modals_Update
+  delete: ProductsFields_Modals_Delete
+  fields: ProductsFields_Modals_Fields
+}
+
+type ProductsFields_Modals_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_Fields {
+  Modal: ProductsFields_Modals_Modal
+  id: ProductsFields_Modals_id
+}
+
+type ProductsFields_Modals_Modal {
+  create: ProductsFields_Modals_Modal_Create
+  read: ProductsFields_Modals_Modal_Read
+  update: ProductsFields_Modals_Modal_Update
+  delete: ProductsFields_Modals_Modal_Delete
+}
+
+type ProductsFields_Modals_Modal_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_Modal_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_Modal_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_Modal_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_id {
+  create: ProductsFields_Modals_id_Create
+  read: ProductsFields_Modals_id_Read
+  update: ProductsFields_Modals_id_Update
+  delete: ProductsFields_Modals_id_Delete
+}
+
+type ProductsFields_Modals_id_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_id_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_id_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_Modals_id_Delete {
   permission: Boolean!
 }
 
@@ -24579,6 +24791,7 @@ input mutationProductInput {
   shortInfo3: String!
   shortInfo4: String!
   icons: [mutationProduct_IconsInput]
+  Modals: [mutationProduct_ModalsInput]
   price: String!
   weight: Float!
   media1: String
@@ -24614,6 +24827,11 @@ enum Product_Icons_iconLibrary_MutationInput {
   tb
 }
 
+input mutationProduct_ModalsInput {
+  Modal: JSON!
+  id: String
+}
+
 input mutationProduct_MetaInput {
   title: String
   description: String
@@ -24634,6 +24852,7 @@ input mutationProductUpdateInput {
   shortInfo3: String
   shortInfo4: String
   icons: [mutationProductUpdate_IconsInput]
+  Modals: [mutationProductUpdate_ModalsInput]
   price: String
   weight: Float
   media1: String
@@ -24667,6 +24886,11 @@ enum ProductUpdate_Icons_iconLibrary_MutationInput {
   io5
   lia
   tb
+}
+
+input mutationProductUpdate_ModalsInput {
+  Modal: JSON!
+  id: String
 }
 
 input mutationProductUpdate_MetaInput {

@@ -116,6 +116,19 @@ const Products: CollectionConfig = {
       ],
     },
     {
+      name: 'Modals', // Nazwa pola
+      type: 'array', // Typ pola: tablica
+      minRows: 4, // Minimalna liczba elementów w tablicy
+      maxRows: 4, // Maksymalna liczba elementów w tablicy
+      fields: [
+        {
+          name: 'Modal',
+          type: 'richText', // Typ pola wewnętrznego
+          required: true, // Czy pole jest wymagane
+        },
+      ],
+    },
+    {
       name: 'price',
       type: 'text',
       required: true,

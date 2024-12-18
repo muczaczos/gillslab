@@ -98,7 +98,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   //********************************************* */
 
   return (
-    <>
+    <div className="">
       <div className="lg:flex">
         {/* main image with buttons */}
         <section className="bg-primary pt-5 pb-16 lg:w-1/2">
@@ -233,6 +233,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
         </section>
         {/* /////////////////////// */}
       </div>
-    </>
+    </div>
   )
 }

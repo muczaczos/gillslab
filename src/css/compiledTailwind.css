@@ -518,6 +518,10 @@
   max-width: 24rem !important;
 }
 
+.max-w-\[1530px\] {
+  max-width: 1530px !important;
+}
+
 .flex-auto {
   flex: 1 1 auto !important;
 }
@@ -1697,6 +1701,10 @@
 
   .md\:max-w-\[1536px\] {
     max-width: 1536px !important;
+  }
+
+  .md\:max-w-\[1530px\] {
+    max-width: 1530px !important;
   }
 
   .md\:flex-row {

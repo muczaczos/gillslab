@@ -51,7 +51,7 @@ export const RelatedMovies: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <>
       <div className={classes.diagonalRelated}></div>
-      <div className={`mt-[-2.2rem] ${classes.relatedGradient}`}>
+      <div className={`mt-[-2.2rem] ${classes.relatedGradient} `}>
         {/*Related */}
         <section className="">
           <div className="mt-8 mx-5 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
