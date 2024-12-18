@@ -113,8 +113,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               <IoArrowBackOutline className="text-3xl text-customWhite md:text-6xl lg:text-5xl" />
             </Link>
             <div className="flex">
-              <ShareModal />
-
+              <ShareModal color="customWhite" />
+              <div className="mr-1"></div>
               {/* Ikona serca z obsługą kliknięcia */}
               {isFavorite ? (
                 <IoHeart
@@ -132,8 +132,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="sm:w-full">
               {typeof product.media1 === 'object' &&
-              product.media1 !== null &&
-              'url' in product.media1 ? (
+                product.media1 !== null &&
+                'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
