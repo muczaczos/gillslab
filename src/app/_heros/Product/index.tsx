@@ -113,7 +113,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               <IoArrowBackOutline className="text-3xl text-customWhite md:text-6xl lg:text-5xl" />
             </Link>
             <div className="flex">
-              <ShareModal color="customWhite" />
+              <ShareModal color="customWhite" mdsize="6xl" lgsize="5xl" />
               <div className="mr-1"></div>
               {/* Ikona serca z obsługą kliknięcia */}
               {isFavorite ? (

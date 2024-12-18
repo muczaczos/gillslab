@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IoShareOutline } from 'react-icons/io5'
 import Link from 'next/link'
 
-const ShareModal = color => {
+const ShareModal = ({ color, mdsize, lgsize }) => {
   const [isOpen, setIsOpen] = useState(false)
   const currentURL = typeof window !== 'undefined' ? window.location.href : '' // Aktualny URL strony
 
@@ -11,7 +11,7 @@ const ShareModal = color => {
     <div>
       {/* Ikona udostępniania */}
       <div onClick={toggleModal} className="">
-        <IoShareOutline className={`text-3xl text-${color.color} md:text-6xl lg:text-5xl`} />
+        <IoShareOutline className={`text-3xl text-${color} md:text-${mdsize} lg:text-${lgsize}`} />
       </div>
 
       {/* Modal */}

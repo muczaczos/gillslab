@@ -79,7 +79,7 @@ export const PostHero: React.FC<{
           </div>
           <div className="absolute bottom-[-20px] right-5 flex space-x-4 z-20">
             <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
-              <ShareModal color="primary" />
+              <ShareModal color="primary" size="" />
             </div>
             <Link href="/">
               <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
