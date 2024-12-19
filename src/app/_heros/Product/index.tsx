@@ -51,17 +51,16 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
     setIsModalOpen(false)
     setModalContent([]) // Upewnij się, że resetujesz zawartość modala, jeśli chcesz
   }
-  useEffect(() => { }, [isModalOpen])
+  useEffect(() => {}, [isModalOpen])
 
   let productDescription
   let productDetails
   let productFaq
   const images = []
   const infoLabels = [shortInfo1, shortInfo2, shortInfo3, shortInfo4]
-  // Extract text content from each modal
+  // Extract text content from each moda
 
-  const modalContents = Modals.map(modal => modal.Modal[0]?.children)
-  console.log(modalContents[1])
+  //console.log(Modals[3].Modal[1])
 
   if (media1) {
     images.push(media1['url'])
@@ -120,7 +119,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <div className="">
       <div className="lg:flex">
-
         {/* main image with buttons */}
         <section className="bg-primary pt-5 pb-16 lg:w-1/2">
           <div className="flex justify-between px-5 pt-5 pb-7 lg:mb-20">
@@ -153,8 +151,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="sm:w-full">
               {typeof product.media1 === 'object' &&
-                product.media1 !== null &&
-                'url' in product.media1 ? (
+              product.media1 !== null &&
+              'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
@@ -202,7 +200,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             <div className="flex w-full">
               <div
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
-                onClick={() => handleOpenModal(modalContents[0])}
+                onClick={() => handleOpenModal(Modals[0])}
               >
                 <DynamicIcon
                   library={product.icons[0].iconLibrary}
@@ -217,7 +215,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
 
               <div
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
-                onClick={() => handleOpenModal(modalContents[1])}
+                onClick={() => handleOpenModal(Modals[1])}
               >
                 <DynamicIcon
                   library={product.icons[1].iconLibrary}
@@ -232,7 +230,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             <div className="flex justify-center w-full">
               <div
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
-                onClick={() => handleOpenModal(modalContents[2])}
+                onClick={() => handleOpenModal(Modals[2])}
               >
                 <DynamicIcon
                   library={product.icons[2].iconLibrary}
@@ -245,7 +243,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
               <div
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
-                onClick={() => handleOpenModal(modalContents[3])}
+                onClick={() => handleOpenModal(Modals[3])}
               >
                 <DynamicIcon
                   library={product.icons[3].iconLibrary}
