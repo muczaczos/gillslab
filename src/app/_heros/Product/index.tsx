@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { Product } from '../../../payload/payload-types'
 import { AddToCartButton } from '../../_components/AddToCartButton'
 import DynamicIcon from '../../_components/DaynamicIcon'
+import { Modal } from '../../_components/Modal'
 import RichText from '../../_components/RichText'
 import ShareModal from '../../_components/ShareModal'
 import SmallCarousel from '../../_components/SmallCarousel'
@@ -35,13 +36,32 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
     media1,
     media2,
     media3,
+    Modals,
   } = product
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState([])
+
+  const handleOpenModal = content => {
+    setModalContent(content)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setModalContent([]) // Upewnij się, że resetujesz zawartość modala, jeśli chcesz
+  }
+  useEffect(() => { }, [isModalOpen])
 
   let productDescription
   let productDetails
   let productFaq
   const images = []
   const infoLabels = [shortInfo1, shortInfo2, shortInfo3, shortInfo4]
+  // Extract text content from each modal
+
+  const modalContents = Modals.map(modal => modal.Modal[0]?.children)
+  console.log(modalContents[1])
 
   if (media1) {
     images.push(media1['url'])
@@ -100,6 +120,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <div className="">
       <div className="lg:flex">
+
         {/* main image with buttons */}
         <section className="bg-primary pt-5 pb-16 lg:w-1/2">
           <div className="flex justify-between px-5 pt-5 pb-7 lg:mb-20">
@@ -132,8 +153,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="sm:w-full">
               {typeof product.media1 === 'object' &&
-              product.media1 !== null &&
-              'url' in product.media1 ? (
+                product.media1 !== null &&
+                'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
@@ -179,7 +200,10 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           {/* Short info for desktop */}
           <div className="hidden lg:flex lg:flex-col lg:gap-5 xxl:flex-row xxl:gap-0 justify-center pb-10 2xl:pb-28 ">
             <div className="flex w-full">
-              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+              <div
+                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                onClick={() => handleOpenModal(modalContents[0])}
+              >
                 <DynamicIcon
                   library={product.icons[0].iconLibrary}
                   name={product.icons[0].iconName}
@@ -188,7 +212,13 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo1}</h3>
               </div>
-              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+              {/* Modal */}
+              <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={[modalContent]} />
+
+              <div
+                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                onClick={() => handleOpenModal(modalContents[1])}
+              >
                 <DynamicIcon
                   library={product.icons[1].iconLibrary}
                   name={product.icons[1].iconName}
@@ -197,9 +227,13 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo2}</h3>
               </div>
+              <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
             </div>
             <div className="flex justify-center w-full">
-              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+              <div
+                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                onClick={() => handleOpenModal(modalContents[2])}
+              >
                 <DynamicIcon
                   library={product.icons[2].iconLibrary}
                   name={product.icons[2].iconName}
@@ -208,7 +242,11 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo3}</h3>
               </div>
-              <div className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]">
+              <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
+              <div
+                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                onClick={() => handleOpenModal(modalContents[3])}
+              >
                 <DynamicIcon
                   library={product.icons[3].iconLibrary}
                   name={product.icons[3].iconName}
@@ -217,6 +255,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo4}</h3>
               </div>
+              <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
             </div>
           </div>
           {/* /////////////////////// */}

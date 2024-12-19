@@ -28,6 +28,9 @@ export const PRODUCT = `
           iconLibrary
           iconName
         }
+         Modals {
+          Modal
+        }
         price
         weight
         media1 {

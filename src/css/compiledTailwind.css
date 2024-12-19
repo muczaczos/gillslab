@@ -498,6 +498,10 @@
   width: 100% !important;
 }
 
+.w-\[90\%\] {
+  width: 90% !important;
+}
+
 .max-w-\[1519px\] {
   max-width: 1519px !important;
 }
@@ -516,10 +520,6 @@
 
 .max-w-sm {
   max-width: 24rem !important;
-}
-
-.max-w-\[1530px\] {
-  max-width: 1530px !important;
 }
 
 .flex-auto {
@@ -1149,10 +1149,6 @@
   padding-top: 5rem !important;
 }
 
-.pt-3 {
-  padding-top: 0.75rem !important;
-}
-
 .pt-4 {
   padding-top: 1rem !important;
 }
@@ -1514,6 +1510,11 @@
   color: rgb(55 65 81 / var(--tw-text-opacity)) !important;
 }
 
+.hover\:text-black:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline !important;
 }
@@ -1699,12 +1700,12 @@
     width: 100% !important;
   }
 
-  .md\:max-w-\[1536px\] {
-    max-width: 1536px !important;
+  .md\:w-\[50\%\] {
+    width: 50% !important;
   }
 
-  .md\:max-w-\[1530px\] {
-    max-width: 1530px !important;
+  .md\:max-w-\[1536px\] {
+    max-width: 1536px !important;
   }
 
   .md\:flex-row {
@@ -1764,16 +1765,16 @@
     padding-top: 2.5rem !important;
   }
 
+  .md\:pt-16 {
+    padding-top: 4rem !important;
+  }
+
   .md\:pt-4 {
     padding-top: 1rem !important;
   }
 
   .md\:pt-\[500px\] {
     padding-top: 500px !important;
-  }
-
-  .md\:pt-16 {
-    padding-top: 4rem !important;
   }
 
   .md\:text-2xl {
