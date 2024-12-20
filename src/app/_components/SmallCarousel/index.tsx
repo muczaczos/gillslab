@@ -8,7 +8,17 @@ import DynamicIcon from '../DaynamicIcon'
 
 import styles from './index.module.scss'
 
-const SmallCarousel = ({ icons, images, catLabels, links, modals }) => {
+const SmallCarousel = ({
+  icons,
+  images,
+  catLabels,
+  links,
+  modals,
+  handleOpenModal,
+  isModalOpen,
+  handleCloseModal,
+  modalContent,
+}) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -51,18 +61,6 @@ const SmallCarousel = ({ icons, images, catLabels, links, modals }) => {
     setIsDown(false)
   }
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modalContent, setModalContent] = useState([])
-
-  const handleOpenModal = content => {
-    setModalContent(content)
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setModalContent([]) // Upewnij się, że resetujesz zawartość modala, jeśli chcesz
-  }
   useEffect(() => {}, [isModalOpen])
   useEffect(() => {}, [modalContent]) // Logowanie kiedy modalContent się zmienia
   return (
