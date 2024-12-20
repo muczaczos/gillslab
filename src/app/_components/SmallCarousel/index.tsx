@@ -3,11 +3,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Modal } from '../../_components/Modal'
 import DynamicIcon from '../DaynamicIcon'
 
 import styles from './index.module.scss'
 
-const SmallCarousel = ({ icons, images, catLabels, links }) => {
+const SmallCarousel = ({ icons, images, catLabels, links, modals }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -23,24 +24,6 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
       slider.scrollLeft = slideWidth / 2 // Ustawienie początkowego przesunięcia przy montowaniu komponentu
     }
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
-
-  const handleMouseMove = event => {
-    if (!isDown) return
-    event.preventDefault()
-    const slider = sliderRef.current
-    const x = event.pageX - slider.offsetLeft
-    const walk = x - startX
-    slider.scrollLeft = scrollLeft - walk
-  }
-
-  const handleTouchMove = event => {
-    if (!isDown) return
-    event.preventDefault()
-    const slider = sliderRef.current
-    const x = event.touches[0].pageX - slider.offsetLeft
-    const walk = x - startX
-    slider.scrollLeft = scrollLeft - walk
-  }
 
   const handleMouseDown = event => {
     const slider = sliderRef.current
@@ -68,6 +51,20 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
     setIsDown(false)
   }
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState([])
+
+  const handleOpenModal = content => {
+    setModalContent(content)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setModalContent([]) // Upewnij się, że resetujesz zawartość modala, jeśli chcesz
+  }
+  useEffect(() => {}, [isModalOpen])
+  useEffect(() => {}, [modalContent]) // Logowanie kiedy modalContent się zmienia
   return (
     <div
       className={styles.slider}
@@ -87,7 +84,8 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
             </div>
           </Link>
         ))}
-      {icons &&
+      {!modals &&
+        icons &&
         icons.map((Icon, index) => (
           <Link key={index} href={`/${links[index]}`} className="w-full">
             <div className={`${styles.slide} w-[150px] md:w-[200px]`} key={index}>
@@ -101,6 +99,29 @@ const SmallCarousel = ({ icons, images, catLabels, links }) => {
               <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
             </div>
           </Link>
+        ))}
+      {icons &&
+        modals &&
+        icons.map((Icon, index) => (
+          <div key={index} className="w-full">
+            <div
+              className={`${styles.slide} w-[150px] md:w-[200px]`}
+              onClick={() => {
+                handleOpenModal(modals[index])
+              }}
+            >
+              {/* Renderowanie ikony */}
+              <DynamicIcon
+                library={Icon.iconLibrary}
+                name={Icon.iconName}
+                size={50}
+                color="#4968AC"
+              />
+              <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
+            </div>
+
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
+          </div>
         ))}
       <div className="flex-shrink-0 w-[100px]"></div>
     </div>

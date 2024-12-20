@@ -2,7 +2,6 @@ export const Modal = ({ isOpen, onClose, content }) => {
   if (!isOpen) {
     return null
   }
-
   const renderContent = blocks => {
     if (!blocks || !Array.isArray(blocks)) {
       // console.warn('Invalid blocks provided:', blocks)
@@ -10,8 +9,6 @@ export const Modal = ({ isOpen, onClose, content }) => {
     }
 
     return blocks.map((block, index) => {
-      // console.log('Rendering block:', block) // Zalogowanie bloku przed renderowaniem
-
       if (block.text) {
         // Renderowanie tekstu
         const textStyle = {
@@ -64,17 +61,8 @@ export const Modal = ({ isOpen, onClose, content }) => {
           </div>
         )
       }
-
-      // console.warn('Unhandled block:', block) // Logowanie nieobsługiwanego bloku
-      /* return (
-        <p key={index} style={{ color: 'red' }}>
-          Unhandled content structure
-        </p>
-      )*/
     })
   }
-
-  //console.log('Modal Data:', JSON.stringify(content, null, 2)) // Zalogowanie danych modal
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-35 z-50">

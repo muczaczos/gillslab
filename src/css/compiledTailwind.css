@@ -912,24 +912,16 @@
   background-color: rgb(254 249 195 / var(--tw-bg-opacity)) !important;
 }
 
+.bg-opacity-35 {
+  --tw-bg-opacity: 0.35 !important;
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5 !important;
 }
 
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75 !important;
-}
-
-.bg-opacity-90 {
-  --tw-bg-opacity: 0.9 !important;
-}
-
-.bg-opacity-20 {
-  --tw-bg-opacity: 0.2 !important;
-}
-
-.bg-opacity-35 {
-  --tw-bg-opacity: 0.35 !important;
 }
 
 .bg-cover {
@@ -1291,6 +1283,11 @@
   color: rgb(96 165 250 / var(--tw-text-opacity)) !important;
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(59 130 246 / var(--tw-text-opacity)) !important;
+}
+
 .text-blue-600 {
   --tw-text-opacity: 1 !important;
   color: rgb(37 99 235 / var(--tw-text-opacity)) !important;
@@ -1374,11 +1371,6 @@
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(59 130 246 / var(--tw-text-opacity)) !important;
 }
 
 .underline {

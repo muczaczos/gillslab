@@ -1,10 +1,7 @@
 'use client'
 
-import React, { Fragment, useEffect, useState } from 'react'
-import { GiPressureCooker, GiWateringCan, GiWeight } from 'react-icons/gi'
-import { IoArrowBackOutline, IoHeart, IoHeartOutline, IoShareOutline } from 'react-icons/io5'
-import { LiaTemperatureLowSolid } from 'react-icons/lia'
-import { TbSunOff } from 'react-icons/tb'
+import React, { useEffect, useState } from 'react'
+import { IoArrowBackOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -23,7 +20,6 @@ import classes from './index.module.scss'
 export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
     slug,
-    id,
     title,
     title2,
     shortInfo1,
@@ -31,7 +27,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
     shortInfo3,
     shortInfo4,
     icons,
-    categories,
     price,
     media1,
     media2,
@@ -51,7 +46,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
     setIsModalOpen(false)
     setModalContent([]) // Upewnij się, że resetujesz zawartość modala, jeśli chcesz
   }
-  useEffect(() => {}, [isModalOpen])
 
   let productDescription
   let productDetails
@@ -59,8 +53,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const images = []
   const infoLabels = [shortInfo1, shortInfo2, shortInfo3, shortInfo4]
   // Extract text content from each moda
-
-  //console.log(Modals[3].Modal[1])
 
   if (media1) {
     images.push(media1['url'])
@@ -191,7 +183,13 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
 
           {/* Short info for mobile */}
           <div className="lg:hidden">
-            <SmallCarousel links={null} icons={icons} catLabels={infoLabels} images={null} />
+            <SmallCarousel
+              links={null}
+              icons={icons}
+              catLabels={infoLabels}
+              images={null}
+              modals={Modals}
+            />
           </div>
           {/* /////////////////////// */}
 
