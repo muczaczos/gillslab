@@ -117,8 +117,6 @@ const SmallCarousel = ({
               />
               <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
             </div>
-
-            <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
           </div>
         ))}
       <div className="flex-shrink-0 w-[100px]"></div>

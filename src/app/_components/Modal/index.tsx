@@ -65,7 +65,7 @@ export const Modal = ({ isOpen, onClose, content }) => {
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-35 z-[9999]">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[9999]">
       <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[50%]">
         <button
           onClick={() => {

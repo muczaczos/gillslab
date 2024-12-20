@@ -195,6 +195,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               modalContent={modalContent}
             />
           </div>
+          <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
           {/* /////////////////////// */}
 
           {/* Short info for desktop */}
