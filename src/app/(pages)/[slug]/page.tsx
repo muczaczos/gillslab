@@ -184,6 +184,10 @@ export default async function Pages({ params: { slug = 'home' } }) {
               catLabels={catLabels}
               images={images}
               modals={null}
+              handleOpenModal={null} // Pass function down to SmallCarousel
+              isModalOpen={null} // Pass modal state down to SmallCarousel
+              handleCloseModal={null} // Pass close function as prop
+              modalContent={null}
             />
           </section>
           {/* /////////// */}
