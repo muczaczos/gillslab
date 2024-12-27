@@ -3,11 +3,6 @@
 @use './type.scss' as *;
 @use "./theme.scss";
 
-.richText ul,
-.richText ol {
-  list-style: initial !important;
-}
-
 .react-tabs__tab-list {
   border: none !important; /* Usunięcie obramowania */
   outline: none !important; /* Usuń obrys */

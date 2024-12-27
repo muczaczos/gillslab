@@ -484,6 +484,7 @@ export interface Post {
           | null;
         author?: string | null;
         media?: string | Media | null;
+        imagePosition?: ('left' | 'right') | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'text';
@@ -1076,6 +1077,7 @@ export interface Page {
           | null;
         author?: string | null;
         media?: string | Media | null;
+        imagePosition?: ('left' | 'right') | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'text';

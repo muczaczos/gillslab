@@ -79,5 +79,6 @@ export const TEXT = `
   test
   author
   ${MEDIA}
+  imagePosition
 }
 `

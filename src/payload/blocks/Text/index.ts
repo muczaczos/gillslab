@@ -17,5 +17,14 @@ export const Text: Block = {
       relationTo: 'media', // Kolekcja, w której przechowywane są obrazy
       required: false, // Możesz ustawić na `true`, jeśli obraz jest wymagany
     },
+    {
+      name: 'imagePosition', // Dodane pole do wyboru pozycji tekstu
+      type: 'select',
+      options: [
+        { label: 'Left', value: 'left' },
+        { label: 'Right', value: 'right' },
+      ],
+      defaultValue: 'left', // Ustawienie domyślnej wartości na "left"
+    },
   ],
 }

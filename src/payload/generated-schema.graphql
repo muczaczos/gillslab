@@ -3347,6 +3347,7 @@ type Text {
   test(depth: Int): JSON
   author: String
   media(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Text_Media_where): Media
+  imagePosition: Text_imagePosition
   id: String
   blockName: String
   blockType: String
@@ -3538,6 +3539,11 @@ input Text_Media_where_or {
   id: Text_Media_id_operator
   AND: [Text_Media_where_and]
   OR: [Text_Media_where_or]
+}
+
+enum Text_imagePosition {
+  left
+  right
 }
 
 type Page_Meta {
