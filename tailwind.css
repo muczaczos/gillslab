@@ -76,9 +76,10 @@
   }
 }
 
-
-
-
+.richText ul,
+.richText ol {
+  list-style: initial !important;
+}
 
 
 

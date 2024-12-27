@@ -5,7 +5,7 @@ export const Text: Block = {
   fields: [
     {
       name: 'test',
-      type: 'textarea',
+      type: 'richText',
     },
     {
       name: 'author',

@@ -477,7 +477,11 @@ export interface Post {
         blockType: 'archive';
       }
     | {
-        test?: string | null;
+        test?:
+          | {
+              [k: string]: unknown;
+            }[]
+          | null;
         author?: string | null;
         media?: string | Media | null;
         id?: string | null;
@@ -1065,7 +1069,11 @@ export interface Page {
         blockType: 'archive';
       }
     | {
-        test?: string | null;
+        test?:
+          | {
+              [k: string]: unknown;
+            }[]
+          | null;
         author?: string | null;
         media?: string | Media | null;
         id?: string | null;

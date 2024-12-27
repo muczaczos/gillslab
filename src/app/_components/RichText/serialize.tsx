@@ -7,6 +7,8 @@ import { Label } from '../Label'
 import { LargeBody } from '../LargeBody'
 import { CMSLink } from '../Link'
 
+import classes from './index.module.scss'
+
 // eslint-disable-next-line no-use-before-define
 type Children = Leaf[]
 
@@ -77,9 +79,17 @@ const serialize = (children?: Children): React.ReactNode[] =>
       case 'quote':
         return <blockquote key={i}>{serialize(node?.children)}</blockquote>
       case 'ul':
-        return <ul key={i}>{serialize(node?.children)}</ul>
+        return (
+          <ul className={classes.ul} key={i}>
+            {serialize(node?.children)}
+          </ul>
+        )
       case 'ol':
-        return <ol key={i}>{serialize(node.children)}</ol>
+        return (
+          <ol className={classes.ol} key={i}>
+            {serialize(node.children)}
+          </ol>
+        )
       case 'li':
         return <li key={i}>{serialize(node.children)}</li>
       case 'link':

@@ -21,11 +21,11 @@ export const Text: React.FC<Props> = props => {
   if (media && typeof media === 'object') caption = media.filename
 
   return (
-    <div className={classes.mediaBlock}>
-      <p>test</p>
-      <p>{test}</p>
-      <Media resource={media} src={staticImage} />
-      <p>no i po obrazku</p>
-    </div>
+    <Gutter className="">
+      <div className="flex">
+        <RichText content={test} className={`${classes} w-1/2 order-2`} /> {/* Renderowanie pola `richText` */}
+        <Media resource={media} src={staticImage} className="w-1/2 order-1" />
+      </div>
+    </Gutter>
   )
 }
