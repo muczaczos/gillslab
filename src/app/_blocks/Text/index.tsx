@@ -20,8 +20,6 @@ export const Text: React.FC<Props> = props => {
   let caption
   if (media && typeof media === 'object') caption = media.filename
 
-  console.log(props)
-
   return (
     <Gutter className="">
       <div className={`md:flex ${imagePosition === 'right' ? 'md:flex-row-reverse' : ''}`}>
