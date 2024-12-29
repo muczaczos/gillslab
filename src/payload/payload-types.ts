@@ -477,11 +477,9 @@ export interface Post {
         blockType: 'archive';
       }
     | {
-        test?:
-          | {
-              [k: string]: unknown;
-            }[]
-          | null;
+        richText: {
+          [k: string]: unknown;
+        }[];
         author?: string | null;
         media?: string | Media | null;
         imagePosition?: ('left' | 'right') | null;
@@ -1070,11 +1068,9 @@ export interface Page {
         blockType: 'archive';
       }
     | {
-        test?:
-          | {
-              [k: string]: unknown;
-            }[]
-          | null;
+        richText: {
+          [k: string]: unknown;
+        }[];
         author?: string | null;
         media?: string | Media | null;
         imagePosition?: ('left' | 'right') | null;

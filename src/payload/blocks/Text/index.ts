@@ -1,12 +1,10 @@
 import type { Block } from 'payload/types'
+import richText from '../../fields/richText'
 
 export const Text: Block = {
   slug: 'text',
   fields: [
-    {
-      name: 'test',
-      type: 'richText',
-    },
+    richText(),
     {
       name: 'author',
       type: 'text',

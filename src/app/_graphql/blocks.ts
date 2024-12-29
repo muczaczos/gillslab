@@ -75,8 +75,8 @@ export const ARCHIVE_BLOCK = `
 
 export const TEXT = `
 ...on Text {
+  richText
   blockType
-  test
   author
   ${MEDIA}
   imagePosition

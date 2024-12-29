@@ -3344,7 +3344,7 @@ enum Archive_PopulatedDocs_RelationTo {
 union Archive_PopulatedDocs = Product | Post
 
 type Text {
-  test(depth: Int): JSON
+  richText(depth: Int): JSON
   author: String
   media(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: Text_Media_where): Media
   imagePosition: Text_imagePosition
