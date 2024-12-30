@@ -29,7 +29,7 @@ export default function HamburgerMenu() {
       >
         {isOpen && !isClosing ? (
           // Krzyżyk (X)
-          <div className="relative w-8 h-8 transform z-50">
+          <div className="fixed top-4 right-4 z-50 w-8 h-8 transform">
             <p className="text-customWhite font-bold">X</p>
           </div>
         ) : (
@@ -53,78 +53,84 @@ export default function HamburgerMenu() {
             className="absolute inset-0 bg-no-repeat bg-cover opacity-5"
             style={{ backgroundImage: "url('/media/eyes.png')" }}
           ></div>
-          <ul className="list-none p-4 text-center z-50 w-full">
-            <Link href="/about">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">About</p>
-              </div>
-            </Link>
-            <Link className="" href="/cubensis-grow-kits">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Growkits</p>
-              </div>
-            </Link>
-            <Link className="" href="/cubensis-spore-syringes">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Spores</p>
-              </div>
-            </Link>
-            <Link className="" href="/cubensis-liquid-cultures">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Cultures</p>
-              </div>
-            </Link>
-            <Link className="" href="/substrates">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Substrates</p>
-              </div>
-            </Link>
-            <Link className="" href="/laboratory-equipments">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Lab</p>
-              </div>
-            </Link>
-            <Link className="" href="/favorities">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Favorities</p>
-              </div>
-            </Link>
-            <Link className="" href="/contact">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Contact</p>
-              </div>
-            </Link>
-            <Link className="" href="/shipping">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Shipping</p>
-              </div>
-            </Link>
-            <Link className="" href="/blog">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Blog</p>
-              </div>
-            </Link>
-            <Link className="" href="/payments">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Payments</p>
-              </div>
-            </Link>
-            <Link className="" href="/vlog">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Vlog</p>
-              </div>
-            </Link>
-            <Link className="" href="/conditions">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Conditions</p>
-              </div>
-            </Link>
-            <Link className="" href="/privacy">
-              <div className="border-0 border-b border-b-customWhite-light border-solid pt-1">
-                <p className="text-customWhite font-bold text-2xl block pb-1">Privacy</p>
-              </div>
-            </Link>
-          </ul>
+          <div className="flex justify-center gap-8 p-4 text-left z-50 w-full">
+            <div>
+              <p className="text-customWhite font-black text-2xl underline">Informations</p>
+              <Link className="" href="/vlog">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Vlog</p>
+                </div>
+              </Link>
+              <Link className="" href="/blog">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Blog</p>
+                </div>
+              </Link>
+              <Link href="/about">
+                <div className=" pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">About</p>
+                </div>
+              </Link>
+              <Link className="" href="/privacy">
+                <div className=" pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Privacy</p>
+                </div>
+              </Link>
+              <Link className="" href="/contact">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Contact</p>
+                </div>
+              </Link>
+              <Link className="" href="/shipping">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Shipping</p>
+                </div>
+              </Link>
+              <Link className="" href="/payments">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Payments</p>
+                </div>
+              </Link>
+              <Link className="" href="/conditions">
+                <div className=" pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Conditions</p>
+                </div>
+              </Link>
+            </div>
+            <div>
+              <p className="text-customWhite font-black text-2xl underline">Products</p>
+              <Link className="" href="/laboratory-equipments">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Lab</p>
+                </div>
+              </Link>
+              <Link className="" href="/cubensis-spore-syringes">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Spores</p>
+                </div>
+              </Link>
+              <Link className="" href="/cubensis-liquid-cultures">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Cultures</p>
+                </div>
+              </Link>
+              <Link className="" href="/cubensis-grow-kits">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Growkits</p>
+                </div>
+              </Link>
+              <Link className="" href="/favorities">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Favorities</p>
+                </div>
+              </Link>
+              <Link className="" href="/substrates">
+                <div className="pt-1">
+                  <p className="text-customWhite font-bold text-2xl block pb-3">Substrates</p>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </div>
