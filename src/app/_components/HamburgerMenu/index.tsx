@@ -53,9 +53,9 @@ export default function HamburgerMenu() {
             className="absolute inset-0 bg-no-repeat bg-cover opacity-5"
             style={{ backgroundImage: "url('/media/eyes.png')" }}
           ></div>
-          <div className="flex justify-center gap-8 p-4 text-left z-50 w-full">
+          <div className="flex justify-center gap-2 p-4 text-left z-50 w-full">
             <div>
-              <p className="text-customWhite font-black text-2xl underline">Informations</p>
+              <p className="text-customWhite font-black text-3xl underline">Info</p>
               <Link className="" href="/vlog">
                 <div className="pt-1">
                   <p className="text-customWhite font-bold text-2xl block pb-3">Vlog</p>
@@ -98,7 +98,7 @@ export default function HamburgerMenu() {
               </Link>
             </div>
             <div>
-              <p className="text-customWhite font-black text-2xl underline">Products</p>
+              <p className="text-customWhite font-black text-3xl underline">Products</p>
               <Link className="" href="/laboratory-equipments">
                 <div className="pt-1">
                   <p className="text-customWhite font-bold text-2xl block pb-3">Lab</p>
