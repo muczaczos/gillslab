@@ -29,6 +29,15 @@ const serialize = (children?: Children): React.ReactNode[] =>
     if (Text.isText(node)) {
       let text = <span dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />
 
+      // Dodajemy obsługę koloru, rzutowanie typu na string
+      if (node.color_picker && typeof node.color_picker === 'string') {
+        text = (
+          <span style={{ color: node.color_picker }} key={i}>
+            {text}
+          </span>
+        )
+      }
+
       if (node.bold) {
         text = <strong key={i}>{text}</strong>
       }

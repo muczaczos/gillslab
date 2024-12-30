@@ -1,5 +1,7 @@
 import type { RichTextLeaf } from '@payloadcms/richtext-slate/dist/types'
 
-const defaultLeaves: RichTextLeaf[] = ['bold', 'italic', 'underline']
+import color from './color'
+
+const defaultLeaves: RichTextLeaf[] = ['bold', 'italic', 'underline', color]
 
 export default defaultLeaves
