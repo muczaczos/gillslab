@@ -30,8 +30,36 @@ import classes from './index.module.scss'
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
 
+type NewsItem = {
+  id: string
+  title: string
+  content: string
+  meta: {
+    image: {
+      filename: string
+    }
+  }
+}
+
 export default async function Pages({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
+
+  const response = await fetch(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts`, {
+    headers: {
+      Authorization: `Bearer ${process.env.CMS_API_KEY}`,
+    },
+    cache: 'no-store',
+  })
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  const data: { docs: NewsItem[] } = await response.json()
+
+  console.log(data)
+
+  data.docs.map(news => console.log(news.meta.image.filename))
 
   let page: Page | null = null
   let categories: Category[] | null = null
