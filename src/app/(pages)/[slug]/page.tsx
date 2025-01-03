@@ -38,7 +38,9 @@ type NewsItem = {
     image: {
       filename: string
     }
+    description: string
   }
+  slug: string
 }
 
 export default async function Pages({ params: { slug = 'home' } }) {
@@ -57,15 +59,19 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   const data: { docs: NewsItem[] } = await response.json()
 
-  //console.log(data)
-
   // data.docs.map(news => console.log(news.meta.image.filename))
 
   const images3 = data.docs
-    .slice(-5) // Pobiera ostatnie 5 elementów z tablicy
-    .map(news => `http://localhost:3000/media/${news.meta.image.filename}`) // Dodaje prefiks do ścieżki
+    .slice(0, 5) // Pobiera ostatnie 5 elementów z tablicy
+    .map(news => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/media/${news.meta.image.filename}`) // Dodaje prefiks do ścieżki
 
-  console.log(images3)
+  const catLabels2 = data.docs.slice(0, 5).map(news => news.title)
+
+  const content = data.docs.slice(0, 5).map(news => news.meta.description)
+
+  const slugs = data.docs
+    .slice(0, 5)
+    .map(news => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/blog/${news.slug}`)
 
   let page: Page | null = null
   let categories: Category[] | null = null
@@ -76,7 +82,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
       draft: isDraftMode,
     })
     categories = await fetchDocs<Category>('categories')
-  } catch (error) { }
+  } catch (error) {}
 
   // if no `home` page exists, render a static one using dummy content
   // you should delete this code once you have a home page in the CMS
@@ -113,8 +119,6 @@ export default async function Pages({ params: { slug = 'home' } }) {
     process.env.NEXT_PUBLIC_SERVER_URL + '/media/muchomor.jpg',
     process.env.NEXT_PUBLIC_SERVER_URL + '/media/koszyk.jpg',
   ]
-
-  console.log(images2)
 
   const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
   const promotionImg = process.env.NEXT_PUBLIC_SERVER_URL + '/media/promotions.png'
@@ -472,12 +476,14 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <Gutter>
               <div className="flex justify-between z-0">
                 <p className="py-2 font-bold text-xl text-primary z-20 sm:text-3xl">News on Blog</p>
-                <p className="pt-2 relative top-1 font-bold text-md text-primary sm:text-xl">
-                  View All
-                </p>
+                <Link href={process.env.NEXT_PUBLIC_SERVER_URL + '/blog'}>
+                  <p className="pt-2 relative top-1 font-bold text-md text-primary sm:text-xl">
+                    View All
+                  </p>
+                </Link>
               </div>
             </Gutter>
-            <NewsCarousel catLabels={catLabels} images={images3} />
+            <NewsCarousel catLabels={catLabels2} images={images3} content={content} slugs={slugs} />
             <div className="pb-10"></div>
             <Gutter>
               <div className="flex justify-between z-10">

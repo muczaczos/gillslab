@@ -2,10 +2,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from './index.module.scss'
 
-const NewsCarousel = ({ images, catLabels }) => {
+const NewsCarousel = ({ images, catLabels, content, slugs }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -89,6 +90,8 @@ const NewsCarousel = ({ images, catLabels }) => {
     }
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
+  if (!slugs) return null
+
   return (
     <div className="relative md:flex md:justify-center">
       <div
@@ -101,7 +104,7 @@ const NewsCarousel = ({ images, catLabels }) => {
         onTouchEnd={handleTouchEnd}
       >
         {images.map((image, index) => (
-          <div key={index} className={`${styles.slide} slide z-10`}>
+          <Link href={`${slugs[index]}`} key={index} className={`${styles.slide} slide z-10`}>
             <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
               <div className="p-4">
                 <div className="w-full rounded-xl overflow-hidden">
@@ -123,14 +126,12 @@ const NewsCarousel = ({ images, catLabels }) => {
                     {catLabels[index]}
                   </h2>
                   <p className="text-customGray-dark font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, ipsam consectetur
-                    rerum sit qui accusantium architecto vero, corporis tempora perspiciatis
-                    distinctio placeat quae aut odit sint veritatis possimus sapiente. Fuga.
+                    {content[index]}
                   </p>
                 </div>
               )}
             </div>
-          </div>
+          </Link>
         ))}
         <div className="flex-shrink-0 w-[100px]"></div>
       </div>
