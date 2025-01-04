@@ -14,6 +14,7 @@ import { buildConfig } from 'payload/config'
 import Categories from './collections/Categories'
 import Comments from './collections/Comments'
 import { Media } from './collections/Media'
+import Movies from './collections/Movies'
 import { Orders } from './collections/Orders'
 import { Pages } from './collections/Pages'
 import Posts from './collections/Posts'
@@ -133,6 +134,7 @@ export default buildConfig({
     Products,
     Orders,
     Media,
+    Movies,
     Categories,
     Users,
     Comments,

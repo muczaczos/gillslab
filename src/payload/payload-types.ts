@@ -28,6 +28,7 @@ export interface Config {
     products: Product;
     orders: Order;
     media: Media;
+    movies: Movie;
     categories: Category;
     users: User;
     comments: Comment;
@@ -1134,6 +1135,42 @@ export interface Order {
     | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "movies".
+ */
+export interface Movie {
+  id: string;
+  title: string;
+  categories?: (string | Category)[] | null;
+  publishedAt?: string | null;
+  authors?: (string | User)[] | null;
+  populatedAuthors?:
+    | {
+        id?: string | null;
+        name?: string | null;
+      }[]
+    | null;
+  layout: {
+    richText: {
+      [k: string]: unknown;
+    }[];
+    author?: string | null;
+    media?: string | Media | null;
+    imagePosition?: ('left' | 'right') | null;
+    id?: string | null;
+    blockName?: string | null;
+    blockType: 'text';
+  }[];
+  media: string | Media;
+  youtubeLink: string;
+  blogLink: string;
+  podcastLink: string;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

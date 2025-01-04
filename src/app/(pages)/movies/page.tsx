@@ -1,19 +1,17 @@
 import React, { Suspense } from 'react'
-
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
-import PostsCards from './PostsCards'
-import PostsContent from './PostsContent'
+import MoviesContent from './MoviesContent'
 
-const Posts = () => {
+const Movies = () => {
   const serverUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL
 
   return (
     <LayoutWithHeaderFooter>
       <Suspense fallback={<div>Loading posts...</div>}>
-        <PostsContent serverUrl={serverUrl} />
+        <MoviesContent serverUrl={serverUrl} />
       </Suspense>
     </LayoutWithHeaderFooter>
   )
 }
 
-export default Posts
+export default Movies
