@@ -70,6 +70,10 @@ const nextConfig = {
         destination: '/posts', // docelowa strona produktu
       },
       {
+        source: '/vlog', // dla kategorii substrates
+        destination: '/movies', // docelowa strona produktu
+      },
+      {
         source: '/blog/:slug', // dla kategorii substrates
         destination: '/posts/:slug', // docelowa strona produktu
       },

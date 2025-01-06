@@ -346,6 +346,10 @@
   margin-top: 6px !important;
 }
 
+.mr-2 {
+  margin-right: 0.5rem !important;
+}
+
 .block {
   display: block !important;
 }
@@ -1708,6 +1712,10 @@
 
   .md\:w-full {
     width: 100% !important;
+  }
+
+  .md\:w-1\/4 {
+    width: 25% !important;
   }
 
   .md\:max-w-\[1536px\] {

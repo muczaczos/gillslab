@@ -5,6 +5,19 @@ import Link from 'next/link'
 import PostsCard from '../../../_components/PostCard'
 
 const PostsCards = ({ posts }) => {
+  if (!posts || posts.length === 0) return null // Jeśli nie ma filmów, nic nie renderuj
+
+  if (posts.length === 1) {
+    // Jeśli jest tylko jeden film, renderuj go w pełnej szerokości
+    return (
+      <div className="w-full md:max-w-[1536px] bg-customWhite p-4 flex justify-center md:justify-start">
+        <div className="w-full justify-center md:w-1/4">
+          <PostsCard posts={posts} />
+        </div>
+      </div>
+    )
+  }
+
   // Podzielmy strony na 2 grupy: parzyste i nieparzyste
   const evenPages = posts.filter((_, index) => index % 2 === 0) // Elementy o parzystych indeksach
   const oddPages = posts.filter((_, index) => index % 2 !== 0) // Elementy o nieparzystych indeksach
