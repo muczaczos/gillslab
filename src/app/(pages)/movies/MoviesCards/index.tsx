@@ -15,7 +15,7 @@ const MoviesCards = ({ movies }) => {
   const everyFourthPageStartingFromFourth = movies.filter((_, index) => (index - 3) % 4 === 0)
 
   return (
-    <div className="md:max-w-[1536px]">
+    <div className="">
       <section className="csm:hidden sm:hidden flex w-full bg-customWhite">
         <div className="w-full p-2">
           <MoviesCard movies={movies} />

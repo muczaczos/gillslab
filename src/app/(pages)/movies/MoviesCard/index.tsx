@@ -18,7 +18,7 @@ const MoviesCard = ({ movies }) => {
     return `${day} ${month}, ${year}`
   }
   console.log('movies')
-  console.log(movies)
+  console.log(movies[0].media.url)
 
   return (
     <>
@@ -27,13 +27,20 @@ const MoviesCard = ({ movies }) => {
         // const href = `${process.env.NEXT_PUBLIC_SERVER_URL}/blog/${item.slug}`
         const title = item.title
         return (
-          <div key={index} className="mb-10">
-            <Link href={'https://google.pl'}></Link>
-            <h3 className="text-left text-xl mt-2 text-customGray-dark">{title}</h3>
-            <h4 className="text-lg font-medium text-customGray-light">
-              {formatDateWithComma(item.publishedAt)} <span className="text-2xl">•</span>{' '}
-              {item.readingTime} min read
-            </h4>
+          <div key={index} className="mb-10 w-full">
+            <Link href={'https://google.pl'}>
+              <Image
+                src={movies[index].media.url}
+                alt={movies[index].media.alt}
+                width="500"
+                height="200"
+              ></Image>
+              <h3 className="text-left text-xl mt-2 text-customGray-dark">{title}</h3>
+              <h4 className="text-lg font-medium text-customGray-light">
+                {formatDateWithComma(item.publishedAt)} <span className="text-2xl">•</span>{' '}
+                {item.readingTime} min read
+              </h4>
+            </Link>
           </div>
         )
       })}

@@ -22,16 +22,23 @@ export const Text: React.FC<Props> = props => {
 
   return (
     <Gutter className="">
-      <div className={`md:flex ${imagePosition === 'right' ? 'md:flex-row-reverse' : ''}`}>
-        <RichText
-          content={richText}
-          className={`${classes} px-5 py-5 md:py-0 w-full md:w-1/2 order-2`}
-        />{' '}
-        {/* Renderowanie pola `richText` */}
-        <div className="flex w-full md:w-1/2 justify-center">
-          <Media resource={media} src={staticImage} className=" order-1" />
+      {richText && media && (
+        <div className={`md:flex ${imagePosition === 'right' ? 'md:flex-row-reverse' : ''}`}>
+          <RichText
+            content={richText}
+            className={`${classes} px-5 py-5 md:py-0 w-full md:w-1/2 order-2`}
+          />{' '}
+          {/* Renderowanie pola `richText` */}
+          <div className="flex w-full md:w-1/2 justify-center">
+            <Media resource={media} src={staticImage} className=" order-1" />
+          </div>
         </div>
-      </div>
+      )}
+      {richText && !media && (
+        <div className="w-full">
+          <RichText content={richText} className={`${classes} px-5 py-5 md:py-0 w-full order-2`} />{' '}
+        </div>
+      )}
     </Gutter>
   )
 }

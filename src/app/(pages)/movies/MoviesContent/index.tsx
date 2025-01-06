@@ -48,7 +48,7 @@ const MoviesContent = serverUrl => {
       setCurrentPage(newPage) // Zaktualizuj stan
       setShowAll(false) // Przełącz na paginację
       sessionStorage.setItem('showAll', 'false') // Zapisz stan
-      router.push(`/blog?page=${newPage}`) // Zaktualizuj URL
+      router.push(`/movies?page=${newPage}`) // Zaktualizuj URL
     }
   }
 
@@ -56,14 +56,14 @@ const MoviesContent = serverUrl => {
   const handleSeeAllToggle = () => {
     setShowAll(true) // Przełącz na "See All"
     sessionStorage.setItem('showAll', 'true') // Zapisz stan
-    router.push('/blog') // Zmień adres URL na /blog
+    router.push('/movies') // Zmień adres URL na /blog
   }
 
   // Funkcja powrotu do paginacji
   const handleReturnToPagination = () => {
     setShowAll(false)
     sessionStorage.setItem('showAll', 'false') // Zapisz stan
-    router.push(`/blog?page=${currentPage}`) // Powrót do obecnej strony paginacji
+    router.push(`/movies?page=${currentPage}`) // Powrót do obecnej strony paginacji
   }
 
   // Funkcja do generowania numerów stron w paginacji
