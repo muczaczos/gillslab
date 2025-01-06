@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react'
+
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import MoviesContent from './MoviesContent'
 

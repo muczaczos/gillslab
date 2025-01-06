@@ -43,9 +43,19 @@ type NewsItem = {
   slug: string
 }
 
+type VlogItem = {
+  id: string
+  title: string
+  media: {
+    filename: string
+  }
+  slug: string
+  youtubeLink: string
+}
 export default async function Pages({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
+  //get posts
   const response = await fetch(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts`, {
     headers: {
       Authorization: `Bearer ${process.env.CMS_API_KEY}`,
@@ -56,14 +66,32 @@ export default async function Pages({ params: { slug = 'home' } }) {
   if (!response.ok) {
     throw new Error('Failed to fetch data')
   }
-
   const data: { docs: NewsItem[] } = await response.json()
+  ////////////
+
+  //get movies
+  const response2 = await fetch(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/movies`, {
+    headers: {
+      Authorization: `Bearer ${process.env.CMS_API_KEY}`,
+    },
+    cache: 'no-store',
+  })
+
+  if (!response2.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  const data2: { docs: VlogItem[] } = await response2.json()
+  ///////////
 
   // data.docs.map(news => console.log(news.meta.image.filename))
-
+  data2.docs.map(vlogs => console.log(vlogs.slug))
   const images3 = data.docs
     .slice(0, 5) // Pobiera ostatnie 5 elementów z tablicy
     .map(news => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/media/${news.meta.image.filename}`) // Dodaje prefiks do ścieżki
+
+  const vlogImages = data2.docs
+    .slice(0, 5) // Pobiera ostatnie 5 elementów z tablicy
+    .map(vlogs => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/media/${vlogs.media.filename}`) // Dodaje prefiks do ścieżki
 
   const catLabels2 = data.docs.slice(0, 5).map(news => news.title)
 
@@ -72,6 +100,8 @@ export default async function Pages({ params: { slug = 'home' } }) {
   const slugs = data.docs
     .slice(0, 5)
     .map(news => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/blog/${news.slug}`)
+
+  const vlogSlugs = data2.docs.slice(0, 5).map(vlogs => `${vlogs.youtubeLink}`)
 
   let page: Page | null = null
   let categories: Category[] | null = null
@@ -487,13 +517,15 @@ export default async function Pages({ params: { slug = 'home' } }) {
             <div className="pb-10"></div>
             <Gutter>
               <div className="flex justify-between z-10">
-                <p className="py-2 relative top-1 font-bold text-md text-primary sm:text-xl">
-                  View All
-                </p>
+                <Link href={process.env.NEXT_PUBLIC_SERVER_URL + '/vlog'}>
+                  <p className="py-2 relative top-1 font-bold text-md text-primary sm:text-xl">
+                    View All
+                  </p>
+                </Link>
                 <p className="py-2 font-bold text-xl text-primary sm:text-3xl">News on Vlog</p>
               </div>
             </Gutter>
-            <NewsCarousel catLabels={null} images={images2} />
+            <NewsCarousel catLabels={null} images={vlogImages} content={null} slugs={vlogSlugs} />
           </section>
           {/* /////////// */}
         </>

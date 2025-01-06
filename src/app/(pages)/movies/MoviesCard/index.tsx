@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import RichText from '../../../_components/RichText'
+
 import { Button } from '../../../_components/Button'
+import RichText from '../../../_components/RichText'
 
 // Komponent przyjmujący props 'pages' i opcjonalnie 'posts'
 const MoviesCard = ({ movies }) => {
