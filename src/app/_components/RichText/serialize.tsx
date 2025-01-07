@@ -24,6 +24,20 @@ type Leaf = {
   [key: string]: unknown
 }
 
+const emoticonsMap = {
+  ':)': '😊',
+  ':(': '😢',
+  ':D': '😄',
+  ';)': '😉',
+  ':P': '😛',
+  '<3': '❤️',
+}
+
+// Funkcja zamieniająca emotikony na emoji
+const replaceEmoticons = text => {
+  return text.replace(/:\)|:\(|:D|;\)|:P|<3/g, match => emoticonsMap[match] || match)
+}
+
 const serialize = (children?: Children): React.ReactNode[] =>
   children?.map((node, i) => {
     if (Text.isText(node)) {
@@ -36,6 +50,11 @@ const serialize = (children?: Children): React.ReactNode[] =>
           </Fragment>
         )
       }
+
+      // Zamiana emotikonów na emoji
+      const replacedText = replaceEmoticons(node.text)
+
+      text = <span dangerouslySetInnerHTML={{ __html: escapeHTML(replacedText) }} />
 
       // Dodajemy obsługę koloru, rzutowanie typu na string
       if (node.color_picker && typeof node.color_picker === 'string') {
