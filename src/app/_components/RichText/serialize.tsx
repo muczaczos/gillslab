@@ -28,6 +28,14 @@ const serialize = (children?: Children): React.ReactNode[] =>
   children?.map((node, i) => {
     if (Text.isText(node)) {
       let text = <span dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />
+      if (!node.text.trim()) {
+        // Jeśli tekst jest pusty, dodaj nową linię
+        return (
+          <Fragment key={i}>
+            <br />
+          </Fragment>
+        )
+      }
 
       // Dodajemy obsługę koloru, rzutowanie typu na string
       if (node.color_picker && typeof node.color_picker === 'string') {

@@ -298,6 +298,10 @@
   margin-right: 2.5rem !important;
 }
 
+.mr-2 {
+  margin-right: 0.5rem !important;
+}
+
 .mr-5 {
   margin-right: 1.25rem !important;
 }
@@ -344,10 +348,6 @@
 
 .mt-\[6px\] {
   margin-top: 6px !important;
-}
-
-.mr-2 {
-  margin-right: 0.5rem !important;
 }
 
 .block {
@@ -1694,6 +1694,10 @@
     width: 33.333333% !important;
   }
 
+  .md\:w-1\/4 {
+    width: 25% !important;
+  }
+
   .md\:w-\[1536px\] {
     width: 1536px !important;
   }
@@ -1712,10 +1716,6 @@
 
   .md\:w-full {
     width: 100% !important;
-  }
-
-  .md\:w-1\/4 {
-    width: 25% !important;
   }
 
   .md\:max-w-\[1536px\] {
