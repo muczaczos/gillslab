@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { FaFlask, FaSyringe, FaVial } from 'react-icons/fa' // Ikony z Font Awesome
 import escapeHTML from 'escape-html'
 import Link from 'next/link'
 import { Text } from 'slate'
@@ -25,17 +26,49 @@ type Leaf = {
 }
 
 const emoticonsMap = {
-  ':)': '😊',
-  ':(': '😢',
-  ':D': '😄',
-  ';)': '😉',
-  ':P': '😛',
-  '<3': '❤️',
+  '--usmiech--': '😊',
+  '--smuteczek--': '😢',
+  '--radocha--': '😄',
+  '--oczko--': '😉',
+  '--jezyk--': '😛',
+  '--serce--': '❤️',
+  '--zdziwienie--': '😮',
+  '--szok--': '😲',
+  '--beka--': '😂',
+  '--smutek--': '🙁',
+  '--szczerzy--': '😁',
+  '--okojezyk--': '😜',
+  '--jezykzly--': '😝',
+  '--okulary--': '😎',
+  '--zniesmaczony--': '😐',
+  '--zly--': '😕',
+  '--placze--': '😭',
+  '--calus--': '😘', // Dodano emotikonę całusa
+  '--zlamaneserce--': '💔',
+  '--grzybek--': '🍄',
+  '--strzykawka--': '💉',
+  '--mikroskop--': '🔬',
+  '--istrzykawka--': <FaSyringe />,
+  '--ikolba--': <FaFlask />,
+  '--iprobowka--': <FaVial />,
 }
 
-// Funkcja zamieniająca emotikony na emoji
 const replaceEmoticons = text => {
-  return text.replace(/:\)|:\(|:D|;\)|:P|<3/g, match => emoticonsMap[match] || match)
+  return text
+    .split(
+      /(--usmiech--|--smuteczek--|--radocha--|--oczko--|--jezyk--|--serce--|--zdziwienie--|--szok--|--beka--|--smutek--|--szczerzy--|--okojezyk--|--jezykzly--|--okulary--|--zniesmaczony--|--zly--|--placze--|--calus--|--zlamaneserce--|--grzybek--|--strzykawka--|--mikroskop--|--istrzykawka--|--ikolba--|--iprobowka--)/g,
+    )
+    .map(part => {
+      if (emoticonsMap[part]) {
+        // Jeśli mamy komponent JSX, zwróć go jako JSX
+        return typeof emoticonsMap[part] === 'string' ? (
+          emoticonsMap[part]
+        ) : (
+          <span>{emoticonsMap[part]}</span>
+        ) // Renderujemy JSX w przypadku komponentów
+      }
+      return part // Zwróć tekst, jeśli nie pasuje do emotikony
+    })
 }
 
 const serialize = (children?: Children): React.ReactNode[] =>
@@ -54,7 +87,7 @@ const serialize = (children?: Children): React.ReactNode[] =>
       // Zamiana emotikonów na emoji
       const replacedText = replaceEmoticons(node.text)
 
-      text = <span dangerouslySetInnerHTML={{ __html: escapeHTML(replacedText) }} />
+      text = <span>{replacedText}</span>
 
       // Dodajemy obsługę koloru, rzutowanie typu na string
       if (node.color_picker && typeof node.color_picker === 'string') {
