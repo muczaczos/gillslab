@@ -514,6 +514,18 @@
   width: 100% !important;
 }
 
+.w-1\/6 {
+  width: 16.666667% !important;
+}
+
+.w-1\/12 {
+  width: 8.333333% !important;
+}
+
+.w-5\/6 {
+  width: 83.333333% !important;
+}
+
 .max-w-\[1519px\] {
   max-width: 1519px !important;
 }
@@ -1157,6 +1169,18 @@
   padding-top: 24rem !important;
 }
 
+.pl-10 {
+  padding-left: 2.5rem !important;
+}
+
+.pt-16 {
+  padding-top: 4rem !important;
+}
+
+.pl-4 {
+  padding-left: 1rem !important;
+}
+
 .text-left {
   text-align: left !important;
 }
@@ -1407,6 +1431,14 @@
 
 .opacity-90 {
   opacity: 0.9 !important;
+}
+
+.opacity-60 {
+  opacity: 0.6 !important;
+}
+
+.opacity-95 {
+  opacity: 0.95 !important;
 }
 
 .shadow-\[4px_4px_0px_rgba\(0\2c 0\2c 0\2c 0\.2\)\] {
