@@ -1,12 +1,7 @@
 import type { CollectionConfig } from 'payload/types'
 
 import { admins } from '../../access/admins'
-import { Archive } from '../../blocks/ArchiveBlock'
-import { CallToAction } from '../../blocks/CallToAction'
-import { Content } from '../../blocks/Content'
-import { MediaBlock } from '../../blocks/MediaBlock'
 import { Text } from '../../blocks/Text'
-import { hero } from '../../fields/hero'
 import { slugField } from '../../fields/slug'
 
 const Movies: CollectionConfig = {

@@ -11,8 +11,7 @@ const Sidebar = () => {
   return (
     <div className="w-5/6 pt-20 px-5 h-full bg-transparent z-50">
       {/* Shop section */}
-      <div
-        onClick={toggleShopMenu} className="pt-1 flex items-center justify-between">
+      <div onClick={toggleShopMenu} className="pt-1 flex items-center justify-between">
         <p
           onClick={toggleShopMenu}
           className="text-customWhite font-semibold text-xl block pb-3 cursor-pointer"

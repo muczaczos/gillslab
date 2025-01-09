@@ -1,19 +1,20 @@
 'use client' // Dodaj to na początku pliku
 
 import { useState } from 'react'
-import { HiMenu, HiX } from 'react-icons/hi' // Import ikon z Heroicons
-import Link from 'next/link'
 import {
+  FaFacebook,
   FaHome,
+  FaInstagram,
   FaRegHeart,
   FaShoppingCart,
   FaUser,
-  FaFacebook,
-  FaInstagram,
   FaVimeo,
 } from 'react-icons/fa'
-import Sidebar from './Sidebar'
+import { HiMenu, HiX } from 'react-icons/hi' // Import ikon z Heroicons
+import Link from 'next/link'
+
 import { useCart } from '../../_providers/Cart'
+import Sidebar from './Sidebar'
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false)

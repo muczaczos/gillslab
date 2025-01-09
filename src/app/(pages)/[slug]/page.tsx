@@ -84,7 +84,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
   ///////////
 
   // data.docs.map(news => console.log(news.meta.image.filename))
-  data2.docs.map(vlogs => console.log(vlogs.slug))
+  // data2.docs.map(vlogs => console.log(vlogs.slug))
   const images3 = data.docs
     .slice(0, 5) // Pobiera ostatnie 5 elementów z tablicy
     .map(news => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/media/${news.meta.image.filename}`) // Dodaje prefiks do ścieżki

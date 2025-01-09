@@ -20,8 +20,6 @@ const MoviesCard = ({ movies }) => {
     // Składamy wynik z przecinkiem po miesiącu
     return `${day} ${month}, ${year}`
   }
-  console.log('movies')
-  console.log(movies[0].layout[0].richText)
 
   return (
     <>
