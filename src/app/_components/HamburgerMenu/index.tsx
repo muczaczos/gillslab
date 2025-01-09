@@ -3,8 +3,17 @@
 import { useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi' // Import ikon z Heroicons
 import Link from 'next/link'
-
+import {
+  FaHome,
+  FaRegHeart,
+  FaShoppingCart,
+  FaUser,
+  FaFacebook,
+  FaInstagram,
+  FaVimeo,
+} from 'react-icons/fa'
 import Sidebar from './Sidebar'
+import { useCart } from '../../_providers/Cart'
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,6 +30,15 @@ export default function HamburgerMenu() {
       setIsOpen(true)
     }
   }
+
+  const { cart } = useCart()
+  let totalItem = 0
+
+  cart?.items?.forEach(item => {
+    if (typeof item.product === 'object' && item.quantity) {
+      totalItem += item.quantity
+    }
+  })
 
   return (
     <div className="relative z-[60]">
@@ -47,23 +65,47 @@ export default function HamburgerMenu() {
       {/* Menu po otwarciu i zamykaniu */}
       {(isOpen || isClosing) && (
         <div
-          className={`fixed flex inset-0 bg-primary ${isClosing ? 'animate-slideUp' : 'animate-slideDown'
-            }`}
+          className={`fixed flex inset-0 bg-primary ${
+            isClosing ? 'animate-slideUp' : 'animate-slideDown'
+          }`}
         >
           <div
             className="absolute inset-0 bg-no-repeat bg-cover opacity-5"
             style={{ backgroundImage: "url('/media/eyes.png')" }}
           ></div>
-          <div className="w-1/6 h-full flex flex-col justify-between items-center bg-secondary">
-            <div className="pt-5">
-              <p>J</p>
-              <p>J</p>
-              <p>J</p>
+          <div className="w-1/6 h-full flex flex-col justify-between items-center bg-secondary bg-opacity-50 z-50">
+            <div className="pt-5 flex flex-col">
+              <Link href="/" className="pb-3">
+                <FaHome className="text-customWhite text-2xl" />
+              </Link>
+              <Link href="/favorities" className="pb-3">
+                <FaRegHeart className="text-customWhite text-2xl" />
+              </Link>
+              <Link href="/cart" className="pb-3">
+                {/* Cart icon with total items count */}
+                <div className="relative">
+                  <FaShoppingCart className="text-customWhite text-2xl" />
+                  {totalItem > 0 && (
+                    <span className="absolute top-[-8px] right-[-10px] bg-secondary text-customWhite rounded-full px-2 py-0 text-xs font-bold">
+                      {totalItem}
+                    </span>
+                  )}
+                </div>
+              </Link>
+              <Link href="/account">
+                <FaUser className="text-customWhite text-2xl" />
+              </Link>
             </div>
-            <div className="pb-5">
-              <p>J</p>
-              <p>J</p>
-              <p>J</p>
+            <div className="pb-5 flex flex-col">
+              <Link href="https://www.facebook.com" className="pb-3">
+                <FaFacebook className="text-customWhite text-2xl" />
+              </Link>
+              <Link href="https://www.instagram.com" className="pb-3">
+                <FaInstagram className="text-customWhite text-2xl" />
+              </Link>
+              <Link href="https://www.vimeo.com" className="pb-3">
+                <FaVimeo className="text-customWhite text-2xl" />
+              </Link>
             </div>
           </div>
           <Sidebar />
