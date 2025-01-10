@@ -43,10 +43,20 @@ module.exports = {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-100%)' },
         },
+        slideRight: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        slideLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
         slideDown: 'slideDown 0.5s ease-out forwards',
         slideUp: 'slideUp 0.5s ease-out forwards',
+        slideRight: 'slideRight 0.5s ease-out forwards',
+        slideLeft: 'slideLeft 0.5s ease-out forwards',
       },
     },
   },

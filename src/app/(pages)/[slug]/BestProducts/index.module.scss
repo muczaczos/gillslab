@@ -1,0 +1,185 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 100px;
+  }
+  
+  .newsletterSec {
+    border-radius: 1rem;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(70deg,
+    #DCB4C1,           /* Niebieski początek */
+    #AC4968 50%,       /* Koniec jednolitego niebieskiego */
+    #4968AC 50%, /* Początek gradientu */
+    #BBCCF1 100%);
+  
+    @media (min-width: 768px) {
+      width: 350px;
+      height: 200px;
+    }
+  
+    @media (min-width: 1024px) {
+      width: 420px;
+      height: 250px;
+    }
+  
+    @media (min-width: 1280px) {
+      width: 590px;
+      height: 300px;
+     }
+  
+     @media (min-width: 1536px) {
+      width: 700px;
+     }
+  }
+  
+  .promoCard {
+    border-radius: 1rem;
+    width: 300px;
+    height: 150px;
+    background: linear-gradient(to right, #BBCCF1, #F7F9FB);
+    padding-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; 
+  
+    @media (min-width: 768px) {
+     height: 200px;
+    }
+  
+    @media (min-width: 1024px) {
+      width: 420px;
+      height: 250px;
+     }
+  
+     @media (min-width: 1280px) {
+      width: 590px;
+      height: 300px;
+     }
+  
+     @media (min-width: 1536px) {
+      width: 700px;
+     }
+  }
+  
+  .promoImage {
+    position: relative;
+    scale: 1.7;
+    top: 28px;
+    right: 25px;
+    @media (min-width: 768px) {
+       scale: 2.4;
+       top: 35px;
+       right: -50px;
+     }
+     @media (min-width: 1024px) {
+      scale: 3.2;
+      top: 35px;
+      right: -20px;
+    }
+    @media (min-width: 1280px) {
+      scale: 4;
+      top: 40px;
+      right: 70px;
+     }
+  }
+  
+  .promoText {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    h3 {
+      color: #AC4968;
+      font-weight: 900;
+      line-height: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  .smallText {
+    font-weight: 700;
+    font-size: 16px !important;
+    color: #AC4968;
+    min-width: 150px;
+    opacity: 70%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.9rem;
+    @media (min-width: 768px) {
+      font-size: 24px !important;
+      line-height: 2.5rem; 
+    }
+  
+    @media (min-width: 1024px) {
+      font-size: 32px !important;
+      line-height: 3.5rem;
+    }
+  
+    @media (min-width: 1280px) {
+      font-size: 40px !important;
+      line-height: 4rem;
+    }
+  }
+  
+  .bigText {
+    font-size: 32px !important;
+    @media (min-width: 1024px) {
+      font-size: 40px !important;
+    }
+    @media (min-width: 1280px) {
+      font-size: 48px !important;
+      line-height: 4rem;
+    }
+  }
+  
+  .blogvlog {
+    background-color: #F7F9FB;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 10rem;
+    background: linear-gradient(rgba(247, 249, 251, 0.8), rgba(247, 249, 251, 0)), 
+                url('/media/stripes2.png');
+    background-size: cover; /* Rozciąga tło, aby pokryło cały obszar diva */
+    background-repeat: no-repeat; /* Zapobiega powielaniu tła */
+    background-position: center; /* Ustawia tło na środku */
+    z-index: 0;
+  }
+  
+  
+  
+  @media (max-width: 1024px) {
+    .home {
+      gap: 60px;
+    }
+  }/*# sourceMappingURL=index.module.css.map */
+  
+  .gradientMenu {
+    background: linear-gradient(to right, #BBCCF1, #F7F9FB);
+    height: full;
+    width: 100%;
+  }
+  
+  .gradientMenu2 {
+    background: #F7F9FB;
+    @media (min-width: 1280px) {
+      background: linear-gradient(to left, #DAACBA, #F7F9FB);
+      height: full;
+      width: 100%;
+    }
+  }
+  
+  .imageContainer {
+    transition: transform 0.3s ease; /* Animacja */
+  }
+  
+  .imageContainer:hover {
+    transform: scale(1.05); /* Powiększenie */
+  }
+  
+  
+  
+  
+  

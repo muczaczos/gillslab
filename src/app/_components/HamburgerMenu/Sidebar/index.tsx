@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+
 import fetchCategories from '../../FetchCategories'
 
 const Sidebar = () => {
@@ -25,7 +26,7 @@ const Sidebar = () => {
         const data = await response.json()
         setCategories(data.docs)
       } catch (error) {
-        console.error('Error fetching categories:', error)
+        // console.error('Error fetching categories:', error)
       } finally {
         setLoading(false)
       }

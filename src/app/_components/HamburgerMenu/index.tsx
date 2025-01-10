@@ -67,7 +67,7 @@ export default function HamburgerMenu() {
       {(isOpen || isClosing) && (
         <div
           className={`fixed flex inset-0 bg-primary ${
-            isClosing ? 'animate-slideUp' : 'animate-slideDown'
+            isClosing ? 'animate-slideRight' : 'animate-slideLeft'
           }`}
         >
           <div

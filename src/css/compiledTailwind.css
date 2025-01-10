@@ -446,6 +446,10 @@
   width: 25% !important;
 }
 
+.w-1\/6 {
+  width: 16.666667% !important;
+}
+
 .w-12 {
   width: 3rem !important;
 }
@@ -460,6 +464,10 @@
 
 .w-3\/4 {
   width: 75% !important;
+}
+
+.w-5\/6 {
+  width: 83.333333% !important;
 }
 
 .w-52 {
@@ -514,14 +522,6 @@
   width: 100% !important;
 }
 
-.w-1\/6 {
-  width: 16.666667% !important;
-}
-
-.w-5\/6 {
-  width: 83.333333% !important;
-}
-
 .max-w-\[1519px\] {
   max-width: 1519px !important;
 }
@@ -573,32 +573,32 @@
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
-@keyframes slideDown {
+@keyframes slideLeft {
   0% {
-    transform: translateY(-100%);
+    transform: translateX(-100%);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-.animate-slideDown {
-  animation: slideDown 0.5s ease-out forwards !important;
+.animate-slideLeft {
+  animation: slideLeft 0.5s ease-out forwards !important;
 }
 
-@keyframes slideUp {
+@keyframes slideRight {
   0% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   100% {
-    transform: translateY(-100%);
+    transform: translateX(-100%);
   }
 }
 
-.animate-slideUp {
-  animation: slideUp 0.5s ease-out forwards !important;
+.animate-slideRight {
+  animation: slideRight 0.5s ease-out forwards !important;
 }
 
 .cursor-pointer {
@@ -782,16 +782,16 @@
   border-left-width: 0px !important;
 }
 
+.border-r {
+  border-right-width: 1px !important;
+}
+
 .border-r-0 {
   border-right-width: 0px !important;
 }
 
 .border-t-0 {
   border-top-width: 0px !important;
-}
-
-.border-r {
-  border-right-width: 1px !important;
 }
 
 .border-solid {
@@ -930,14 +930,6 @@
 
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75 !important;
-}
-
-.bg-opacity-70 {
-  --tw-bg-opacity: 0.7 !important;
-}
-
-.bg-opacity-\[90\] {
-  --tw-bg-opacity: 90 !important;
 }
 
 .bg-cover {
@@ -1129,6 +1121,10 @@
   padding-left: 0.75rem !important;
 }
 
+.pl-4 {
+  padding-left: 1rem !important;
+}
+
 .pl-5 {
   padding-left: 1.25rem !important;
 }
@@ -1175,10 +1171,6 @@
 
 .pt-96 {
   padding-top: 24rem !important;
-}
-
-.pl-4 {
-  padding-left: 1rem !important;
 }
 
 .text-left {
