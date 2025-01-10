@@ -1,8 +1,40 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import fetchCategories from '../../FetchCategories'
 
 const Sidebar = () => {
   const [isShopOpen, setIsShopOpen] = useState(false)
+
+  const [categories, setCategories] = useState([]) // Stan na przechowywanie kategorii
+  const [error, setError] = useState<string | null>(null) // Obsługa błędów
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/categories`, {
+          headers: {
+            Authorization: `Bearer ${process.env.CMS_API_KEY}`,
+          },
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch categories')
+        }
+
+        const data = await response.json()
+        setCategories(data.docs)
+      } catch (error) {
+        console.error('Error fetching categories:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchCategories()
+  }, [])
+
+  if (error) return <div>Error: {error}</div>
 
   const toggleShopMenu = () => {
     setIsShopOpen(!isShopOpen)
@@ -27,29 +59,16 @@ const Sidebar = () => {
       </div>
       {isShopOpen && (
         <div className="pl-4">
-          <Link href="cubensis-grow-kits">
-            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
-              Cubensis Growkits
-            </p>
-          </Link>
-          <Link href="/cubensis-spore-syringes">
-            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
-              Cubensis Spore Syringes
-            </p>
-          </Link>
-          <Link href="/cubensis-liquid-cultures">
-            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
-              Cubensis Liquid Cultures
-            </p>
-          </Link>
-          <Link href="/laboratory-equipments">
-            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
-              Laboratory Equipments
-            </p>
-          </Link>
-          <Link href="/substrates">
-            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">Substrates</p>
-          </Link>
+          {categories
+            ?.slice()
+            .reverse() //display categories in reverse order
+            .map(category => (
+              <Link href={category?.slug || 'Untitled Category'} key={category?.id}>
+                <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+                  {category?.title || 'Untitled Category'}
+                </p>
+              </Link>
+            ))}
         </div>
       )}
 
