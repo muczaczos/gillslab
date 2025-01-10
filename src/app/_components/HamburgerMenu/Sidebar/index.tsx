@@ -27,17 +27,28 @@ const Sidebar = () => {
       </div>
       {isShopOpen && (
         <div className="pl-4">
-          <Link href="/shop/category1">
-            <p className="text-customWhite font-medium text-lg pb-2 cursor-pointer">Category 1</p>
+          <Link href="cubensis-grow-kits">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Cubensis Growkits
+            </p>
           </Link>
-          <Link href="/shop/category2">
-            <p className="text-customWhite font-medium text-lg pb-2 cursor-pointer">Category 2</p>
+          <Link href="/cubensis-spore-syringes">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Cubensis Spore Syringes
+            </p>
           </Link>
-          <Link href="/shop/category3">
-            <p className="text-customWhite font-medium text-lg pb-2 cursor-pointer">Category 3</p>
+          <Link href="/cubensis-liquid-cultures">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Cubensis Liquid Cultures
+            </p>
           </Link>
-          <Link href="/shop/category4">
-            <p className="text-customWhite font-medium text-lg pb-2 cursor-pointer">Category 4</p>
+          <Link href="/laboratory-equipments">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Laboratory Equipments
+            </p>
+          </Link>
+          <Link href="/substrates">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">Substrates</p>
           </Link>
         </div>
       )}
