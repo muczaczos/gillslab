@@ -74,7 +74,7 @@ export default function HamburgerMenu() {
             className="absolute inset-0 bg-no-repeat bg-cover opacity-5"
             style={{ backgroundImage: "url('/media/eyes.png')" }}
           ></div>
-          <div className="border-r border border-customWhite w-1/6 h-full flex flex-col justify-between items-center bg-secondary bg-opacity-50 z-50">
+          <div className="border-0 border-r-2 border-solid border-customWhite w-1/6 h-full flex flex-col justify-between items-center bg-secondary bg-opacity-50 z-50">
             <div className="pt-5 flex flex-col">
               <Link href="/" className="pb-3">
                 <FaHome className="text-customWhite text-2xl" />
