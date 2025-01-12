@@ -64,7 +64,7 @@ const Sidebar = () => {
             ?.slice()
             .reverse() //display categories in reverse order
             .map(category => (
-              <Link href={category?.slug || 'Untitled Category'} key={category?.id}>
+              <Link href={`/shop/${category?.slug}` || 'Untitled Category'} key={category?.id}>
                 <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
                   {category?.title || 'Untitled Category'}
                 </p>

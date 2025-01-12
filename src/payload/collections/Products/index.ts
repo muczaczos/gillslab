@@ -19,9 +19,7 @@ const Products: CollectionConfig = {
     useAsTitle: 'title',
     defaultColumns: ['price', 'title', 'stripeProductID', '_status'],
     preview: doc => {
-      return `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/next/preview?url=${encodeURIComponent(
-        `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/products/${doc.slug}`,
-      )}&secret=${process.env.PAYLOAD_PUBLIC_DRAFT_SECRET}`
+      return `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/shop/${doc.category_slug}/${doc.slug}` // Zmienione na '/shop/:category_slug/:slug'
     },
   },
   hooks: {
