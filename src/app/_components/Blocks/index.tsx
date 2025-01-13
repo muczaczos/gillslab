@@ -9,6 +9,7 @@ import { MediaBlock } from '../../_blocks/MediaBlock'
 import { RelatedPosts, type RelatedPostsProps } from '../../_blocks/RelatedPosts'
 import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
 import { Text } from '../../_blocks/Text/'
+import { ImageLink } from '../../_blocks/ImageLink/'
 import { toKebabCase } from '../../_utilities/toKebabCase'
 import { BackgroundColor } from '../BackgroundColor/index'
 import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding/index'
@@ -22,6 +23,7 @@ const blockComponents = {
   relatedPosts: RelatedPosts,
   comments: CommentsBlock,
   text: Text,
+  imageLink: ImageLink,
 }
 
 export const Blocks: React.FC<{

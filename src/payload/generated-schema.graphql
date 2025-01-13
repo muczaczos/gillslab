@@ -2854,7 +2854,7 @@ input Page_Hero_Media_where_or {
   OR: [Page_Hero_Media_where_or]
 }
 
-union Page_Layout = Cta | Content | MediaBlock | Archive | Text
+union Page_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink
 
 type Content {
   invertBackground: Boolean
@@ -3550,6 +3550,209 @@ input Text_Media_where_or {
 enum Text_imagePosition {
   left
   right
+}
+
+type ImageLink {
+  items: [ImageLink_Items!]
+  id: String
+  blockName: String
+  blockType: String
+}
+
+type ImageLink_Items {
+  title: String
+  url: String
+  media(locale: LocaleInputType, fallbackLocale: FallbackLocaleInputType, where: ImageLink_Items_Media_where): Media
+  richText(depth: Int): JSON
+  id: String
+}
+
+input ImageLink_Items_Media_where {
+  alt: ImageLink_Items_Media_alt_operator
+  caption: ImageLink_Items_Media_caption_operator
+  updatedAt: ImageLink_Items_Media_updatedAt_operator
+  createdAt: ImageLink_Items_Media_createdAt_operator
+  url: ImageLink_Items_Media_url_operator
+  filename: ImageLink_Items_Media_filename_operator
+  mimeType: ImageLink_Items_Media_mimeType_operator
+  filesize: ImageLink_Items_Media_filesize_operator
+  width: ImageLink_Items_Media_width_operator
+  height: ImageLink_Items_Media_height_operator
+  focalX: ImageLink_Items_Media_focalX_operator
+  focalY: ImageLink_Items_Media_focalY_operator
+  id: ImageLink_Items_Media_id_operator
+  AND: [ImageLink_Items_Media_where_and]
+  OR: [ImageLink_Items_Media_where_or]
+}
+
+input ImageLink_Items_Media_alt_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input ImageLink_Items_Media_caption_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_updatedAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_createdAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_url_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_filename_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_mimeType_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_filesize_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_width_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_height_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_focalX_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_focalY_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input ImageLink_Items_Media_where_and {
+  alt: ImageLink_Items_Media_alt_operator
+  caption: ImageLink_Items_Media_caption_operator
+  updatedAt: ImageLink_Items_Media_updatedAt_operator
+  createdAt: ImageLink_Items_Media_createdAt_operator
+  url: ImageLink_Items_Media_url_operator
+  filename: ImageLink_Items_Media_filename_operator
+  mimeType: ImageLink_Items_Media_mimeType_operator
+  filesize: ImageLink_Items_Media_filesize_operator
+  width: ImageLink_Items_Media_width_operator
+  height: ImageLink_Items_Media_height_operator
+  focalX: ImageLink_Items_Media_focalX_operator
+  focalY: ImageLink_Items_Media_focalY_operator
+  id: ImageLink_Items_Media_id_operator
+  AND: [ImageLink_Items_Media_where_and]
+  OR: [ImageLink_Items_Media_where_or]
+}
+
+input ImageLink_Items_Media_where_or {
+  alt: ImageLink_Items_Media_alt_operator
+  caption: ImageLink_Items_Media_caption_operator
+  updatedAt: ImageLink_Items_Media_updatedAt_operator
+  createdAt: ImageLink_Items_Media_createdAt_operator
+  url: ImageLink_Items_Media_url_operator
+  filename: ImageLink_Items_Media_filename_operator
+  mimeType: ImageLink_Items_Media_mimeType_operator
+  filesize: ImageLink_Items_Media_filesize_operator
+  width: ImageLink_Items_Media_width_operator
+  height: ImageLink_Items_Media_height_operator
+  focalX: ImageLink_Items_Media_focalX_operator
+  focalY: ImageLink_Items_Media_focalY_operator
+  id: ImageLink_Items_Media_id_operator
+  AND: [ImageLink_Items_Media_where_and]
+  OR: [ImageLink_Items_Media_where_or]
 }
 
 type Page_Meta {
@@ -9143,7 +9346,7 @@ input PageVersion_Version_Hero_Media_where_or {
   OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
-union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text
+union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink
 
 type PageVersion_Version_Meta {
   title: String

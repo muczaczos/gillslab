@@ -1079,6 +1079,22 @@ export interface Page {
         blockName?: string | null;
         blockType: 'text';
       }
+    | {
+        items?:
+          | {
+              title: string;
+              url: string;
+              media: string | Media;
+              richText: {
+                [k: string]: unknown;
+              }[];
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageLink';
+      }
   )[];
   slug?: string | null;
   meta?: {

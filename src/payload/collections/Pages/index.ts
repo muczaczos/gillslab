@@ -12,6 +12,7 @@ import { slugField } from '../../fields/slug'
 import { populateArchiveBlock } from '../../hooks/populateArchiveBlock'
 import { adminsOrPublished } from './access/adminsOrPublished'
 import { revalidatePage } from './hooks/revalidatePage'
+import { ImageLink } from '../../blocks/ImageLink'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -90,7 +91,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [CallToAction, Content, MediaBlock, Archive, Text],
+              blocks: [CallToAction, Content, MediaBlock, Archive, Text, ImageLink],
             },
           ],
         },

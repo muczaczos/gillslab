@@ -82,3 +82,19 @@ export const TEXT = `
   imagePosition
 }
 `
+
+export const IMAGE_LINK = `
+...on ImageLink {
+  blockType
+  items {
+    title
+    url
+    media {
+      id
+      url
+      alt
+    }
+    richText
+  }
+}
+`
