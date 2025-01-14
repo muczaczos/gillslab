@@ -13,6 +13,8 @@ import { CustomerSelect } from './ui/CustomerSelect'
 const Users: CollectionConfig = {
   slug: 'users',
   auth: {
+    maxLoginAttempts: 10, // Maksymalna liczba prób logowania przed blokadą
+    lockTime: 600000,
     forgotPassword: {
       generateEmailHTML: ({ token }) => {
         // Use the token provided to allow your user to reset their password

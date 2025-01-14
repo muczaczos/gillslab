@@ -19,15 +19,42 @@ const toggleLeaf = (editor: Editor, format: string, color: string) => {
   }
 }
 
-// Komponent do wyboru koloru
-const ColorInput: React.FC<{ onChange: (color: string) => void }> = ({ onChange }) => {
+// Komponent do wyboru koloru (HEX i picker)
+const ColorInput: React.FC<{ color: string; onChange: (color: string) => void }> = ({
+  color,
+  onChange,
+}) => {
   return (
-    <input
-      type="color"
-      defaultValue="#000000"
-      onChange={e => onChange(e.target.value)}
-      style={{ marginRight: '8px' }}
-    />
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      {/* Picker koloru */}
+      <input
+        type="color"
+        value={color}
+        onChange={e => onChange(e.target.value)}
+        style={{ width: '40px', height: '40px', border: 'none', cursor: 'pointer' }}
+      />
+      {/* Pole tekstowe dla wartości HEX */}
+      <input
+        type="text"
+        value={color}
+        onChange={e => {
+          const value = e.target.value
+          // Walidacja czy kolor jest w formacie HEX
+          if (/^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$/.test(value) || value === '') {
+            onChange(value)
+          }
+        }}
+        maxLength={7}
+        placeholder="#000000"
+        style={{
+          width: '100px',
+          padding: '4px',
+          border: '1px solid #ccc',
+          borderRadius: '4px',
+          fontSize: '14px',
+        }}
+      />
+    </div>
   )
 }
 
@@ -37,8 +64,8 @@ const LeafButton: React.FC<{ format: string }> = ({ format }) => {
   const [color, setColor] = React.useState('#000000')
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <ColorInput onChange={newColor => setColor(newColor)} />
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <ColorInput color={color} onChange={newColor => setColor(newColor)} />
       <button
         type="button"
         className="rich-text__button"
