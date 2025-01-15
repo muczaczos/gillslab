@@ -2854,7 +2854,7 @@ input Page_Hero_Media_where_or {
   OR: [Page_Hero_Media_where_or]
 }
 
-union Page_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink
+union Page_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink | FilteredProducts
 
 type Content {
   invertBackground: Boolean
@@ -3753,6 +3753,13 @@ input ImageLink_Items_Media_where_or {
   id: ImageLink_Items_Media_id_operator
   AND: [ImageLink_Items_Media_where_and]
   OR: [ImageLink_Items_Media_where_or]
+}
+
+type FilteredProducts {
+  category: String
+  id: String
+  blockName: String
+  blockType: String
 }
 
 type Page_Meta {
@@ -9346,7 +9353,7 @@ input PageVersion_Version_Hero_Media_where_or {
   OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
-union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink
+union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink | FilteredProducts
 
 type PageVersion_Version_Meta {
   title: String

@@ -83,6 +83,12 @@ export const TEXT = `
 }
 `
 
+export const FILTERED_PRODUCTS = `
+...on FilteredProducts {
+  category
+}
+`
+
 export const IMAGE_LINK = `
 ...on ImageLink {
   blockType

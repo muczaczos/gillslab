@@ -19,8 +19,6 @@ type Props = Extract<Page['layout'][0], { blockType: 'imageLink' }> & {
 export const ImageLink: React.FC<Props> = props => {
   const { items } = props // Wyciągamy tablicę `items` z propsów
 
-  console.log(items[0].media.url)
-
   return (
     <Gutter className="pb-20 justify-center flex flex-wrap">
       {items &&

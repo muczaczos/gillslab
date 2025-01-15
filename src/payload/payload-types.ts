@@ -1095,6 +1095,12 @@ export interface Page {
         blockName?: string | null;
         blockType: 'imageLink';
       }
+    | {
+        category?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'FilteredProducts';
+      }
   )[];
   slug?: string | null;
   meta?: {
