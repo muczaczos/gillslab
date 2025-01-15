@@ -85,6 +85,7 @@ export const TEXT = `
 
 export const FILTERED_PRODUCTS = `
 ...on FilteredProducts {
+  blockType
   category
 }
 `

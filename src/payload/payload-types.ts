@@ -1099,7 +1099,7 @@ export interface Page {
         category?: string | null;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'FilteredProducts';
+        blockType: 'filteredProducts';
       }
   )[];
   slug?: string | null;

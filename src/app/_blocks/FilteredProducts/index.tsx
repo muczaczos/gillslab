@@ -1,25 +1,36 @@
 import React from 'react'
-import Image, { StaticImageData } from 'next/image'
-import Link from 'next/link'
-
-import { Page } from '../../../payload/payload-types'
 import { Gutter } from '../../_components/Gutter'
-import { Media } from '../../_components/Media'
-import RichText from '../../_components/RichText'
+import { fetchDocs } from '../../_api/fetchDocs'
+import { fetchDoc } from '../../_api/fetchDoc'
+import { Product, Page } from '../../../payload/payload-types'
 
 type Props = Extract<Page['layout'][0], { blockType: 'filteredProducts' }> & {
-  staticImage?: StaticImageData
   id?: string
-  test?: string
-  imagePosition?: 'left' | 'right' // Nowe pole dla pozycji obrazu
 }
 
-export const FilteredProducts: React.FC<Props> = props => {
-  const { category } = props // Wyciągamy tablicę `items` z propsów
+export const FilteredProducts = async (props: Props) => {
+  const { category } = props
+
+  const products = await fetchDocs<Product>('products')
+  const pages = await Promise.all(
+    products.map(product =>
+      fetchDoc<Page>({
+        collection: 'products',
+        slug: product.slug,
+      }),
+    ),
+  )
+
+  const filteredPages = pages.filter(page => page.categories?.[0]?.slug === category)
 
   return (
     <Gutter className="pb-20 justify-center flex flex-wrap">
-      <h1>Filtered Products test</h1>
+      <h1>Filtered Products</h1>
+      {filteredPages.map(page => (
+        <div key={page.id}>
+          <h2>{page.title}</h2>
+        </div>
+      ))}
     </Gutter>
   )
 }

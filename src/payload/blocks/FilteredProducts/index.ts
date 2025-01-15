@@ -1,7 +1,7 @@
 import type { Block } from 'payload/types'
 
 export const FilteredProducts: Block = {
-  slug: 'FilteredProducts',
+  slug: 'filteredProducts',
   fields: [
     {
       name: 'category',
