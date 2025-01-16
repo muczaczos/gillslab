@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,22 +14,48 @@ type Props = Extract<Page['layout'][0], { blockType: 'filteredProducts' }> & {
   id?: string
 }
 
-export const FilteredProducts = async (props: Props) => {
+export const FilteredProducts = (props: Props) => {
   const { category } = props
 
   const { favorites, toggleFavorite } = useFavorites()
 
-  const products = await fetchDocs<Product>('products')
-  const pages = await Promise.all(
-    products.map(product =>
-      fetchDoc<Page>({
-        collection: 'products',
-        slug: product.slug,
-      }),
-    ),
-  )
+  const [filteredPages, setFilteredPages] = useState<Page[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const filteredPages = pages.filter(page => page.categories?.[0]?.slug === category)
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Fetch products
+        const products = await fetchDocs<Product>('products')
+
+        // Fetch pages for each product
+        const pages = await Promise.all(
+          products.map(product =>
+            fetchDoc<Page>({
+              collection: 'products',
+              slug: product.slug,
+            }),
+          ),
+        )
+
+        // Filter pages based on category
+        const filteredPages = pages.filter(page => page.categories?.[0]?.slug === category)
+
+        // Update state with filtered pages
+        setFilteredPages(filteredPages)
+      } catch (error) {
+        console.error('Error fetching filtered pages:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [category]) // Re-run effect if the category changes
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
 
   return (
     <Gutter>
@@ -86,5 +112,3 @@ export const FilteredProducts = async (props: Props) => {
     </Gutter>
   )
 }
-
-

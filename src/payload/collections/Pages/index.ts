@@ -85,11 +85,6 @@ export const Pages: CollectionConfig = {
             }
             return value
           },
-          async ({ data }) => {
-            if (data.prefix && data.slug) {
-              data.fullPath = `${data.prefix}/${data.slug}` // Zbuduj pełną ścieżkę
-            }
-          },
         ],
       },
     },
