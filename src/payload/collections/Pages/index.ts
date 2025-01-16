@@ -53,10 +53,20 @@ export const Pages: CollectionConfig = {
       localized: true,
     },
     {
+      name: 'prefix', // Dodaj pole prefiksu
+      type: 'text',
+      required: false,
+      defaultValue: '/shop', // Domyślny prefiks
+    },
+    {
       name: 'customClass',
       type: 'text',
       label: 'Custom CSS Class', // Pole do wpisania niestandardowej klasy CSS
       required: false,
+    },
+    {
+      name: 'fullPath',
+      type: 'text',
     },
     {
       name: 'publishedOn',
@@ -74,6 +84,11 @@ export const Pages: CollectionConfig = {
               return new Date()
             }
             return value
+          },
+          async ({ data }) => {
+            if (data.prefix && data.slug) {
+              data.fullPath = `${data.prefix}/${data.slug}` // Zbuduj pełną ścieżkę
+            }
           },
         ],
       },

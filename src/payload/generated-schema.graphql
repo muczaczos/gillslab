@@ -2415,7 +2415,9 @@ union Cta_Links_Link_Reference = Page
 type Page {
   id: String
   title: String
+  prefix: String
   customClass: String
+  fullPath: String
   publishedOn: DateTime
   hero: Page_Hero
   layout: [Page_Layout!]!
@@ -7920,7 +7922,9 @@ type Pages {
 
 input Page_where {
   title: Page_title_operator
+  prefix: Page_prefix_operator
   customClass: Page_customClass_operator
+  fullPath: Page_fullPath_operator
   publishedOn: Page_publishedOn_operator
   hero__type: Page_hero__type_operator
   hero__richText: Page_hero__richText_operator
@@ -7955,7 +7959,29 @@ input Page_title_operator {
   all: [String]
 }
 
+input Page_prefix_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
 input Page_customClass_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Page_fullPath_operator {
   equals: String
   not_equals: String
   like: String
@@ -8170,7 +8196,9 @@ input Page_id_operator {
 
 input Page_where_and {
   title: Page_title_operator
+  prefix: Page_prefix_operator
   customClass: Page_customClass_operator
+  fullPath: Page_fullPath_operator
   publishedOn: Page_publishedOn_operator
   hero__type: Page_hero__type_operator
   hero__richText: Page_hero__richText_operator
@@ -8197,7 +8225,9 @@ input Page_where_and {
 
 input Page_where_or {
   title: Page_title_operator
+  prefix: Page_prefix_operator
   customClass: Page_customClass_operator
+  fullPath: Page_fullPath_operator
   publishedOn: Page_publishedOn_operator
   hero__type: Page_hero__type_operator
   hero__richText: Page_hero__richText_operator
@@ -8237,7 +8267,9 @@ type pagesDocAccess {
 
 type PagesDocAccessFields {
   title: PagesDocAccessFields_title
+  prefix: PagesDocAccessFields_prefix
   customClass: PagesDocAccessFields_customClass
+  fullPath: PagesDocAccessFields_fullPath
   publishedOn: PagesDocAccessFields_publishedOn
   hero: PagesDocAccessFields_hero
   layout: PagesDocAccessFields_layout
@@ -8271,6 +8303,29 @@ type PagesDocAccessFields_title_Delete {
   permission: Boolean!
 }
 
+type PagesDocAccessFields_prefix {
+  create: PagesDocAccessFields_prefix_Create
+  read: PagesDocAccessFields_prefix_Read
+  update: PagesDocAccessFields_prefix_Update
+  delete: PagesDocAccessFields_prefix_Delete
+}
+
+type PagesDocAccessFields_prefix_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_prefix_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_prefix_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_prefix_Delete {
+  permission: Boolean!
+}
+
 type PagesDocAccessFields_customClass {
   create: PagesDocAccessFields_customClass_Create
   read: PagesDocAccessFields_customClass_Read
@@ -8291,6 +8346,29 @@ type PagesDocAccessFields_customClass_Update {
 }
 
 type PagesDocAccessFields_customClass_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_fullPath {
+  create: PagesDocAccessFields_fullPath_Create
+  read: PagesDocAccessFields_fullPath_Read
+  update: PagesDocAccessFields_fullPath_Update
+  delete: PagesDocAccessFields_fullPath_Delete
+}
+
+type PagesDocAccessFields_fullPath_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_fullPath_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_fullPath_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_fullPath_Delete {
   permission: Boolean!
 }
 
@@ -8914,7 +8992,9 @@ type PageVersion {
 
 type PageVersion_Version {
   title: String
+  prefix: String
   customClass: String
+  fullPath: String
   publishedOn: DateTime
   hero: PageVersion_Version_Hero
   layout: [PageVersion_Version_Layout!]!
@@ -9571,7 +9651,9 @@ type versionsPages {
 input versionsPage_where {
   parent: versionsPage_parent_operator
   version__title: versionsPage_version__title_operator
+  version__prefix: versionsPage_version__prefix_operator
   version__customClass: versionsPage_version__customClass_operator
+  version__fullPath: versionsPage_version__fullPath_operator
   version__publishedOn: versionsPage_version__publishedOn_operator
   version__hero__type: versionsPage_version__hero__type_operator
   version__hero__richText: versionsPage_version__hero__richText_operator
@@ -9618,7 +9700,29 @@ input versionsPage_version__title_operator {
   all: [String]
 }
 
+input versionsPage_version__prefix_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
 input versionsPage_version__customClass_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input versionsPage_version__fullPath_operator {
   equals: String
   not_equals: String
   like: String
@@ -9862,7 +9966,9 @@ input versionsPage_id_operator {
 input versionsPage_where_and {
   parent: versionsPage_parent_operator
   version__title: versionsPage_version__title_operator
+  version__prefix: versionsPage_version__prefix_operator
   version__customClass: versionsPage_version__customClass_operator
+  version__fullPath: versionsPage_version__fullPath_operator
   version__publishedOn: versionsPage_version__publishedOn_operator
   version__hero__type: versionsPage_version__hero__type_operator
   version__hero__richText: versionsPage_version__hero__richText_operator
@@ -9893,7 +9999,9 @@ input versionsPage_where_and {
 input versionsPage_where_or {
   parent: versionsPage_parent_operator
   version__title: versionsPage_version__title_operator
+  version__prefix: versionsPage_version__prefix_operator
   version__customClass: versionsPage_version__customClass_operator
+  version__fullPath: versionsPage_version__fullPath_operator
   version__publishedOn: versionsPage_version__publishedOn_operator
   version__hero__type: versionsPage_version__hero__type_operator
   version__hero__richText: versionsPage_version__hero__richText_operator
@@ -20811,7 +20919,9 @@ type pagesAccess {
 
 type PagesFields {
   title: PagesFields_title
+  prefix: PagesFields_prefix
   customClass: PagesFields_customClass
+  fullPath: PagesFields_fullPath
   publishedOn: PagesFields_publishedOn
   hero: PagesFields_hero
   layout: PagesFields_layout
@@ -20845,6 +20955,29 @@ type PagesFields_title_Delete {
   permission: Boolean!
 }
 
+type PagesFields_prefix {
+  create: PagesFields_prefix_Create
+  read: PagesFields_prefix_Read
+  update: PagesFields_prefix_Update
+  delete: PagesFields_prefix_Delete
+}
+
+type PagesFields_prefix_Create {
+  permission: Boolean!
+}
+
+type PagesFields_prefix_Read {
+  permission: Boolean!
+}
+
+type PagesFields_prefix_Update {
+  permission: Boolean!
+}
+
+type PagesFields_prefix_Delete {
+  permission: Boolean!
+}
+
 type PagesFields_customClass {
   create: PagesFields_customClass_Create
   read: PagesFields_customClass_Read
@@ -20865,6 +20998,29 @@ type PagesFields_customClass_Update {
 }
 
 type PagesFields_customClass_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_fullPath {
+  create: PagesFields_fullPath_Create
+  read: PagesFields_fullPath_Read
+  update: PagesFields_fullPath_Update
+  delete: PagesFields_fullPath_Delete
+}
+
+type PagesFields_fullPath_Create {
+  permission: Boolean!
+}
+
+type PagesFields_fullPath_Read {
+  permission: Boolean!
+}
+
+type PagesFields_fullPath_Update {
+  permission: Boolean!
+}
+
+type PagesFields_fullPath_Delete {
   permission: Boolean!
 }
 
@@ -26676,7 +26832,9 @@ enum SubscriberUpdate__status_MutationInput {
 
 input mutationPageInput {
   title: String
+  prefix: String
   customClass: String
+  fullPath: String
   publishedOn: String
   hero: mutationPage_HeroInput!
   layout: JSON
@@ -26745,7 +26903,9 @@ enum Page__status_MutationInput {
 
 input mutationPageUpdateInput {
   title: String
+  prefix: String
   customClass: String
+  fullPath: String
   publishedOn: String
   hero: mutationPageUpdate_HeroInput!
   layout: JSON

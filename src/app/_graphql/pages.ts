@@ -27,6 +27,8 @@ export const PAGE = `
       docs {
         id
         title
+        prefix
+        fullPath
         customClass
         hero {
           type

@@ -942,7 +942,9 @@ export interface Product {
 export interface Page {
   id: string;
   title: string;
+  prefix?: string | null;
   customClass?: string | null;
+  fullPath?: string | null;
   publishedOn?: string | null;
   hero: {
     type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'customHero';
