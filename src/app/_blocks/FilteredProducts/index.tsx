@@ -50,7 +50,7 @@ export const FilteredProducts: React.FC<Props> = props => {
         )
 
         // Filtruj strony na podstawie kategorii
-        const filteredPages = pages.filter(page => page.categories?.[0]?.slug === category)
+        //  const filteredPages = pages.filter(page => page.categories?.[0]?.slug === category)
 
         // Aktualizuj stan z przefiltrowanymi stronami
         setFilteredPages(filteredPages)
@@ -74,10 +74,10 @@ export const FilteredProducts: React.FC<Props> = props => {
         {filteredPages.map((item, index) => {
           if (!item) return null
 
-          const src = item.media1?.url || ''
-          const href = `/shop/${item.categories?.[0]?.slug}/${item.slug}`
+          const src = ''
+          const href = ''
           const title = item.title || 'No Title'
-          const price = item.price || 0
+          const price = 0
 
           return (
             <div className="flex justify-center" key={index}>
