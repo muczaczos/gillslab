@@ -14,34 +14,50 @@ type Props = Extract<Page['layout'][0], { blockType: 'filteredProducts' }> & {
   id?: string
 }
 
+interface Category {
+  slug: string
+  // inne pola kategorii, np. name, description, itp.
+}
+// Typ rozszerzający właściwości Page o dane z Product
+interface ProductPage extends Page {
+  categories?: Category[]
+  media1?: { url: string }
+  price?: number
+}
+
 export const FilteredProducts = (props: Props) => {
   const { category } = props
 
   const { favorites, toggleFavorite } = useFavorites()
 
-  const [filteredPages, setFilteredPages] = useState<Page[]>([])
+  const [filteredPages, setFilteredPages] = useState<ProductPage[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // Fetch products
+        // Pobierz produkty
         const products = await fetchDocs<Product>('products')
 
-        // Fetch pages for each product
+        // Pobierz strony powiązane z produktami
         const pages = await Promise.all(
-          products.map(product =>
-            fetchDoc<Page>({
+          products.map(async product => {
+            const page = await fetchDoc<Page>({
               collection: 'products',
               slug: product.slug,
-            }),
-          ),
+            })
+            // Dodaj dane kategorii do strony
+            return {
+              ...page,
+              categories: product.categories,
+            } as ProductPage
+          }),
         )
 
-        // Filter pages based on category
+        // Filtruj strony na podstawie kategorii
         const filteredPages = pages.filter(page => page.categories?.[0]?.slug === category)
 
-        // Update state with filtered pages
+        // Aktualizuj stan z przefiltrowanymi stronami
         setFilteredPages(filteredPages)
       } catch (error) {
         //console.error('Error fetching filtered pages:', error)
@@ -51,7 +67,7 @@ export const FilteredProducts = (props: Props) => {
     }
 
     fetchData()
-  }, [category]) // Re-run effect if the category changes
+  }, [category]) // Ponowne wykonanie, gdy zmienia się kategoria
 
   if (loading) {
     return <div>Loading...</div>
@@ -63,10 +79,10 @@ export const FilteredProducts = (props: Props) => {
         {filteredPages.map((item, index) => {
           if (!item) return null
 
-          const src = item.media1.url
-          const href = `/shop/${item.categories[0].slug}/${item.slug}`
-          const title = item.title
-          const price = item.price
+          const src = item.media1?.url || ''
+          const href = `/shop/${item.categories?.[0]?.slug}/${item.slug}`
+          const title = item.title || 'No Title'
+          const price = item.price || 0
 
           return (
             <div className="flex justify-center" key={index}>
