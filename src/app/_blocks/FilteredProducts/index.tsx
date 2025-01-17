@@ -44,7 +44,7 @@ export const FilteredProducts = (props: Props) => {
         // Update state with filtered pages
         setFilteredPages(filteredPages)
       } catch (error) {
-        console.error('Error fetching filtered pages:', error)
+        //console.error('Error fetching filtered pages:', error)
       } finally {
         setLoading(false)
       }

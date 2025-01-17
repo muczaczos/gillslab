@@ -29,7 +29,7 @@ const HorizontalDesktopMenu = () => {
           <div id="start" className="w-3/4">
             <h2 className="py-2 font-bold text-2xl text-primary sm:text-3xl">Shop By Categories</h2>
             <div className={`${classes.gradientMenu} rounded-xl flex py-14 px-10`}>
-              <Link className="" href={`/${links[0]}`}>
+              <Link className="" href={`/shop/${links[0]}`}>
                 <div
                   className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
                 >
@@ -46,7 +46,7 @@ const HorizontalDesktopMenu = () => {
                 </div>
               </Link>
 
-              <Link className="" href={`/${links[1]}`}>
+              <Link className="" href={`/shop/${links[1]}`}>
                 <div
                   className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
                 >
@@ -63,7 +63,7 @@ const HorizontalDesktopMenu = () => {
                 </div>
               </Link>
 
-              <Link className="" href={`/${links[2]}`}>
+              <Link className="" href={`/shop/${links[2]}`}>
                 <div
                   className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
                 >
@@ -80,7 +80,7 @@ const HorizontalDesktopMenu = () => {
                 </div>
               </Link>
 
-              <Link className="" href={`/${links[3]}`}>
+              <Link className="" href={`/shop/${links[3]}`}>
                 <div
                   className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
                 >
@@ -97,7 +97,7 @@ const HorizontalDesktopMenu = () => {
                 </div>
               </Link>
 
-              <Link className="" href={`/${links[4]}`}>
+              <Link className="" href={`/shop/${links[4]}`}>
                 <div
                   className={`${classes.imageContainer} bg-customWhite rounded-lg shadow-xl mr-5`}
                 >

@@ -60,27 +60,27 @@ const HeaderComponent = ({ header }: { header: Header }) => {
             {isDropdownOpen && (
               <div className="absolute left-0 mt-1 bg-primary-light text-customWhite rounded-lg shadow-lg w-[150px]">
                 <ul className="pt-2">
-                  <Link href="/cubensis-grow-kits">
+                  <Link href="/shop/cubensis-grow-kits">
                     <li className="group px-4 py-1 hover:bg-customWhite">
                       <p className="text-customWhite group-hover:text-primary-dark">Growkits</p>
                     </li>
                   </Link>
-                  <Link href="/cubensis-spore-syringes">
+                  <Link href="/shop/cubensis-spore-syringes">
                     <li className="group px-4 py-1 hover:bg-customWhite">
                       <p className="text-customWhite group-hover:text-primary-dark">Spores</p>
                     </li>
                   </Link>
-                  <Link href="/cubensis-liquid-cultures">
+                  <Link href="/shop/cubensis-liquid-cultures">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Cultures</p>
                     </li>
                   </Link>
-                  <Link href="/laboratory-equipments">
+                  <Link href="/shop/laboratory-equipments">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Laboratory</p>
                     </li>
                   </Link>
-                  <Link href="/substrates">
+                  <Link href="/shop/substrates">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Substrates</p>
                     </li>

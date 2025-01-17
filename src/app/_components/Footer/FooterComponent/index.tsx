@@ -128,19 +128,19 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 </div>
                 <section>
                   <h4 className="text-customWhite font-bold">Sitemap</h4>
-                  <Link href="/cubensis-grow-kits">
+                  <Link href="/shop/cubensis-grow-kits">
                     <p className="text-customWhite text-xl">Growkits</p>
                   </Link>
-                  <Link href="/cubensis-liquid-cultures">
+                  <Link href="/shop/cubensis-liquid-cultures">
                     <p className="text-customWhite text-xl">Cultures</p>
                   </Link>
-                  <Link href="/cubensis-spore-syringes">
+                  <Link href="/shop/cubensis-spore-syringes">
                     <p className="text-customWhite text-xl">Spores</p>
                   </Link>
-                  <Link href="/laboratory-equipments">
+                  <Link href="/shop/laboratory-equipments">
                     <p className="text-customWhite text-xl">Lab</p>
                   </Link>
-                  <Link href="/substrates">
+                  <Link href="/shop/substrates">
                     <p className="text-customWhite text-xl">Substrates</p>
                   </Link>
                   <Link href="/contact">

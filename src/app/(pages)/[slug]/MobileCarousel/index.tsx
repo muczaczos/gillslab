@@ -5,11 +5,11 @@ import SmallCarousel from '../../../_components/SmallCarousel'
 
 const MobileCarousel = () => {
   const links = [
-    'cubensis-grow-kits',
-    'cubensis-spore-syringes',
-    'cubensis-liquid-cultures',
-    'laboratory-equipments',
-    'substrates',
+    'shop/cubensis-grow-kits',
+    'shop/cubensis-spore-syringes',
+    'shop/cubensis-liquid-cultures',
+    'shop/laboratory-equipments',
+    'shop/substrates',
   ]
 
   const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
