@@ -109,6 +109,11 @@ const Sidebar = () => {
           <p className="text-customWhite font-semibold text-xl block pb-3">Vlog</p>
         </div>
       </Link>
+      <Link href="/about">
+        <div className="pt-1">
+          <p className="text-customWhite font-semibold text-xl block pb-3">About</p>
+        </div>
+      </Link>
     </div>
   )
 }

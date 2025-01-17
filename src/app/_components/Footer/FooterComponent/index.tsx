@@ -128,6 +128,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 </div>
                 <section>
                   <h4 className="text-customWhite font-bold">Sitemap</h4>
+                  <Link href="/shop/">
+                    <p className="text-customWhite text-xl">Shop</p>
+                  </Link>
                   <Link href="/shop/cubensis-grow-kits">
                     <p className="text-customWhite text-xl">Growkits</p>
                   </Link>
@@ -169,6 +172,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                   </Link>
                   <Link href="/favorities">
                     <p className="text-customWhite text-xl">Favorities</p>
+                  </Link>
+                  <Link href="/about">
+                    <p className="text-customWhite text-xl">About</p>
                   </Link>
                 </section>
               </div>
