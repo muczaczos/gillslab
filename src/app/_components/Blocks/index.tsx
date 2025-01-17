@@ -5,7 +5,7 @@ import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
 import { CommentsBlock, type CommentsBlockProps } from '../../_blocks/Comments/index'
 import { ContentBlock } from '../../_blocks/Content'
-import { FilteredProducts } from '../../_blocks/FilteredProducts/'
+import { FilteredProducts, type Props } from '../../_blocks/FilteredProducts/'
 import { ImageLink } from '../../_blocks/ImageLink/'
 import { MediaBlock } from '../../_blocks/MediaBlock'
 import { RelatedPosts, type RelatedPostsProps } from '../../_blocks/RelatedPosts'
@@ -25,7 +25,6 @@ const blockComponents = {
   comments: CommentsBlock,
   text: Text,
   imageLink: ImageLink,
-  filteredProducts: FilteredProducts,
 }
 
 export const Blocks: React.FC<{

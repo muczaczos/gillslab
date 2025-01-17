@@ -10,27 +10,22 @@ import { fetchDocs } from '../../_api/fetchDocs'
 import { Gutter } from '../../_components/Gutter'
 import useFavorites from '../../_components/UseFavorites'
 
-type Props = Extract<Page['layout'][0], { blockType: 'filteredProducts' }> & {
-  id?: string
+export type Props = Extract<Page['layout'][0], { blockType: 'filteredProducts' }> & {
+  id: string
+  blockType: 'filteredProducts'
+  blockName: string
+  introContent?: any
+  docs?: (string | Product)[]
 }
 
-interface Category {
-  slug: string
-  // inne pola kategorii, np. name, description, itp.
-}
 // Typ rozszerzający właściwości Page o dane z Product
-interface ProductPage extends Page {
-  categories?: Category[]
-  media1?: { url: string }
-  price?: number
-}
 
-export const FilteredProducts = (props: Props) => {
+export const FilteredProducts: React.FC<Props> = props => {
   const { category } = props
 
   const { favorites, toggleFavorite } = useFavorites()
 
-  const [filteredPages, setFilteredPages] = useState<ProductPage[]>([])
+  const [filteredPages, setFilteredPages] = useState<Page[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -50,7 +45,7 @@ export const FilteredProducts = (props: Props) => {
             return {
               ...page,
               categories: product.categories,
-            } as ProductPage
+            } as Page
           }),
         )
 
