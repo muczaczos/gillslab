@@ -113,7 +113,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
       <div className="lg:flex">
         {/* main image with buttons */}
         <section className="bg-primary pt-5 pb-16 lg:w-1/2">
-          <div className="flex justify-between px-5 pt-5 pb-7 lg:mb-20">
+          <div className="flex justify-between px-5 pt-5 pb-7 lg:mb-10">
             <Link
               href="#"
               onClick={e => {
@@ -141,19 +141,20 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <div className="sm:w-full">
+            <div className="w-auto">
               {typeof product.media1 === 'object' &&
               product.media1 !== null &&
               'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
-                  height="300"
-                  width="500"
+                  layout="intrinsic" // Automatycznie dostosuje wysokość i szerokość
+                  width={product.media1.width} // Oryginalna szerokość
+                  height={product.media1.height} // Oryginalna wysokość
                   className="mb-5 mx-auto"
                 />
               ) : (
-                <p>Image not available</p> // Alternatywa, jeśli media1 nie ma url
+                <p>Image not available</p>
               )}
             </div>
           </div>

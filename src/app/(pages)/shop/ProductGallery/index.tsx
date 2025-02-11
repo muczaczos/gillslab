@@ -86,8 +86,8 @@ const ProductGallery = ({ product }) => {
                 <Image
                   src={selectedImage}
                   alt="Enlarged Image"
-                  width="500"
-                  height="500"
+                  width="1000"
+                  height="1000"
                   className="max-w-full max-h-full object-cover"
                 />
               </div>
