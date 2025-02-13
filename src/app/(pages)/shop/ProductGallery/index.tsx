@@ -23,52 +23,24 @@ const ProductGallery = ({ product }) => {
   // Obrazy do galerii
 
   return (
-    <div className="pt-20 bg-customWhite lg:w-1/2 lg:pt-0">
+    <div className="pt-20 lg:mb-20 bg-customWhite lg:w-1/2 lg:pt-0">
       <div className="lg:mt-6 mx-5 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
         <h6 className="text-primary text-4xl font-medium md:text-6xl">Gallery</h6>
       </div>
       <div className={`${classes.contentGradient} flex flex-col items-center p-0`}>
         <section className="flex justify-center gap-4 p-4 bg-transparent h-[300px] csm:h-[400px] sm:h-[600px] xs:w-4/5 lg:w-full">
           {/* Duży obrazek po lewej */}
-          <div className="flex items-center justify-center w-3/4">
-            <div className="w-full flex justify-center lg:pb-14">
+          <div className="flex items-center justify-center w-full">
+            <div className="w-full flex justify-center ">
               <Image
                 src={selectedImage} // Aktualnie wybrany obrazek
                 alt="Main Image"
-                width="300"
-                height="300"
-                className="sm:w-[400px] rounded-lg shadow-lg cursor-pointer"
+                width="1000"
+                height="1000"
+                className="sm:w-[600px] cursor-pointer"
                 onClick={openModal} // Po kliknięciu otwiera modal
               />
             </div>
-          </div>
-
-          {/* Małe obrazki po prawej */}
-          <div className="flex flex-col gap-4 justify-center">
-            <Image
-              src={product.media1.url}
-              alt={product.media1.alt}
-              width="75"
-              height="75"
-              className="rounded-lg shadow-md cursor-pointer"
-              onClick={() => setSelectedImage(product.media1.url)} // Zmieniamy obrazek po lewej po kliknięciu
-            />
-            <Image
-              src={product.media2.url}
-              alt={product.media2.alt}
-              width="75"
-              height="75"
-              className="rounded-lg shadow-md cursor-pointer"
-              onClick={() => setSelectedImage(product.media2.url)} // Zmieniamy obrazek po lewej po kliknięciu
-            />
-            <Image
-              src={product.media3.url}
-              alt={product.media3.alt}
-              width="75"
-              height="75"
-              className="rounded-lg shadow-md cursor-pointer"
-              onClick={() => setSelectedImage(product.media3.url)} // Zmieniamy obrazek po lewej po kliknięciu
-            />
           </div>
 
           {/* Modal do wyświetlenia powiększonego obrazka */}
@@ -94,6 +66,34 @@ const ProductGallery = ({ product }) => {
             </div>
           )}
         </section>
+
+        {/* Małe obrazki po prawej */}
+        <div className="flex flex-row gap-4 justify-center pb-5">
+          <Image
+            src={product.media1.url}
+            alt={product.media1.alt}
+            width="75"
+            height="75"
+            className="cursor-pointer"
+            onClick={() => setSelectedImage(product.media1.url)} // Zmieniamy obrazek po lewej po kliknięciu
+          />
+          <Image
+            src={product.media2.url}
+            alt={product.media2.alt}
+            width="75"
+            height="75"
+            className="cursor-pointer"
+            onClick={() => setSelectedImage(product.media2.url)} // Zmieniamy obrazek po lewej po kliknięciu
+          />
+          <Image
+            src={product.media3.url}
+            alt={product.media3.alt}
+            width="75"
+            height="75"
+            className="cursor-pointer"
+            onClick={() => setSelectedImage(product.media3.url)} // Zmieniamy obrazek po lewej po kliknięciu
+          />
+        </div>
       </div>
     </div>
   )
