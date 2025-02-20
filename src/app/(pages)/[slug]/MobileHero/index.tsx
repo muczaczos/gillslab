@@ -24,6 +24,7 @@ const MobileHero = () => {
               width={240} // Szerokość obrazu
               height={20} // Wysokość obrazu
               className="md:w-[440px]"
+              priority={true} // 🔥 Obraz ładuje się natychmiast
             />
           </div>
           <div className="bg-customWhite">
