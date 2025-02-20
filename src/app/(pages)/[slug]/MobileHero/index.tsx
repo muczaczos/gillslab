@@ -18,6 +18,15 @@ const MobileHero = () => {
               height={20} // Wysokość obrazu
               className="hidden sm:block ml-15 w-3/4 h-full"
             />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.webp`} // Ścieżka do obrazu w katalogu public
+              alt="Hero image"
+              width={240} // Szerokość obrazu
+              height={20} // Wysokość obrazu
+              className="md:w-[440px]"
+              loading="eager" // 👈 Dodaj to
+              priority={true} // 🔥 Obraz ładuje się natychmiast
+            />
           </div>
           <div className="bg-customWhite">
             <h1 className="font-black text-primary ml-7 w-80% mb-0 sm:mt-10 sm:ml-10">
