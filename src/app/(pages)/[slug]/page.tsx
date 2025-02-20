@@ -39,7 +39,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
       draft: isDraftMode,
     })
     categories = await fetchDocs<Category>('categories')
-  } catch (error) { }
+  } catch (error) {}
 
   // if no `home` page exists, render a static one using dummy content
   // you should delete this code once you have a home page in the CMS
