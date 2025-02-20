@@ -56,18 +56,22 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   return (
     <>
-      <Head>
-        <link
-          rel="preload"
-          href="https://gillslab.com/media/mobileHero.webp"
-          as="image"
-          type="image/webp"
-        />
-      </Head>
       {slug === 'home' ? (
-        <>
-          <h1>Welcome</h1>
-        </>
+        <LayoutWithHeaderFooter>
+          <MobileHero />
+
+          <DesktopHero />
+
+          <MobileCarousel />
+
+          <HorizontalDesktopMenu />
+
+          <Banners />
+
+          <BestProducts />
+
+          <BlogVlogNews />
+        </LayoutWithHeaderFooter>
       ) : (
         <>
           <Hero {...hero} />

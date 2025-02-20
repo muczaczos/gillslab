@@ -12,6 +12,12 @@ import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
 
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-monteserrat',
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -20,16 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/media/el2-icon.svg" sizes="32x32" />
         <link rel="icon" href="/media/el2-icon.svg" type="image/svg+xml" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ62PVHDXD"></Script>
-        <Script id="google-analitics">
-          {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-DJ62PVHDXD');
-            `}
-        </Script>
       </head>
-      <body className={`bg-customWhite`}>
+      <body className={`bg-customWhite ${montserrat.variable}`}>
         <Providers>
           <AdminBar />
           <main className="bg-customWhite">{children}</main>
