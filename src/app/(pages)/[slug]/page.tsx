@@ -65,7 +65,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
         />
       </Head>
       {slug === 'home' ? (
-        <></>
+        <>
+          <h1>Welcome</h1>
+        </>
       ) : (
         <>
           <Hero {...hero} />
