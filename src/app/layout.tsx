@@ -12,12 +12,6 @@ import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 import './_css/app.scss'
 import '../css/compiledTailwind.css'
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-monteserrat',
-})
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -35,10 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `}
         </Script>
       </head>
-      <body className={`bg-customWhite ${montserrat.variable}`}>
+      <body className={`bg-customWhite`}>
         <Providers>
           <AdminBar />
           <main className="bg-customWhite">{children}</main>
+          <MobileStickyMenu />
         </Providers>
       </body>
     </html>
