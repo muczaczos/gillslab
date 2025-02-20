@@ -65,21 +65,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
         />
       </Head>
       {slug === 'home' ? (
-        <>
-          <MobileHero />
-
-          <DesktopHero />
-
-          <MobileCarousel />
-
-          <HorizontalDesktopMenu />
-
-          <Banners />
-
-          <BestProducts />
-
-          <BlogVlogNews />
-        </>
+        <></>
       ) : (
         <>
           <Hero {...hero} />
