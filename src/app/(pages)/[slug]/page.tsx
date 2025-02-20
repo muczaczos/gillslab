@@ -39,7 +39,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
       draft: isDraftMode,
     })
     categories = await fetchDocs<Category>('categories')
-  } catch (error) {}
+  } catch (error) { }
 
   // if no `home` page exists, render a static one using dummy content
   // you should delete this code once you have a home page in the CMS
@@ -64,19 +64,31 @@ export default async function Pages({ params: { slug = 'home' } }) {
           type="image/webp"
         />
       </Head>
-      <LayoutWithHeaderFooter>
-        {slug === 'home' ? (
-          <></>
-        ) : (
-          <>
-            <Hero {...hero} />
-            <Blocks
-              blocks={layout}
-              disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-            />
-          </>
-        )}
-      </LayoutWithHeaderFooter>
+      {slug === 'home' ? (
+        <>
+          <MobileHero />
+
+          <DesktopHero />
+
+          <MobileCarousel />
+
+          <HorizontalDesktopMenu />
+
+          <Banners />
+
+          <BestProducts />
+
+          <BlogVlogNews />
+        </>
+      ) : (
+        <>
+          <Hero {...hero} />
+          <Blocks
+            blocks={layout}
+            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
+          />
+        </>
+      )}
     </>
   )
 }
