@@ -19,7 +19,7 @@ const MobileHero = () => {
               className="hidden sm:block ml-15 w-3/4 h-full"
             />
             <Image
-              src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.png`} // Ścieżka do obrazu w katalogu public
+              src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.webp`} // Ścieżka do obrazu w katalogu public
               alt="Hero image"
               width={240} // Szerokość obrazu
               height={20} // Wysokość obrazu
