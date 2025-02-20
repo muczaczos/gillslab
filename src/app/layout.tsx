@@ -39,7 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <AdminBar />
           <main className="bg-customWhite">{children}</main>
-          <MobileStickyMenu />
         </Providers>
       </body>
     </html>
