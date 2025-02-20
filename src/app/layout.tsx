@@ -23,12 +23,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
-        <link
-          rel="preload"
-          as="image"
-          href={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/mobileHero.webp`}
-          type="image/webp"
-        />
         <link rel="icon" href="/media/el2-icon.svg" sizes="32x32" />
         <link rel="icon" href="/media/el2-icon.svg" type="image/svg+xml" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ62PVHDXD"></Script>
