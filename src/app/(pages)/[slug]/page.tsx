@@ -25,6 +25,7 @@ import MobileHero from './MobileHero'
 // See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
+import Head from 'next/head'
 
 export default async function Pages({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
@@ -38,7 +39,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
       draft: isDraftMode,
     })
     categories = await fetchDocs<Category>('categories')
-  } catch (error) {}
+  } catch (error) { }
 
   // if no `home` page exists, render a static one using dummy content
   // you should delete this code once you have a home page in the CMS
@@ -54,33 +55,43 @@ export default async function Pages({ params: { slug = 'home' } }) {
   const { hero, layout } = page
 
   return (
-    <LayoutWithHeaderFooter>
-      {slug === 'home' ? (
-        <>
-          <MobileHero />
+    <>
+      <Head>
+        <link
+          rel="preload"
+          href="https://gillslab.com/media/mobileHero.webp"
+          as="image"
+          type="image/webp"
+        />
+      </Head>
+      <LayoutWithHeaderFooter>
+        {slug === 'home' ? (
+          <>
+            <MobileHero />
 
-          <DesktopHero />
+            <DesktopHero />
 
-          <MobileCarousel />
+            <MobileCarousel />
 
-          <HorizontalDesktopMenu />
+            <HorizontalDesktopMenu />
 
-          <Banners />
+            <Banners />
 
-          <BestProducts />
+            <BestProducts />
 
-          <BlogVlogNews />
-        </>
-      ) : (
-        <>
-          <Hero {...hero} />
-          <Blocks
-            blocks={layout}
-            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-          />
-        </>
-      )}
-    </LayoutWithHeaderFooter>
+            <BlogVlogNews />
+          </>
+        ) : (
+          <>
+            <Hero {...hero} />
+            <Blocks
+              blocks={layout}
+              disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
+            />
+          </>
+        )}
+      </LayoutWithHeaderFooter>
+    </>
   )
 }
 
