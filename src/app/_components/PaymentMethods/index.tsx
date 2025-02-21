@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsBank, BsCreditCard2Back, BsCurrencyBitcoin } from 'react-icons/bs'
+import { BsBank } from 'react-icons/bs'
 import Image from 'next/image'
 
 import { RadioButton } from '../Radio'

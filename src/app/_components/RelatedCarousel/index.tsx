@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 import styles from './index.module.scss'
 
-const RelatedCarousel = ({ icons, images, catLabels, product }) => {
+const RelatedCarousel = ({ product }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -61,10 +61,6 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   }
 
   // Dodanie stylów do smooth scrolling
-  const smoothScroll = () => {
-    const slider = sliderRef.current
-    slider.style.scrollBehavior = 'smooth' // Włączenie płynnego przewijania
-  }
 
   useEffect(() => {
     const slider = sliderRef.current
@@ -72,8 +68,6 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
       slider.style.scrollBehavior = 'smooth' // Ustawienie płynnego przewijania przy montowaniu komponentu
     }
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
-
-  const { relatedProducts } = product
 
   return (
     <div className="relative md:flex md:justify-center">

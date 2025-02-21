@@ -9,9 +9,6 @@ import Link from 'next/link'
 import { Header as HeaderType } from '../../../payload/payload-types'
 import { fetchHeader } from '../../_api/fetchGlobals'
 import HeaderComponent from './HeaderComponent'
-import { HeaderNav } from './Nav'
-
-import classes from './index.module.scss'
 
 export function Header() {
   const [header, setHeader] = useState<HeaderType | null>(null)

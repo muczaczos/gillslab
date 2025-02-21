@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-import { HR } from '../HR'
 import { InpostGeoWidget } from '../InpostGeoWidget'
 
 import classes from './index.module.scss'

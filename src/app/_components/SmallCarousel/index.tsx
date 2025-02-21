@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Modal } from '../../_components/Modal'
 import DynamicIcon from '../DaynamicIcon'
 
 import styles from './index.module.scss'
@@ -16,7 +15,6 @@ const SmallCarousel = ({
   modals,
   handleOpenModal,
   isModalOpen,
-  handleCloseModal,
   modalContent,
 }) => {
   const sliderRef = useRef(null)

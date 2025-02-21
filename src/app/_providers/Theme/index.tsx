@@ -41,6 +41,7 @@ export const ThemeProvider: React.FC<{ children?: React.ReactNode }> = ({ childr
       const implicitPreference = getImplicitPreference()
 
       if (implicitPreference) {
+        // eslint-disable-next-line no-unused-vars
         themeToSet = implicitPreference
       }
     }

@@ -1,14 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { FaHeart } from 'react-icons/fa'
-import {
-  IoArrowBackOutline,
-  IoHeart,
-  IoHeartOutline,
-  IoHomeOutline,
-  IoShareOutline,
-} from 'react-icons/io5'
-import { PiShareFatFill } from 'react-icons/pi'
+import { IoArrowBackOutline, IoHomeOutline } from 'react-icons/io5'
 import Link from 'next/link'
 
 import { Post } from '../../../payload/payload-types'
@@ -32,17 +24,13 @@ export const PostHero: React.FC<{
     return `${day} ${month}, ${year}`
   }
 
-  let imageLink
-  if (typeof post.meta.image === 'object' && post.meta.image !== null) {
-    imageLink = serverURL + '/media/' + post.meta.image.filename
-  }
   const [backgroundImage, setBackgroundImage] = useState<string>('')
 
   useEffect(() => {
     if (metaImage && typeof metaImage === 'object') {
       setBackgroundImage(`url(${serverURL}/media/${metaImage.filename})`)
     }
-  }, [metaImage])
+  }, [metaImage, serverURL])
 
   return (
     <Gutter>

@@ -5,8 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Page, Product } from '../../../payload/payload-types'
-import { fetchDoc } from '../../_api/fetchDoc'
-import { fetchDocs } from '../../_api/fetchDocs'
 import { Gutter } from '../../_components/Gutter'
 import useFavorites from '../../_components/UseFavorites'
 
@@ -31,24 +29,6 @@ export const FilteredProducts: React.FC<Props> = props => {
   useEffect(() => {
     async function fetchData() {
       try {
-        // Pobierz produkty
-        const products = await fetchDocs<Product>('products')
-
-        // Pobierz strony powiązane z produktami
-        const pages = await Promise.all(
-          products.map(async product => {
-            const page = await fetchDoc<Page>({
-              collection: 'products',
-              slug: product.slug,
-            })
-            // Dodaj dane kategorii do strony
-            return {
-              ...page,
-              categories: product.categories,
-            } as Page
-          }),
-        )
-
         // Filtruj strony na podstawie kategorii
         //  const filteredPages = pages.filter(page => page.categories?.[0]?.slug === category)
 
@@ -62,7 +42,7 @@ export const FilteredProducts: React.FC<Props> = props => {
     }
 
     fetchData()
-  }, [category]) // Ponowne wykonanie, gdy zmienia się kategoria
+  }, [category, filteredPages]) // Ponowne wykonanie, gdy zmienia się kategoria
 
   if (loading) {
     return <div>Loading...</div>

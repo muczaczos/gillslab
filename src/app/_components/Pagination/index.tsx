@@ -7,6 +7,7 @@ import classes from './index.module.scss'
 export const Pagination: React.FC<{
   page: number
   totalPages: number
+  // eslint-disable-next-line no-unused-vars
   onClick: (page: number) => void
   className?: string
 }> = props => {

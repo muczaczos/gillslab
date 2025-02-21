@@ -7,7 +7,6 @@ import type { Post, Product } from '../../../payload/payload-types'
 import type { ArchiveBlockProps } from '../../_blocks/ArchiveBlock/types'
 import { useFilter } from '../../_providers/Filter'
 import { Card } from '../Card'
-import { Gutter } from '../Gutter'
 import { PageRange } from '../PageRange'
 import { Pagination } from '../Pagination'
 
@@ -186,7 +185,7 @@ export const CollectionArchive: React.FC<Props> = props => {
           </div>
         )}
         <div className={classes.grid}>
-          {results.docs?.map((result, index) => {
+          {results.docs?.map(result => {
             if (typeof result === 'object' && result !== null) {
               return <Card key={result.id} doc={result} relationTo={relationTo} showCategories />
             }

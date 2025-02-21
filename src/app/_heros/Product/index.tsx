@@ -48,8 +48,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   }
 
   let productDescription
-  let productDetails
-  let productFaq
   const images = []
   const infoLabels = [shortInfo1, shortInfo2, shortInfo3, shortInfo4]
   // Extract text content from each moda
@@ -72,13 +70,9 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
       if (layoutItem.blockType === 'content' && layoutItem.columns) {
         const columns = layoutItem.columns
         productDescription = columns[0]
-        productDetails = columns[1]
-        productFaq = columns[2]
       }
     })
   }
-
-  const websiteUrl = process.env.NEXT_PUBLIC_SERVER_URL
 
   //********************************************* */
   // Stan do zarządzania ulubionymi

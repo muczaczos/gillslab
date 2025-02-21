@@ -6,6 +6,7 @@ import { payloadToken } from '../../_api/token'
 export async function GET(
   req: Request & {
     cookies: {
+      // eslint-disable-next-line no-unused-vars
       get: (name: string) => {
         value: string
       }

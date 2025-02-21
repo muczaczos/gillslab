@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import countryList from 'react-select-country-list'
 
 import { Input } from '../Input'
 import CountrySelector from './CountrySelector'
@@ -28,17 +27,12 @@ const ShippingDetails = ({
   defaultPhone = '',
   defaultEmail = '',
 }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isLoading },
-  } = useForm<FormData>()
+  const { register } = useForm<FormData>()
 
   const [fullName, setFullNameValue] = useState(defaultFullName)
   const [address, setAddressValue] = useState(defaultAddress)
   const [city, setCityValue] = useState(defaultCity)
   const [postalCode, setPostalCodeValue] = useState(defaultPostalCode)
-  const [country, setCountryValue] = useState(defaultCountry)
   const [phone, setPhoneValue] = useState(defaultPhone)
   const [email, setEmailValue] = useState(defaultEmail)
 

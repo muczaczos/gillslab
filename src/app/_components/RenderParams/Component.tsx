@@ -11,6 +11,7 @@ export type Props = {
   params?: string[]
   message?: string
   className?: string
+  // eslint-disable-next-line no-unused-vars
   onParams?: (paramValues: ((string | null | undefined) | string[])[]) => void
 }
 

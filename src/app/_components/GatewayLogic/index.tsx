@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
@@ -69,7 +69,6 @@ const GatewayLogic = ({
         })
 
         const {
-          error: errorFromRes,
           doc,
         }: {
           message?: string
@@ -147,7 +146,6 @@ const GatewayLogic = ({
         })
 
         const {
-          error: errorFromRes,
           doc,
         }: {
           message?: string
@@ -186,7 +184,6 @@ const GatewayLogic = ({
         })
 
         const {
-          error: errorFromRes,
           doc,
         }: {
           message?: string
@@ -225,7 +222,6 @@ const GatewayLogic = ({
         })
 
         const {
-          error: errorFromRes,
           doc,
         }: {
           message?: string
@@ -264,7 +260,6 @@ const GatewayLogic = ({
         })
 
         const {
-          error: errorFromRes,
           doc,
         }: {
           message?: string

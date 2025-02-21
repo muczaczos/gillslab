@@ -10,7 +10,6 @@ import {
   FaUser,
   FaVimeo,
 } from 'react-icons/fa'
-import { HiMenu, HiX } from 'react-icons/hi' // Import ikon z Heroicons
 import Link from 'next/link'
 
 import { useCart } from '../../_providers/Cart'

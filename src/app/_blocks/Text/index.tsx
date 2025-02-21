@@ -17,8 +17,6 @@ type Props = Extract<Page['layout'][0], { blockType: 'text' }> & {
 
 export const Text: React.FC<Props> = props => {
   const { richText, media, staticImage, imagePosition = 'left' } = props
-  let caption
-  if (media && typeof media === 'object') caption = media.filename
 
   return (
     <Gutter className="">

@@ -10,9 +10,11 @@ type Props = {
   required?: boolean
   error: any
   type?: 'text' | 'number' | 'password' | 'email' | 'textarea'
+  // eslint-disable-next-line no-unused-vars
   validate?: (value: string) => boolean | string
   placeholder?: string
   disabled?: boolean
+  // eslint-disable-next-line no-unused-vars
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   className?: string
   value?: string

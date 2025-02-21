@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { FaFlask, FaSyringe, FaVial } from 'react-icons/fa' // Ikony z Font Awesome
 import escapeHTML from 'escape-html'
-import Link from 'next/link'
 import { Text } from 'slate'
 
 import { Label } from '../Label'

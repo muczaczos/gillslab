@@ -21,24 +21,6 @@ const NewsCarousel = ({ images, catLabels, content, slugs }) => {
     }
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
-  const handleMouseMove = event => {
-    if (!isDown) return
-    event.preventDefault()
-    const slider = sliderRef.current
-    const x = event.pageX - slider.offsetLeft
-    const walk = x - startX
-    slider.scrollLeft = scrollLeft - walk
-  }
-
-  const handleTouchMove = event => {
-    if (!isDown) return
-    event.preventDefault()
-    const slider = sliderRef.current
-    const x = event.touches[0].pageX - slider.offsetLeft
-    const walk = x - startX
-    slider.scrollLeft = scrollLeft - walk
-  }
-
   const handleMouseDown = event => {
     const slider = sliderRef.current
     setIsDown(true)
@@ -78,10 +60,6 @@ const NewsCarousel = ({ images, catLabels, content, slugs }) => {
   }
 
   // Dodanie stylów do smooth scrolling
-  const smoothScroll = () => {
-    const slider = sliderRef.current
-    slider.style.scrollBehavior = 'smooth' // Włączenie płynnego przewijania
-  }
 
   useEffect(() => {
     const slider = sliderRef.current

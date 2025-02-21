@@ -1,23 +1,17 @@
 'use client' // you must use this directive when you wanna use 'pathname'
 
 import React, { useState } from 'react'
-import { BiSolidDownArrow } from 'react-icons/bi'
 import { FaHouse } from 'react-icons/fa6'
 import { FiHeart, FiShoppingCart, FiUser } from 'react-icons/fi'
 import { RiArrowDownSLine } from 'react-icons/ri'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 import { Header } from '../../../../payload/payload-types'
 import { useCart } from '../../../_providers/Cart'
-import { noHeaderFooterUrls } from '../../../constants'
-import { Gutter } from '../../Gutter'
 import HamburgerMenu from '../../HamburgerMenu'
-import { HeaderNav } from '../Nav'
 
-const HeaderComponent = ({ header }: { header: Header }) => {
-  const pathname = usePathname()
+const HeaderComponent = ({}: { header: Header }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const toggleDropdown = () => {

@@ -5,7 +5,7 @@ import countryList from 'react-select-country-list'
 function CountrySelector({ setCountry }) {
   const [value, setValue] = useState('')
   const options = useMemo(() => countryList().getData(), [])
-  const [id, setId] = useState('')
+  const [id] = useState('')
 
   const changeHandler = value => {
     setValue(value)

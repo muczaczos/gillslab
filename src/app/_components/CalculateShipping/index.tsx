@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Zone } from '../../../payload/payload-types'
 import { fetchDocs } from '../../_api/fetchDocs'
 

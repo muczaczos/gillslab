@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface Window {
     onPoint: any
   }
@@ -8,6 +9,7 @@ declare global {
 
 export type InpostGeowidgetProps = {
   token: string
+  // eslint-disable-next-line no-unused-vars
   onPoint: (e?: any) => void
   language?: string
   config?: string

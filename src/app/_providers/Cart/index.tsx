@@ -16,10 +16,13 @@ import { CartItem, cartReducer } from './reducer'
 
 export type CartContext = {
   cart: User['cart']
+  // eslint-disable-next-line no-unused-vars
   addItemToCart: (item: CartItem) => void
+  // eslint-disable-next-line no-unused-vars
   deleteItemFromCart: (product: Product) => void
   cartIsEmpty: boolean | undefined
   clearCart: () => void
+  // eslint-disable-next-line no-unused-vars
   isProductInCart: (product: Product) => boolean
   cartTotal: {
     formatted: string

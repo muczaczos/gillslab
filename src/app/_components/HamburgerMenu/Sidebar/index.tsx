@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-import fetchCategories from '../../FetchCategories'
-
 const Sidebar = () => {
   const [isShopOpen, setIsShopOpen] = useState(false)
 
-  const [categories, setCategories] = useState([]) // Stan na przechowywanie kategorii
-  const [error, setError] = useState<string | null>(null) // Obsługa błędów
-  const [loading, setLoading] = useState(true)
+  const [categories, setCategories] = useState([])
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -28,14 +24,11 @@ const Sidebar = () => {
       } catch (error) {
         // console.error('Error fetching categories:', error)
       } finally {
-        setLoading(false)
       }
     }
 
     fetchCategories()
   }, [])
-
-  if (error) return <div>Error: {error}</div>
 
   const toggleShopMenu = () => {
     setIsShopOpen(!isShopOpen)

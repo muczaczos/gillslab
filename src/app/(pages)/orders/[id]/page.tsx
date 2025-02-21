@@ -65,7 +65,7 @@ export default async function CustomerOrder({ params: { id } }) {
             const {
               quantity,
               product,
-              product: { id, title, meta },
+              product: { title, meta },
               price,
             } = item
 

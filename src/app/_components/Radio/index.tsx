@@ -6,6 +6,7 @@ interface RadioButtonProps {
   label: string
   value: string
   isSelected: boolean
+  // eslint-disable-next-line no-unused-vars
   onRadioChange: (value: string) => void
   groupName: string
 }
