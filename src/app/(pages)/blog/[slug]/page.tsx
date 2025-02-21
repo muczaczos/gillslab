@@ -1,17 +1,13 @@
 import React from 'react'
-import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Comment, Post } from '../../../../payload/payload-types'
+import { Post } from '../../../../payload/payload-types'
 import { fetchComments } from '../../../_api/fetchComments'
 import { fetchDoc } from '../../../_api/fetchDoc'
-import { fetchDocs } from '../../../_api/fetchDocs'
 import { Blocks } from '../../../_components/Blocks'
 import { PremiumContent } from '../../../_components/PremiumContent'
 import { PostHero } from '../../../_heros/PostHero'
-import { generateMeta } from '../../../_utilities/generateMeta'
-import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 
 // Force this page to be dynamic so that Next.js does not cache it
 // See the note in '../../../[slug]/page.tsx' about this
@@ -38,7 +34,7 @@ export default async function Posts({ params: { slug } }) {
     doc: post?.id,
   })
 
-  const { layout, relatedPosts, enablePremiumContent, premiumContent } = post
+  const { layout, relatedPosts, enablePremiumContent } = post
 
   return (
     <React.Fragment>

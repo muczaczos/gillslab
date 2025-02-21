@@ -12,7 +12,6 @@ const MoviesContent = serverUrl => {
   const [totalPages, setTotalPages] = useState<number>(0) // Liczba stron
   const [currentPage, setCurrentPage] = useState<number>(1) // Numer aktualnej strony
   const [showAll, setShowAll] = useState<boolean>(false) // Stan dla "See All"
-  const [currentPageInput, setCurrentPageInput] = useState<string>('') // Stan lokalny dla inputa
 
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -40,7 +39,7 @@ const MoviesContent = serverUrl => {
     } else {
       getMovies(currentPageNum, 4) // Paginacja
     }
-  }, [searchParams]) // Zaktualizuj przy zmianie query params lub "See All"
+  }, [getMovies, searchParams]) // Zaktualizuj przy zmianie query params lub "See All"
 
   // Funkcja zmieniająca stronę
   const handlePageChange = (newPage: number) => {

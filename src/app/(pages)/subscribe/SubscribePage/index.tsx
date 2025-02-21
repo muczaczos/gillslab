@@ -2,17 +2,12 @@
 
 import React, { Fragment, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
-import { Subscriber } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
 import { Input } from '../../../_components/Input'
 
-import classes from './index.module.scss'
-
 export const SubscribePage: React.FC<{}> = () => {
-  const searchParams = useSearchParams()
-  const error = searchParams.get('error')
   const [isChecked, setIsChecked] = useState(false)
   const [isButtonActive, setIsButtonActive] = useState(false)
   const [firstName, setFirstName] = useState('')
@@ -25,44 +20,17 @@ export const SubscribePage: React.FC<{}> = () => {
     setIsButtonActive(!isButtonActive) // Button becomes active when the checkbox is checked
   }
 
-  const handleButtonClick = () => {
-    // Handle button click action
-  }
-
   const handleSubscriber = async () => {
     if (firstName != '') {
       setMessage('')
-      const subscriberReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/subscribers`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: firstName,
-          email: email,
-        }),
-      })
 
-      const {
-        error: errorFromRes,
-        doc,
-      }: {
-        message?: string
-        error?: string
-        doc: Subscriber
-      } = await subscriberReq.json()
       router.push(`/subscribe-confirmation?firstName=${firstName}&email=${email}`)
     } else {
       setMessage('Please enter your name into the form.')
     }
   }
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isLoading },
-  } = useForm<FormData>()
+  const { register } = useForm<FormData>()
 
   const handelFirstName = e => {
     setFirstName(e.target.value)

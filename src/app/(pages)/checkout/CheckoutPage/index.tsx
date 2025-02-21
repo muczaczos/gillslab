@@ -3,7 +3,6 @@ import React, { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import { Settings } from '../../../../payload/payload-types'
 import AdditionalInfo from '../../../_components/AdditionalInfo'
 import { Button } from '../../../_components/Button'
 import { calculateShippingCost } from '../../../_components/CalculateShipping'
@@ -13,12 +12,11 @@ import PaymentMethods from '../../../_components/PaymentMethods'
 import ShippingDetails from '../../../_components/ShippingDetails'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
-import { useTheme } from '../../../_providers/Theme'
 import { CheckoutItem } from '../CheckoutItem'
 
 import classes from './index.module.scss'
 
-export const CheckoutPage: React.FC<{}> = props => {
+export const CheckoutPage: React.FC<{}> = () => {
   const { user } = useAuth()
   const router = useRouter()
 
@@ -30,10 +28,8 @@ export const CheckoutPage: React.FC<{}> = props => {
   const [country, setCountry] = React.useState('')
   const [email, setEmail] = React.useState('')
   const [method, setMethod] = React.useState()
-  const [lockerCode, setLockerCode] = React.useState()
-  const [showDisplayCode, setShowDisplayCode] = React.useState()
-  const [shippingMethods, setShippingMethods] = React.useState()
-  const [paymentMethods, setPaymentMethods] = React.useState()
+  const [lockerCode] = React.useState()
+  const [showDisplayCode] = React.useState()
   const [shippingCost, setShippingCost] = React.useState(0)
   const [additionalInfo, setAdditionalInfo] = React.useState()
   const { cart, cartIsEmpty, totalAmount, totalWeight } = useCart()

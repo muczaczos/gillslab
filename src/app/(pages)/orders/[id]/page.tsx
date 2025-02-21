@@ -8,14 +8,13 @@ import { Button } from '../../../_components/Button'
 import { Gutter } from '../../../_components/Gutter'
 import { HR } from '../../../_components/HR'
 import { Media } from '../../../_components/Media'
-import { Price } from '../../../_components/Price'
 import { formatDateTime } from '../../../_utilities/formatDateTime'
 import { getMeUser } from '../../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
 
-export default async function Order({ params: { id } }) {
+export default async function CustomerOrder({ params: { id } }) {
   const { token } = await getMeUser({
     nullUserRedirect: `/login?error=${encodeURIComponent(
       'You must be logged in to view this order.',
@@ -23,7 +22,6 @@ export default async function Order({ params: { id } }) {
   })
 
   let order: Order | null = null
-
   try {
     order = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders/${id}`, {
       headers: {

@@ -3,8 +3,6 @@ import Link from 'next/link'
 
 import { Order } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
-import { Gutter } from '../../../_components/Gutter'
-import { HR } from '../../../_components/HR'
 import { RenderParams } from '../../../_components/RenderParams'
 import { formatDateTime } from '../../../_utilities/formatDateTime'
 
@@ -26,7 +24,7 @@ const OrdersList: React.FC<Props> = ({ orders }) => {
       <RenderParams />
       {orders && orders.length > 0 && (
         <ul className={classes.ordersList}>
-          {orders?.map((order, index) => (
+          {orders?.map(order => (
             <li key={order.id} className={classes.listItem}>
               <Link className={classes.item} href={`/orders/${order.id}`}>
                 <div className={classes.itemContent}>

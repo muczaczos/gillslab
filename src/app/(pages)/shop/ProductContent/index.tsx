@@ -2,10 +2,8 @@
 
 import React from 'react'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
-import Image from 'next/image'
 
 import { Product } from '../../../../payload/payload-types'
-import { Gutter } from '../../../_components/Gutter'
 import RichText from '../../../_components/RichText'
 import ProductGallery from '../ProductGallery'
 

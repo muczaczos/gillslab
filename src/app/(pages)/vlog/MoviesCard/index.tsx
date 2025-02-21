@@ -2,24 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Button } from '../../../_components/Button'
 import RichText from '../../../_components/RichText'
 
 // Komponent przyjmujący props 'pages' i opcjonalnie 'posts'
 const MoviesCard = ({ movies }) => {
   if (!movies || movies.length === 0) return null // Sprawdzamy, czy pages istnieje
-
-  function formatDateWithComma(dateString) {
-    const date = new Date(dateString)
-
-    // Pobieramy części daty
-    const day = date.toLocaleDateString('en-GB', { day: '2-digit' })
-    const month = date.toLocaleDateString('en-GB', { month: 'short' })
-    const year = date.toLocaleDateString('en-GB', { year: 'numeric' })
-
-    // Składamy wynik z przecinkiem po miesiącu
-    return `${day} ${month}, ${year}`
-  }
 
   return (
     <>

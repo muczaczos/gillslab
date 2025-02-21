@@ -6,7 +6,7 @@ import { fetchDoc } from '../../_api/fetchDoc'
 import { Blocks } from '../../_components/Blocks'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
-export default async function Privacy({ params }) {
+export default async function Privacy({}) {
   const pageData: Page | null = await fetchDoc<Page>({
     collection: 'pages',
     slug: 'privacy',

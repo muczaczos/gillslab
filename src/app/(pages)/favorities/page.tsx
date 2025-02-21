@@ -1,13 +1,9 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
 
 import { Gutter } from '../../_components/Gutter'
-import { HR } from '../../_components/HR'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import FavoritesPage from './FavoritiesPage'
-
-import classes from './index.module.scss'
 
 const Favorities = () => {
   // console.log('sdfdsfsfsfd$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')

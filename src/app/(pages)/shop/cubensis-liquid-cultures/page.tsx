@@ -4,15 +4,12 @@ import Head from 'next/head'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
 
-import { Category, Page, Product } from '../../../../payload/payload-types'
+import { Page, Product } from '../../../../payload/payload-types'
 import { fetchDoc } from '../../../_api/fetchDoc'
 import { fetchDocs } from '../../../_api/fetchDocs'
 import { Gutter } from '../../../_components/Gutter'
-import { Hero } from '../../../_components/Hero'
-import { HR } from '../../../_components/HR'
 import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 import GrowkitsCards from '../cubensis-grow-kits/GrowkitsCards'
-import LiquidsCards from './LiquidsCards'
 
 import classes from './index.module.scss'
 

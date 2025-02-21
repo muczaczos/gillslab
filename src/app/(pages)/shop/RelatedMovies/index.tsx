@@ -2,14 +2,10 @@
 
 import React, { useEffect, useRef } from 'react'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
-import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
-import Image from 'next/image'
 
 import { Product } from '../../../../payload/payload-types'
-import { Gutter } from '../../../_components/Gutter'
 import NewsCarousel from '../../../_components/NewsCarousel'
 import RelatedCarousel from '../../../_components/RelatedCarousel'
-import RichText from '../../../_components/RichText'
 
 import 'react-tabs/style/react-tabs.css'
 
@@ -31,12 +27,6 @@ export const RelatedMovies: React.FC<{ product: Product }> = ({ product }) => {
       top: 0,
       behavior: 'smooth', // Płynne przewijanie
     })
-  }
-
-  // Dodanie stylów do smooth scrolling
-  const smoothScroll = () => {
-    const slider = sliderRef.current
-    slider.style.scrollBehavior = 'smooth' // Włączenie płynnego przewijania
   }
 
   useEffect(() => {

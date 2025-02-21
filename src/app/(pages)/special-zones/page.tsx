@@ -1,8 +1,7 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 
 import { Gutter } from '../../_components/Gutter'
-import { HR } from '../../_components/HR'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import {
   croatia,

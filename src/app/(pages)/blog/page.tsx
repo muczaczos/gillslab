@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react'
 
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
-import PostsCards from './PostsCards'
 import PostsContent from './PostsContent'
 
 const Posts = () => {

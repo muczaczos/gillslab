@@ -2,9 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Button } from '../../_components/Button'
 import { Gutter } from '../../_components/Gutter'
-import { HR } from '../../_components/HR'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 
 const Payments = async () => {

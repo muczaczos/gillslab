@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -6,7 +6,6 @@ import { Page, Settings } from '../../../payload/payload-types'
 import { staticCart } from '../../../payload/seed/cart-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchSettings } from '../../_api/fetchGlobals'
-import { Blocks } from '../../_components/Blocks'
 import { Button } from '../../_components/Button'
 import { Gutter } from '../../_components/Gutter'
 import { generateMeta } from '../../_utilities/generateMeta'

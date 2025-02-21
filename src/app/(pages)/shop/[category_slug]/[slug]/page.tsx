@@ -7,7 +7,6 @@ import { notFound } from 'next/navigation'
 import { Product, Product as ProductType } from '../../../../../payload/payload-types'
 import { fetchDoc } from '../../../../_api/fetchDoc'
 import { fetchDocs } from '../../../../_api/fetchDocs'
-import { Blocks } from '../../../../_components/Blocks'
 import { ProductHero } from '../../../../_heros/Product'
 import { generateMeta } from '../../../../_utilities/generateMeta'
 import LayoutWithNoHeaderAndFooter from '../../../../layouts/withNoFooter/layout'
@@ -21,16 +20,12 @@ export default async function Products({ params: { slug } }) {
   let product: Product | null = null
   let hideFooter = false
 
-  let productDetails
-  let productFaq
-
   try {
     product = await fetchDoc<Product>({
       collection: 'products',
       slug,
       draft: isDraftMode,
     })
-    hideFooter = product ? product.hideFooter : false
   } catch (error) {
     console.error(error) // eslint-disable-line no-console
   }
@@ -38,8 +33,6 @@ export default async function Products({ params: { slug } }) {
   if (!product) {
     notFound()
   }
-
-  const { relatedProducts } = product
 
   if (product.layout) {
     // Iteruj przez każdy element w layout

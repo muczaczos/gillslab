@@ -4,16 +4,15 @@ import Link from 'next/link'
 
 import classes from './index.module.scss'
 
-const PrintsCards = ({ pages, products }) => {
+const PrintsCards = ({ pages }) => {
   return (
     <section className="mt-10 flex flex-col gap-5 justify-center md:flex-wrap md:flex-row md:justify-between">
-      {pages.map((item, index) => {
+      {pages.map(item => {
         if (item !== null) {
           if (!item) return null
           const src = '/media/' + item.meta.image.filename
           const href = `/shop/${item.categories[0].slug}/${item.slug}`
           const title = item.title
-          const description = item.meta.description
           const price = item.price
           return (
             <div className="">

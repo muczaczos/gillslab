@@ -25,20 +25,17 @@ import MobileHero from './MobileHero'
 // See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
-import Head from 'next/head'
 
 export default async function Pages({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
-  let categories: Category[] | null = null
   try {
     page = await fetchDoc<Page>({
       collection: 'pages',
       slug,
       draft: isDraftMode,
     })
-    categories = await fetchDocs<Category>('categories')
   } catch (error) {}
 
   // if no `home` page exists, render a static one using dummy content
@@ -98,14 +95,12 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
-  let categories: Category[] | null = null
   try {
     page = await fetchDoc<Page>({
       collection: 'pages',
       slug,
       draft: isDraftMode,
     })
-    categories = await fetchDocs<Category>('categories')
   } catch (error) {
     // don't throw an error if the fetch fails
     // this is so that we can render a static home page for the demo

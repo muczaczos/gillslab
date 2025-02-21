@@ -48,12 +48,6 @@ export default function Contact() {
     }
   }
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isLoading },
-  } = useForm<FormData>()
-
   const handleName = e => {
     setName(e.target.value)
   }

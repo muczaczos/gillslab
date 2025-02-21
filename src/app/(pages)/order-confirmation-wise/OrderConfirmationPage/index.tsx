@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
 import { Button } from '../../../_components/Button'
-import { Message } from '../../../_components/Message'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
 
@@ -16,7 +15,6 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
   const searchParams = useSearchParams()
   const orderID = searchParams.get('order_id')
   const total = searchParams.get('total')
-  const error = searchParams.get('error')
 
   const { clearCart } = useCart()
 

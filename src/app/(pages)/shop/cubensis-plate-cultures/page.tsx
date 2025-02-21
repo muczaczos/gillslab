@@ -87,7 +87,7 @@ const CubensisPlatesCultures = async () => {
           with our high-quality plate cultures today 🚀.
         </p>
         <div className={classes.gap}></div>
-        <PlatesCards pages={filteredPages} products={products} />
+        <PlatesCards pages={filteredPages} />
         <HR />
       </Gutter>
     </LayoutWithHeaderFooter>

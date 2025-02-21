@@ -3,11 +3,10 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Image from 'next/image'
 
-import { Category, Page, Product } from '../../../../payload/payload-types'
+import { Page, Product } from '../../../../payload/payload-types'
 import { fetchDoc } from '../../../_api/fetchDoc'
 import { fetchDocs } from '../../../_api/fetchDocs'
 import { Gutter } from '../../../_components/Gutter'
-import { Hero } from '../../../_components/Hero'
 import { HR } from '../../../_components/HR'
 import PrintsCards from './PrintsCards'
 
@@ -55,7 +54,7 @@ const CubensisSporePrints = async () => {
         mushroom cultivation projects with confidence. 😎
       </p>
       <div className={classes.gap}></div>
-      <PrintsCards pages={filteredPages} products={products} />
+      <PrintsCards pages={filteredPages} />
       <HR />
     </Gutter>
   )

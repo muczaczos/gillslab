@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
@@ -8,7 +8,6 @@ import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 export const SubscribeConfiramtionPage: React.FC<{}> = () => {
   const searchParams = useSearchParams()
   const firstName = searchParams.get('firstName')
-  const email = searchParams.get('email')
 
   return (
     <LayoutWithHeaderFooter>

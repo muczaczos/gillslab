@@ -2,13 +2,11 @@ import React from 'react'
 import { Metadata } from 'next'
 import Head from 'next/head'
 import { draftMode } from 'next/headers'
-import Image from 'next/image'
 
 import { Page, Product } from '../../../../payload/payload-types'
 import { fetchDoc } from '../../../_api/fetchDoc'
 import { fetchDocs } from '../../../_api/fetchDocs'
 import { Gutter } from '../../../_components/Gutter'
-import { HR } from '../../../_components/HR'
 import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 import GrowkitsCards from './GrowkitsCards'
 

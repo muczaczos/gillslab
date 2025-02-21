@@ -19,8 +19,6 @@ export const CartPage: React.FC<{
   const { settings } = props
   const { productsPage } = settings || {}
 
-  const { user } = useAuth()
-
   const { cart, cartIsEmpty, addItemToCart, totalAmount, hasInitializedCart } = useCart()
   let subtotal = 0
 
@@ -59,15 +57,14 @@ export const CartPage: React.FC<{
                 </div>
                 {/* CART ITEM LIST */}
                 <ul className={classes.itemList}>
-                  {cart?.items?.map((item, index) => {
+                  {cart?.items?.map(item => {
                     if (typeof item.product === 'object') {
                       const {
                         quantity,
                         product,
-                        product: { price, id, title, meta, stripeProductID },
+                        product: { price, id, title, meta },
                       } = item
                       subtotal = Number(price) * quantity
-                      const isLast = index === (cart?.items?.length || 0) - 1
 
                       const metaImage = meta?.image
 
