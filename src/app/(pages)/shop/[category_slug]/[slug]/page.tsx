@@ -18,7 +18,6 @@ export default async function Products({ params: { slug } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let product: Product | null = null
-  let hideFooter = false
 
   try {
     product = await fetchDoc<Product>({
@@ -39,12 +38,6 @@ export default async function Products({ params: { slug } }) {
     product.layout.forEach(layoutItem => {
       // Sprawdź, czy obiekt layoutItem ma właściwość columns
       if (layoutItem.blockType === 'content' && layoutItem.columns) {
-        // Jeśli columns istnieje, możesz uzyskać do niego dostęp tutaj
-        const columns = layoutItem.columns
-        // Możesz dalej przetwarzać columns
-        // np. możesz iterować przez każdą kolumnę i wykonywać odpowiednie operacje
-        productDetails = columns[1]
-        productFaq = columns[2]
       }
     })
   }
