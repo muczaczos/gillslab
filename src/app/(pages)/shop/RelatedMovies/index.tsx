@@ -47,7 +47,7 @@ export const RelatedMovies: React.FC<{ product: Product }> = ({ product }) => {
           <div className="mt-8 mx-5 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
             <h6 className="text-primary text-4xl md:text-6xl font-medium">Related</h6>
           </div>
-          <RelatedCarousel product={product} icons={null} images={images2} catLabels={catLabels} />
+          <RelatedCarousel product={product} />
         </section>
 
         {/*Movies */}
