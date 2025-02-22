@@ -186,7 +186,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               modals={Modals}
               handleOpenModal={handleOpenModal} // Pass function down to SmallCarousel
               isModalOpen={isModalOpen} // Pass modal state down to SmallCarousel
-              handleCloseModal={handleCloseModal} // Pass close function as prop
               modalContent={modalContent}
             />
           </div>
