@@ -46,15 +46,14 @@ const GrowkitsCards = ({ pages }) => {
                 </div>
 
                 {/* Powiększony obrazek */}
-                <div className="px-16 pb-3">
-                  <Image
-                    alt="Cubensis grow kit"
-                    src={src}
-                    width={150 * 1.5} // Powiększenie szerokości 1.5x
-                    height={180 * 1.5} // Powiększenie wysokości 1.5x
-                    className="w-[225px] lg:w-[300px]" // Powiększona szerokość w Tailwind
-                  />
-                </div>
+                <Image
+                  alt="Cubensis grow kit"
+                  src={src}
+                  layout="intrinsic"
+                  width={150 * 4} // Powiększenie szerokości 1.5x
+                  height={180 * 4} // Powiększenie wysokości 1.5x
+                  className="w-auto h-auto object-cover"
+                />
 
                 <h6 className="pl-5 text-xl text-primary">{title}</h6>
                 <p className="pl-5 text-xl pb-4 font-bold text-primary">€{price}</p>

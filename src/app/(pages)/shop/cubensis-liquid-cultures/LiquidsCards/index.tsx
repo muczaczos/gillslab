@@ -23,7 +23,7 @@ const LiquidsCards = ({ pages, products }) => {
                     className=""
                     alt="Cubensis liquid culture"
                     src={src}
-                    width="350"
+                    width="700"
                     height="180"
                   />
                 </div>
