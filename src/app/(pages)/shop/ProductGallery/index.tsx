@@ -5,7 +5,9 @@ import classes from './index.module.scss'
 
 const ProductGallery = ({ product }) => {
   // State do przechowywania aktualnie wybranego obrazka
-  const [selectedImage, setSelectedImage] = useState(product.media1.url)
+  const [selectedImage, setSelectedImage] = useState(
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`,
+  )
 
   // State do kontrolowania widoczności modala
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -22,6 +24,7 @@ const ProductGallery = ({ product }) => {
 
   // Obrazy do galerii
 
+  console.log(product)
   return (
     <div className="pt-20 lg:mb-20 bg-customWhite lg:w-1/2 lg:pt-0">
       <div className="lg:mt-6 mx-5 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
@@ -35,8 +38,8 @@ const ProductGallery = ({ product }) => {
               <Image
                 src={selectedImage} // Aktualnie wybrany obrazek
                 alt="Main Image"
-                width="1000"
-                height="1000"
+                width="600"
+                height="600"
                 className="sm:w-[600px] cursor-pointer"
                 onClick={openModal} // Po kliknięciu otwiera modal
               />
@@ -70,11 +73,11 @@ const ProductGallery = ({ product }) => {
         {/* Małe obrazki po prawej */}
         <div className="flex flex-row gap-4 justify-center pb-5">
           <Image
-            src={product.media1.url}
+            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`}
             alt={product.media1.alt}
             width="75"
             height="75"
-            className="cursor-pointer"
+            className="cursor-pointer object-cover"
             onClick={() => setSelectedImage(product.media1.url)} // Zmieniamy obrazek po lewej po kliknięciu
           />
           <Image
@@ -82,7 +85,7 @@ const ProductGallery = ({ product }) => {
             alt={product.media2.alt}
             width="75"
             height="75"
-            className="cursor-pointer"
+            className="cursor-pointer object-cover"
             onClick={() => setSelectedImage(product.media2.url)} // Zmieniamy obrazek po lewej po kliknięciu
           />
           <Image
@@ -90,7 +93,7 @@ const ProductGallery = ({ product }) => {
             alt={product.media3.alt}
             width="75"
             height="75"
-            className="cursor-pointer"
+            className="cursor-pointer object-cover"
             onClick={() => setSelectedImage(product.media3.url)} // Zmieniamy obrazek po lewej po kliknięciu
           />
         </div>

@@ -1,0 +1,39 @@
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto;
+  cursor: grab;
+  scrollbar-width: none;
+  margin: 0;
+  padding-bottom: 1rem;
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider:active {
+  cursor: grabbing;
+}
+
+.slide {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column; /* Ustawienie układu kolumnowego */
+  justify-content: flex-start; /* Zmieniamy na 'flex-start', aby elementy były rozmieszczone od góry */
+  align-items: center;
+  background-color: #F7F9FB;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 1rem;
+  flex-shrink: 0; /* Zapobiega kurczeniu się elementów slajdu */
+}
+
+.slide img {
+  width: 100%; /* Ustawienie szerokości obrazu na 100% kontenera */
+  display: block;
+}

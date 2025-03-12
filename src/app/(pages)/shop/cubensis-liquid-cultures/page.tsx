@@ -10,6 +10,7 @@ import { fetchDocs } from '../../../_api/fetchDocs'
 import { Gutter } from '../../../_components/Gutter'
 import { Hero } from '../../../_components/Hero'
 import { HR } from '../../../_components/HR'
+import ProductsCarousel from '../../../_components/ProductsCarousel'
 import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 import GrowkitsCards from '../cubensis-grow-kits/GrowkitsCards'
 import LiquidsCards from './LiquidsCards'
@@ -91,7 +92,7 @@ const CubensisLiquidCultures = async () => {
           Liquid Cultures today!
         </p>
         <div className={`${classes.gap} bg-customWhite`}></div>
-        <GrowkitsCards pages={filteredPages} />
+        <ProductsCarousel filteredPages={filteredPages} category={'cubensis-liquid-cultures'} />
       </Gutter>
     </LayoutWithHeaderFooter>
   )
