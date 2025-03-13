@@ -78,7 +78,11 @@ const ProductGallery = ({ product }) => {
             width="75"
             height="75"
             className="cursor-pointer object-cover"
-            onClick={() => setSelectedImage(product.media1.url)} // Zmieniamy obrazek po lewej po kliknięciu
+            onClick={() =>
+              setSelectedImage(
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`,
+              )
+            } // Zmieniamy obrazek po lewej po kliknięciu
           />
           <Image
             src={product.media2.url}

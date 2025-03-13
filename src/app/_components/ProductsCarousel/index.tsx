@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import styles from './index.module.scss'
 
-const NewsCarousel = ({ filteredPages, category }) => {
+const ProductsCarousel = ({ filteredPages, category }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -92,6 +92,7 @@ const NewsCarousel = ({ filteredPages, category }) => {
 
   if (!filteredPages) return null
   console.log(filteredPages)
+
   return (
     <div className="relative md:flex md:justify-center">
       <div
@@ -153,4 +154,4 @@ const NewsCarousel = ({ filteredPages, category }) => {
   )
 }
 
-export default NewsCarousel
+export default ProductsCarousel
