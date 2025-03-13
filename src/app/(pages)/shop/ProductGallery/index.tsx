@@ -24,7 +24,7 @@ const ProductGallery = ({ product }) => {
 
   // Obrazy do galerii
 
-  console.log(product)
+  //console.log(product)
   return (
     <div className="pt-20 lg:mb-20 bg-customWhite lg:w-1/2 lg:pt-0">
       <div className="lg:mt-6 mx-5 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
