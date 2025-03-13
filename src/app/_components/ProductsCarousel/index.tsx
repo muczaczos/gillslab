@@ -91,7 +91,7 @@ const ProductsCarousel = ({ filteredPages, category }) => {
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
   if (!filteredPages) return null
-  console.log(filteredPages)
+  //console.log(filteredPages)
 
   return (
     <div className="relative md:flex md:justify-center">
@@ -129,10 +129,10 @@ const ProductsCarousel = ({ filteredPages, category }) => {
               {product.title && (
                 <div className="p-3 pt-0 ">
                   <h2 className="text-xl md:text-3xl text-customGray-dark opacity-80 font-black">
-                    {product.title[index]}
+                    {product.title}
                   </h2>
                   <p className="text-customGray-dark font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
-                    {product.title[index]}
+                    {product.title2}
                   </p>
                 </div>
               )}
