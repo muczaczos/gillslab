@@ -27,8 +27,9 @@
   flex-direction: column; /* Ustawienie układu kolumnowego */
   justify-content: flex-start; /* Zmieniamy na 'flex-start', aby elementy były rozmieszczone od góry */
   align-items: center;
-  background-color: #F7F9FB;
+  background-color: white;
   transition: transform 0.3s ease-in-out;
+  border: 1px solid #e1e2e8;
   border-radius: 1rem;
   flex-shrink: 0; /* Zapobiega kurczeniu się elementów slajdu */
 }

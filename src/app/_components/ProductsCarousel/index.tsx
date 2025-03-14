@@ -91,10 +91,9 @@ const ProductsCarousel = ({ filteredPages, category }) => {
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
   if (!filteredPages) return null
-  console.log(filteredPages)
 
   return (
-    <div className="relative md:flex md:justify-center">
+    <div className="mt-10 relative md:flex md:justify-center">
       <div
         className={`${styles.slider} slider`}
         ref={sliderRef}
@@ -110,7 +109,7 @@ const ProductsCarousel = ({ filteredPages, category }) => {
             key={index}
             className={`${styles.slide} slide z-10`}
           >
-            <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg frame-gradient">
+            <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg">
               <div className="p-4">
                 <div className="flex justify-center w-full rounded-xl overflow-hidden">
                   <div className="z-50 w-[15rem] relative">
@@ -128,10 +127,10 @@ const ProductsCarousel = ({ filteredPages, category }) => {
               {!product.title && <div className="w-[20rem] pt-0"></div>}
               {product.title && (
                 <div className="p-3 pt-0 ">
-                  <h2 className="text-xl md:text-3xl text-customGray-dark opacity-80 font-black">
+                  <h2 className="text-xl md:text-3xl text-primary-dark opacity-80 font-black">
                     {product.title}
                   </h2>
-                  <p className="text-customGray-dark font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
+                  <p className="text-primary font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
                     {product.title2}
                   </p>
                 </div>
