@@ -13,6 +13,7 @@ import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 import GrowkitsCards from './GrowkitsCards'
 
 import classes from './index.module.scss'
+import ProductsCarousel from '../../../_components/ProductsCarousel'
 
 const GrowKits = async () => {
   const { isEnabled: isDraftMode } = draftMode()
@@ -71,7 +72,7 @@ const GrowKits = async () => {
           </div>
 
           <div className={classes.gap}></div>
-          <GrowkitsCards pages={filteredPages} />
+          <ProductsCarousel filteredPages={filteredPages} category={'cubensis-grow-kits'} />
         </Gutter>
       </section>
     </LayoutWithHeaderFooter>
