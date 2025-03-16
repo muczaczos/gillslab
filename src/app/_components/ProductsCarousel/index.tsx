@@ -127,7 +127,7 @@ const ProductsCarousel = ({ filteredPages, category }) => {
               {!product.title && <div className="w-[20rem] pt-0"></div>}
               {product.title && (
                 <div className="p-3 pt-0 ">
-                  <h2 className="text-xl md:text-3xl text-primary-dark opacity-80 font-black">
+                  <h2 className="text-xl md:text-2xl text-primary-dark opacity-80 font-black">
                     {product.title}
                   </h2>
                   <p className="text-primary font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">

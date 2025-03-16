@@ -74,7 +74,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
   const { relatedProducts } = product
-
+  console.log(product)
   return (
     <div className="relative md:flex md:justify-center">
       <div
@@ -88,7 +88,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
       >
         {product.relatedProducts &&
           product.relatedProducts.map((related, index) => (
-            <Link key={index} href={`/${related.categories[0].slug}/${related.slug}`}>
+            <Link key={index} href={`/shop/${related.categories[0].slug}/${related.slug}`}>
               <div className={styles.slide} key={index}>
                 <div className="flex justify-end lg:pb-5">
                   <FaRegHeart className="text-primary text-xl lg:text-4xl" />
@@ -98,7 +98,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
                    w-[200px] h-[68px] lg:w-[500px] lg:h-[170px]"
                 >
                   <Image
-                    src={`${related.media1.url}`}
+                    src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${related.meta.image.filename}`}
                     alt={`Slide ${index}`}
                     width={500}
                     height={120}

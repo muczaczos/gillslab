@@ -13,12 +13,14 @@ import GrowkitsCards from '../cubensis-grow-kits/GrowkitsCards'
 import SyringesCards from './SyringesCards'
 
 import classes from './index.module.scss'
+import ProductsCarousel from '../../../_components/ProductsCarousel'
 
-const Syringes = async () => {
+const YourCubensisSpores = async () => {
   const { isEnabled: isDraftMode } = draftMode()
   let products: Product[] | null = null
   let pages = []
-  let filteredPages = []
+  let filteredSyringes = []
+  let filteredPrints = []
 
   try {
     products = await fetchDocs<Product>('products')
@@ -34,9 +36,15 @@ const Syringes = async () => {
     //console.log(error)
   }
 
-  filteredPages = pages.filter(page => {
+  filteredSyringes = pages.filter(page => {
     if (page.categories[0]) {
       return page.categories[0].slug === 'cubensis-spore-syringes'
+    }
+  })
+
+  filteredPrints = pages.filter(page => {
+    if (page.categories[0]) {
+      return page.categories[0].slug === 'cubensis-spore-prints'
     }
   })
 
@@ -95,10 +103,13 @@ const Syringes = async () => {
           </div>
         </div>
         <div className={classes.gap}></div>
-        <GrowkitsCards pages={filteredPages} />
+        <ProductsCarousel filteredPages={filteredSyringes} category={'cubensis-spore-syringes'} />
+
+        <h2>Cubensis Spore Prints</h2>
+        <ProductsCarousel filteredPages={filteredPrints} category={'cubensis-spore-prints'} />
       </Gutter>
     </LayoutWithHeaderFooter>
   )
 }
 
-export default Syringes
+export default YourCubensisSpores

@@ -37,7 +37,7 @@ const GrowKits = async () => {
 
   filteredPages = pages.filter(page => {
     if (page.categories[0]) {
-      return page.categories[0].slug === 'cubensis-grow-kits'
+      return page.categories[0].slug === 'cubensis-monotubs'
     }
   })
 
@@ -72,7 +72,7 @@ const GrowKits = async () => {
           </div>
 
           <div className={classes.gap}></div>
-          <ProductsCarousel filteredPages={filteredPages} category={'cubensis-grow-kits'} />
+          <ProductsCarousel filteredPages={filteredPages} category={'cubensis-monotubs'} />
         </Gutter>
       </section>
     </LayoutWithHeaderFooter>

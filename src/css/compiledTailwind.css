@@ -494,6 +494,10 @@
   width: 150px !important;
 }
 
+.w-\[15rem\] {
+  width: 15rem !important;
+}
+
 .w-\[200px\] {
   width: 200px !important;
 }
@@ -514,10 +518,6 @@
   width: 80% !important;
 }
 
-.w-\[8rem\] {
-  width: 8rem !important;
-}
-
 .w-\[90\%\] {
   width: 90% !important;
 }
@@ -528,10 +528,6 @@
 
 .w-full {
   width: 100% !important;
-}
-
-.w-\[15rem\] {
-  width: 15rem !important;
 }
 
 .max-w-\[1519px\] {
