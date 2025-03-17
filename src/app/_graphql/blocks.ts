@@ -105,9 +105,3 @@ export const IMAGE_LINK = `
   }
 }
 `
-
-export const SHOP_CAROUSEL = `
-...on ImageLink {
-  category_slug
-}
-`
