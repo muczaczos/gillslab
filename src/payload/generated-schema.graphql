@@ -2856,7 +2856,7 @@ input Page_Hero_Media_where_or {
   OR: [Page_Hero_Media_where_or]
 }
 
-union Page_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink | ShopCarousel
+union Page_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink | ShopCarouselBlock
 
 type Content {
   invertBackground: Boolean
@@ -3757,7 +3757,7 @@ input ImageLink_Items_Media_where_or {
   OR: [ImageLink_Items_Media_where_or]
 }
 
-type ShopCarousel {
+type ShopCarouselBlock {
   title: String
   category_slug: String
   id: String
@@ -9434,7 +9434,7 @@ input PageVersion_Version_Hero_Media_where_or {
   OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
-union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink | ShopCarousel
+union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive | Text | ImageLink | ShopCarouselBlock
 
 type PageVersion_Version_Meta {
   title: String

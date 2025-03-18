@@ -25,7 +25,7 @@ const blockComponents = {
   comments: CommentsBlock,
   text: Text,
   imageLink: ImageLink,
-  shopCarouselBlock: ShopCarouselBlock
+  shopCarouselBlock: ShopCarouselBlock,
 }
 
 export const Blocks: React.FC<{

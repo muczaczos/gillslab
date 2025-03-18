@@ -1102,7 +1102,7 @@ export interface Page {
         category_slug: string;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'shopCarousel';
+        blockType: 'shopCarouselBlock';
       }
   )[];
   slug?: string | null;

@@ -1,7 +1,7 @@
 import type { Block } from 'payload/types'
 
 export const ShopCarouselBlock: Block = {
-  slug: 'shopCarousel',
+  slug: 'shopCarouselBlock',
   labels: {
     singular: 'Shop Carousel',
     plural: 'Shop Carousels',
