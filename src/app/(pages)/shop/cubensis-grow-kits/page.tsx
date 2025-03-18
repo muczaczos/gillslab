@@ -8,17 +8,39 @@ import { Page, Product } from '../../../../payload/payload-types'
 import { fetchDoc } from '../../../_api/fetchDoc'
 import { fetchDocs } from '../../../_api/fetchDocs'
 import { Gutter } from '../../../_components/Gutter'
+import { HR } from '../../../_components/HR'
 import ProductsCarousel from '../../../_components/ProductsCarousel'
 import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
+import GrowkitsCards from './GrowkitsCards'
 
 import classes from './index.module.scss'
-import { useFilteredProducts } from '../../../_components/FilteredProducts'
 
-type Props = {
-  filteredProducts: Page[]
-}
+const GrowKits = async () => {
+  const { isEnabled: isDraftMode } = draftMode()
+  let products: Product[] | null = null
+  let pages = []
+  let filteredPages = []
 
-const GrowKits = ({ filteredProducts }: Props) => {
+  try {
+    products = await fetchDocs<Product>('products')
+
+    for (let i = 0; i < products.length; i++) {
+      pages[i] = await fetchDoc<Page>({
+        collection: 'products',
+        slug: products[i].slug,
+        draft: isDraftMode,
+      })
+    }
+  } catch (error) {
+    //console.log(error)
+  }
+
+  filteredPages = pages.filter(page => {
+    if (page.categories[0]) {
+      return page.categories[0].slug === 'cubensis-monotubs'
+    }
+  })
+
   return (
     <LayoutWithHeaderFooter>
       <Head>
@@ -50,60 +72,28 @@ const GrowKits = ({ filteredProducts }: Props) => {
           </div>
 
           <div className={classes.gap}></div>
-          <ProductsCarousel filteredPages={filteredProducts} category={'cubensis-monotubs'} />
+          <ProductsCarousel filteredPages={filteredPages} category={'cubensis-monotubs'} />
         </Gutter>
       </section>
     </LayoutWithHeaderFooter>
   )
 }
 
-// Przenieś logikę pobierania danych do getServerSideProps
-export const getServerSideProps = async () => {
-  const { isEnabled: isDraftMode } = draftMode()
-  let products: Product[] | null = null
-  let pages: Page[] = []
-  let filteredPages: Page[] = []
-
-  try {
-    // Pobierz produkty
-    products = await fetchDocs<Product>('products')
-
-    // Pobierz strony produktów na podstawie sluga
-    pages = await Promise.all(
-      products.map(product =>
-        fetchDoc<Page>({
-          collection: 'products',
-          slug: product.slug,
-          draft: isDraftMode,
-        }),
-      ),
-    )
-
-    // Filtrowanie stron na podstawie kategorii
-    const { filteredProducts, loading, error } = useFilteredProducts({ categorySlug: 'cubensis-monotubs' }, { 'cubensis-monotubs': {} });
-
-    return {
-      props: {
-        filteredProducts, // Zwróć przefiltrowane dane jako prop
-      },
-    }
-  }
-
-// Metadane strony
+// either Static metadata
 export const metadata: Metadata = {
+  title: 'Beginner-Friendly Cubensis Grow Kit - Psychodelic Mushrooms', //60 char
+  description:
+    'Embark on a captivating journey into the world 🌎 of fungi with our premium Cubensis Grow Kits, designed to bring the magic of mushroom cultivation', //150 char
+  keywords:
+    'Cubensis grow kit, growkits, magic mushrooms growkit, Cubensis spore print, Fungi, Organic Mushrooms',
+  openGraph: {
+    images: ['/media/growkit.jpg'],
     title: 'Beginner-Friendly Cubensis Grow Kit - Psychodelic Mushrooms',
     description:
       'Embark on a captivating journey into the world 🌎 of fungi with our premium Cubensis Grow Kits, designed to bring the magic of mushroom cultivation',
-    keywords:
-      'Cubensis grow kit, growkits, magic mushrooms growkit, Cubensis spore print, Fungi, Organic Mushrooms',
-    openGraph: {
-      images: ['/media/growkit.jpg'],
-      title: 'Beginner-Friendly Cubensis Grow Kit - Psychodelic Mushrooms',
-      description:
-        'Embark on a captivating journey into the world 🌎 of fungi with our premium Cubensis Grow Kits, designed to bring the magic of mushroom cultivation',
-      url: 'https://planet-of-mushrooms.com/cubensis-grow-kits',
-      type: 'website',
-    },
-  }
+    url: 'https://planet-of-mushrooms.com/cubensis-grow-kits',
+    type: 'website',
+  },
+}
 
-  export default GrowKits
+export default GrowKits

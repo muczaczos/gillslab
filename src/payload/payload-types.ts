@@ -1098,10 +1098,11 @@ export interface Page {
         blockType: 'imageLink';
       }
     | {
-        category?: string | null;
+        title: string;
+        category_slug: string;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'filteredProducts';
+        blockType: 'shopCarousel';
       }
   )[];
   slug?: string | null;

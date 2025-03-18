@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 
+import { ShopCarouselBlock } from '../../../payload/blocks/ShopCarousel'
 import { Page } from '../../../payload/payload-types.js'
 import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
@@ -24,6 +25,7 @@ const blockComponents = {
   comments: CommentsBlock,
   text: Text,
   imageLink: ImageLink,
+  shopCarouselBlock: ShopCarouselBlock
 }
 
 export const Blocks: React.FC<{

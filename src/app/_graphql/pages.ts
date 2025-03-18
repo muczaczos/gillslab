@@ -2,9 +2,9 @@ import {
   ARCHIVE_BLOCK,
   CALL_TO_ACTION,
   CONTENT,
-  FILTERED_PRODUCTS,
   IMAGE_LINK,
   MEDIA_BLOCK,
+  SHOP_CAROUSEL,
   TEXT,
 } from './blocks'
 import { LINK_FIELDS } from './link'
@@ -46,7 +46,7 @@ export const PAGE = `
           ${ARCHIVE_BLOCK}
           ${TEXT}
           ${IMAGE_LINK}
-          ${FILTERED_PRODUCTS}
+          ${SHOP_CAROUSEL}
         }
         ${META}
       }

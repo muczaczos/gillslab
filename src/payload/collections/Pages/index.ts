@@ -4,9 +4,9 @@ import { admins } from '../../access/admins'
 import { Archive } from '../../blocks/ArchiveBlock'
 import { CallToAction } from '../../blocks/CallToAction'
 import { Content } from '../../blocks/Content'
-import { FilteredProducts } from '../../blocks/FilteredProducts'
 import { ImageLink } from '../../blocks/ImageLink'
 import { MediaBlock } from '../../blocks/MediaBlock'
+import { ShopCarouselBlock } from '../../blocks/ShopCarousel'
 import { Text } from '../../blocks/Text'
 import { CustomPublishButton } from '../../components/CustomPublishButton'
 import { hero } from '../../fields/hero'
@@ -109,7 +109,7 @@ export const Pages: CollectionConfig = {
                 Archive,
                 Text,
                 ImageLink,
-                FilteredProducts,
+                ShopCarouselBlock,
               ],
             },
           ],

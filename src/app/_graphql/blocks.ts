@@ -83,10 +83,11 @@ export const TEXT = `
 }
 `
 
-export const FILTERED_PRODUCTS = `
-...on FilteredProducts {
+export const SHOP_CAROUSEL = `
+...on ShopCarousel {
   blockType
-  category
+    title
+    category_slug
 }
 `
 
