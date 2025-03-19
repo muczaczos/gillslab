@@ -1097,6 +1097,12 @@ export interface Page {
         blockName?: string | null;
         blockType: 'imageLink';
       }
+    | {
+        title?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'shopCarousel';
+      }
   )[];
   slug?: string | null;
   meta?: {

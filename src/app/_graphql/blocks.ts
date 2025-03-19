@@ -83,6 +83,13 @@ export const TEXT = `
 }
 `
 
+export const SHOP_CAROUSEL = `
+...on ShopCarousel {
+  blockType
+  title
+}
+`
+
 export const IMAGE_LINK = `
 ...on ImageLink {
   blockType

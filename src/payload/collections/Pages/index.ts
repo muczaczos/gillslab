@@ -6,6 +6,7 @@ import { CallToAction } from '../../blocks/CallToAction'
 import { Content } from '../../blocks/Content'
 import { ImageLink } from '../../blocks/ImageLink'
 import { MediaBlock } from '../../blocks/MediaBlock'
+import { ShopCarousel } from '../../blocks/ShopCarousel'
 import { Text } from '../../blocks/Text'
 import { CustomPublishButton } from '../../components/CustomPublishButton'
 import { hero } from '../../fields/hero'
@@ -101,7 +102,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [CallToAction, Content, MediaBlock, Archive, Text, ImageLink],
+              blocks: [CallToAction, Content, MediaBlock, Archive, Text, ImageLink, ShopCarousel],
             },
           ],
         },

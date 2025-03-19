@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 
-import { ShopCarouselBlock } from '../../../payload/blocks/ShopCarousel'
 import { Page } from '../../../payload/payload-types.js'
 import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
@@ -10,6 +9,7 @@ import { ImageLink } from '../../_blocks/ImageLink/'
 import { MediaBlock } from '../../_blocks/MediaBlock'
 import { RelatedPosts, type RelatedPostsProps } from '../../_blocks/RelatedPosts'
 import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
+import { ShopCarousel } from '../../_blocks/ShopCarousel'
 import { Text } from '../../_blocks/Text/'
 import { toKebabCase } from '../../_utilities/toKebabCase'
 import { BackgroundColor } from '../BackgroundColor/index'
@@ -25,6 +25,7 @@ const blockComponents = {
   comments: CommentsBlock,
   text: Text,
   imageLink: ImageLink,
+  shopCarousel: ShopCarousel,
 }
 
 export const Blocks: React.FC<{
