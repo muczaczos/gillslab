@@ -11,6 +11,14 @@ type Props = {
   title: string
 }
 
+interface Page {
+  slug: string
+  title: string
+  categories: {
+    slug: string
+  }
+}
+
 export const ShopCarousel: React.FC<Props> = ({ title }) => {
   const [filteredPages, setFilteredPages] = useState<Page[]>([])
   const [loading, setLoading] = useState<boolean>(true)
