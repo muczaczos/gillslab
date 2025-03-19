@@ -8,12 +8,12 @@ import { fetchDoc } from '../../../_api/fetchDoc'
 import { fetchDocs } from '../../../_api/fetchDocs'
 import { Gutter } from '../../../_components/Gutter'
 import { HR } from '../../../_components/HR'
+import ProductsCarousel from '../../../_components/ProductsCarousel'
 import LayoutWithHeaderFooter from '../../../layouts/withHeaderAndFooter/layout'
 import GrowkitsCards from '../cubensis-grow-kits/GrowkitsCards'
 import SyringesCards from './SyringesCards'
 
 import classes from './index.module.scss'
-import ProductsCarousel from '../../../_components/ProductsCarousel'
 
 const YourCubensisSpores = async () => {
   const { isEnabled: isDraftMode } = draftMode()

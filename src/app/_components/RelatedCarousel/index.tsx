@@ -74,7 +74,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   }, []) // Pusta tablica zależności, aby kod wykonał się tylko raz po montowaniu komponentu
 
   const { relatedProducts } = product
-  console.log(product)
+
   return (
     <div className="relative md:flex md:justify-center">
       <div
