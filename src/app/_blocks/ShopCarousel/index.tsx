@@ -11,14 +11,6 @@ type Props = {
   title: string
 }
 
-interface Page {
-  slug: string
-  title: string
-  categories: {
-    slug: string
-  }
-}
-
 export const ShopCarousel: React.FC<Props> = ({ title }) => {
   const [filteredPages, setFilteredPages] = useState<Page[]>([])
   const [loading, setLoading] = useState<boolean>(true)
@@ -45,9 +37,9 @@ export const ShopCarousel: React.FC<Props> = ({ title }) => {
 
       // Filtrowanie stron według kategorii
       const filtered = pages.filter(page => {
-        // Asercja, że categories na pewno istnieje
-        if (page.categories! && page.categories![0]) {
-          return page.categories![0].slug === title
+        // Sprawdzamy, czy strona jest produktem i ma kategorie
+        if ('categories' in page && Array.isArray(page.categories) && page.categories[0]?.slug) {
+          return page.categories[0].slug === title
         }
         return false
       })
