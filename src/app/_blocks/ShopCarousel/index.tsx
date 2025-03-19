@@ -37,8 +37,9 @@ export const ShopCarousel: React.FC<Props> = ({ title }) => {
 
       // Filtrowanie stron według kategorii
       const filtered = pages.filter(page => {
-        if (page.categories && page.categories[0]) {
-          return page.categories[0].slug === title
+        // Asercja, że categories na pewno istnieje
+        if (page.categories! && page.categories![0]) {
+          return page.categories![0].slug === title
         }
         return false
       })
