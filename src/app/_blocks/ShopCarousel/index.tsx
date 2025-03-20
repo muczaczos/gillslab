@@ -37,7 +37,8 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
 
       const filtered = products.filter(product =>
         product.categories?.some(
-          category => typeof category === 'object' && 'slug' in category && category.slug === category_slug,
+          category =>
+            typeof category === 'object' && 'slug' in category && category.slug === category_slug,
         ),
       )
 
