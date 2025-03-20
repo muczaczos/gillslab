@@ -15,7 +15,7 @@ import { toKebabCase } from '../../_utilities/toKebabCase'
 import { BackgroundColor } from '../BackgroundColor/index'
 import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding/index'
 
-const blockComponents = {
+const blockComponents: Record<string, React.FC<any>> = {
   cta: CallToActionBlock,
   content: ContentBlock,
   mediaBlock: MediaBlock,
