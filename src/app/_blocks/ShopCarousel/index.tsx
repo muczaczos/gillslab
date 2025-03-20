@@ -31,12 +31,12 @@ export const ShopCarousel: React.FC<Props> = ({ title }) => {
           products.push(product)
         }
       } catch (error) {
-        console.error('Błąd pobierania danych produktów:', error)
+        //console.error('Błąd pobierania danych produktów:', error)
       }
 
       // Filtrowanie produktów według kategorii
       const filtered = products.filter(product =>
-        product.categories?.some(category => category.slug === title)
+        product.categories?.some(category => category.slug === title),
       )
 
       setFilteredProducts(filtered)
