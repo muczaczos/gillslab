@@ -34,9 +34,10 @@ export const ShopCarousel: React.FC<Props> = ({ title }) => {
         //console.error('Błąd pobierania danych produktów:', error)
       }
 
-      // Filtrowanie produktów według kategorii
       const filtered = products.filter(product =>
-        product.categories?.some(category => category.slug === title),
+        product.categories?.some(
+          category => typeof category === 'object' && 'slug' in category && category.slug === title,
+        ),
       )
 
       setFilteredProducts(filtered)
