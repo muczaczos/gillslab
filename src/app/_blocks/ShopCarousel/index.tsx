@@ -9,9 +9,10 @@ import ProductsCarousel from '../../_components/ProductsCarousel'
 
 type Props = {
   title: string
+  category_slug: string
 }
 
-export const ShopCarousel: React.FC<Props> = ({ title }) => {
+export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState<boolean>(true)
 
@@ -36,7 +37,7 @@ export const ShopCarousel: React.FC<Props> = ({ title }) => {
 
       const filtered = products.filter(product =>
         product.categories?.some(
-          category => typeof category === 'object' && 'slug' in category && category.slug === title,
+          category => typeof category === 'object' && 'slug' in category && category.slug === category_slug,
         ),
       )
 
@@ -45,16 +46,16 @@ export const ShopCarousel: React.FC<Props> = ({ title }) => {
     }
 
     fetchData()
-  }, [title]) // Zaktualizuj dane, jeśli `title` się zmieni
+  }, [category_slug]) // Zaktualizuj dane, jeśli `title` się zmieni
 
   if (loading) {
     return <div>Loading...</div>
   }
 
   return (
-    <Gutter className="pb-20 justify-center flex flex-wrap">
-      <h2 className="text-lg font-bold text-customGray-dark mb-2">{title}</h2>
-      <ProductsCarousel filteredPages={filteredProducts} category={title} />
+    <Gutter className="pb-20 justify-center ">
+      <h2>{title}</h2>
+      <ProductsCarousel filteredPages={filteredProducts} category={category_slug} />
     </Gutter>
   )
 }

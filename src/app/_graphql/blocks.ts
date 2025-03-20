@@ -87,6 +87,7 @@ export const SHOP_CAROUSEL = `
 ...on ShopCarousel {
   blockType
   title
+  category_slug
 }
 `
 

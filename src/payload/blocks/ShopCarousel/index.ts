@@ -8,5 +8,10 @@ export const ShopCarousel: Block = {
       label: 'Title',
       type: 'text',
     },
+    {
+      name: 'category_slug',
+      label: 'Category slug',
+      type: 'text',
+    },
   ],
 }

@@ -1099,6 +1099,7 @@ export interface Page {
       }
     | {
         title?: string | null;
+        category_slug?: string | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'shopCarousel';

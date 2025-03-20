@@ -3759,6 +3759,7 @@ input ImageLink_Items_Media_where_or {
 
 type ShopCarousel {
   title: String
+  category_slug: String
   id: String
   blockName: String
   blockType: String
