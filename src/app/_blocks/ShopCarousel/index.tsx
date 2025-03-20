@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 
-import { Page, Product } from '../../../payload/payload-types'
+import { Product } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Gutter } from '../../_components/Gutter'
@@ -12,39 +12,34 @@ type Props = {
 }
 
 export const ShopCarousel: React.FC<Props> = ({ title }) => {
-  const [filteredPages, setFilteredPages] = useState<Page[]>([])
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     const fetchData = async () => {
-      let products: Product[] | null = null
-      let pages: Page[] = []
+      let products: Product[] = []
 
       try {
-        products = await fetchDocs<Product>('products')
+        const fetchedProducts = await fetchDocs<Product>('products')
 
         // Pobieranie pełnych danych produktów
-        for (let i = 0; i < products.length; i++) {
-          const page = await fetchDoc<Page>({
+        for (let i = 0; i < fetchedProducts.length; i++) {
+          const product = await fetchDoc<Product>({
             collection: 'products',
-            slug: products[i].slug,
+            slug: fetchedProducts[i].slug,
           })
-          pages.push(page)
+          products.push(product)
         }
       } catch (error) {
-        //console.error('Błąd pobierania danych produktów:', error)
+        console.error('Błąd pobierania danych produktów:', error)
       }
 
-      // Filtrowanie stron według kategorii
-      const filtered = pages.filter(page => {
-        // Sprawdzamy, czy strona jest produktem i ma kategorie
-        if ('categories' in page && Array.isArray(page.categories) && page.categories[0]?.slug) {
-          return page.categories[0].slug === title
-        }
-        return false
-      })
+      // Filtrowanie produktów według kategorii
+      const filtered = products.filter(product =>
+        product.categories?.some(category => category.slug === title)
+      )
 
-      setFilteredPages(filtered)
+      setFilteredProducts(filtered)
       setLoading(false)
     }
 
@@ -58,7 +53,7 @@ export const ShopCarousel: React.FC<Props> = ({ title }) => {
   return (
     <Gutter className="pb-20 justify-center flex flex-wrap">
       <h2 className="text-lg font-bold text-customGray-dark mb-2">{title}</h2>
-      <ProductsCarousel filteredPages={filteredPages} category={title} />
+      <ProductsCarousel filteredPages={filteredProducts} category={title} />
     </Gutter>
   )
 }
