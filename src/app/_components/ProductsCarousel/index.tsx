@@ -113,13 +113,20 @@ const ProductsCarousel = ({ filteredPages, category }) => {
               <div className="p-4">
                 <div className="flex justify-center w-full rounded-xl overflow-hidden">
                   <div className="z-50 w-[15rem] relative">
-                    <Image
-                      src={product.media1.url}
-                      alt="Example Image"
-                      width="200"
-                      height="200"
-                      style={{ objectFit: 'cover' }}
-                    />
+                    {product.media1?.url ? (
+                      <Image
+                        src={product.media1.url}
+                        alt="Example Image"
+                        width="200"
+                        height="200"
+                        style={{ objectFit: 'cover' }}
+                        onError={e => (e.currentTarget.src = '/placeholder.jpg')} // Zamienia na placeholder w razie błędu
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center w-[200px] h-[200px] bg-gray-200 text-gray-500">
+                        Chyba jest problem z obrazem w jednym z produktow danej kategoreii
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
