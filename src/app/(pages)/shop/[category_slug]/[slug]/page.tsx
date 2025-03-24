@@ -19,8 +19,6 @@ export default async function Products({ params: { slug } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let product: Product | null = null
-  let hideFooter = false
-
   let productDetails
   let productFaq
 
@@ -30,7 +28,6 @@ export default async function Products({ params: { slug } }) {
       slug,
       draft: isDraftMode,
     })
-    hideFooter = product ? product.hideFooter : false
   } catch (error) {
     console.error(error) // eslint-disable-line no-console
   }
@@ -86,7 +83,7 @@ export async function generateMetadata({ params: { slug } }): Promise<Metadata> 
       slug,
       draft: isDraftMode,
     })
-  } catch (error) {}
+  } catch (error) { }
 
   return generateMeta({ doc: product })
 }

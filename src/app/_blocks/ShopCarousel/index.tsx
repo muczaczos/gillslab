@@ -23,12 +23,16 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
       try {
         const fetchedProducts = await fetchDocs<Product>('products')
 
+        console.log('📦 Produkty z API:', fetchedProducts) //
         // Pobieranie pełnych danych produktów
         for (let i = 0; i < fetchedProducts.length; i++) {
+          console.log(`Fetching: ${fetchedProducts[i].slug}`) // 🟢 Sprawdź slug przed zapytaniem
+
           const product = await fetchDoc<Product>({
             collection: 'products',
             slug: fetchedProducts[i].slug,
           })
+          console.log('Fetched product:', product) // 🟢 Sprawdź, co zwróciło API
           products.push(product)
         }
       } catch (error) {
