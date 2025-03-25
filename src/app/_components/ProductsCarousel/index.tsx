@@ -107,9 +107,9 @@ const ProductsCarousel = ({ filteredPages, category }) => {
           <Link
             href={`${process.env.NEXT_PUBLIC_SERVER_URL}/shop/${category}/${product.slug}`}
             key={index}
-            className={`${styles.slide} slide z-10`}
+            className={`${styles.slide} slide z-10 focus:outline-none`}
           >
-            <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-lg">
+            <div className="max-w-sm w-full rounded-2xl overflow-hidden shadow-custom-lg transition-shadow">
               <div className="p-4">
                 <div className="flex justify-center w-full rounded-xl overflow-hidden">
                   <div className="z-50 w-[15rem] relative">
@@ -120,6 +120,7 @@ const ProductsCarousel = ({ filteredPages, category }) => {
                         width="200"
                         height="200"
                         style={{ objectFit: 'cover' }}
+                        loading="eager" // lub priority={true}
                         onError={e => (e.currentTarget.src = '/placeholder.jpg')} // Zamienia na placeholder w razie błędu
                       />
                     ) : (
@@ -140,6 +141,7 @@ const ProductsCarousel = ({ filteredPages, category }) => {
                   <p className="text-primary font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
                     {product.title2}
                   </p>
+
                 </div>
               )}
             </div>
