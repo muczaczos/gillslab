@@ -18,47 +18,50 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let products: Product[] = []
-
       try {
+        // Pobierz listę produktów (ogólny zarys)
         const fetchedProducts = await fetchDocs<Product>('products')
+        console.log('📦 Produkty z API:', fetchedProducts)
 
-        console.log('📦 Produkty z API:', fetchedProducts) //
-        // Pobieranie pełnych danych produktów
-        for (let i = 0; i < fetchedProducts.length; i++) {
-          console.log(`Fetching: ${fetchedProducts[i].slug}`) // 🟢 Sprawdź slug przed zapytaniem
-
-          const product = await fetchDoc<Product>({
+        // Równoległe pobieranie pełnych danych produktów
+        const productPromises = fetchedProducts.map(prod => {
+          console.log(`Fetching: ${prod.slug}`)
+          return fetchDoc<Product>({
             collection: 'products',
-            slug: fetchedProducts[i].slug,
+            slug: prod.slug,
           })
-          console.log('Fetched product:', product) // 🟢 Sprawdź, co zwróciło API
-          products.push(product)
-        }
+        })
+
+        const products = await Promise.all(productPromises)
+        console.log('✅ Wszystkie produkty pobrane:', products)
+
+        // Filtrowanie produktów po kategorii
+        const filtered = products.filter(product =>
+          product.categories?.some(
+            category =>
+              typeof category === 'object' && 'slug' in category && category.slug === category_slug,
+          ),
+        )
+
+        console.log('🎯 Produkty po filtracji:', filtered)
+
+        setFilteredProducts(filtered)
       } catch (error) {
-        //console.error('Błąd pobierania danych produktów:', error)
+        console.error('Błąd pobierania danych produktów:', error)
+      } finally {
+        setLoading(false)
       }
-
-      const filtered = products.filter(product =>
-        product.categories?.some(
-          category =>
-            typeof category === 'object' && 'slug' in category && category.slug === category_slug,
-        ),
-      )
-
-      setFilteredProducts(filtered)
-      setLoading(false)
     }
 
     fetchData()
-  }, [category_slug]) // Zaktualizuj dane, jeśli `title` się zmieni
+  }, [category_slug])
 
   if (loading) {
     return <div>Loading...</div>
   }
 
   return (
-    <Gutter className="pb-20 justify-center ">
+    <Gutter className="pb-20 justify-center">
       <h2>{title}</h2>
       <ProductsCarousel filteredPages={filteredProducts} category={category_slug} />
     </Gutter>
