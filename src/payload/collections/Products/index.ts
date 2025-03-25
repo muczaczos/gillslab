@@ -54,6 +54,16 @@ const Products: CollectionConfig = {
   },
   fields: [
     {
+      name: 'disable',
+      type: 'checkbox',
+      required: false,
+    },
+    {
+      name: 'outOfStock',
+      type: 'checkbox',
+      required: false,
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,

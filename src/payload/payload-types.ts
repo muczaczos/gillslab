@@ -684,7 +684,8 @@ export interface User {
  */
 export interface Product {
   id: string;
-  hideFooter?: boolean | null;
+  disable?: boolean | null;
+  outOfStock?: boolean | null;
   title: string;
   title2: string;
   shortInfo1: string;

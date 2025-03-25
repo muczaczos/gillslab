@@ -1757,7 +1757,8 @@ enum User_roles {
 
 type Product {
   id: String
-  hideFooter: Boolean
+  disable: Boolean
+  outOfStock: Boolean
   title: String
   title2: String
   shortInfo1: String
@@ -10045,7 +10046,8 @@ type Products {
 }
 
 input Product_where {
-  hideFooter: Product_hideFooter_operator
+  disable: Product_disable_operator
+  outOfStock: Product_outOfStock_operator
   title: Product_title_operator
   title2: Product_title2_operator
   shortInfo1: Product_shortInfo1_operator
@@ -10082,7 +10084,13 @@ input Product_where {
   OR: [Product_where_or]
 }
 
-input Product_hideFooter_operator {
+input Product_disable_operator {
+  equals: Boolean
+  not_equals: Boolean
+  exists: Boolean
+}
+
+input Product_outOfStock_operator {
   equals: Boolean
   not_equals: Boolean
   exists: Boolean
@@ -10394,7 +10402,8 @@ input Product_id_operator {
 }
 
 input Product_where_and {
-  hideFooter: Product_hideFooter_operator
+  disable: Product_disable_operator
+  outOfStock: Product_outOfStock_operator
   title: Product_title_operator
   title2: Product_title2_operator
   shortInfo1: Product_shortInfo1_operator
@@ -10432,7 +10441,8 @@ input Product_where_and {
 }
 
 input Product_where_or {
-  hideFooter: Product_hideFooter_operator
+  disable: Product_disable_operator
+  outOfStock: Product_outOfStock_operator
   title: Product_title_operator
   title2: Product_title2_operator
   shortInfo1: Product_shortInfo1_operator
@@ -10483,7 +10493,8 @@ type productsDocAccess {
 }
 
 type ProductsDocAccessFields {
-  hideFooter: ProductsDocAccessFields_hideFooter
+  disable: ProductsDocAccessFields_disable
+  outOfStock: ProductsDocAccessFields_outOfStock
   title: ProductsDocAccessFields_title
   title2: ProductsDocAccessFields_title2
   shortInfo1: ProductsDocAccessFields_shortInfo1
@@ -10514,26 +10525,49 @@ type ProductsDocAccessFields {
   _status: ProductsDocAccessFields__status
 }
 
-type ProductsDocAccessFields_hideFooter {
-  create: ProductsDocAccessFields_hideFooter_Create
-  read: ProductsDocAccessFields_hideFooter_Read
-  update: ProductsDocAccessFields_hideFooter_Update
-  delete: ProductsDocAccessFields_hideFooter_Delete
+type ProductsDocAccessFields_disable {
+  create: ProductsDocAccessFields_disable_Create
+  read: ProductsDocAccessFields_disable_Read
+  update: ProductsDocAccessFields_disable_Update
+  delete: ProductsDocAccessFields_disable_Delete
 }
 
-type ProductsDocAccessFields_hideFooter_Create {
+type ProductsDocAccessFields_disable_Create {
   permission: Boolean!
 }
 
-type ProductsDocAccessFields_hideFooter_Read {
+type ProductsDocAccessFields_disable_Read {
   permission: Boolean!
 }
 
-type ProductsDocAccessFields_hideFooter_Update {
+type ProductsDocAccessFields_disable_Update {
   permission: Boolean!
 }
 
-type ProductsDocAccessFields_hideFooter_Delete {
+type ProductsDocAccessFields_disable_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_outOfStock {
+  create: ProductsDocAccessFields_outOfStock_Create
+  read: ProductsDocAccessFields_outOfStock_Read
+  update: ProductsDocAccessFields_outOfStock_Update
+  delete: ProductsDocAccessFields_outOfStock_Delete
+}
+
+type ProductsDocAccessFields_outOfStock_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_outOfStock_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_outOfStock_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_outOfStock_Delete {
   permission: Boolean!
 }
 
@@ -11420,7 +11454,8 @@ type ProductVersion {
 }
 
 type ProductVersion_Version {
-  hideFooter: Boolean
+  disable: Boolean
+  outOfStock: Boolean
   title: String
   title2: String
   shortInfo1: String
@@ -12252,7 +12287,8 @@ type versionsProducts {
 
 input versionsProduct_where {
   parent: versionsProduct_parent_operator
-  version__hideFooter: versionsProduct_version__hideFooter_operator
+  version__disable: versionsProduct_version__disable_operator
+  version__outOfStock: versionsProduct_version__outOfStock_operator
   version__title: versionsProduct_version__title_operator
   version__title2: versionsProduct_version__title2_operator
   version__shortInfo1: versionsProduct_version__shortInfo1_operator
@@ -12301,7 +12337,13 @@ input versionsProduct_parent_operator {
   exists: Boolean
 }
 
-input versionsProduct_version__hideFooter_operator {
+input versionsProduct_version__disable_operator {
+  equals: Boolean
+  not_equals: Boolean
+  exists: Boolean
+}
+
+input versionsProduct_version__outOfStock_operator {
   equals: Boolean
   not_equals: Boolean
   exists: Boolean
@@ -12642,7 +12684,8 @@ input versionsProduct_id_operator {
 
 input versionsProduct_where_and {
   parent: versionsProduct_parent_operator
-  version__hideFooter: versionsProduct_version__hideFooter_operator
+  version__disable: versionsProduct_version__disable_operator
+  version__outOfStock: versionsProduct_version__outOfStock_operator
   version__title: versionsProduct_version__title_operator
   version__title2: versionsProduct_version__title2_operator
   version__shortInfo1: versionsProduct_version__shortInfo1_operator
@@ -12684,7 +12727,8 @@ input versionsProduct_where_and {
 
 input versionsProduct_where_or {
   parent: versionsProduct_parent_operator
-  version__hideFooter: versionsProduct_version__hideFooter_operator
+  version__disable: versionsProduct_version__disable_operator
+  version__outOfStock: versionsProduct_version__outOfStock_operator
   version__title: versionsProduct_version__title_operator
   version__title2: versionsProduct_version__title2_operator
   version__shortInfo1: versionsProduct_version__shortInfo1_operator
@@ -21644,7 +21688,8 @@ type productsAccess {
 }
 
 type ProductsFields {
-  hideFooter: ProductsFields_hideFooter
+  disable: ProductsFields_disable
+  outOfStock: ProductsFields_outOfStock
   title: ProductsFields_title
   title2: ProductsFields_title2
   shortInfo1: ProductsFields_shortInfo1
@@ -21675,26 +21720,49 @@ type ProductsFields {
   _status: ProductsFields__status
 }
 
-type ProductsFields_hideFooter {
-  create: ProductsFields_hideFooter_Create
-  read: ProductsFields_hideFooter_Read
-  update: ProductsFields_hideFooter_Update
-  delete: ProductsFields_hideFooter_Delete
+type ProductsFields_disable {
+  create: ProductsFields_disable_Create
+  read: ProductsFields_disable_Read
+  update: ProductsFields_disable_Update
+  delete: ProductsFields_disable_Delete
 }
 
-type ProductsFields_hideFooter_Create {
+type ProductsFields_disable_Create {
   permission: Boolean!
 }
 
-type ProductsFields_hideFooter_Read {
+type ProductsFields_disable_Read {
   permission: Boolean!
 }
 
-type ProductsFields_hideFooter_Update {
+type ProductsFields_disable_Update {
   permission: Boolean!
 }
 
-type ProductsFields_hideFooter_Delete {
+type ProductsFields_disable_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_outOfStock {
+  create: ProductsFields_outOfStock_Create
+  read: ProductsFields_outOfStock_Read
+  update: ProductsFields_outOfStock_Update
+  delete: ProductsFields_outOfStock_Delete
+}
+
+type ProductsFields_outOfStock_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_outOfStock_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_outOfStock_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_outOfStock_Delete {
   permission: Boolean!
 }
 
@@ -26974,7 +27042,8 @@ enum PageUpdate__status_MutationInput {
 }
 
 input mutationProductInput {
-  hideFooter: Boolean
+  disable: Boolean
+  outOfStock: Boolean
   title: String!
   title2: String!
   shortInfo1: String!
@@ -27035,7 +27104,8 @@ enum Product__status_MutationInput {
 }
 
 input mutationProductUpdateInput {
-  hideFooter: Boolean
+  disable: Boolean
+  outOfStock: Boolean
   title: String
   title2: String
   shortInfo1: String
