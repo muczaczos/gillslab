@@ -10,6 +10,7 @@ import ProductsCarousel from '../../_components/ProductsCarousel'
 type Props = {
   title: string
   category_slug: string
+  disable: boolean
 }
 
 export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
@@ -35,12 +36,16 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
         const products = await Promise.all(productPromises)
         console.log('✅ Wszystkie produkty pobrane:', products)
 
-        // Filtrowanie produktów po kategorii
-        const filtered = products.filter(product =>
-          product.categories?.some(
-            category =>
-              typeof category === 'object' && 'slug' in category && category.slug === category_slug,
-          ),
+        // Filtrowanie produktów po kategorii i dodatkowo usunięcie tych, które mają disabled = true
+        const filtered = products.filter(
+          product =>
+            !product.disable && // Wyklucza produkty z disabled = true
+            product.categories?.some(
+              category =>
+                typeof category === 'object' &&
+                'slug' in category &&
+                category.slug === category_slug,
+            ),
         )
 
         console.log('🎯 Produkty po filtracji:', filtered)
@@ -62,7 +67,7 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
 
   return (
     <Gutter className="pb-20 justify-center">
-      <h2>{title}</h2>
+      <h2 className="text-primary-dark">{title}</h2>
       <ProductsCarousel filteredPages={filteredProducts} category={category_slug} />
     </Gutter>
   )

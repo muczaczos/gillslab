@@ -20,6 +20,7 @@ import classes from './index.module.scss'
 export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
     slug,
+    outOfStock,
     title,
     title2,
     shortInfo1,
@@ -143,8 +144,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="w-auto">
               {typeof product.media1 === 'object' &&
-              product.media1 !== null &&
-              'url' in product.media1 ? (
+                product.media1 !== null &&
+                'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
@@ -265,10 +266,17 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           {/* Price and add to cart button */}
           <div className="mt-5 flex justify-between items-center pb-5">
             <p className="text-primary text-5xl font-medium md:text-8xl lg:text-6xl">{`€${price}`}</p>
-            <AddToCartButton
-              product={product}
-              className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold md:h-24 lg:h-16 lg:px-1"
-            />
+            {!outOfStock && (
+              <AddToCartButton
+                product={product}
+                className="bg-secondary px-3 flex h-16 items-center text-customWhite font-bold md:h-24 lg:h-16 lg:px-1"
+              />
+            )}
+            {outOfStock && (
+              <div className="bg-gray-300 px-3 h-16 items-center text-customWhite font-bold rounded-xl">
+                <p className="text-2xl p-3 md:text-3xl">Out of Stock</p>
+              </div>
+            )}
           </div>
           {/* /////////////////////// */}
         </section>

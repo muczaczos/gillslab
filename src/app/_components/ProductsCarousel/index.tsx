@@ -134,14 +134,23 @@ const ProductsCarousel = ({ filteredPages, category }) => {
               <p className="max-w-full"></p>
               {!product.title && <div className="w-[20rem] pt-0"></div>}
               {product.title && (
-                <div className="p-3 pt-0 ">
+                <div className="pl-3">
                   <h2 className="text-xl md:text-2xl text-primary-dark opacity-80 font-black">
                     {product.title}
                   </h2>
                   <p className="text-primary font-semibold text-sm md:text-lg leading-4 max-w-full break-words overflow-hidden">
                     {product.title2}
                   </p>
-
+                </div>
+              )}
+              {product.outOfStock && (
+                <div className="pb-3 pl-3 pt-0 ">
+                  <p className="text-secondary font-black">Out of stock!</p>
+                </div>
+              )}
+              {!product.outOfStock && (
+                <div className="pb-3 pl-3 pt-0 ">
+                  <p className="text-green-500 font-bold">Available!</p>
                 </div>
               )}
             </div>
