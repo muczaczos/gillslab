@@ -11,13 +11,15 @@ const DesktopHero = () => {
           <div className="grid grid-cols-3 bg-customWhite">
             {/* Lewa kolumna podzielona na dwa wiersze */}
             <div className="col-span-2 grid grid-rows-2">
-              <div className="bg-customWhite">
+              <div className="bg-customWhite relative">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/clouds.png`} // Ścieżka do obrazu w katalogu public
+                  src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/clouds2.png`}
                   alt="Clouds image"
-                  width={240} // Szerokość obrazu
-                  height={20} // Wysokość obrazu
-                  className="hidden md:block ml-10 mt-10 w-[450px] lg:w-[600px] xl:w-[800px] xl:ml-14 xl:mt-16 2xl:w-[1000px]"
+                  width={1000}
+                  height={500}
+                  quality={100}
+                  priority={true}
+                  className="pt-10 pl-3 scale-100 hover:scale-105 transition-transform duration-300 object-contain"
                 />
               </div>
               <div className="bg-customWhite">
