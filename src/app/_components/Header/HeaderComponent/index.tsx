@@ -53,7 +53,11 @@ const HeaderComponent = ({ header }: { header: Header }) => {
 
           {/* Dropdown for 'Our Products' */}
           <div className="relative z-[100]">
-            <div className="flex items-center cursor-pointer" onClick={toggleDropdown}>
+            <div
+              className="flex items-center cursor-pointer"
+              onMouseEnter={toggleDropdown}
+              onClick={toggleDropdown}
+            >
               <p>Our Products</p>
               <RiArrowDownSLine className="mt-[6px]" />
             </div>
