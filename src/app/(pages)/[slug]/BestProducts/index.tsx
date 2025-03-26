@@ -19,7 +19,9 @@ const BestProducts = () => {
             >
               <div className=" xl:flex xl:gap-12">
                 <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
-                  <p className="absolute pl-3 text-primary text-2xl font-bold top-3 z-[100]">B+</p>
+                  <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3 z-[100]">
+                    B+
+                  </p>
                   <div className="mt-5 flex justify-center">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/b_liquid_fotor.png`}
@@ -33,7 +35,9 @@ const BestProducts = () => {
                 </div>
 
                 <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
-                  <p className="absolute pl-3 text-primary text-2xl font-bold top-3">Cambodian</p>
+                  <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3">
+                    Cambodian
+                  </p>
                   <div className="flex justify-center">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/Cambodia_monotub_transparent.png`}
@@ -49,7 +53,9 @@ const BestProducts = () => {
 
               <div className="xl:flex xl:gap-12">
                 <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
-                  <p className="absolute pl-3 text-primary text-2xl font-bold top-3">Golden T.</p>
+                  <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3">
+                    Golden T.
+                  </p>
                   <div className="mt-2 flex justify-center">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/Golden_plate-fotor-1.png`}
@@ -63,8 +69,9 @@ const BestProducts = () => {
                 </div>
 
                 <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
-
-                  <p className="absolute pl-3 text-primary text-2xl font-bold top-3">Malabar</p>
+                  <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3">
+                    Malabar
+                  </p>
                   <div className="mt-1 flex justify-center">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/Malabar_print-fotor.png`}
