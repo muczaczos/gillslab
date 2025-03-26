@@ -52,13 +52,13 @@ const HeaderComponent = ({ header }: { header: Header }) => {
           </Link>
 
           {/* Dropdown for 'Our Products' */}
-          <div className="relative">
+          <div className="relative z-[100]">
             <div className="flex items-center cursor-pointer" onClick={toggleDropdown}>
               <p>Our Products</p>
               <RiArrowDownSLine className="mt-[6px]" />
             </div>
             {isDropdownOpen && (
-              <div className="absolute left-0 mt-1 bg-primary-light text-customWhite rounded-lg shadow-lg w-[150px]">
+              <div className="absolute left-0 mt-1 bg-primary text-customWhite rounded-lg shadow-lg w-[150px]">
                 <ul className="pt-2">
                   <Link href="/shop/cubensis-grow-kits">
                     <li className="group px-4 py-1 hover:bg-customWhite">
