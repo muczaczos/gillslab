@@ -22,11 +22,11 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
       try {
         // Pobierz listę produktów (ogólny zarys)
         const fetchedProducts = await fetchDocs<Product>('products')
-        console.log('📦 Produkty z API:', fetchedProducts)
+        //  console.log('📦 Produkty z API:', fetchedProducts)
 
         // Równoległe pobieranie pełnych danych produktów
         const productPromises = fetchedProducts.map(prod => {
-          console.log(`Fetching: ${prod.slug}`)
+          //    console.log(`Fetching: ${prod.slug}`)
           return fetchDoc<Product>({
             collection: 'products',
             slug: prod.slug,
@@ -34,7 +34,7 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
         })
 
         const products = await Promise.all(productPromises)
-        console.log('✅ Wszystkie produkty pobrane:', products)
+        //    console.log('✅ Wszystkie produkty pobrane:', products)
 
         // Filtrowanie produktów po kategorii i dodatkowo usunięcie tych, które mają disabled = true
         const filtered = products.filter(
@@ -48,11 +48,11 @@ export const ShopCarousel: React.FC<Props> = ({ title, category_slug }) => {
             ),
         )
 
-        console.log('🎯 Produkty po filtracji:', filtered)
+        //    console.log('🎯 Produkty po filtracji:', filtered)
 
         setFilteredProducts(filtered)
       } catch (error) {
-        console.error('Błąd pobierania danych produktów:', error)
+        //    console.error('Błąd pobierania danych produktów:', error)
       } finally {
         setLoading(false)
       }

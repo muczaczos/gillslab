@@ -10,24 +10,27 @@ const FavoritiesProducts = ({ favoriteSlugs }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!favoriteSlugs || favoriteSlugs.length === 0) {
+      setLoading(false)
+      return
+    }
+
     const fetchProductsAndPages = async () => {
       try {
         // Pobierz produkty na podstawie slugów
         const fetchedProducts = await Promise.all(
           favoriteSlugs.map(async slug => {
             try {
-              const product = await fetchDoc({
+              return await fetchDoc({
                 collection: 'products',
                 slug: slug,
               })
-              return product
             } catch (error) {
               return null // Zwróć null, jeśli wystąpił błąd
             }
           }),
         )
 
-        // Filtruj niepobrane produkty
         const validProducts = fetchedProducts.filter(Boolean)
         setProducts(validProducts)
 
@@ -35,58 +38,59 @@ const FavoritiesProducts = ({ favoriteSlugs }) => {
         const fetchedPages = await Promise.all(
           validProducts.map(async product => {
             try {
-              const page = await fetchDoc({
+              return await fetchDoc({
                 collection: 'pages', // Zakładam, że kolekcja stron to 'pages'
-                slug: product.slug, // Używamy slug produktu do pobrania powiązanej strony
+                slug: product.slug,
               })
-              return page
             } catch (error) {
               return null
             }
           }),
         )
 
-        setPages(fetchedPages.filter(Boolean)) // Filtruj null dla stron
+        setPages(fetchedPages.filter(Boolean))
       } catch (error) {
       } finally {
         setLoading(false)
       }
     }
 
-    if (favoriteSlugs.length > 0) {
-      fetchProductsAndPages()
-    } else {
-      setLoading(false) // Jeśli nie ma ulubionych slugów, ustaw loading na false
-    }
+    fetchProductsAndPages()
   }, [favoriteSlugs])
 
   if (loading) {
     return <div>Loading...</div> // Możesz dodać ładujący komponent
   }
-  //console.log('product href: ' + JSON.stringify(products, null, 2))
-  // console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+
   return (
     <div className="w-full bg-customWhite">
       <ul className="flex flex-wrap gap-8 justify-center bg-customWhite">
-        {products.map((product, index) => (
-          <Link
-            href={`/${product.categories[index].slug}/${product.slug}`}
-            className="shadow-xl bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl px-10 pt-10 pb-5"
-            key={product.id}
-          >
-            <li className="">
-              <Image
-                alt="Cubensis grow kit"
-                src={product.media1.url}
-                width={250}
-                height={180}
-                className=""
-              />
-              <h3 className="text-xl pt-5 text-primary-dark">{product.title}</h3>
-              <p className="text-md text-primary font-semibold">Price: ${product.price}</p>
-            </li>
-          </Link>
-        ))}
+        {products.map((product, index) =>
+          product.categories?.[0]?.slug ? ( // Sprawdzam, czy kategoria istnieje
+            <Link
+              href={`/shop/${product.categories[0].slug}/${product.slug}`}
+              className="shadow-xl bg-[rgba(187,204,241,0.1)] border-2 border-solid border-primary rounded-2xl px-10 pt-10 pb-5"
+              key={product.id}
+            >
+              <li>
+                {product.media1?.url ? ( // Sprawdzam, czy istnieje obrazek
+                  <Image
+                    alt="Cubensis grow kit"
+                    src={product.media1.url}
+                    width={250}
+                    height={180}
+                  />
+                ) : (
+                  <div className="w-[250px] h-[180px] flex items-center justify-center bg-gray-200 text-gray-500">
+                    No image available
+                  </div>
+                )}
+                <h3 className="text-xl pt-5 text-primary-dark">{product.title}</h3>
+                <p className="text-md text-primary font-semibold">Price: ${product.price}</p>
+              </li>
+            </Link>
+          ) : null,
+        )}
       </ul>
     </div>
   )
