@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import styles from './index.module.scss'
 
-const NewsCarousel = ({ images, catLabels, content, slugs }) => {
+const NewsCarousel = ({ images, catLabels, content, slugs, vlogTitles = null }) => {
   const sliderRef = useRef(null)
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -109,6 +109,11 @@ const NewsCarousel = ({ images, catLabels, content, slugs }) => {
               <div className="p-4">
                 <div className="w-full rounded-xl overflow-hidden">
                   <div className="z-50 h-[8rem] w-full relative">
+                    {vlogTitles && (
+                      <p className="absolute top-[-10px] left-[5px] font-bold text-primary-dark">
+                        {vlogTitles[index]}
+                      </p>
+                    )}
                     <Image
                       src={image}
                       alt="Example Image"

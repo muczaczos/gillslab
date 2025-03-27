@@ -49,6 +49,7 @@ const BlogVlogNews = () => {
   if (error) return <div>{error}</div> // Wyświetlamy błąd
 
   const vlogSlugs = movies.slice(0, 5).map(vlogs => `${vlogs.youtubeLink}`)
+  const vlogTitles = movies.slice(0, 5).map(vlogs => `${vlogs.title}`)
 
   const vlogImages = movies
     .slice(0, 5) // Pobiera ostatnie 5 elementów z tablicy
@@ -96,7 +97,13 @@ const BlogVlogNews = () => {
             <p className="py-2 font-bold text-xl text-primary sm:text-3xl">News on Vlog</p>
           </div>
         </Gutter>
-        <NewsCarousel catLabels={null} images={vlogImages} content={null} slugs={vlogSlugs} />
+        <NewsCarousel
+          catLabels={null}
+          images={vlogImages}
+          content={null}
+          slugs={vlogSlugs}
+          vlogTitles={vlogTitles}
+        />
       </section>
       {/* /////////// */}
     </div>

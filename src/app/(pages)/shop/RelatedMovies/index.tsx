@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 import Image from 'next/image'
@@ -10,6 +10,7 @@ import { Gutter } from '../../../_components/Gutter'
 import NewsCarousel from '../../../_components/NewsCarousel'
 import RelatedCarousel from '../../../_components/RelatedCarousel'
 import RichText from '../../../_components/RichText'
+import { fetchMovies } from '../../[slug]/BlogVlogNews/fetchMovies'
 
 import 'react-tabs/style/react-tabs.css'
 
@@ -17,6 +18,24 @@ import classes from './index.module.scss'
 // Definicja typu dla props
 
 export const RelatedMovies: React.FC<{ product: Product }> = ({ product }) => {
+  const [movies, setMovies] = useState<any[]>([]) // Przechowujemy filmy w stanie
+  const [loading, setLoading] = useState<boolean>(true) // Przechowujemy stan ładowania
+
+  const [error, setError] = useState<string | null>(null) // Przechowujemy stan błędu
+  useEffect(() => {
+    const loadMovies = async () => {
+      try {
+        const moviesData = await fetchMovies() // Wywołanie naszej funkcji fetch
+        setMovies(moviesData) // Ustawiamy stan na pobrane filmy
+      } catch (error) {
+        setError('Failed to load movies') // Ustawiamy błąd, jeśli coś poszło nie tak
+      } finally {
+        setLoading(false) // Zmieniamy stan ładowania na false
+      }
+    }
+
+    loadMovies() // Wywołanie asynchronicznej funkcji
+  }, []) // Pusta tablica zależności, żeby wywołało się tylko raz
   const sliderRef = useRef(null)
   const images2 = [
     '/media/gtLabel.png',
@@ -48,6 +67,15 @@ export const RelatedMovies: React.FC<{ product: Product }> = ({ product }) => {
 
   const catLabels = ['Growkit 1', 'Growkit 2', 'Growkit 3', 'Growkit 4', 'Growkit 5']
 
+  if (loading) return <div>Loading...</div> // Wyświetlamy ładowanie
+  if (error) return <div>{error}</div> // Wyświetlamy błąd
+
+  const vlogSlugs = movies.slice(0, 5).map(vlogs => `${vlogs.youtubeLink}`)
+  const vlogTitles = movies.slice(0, 5).map(vlogs => `${vlogs.title}`)
+  const vlogImages = movies
+    .slice(0, 5) // Pobiera ostatnie 5 elementów z tablicy
+    .map(vlogs => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/media/${vlogs.media.filename}`) // Dodaje prefiks do ścieżki
+
   return (
     <>
       <div className={classes.diagonalRelated}></div>
@@ -65,7 +93,13 @@ export const RelatedMovies: React.FC<{ product: Product }> = ({ product }) => {
           <div className="mb-10 mt-6 mx-5 border-solid border-b-0 border-r-0 border-t-1 border-l-1 border-primary pl-5 py-4">
             <h6 className="text-primary text-4xl md:text-6xl font-medium">Movies</h6>
           </div>
-          <NewsCarousel catLabels={null} images={images2} content={null} slugs={null} />
+          <NewsCarousel
+            catLabels={null}
+            images={vlogImages}
+            content={null}
+            slugs={vlogSlugs}
+            vlogTitles={vlogTitles}
+          />
         </section>
 
         {/* hr */}

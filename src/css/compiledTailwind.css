@@ -134,6 +134,18 @@
   top: -8px !important;
 }
 
+.top-\[-5px\] {
+  top: -5px !important;
+}
+
+.top-\[-10px\] {
+  top: -10px !important;
+}
+
+.left-\[5px\] {
+  left: 5px !important;
+}
+
 .z-0 {
   z-index: 0 !important;
 }
