@@ -75,6 +75,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
 
   const { relatedProducts } = product
 
+
   return (
     <div className="relative md:flex md:justify-center">
       <div
@@ -90,8 +91,8 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
           product.relatedProducts.map((related, index) => (
             <Link key={index} href={`/shop/${related.categories[0].slug}/${related.slug}`}>
               <div className={styles.slide} key={index}>
-                <div className="flex justify-end lg:pb-5">
-                  <FaRegHeart className="text-primary text-xl lg:text-4xl" />
+                <div className="flex justify-end pb-2 lg:pb-5">
+
                 </div>
                 <div
                   className="flex justify-center items-center mt-1 mb-3 
