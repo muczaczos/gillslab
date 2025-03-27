@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaHeart } from 'react-icons/fa'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import classes from './index.module.scss'
 
@@ -18,7 +19,10 @@ const BestProducts = () => {
               className={`${classes.gradientMenu2} rounded-xl flex gap-2 xl:gap-12 justify-center xl:justify-end pb-14 xl:pt-14 px-10`}
             >
               <div className=" xl:flex xl:gap-12">
-                <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_SERVER_URL}/shop/cubensis-liquid-cultures/cubensis-b-plus-liquid-culture`}
+                  className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]"
+                >
                   <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3 z-[100]">
                     B+
                   </p>
@@ -32,9 +36,12 @@ const BestProducts = () => {
                     />
                   </div>
                   <p className="absolute bottom-3 text-primary text-2xl font-bold pl-3">$35</p>
-                </div>
+                </Link>
 
-                <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_SERVER_URL}/shop/cubensis-monotubs/cubensis-cambodian-monotub`}
+                  className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]"
+                >
                   <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3">
                     Cambodian
                   </p>
@@ -48,11 +55,14 @@ const BestProducts = () => {
                     />
                   </div>
                   <p className="absolute bottom-3 text-primary text-2xl font-bold pl-3">$50</p>
-                </div>
+                </Link>
               </div>
 
               <div className="xl:flex xl:gap-12">
-                <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_SERVER_URL}/shop/cubensis-plate-cultures/cubensis-golden-teacher-plate-culture`}
+                  className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]"
+                >
                   <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3">
                     Golden T.
                   </p>
@@ -66,9 +76,12 @@ const BestProducts = () => {
                     />
                   </div>
                   <p className="absolute bottom-3 text-primary text-2xl font-bold pl-3">$20</p>
-                </div>
+                </Link>
 
-                <div className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]">
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_SERVER_URL}/shop/cubensis-spore-prints/cubensis-malabar-spore-print`}
+                  className="mb-2 relative flex flex-col justify-aroun bg-customWhite shadow-xl rounded-xl h-[12rem] w-[10rem] sm:h-[16rem] sm:w-[14rem]"
+                >
                   <p className="absolute pl-3 text-primary text-normal md:text-xl font-bold top-3">
                     Malabar
                   </p>
@@ -82,7 +95,7 @@ const BestProducts = () => {
                     />
                   </div>
                   <p className="absolute bottom-3 pl-3 text-primary text-2xl font-bold">$25</p>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
