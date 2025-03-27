@@ -28,7 +28,7 @@ const BestProducts = () => {
                   </p>
                   <div className="mt-5 flex justify-center">
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/b_liquid_fotor.png`}
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/B_liquid_fotor-1.png`}
                       alt="Promotion"
                       className="w-[5rem] sm:w-[7rem] sm:mt-[1rem]"
                       width={100}
