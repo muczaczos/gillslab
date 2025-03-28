@@ -6,7 +6,9 @@ import classes from './index.module.scss'
 const ProductGallery = ({ product }) => {
   // State do przechowywania aktualnie wybranego obrazka
   const [selectedImage, setSelectedImage] = useState(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`,
+    product?.meta?.image?.filename
+      ? `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`
+      : `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
   )
 
   // State do kontrolowania widoczności modala
@@ -73,32 +75,54 @@ const ProductGallery = ({ product }) => {
         {/* Małe obrazki po prawej */}
         <div className="flex flex-row gap-4 justify-center pb-5">
           <Image
-            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`}
-            alt={product.media1.alt}
+            src={
+              product?.meta?.image?.filename
+                ? `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`
+                : `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`
+            }
+            alt={product?.media1?.alt || 'Brak opisu'}
             width="75"
             height="75"
             className="cursor-pointer object-cover"
             onClick={() =>
               setSelectedImage(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`,
+                product?.meta?.image?.filename
+                  ? `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${product.meta.image.filename}`
+                  : `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
               )
-            } // Zmieniamy obrazek po lewej po kliknięciu
+            }
           />
+
           <Image
-            src={product.media2.url}
-            alt={product.media2.alt}
+            src={
+              product?.media2?.url || `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`
+            }
+            alt={product?.media2?.alt || 'Brak opisu'}
             width="75"
             height="75"
             className="cursor-pointer object-cover"
-            onClick={() => setSelectedImage(product.media2.url)} // Zmieniamy obrazek po lewej po kliknięciu
+            onClick={() =>
+              setSelectedImage(
+                product?.media2?.url ||
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
+              )
+            }
           />
+
           <Image
-            src={product.media3.url}
-            alt={product.media3.alt}
+            src={
+              product?.media3?.url || `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`
+            }
+            alt={product?.media3?.alt || 'Brak opisu'}
             width="75"
             height="75"
             className="cursor-pointer object-cover"
-            onClick={() => setSelectedImage(product.media3.url)} // Zmieniamy obrazek po lewej po kliknięciu
+            onClick={() =>
+              setSelectedImage(
+                product?.media3?.url ||
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
+              )
+            }
           />
         </div>
       </div>
