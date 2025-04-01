@@ -2416,7 +2416,7 @@ union Cta_Links_Link_Reference = Page
 type Page {
   id: String
   title: String
-  prefix: String
+  prefix: Page_prefix
   customClass: String
   fullPath: String
   publishedOn: DateTime
@@ -2427,6 +2427,12 @@ type Page {
   updatedAt: DateTime
   createdAt: DateTime
   _status: Page__status
+}
+
+enum Page_prefix {
+  _
+  shop
+  blog
 }
 
 type Page_Hero {
@@ -7962,14 +7968,18 @@ input Page_title_operator {
 }
 
 input Page_prefix_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
+  equals: Page_prefix_Input
+  not_equals: Page_prefix_Input
+  in: [Page_prefix_Input]
+  not_in: [Page_prefix_Input]
+  all: [Page_prefix_Input]
   exists: Boolean
+}
+
+enum Page_prefix_Input {
+  _
+  shop
+  blog
 }
 
 input Page_customClass_operator {
@@ -8994,7 +9004,7 @@ type PageVersion {
 
 type PageVersion_Version {
   title: String
-  prefix: String
+  prefix: PageVersion_Version_prefix
   customClass: String
   fullPath: String
   publishedOn: DateTime
@@ -9005,6 +9015,12 @@ type PageVersion_Version {
   updatedAt: DateTime
   createdAt: DateTime
   _status: PageVersion_Version__status
+}
+
+enum PageVersion_Version_prefix {
+  _
+  shop
+  blog
 }
 
 type PageVersion_Version_Hero {
@@ -9703,14 +9719,18 @@ input versionsPage_version__title_operator {
 }
 
 input versionsPage_version__prefix_operator {
-  equals: String
-  not_equals: String
-  like: String
-  contains: String
-  in: [String]
-  not_in: [String]
-  all: [String]
+  equals: versionsPage_version__prefix_Input
+  not_equals: versionsPage_version__prefix_Input
+  in: [versionsPage_version__prefix_Input]
+  not_in: [versionsPage_version__prefix_Input]
+  all: [versionsPage_version__prefix_Input]
   exists: Boolean
+}
+
+enum versionsPage_version__prefix_Input {
+  _
+  shop
+  blog
 }
 
 input versionsPage_version__customClass_operator {
@@ -26901,7 +26921,7 @@ enum SubscriberUpdate__status_MutationInput {
 
 input mutationPageInput {
   title: String
-  prefix: String
+  prefix: Page_prefix_MutationInput
   customClass: String
   fullPath: String
   publishedOn: String
@@ -26912,6 +26932,12 @@ input mutationPageInput {
   updatedAt: String
   createdAt: String
   _status: Page__status_MutationInput
+}
+
+enum Page_prefix_MutationInput {
+  _
+  shop
+  blog
 }
 
 input mutationPage_HeroInput {
@@ -26972,7 +26998,7 @@ enum Page__status_MutationInput {
 
 input mutationPageUpdateInput {
   title: String
-  prefix: String
+  prefix: PageUpdate_prefix_MutationInput
   customClass: String
   fullPath: String
   publishedOn: String
@@ -26983,6 +27009,12 @@ input mutationPageUpdateInput {
   updatedAt: String
   createdAt: String
   _status: PageUpdate__status_MutationInput
+}
+
+enum PageUpdate_prefix_MutationInput {
+  _
+  shop
+  blog
 }
 
 input mutationPageUpdate_HeroInput {

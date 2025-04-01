@@ -943,7 +943,7 @@ export interface Product {
 export interface Page {
   id: string;
   title: string;
-  prefix?: string | null;
+  prefix?: ('' | 'shop' | 'blog') | null;
   customClass?: string | null;
   fullPath?: string | null;
   publishedOn?: string | null;

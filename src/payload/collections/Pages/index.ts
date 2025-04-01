@@ -53,10 +53,15 @@ export const Pages: CollectionConfig = {
       localized: true,
     },
     {
-      name: 'prefix', // Dodaj pole prefiksu
-      type: 'text',
-      required: false,
-      defaultValue: '/shop', // Domyślny prefiks
+      name: 'prefix',
+      label: 'Prefix',
+      type: 'select',
+      options: [
+        { label: 'Brak', value: '' },
+        { label: 'Shop', value: 'shop' },
+        { label: 'Blog', value: 'blog' },
+      ],
+      defaultValue: '',
     },
     {
       name: 'customClass',

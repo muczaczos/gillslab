@@ -10,7 +10,7 @@ import { Gutter } from '../../../_components/Gutter'
 import NewsCarousel from '../../../_components/NewsCarousel'
 import RelatedCarousel from '../../../_components/RelatedCarousel'
 import RichText from '../../../_components/RichText'
-import { fetchMovies } from '../../[slug]/BlogVlogNews/fetchMovies'
+import { fetchMovies } from '../../[...slug]/BlogVlogNews/fetchMovies'
 
 import 'react-tabs/style/react-tabs.css'
 

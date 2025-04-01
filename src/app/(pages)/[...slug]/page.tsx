@@ -12,42 +12,52 @@ import { generateMeta } from '../../_utilities/generateMeta'
 import LayoutWithHeaderFooter from '../../layouts/withHeaderAndFooter/layout'
 import Banners from './Banners'
 import BestProducts from './BestProducts'
-import BlogVlogNews from './BlogVlogNews' // Zmienna ścieżka w zależności od struktury projektu
+import BlogVlogNews from './BlogVlogNews'
 import DesktopHero from './DesktopHero'
 import HorizontalDesktopMenu from './HorizontalDesktopMenu'
 import MobileCarousel from './MobileCarousel'
 import MobileHero from './MobileHero'
 
-// Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
-// This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN
-// To do this, we include the `no-cache` header on the fetch requests used to get the data for this page
-// But we also need to force Next.js to dynamically render this page on each request for preview mode to work
-// See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-// If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
+// Włącz dynamiczne renderowanie
 export const dynamic = 'force-dynamic'
 
-export default async function Pages({ params: { slug = 'home' } }) {
+export default async function Pages({ params }) {
+  const slugArray = Array.isArray(params.slug) ? params.slug : [params.slug || 'home']
+  const finalSlug = slugArray.pop() // Ostatni element to `slug`
+  const prefix = slugArray.length > 0 ? slugArray.join("/") : null // Reszta to `prefix`
+
+  console.log('📌 Otrzymane params:', params)
+  console.log('📌 Finalny slug:', finalSlug)
+  console.log('📌 Prefix:', prefix) // Dodajemy logowanie `prefix`
+
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
   let categories: Category[] | null = null
+
   try {
+    // Pobieramy stronę na podstawie `slug` i `prefix`
     page = await fetchDoc<Page>({
       collection: 'pages',
-      slug,
+      slug: finalSlug,
+      prefix, // ✅ Dodajemy prefix do fetchDoc!
       draft: isDraftMode,
     })
-    categories = await fetchDocs<Category>('categories')
-  } catch (error) {}
+    console.log('🛠 Pełne dane strony:', page)
 
-  // if no `home` page exists, render a static one using dummy content
-  // you should delete this code once you have a home page in the CMS
-  // this is really only useful for those who are demoing this template
-  if (!page && slug === 'home') {
+    categories = await fetchDocs<Category>('categories')
+  } catch (error) {
+    console.error('Błąd pobierania danych:', error)
+  }
+
+  // Jeśli nie ma takiej strony, próbujemy użyć statycznej strony głównej
+  if (!page && finalSlug === 'home') {
     page = staticHome
+    console.log('⚠️ Brak strony, używamy statycznej strony głównej')
   }
 
   if (!page) {
+    console.log('🚫 Nie znaleziono strony, zwracamy 404')
     return notFound()
   }
 
@@ -55,20 +65,14 @@ export default async function Pages({ params: { slug = 'home' } }) {
 
   return (
     <LayoutWithHeaderFooter>
-      {slug === 'home' ? (
+      {finalSlug === 'home' ? (
         <>
           <MobileHero />
-
           <DesktopHero />
-
           <MobileCarousel />
-
           <HorizontalDesktopMenu />
-
           <Banners />
-
           <BestProducts />
-
           <BlogVlogNews />
         </>
       ) : (
@@ -84,32 +88,41 @@ export default async function Pages({ params: { slug = 'home' } }) {
   )
 }
 
+// 🛠 POPRAWIONE generowanie statycznych ścieżek
 export async function generateStaticParams() {
   try {
     const pages = await fetchDocs<Page>('pages')
-    return pages?.map(({ slug }) => slug)
+
+    console.log('📢 Otrzymane strony z API:', pages)
+
+    const paths = pages?.map(({ slug, prefix }) => ({
+      slug: prefix ? [prefix, slug] : [slug] // ✅ Teraz zwracamy tablicę zamiast stringa!
+    }))
+
+    console.log('✅ Poprawione generowane ścieżki:', paths)
+    return paths || []
   } catch (error) {
+    console.error('Błąd pobierania stron:', error)
     return []
   }
 }
 
+// Generowanie metadanych
 export async function generateMetadata({ params: { slug = 'home' } }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
-  let categories: Category[] | null = null
+
   try {
-    page = await fetchDoc<Page>({
-      collection: 'pages',
-      slug,
-      draft: isDraftMode,
-    })
-    categories = await fetchDocs<Category>('categories')
+    const allPages = await fetchDocs<Page>('pages')
+
+    page =
+      allPages.find(p => {
+        const expectedSlug = p.prefix ? `${p.prefix}/${p.slug}` : p.slug
+        return expectedSlug === slug
+      }) || null
   } catch (error) {
-    // don't throw an error if the fetch fails
-    // this is so that we can render a static home page for the demo
-    // when deploying this template on Payload Cloud, this page needs to build before the APIs are live
-    // in production you may want to redirect to a 404  page or at least log the error somewhere
+    console.error('Błąd pobierania danych:', error)
   }
 
   if (!page && slug === 'home') {

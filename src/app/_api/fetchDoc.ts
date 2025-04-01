@@ -35,10 +35,11 @@ const queryMap = {
 export const fetchDoc = async <T>(args: {
   collection: keyof Config['collections']
   slug?: string
+  prefix?: string
   id?: string
   draft?: boolean
 }): Promise<T> => {
-  const { collection, slug, draft } = args || {}
+  const { collection, slug, prefix, draft } = args || {}
 
   if (!queryMap[collection]) throw new Error(`Collection ${collection} not found`)
 
@@ -61,6 +62,7 @@ export const fetchDoc = async <T>(args: {
       query: queryMap[collection].query,
       variables: {
         slug,
+        ...(prefix ? { prefix } : {}), // ✅ NIE WYSYŁA PREFIXU, JEŚLI GO NIE MA
         draft,
       },
     }),
