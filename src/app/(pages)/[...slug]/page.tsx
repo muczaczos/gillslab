@@ -24,7 +24,7 @@ export const dynamic = 'force-dynamic'
 export default async function Pages({ params }) {
   const slugArray = Array.isArray(params.slug) ? params.slug : [params.slug || 'home']
   const finalSlug = slugArray.pop() // Ostatni element to `slug`
-  const prefix = slugArray.length > 0 ? slugArray.join("/") : null // Reszta to `prefix`
+  const prefix = slugArray.length > 0 ? slugArray.join('/') : null // Reszta to `prefix`
 
   console.log('📌 Otrzymane params:', params)
   console.log('📌 Finalny slug:', finalSlug)
@@ -93,13 +93,13 @@ export async function generateStaticParams() {
   try {
     const pages = await fetchDocs<Page>('pages')
 
-    console.log('📢 Otrzymane strony z API:', pages)
+    // console.log('📢 Otrzymane strony z API:', pages)
 
     const paths = pages?.map(({ slug, prefix }) => ({
-      slug: prefix ? [prefix, slug] : [slug] // ✅ Teraz zwracamy tablicę zamiast stringa!
+      slug: prefix ? [prefix, slug] : [slug], // ✅ Teraz zwracamy tablicę zamiast stringa!
     }))
 
-    console.log('✅ Poprawione generowane ścieżki:', paths)
+    //console.log('✅ Poprawione generowane ścieżki:', paths)
     return paths || []
   } catch (error) {
     console.error('Błąd pobierania stron:', error)
@@ -115,19 +115,59 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
 
   try {
     const allPages = await fetchDocs<Page>('pages')
+    console.log(allPages)
+    // Logowanie pełnych danych
+    console.log(
+      '📄 Otrzymane strony z API:',
+      allPages.map(p => p.slug),
+    )
 
+    // Poprawione porównanie `slug` i `prefix` (bez tworzenia pełnej ścieżki)
     page =
       allPages.find(p => {
-        const expectedSlug = p.prefix ? `${p.prefix}/${p.slug}` : p.slug
-        return expectedSlug === slug
+        const currentSlug = slug // aktualny slug, który mamy w params
+        const expectedSlug = p.prefix ? `${p.prefix}/${p.slug}` : p.slug // sprawdzamy pełną ścieżkę z prefixem
+
+        console.log(`🔎 Sprawdzam: ${expectedSlug} === ${currentSlug}`) // Dodatkowe logowanie, aby śledzić co się porównuje
+
+        // Porównanie slugu i prefixu, uwzględniając możliwość braku prefixu w params
+        return expectedSlug === currentSlug || p.slug === currentSlug
       }) || null
+
+    console.log('✅ Znaleziono stronę:', page)
   } catch (error) {
-    console.error('Błąd pobierania danych:', error)
+    console.error('❌ Błąd pobierania danych:', error)
   }
 
   if (!page && slug === 'home') {
-    page = staticHome
+    page = staticHome // Strona statyczna dla "home"
   }
 
-  return generateMeta({ doc: page })
+  if (!page) {
+    console.warn('⚠️ Strona nie została znaleziona, zwracamy domyślne meta')
+    return {
+      title: 'Brak tytułu',
+      description: 'Opis niedostępny',
+    }
+  }
+
+  // Odczytujemy metadane
+  const meta = page.meta || {}
+
+  // Zwracamy metadane, w tym tytuł, opis i obrazek
+  const metaTitle = meta.title || page.title || 'Brak tytułu'
+  const metaDescription = meta.description || 'Opis strony niedostępny'
+  const metaImage = meta.image?.url || null
+
+  console.log('✅ Meta dla strony:', {
+    title: metaTitle,
+    description: metaDescription,
+    image: metaImage,
+  })
+
+  return {
+    title: metaTitle,
+    description: metaDescription,
+    image: metaImage, // Dodanie obrazka, jeśli dostępny
+  }
 }
