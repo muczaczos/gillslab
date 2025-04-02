@@ -78,7 +78,7 @@ const RelatedCarousel = ({ icons, images, catLabels, product }) => {
   return (
     <div className="relative md:flex md:justify-center">
       <div
-        className={`${styles.slider}`}
+        className={`${styles.slider} md:w-[80%]`}
         ref={sliderRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}

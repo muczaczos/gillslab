@@ -1774,6 +1774,10 @@
     width: 100% !important;
   }
 
+  .md\:w-\[80\%\] {
+    width: 80% !important;
+  }
+
   .md\:max-w-\[1536px\] {
     max-width: 1536px !important;
   }
