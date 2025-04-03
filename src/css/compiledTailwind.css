@@ -1770,12 +1770,12 @@
     width: 50% !important;
   }
 
-  .md\:w-full {
-    width: 100% !important;
-  }
-
   .md\:w-\[80\%\] {
     width: 80% !important;
+  }
+
+  .md\:w-full {
+    width: 100% !important;
   }
 
   .md\:max-w-\[1536px\] {

@@ -111,36 +111,28 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params: { slug = 'home' } }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode()
 
+  // ✅ Upewniamy się, że slug to string, a nie tablica
+  const finalSlug = Array.isArray(slug) ? slug.pop() : slug
+
+  console.log(`📡 Pobieramy stronę dla sluga: ${finalSlug}`)
+
   let page: Page | null = null
 
   try {
-    const allPages = await fetchDocs<Page>('pages')
-    console.log(allPages)
-    // Logowanie pełnych danych
-    console.log(
-      '📄 Otrzymane strony z API:',
-      allPages.map(p => p.slug),
-    )
-
-    // Poprawione porównanie `slug` i `prefix` (bez tworzenia pełnej ścieżki)
-    page =
-      allPages.find(p => {
-        const currentSlug = slug // aktualny slug, który mamy w params
-        const expectedSlug = p.prefix ? `${p.prefix}/${p.slug}` : p.slug // sprawdzamy pełną ścieżkę z prefixem
-
-        console.log(`🔎 Sprawdzam: ${expectedSlug} === ${currentSlug}`) // Dodatkowe logowanie, aby śledzić co się porównuje
-
-        // Porównanie slugu i prefixu, uwzględniając możliwość braku prefixu w params
-        return expectedSlug === currentSlug || p.slug === currentSlug
-      }) || null
+    // ✅ Teraz slug zawsze jest stringiem
+    page = await fetchDoc<Page>({
+      collection: 'pages',
+      slug: finalSlug,
+      draft: isDraftMode,
+    })
 
     console.log('✅ Znaleziono stronę:', page)
   } catch (error) {
     console.error('❌ Błąd pobierania danych:', error)
   }
 
-  if (!page && slug === 'home') {
-    page = staticHome // Strona statyczna dla "home"
+  if (!page && finalSlug === 'home') {
+    page = staticHome
   }
 
   if (!page) {
@@ -151,23 +143,31 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
     }
   }
 
-  // Odczytujemy metadane
   const meta = page.meta || {}
 
-  // Zwracamy metadane, w tym tytuł, opis i obrazek
-  const metaTitle = meta.title || page.title || 'Brak tytułu'
-  const metaDescription = meta.description || 'Opis strony niedostępny'
-  const metaImage = meta.image?.url || null
+  const imageUrl =
+    meta.image && typeof meta.image === 'object' && 'filename' in meta.image
+      ? `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${meta.image.filename}`
+      : null
 
-  console.log('✅ Meta dla strony:', {
-    title: metaTitle,
-    description: metaDescription,
-    image: metaImage,
-  })
+  const imageAlt =
+    meta.image && typeof meta.image === 'object' && 'alt' in meta.image
+      ? meta.image.alt || 'Brak opisu'
+      : 'Brak opisu'
 
   return {
-    title: metaTitle,
-    description: metaDescription,
-    image: metaImage, // Dodanie obrazka, jeśli dostępny
+    title: meta.title || page.title || 'Brak tytułu',
+    description: meta.description || 'Opis strony niedostępny',
+    openGraph: {
+      title: meta.title || page.title,
+      description: meta.description || 'Opis strony niedostępny',
+      images: imageUrl ? [{ url: imageUrl, alt: imageAlt || 'Brak opisu' }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: meta.title || page.title,
+      description: meta.description || 'Opis strony niedostępny',
+      images: imageUrl ? [{ url: imageUrl, alt: imageAlt || 'Brak opisu' }] : [],
+    },
   }
 }
