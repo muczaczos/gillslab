@@ -104,7 +104,7 @@ const ProductGallery = ({ product }) => {
             onClick={() =>
               setSelectedImage(
                 product?.media2?.url ||
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
+                  `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
               )
             }
           />
@@ -120,7 +120,7 @@ const ProductGallery = ({ product }) => {
             onClick={() =>
               setSelectedImage(
                 product?.media3?.url ||
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
+                  `${process.env.NEXT_PUBLIC_SERVER_URL}/media/placeholder.png`,
               )
             }
           />

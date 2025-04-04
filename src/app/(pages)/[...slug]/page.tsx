@@ -26,9 +26,9 @@ export default async function Pages({ params }) {
   const finalSlug = slugArray.pop() // Ostatni element to `slug`
   const prefix = slugArray.length > 0 ? slugArray.join('/') : null // Reszta to `prefix`
 
-  console.log('📌 Otrzymane params:', params)
-  console.log('📌 Finalny slug:', finalSlug)
-  console.log('📌 Prefix:', prefix) // Dodajemy logowanie `prefix`
+  //console.log('📌 Otrzymane params:', params)
+  //console.log('📌 Finalny slug:', finalSlug)
+  //console.log('📌 Prefix:', prefix) // Dodajemy logowanie `prefix`
 
   const { isEnabled: isDraftMode } = draftMode()
 
@@ -43,21 +43,21 @@ export default async function Pages({ params }) {
       prefix, // ✅ Dodajemy prefix do fetchDoc!
       draft: isDraftMode,
     })
-    console.log('🛠 Pełne dane strony:', page)
+    //console.log('🛠 Pełne dane strony:', page)
 
     categories = await fetchDocs<Category>('categories')
   } catch (error) {
-    console.error('Błąd pobierania danych:', error)
+    //console.error('Błąd pobierania danych:', error)
   }
 
   // Jeśli nie ma takiej strony, próbujemy użyć statycznej strony głównej
   if (!page && finalSlug === 'home') {
     page = staticHome
-    console.log('⚠️ Brak strony, używamy statycznej strony głównej')
+    //console.log('⚠️ Brak strony, używamy statycznej strony głównej')
   }
 
   if (!page) {
-    console.log('🚫 Nie znaleziono strony, zwracamy 404')
+    //console.log('🚫 Nie znaleziono strony, zwracamy 404')
     return notFound()
   }
 
@@ -102,7 +102,7 @@ export async function generateStaticParams() {
     //console.log('✅ Poprawione generowane ścieżki:', paths)
     return paths || []
   } catch (error) {
-    console.error('Błąd pobierania stron:', error)
+    //console.error('Błąd pobierania stron:', error)
     return []
   }
 }
@@ -114,7 +114,7 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
   // ✅ Upewniamy się, że slug to string, a nie tablica
   const finalSlug = Array.isArray(slug) ? slug.pop() : slug
 
-  console.log(`📡 Pobieramy stronę dla sluga: ${finalSlug}`)
+  //console.log(`📡 Pobieramy stronę dla sluga: ${finalSlug}`)
 
   let page: Page | null = null
 
@@ -126,9 +126,9 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
       draft: isDraftMode,
     })
 
-    console.log('✅ Znaleziono stronę:', page)
+    //console.log('✅ Znaleziono stronę:', page)
   } catch (error) {
-    console.error('❌ Błąd pobierania danych:', error)
+    //console.error('❌ Błąd pobierania danych:', error)
   }
 
   if (!page && finalSlug === 'home') {
@@ -136,7 +136,7 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
   }
 
   if (!page) {
-    console.warn('⚠️ Strona nie została znaleziona, zwracamy domyślne meta')
+    //console.warn('⚠️ Strona nie została znaleziona, zwracamy domyślne meta')
     return {
       title: 'Brak tytułu',
       description: 'Opis niedostępny',
