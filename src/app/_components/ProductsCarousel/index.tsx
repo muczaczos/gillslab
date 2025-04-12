@@ -92,10 +92,22 @@ const ProductsCarousel = ({ filteredPages, category }) => {
 
   if (!filteredPages) return null
 
+  const handleArrowClick = direction => e => {
+    e.preventDefault()
+    e.stopPropagation()
+    e.currentTarget.blur() // usunięcie focusu z przycisku
+
+    if (direction === 'prev') {
+      handlePrev()
+    } else {
+      handleNext()
+    }
+  }
+
   return (
     <div className="mt-10 relative md:flex md:justify-center">
       <div
-        className={`${styles.slider} slider`}
+        className={`${styles.slider} slider select-none`}
         ref={sliderRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
@@ -160,12 +172,13 @@ const ProductsCarousel = ({ filteredPages, category }) => {
       </div>
 
       <IoIosArrowDropleftCircle
-        className="z-50 absolute left-0 text-7xl top-1/2 text-customWhite  bg-primary rounded-full  transform -translate-y-1/2 p-0 hidden md:block"
-        onClick={handlePrev}
+        className="z-50 absolute left-0 text-7xl top-1/2 text-customWhite bg-primary rounded-full transform -translate-y-1/2 p-0 hidden md:block select-none"
+        onClick={handleArrowClick('prev')}
       />
+
       <IoIosArrowDroprightCircle
-        className="z-50 absolute right-0 top-1/2 transform -translate-y-1/2 text-7xl text-customWhite bg-primary rounded-full p-0 hidden md:block"
-        onClick={handleNext}
+        className="z-50 absolute right-0 top-1/2 transform -translate-y-1/2 text-7xl text-customWhite bg-primary rounded-full p-0 hidden md:block select-none"
+        onClick={handleArrowClick('next')}
       />
     </div>
   )

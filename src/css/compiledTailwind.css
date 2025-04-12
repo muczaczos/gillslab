@@ -198,10 +198,6 @@
   grid-row-start: 1 !important;
 }
 
-.m-0 {
-  margin: 0px !important;
-}
-
 .m-5 {
   margin: 1.25rem !important;
 }
@@ -633,6 +629,12 @@
 
 .cursor-pointer {
   cursor: pointer !important;
+}
+
+.select-none {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important;
 }
 
 .list-decimal {
@@ -1186,10 +1188,6 @@
   padding-top: 5rem !important;
 }
 
-.pt-4 {
-  padding-top: 1rem !important;
-}
-
 .pt-5 {
   padding-top: 1.25rem !important;
 }
@@ -1482,6 +1480,11 @@
 .outline-none {
   outline: 2px solid transparent !important;
   outline-offset: 2px !important;
+}
+
+.blur {
+  --tw-blur: blur(8px) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
 .invert {
@@ -2032,10 +2035,6 @@
 
   .lg\:pt-0 {
     padding-top: 0px !important;
-  }
-
-  .lg\:pt-10 {
-    padding-top: 2.5rem !important;
   }
 
   .lg\:pt-12 {
