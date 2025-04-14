@@ -26,7 +26,7 @@ export const Text: React.FC<Props> = props => {
         <div className={`md:flex ${imagePosition === 'right' ? 'md:flex-row-reverse' : ''}`}>
           <RichText
             content={richText}
-            className={`${classes} px-5 py-5 md:py-0 w-full md:w-1/2 order-2`}
+            className={`${classes} px-5 py-0 w-full md:py-0 md:w-1/2 order-2`}
           />{' '}
           {/* Renderowanie pola `richText` */}
           <div className="flex w-full md:w-1/2 justify-center">
@@ -36,7 +36,7 @@ export const Text: React.FC<Props> = props => {
       )}
       {richText && !media && (
         <div className="w-full">
-          <RichText content={richText} className={`${classes} px-5 py-5 md:py-0 w-full order-2`} />{' '}
+          <RichText content={richText} className={`${classes} px-5 py-0 md:py-0 w-full order-2`} />{' '}
         </div>
       )}
     </Gutter>

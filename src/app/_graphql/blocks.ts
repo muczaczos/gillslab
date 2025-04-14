@@ -91,6 +91,13 @@ export const SHOP_CAROUSEL = `
 }
 `
 
+export const SPACER_BLOCK = `
+...on SpacerBlock {
+  blockType
+  height
+}
+`
+
 export const IMAGE_LINK = `
 ...on ImageLink {
   blockType

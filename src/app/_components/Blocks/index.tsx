@@ -10,6 +10,7 @@ import { MediaBlock } from '../../_blocks/MediaBlock'
 import { RelatedPosts, type RelatedPostsProps } from '../../_blocks/RelatedPosts'
 import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
 import { ShopCarousel } from '../../_blocks/ShopCarousel'
+import { SpacerBlock } from '../../_blocks/SpacerBlock'
 import { Text } from '../../_blocks/Text/'
 import { toKebabCase } from '../../_utilities/toKebabCase'
 import { BackgroundColor } from '../BackgroundColor/index'
@@ -26,6 +27,7 @@ const blockComponents: Record<string, React.FC<any>> = {
   text: Text,
   imageLink: ImageLink,
   shopCarousel: ShopCarousel,
+  spacerBlock: SpacerBlock,
 }
 
 export const Blocks: React.FC<{

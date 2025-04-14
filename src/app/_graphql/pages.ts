@@ -5,6 +5,7 @@ import {
   IMAGE_LINK,
   MEDIA_BLOCK,
   SHOP_CAROUSEL,
+  SPACER_BLOCK,
   TEXT,
 } from './blocks'
 import { LINK_FIELDS } from './link'
@@ -56,6 +57,7 @@ query Page($slug: String!, $prefix: Page_prefix_Input, $draft: Boolean) {
         ${TEXT}
         ${IMAGE_LINK}
         ${SHOP_CAROUSEL}
+        ${SPACER_BLOCK}
       }
       ${META}
     }

@@ -1105,6 +1105,12 @@ export interface Page {
         blockName?: string | null;
         blockType: 'shopCarousel';
       }
+    | {
+        height: number;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'spacerBlock';
+      }
   )[];
   slug?: string | null;
   meta?: {
