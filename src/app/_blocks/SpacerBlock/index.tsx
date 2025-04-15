@@ -14,7 +14,6 @@ export const SpacerBlock: React.FC<Props> = ({ height }) => {
         padding: 0,
         margin: 0,
         border: 'none',
-        background: 'red',
         fontSize: 0,
         lineHeight: 0,
         overflow: 'hidden',

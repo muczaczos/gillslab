@@ -74,9 +74,13 @@ export const Blocks: React.FC<{
             if (Block) {
               return (
                 <BackgroundColor key={index} invert={blockIsInverted}>
-                  <VerticalPadding top={paddingTop} bottom={paddingBottom}>
+                  {blockType === 'spacerBlock' ? (
                     <Block id={toKebabCase(blockName)} {...block} />
-                  </VerticalPadding>
+                  ) : (
+                    <VerticalPadding top={paddingTop} bottom={paddingBottom}>
+                      <Block id={toKebabCase(blockName)} {...block} />
+                    </VerticalPadding>
+                  )}
                 </BackgroundColor>
               )
             }
