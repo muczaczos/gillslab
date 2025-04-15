@@ -23,7 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
-        <link rel="icon" href="/media/logo.png" sizes="48x48" />
+        <link rel="icon" href="/media/logo.png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/media/logo.png" sizes="180x180" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ62PVHDXD"></Script>
         <Script id="google-analitics">
           {`
