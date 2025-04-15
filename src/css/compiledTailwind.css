@@ -446,6 +446,10 @@
   min-height: 150px !important;
 }
 
+.min-h-\[300px\] {
+  min-height: 300px !important;
+}
+
 .w-1\/2 {
   width: 50% !important;
 }

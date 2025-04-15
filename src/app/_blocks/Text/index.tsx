@@ -23,7 +23,11 @@ export const Text: React.FC<Props> = props => {
   return (
     <Gutter className="">
       {richText && media && (
-        <div className={`md:flex ${imagePosition === 'right' ? 'md:flex-row-reverse' : ''}`}>
+        <div
+          className={`md:flex md:items-center ${
+            imagePosition === 'right' ? 'md:flex-row-reverse' : ''
+          } min-h-[300px]`} // dodajemy minimalną wysokość tylko od md
+        >
           <RichText
             content={richText}
             className={`${classes} px-5 py-0 w-full md:py-0 md:w-1/2 order-2`}
