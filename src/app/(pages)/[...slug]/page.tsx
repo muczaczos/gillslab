@@ -70,7 +70,6 @@ export default async function Pages({ params }) {
           <DesktopHero />
           <MobileCarousel />
           <HorizontalDesktopMenu />
-          <BlogVlogNews />
         </>
       ) : (
         <>
