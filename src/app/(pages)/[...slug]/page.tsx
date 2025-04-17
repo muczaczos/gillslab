@@ -67,7 +67,6 @@ export default async function Pages({ params }) {
     <LayoutWithHeaderFooter>
       {finalSlug === 'home' ? (
         <>
-          <MobileHero />
           <DesktopHero />
           <MobileCarousel />
           <HorizontalDesktopMenu />
