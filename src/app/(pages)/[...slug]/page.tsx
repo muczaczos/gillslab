@@ -64,9 +64,10 @@ export default async function Pages({ params }) {
   const { hero, layout } = page
 
   return (
-    <>
+    <LayoutWithHeaderFooter>
       {finalSlug === 'home' ? (
         <>
+          <MobileHero />
           <DesktopHero />
           <MobileCarousel />
           <HorizontalDesktopMenu />
@@ -83,7 +84,7 @@ export default async function Pages({ params }) {
           />
         </>
       )}
-    </>
+    </LayoutWithHeaderFooter>
   )
 }
 
