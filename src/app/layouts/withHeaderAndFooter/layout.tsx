@@ -6,8 +6,8 @@ import { Header } from '../../_components/Header' //
 export default function LayoutWithHeaderFooter({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Header />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
