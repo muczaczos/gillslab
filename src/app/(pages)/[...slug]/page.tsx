@@ -64,7 +64,7 @@ export default async function Pages({ params }) {
   const { hero, layout } = page
 
   return (
-    <LayoutWithHeaderFooter>
+    <>
       {finalSlug === 'home' ? (
         <>
           <MobileHero />
@@ -84,7 +84,7 @@ export default async function Pages({ params }) {
           />
         </>
       )}
-    </LayoutWithHeaderFooter>
+    </>
   )
 }
 
