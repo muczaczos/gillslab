@@ -64,7 +64,7 @@ export default async function Pages({ params }) {
   const { hero, layout } = page
 
   return (
-    <LayoutWithHeaderFooter>
+    <>
       {finalSlug === 'home' ? (
         <>
           <DesktopHero />
@@ -83,7 +83,7 @@ export default async function Pages({ params }) {
           />
         </>
       )}
-    </LayoutWithHeaderFooter>
+    </>
   )
 }
 
