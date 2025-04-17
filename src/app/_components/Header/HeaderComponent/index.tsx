@@ -1,5 +1,3 @@
-'use client' // you must use this directive when you wanna use 'pathname'
-
 import React, { useState } from 'react'
 import { BiSolidDownArrow } from 'react-icons/bi'
 import { FaHouse } from 'react-icons/fa6'
@@ -17,7 +15,6 @@ import HamburgerMenu from '../../HamburgerMenu'
 import { HeaderNav } from '../Nav'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
-  const pathname = usePathname()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const toggleDropdown = () => {
