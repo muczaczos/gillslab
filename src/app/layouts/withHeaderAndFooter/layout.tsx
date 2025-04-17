@@ -8,7 +8,6 @@ export default function LayoutWithHeaderFooter({ children }: { children: React.R
     <>
       <Header />
       <main>{children}</main>
-      <Footer />
     </>
   )
 }
