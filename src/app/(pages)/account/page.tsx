@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import BiDoorOpen from 'react-icons/bi'
+import { BiDoorOpen } from 'react-icons/bi'
 import { FaClipboardList, FaCreditCard, FaIdBadge, FaRegUser } from 'react-icons/fa'
 import { Metadata } from 'next'
 import Link from 'next/link'
