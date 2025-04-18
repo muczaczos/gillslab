@@ -58,8 +58,8 @@ const SmallCarousel = ({
     setIsDown(false)
   }
 
-  useEffect(() => { }, [isModalOpen])
-  useEffect(() => { }, [modalContent]) // Logowanie kiedy modalContent się zmienia
+  useEffect(() => {}, [isModalOpen])
+  useEffect(() => {}, [modalContent]) // Logowanie kiedy modalContent się zmienia
   return (
     <div
       className={styles.slider}
