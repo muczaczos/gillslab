@@ -1,7 +1,10 @@
 'use client'
-import React, { lazy, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { Modal } from '../../_components/Modal'
+import DynamicIcon from '../DaynamicIcon'
 
 import styles from './index.module.scss'
 
@@ -85,6 +88,12 @@ const SmallCarousel = ({
           <Link key={index} href={`/${links[index]}`} className="w-full">
             <div className={`${styles.slide} w-[150px] md:w-[200px]`} key={index}>
               {/* Renderowanie ikony */}
+              <DynamicIcon
+                library={Icon.iconLibrary}
+                name={Icon.iconName}
+                size={50}
+                color="#4968AC"
+              />
               <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
             </div>
           </Link>
@@ -100,6 +109,12 @@ const SmallCarousel = ({
               }}
             >
               {/* Renderowanie ikony */}
+              <DynamicIcon
+                library={Icon.iconLibrary}
+                name={Icon.iconName}
+                size={50}
+                color="#4968AC"
+              />
               <h3 className="text-xs text-primary opacity-70 md:text-lg">{catLabels[index]}</h3>
             </div>
           </div>
