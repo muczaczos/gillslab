@@ -16,8 +16,6 @@ import 'react-tabs/style/react-tabs.css'
 
 import classes from './index.module.scss'
 
-const DynamicIcon = lazy(() => import('../../_components/DaynamicIcon'))
-
 export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
     slug,
@@ -208,12 +206,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[0])}
               >
-                <DynamicIcon
-                  library={product.icons[0].iconLibrary}
-                  name={product.icons[0].iconName}
-                  size={50}
-                  color="#4968AC"
-                />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo1}</h3>
               </div>
               {/* Modal */}
@@ -223,12 +215,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[1])}
               >
-                <DynamicIcon
-                  library={product.icons[1].iconLibrary}
-                  name={product.icons[1].iconName}
-                  size={50}
-                  color="#4968AC"
-                />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo2}</h3>
               </div>
               <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
@@ -238,12 +224,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[2])}
               >
-                <DynamicIcon
-                  library={product.icons[2].iconLibrary}
-                  name={product.icons[2].iconName}
-                  size={50}
-                  color="#4968AC"
-                />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo3}</h3>
               </div>
               <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
@@ -251,12 +231,6 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
                 className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[3])}
               >
-                <DynamicIcon
-                  library={product.icons[3].iconLibrary}
-                  name={product.icons[3].iconName}
-                  size={50}
-                  color="#4968AC"
-                />
                 <h3 className="text-xs text-primary opacity-70 md:text-lg">{shortInfo4}</h3>
               </div>
               <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
