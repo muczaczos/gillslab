@@ -20,9 +20,11 @@
     "lint": "eslint src",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js src",
     "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload/payload.config.ts payload",
-    "tailwind": "tailwindcss -i ./tailwind.css -o ./src/css/compiledTailwind.css --watch"
+    "tailwind": "tailwindcss -i ./tailwind.css -o ./src/css/compiledTailwind.css --watch",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^15.3.1",
     "@payloadcms/bundler-webpack": "^1.0.0",
     "@payloadcms/db-mongodb": "^1.0.0",
     "@payloadcms/plugin-cloud": "^3.0.0",
@@ -35,7 +37,6 @@
     "@stripe/stripe-js": "^1.46.0",
     "@tanstack/react-table": "^8.15.3",
     "axios": "1.6.7",
-    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "escape-html": "^1.0.3",
     "express": "^4.17.1",
@@ -73,6 +74,7 @@
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.19",
     "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.11.0",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.10.0",

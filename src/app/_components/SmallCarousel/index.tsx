@@ -1,12 +1,12 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { lazy, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Modal } from '../../_components/Modal'
-import DynamicIcon from '../DaynamicIcon'
-
 import styles from './index.module.scss'
+
+const DynamicIcon = lazy(() => import('../DaynamicIcon'))
+
 
 const SmallCarousel = ({
   icons,
@@ -61,8 +61,8 @@ const SmallCarousel = ({
     setIsDown(false)
   }
 
-  useEffect(() => {}, [isModalOpen])
-  useEffect(() => {}, [modalContent]) // Logowanie kiedy modalContent się zmienia
+  useEffect(() => { }, [isModalOpen])
+  useEffect(() => { }, [modalContent]) // Logowanie kiedy modalContent się zmienia
   return (
     <div
       className={styles.slider}

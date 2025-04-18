@@ -1,13 +1,12 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { lazy, useEffect, useState } from 'react'
 import { IoArrowBackOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Product } from '../../../payload/payload-types'
 import { AddToCartButton } from '../../_components/AddToCartButton'
-import DynamicIcon from '../../_components/DaynamicIcon'
 import { Modal } from '../../_components/Modal'
 import RichText from '../../_components/RichText'
 import ShareModal from '../../_components/ShareModal'
@@ -16,6 +15,8 @@ import SmallCarousel from '../../_components/SmallCarousel'
 import 'react-tabs/style/react-tabs.css'
 
 import classes from './index.module.scss'
+
+const DynamicIcon = lazy(() => import('../../_components/DaynamicIcon'))
 
 export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
   const {
@@ -144,8 +145,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="w-auto">
               {typeof product.media1 === 'object' &&
-              product.media1 !== null &&
-              'url' in product.media1 ? (
+                product.media1 !== null &&
+                'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
