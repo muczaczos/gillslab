@@ -25,7 +25,7 @@ export const ImageLink: React.FC<Props> = props => {
         items.map((item, index) => (
           <Link
             key={index}
-            href={item.url}
+            href={`${process.env.NEXT_PUBLIC_SERVER_URL}/${item.url}`}
             className="m-5 max-w-sm rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-white"
           >
             {/* Obrazek */}
