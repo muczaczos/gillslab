@@ -144,8 +144,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="w-auto">
               {typeof product.media1 === 'object' &&
-              product.media1 !== null &&
-              'url' in product.media1 ? (
+                product.media1 !== null &&
+                'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
@@ -175,7 +175,10 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
 
           {/* In stock and short text */}
           <div className={classes.categoryWrapper}>
-            <p className="text-green-700 text-md font-bold md:text-xl">In stock</p>
+            {!outOfStock && <p className="text-green-700 text-md font-bold md:text-xl">In stock</p>}
+            {outOfStock && (
+              <p className="text-secondary text-md font-bold md:text-xl">Out of stock</p>
+            )}
           </div>
           <RichText
             className="mb-10 text-lg text-customGray-dark font-medium md:text-2xl"
