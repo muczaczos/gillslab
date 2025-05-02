@@ -18,7 +18,7 @@ const Banners = () => {
       <section className="pb-10 xl:px-5 bg-customWhite md:flex md:justify-center">
         <div className="px-5 w-full bg-customWhite flex flex-col items-center md:justify-between md:flex-row 2xl:px-0 max-w-[1536px]">
           {/* Promo banner */}
-          <Link href="/cubensis-grow-kits" className={`${classes.promoCard} mb-5 md:mb-0 flex`}>
+          <Link href="/mushroom-growkits" className={`${classes.promoCard} mb-5 md:mb-0 flex`}>
             <div className={classes.promoText}>
               <p className={classes.smallText}>Get</p>
               <h3 className={classes.bigText}>20% Off</h3>
