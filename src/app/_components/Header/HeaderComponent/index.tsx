@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
-import { BiSolidDownArrow } from 'react-icons/bi'
 import { FaHouse } from 'react-icons/fa6'
 import { FiHeart, FiShoppingCart, FiUser } from 'react-icons/fi'
 import { RiArrowDownSLine } from 'react-icons/ri'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 import { Header } from '../../../../payload/payload-types'
 import { useCart } from '../../../_providers/Cart'
-import { noHeaderFooterUrls } from '../../../constants'
-import { Gutter } from '../../Gutter'
 import HamburgerMenu from '../../HamburgerMenu'
-import { HeaderNav } from '../Nav'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -61,27 +56,27 @@ const HeaderComponent = ({ header }: { header: Header }) => {
             {isDropdownOpen && (
               <div className="absolute left-0 mt-1 bg-primary text-customWhite rounded-lg shadow-lg w-[150px]">
                 <ul className="pt-2">
-                  <Link href="/shop/cubensis-grow-kits">
+                  <Link href="/shop/mushroom-growkits">
                     <li className="group px-4 py-1 hover:bg-customWhite">
                       <p className="text-customWhite group-hover:text-primary-dark">Growkits</p>
                     </li>
                   </Link>
-                  <Link href="/shop/cubensis-spore-syringes">
+                  <Link href="/shop/mushroom-spores">
                     <li className="group px-4 py-1 hover:bg-customWhite">
                       <p className="text-customWhite group-hover:text-primary-dark">Spores</p>
                     </li>
                   </Link>
-                  <Link href="/shop/cubensis-liquid-cultures">
+                  <Link href="/shop/mushroom-cultures">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Cultures</p>
                     </li>
                   </Link>
-                  <Link href="/shop/laboratory-equipments">
+                  <Link href="/shop/mushroom-laboratory">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Laboratory</p>
                     </li>
                   </Link>
-                  <Link href="/shop/substrates">
+                  <Link href="/shop/mushroom-substrates">
                     <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
                       <p className="text-customWhite group-hover:text-primary-dark">Substrates</p>
                     </li>

@@ -60,7 +60,33 @@ const Sidebar = () => {
       </div>
       {isShopOpen && (
         <div className="pl-4">
-          {categories
+          <Link href="/shop/mushroom-growkits">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Mushroom Growkits
+            </p>
+          </Link>
+          <Link href="/shop/mushroom-spores">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Mushroom Spores
+            </p>
+          </Link>
+          <Link href="/shop/mushroom-cultures">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Mushroom Cultures
+            </p>
+          </Link>
+          <Link href="/shop/mushroom-substrates">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Mushroom Substrates
+            </p>
+          </Link>
+          <Link href="/shop/mushroom-laboratory">
+            <p className="text-customWhite font-semibold text-lg pb-2 cursor-pointer">
+              Mushroom Laboratory
+            </p>
+          </Link>
+
+          {/*categories
             ?.slice()
             .reverse() //display categories in reverse order
             .map(category => (
@@ -69,7 +95,7 @@ const Sidebar = () => {
                   {category?.title || 'Untitled Category'}
                 </p>
               </Link>
-            ))}
+            ))*/}
         </div>
       )}
 

@@ -5,14 +5,14 @@ import SmallCarousel from '../../../_components/SmallCarousel'
 
 const MobileCarousel = () => {
   const links = [
-    'shop/cubensis-grow-kits',
-    'shop/cubensis-spore-syringes',
-    'shop/cubensis-liquid-cultures',
+    'shop/mushroom-growkits',
+    'shop/mushroom-spores',
+    'shop/mushroom-cultures',
     'shop/laboratory-equipments',
-    'shop/substrates',
+    'shop/mushroom-substrates',
   ]
 
-  const catLabels = ['Growkits', 'Spores', 'Liquids', 'Lab', 'Substrates']
+  const catLabels = ['Growkits', 'Spores', 'Cultures', 'Lab', 'Substrates']
 
   const images = [
     process.env.NEXT_PUBLIC_SERVER_URL + '/media/growkitsCat.png',

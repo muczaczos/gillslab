@@ -14,11 +14,11 @@ const HorizontalDesktopMenu = () => {
   ]
 
   const links = [
-    'cubensis-grow-kits',
-    'cubensis-spore-syringes',
-    'cubensis-liquid-cultures',
-    'laboratory-equipments',
-    'substrates',
+    'mushroom-growkits',
+    'mushroom-spores',
+    'mushroom-cultures',
+    'mushroom-laboratory',
+    'mushroom-substrates',
   ]
 
   return (
