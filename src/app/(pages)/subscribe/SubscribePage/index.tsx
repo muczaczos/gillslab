@@ -114,12 +114,23 @@ export const SubscribePage: React.FC<{}> = () => {
           />
         </div>
         <div className="flex justify-end mt-10">
-          <Button
-            disabled={!isButtonActive}
-            label="Subscribe"
-            onClick={handleSubscriber}
-            className="bg-primary text-customWhite"
-          ></Button>
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={isButtonActive ? handleSubscriber : undefined}
+            onKeyDown={e => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                if (isButtonActive) handleSubscriber()
+              }
+            }}
+            className={`px-4 py-2 rounded cursor-pointer text-center select-none 
+              ${isButtonActive
+                ? 'bg-primary text-customWhite'
+                : 'bg-gray-400 text-white cursor-not-allowed'
+              }`}
+          >
+            Subscribe
+          </div>
         </div>
       </div>
     </Fragment>
