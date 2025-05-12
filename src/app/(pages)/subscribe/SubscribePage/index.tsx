@@ -124,9 +124,10 @@ export const SubscribePage: React.FC<{}> = () => {
               }
             }}
             className={`px-4 py-2 rounded cursor-pointer text-center select-none 
-              ${isButtonActive
-                ? 'bg-primary text-customWhite'
-                : 'bg-gray-400 text-white cursor-not-allowed'
+              ${
+                isButtonActive
+                  ? 'bg-primary text-customWhite'
+                  : 'bg-gray-400 text-white cursor-not-allowed'
               }`}
           >
             Subscribe

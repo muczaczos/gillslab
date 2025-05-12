@@ -66,7 +66,10 @@ export const ProductContent: React.FC<{
                     scrollbar-thin scrollbar-thumb-gray-400
                   "
                   >
-                    <RichText content={productDetails.richText} />
+                    <RichText
+                      className="text-customWhite text-xl md:text-2xl"
+                      content={productDetails.richText}
+                    />
                   </div>
                 </TabPanel>
                 <TabPanel>
@@ -82,7 +85,10 @@ export const ProductContent: React.FC<{
                     scrollbar-thin scrollbar-thumb-gray-400
                   "
                   >
-                    <RichText content={productFaq.richText} />
+                    <RichText
+                      className="text-customWhite text-xl md:text-2xl"
+                      content={productFaq.richText}
+                    />
                   </div>
                 </TabPanel>
               </div>

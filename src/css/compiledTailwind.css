@@ -631,12 +631,12 @@
   animation: slideRight 0.5s ease-out forwards !important;
 }
 
-.cursor-pointer {
-  cursor: pointer !important;
-}
-
 .cursor-not-allowed {
   cursor: not-allowed !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
 }
 
 .select-none {
@@ -930,6 +930,11 @@
   background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1)) !important;
 }
 
+.bg-gray-400 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1)) !important;
+}
+
 .bg-green-100 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1)) !important;
@@ -962,11 +967,6 @@
 .bg-yellow-100 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1)) !important;
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1)) !important;
 }
 
 .bg-opacity-50 {
@@ -1420,6 +1420,11 @@
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
+.text-yellow-400 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(250 204 21 / var(--tw-text-opacity, 1)) !important;
 }
 
 .underline {
