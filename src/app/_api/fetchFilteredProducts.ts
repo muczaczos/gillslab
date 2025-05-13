@@ -4,7 +4,12 @@ export const fetchFilteredProducts = async (category_slug: string): Promise<Prod
   // Zdefiniowane zapytanie GraphQL z filtrowaniem po category_slug
   const query = `
     query Products($categorySlug: String!) {
-      Products(where: { category_slug: { equals: $categorySlug }}, limit: 300) {
+      Products( where: {
+      AND: [
+        { category_slug: { equals: $categorySlug } }
+        { disable: { not_equals: true } }  # To zapewni, że produkty z disable: true nie będą zwracane
+      ]
+    }) {
         docs {
           id
           disable
@@ -85,6 +90,7 @@ export const fetchFilteredProducts = async (category_slug: string): Promise<Prod
 
   const data = await res.json()
 
+  console.log(data)
   // Zwrócenie wyników z produktów
   return data.data.Products.docs || []
 }
