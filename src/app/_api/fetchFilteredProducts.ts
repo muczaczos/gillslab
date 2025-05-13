@@ -90,7 +90,6 @@ export const fetchFilteredProducts = async (category_slug: string): Promise<Prod
 
   const data = await res.json()
 
-  console.log(data)
   // Zwrócenie wyników z produktów
   return data.data.Products.docs || []
 }
