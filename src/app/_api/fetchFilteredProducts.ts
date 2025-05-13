@@ -9,7 +9,8 @@ export const fetchFilteredProducts = async (category_slug: string): Promise<Prod
         { category_slug: { equals: $categorySlug } }
         { disable: { not_equals: true } }  # To zapewni, że produkty z disable: true nie będą zwracane
       ]
-    }) {
+    },
+    limit: 300) {
         docs {
           id
           disable
