@@ -33,7 +33,7 @@ const MobileHero = () => {
               GROWKITS
             </h1>
             <p className="text-primary ml-7 mt-2 sm:ml-10">
-              <span className="font-normal text-base">Cultivate Your Mushrooms Dreams</span>
+              <span className="font-normal text-base">Cultivate Your Mushroom Dreams</span>
             </p>
             <Link href="#start2">
               <button className="border-0 rounded-xl text-customWhite text-2xl font-black bg-secondary py-3 px-7 ml-7 mt-5 mb-5 sm:mt-10 sm:ml-10">
