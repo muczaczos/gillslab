@@ -69,7 +69,7 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
         <p className="text-xl font-bold text-center">
           Company name: <br />
         </p>
-        <p className="text-xl text-center">UiTeH</p>
+        <p className="text-xl text-center">Gillslab</p>
         <p className="text-xl font-bold text-center">Address:</p>
         <p className="text-xl text-center">Szkolna 1/3, 05-500 Piaseczno, Poland</p>
       </div>
