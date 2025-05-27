@@ -74,6 +74,12 @@ export default async function Pages({ params }) {
           <Banners />
           <BestProducts />
           <BlogVlogNews />
+          {/* --- DYNAMICZNA TREŚĆ Z DASHBOARDU --- */}
+          <Hero {...hero} />
+          <Blocks
+            blocks={layout}
+            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
+          />
         </>
       ) : (
         <>
