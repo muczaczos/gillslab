@@ -207,7 +207,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="hidden lg:flex lg:flex-col lg:gap-5 xxl:flex-row xxl:gap-0 justify-center pb-10 2xl:pb-28 ">
             <div className="flex w-full">
               <div
-                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                className="hover:cursor-pointer w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[0])}
               >
                 <DynamicIcon
@@ -222,7 +222,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={[modalContent]} />
 
               <div
-                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                className="hover:cursor-pointer w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[1])}
               >
                 <DynamicIcon
@@ -237,7 +237,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
             </div>
             <div className="flex justify-center w-full">
               <div
-                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                className="hover:cursor-pointer w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[2])}
               >
                 <DynamicIcon
@@ -250,7 +250,7 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               </div>
               <Modal isOpen={isModalOpen} onClose={handleCloseModal} content={modalContent} />
               <div
-                className="w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
+                className="hover:cursor-pointer w-1/2 ml-4 flex gap-2 p-2 bg-white flex-col justify-center items-center shadow-[4px_4px_0px_rgba(0,0,0,0.2)]  transition-transform duration-300 ease-in-out rounded-xl h-[140px]"
                 onClick={() => handleOpenModal(Modals[3])}
               >
                 <DynamicIcon
