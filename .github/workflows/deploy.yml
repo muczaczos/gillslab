@@ -21,7 +21,7 @@ jobs:
       - name: Deploy over SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd /home/USERNAME/gillslab
+            cd /home/gillslab/gillslab
             echo "${{ secrets.ENV_FILE }}" > .env
             docker compose -f docker-compose.yml pull
             docker compose -f docker-compose.yml up -d --build
