@@ -19,9 +19,8 @@ jobs:
       - name: Copy env file
         run: echo "${{ secrets.ENV_FILE }}" > .env
 
-      - name: Build and push Docker image
-        run: |
-          docker-compose -f docker-compose.yml up -d --build
+      - name: Run Docker Compose
+        run: docker compose -f docker-compose.yml up -d --build
 
       - name: Clean up
         run: docker image prune -f
