@@ -18,17 +18,15 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Save .env file from secret
-        run: echo "${{ secrets.ENV_FILE }}" > .env
-
-      - name: Copy files to VPS
+      - name: Copy project to VPS
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: ".env"
+          source: "."
           target: "/home/gillslab/gillslab"
+          strip_components: 1
 
       - name: SSH and deploy
         uses: appleboy/ssh-action@v1.0.3
@@ -38,8 +36,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/gillslab/gillslab
-            git reset --hard
-            git pull origin production
             echo "${{ secrets.ENV_FILE }}" > .env
             docker compose down
             docker compose up -d --build
