@@ -80,6 +80,7 @@ export default async function Pages({ params }) {
             blocks={layout}
             disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
           />
+          <Banners />
         </>
       ) : (
         <>
