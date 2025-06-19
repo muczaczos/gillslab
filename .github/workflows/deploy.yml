@@ -38,6 +38,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/gillslab/gillslab
-            docker compose -f docker-compose.yml pull
-            docker compose -f docker-compose.yml up -d --build
+            git reset --hard
+            git pull origin production
+            echo "${{ secrets.ENV_FILE }}" > .env
+            docker compose down
+            docker compose up -d --build
             docker image prune -f
