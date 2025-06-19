@@ -13,18 +13,31 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up SSH
+      - name: Set up SSH Agent
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy over SSH
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+      - name: Save .env file from secret
+        run: echo "${{ secrets.ENV_FILE }}" > .env
+
+      - name: Copy files to VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: ".env"
+          target: "/home/gillslab/gillslab"
+
+      - name: SSH and deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
             cd /home/gillslab/gillslab
-            echo "${{ secrets.ENV_FILE }}" > .env
             docker compose -f docker-compose.yml pull
             docker compose -f docker-compose.yml up -d --build
             docker image prune -f
-          EOF
-
