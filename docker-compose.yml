@@ -13,7 +13,7 @@ services:
     ports:
       - "27017:27017"
     healthcheck:
-      test: echo 'db.runCommand({ ping: 1 })' | mongosh --username=${MONGO_USER} --password=${MONGO_PASSWORD} --authenticationDatabase=admin --quiet
+      test: "echo 'db.runCommand({ ping: 1 })' | mongosh --username=${MONGO_USER} --password=${MONGO_PASSWORD} --authenticationDatabase=admin --quiet"
       interval: 5s
       timeout: 5s
       retries: 5
