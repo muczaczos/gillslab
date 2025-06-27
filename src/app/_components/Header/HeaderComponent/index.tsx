@@ -67,12 +67,12 @@ const HeaderComponent = ({ header }: { header: Header }) => {
                     </li>
                   </Link>
                   <Link href="/shop/mushroom-cultures">
-                    <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
+                    <li className="group px-4 py-1 hover:bg-customWhite">
                       <p className="text-customWhite group-hover:text-primary-dark">Cultures</p>
                     </li>
                   </Link>
                   <Link href="/shop/mushroom-laboratory">
-                    <li className="group px-4 py-1 hover:bg-customWhite rounded-b-lg">
+                    <li className="group px-4 py-1 hover:bg-customWhite">
                       <p className="text-customWhite group-hover:text-primary-dark">Laboratory</p>
                     </li>
                   </Link>
