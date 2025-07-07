@@ -12,6 +12,7 @@ import { Modal } from '../../_components/Modal'
 import RichText from '../../_components/RichText'
 import ShareModal from '../../_components/ShareModal'
 import SmallCarousel from '../../_components/SmallCarousel'
+import { getBTCPriceEUR } from '../../_utilities/getBtcPrice'
 
 import 'react-tabs/style/react-tabs.css'
 
@@ -35,6 +36,17 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
     Modals,
   } = product
 
+  const [btcPrice, setBtcPrice] = useState<number | null>(null)
+
+  useEffect(() => {
+    getBTCPriceEUR().then(setBtcPrice)
+  }, [])
+  const priceNumber = parseFloat(price)
+  const euro = priceNumber.toFixed(2)
+  const sats = (priceNumber / btcPrice).toFixed(8)
+  console.log('btc price')
+  console.log(btcPrice)
+  console.log(sats)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalContent, setModalContent] = useState([])
 
@@ -144,8 +156,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
           <div className="flex justify-center items-center">
             <div className="w-auto">
               {typeof product.media1 === 'object' &&
-              product.media1 !== null &&
-              'url' in product.media1 ? (
+                product.media1 !== null &&
+                'url' in product.media1 ? (
                 <Image
                   alt="Product Image"
                   src={product.media1.url}
@@ -268,7 +280,9 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
 
           {/* Price and add to cart button */}
           <div className="mt-5 flex justify-between items-center pb-5">
-            <p className="text-primary text-5xl font-medium md:text-8xl lg:text-6xl">{`€${price}`}</p>
+            <p className="text-primary text-5xl font-medium md:text-8xl lg:text-6xl">
+              {`€${price}`}
+            </p>
             {!outOfStock && (
               <AddToCartButton
                 product={product}
@@ -281,6 +295,8 @@ export const ProductHero: React.FC<{ product: Product }> = ({ product }) => {
               </div>
             )}
           </div>
+
+          <p className="text-primary text-2xl font-medium md:text-2xl lg:text-2xl">{`₿${sats}`}</p>
           {/* /////////////////////// */}
         </section>
         {/* /////////////////////// */}
