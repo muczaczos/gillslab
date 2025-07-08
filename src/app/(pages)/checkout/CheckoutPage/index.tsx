@@ -14,6 +14,7 @@ import ShippingDetails from '../../../_components/ShippingDetails'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
 import { useTheme } from '../../../_providers/Theme'
+import { getBTCPriceEUR } from '../../../_utilities/getBtcPrice'
 import { CheckoutItem } from '../CheckoutItem'
 
 import classes from './index.module.scss'
@@ -81,6 +82,15 @@ export const CheckoutPage: React.FC<{}> = props => {
   }, [postalCode, totalWeight, country, totalAmount])
 
   total = Number(totalAmount) + Number(shippingCost)
+
+  const [btcPrice, setBtcPrice] = useState<number | null>(null)
+
+  useEffect(() => {
+    getBTCPriceEUR().then(setBtcPrice)
+  }, [])
+
+  const btc = (total / btcPrice).toFixed(8)
+  const sats = btcPrice ? Math.round((total / btcPrice) * 100_000_000) : null
 
   //if (!user || !stripe) return null
   return (
@@ -194,6 +204,10 @@ export const CheckoutPage: React.FC<{}> = props => {
               <p>Order Total</p>
               <p>€{total}</p>
             </div>
+            <div className={classes.orderTotal}>
+              <p>Order Total in crypto</p>
+              <p>₿{btc}</p>
+            </div>
           </ul>
         </div>
       )}
@@ -210,11 +224,10 @@ export const CheckoutPage: React.FC<{}> = props => {
         from planet-of-mushrooms.com
       </label>
       <div
-        className={`${
-          isButtonActive
-            ? 'opacity-100 flex flex-col md:flex-row gap-2 justify-between mt-10'
-            : 'opacity-50 flex flex-col md:flex-row gap-2 justify-between mt-10'
-        }`}
+        className={`${isButtonActive
+          ? 'opacity-100 flex flex-col md:flex-row gap-2 justify-between mt-10'
+          : 'opacity-50 flex flex-col md:flex-row gap-2 justify-between mt-10'
+          }`}
       >
         <div className="order-2">
           <GatewayLogic
