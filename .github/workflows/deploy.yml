@@ -17,7 +17,6 @@ jobs:
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Copy project to VPS
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -36,7 +35,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/gillslab/gillslab
-            echo "${{ secrets.ENV_FILE }}" > .env
+            git reset --hard
+            git pull origin production
             docker compose down
             docker compose up -d --build
             docker image prune -f
