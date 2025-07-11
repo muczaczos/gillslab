@@ -26,7 +26,6 @@ import Zones from './collections/Zones'
 import BeforeDashboard from './components/BeforeDashboard'
 import BeforeLogin from './components/BeforeLogin'
 import NavigationAlert from './components/NavigationAlerts'
-import { createBtcInvoiceEndpoint } from './endpoints/create-btc-invoice'
 import { createPaymentIntent } from './endpoints/create-payment-intent'
 import { customersProxy } from './endpoints/customers'
 import { productsProxy } from './endpoints/products'
@@ -188,11 +187,6 @@ export default buildConfig({
       path: '/stripe/customers',
       method: 'get',
       handler: customersProxy,
-    },
-    {
-      path: '/create-btc-invoice',
-      method: 'post',
-      handler: createBtcInvoiceEndpoint,
     },
     {
       path: '/stripe/products',

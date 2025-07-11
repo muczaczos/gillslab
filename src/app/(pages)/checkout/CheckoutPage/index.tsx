@@ -224,10 +224,11 @@ export const CheckoutPage: React.FC<{}> = props => {
         from planet-of-mushrooms.com
       </label>
       <div
-        className={`${isButtonActive
-          ? 'opacity-100 flex flex-col md:flex-row gap-2 justify-between mt-10'
-          : 'opacity-50 flex flex-col md:flex-row gap-2 justify-between mt-10'
-          }`}
+        className={`${
+          isButtonActive
+            ? 'opacity-100 flex flex-col md:flex-row gap-2 justify-between mt-10'
+            : 'opacity-50 flex flex-col md:flex-row gap-2 justify-between mt-10'
+        }`}
       >
         <div className="order-2">
           <GatewayLogic
