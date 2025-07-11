@@ -11,6 +11,7 @@ const policies = {
     'https://www.googletagmanager.com/',
     'https://region1.google-analytics.com/',
     'https://www.google-analytics.com',
+    'https://api.coingecko.com',
   ],
   'child-src': ["'self'"],
   'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
@@ -42,6 +43,7 @@ const policies = {
     'https://www.googletagmanager.com/',
     'https://region1.google-analytics.com/',
     'https://www.google-analytics.com',
+    'https://api.coingecko.com',
   ],
 }
 
