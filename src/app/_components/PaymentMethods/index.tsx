@@ -71,7 +71,7 @@ const PaymentMethods = ({ method, setMethod }) => {
       <hr className="mb-5 mt-5"></hr>
       <div className="flex justify-between">
         <RadioButton
-          label="Cryptocurency"
+          label="BTC"
           value="crypto"
           isSelected={method === 'crypto'}
           onRadioChange={handlePaymentMethod}

@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
 import { Order } from '../../../payload/payload-types'
 import { useCart } from '../../_providers/Cart'
 import { Button } from '../Button'
+import { getBTCPriceEUR } from '../../_utilities/getBtcPrice'
 
 const GatewayLogic = ({
   setShowMessage,
@@ -108,6 +109,15 @@ const GatewayLogic = ({
         dataObj.sign = sha1Hash
 
         clearCart()
+
+        const [btcPrice, setBtcPrice] = useState<number | null>(null)
+
+        useEffect(() => {
+          getBTCPriceEUR().then(setBtcPrice)
+        }, [])
+
+        const btc = (totalAmount / btcPrice).toFixed(8)
+        const sats = btcPrice ? Math.round((totalAmount / btcPrice) * 100_000_000) : null
 
         try {
           const response = await axios.post('/cashbill-payment', dataObj)
