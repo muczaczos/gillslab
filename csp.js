@@ -12,6 +12,7 @@ const policies = {
     'https://region1.google-analytics.com/',
     'https://www.google-analytics.com',
     'https://api.coingecko.com',
+    'https://pay.gillslab.com',
   ],
   'child-src': ["'self'"],
   'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
@@ -44,6 +45,7 @@ const policies = {
     'https://region1.google-analytics.com/',
     'https://www.google-analytics.com',
     'https://api.coingecko.com',
+    'https://pay.gillslab.com',
   ],
 }
 

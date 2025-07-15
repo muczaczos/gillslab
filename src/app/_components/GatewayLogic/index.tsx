@@ -167,65 +167,77 @@ const GatewayLogic = ({
         router.push(`/order-confirmation-revolut?order_id=${doc.id}&total=${doc.total}`)
       } else if (method === 'crypto') {
         // console.log('1')
-        // const orderReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders`, {
-        //   method: 'POST',
-        //   credentials: 'include',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify({
-        //     total: totalAmount,
-        //     stripePaymentIntentID: '',
-        //     fullname: fullName,
-        //     streetAddress: address,
-        //     city: city,
-        //     postalCode: postalCode,
-        //     country: country,
-        //     phoneNumber: phone,
-        //     email: email,
-        //     lockerCode: lockerCode,
-        //     shippingMethod: 'DPD or Inpost',
-        //     paymentMethod: method,
-        //     additionalInfo: additionalInfo,
-        //     orderStatus: 'Awaiting Payment',
-        //     items: (cart?.items || [])?.map(({ product, quantity }) => ({
-        //       product: typeof product === 'string' ? product : product.id,
-        //       quantity,
-        //       price: typeof product === 'number' ? product : Number(product.price),
-        //     })),
-        //   }),
-        // })
-
-        // const {
-        //   error: errorFromRes,
-        //   doc,
-        // }: {
-        //   message?: string
-        //   error?: string
-        //   doc: Order
-        // } = await orderReq.json()
-        // router.push(`/order-confirmation-crypto?order_id=${doc.id}`)
-
-        const invoiceRes = await fetch(`${BTCPAY_URL}/api/v1/stores/${STORE_ID}/invoices`, {
+        const orderReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders`, {
           method: 'POST',
+          credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `token ${BTCPAY_API_KEY}`,
           },
           body: JSON.stringify({
-            amount: totalAmount,
-            currency: 'PLN', // albo 'EUR', zależnie od frontu
-            metadata: {
-              orderId: doc.id,
-              email: email,
-            },
-            checkout: {
-              speedPolicy: 'HighSpeed',
-              redirectURL: `${process.env.NEXT_PUBLIC_SERVER_URL}/order-confirmation-crypto?order_id=${doc.id}`,
-              defaultLanguage: 'pl',
-            },
+            total: totalAmount,
+            stripePaymentIntentID: '',
+            fullname: fullName,
+            streetAddress: address,
+            city: city,
+            postalCode: postalCode,
+            country: country,
+            phoneNumber: phone,
+            email: email,
+            lockerCode: lockerCode,
+            shippingMethod: 'DPD or Inpost',
+            paymentMethod: method,
+            additionalInfo: additionalInfo,
+            orderStatus: 'Awaiting Payment',
+            items: (cart?.items || [])?.map(({ product, quantity }) => ({
+              product: typeof product === 'string' ? product : product.id,
+              quantity,
+              price: typeof product === 'number' ? product : Number(product.price),
+            })),
           }),
         })
+
+        const {
+          error: errorFromRes,
+          doc,
+        }: {
+          message?: string
+          error?: string
+          doc: Order
+        } = await orderReq.json()
+        //router.push(`/order-confirmation-crypto?order_id=${doc.id}`)
+
+        const invoiceRes = await fetch(
+          `${process.env.NEXT_PUBLIC_BTCPAY_URL}/api/v1/stores/${process.env.NEXT_PUBLIC_STORE_ID}/invoices`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `token ${process.env.NEXT_PUBLIC_BTCPAY_API_KEY}`,
+            },
+            body: JSON.stringify({
+              amount: totalAmount,
+              currency: 'EUR',
+              metadata: {
+                orderId: doc.id,
+                email: email,
+              },
+              checkout: {
+                speedPolicy: 'HighSpeed',
+                redirectURL: `${process.env.NEXT_PUBLIC_SERVER_URL}/order-confirmation-crypto?order_id=${doc.id}`,
+                redirectAutomatically: true,
+                defaultLanguage: 'en',
+              },
+            }),
+          },
+        )
+
+        const invoiceData = await invoiceRes.json()
+
+        if (invoiceData?.checkoutLink) {
+          router.push(invoiceData.checkoutLink)
+        } else {
+          console.error('BTCPay invoice error:', invoiceData)
+        }
       } else if (method === 'wise') {
         // console.log('1')
         const orderReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders`, {
