@@ -187,6 +187,7 @@ const GatewayLogic = ({
             shippingMethod: 'DPD or Inpost',
             paymentMethod: method,
             additionalInfo: additionalInfo,
+            orderStatus: 'Awaiting Payment',
             items: (cart?.items || [])?.map(({ product, quantity }) => ({
               product: typeof product === 'string' ? product : product.id,
               quantity,
