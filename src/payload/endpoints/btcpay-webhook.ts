@@ -1,7 +1,7 @@
+import crypto from 'crypto'
 import type { Response } from 'express'
 import payload from 'payload'
 import type { PayloadRequest } from 'payload/types'
-import crypto from 'crypto'
 
 export const btcpayWebhook = async (req: PayloadRequest, res: Response): Promise<void> => {
   try {
@@ -14,7 +14,7 @@ export const btcpayWebhook = async (req: PayloadRequest, res: Response): Promise
       .digest('hex')}`
 
     if (signature !== expectedSignature) {
-      console.warn('❌ Nieprawidłowy podpis webhooka!')
+      // console.warn('❌ Nieprawidłowy podpis webhooka!')
       res.status(401).json({ error: 'Invalid signature' })
       return
     }
