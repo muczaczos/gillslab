@@ -1,12 +1,8 @@
-import type { NextFunction, Response } from 'express'
-import type { PayloadRequest } from 'payload/types'
+import type { Response } from 'express'
 import payload from 'payload'
+import type { PayloadRequest } from 'payload/types'
 
-export const btcpayWebhook = async (
-  req: PayloadRequest,
-  res: Response,
-  next: NextFunction,
-): Promise<void> => {
+export const btcpayWebhook = async (req: PayloadRequest, res: Response): Promise<void> => {
   try {
     const authHeader = req.headers.authorization
     const expectedToken = `Bearer ${process.env.BTCPAY_WEBHOOK_SECRET}`
@@ -17,7 +13,6 @@ export const btcpayWebhook = async (
     }
 
     const event = req.body
-    const invoiceId = event?.invoiceId
     const status = event?.type
 
     if (status === 'InvoiceSettled') {
@@ -31,14 +26,11 @@ export const btcpayWebhook = async (
             orderStatus: 'Payment Accepted',
           },
         })
-
-        console.log(`✅ Zaktualizowano status zamówienia ${orderId} → Payment Accepted`)
       }
     }
 
     res.status(200).json({ received: true })
-  } catch (err) {
-    console.error('❌ Błąd webhooka BTCPay:', err)
+  } catch (err: unknown) {
     res.status(500).json({ error: 'Webhook handler error' })
   }
 }
