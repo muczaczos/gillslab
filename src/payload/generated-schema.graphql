@@ -12819,6 +12819,7 @@ type Order {
 }
 
 enum Order_orderStatus {
+  AwaitingPayment
   PaymentAccepted
   PackageSended
   OrderCanceled
@@ -12892,6 +12893,7 @@ input Order_orderStatus_operator {
 }
 
 enum Order_orderStatus_Input {
+  AwaitingPayment
   PaymentAccepted
   PackageSended
   OrderCanceled
@@ -27227,6 +27229,7 @@ input mutationOrderInput {
 }
 
 enum Order_orderStatus_MutationInput {
+  AwaitingPayment
   PaymentAccepted
   PackageSended
   OrderCanceled
@@ -27262,6 +27265,7 @@ input mutationOrderUpdateInput {
 }
 
 enum OrderUpdate_orderStatus_MutationInput {
+  AwaitingPayment
   PaymentAccepted
   PackageSended
   OrderCanceled

@@ -38,6 +38,7 @@ export const Orders: CollectionConfig = {
       label: 'Change Order Status',
       type: 'select',
       options: [
+        { label: 'Awaiting Payment', value: 'Awaiting Payment' },
         { label: 'Payment Accepted', value: 'Payment Accepted' },
         { label: 'Package Sended', value: 'Package Sended' },
         { label: 'Order Canceled', value: 'Order Canceled' },

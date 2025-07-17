@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
 import { Order } from '../../../payload/payload-types'
 import { useCart } from '../../_providers/Cart'
+import { getBTCPriceEUR } from '../../_utilities/getBtcPrice'
 import { Button } from '../Button'
 
 const GatewayLogic = ({
@@ -177,6 +178,7 @@ const GatewayLogic = ({
             shippingMethod: 'DPD or Inpost',
             paymentMethod: method,
             additionalInfo: additionalInfo,
+            orderStatus: 'Awaiting Payment',
             items: (cart?.items || [])?.map(({ product, quantity }) => ({
               product: typeof product === 'string' ? product : product.id,
               quantity,
@@ -193,7 +195,40 @@ const GatewayLogic = ({
           error?: string
           doc: Order
         } = await orderReq.json()
-        router.push(`/order-confirmation-crypto?order_id=${doc.id}`)
+        //router.push(`/order-confirmation-crypto?order_id=${doc.id}`)
+
+        const invoiceRes = await fetch(
+          `${process.env.NEXT_PUBLIC_BTCPAY_URL}/api/v1/stores/${process.env.NEXT_PUBLIC_STORE_ID}/invoices`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `token ${process.env.NEXT_PUBLIC_BTCPAY_API_KEY}`,
+            },
+            body: JSON.stringify({
+              amount: totalAmount,
+              currency: 'EUR',
+              metadata: {
+                orderId: doc.id,
+                email: email,
+              },
+              checkout: {
+                speedPolicy: 'HighSpeed',
+                redirectURL: `${process.env.NEXT_PUBLIC_SERVER_URL}/order-confirmation-crypto?order_id=${doc.id}`,
+                redirectAutomatically: true,
+                defaultLanguage: 'en',
+              },
+            }),
+          },
+        )
+
+        const invoiceData = await invoiceRes.json()
+
+        if (invoiceData?.checkoutLink) {
+          router.push(invoiceData.checkoutLink)
+        } else {
+          //  console.error('BTCPay invoice error:', invoiceData)
+        }
       } else if (method === 'wise') {
         // console.log('1')
         const orderReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders`, {

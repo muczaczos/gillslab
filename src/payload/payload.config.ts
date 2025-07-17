@@ -26,6 +26,7 @@ import Zones from './collections/Zones'
 import BeforeDashboard from './components/BeforeDashboard'
 import BeforeLogin from './components/BeforeLogin'
 import NavigationAlert from './components/NavigationAlerts'
+import { btcpayWebhook } from './endpoints/btcpay-webhook'
 import { createPaymentIntent } from './endpoints/create-payment-intent'
 import { customersProxy } from './endpoints/customers'
 import { productsProxy } from './endpoints/products'
@@ -178,6 +179,11 @@ export default buildConfig({
     Boolean,
   ),
   endpoints: [
+    {
+      path: '/btcpay-webhook',
+      method: 'post',
+      handler: btcpayWebhook,
+    },
     {
       path: '/create-payment-intent',
       method: 'post',
