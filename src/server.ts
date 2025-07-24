@@ -38,6 +38,11 @@ server {
 }*/
 //app.set('trust proxy', true)
 
+app.use(
+  '/api/btcpay-webhook',
+  express.raw({ type: 'application/json' }), // ← przechwytujemy raw body
+)
+
 // Dodaj middleware, który odczyta dane JSON z ciała żądania
 app.use(express.json())
 

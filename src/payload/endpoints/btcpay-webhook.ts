@@ -5,12 +5,12 @@ import type { PayloadRequest } from 'payload/types'
 
 export const btcpayWebhook: PayloadHandler = async (req: PayloadRequest, res) => {
   try {
-    const rawBody = JSON.stringify(req.body)
+    const rawBody = req.body as Buffer // <- teraz Buffer, nie obiekt
     const signature = req.headers['btcpay-sig'] as string
 
     const expectedSignature = `sha256=${crypto
       .createHmac('sha256', process.env.BTCPAY_WEBHOOK_SECRET || '')
-      .update(rawBody)
+      .update(rawBody) // <- haszujemy Buffer
       .digest('hex')}`
 
     if (signature !== expectedSignature) {
@@ -18,7 +18,7 @@ export const btcpayWebhook: PayloadHandler = async (req: PayloadRequest, res) =>
       return
     }
 
-    const event = req.body
+    const event = JSON.parse(rawBody.toString()) // <- dopiero teraz parsujemy JSON
     const status = event?.type
 
     if (status === 'InvoiceSettled') {
